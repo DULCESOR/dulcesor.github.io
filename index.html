@@ -1,64 +1,205 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Dulcesor · Asociación Cultural</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Georgia, "Times New Roman", serif;
-            background-color: #f6f4f1;
-            color: #2b2b2b;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-        .container {
-            max-width: 700px;
-            padding: 40px;
-        }
-        h1 {
-            font-size: 2.6rem;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-        p {
-            font-size: 1.15rem;
-            line-height: 1.7;
-            margin-bottom: 25px;
-        }
-        .footer {
-            font-size: 0.9rem;
-            color: #777;
-            margin-top: 40px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asociación Cultural DULCESOR</title>
+  <meta name="description" content="Asociación Cultural DULCESOR: patrimonio gastronómico, repostería conventual, cultura y tradición. Proyecto principal: I Concurso Internacional de Postres Conventuales – Valladolid 2026." />
+  <style>
+    :root{
+      --bg:#f6f4f1;
+      --text:#1f1f1f;
+      --muted:#555;
+      --card:#ffffff;
+      --line:#e6e1da;
+      --accent:#2b2b2b;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 56px 22px 40px;
+    }
+    header{
+      text-align:center;
+      padding: 28px 18px 10px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(34px, 4vw, 54px);
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .tagline{
+      margin:0 auto 18px;
+      font-size: 15px;
+      letter-spacing: .4px;
+      color: var(--muted);
+    }
+    .lead{
+      max-width: 860px;
+      margin: 18px auto 0;
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--text);
+    }
+    .divider{
+      height:1px;
+      background: var(--line);
+      margin: 28px auto 8px;
+      max-width: 780px;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .card{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 18px;
+      box-shadow: 0 1px 0 rgba(0,0,0,.02);
+    }
+    h2{
+      margin:0 0 10px;
+      font-size: 18px;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    ul{
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.75;
+      color: var(--text);
+    }
+    p{margin:0; line-height:1.75; color:var(--text)}
+    .muted{color:var(--muted)}
+    .project{
+      margin-top: 10px;
+      padding: 12px 14px;
+      border-left: 3px solid var(--accent);
+      background: #fbfaf8;
+      border-radius: 10px;
+    }
+    .contact{
+      text-align:center;
+      margin-top: 26px;
+      padding-top: 22px;
+    }
+    .email{
+      display:inline-block;
+      margin-top: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,0,0,.25);
+      padding-bottom: 2px;
+    }
+    footer{
+      text-align:center;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    @media (min-width: 860px){
+      .cards{grid-template-columns: 1fr 1fr;}
+      .card.full{grid-column: 1 / -1;}
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>DULCESOR</h1>
+  <main class="wrap">
+    <header>
+      <h1>ASOCIACIÓN CULTURAL DULCESOR</h1>
+      <div class="tagline">Patrimonio gastronómico · Repostería conventual · Cultura y tradición</div>
 
-        <p>
-            La Asociación Cultural <strong>Dulcesor</strong> se encuentra actualmente
-            en proceso de desarrollo de su web.
+      <div class="divider"></div>
+
+      <p class="lead">
+        La <strong>Asociación Cultural DULCESOR</strong> trabaja en la preservación, difusión y puesta en valor de la
+        <strong>repostería conventual</strong> y del <strong>patrimonio gastronómico</strong> ligado a comunidades religiosas.
+        Su labor se orienta a reconocer y visibilizar una tradición artesanal de alto valor cultural, histórico y social,
+        promoviendo el diálogo entre la tradición y la sociedad contemporánea.
+      </p>
+
+      <div class="project">
+        <p><strong>Proyecto principal en desarrollo:</strong><br>
+          I Concurso Internacional de Postres Conventuales – Valladolid 2026
         </p>
+      </div>
+    </header>
 
-        <p>
-            Muy pronto compartiremos toda la información relativa al
-            <strong>Concurso Internacional de Postres Conventuales – Valladolid 2026</strong>.
+    <section class="cards">
+      <article class="card">
+        <h2>Identidad de la Asociación</h2>
+        <ul>
+          <li><strong>Nombre completo:</strong> Asociación Cultural DULCESOR</li>
+          <li><strong>Naturaleza:</strong> Asociación cultural sin ánimo de lucro</li>
+          <li><strong>Ámbito de actuación:</strong> Cultural y gastronómico</li>
+          <li><strong>Proyección:</strong> Nacional e internacional</li>
+          <li><strong>Sede de referencia:</strong> Valladolid (España)</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Fines y objetivos</h2>
+        <ul>
+          <li>Preservar y difundir la repostería conventual como patrimonio cultural inmaterial.</li>
+          <li>Apoyar y dar visibilidad al trabajo artesanal desarrollado por comunidades religiosas.</li>
+          <li>Promover actividades culturales, gastronómicas y divulgativas.</li>
+          <li>Fomentar el encuentro entre tradición, cultura y sociedad contemporánea.</li>
+          <li>Organizar eventos, encuentros, concursos y actividades formativas relacionadas con sus fines.</li>
+        </ul>
+      </article>
+
+      <article class="card full">
+        <h2>Proyectos</h2>
+        <p><strong>Proyecto principal en desarrollo</strong></p>
+        <p class="muted">
+          <strong>I Concurso Internacional de Postres Conventuales – Valladolid 2026</strong><br>
+          Encuentro cultural y gastronómico de carácter internacional dedicado a la repostería elaborada en conventos y comunidades religiosas,
+          que incluirá actividades divulgativas, concurso, exposiciones y venta de productos artesanos.
         </p>
+        <div style="height:12px"></div>
+        <p><strong>Otros proyectos en preparación</strong></p>
+        <ul>
+          <li>Jornadas culturales y conferencias.</li>
+          <li>Actividades divulgativas sobre patrimonio gastronómico.</li>
+          <li>Colaboraciones con escuelas de cocina e instituciones culturales.</li>
+          <li>Acciones educativas y culturales futuras.</li>
+        </ul>
+      </article>
 
-        <p>
-            Para cualquier consulta, puedes escribirnos a:<br>
-            <strong>info@dulcesor.org</strong>
+      <article class="card full">
+        <h2>Estado actual</h2>
+        <p class="muted">
+          La asociación y sus proyectos se encuentran actualmente en <strong>fase de desarrollo y planificación</strong>.
+          La información publicada es de carácter orientativo y podrá ser actualizada conforme avance la organización y se aprueben oficialmente las bases y programas.
         </p>
+      </article>
 
-        <div class="footer">
-            Valladolid · Octubre 2026
-        </div>
-    </div>
+      <article class="card full contact">
+        <h2>Contacto institucional</h2>
+        <p class="muted">Para información institucional, colaboraciones culturales o futuras actividades de la asociación.</p>
+        <a class="email" href="mailto:info@dulcesor.org">info@dulcesor.org</a>
+      </article>
+    </section>
+
+    <footer>
+      © Asociación Cultural DULCESOR · Asociación cultural sin ánimo de lucro · Proyecto cultural en desarrollo<br>
+      La información publicada podrá ser modificada sin previo aviso.
+    </footer>
+  </main>
 </body>
 </html>
