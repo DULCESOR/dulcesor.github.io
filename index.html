@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Asociación Cultural DULCESOR</title>
-  <meta name="description" content="Asociación Cultural DULCESOR · Repostería monacal conventual · Patrimonio gastronómico · Cultura y tradición." />
+  <meta name="description" content="Asociación Cultural “DULCESOR” – Repostería Monacal Conventual · Patrimonio gastronómico · Cultura y tradición." />
 
   <style>
     :root{
@@ -66,8 +66,8 @@
       color: var(--gold);
       font-weight: 700;
       letter-spacing: .08em;
+      overflow:hidden;
     }
-    /* Cuando tengas logo: sustituye el contenido por <img ...> */
     .logo img{
       width: 100%;
       height: 100%;
@@ -221,14 +221,7 @@
       white-space: nowrap;
     }
 
-    /* Cards grid */
-    .cards{
-      margin-top: 26px;
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
+    /* Cards */
     .card{
       background: var(--card);
       border: 1px solid var(--line);
@@ -283,9 +276,7 @@
       white-space: nowrap;
     }
     .btn:hover{ text-decoration:none; }
-    .btn.outline{
-      background: transparent;
-    }
+    .btn.outline{ background: transparent; }
 
     .note{
       margin-top: 12px;
@@ -293,14 +284,52 @@
       color: var(--muted);
     }
 
-    .contactLine{
-      margin: 12px 0 0;
-    }
+    .contactLine{ margin: 12px 0 0; }
     .email{
       font-weight: 800;
       color: var(--text);
       text-decoration: underline;
       text-underline-offset: 3px;
+    }
+
+    /* Museo card */
+    .museum{
+      margin-top: 12px;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .museumMedia{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(0,0,0,.02);
+      min-height: 190px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+    .museumMedia img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+    }
+    .museumTitle{
+      margin: 0;
+      font-weight: 900;
+      letter-spacing: .02em;
+    }
+    .museumSmall{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     footer{
@@ -319,7 +348,8 @@
 
     @media (min-width: 860px){
       .grid.two{ grid-template-columns: 1fr 1fr; }
-      .cards{ grid-template-columns: 1fr; }
+      .museum{ grid-template-columns: 1.05fr 1.25fr; }
+      .museumMedia{ min-height: 220px; }
     }
   </style>
 </head>
@@ -384,7 +414,88 @@
       </div>
     </header>
 
-    <section class="grid two" aria-label="Identidad y fines">
+    <!-- ASOCIACIÓN (DETALLE) + MUSEOS CONVENTUALES -->
+    <section id="asociacion_detalle" aria-label="Asociación (detalle)" style="margin-top:16px;">
+      <div class="card">
+        <h3 data-i18n="assoc_title">ASOCIACIÓN</h3>
+
+        <p class="muted" data-i18n="assoc_name">
+          Asociación Cultural “DULCESOR” – Repostería Monacal Conventual
+        </p>
+
+        <p data-i18n="assoc_about">
+          Impulsada por profesionales del ámbito cultural y creativo, la Asociación Cultural DULCESOR nace con el propósito de preservar y difundir la repostería monacal conventual como parte del patrimonio gastronómico y cultural.
+        </p>
+
+        <ul class="kv">
+          <li><b data-i18n="assoc_scope_lbl">Ámbito:</b> <span data-i18n="assoc_scope_val">Nacional (España)</span></li>
+          <li><b data-i18n="assoc_reach_lbl">Proyección:</b> <span data-i18n="assoc_reach_val">Nacional e internacional</span></li>
+          <li><b data-i18n="assoc_status_lbl">Estado:</b> <span data-i18n="assoc_status_val">En trámite</span></li>
+          <li><b data-i18n="assoc_seat_lbl">Sede:</b> <span data-i18n="assoc_seat_val">Plaza Santa Ana 2 · 47001 Valladolid (España)</span></li>
+        </ul>
+
+        <p class="muted" style="margin-top:10px;" data-i18n="assoc_purpose_title">
+          Fines de la asociación
+        </p>
+
+        <ul class="kv">
+          <li data-i18n="assoc_goal_1">Preservar y difundir la repostería conventual como patrimonio cultural.</li>
+          <li data-i18n="assoc_goal_2">Apoyar y dar visibilidad al trabajo artesanal de comunidades religiosas.</li>
+          <li data-i18n="assoc_goal_3">Promover actividades culturales, gastronómicas y divulgativas.</li>
+          <li data-i18n="assoc_goal_4">Fomentar el diálogo entre tradición, cultura y sociedad contemporánea.</li>
+          <li data-i18n="assoc_goal_5">Organizar eventos, encuentros, concursos y actividades formativas.</li>
+          <li data-i18n="assoc_goal_6">Impulsar la colaboración cultural con conventos y comunidades religiosas.</li>
+        </ul>
+
+        <p class="note" data-i18n="assoc_routes_note">
+          Las “Rutas Monacales” se desarrollarán como itinerarios culturales y gastronómicos, facilitando el conocimiento del patrimonio conventual y el acceso a productos artesanos.
+        </p>
+
+        <!-- MUSEOS CONVENTUALES -->
+        <div id="museos" style="margin-top:16px;">
+          <h3 data-i18n="museums_title">MUSEOS CONVENTUALES</h3>
+
+          <p class="muted" data-i18n="museums_intro">
+            La Asociación Cultural DULCESOR promueve la conservación y difusión del patrimonio cultural vinculado a la vida conventual, apoyando especialmente a los museos conventuales como espacios vivos de memoria, arte y tradición.
+          </p>
+
+          <div class="museum" aria-label="Museo destacado">
+            <div class="museumMedia" aria-label="Imagen del museo">
+              <!-- Sube una imagen al repo y sustituye el src:
+                   Ej: <img src="museo-santa-ana.jpg" alt="Museo del Monasterio de San Joaquín y Santa Ana" />
+              -->
+              <span data-i18n="museums_img_ph">IMAGEN DEL MUSEO (PRÓXIMAMENTE)</span>
+            </div>
+
+            <div>
+              <p class="museumTitle" data-i18n="museum_featured_name">
+                Museo del Monasterio de San Joaquín y Santa Ana (Valladolid)
+              </p>
+
+              <p class="museumSmall" data-i18n="museum_featured_desc">
+                Museo conventual de referencia vinculado al patrimonio monástico. Un espacio sobrio y valioso que reúne memoria, arte sacro y tradición.
+              </p>
+
+              <div class="actions">
+                <a class="btn" href="https://museosanjoaquinysantaana.es/" target="_blank" rel="noopener" data-i18n="museum_btn">
+                  Visitar web del museo
+                </a>
+              </div>
+
+              <p class="note" data-i18n="museums_future">
+                Este espacio crecerá incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="note" data-i18n="assoc_legal_note">
+          La información publicada es de carácter orientativo y podrá actualizarse conforme avance la tramitación y el desarrollo de los proyectos.
+        </p>
+      </div>
+    </section>
+
+    <section class="grid two" aria-label="Identidad y fines" style="margin-top:16px;">
       <div class="card">
         <h3 data-i18n="identity_title">IDENTIDAD</h3>
         <ul class="kv">
@@ -482,6 +593,11 @@
           <a class="email" href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a>
         </p>
 
+        <p class="contactLine">
+          <span data-i18n="contest_email_lbl">Contacto concurso:</span>
+          <a class="email" href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a>
+        </p>
+
         <p class="muted" data-i18n="address">Plaza Santa Ana 2 · 47001 Valladolid (España)</p>
         <p class="muted" data-i18n="no_phone">No se facilita teléfono en esta fase.</p>
       </div>
@@ -496,11 +612,11 @@
       <div class="muted">
         Plaza Santa Ana 2, 47001 Valladolid · <a class="email" href="mailto:info@dulcesor.org">info@dulcesor.org</a>
       </div>
+      <div class="muted" data-i18n="footer_made_by">Web realizada por Apolo Studio Creativo</div>
     </footer>
   </main>
 
   <script>
-    // ====== I18N ======
     const i18n = {
       es: {
         brand_sub: "ASOCIACIÓN CULTURAL",
@@ -518,6 +634,35 @@
         project_main: "Proyecto principal en desarrollo:",
         project_name: "I Concurso Internacional de Postres Conventuales – Valladolid 2026",
         in_prep: "EN PREPARACIÓN",
+
+        assoc_title: "ASOCIACIÓN",
+        assoc_name: "Asociación Cultural “DULCESOR” – Repostería Monacal Conventual",
+        assoc_about: "Impulsada por profesionales del ámbito cultural y creativo, la Asociación Cultural DULCESOR nace con el propósito de preservar y difundir la repostería monacal conventual como parte del patrimonio gastronómico y cultural.",
+        assoc_scope_lbl: "Ámbito:",
+        assoc_scope_val: "Nacional (España)",
+        assoc_reach_lbl: "Proyección:",
+        assoc_reach_val: "Nacional e internacional",
+        assoc_status_lbl: "Estado:",
+        assoc_status_val: "En trámite",
+        assoc_seat_lbl: "Sede:",
+        assoc_seat_val: "Plaza Santa Ana 2 · 47001 Valladolid (España)",
+        assoc_purpose_title: "Fines de la asociación",
+        assoc_goal_1: "Preservar y difundir la repostería conventual como patrimonio cultural.",
+        assoc_goal_2: "Apoyar y dar visibilidad al trabajo artesanal de comunidades religiosas.",
+        assoc_goal_3: "Promover actividades culturales, gastronómicas y divulgativas.",
+        assoc_goal_4: "Fomentar el diálogo entre tradición, cultura y sociedad contemporánea.",
+        assoc_goal_5: "Organizar eventos, encuentros, concursos y actividades formativas.",
+        assoc_goal_6: "Impulsar la colaboración cultural con conventos y comunidades religiosas.",
+        assoc_routes_note: "Las “Rutas Monacales” se desarrollarán como itinerarios culturales y gastronómicos, facilitando el conocimiento del patrimonio conventual y el acceso a productos artesanos.",
+        assoc_legal_note: "La información publicada es de carácter orientativo y podrá actualizarse conforme avance la tramitación y el desarrollo de los proyectos.",
+
+        museums_title: "MUSEOS CONVENTUALES",
+        museums_intro: "La Asociación Cultural DULCESOR promueve la conservación y difusión del patrimonio cultural vinculado a la vida conventual, apoyando especialmente a los museos conventuales como espacios vivos de memoria, arte y tradición.",
+        museums_img_ph: "IMAGEN DEL MUSEO (PRÓXIMAMENTE)",
+        museum_featured_name: "Museo del Monasterio de San Joaquín y Santa Ana (Valladolid)",
+        museum_featured_desc: "Museo conventual de referencia vinculado al patrimonio monástico. Un espacio sobrio y valioso que reúne memoria, arte sacro y tradición.",
+        museum_btn: "Visitar web del museo",
+        museums_future: "Este espacio crecerá incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.",
 
         identity_title: "IDENTIDAD",
         identity_name_lbl: "Nombre:",
@@ -559,7 +704,8 @@
         address: "Plaza Santa Ana 2 · 47001 Valladolid (España)",
         no_phone: "No se facilita teléfono en esta fase.",
 
-        footer_line_1: "© Asociación Cultural DULCESOR · Asociación cultural sin ánimo de lucro · Proyecto cultural en desarrollo"
+        footer_line_1: "© Asociación Cultural DULCESOR · Asociación cultural sin ánimo de lucro · Proyecto cultural en desarrollo",
+        footer_made_by: "Web realizada por Apolo Studio Creativo"
       },
 
       en: {
@@ -578,6 +724,35 @@
         project_main: "Main project in development:",
         project_name: "1st International Convent Pastry Contest – Valladolid 2026",
         in_prep: "IN PREPARATION",
+
+        assoc_title: "ASSOCIATION",
+        assoc_name: "Cultural Association “DULCESOR” – Monastic Convent Pastry",
+        assoc_about: "Driven by professionals from the cultural and creative fields, the DULCESOR Cultural Association was created to preserve and promote monastic convent pastry as part of our gastronomic and cultural heritage.",
+        assoc_scope_lbl: "Scope:",
+        assoc_scope_val: "National (Spain)",
+        assoc_reach_lbl: "Reach:",
+        assoc_reach_val: "National and international",
+        assoc_status_lbl: "Status:",
+        assoc_status_val: "In progress",
+        assoc_seat_lbl: "Headquarters:",
+        assoc_seat_val: "Plaza Santa Ana 2 · 47001 Valladolid (Spain)",
+        assoc_purpose_title: "Association purposes",
+        assoc_goal_1: "Preserve and promote convent pastry as cultural heritage.",
+        assoc_goal_2: "Support and give visibility to the artisanal work of religious communities.",
+        assoc_goal_3: "Promote cultural, gastronomic and outreach activities.",
+        assoc_goal_4: "Encourage dialogue between tradition, culture and contemporary society.",
+        assoc_goal_5: "Organize events, gatherings, contests and educational activities.",
+        assoc_goal_6: "Promote cultural collaboration with convents and religious communities.",
+        assoc_routes_note: "“Monastic Routes” will be developed as cultural and gastronomic itineraries, helping people discover convent heritage and access artisan products.",
+        assoc_legal_note: "The information published is indicative and may be updated as procedures progress and projects develop.",
+
+        museums_title: "CONVENT MUSEUMS",
+        museums_intro: "The DULCESOR Cultural Association promotes the preservation and dissemination of cultural heritage linked to convent life, with special support for convent museums as living spaces of memory, art and tradition.",
+        museums_img_ph: "MUSEUM IMAGE (COMING SOON)",
+        museum_featured_name: "Museum of the Monastery of San Joaquín y Santa Ana (Valladolid)",
+        museum_featured_desc: "A reference convent museum linked to monastic heritage. A sober and valuable space bringing together memory, sacred art and tradition.",
+        museum_btn: "Visit the museum website",
+        museums_future: "This space will grow by incorporating other convent museums that share DULCESOR’s cultural and heritage values.",
 
         identity_title: "IDENTITY",
         identity_name_lbl: "Name:",
@@ -619,7 +794,8 @@
         address: "Plaza Santa Ana 2 · 47001 Valladolid (Spain)",
         no_phone: "No phone number is provided at this stage.",
 
-        footer_line_1: "© Cultural Association DULCESOR · Non-profit cultural association · Cultural project in development"
+        footer_line_1: "© Cultural Association DULCESOR · Non-profit cultural association · Cultural project in development",
+        footer_made_by: "Website by Apolo Studio Creativo"
       },
 
       pt: {
@@ -638,6 +814,35 @@
         project_main: "Projeto principal em desenvolvimento:",
         project_name: "I Concurso Internacional de Doces Conventuais – Valladolid 2026",
         in_prep: "EM PREPARAÇÃO",
+
+        assoc_title: "ASSOCIAÇÃO",
+        assoc_name: "Associação Cultural “DULCESOR” – Doçaria Monástica Conventual",
+        assoc_about: "Impulsionada por profissionais do âmbito cultural e criativo, a Associação Cultural DULCESOR nasce com o propósito de preservar e divulgar a doçaria monástica conventual como parte do património gastronómico e cultural.",
+        assoc_scope_lbl: "Âmbito:",
+        assoc_scope_val: "Nacional (Espanha)",
+        assoc_reach_lbl: "Projeção:",
+        assoc_reach_val: "Nacional e internacional",
+        assoc_status_lbl: "Estado:",
+        assoc_status_val: "Em tramitação",
+        assoc_seat_lbl: "Sede:",
+        assoc_seat_val: "Plaza Santa Ana 2 · 47001 Valladolid (Espanha)",
+        assoc_purpose_title: "Fins da associação",
+        assoc_goal_1: "Preservar e divulgar a doçaria conventual como património cultural.",
+        assoc_goal_2: "Apoiar e dar visibilidade ao trabalho artesanal de comunidades religiosas.",
+        assoc_goal_3: "Promover atividades culturais, gastronómicas e de divulgação.",
+        assoc_goal_4: "Fomentar o diálogo entre tradição, cultura e sociedade contemporânea.",
+        assoc_goal_5: "Organizar eventos, encontros, concursos e atividades formativas.",
+        assoc_goal_6: "Promover a colaboração cultural com conventos e comunidades religiosas.",
+        assoc_routes_note: "As “Rotas Monásticas” serão desenvolvidas como itinerários culturais e gastronómicos, facilitando o conhecimento do património conventual e o acesso a produtos artesanais.",
+        assoc_legal_note: "A informação publicada é indicativa e poderá ser atualizada à medida que a tramitação e os projetos avancem.",
+
+        museums_title: "MUSEUS CONVENTUAIS",
+        museums_intro: "A Associação Cultural DULCESOR promove a conservação e divulgação do património cultural ligado à vida conventual, apoiando especialmente os museus conventuais como espaços vivos de memória, arte e tradição.",
+        museums_img_ph: "IMAGEM DO MUSEU (EM BREVE)",
+        museum_featured_name: "Museu do Mosteiro de San Joaquín y Santa Ana (Valladolid)",
+        museum_featured_desc: "Museu conventual de referência ligado ao património monástico. Um espaço sóbrio e valioso que reúne memória, arte sacra e tradição.",
+        museum_btn: "Visitar o site do museu",
+        museums_future: "Este espaço crescerá incorporando outros museus conventuais que partilhem os valores culturais e patrimoniais de DULCESOR.",
 
         identity_title: "IDENTIDADE",
         identity_name_lbl: "Nome:",
@@ -679,7 +884,8 @@
         address: "Plaza Santa Ana 2 · 47001 Valladolid (Espanha)",
         no_phone: "Não é disponibilizado telefone nesta fase.",
 
-        footer_line_1: "© Associação Cultural DULCESOR · Associação cultural sem fins lucrativos · Projeto cultural em desenvolvimento"
+        footer_line_1: "© Associação Cultural DULCESOR · Associação cultural sem fins lucrativos · Projeto cultural em desenvolvimento",
+        footer_made_by: "Website por Apolo Studio Creativo"
       },
 
       fr: {
@@ -698,6 +904,35 @@
         project_main: "Projet principal en développement :",
         project_name: "I Concours International de Pâtisserie Conventuelle – Valladolid 2026",
         in_prep: "EN PRÉPARATION",
+
+        assoc_title: "ASSOCIATION",
+        assoc_name: "Association Culturelle « DULCESOR » – Pâtisserie Monastique Conventuelle",
+        assoc_about: "Portée par des professionnels des domaines culturel et créatif, l’Association Culturelle DULCESOR a pour mission de préserver et de diffuser la pâtisserie monastique conventuelle comme patrimoine gastronomique et culturel.",
+        assoc_scope_lbl: "Champ d’action :",
+        assoc_scope_val: "National (Espagne)",
+        assoc_reach_lbl: "Rayonnement :",
+        assoc_reach_val: "National et international",
+        assoc_status_lbl: "Statut :",
+        assoc_status_val: "En cours",
+        assoc_seat_lbl: "Siège :",
+        assoc_seat_val: "Plaza Santa Ana 2 · 47001 Valladolid (Espagne)",
+        assoc_purpose_title: "Objectifs de l’association",
+        assoc_goal_1: "Préserver et diffuser la pâtisserie conventuelle comme patrimoine culturel.",
+        assoc_goal_2: "Soutenir et valoriser le travail artisanal des communautés religieuses.",
+        assoc_goal_3: "Promouvoir des activités culturelles, gastronomiques et de médiation.",
+        assoc_goal_4: "Favoriser le dialogue entre tradition, culture et société contemporaine.",
+        assoc_goal_5: "Organiser des événements, rencontres, concours et activités de formation.",
+        assoc_goal_6: "Encourager la collaboration culturelle avec les couvents et communautés religieuses.",
+        assoc_routes_note: "Les « Itinéraires Monastiques » seront développés comme des parcours culturels et gastronomiques, facilitant la découverte du patrimoine conventuel et l’accès à des produits artisanaux.",
+        assoc_legal_note: "Les informations publiées sont indicatives et pourront être mises à jour au fur et à mesure de l’avancement des démarches et des projets.",
+
+        museums_title: "MUSÉES CONVENTUELS",
+        museums_intro: "L’Association Culturelle DULCESOR promeut la conservation et la diffusion du patrimoine culturel lié à la vie conventuelle, en soutenant particulièrement les musées conventuels comme espaces vivants de mémoire, d’art et de tradition.",
+        museums_img_ph: "IMAGE DU MUSÉE (BIENTÔT)",
+        museum_featured_name: "Musée du Monastère de San Joaquín y Santa Ana (Valladolid)",
+        museum_featured_desc: "Musée conventuel de référence lié au patrimoine monastique. Un espace sobre et précieux réunissant mémoire, art sacré et tradition.",
+        museum_btn: "Visiter le site du musée",
+        museums_future: "Cet espace s’enrichira en intégrant d’autres musées conventuels partageant les valeurs culturelles et patrimoniales de DULCESOR.",
 
         identity_title: "IDENTITÉ",
         identity_name_lbl: "Nom :",
@@ -739,7 +974,8 @@
         address: "Plaza Santa Ana 2 · 47001 Valladolid (Espagne)",
         no_phone: "Aucun numéro de téléphone n’est communiqué à ce stade.",
 
-        footer_line_1: "© Association Culturelle DULCESOR · Association à but non lucratif · Projet culturel en développement"
+        footer_line_1: "© Association Culturelle DULCESOR · Association à but non lucratif · Projet culturel en développement",
+        footer_made_by: "Site réalisé par Apolo Studio Creativo"
       },
 
       it: {
@@ -758,6 +994,35 @@
         project_main: "Progetto principale in sviluppo:",
         project_name: "I Concorso Internazionale di Dolci Conventuali – Valladolid 2026",
         in_prep: "IN PREPARAZIONE",
+
+        assoc_title: "ASSOCIAZIONE",
+        assoc_name: "Associazione Culturale “DULCESOR” – Pasticceria Monastica Conventuale",
+        assoc_about: "Promossa da professionisti dell’ambito culturale e creativo, l’Associazione Culturale DULCESOR nasce con l’obiettivo di preservare e valorizzare la pasticceria monastica conventuale come parte del patrimonio gastronomico e culturale.",
+        assoc_scope_lbl: "Ambito:",
+        assoc_scope_val: "Nazionale (Spagna)",
+        assoc_reach_lbl: "Proiezione:",
+        assoc_reach_val: "Nazionale e internazionale",
+        assoc_status_lbl: "Stato:",
+        assoc_status_val: "In corso",
+        assoc_seat_lbl: "Sede:",
+        assoc_seat_val: "Plaza Santa Ana 2 · 47001 Valladolid (Spagna)",
+        assoc_purpose_title: "Finalità dell’associazione",
+        assoc_goal_1: "Preservare e diffondere la pasticceria conventuale come patrimonio culturale.",
+        assoc_goal_2: "Sostenere e dare visibilità al lavoro artigianale delle comunità religiose.",
+        assoc_goal_3: "Promuovere attività culturali, gastronomiche e divulgative.",
+        assoc_goal_4: "Favorire il dialogo tra tradizione, cultura e società contemporanea.",
+        assoc_goal_5: "Organizzare eventi, incontri, concorsi e attività formative.",
+        assoc_goal_6: "Promuovere la collaborazione culturale con conventi e comunità religiose.",
+        assoc_routes_note: "I “Percorsi Monastici” saranno sviluppati come itinerari culturali e gastronomici, facilitando la conoscenza del patrimonio conventuale e l’accesso a prodotti artigianali.",
+        assoc_legal_note: "Le informazioni pubblicate sono indicative e potranno essere aggiornate con l’avanzare delle procedure e lo sviluppo dei progetti.",
+
+        museums_title: "MUSEI CONVENTUALI",
+        museums_intro: "L’Associazione Culturale DULCESOR promuove la conservazione e la diffusione del patrimonio culturale legato alla vita conventuale, sostenendo in particolare i musei conventuali come spazi vivi di memoria, arte e tradizione.",
+        museums_img_ph: "IMMAGINE DEL MUSEO (PROSSIMAMENTE)",
+        museum_featured_name: "Museo del Monastero di San Joaquín y Santa Ana (Valladolid)",
+        museum_featured_desc: "Museo conventuale di riferimento legato al patrimonio monastico. Uno spazio sobrio e prezioso che unisce memoria, arte sacra e tradizione.",
+        museum_btn: "Visita il sito del museo",
+        museums_future: "Questo spazio crescerà includendo altri musei conventuali che condividano i valori culturali e patrimoniali di DULCESOR.",
 
         identity_title: "IDENTITÀ",
         identity_name_lbl: "Nome:",
@@ -799,36 +1064,32 @@
         address: "Plaza Santa Ana 2 · 47001 Valladolid (Spagna)",
         no_phone: "In questa fase non è disponibile un numero di telefono.",
 
-        footer_line_1: "© Associazione Culturale DULCESOR · Associazione senza scopo di lucro · Progetto culturale in sviluppo"
+        footer_line_1: "© Associazione Culturale DULCESOR · Associazione senza scopo di lucro · Progetto culturale in sviluppo",
+        footer_made_by: "Sito web a cura di Apolo Studio Creativo"
       }
     };
 
     function applyLang(lang){
       const dict = i18n[lang] || i18n.es;
 
-      // textos simples
       document.querySelectorAll("[data-i18n]").forEach(el => {
         const key = el.getAttribute("data-i18n");
         if (dict[key] !== undefined) el.textContent = dict[key];
       });
 
-      // textos con HTML (solo donde lo marcamos)
       document.querySelectorAll("[data-i18n-html]").forEach(el => {
         const key = el.getAttribute("data-i18n-html");
         if (dict[key] !== undefined) el.innerHTML = dict[key];
       });
 
-      // activar resaltado
       document.querySelectorAll(".lang a").forEach(a => {
         a.classList.toggle("active", a.dataset.lang === lang);
       });
 
-      // lang del documento (por accesibilidad/SEO)
       document.documentElement.lang = lang;
       localStorage.setItem("dulcesor_lang", lang);
     }
 
-    // Click idioma
     document.querySelectorAll(".lang a").forEach(a => {
       a.addEventListener("click", (e) => {
         e.preventDefault();
@@ -836,7 +1097,6 @@
       });
     });
 
-    // Inicial
     const saved = localStorage.getItem("dulcesor_lang") || "es";
     applyLang(saved);
   </script>
