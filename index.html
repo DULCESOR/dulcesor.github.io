@@ -4,254 +4,268 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Asociación Cultural DULCESOR</title>
-  <meta name="description" content="Asociación Cultural “DULCESOR” – Repostería Monacal Conventual · Patrimonio gastronómico · Cultura y tradición." />
+  <meta name="description" content="Asociación Cultural DULCESOR · Repostería monacal conventual · Patrimonio gastronómico · Cultura y tradición." />
 
   <style>
     :root{
       --bg:#f6f4f1;
+      --card:#ffffff;
       --text:#1f1f1f;
       --muted:#6b6b6b;
-      --card:#ffffff;
       --line:#e6e1d8;
       --gold: rgb(145, 128, 26);
       --shadow: 0 14px 40px rgba(0,0,0,.06);
       --radius: 16px;
-      --font: "Century Gothic", "CenturyGothic", "AppleGothic", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      --font: "Century Gothic", "CenturyGothic", "AppleGothic", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     }
 
-    *{ box-sizing: border-box; }
-    html, body{ height: 100%; }
+    *{box-sizing:border-box}
     body{
       margin:0;
       font-family: var(--font);
-      background: var(--bg);
       color: var(--text);
-      line-height: 1.55;
+      background: var(--bg);
+      line-height: 1.6;
     }
 
     a{ color: inherit; text-decoration: none; }
-    a:hover{ text-decoration: underline; }
+    a.email{ text-decoration: underline; }
+    .gold{ color: var(--gold); font-weight: 700; }
 
     .wrap{
-      max-width: 980px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 56px 22px 40px;
+      padding: 42px 22px 54px;
     }
 
-    /* Top header */
-    .top{
+    /* Top bar */
+    .topbar{
       display:flex;
       align-items:flex-start;
-      justify-content:space-between;
-      gap: 16px;
-      padding-bottom: 18px;
+      justify-content: space-between;
+      gap:16px;
+      padding-bottom: 14px;
       border-bottom: 1px solid var(--line);
-      margin-bottom: 26px;
+      margin-bottom: 18px;
     }
+
     .brand{
       display:flex;
-      align-items:center;
-      gap: 12px;
-      min-width: 240px;
+      align-items:flex-start;
+      gap:14px;
     }
+
     .logo{
-      width: 42px;
-      height: 42px;
+      width:44px;
+      height:44px;
       border-radius: 12px;
-      border: 1px solid var(--line);
-      background: rgba(145,128,26,.06);
+      background: rgba(145,128,26,.10);
+      border: 1px solid rgba(145,128,26,.22);
       display:flex;
       align-items:center;
       justify-content:center;
+      font-weight: 800;
+      letter-spacing: .5px;
       color: var(--gold);
-      font-weight: 700;
-      letter-spacing: .08em;
-      overflow:hidden;
-    }
-    .logo img{
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 12px;
-      display:block;
+      user-select:none;
     }
 
-    .brandText .name{
+    .brandText .title{
       font-weight: 800;
-      letter-spacing: .14em;
-      font-size: 15px;
-      line-height: 1.1;
+      letter-spacing: .6px;
+      font-size: 16px;
+      line-height: 1.2;
     }
     .brandText .sub{
-      font-size: 11px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-    .gold{ color: var(--gold); font-weight: 800; }
-
-    .lang{
-      display:flex;
-      align-items:center;
-      gap: 10px;
       font-size: 12px;
-      letter-spacing: .18em;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      user-select: none;
-    }
-    .lang a{
       color: var(--muted);
-      padding: 6px 6px;
-      border-radius: 8px;
+      margin-top: 2px;
     }
-    .lang a.active{
+
+    .langs{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap: wrap;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .langBtn{
+      padding:6px 8px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      cursor:pointer;
+      user-select:none;
+      color: var(--muted);
+      background: transparent;
+    }
+    .langBtn.active{
+      border-color: rgba(145,128,26,.28);
+      background: rgba(145,128,26,.08);
       color: var(--text);
-      font-weight: 800;
     }
 
     /* Nav */
     nav{
-      margin-top: 18px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
       display:flex;
-      flex-wrap: wrap;
+      gap:16px;
       justify-content:center;
-      gap: 18px 26px;
-      text-transform: uppercase;
-      letter-spacing: .18em;
-      font-size: 12px;
+      flex-wrap: wrap;
+      padding: 14px 0 18px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 26px;
     }
     nav a{
-      color: var(--text);
-      opacity: .92;
-      padding: 10px 8px;
+      font-size: 12px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      padding: 8px 10px;
       border-radius: 10px;
     }
     nav a:hover{
-      background: rgba(0,0,0,.03);
-      text-decoration:none;
+      background: rgba(0,0,0,.04);
     }
 
     /* Hero */
     header.hero{
       text-align:center;
-      padding: 44px 8px 6px;
+      padding: 26px 12px 0;
     }
+
     .hero h1{
-      margin: 0 0 10px;
-      font-size: clamp(34px, 4vw, 54px);
-      letter-spacing: .12em;
+      margin: 0;
       font-weight: 800;
+      letter-spacing: 4px;
+      font-size: clamp(34px, 4vw, 56px);
       text-transform: uppercase;
     }
+
     .hero h2{
-      margin: 0 0 18px;
-      font-size: clamp(28px, 3.3vw, 46px);
-      letter-spacing: .16em;
+      margin: 10px 0 0;
       font-weight: 900;
+      letter-spacing: 3px;
+      font-size: clamp(28px, 3.2vw, 46px);
       text-transform: uppercase;
-      color: var(--gold);
     }
+
     .tagline{
-      margin: 0 auto;
-      max-width: 820px;
+      margin: 16px auto 0;
+      max-width: 880px;
       font-size: 12px;
-      letter-spacing: .18em;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
       color: var(--muted);
     }
-    .rule{
-      margin: 18px auto 22px;
-      width: 78%;
-      border: none;
-      border-top: 1px solid var(--line);
+
+    .hr{
+      height: 1px;
+      background: var(--line);
+      max-width: 860px;
+      margin: 22px auto;
     }
 
     .lead{
-      margin: 0 auto 18px;
-      max-width: 820px;
+      max-width: 880px;
+      margin: 0 auto;
       font-size: 16px;
     }
-    .lead strong{ font-weight: 800; }
 
-    .project{
-      margin: 18px auto 0;
-      max-width: 900px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px 18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-      text-align:left;
-      position: relative;
-      overflow: hidden;
-    }
-    .project::before{
-      content:"";
-      position:absolute;
-      left:0; top:0; bottom:0;
-      width: 3px;
-      background: var(--gold);
-      opacity: .7;
-    }
-    .project .k{
-      font-weight: 800;
-      letter-spacing: .02em;
-      margin-bottom: 6px;
-    }
-    .project .v{
-      color: var(--text);
-      font-weight: 500;
-    }
-    .pill{
-      font-size: 11px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border: 1px solid var(--line);
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(0,0,0,.01);
-      white-space: nowrap;
-    }
-
-    /* Cards */
+    /* Cards / grid */
     .card{
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 18px 18px;
+      padding: 22px 22px;
     }
 
     .card h3{
       margin: 0 0 10px;
-      font-size: 12px;
-      letter-spacing: .24em;
+      font-size: 13px;
+      letter-spacing: 2.2px;
       text-transform: uppercase;
-      font-weight: 900;
     }
+
     .muted{ color: var(--muted); }
 
-    .grid.two{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-top: 16px;
+    .pillRow{
+      display:flex;
+      justify-content:center;
+      margin: 22px 0 0;
     }
 
-    .kv{
-      margin: 0;
+    .projectPill{
+      width: 100%;
+      max-width: 860px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(145,128,26,.32);
+      background: rgba(145,128,26,.06);
+    }
+
+    .projectPill .left{
+      display:flex;
+      flex-direction:column;
+      gap: 2px;
+    }
+
+    .projectPill .label{
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .projectPill .name{
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .badge{
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.7);
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .grid.two{
+      grid-template-columns: 1fr;
+    }
+
+    .full{
+      grid-column: 1 / -1;
+    }
+
+    @media (min-width: 860px){
+      .grid.two{ grid-template-columns: 1fr 1fr; }
+    }
+
+    ul{
+      margin: 10px 0 0;
       padding-left: 18px;
     }
-    .kv li{ margin: 8px 0; }
-    .kv b{ font-weight: 800; }
+
+    .contactLine{
+      margin: 12px 0 0;
+    }
 
     .actions{
       display:flex;
@@ -259,97 +273,115 @@
       gap: 10px;
       margin-top: 14px;
     }
+
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
+      display:inline-block;
       padding: 10px 14px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: #fff;
+      background: rgba(255,255,255,.75);
       font-size: 12px;
-      letter-spacing: .16em;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      box-shadow: 0 10px 26px rgba(0,0,0,.04);
-      text-decoration:none;
-      cursor: pointer;
-      white-space: nowrap;
+      cursor:pointer;
     }
-    .btn:hover{ text-decoration:none; }
-    .btn.outline{ background: transparent; }
+
+    .btn:hover{ background: rgba(0,0,0,.03); }
+
+    .btn.primary{
+      border-color: rgba(145,128,26,.35);
+      background: rgba(145,128,26,.10);
+    }
+
+    .btn.outline{
+      background: transparent;
+    }
 
     .note{
       margin-top: 12px;
-      font-size: 13px;
       color: var(--muted);
+      font-size: 13px;
     }
 
-    .contactLine{ margin: 12px 0 0; }
-    .email{
-      font-weight: 800;
-      color: var(--text);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    /* Museo card */
-    .museum{
-      margin-top: 12px;
-      border-top: 1px solid var(--line);
-      padding-top: 14px;
+    /* Museum layout */
+    .museumGrid{
       display:grid;
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 16px;
+      margin-top: 14px;
     }
+
+    @media (min-width: 860px){
+      .museumGrid{
+        grid-template-columns: 1.2fr .8fr;
+        align-items: stretch;
+      }
+    }
+
     .museumMedia{
-      border: 1px solid var(--line);
       border-radius: 14px;
-      overflow: hidden;
-      background: rgba(0,0,0,.02);
-      min-height: 190px;
+      overflow:hidden;
+      border: 1px solid var(--line);
+      background: #eee;
+      min-height: 260px;
       display:flex;
       align-items:center;
       justify-content:center;
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: .10em;
-      text-transform: uppercase;
     }
     .museumMedia img{
-      width: 100%;
-      height: 100%;
+      width:100%;
+      height:100%;
       object-fit: cover;
       display:block;
     }
-    .museumTitle{
-      margin: 0;
-      font-weight: 900;
-      letter-spacing: .02em;
-    }
-    .museumSmall{
-      margin: 6px 0 0;
+
+    .kicker{
+      font-size: 12px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
       color: var(--muted);
-      font-size: 14px;
+      margin: 0 0 6px;
     }
+
+    .museumTitle{
+      margin: 0 0 8px;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: .6px;
+    }
+
+    .linkList{
+      margin-top: 10px;
+      display:flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .linkItem{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.7);
+    }
+    .linkItem small{ color: var(--muted); }
 
     footer{
       text-align:center;
       margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
       color: var(--muted);
       font-size: 13px;
       line-height: 1.6;
     }
-    .footrule{
-      margin: 26px auto 18px;
-      width: 100%;
-      border: none;
-      border-top: 1px solid var(--line);
-    }
-
-    @media (min-width: 860px){
-      .grid.two{ grid-template-columns: 1fr 1fr; }
-      .museum{ grid-template-columns: 1.05fr 1.25fr; }
-      .museumMedia{ min-height: 220px; }
+    footer .apolo{
+      margin-top: 8px;
+      font-size: 12px;
+      letter-spacing: .6px;
     }
   </style>
 </head>
@@ -357,31 +389,27 @@
 <body>
   <main class="wrap">
 
-    <div class="top">
+    <!-- Top bar -->
+    <div class="topbar">
       <div class="brand" aria-label="DULCESOR">
-        <div class="logo" aria-label="Logo placeholder" title="Logo (placeholder)">
-          <!-- Cuando tengas logo: sustituye la D por tu imagen -->
-          D
-          <!-- Ejemplo:
-          <img src="logo.png" alt="Logo DULCESOR" />
-          -->
-        </div>
-
+        <!-- Logo placeholder: cuando tengas logo, sustituye el contenido o cambia a <img> -->
+        <div class="logo" title="Logo (placeholder)">D</div>
         <div class="brandText">
-          <div class="name"><span class="gold">DULCESOR</span></div>
+          <div class="title"><span class="gold">DULCESOR</span></div>
           <div class="sub" data-i18n="brand_sub">ASOCIACIÓN CULTURAL</div>
         </div>
       </div>
 
-      <div class="lang" aria-label="Idiomas">
-        <a href="#" data-lang="es" class="active">ES</a>
-        <a href="#" data-lang="en">EN</a>
-        <a href="#" data-lang="pt">PT</a>
-        <a href="#" data-lang="fr">FR</a>
-        <a href="#" data-lang="it">IT</a>
+      <div class="langs" aria-label="Idiomas">
+        <button class="langBtn active" data-lang="es">ES</button>
+        <button class="langBtn" data-lang="en">EN</button>
+        <button class="langBtn" data-lang="pt">PT</button>
+        <button class="langBtn" data-lang="fr">FR</button>
+        <button class="langBtn" data-lang="it">IT</button>
       </div>
     </div>
 
+    <!-- Nav -->
     <nav aria-label="Navegación principal">
       <a href="#asociacion" data-i18n="nav_asociacion">ASOCIACIÓN</a>
       <a href="#proyectos" data-i18n="nav_proyectos">PROYECTOS</a>
@@ -391,148 +419,140 @@
       <a href="#contacto" data-i18n="nav_contacto">CONTACTO</a>
     </nav>
 
-    <header class="hero" id="asociacion" aria-label="Asociación">
+    <!-- Hero -->
+    <header class="hero" id="asociacion">
       <h1 data-i18n="hero_title_1">ASOCIACIÓN CULTURAL</h1>
-      <h2><span class="gold">DULCESOR</span></h2>
+      <h2 class="gold" data-i18n="hero_title_2">DULCESOR</h2>
 
       <div class="tagline" data-i18n="tagline">
         REPOSTERÍA MONACAL CONVENTUAL · PATRIMONIO GASTRONÓMICO · CULTURA Y TRADICIÓN
       </div>
 
-      <hr class="rule" />
+      <div class="hr"></div>
 
-      <p class="lead" data-i18n-html="lead">
-        La <strong>Asociación Cultural <span class="gold">DULCESOR</span></strong> impulsa la preservación, difusión y puesta en valor de la <strong>repostería monacal conventual</strong> y del patrimonio gastronómico ligado a comunidades religiosas, promoviendo proyectos culturales de alcance nacional e internacional.
+      <p class="lead" data-i18n="lead">
+        La <strong>Asociación Cultural <span class="gold">DULCESOR</span></strong> impulsa la preservación, difusión y puesta en valor de la
+        <strong>repostería monacal conventual</strong> y del patrimonio gastronómico ligado a comunidades religiosas, promoviendo proyectos culturales
+        de alcance nacional e internacional.
       </p>
 
-      <div class="project" id="proyectos" aria-label="Proyecto principal">
-        <div>
-          <div class="k" data-i18n="project_main">Proyecto principal en desarrollo:</div>
-          <div class="v" data-i18n="project_name">I Concurso Internacional de Postres Conventuales – Valladolid 2026</div>
+      <div class="pillRow" id="proyectos">
+        <div class="projectPill" role="note">
+          <div class="left">
+            <div class="label" data-i18n="project_main">Proyecto principal en desarrollo:</div>
+            <div class="name" data-i18n="project_name">I Concurso Internacional de Postres Conventuales – Valladolid 2026</div>
+          </div>
+          <div class="badge" data-i18n="in_prep">EN PREPARACIÓN</div>
         </div>
-        <div class="pill" data-i18n="in_prep">EN PREPARACIÓN</div>
       </div>
     </header>
 
-    <!-- ASOCIACIÓN (DETALLE) + MUSEOS CONVENTUALES -->
-    <section id="asociacion_detalle" aria-label="Asociación (detalle)" style="margin-top:16px;">
-      <div class="card">
-        <h3 data-i18n="assoc_title">ASOCIACIÓN</h3>
-
-        <p class="muted" data-i18n="assoc_name">
-          Asociación Cultural “DULCESOR” – Repostería Monacal Conventual
-        </p>
-
-        <p data-i18n="assoc_about">
-          Impulsada por profesionales del ámbito cultural y creativo, la Asociación Cultural DULCESOR nace con el propósito de preservar y difundir la repostería monacal conventual como parte del patrimonio gastronómico y cultural.
-        </p>
-
-        <ul class="kv">
-          <li><b data-i18n="assoc_scope_lbl">Ámbito:</b> <span data-i18n="assoc_scope_val">Nacional (España)</span></li>
-          <li><b data-i18n="assoc_reach_lbl">Proyección:</b> <span data-i18n="assoc_reach_val">Nacional e internacional</span></li>
-          <li><b data-i18n="assoc_status_lbl">Estado:</b> <span data-i18n="assoc_status_val">En trámite</span></li>
-          <li><b data-i18n="assoc_seat_lbl">Sede:</b> <span data-i18n="assoc_seat_val">Plaza Santa Ana 2 · 47001 Valladolid (España)</span></li>
-        </ul>
-
-        <p class="muted" style="margin-top:10px;" data-i18n="assoc_purpose_title">
-          Fines de la asociación
-        </p>
-
-        <ul class="kv">
-          <li data-i18n="assoc_goal_1">Preservar y difundir la repostería conventual como patrimonio cultural.</li>
-          <li data-i18n="assoc_goal_2">Apoyar y dar visibilidad al trabajo artesanal de comunidades religiosas.</li>
-          <li data-i18n="assoc_goal_3">Promover actividades culturales, gastronómicas y divulgativas.</li>
-          <li data-i18n="assoc_goal_4">Fomentar el diálogo entre tradición, cultura y sociedad contemporánea.</li>
-          <li data-i18n="assoc_goal_5">Organizar eventos, encuentros, concursos y actividades formativas.</li>
-          <li data-i18n="assoc_goal_6">Impulsar la colaboración cultural con conventos y comunidades religiosas.</li>
-        </ul>
-
-        <p class="note" data-i18n="assoc_routes_note">
-          Las “Rutas Monacales” se desarrollarán como itinerarios culturales y gastronómicos, facilitando el conocimiento del patrimonio conventual y el acceso a productos artesanos.
-        </p>
-
-        <!-- MUSEOS CONVENTUALES -->
-        <div id="museos" style="margin-top:16px;">
-          <h3 data-i18n="museums_title">MUSEOS CONVENTUALES</h3>
-
-          <p class="muted" data-i18n="museums_intro">
-            La Asociación Cultural DULCESOR promueve la conservación y difusión del patrimonio cultural vinculado a la vida conventual, apoyando especialmente a los museos conventuales como espacios vivos de memoria, arte y tradición.
-          </p>
-
-          <div class="museum" aria-label="Museo destacado">
-            <div class="museumMedia" aria-label="Imagen del museo">
-              <!-- Sube una imagen al repo y sustituye el src:
-                   Ej: <img src="museo-santa-ana.jpg" alt="Museo del Monasterio de San Joaquín y Santa Ana" />
-              -->
-              <span data-i18n="museums_img_ph">IMAGEN DEL MUSEO (PRÓXIMAMENTE)</span>
-            </div>
-
-            <div>
-              <p class="museumTitle" data-i18n="museum_featured_name">
-                Museo del Monasterio de San Joaquín y Santa Ana (Valladolid)
-              </p>
-
-              <p class="museumSmall" data-i18n="museum_featured_desc">
-                Museo conventual de referencia vinculado al patrimonio monástico. Un espacio sobrio y valioso que reúne memoria, arte sacro y tradición.
-              </p>
-
-              <div class="actions">
-                <a class="btn" href="https://museosanjoaquinysantaana.es/" target="_blank" rel="noopener" data-i18n="museum_btn">
-                  Visitar web del museo
-                </a>
-              </div>
-
-              <p class="note" data-i18n="museums_future">
-                Este espacio crecerá incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <p class="note" data-i18n="assoc_legal_note">
-          La información publicada es de carácter orientativo y podrá actualizarse conforme avance la tramitación y el desarrollo de los proyectos.
-        </p>
-      </div>
-    </section>
-
-    <section class="grid two" aria-label="Identidad y fines" style="margin-top:16px;">
+    <!-- Identity & goals -->
+    <section class="grid two" aria-label="Identidad y fines">
       <div class="card">
         <h3 data-i18n="identity_title">IDENTIDAD</h3>
-        <ul class="kv">
-          <li><b data-i18n="identity_name_lbl">Nombre:</b> <span data-i18n="identity_name_val">Asociación Cultural DULCESOR</span></li>
-          <li><b data-i18n="identity_nature_lbl">Naturaleza:</b> <span data-i18n="identity_nature_val">Asociación cultural sin ánimo de lucro</span></li>
-          <li><b data-i18n="identity_scope_lbl">Ámbito:</b> <span data-i18n="identity_scope_val">Cultural y gastronómico</span></li>
-          <li><b data-i18n="identity_reach_lbl">Proyección:</b> <span data-i18n="identity_reach_val">Nacional e internacional</span></li>
-          <li><b data-i18n="identity_seat_lbl">Sede:</b> <span data-i18n="identity_seat_val">Valladolid (España)</span></li>
+        <ul>
+          <li><strong data-i18n="identity_name_lbl">Nombre:</strong> <span data-i18n="identity_name_val">Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual</span></li>
+          <li><strong data-i18n="identity_nature_lbl">Naturaleza:</strong> <span data-i18n="identity_nature_val">Asociación cultural sin ánimo de lucro</span></li>
+          <li><strong data-i18n="identity_scope_lbl">Ámbito:</strong> <span data-i18n="identity_scope_val">Cultural y gastronómico</span></li>
+          <li><strong data-i18n="identity_reach_lbl">Proyección:</strong> <span data-i18n="identity_reach_val">Nacional e internacional</span></li>
+          <li><strong data-i18n="identity_seat_lbl">Sede:</strong> <span data-i18n="identity_seat_val">Valladolid (España)</span></li>
+          <li><strong data-i18n="identity_status_lbl">Estado:</strong> <span data-i18n="identity_status_val">Actualmente en trámite</span></li>
         </ul>
       </div>
 
       <div class="card">
         <h3 data-i18n="goals_title">FINES Y OBJETIVOS</h3>
-        <ul class="kv">
+        <ul>
           <li data-i18n="goal_1">Preservar y difundir la repostería conventual como patrimonio cultural.</li>
           <li data-i18n="goal_2">Dar visibilidad al trabajo artesanal de comunidades religiosas.</li>
           <li data-i18n="goal_3">Promover actividades culturales y divulgativas.</li>
           <li data-i18n="goal_4">Fomentar el diálogo entre tradición y sociedad.</li>
           <li data-i18n="goal_5">Organizar concursos, encuentros y actividades formativas.</li>
+          <li data-i18n="goal_6">Colaborar con conventos y comunidades religiosas en iniciativas culturales (en desarrollo).</li>
         </ul>
       </div>
     </section>
 
-    <!-- CONCURSOS -->
-    <section id="concursos" aria-label="Concursos" style="margin-top:16px;">
-      <div class="card">
-        <h3 data-i18n="contest_section">CONCURSOS</h3>
+    <!-- Museos Conventuales (dentro de Asociación) -->
+    <section id="museos" aria-label="Museos Conventuales" style="margin-top:18px;">
+      <div class="card full">
+        <h3 data-i18n="museums_title">MUSEOS CONVENTUALES</h3>
+
+        <p class="muted" data-i18n="museums_intro">
+          La Asociación Cultural DULCESOR promueve la conservación y difusión del patrimonio cultural vinculado a la vida conventual,
+          apoyando especialmente a los museos conventuales como espacios vivos de memoria, arte y tradición.
+        </p>
+
+        <div class="museumGrid" aria-label="Museo destacado">
+          <div class="museumMedia" aria-label="Imagen del museo">
+            <!-- Imagen subida por ti al repo -->
+            <img src="dolorosa-santa-ana.jpeg" alt="La Dolorosa — Museo del Convento de San Joaquín y Santa Ana (Valladolid)">
+          </div>
+
+          <div>
+            <p class="kicker" data-i18n="museums_featured">Museo destacado</p>
+            <h4 class="museumTitle" data-i18n="museum1_title">Museo del Convento de San Joaquín y Santa Ana (Valladolid)</h4>
+
+            <p data-i18n="museum1_text">
+              Un espacio cultural y patrimonial de referencia, vinculado a la tradición conventual y a la memoria artística de la vida monástica.
+              Te invitamos a conocer el museo y su historia a través de su página oficial.
+            </p>
+
+            <div class="actions">
+              <a class="btn primary" href="https://museosanjoaquinysantaana.es/" target="_blank" rel="noopener" data-i18n="museum1_btn">
+                Visitar web del museo
+              </a>
+            </div>
+
+            <div class="hr" style="margin:16px 0;"></div>
+
+            <p class="kicker" data-i18n="museum_vr_kicker">Experiencia virtual</p>
+            <p class="muted" data-i18n="museum_vr_text">
+              Apolo Studio Creativo está desarrollando una experiencia de realidad virtual vinculada a piezas del museo (en preparación).
+            </p>
+
+            <!-- Cuando tengas la URL real, sustitúyela aquí -->
+            <div class="actions">
+              <a class="btn outline" href="#" target="_blank" rel="noopener" data-i18n="museum_vr_btn">
+                Acceder a la experiencia virtual (próximamente)
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <p class="muted" data-i18n="museums_future">
+          Este espacio crecerá incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.
+        </p>
+
+        <!-- CONTENEDOR ESCALABLE: duplica este bloque para añadir otro museo -->
+        <div class="linkList" aria-label="Futuros museos">
+          <div class="linkItem">
+            <div>
+              <strong data-i18n="museum_future_1">Próximo museo conventual</strong><br>
+              <small data-i18n="museum_future_hint">Se incorporará cuando exista acuerdo o confirmación institucional.</small>
+            </div>
+            <span class="badge" data-i18n="in_prep">EN PREPARACIÓN</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concurso -->
+    <section id="concursos" aria-label="Concursos" style="margin-top:18px;">
+      <div class="card full">
+        <h3 data-i18n="contest_title">
+          I Concurso Internacional de Postres Conventuales – Valladolid 2026
+        </h3>
 
         <p class="muted" data-i18n="contest_intro">
-          Los concursos forman parte de los proyectos culturales impulsados por la Asociación Cultural DULCESOR. La información publicada es orientativa y podrá actualizarse conforme avance la organización.
+          Los concursos forman parte de los proyectos culturales impulsados por la Asociación Cultural DULCESOR. La información publicada es orientativa y
+          podrá actualizarse conforme avance la organización.
         </p>
 
-        <p data-i18n="contest_title">
-          I Concurso Internacional de Postres Conventuales – Valladolid 2026
-        </p>
-
-        <p class="muted" data-i18n="contest_desc">
+        <p data-i18n="contest_desc">
           Encuentro cultural y gastronómico de carácter internacional dedicado a la repostería elaborada en conventos y comunidades religiosas.
         </p>
 
@@ -542,13 +562,8 @@
         </p>
 
         <div class="actions">
-          <a class="btn" href="bases.pdf" target="_blank" rel="noopener" data-i18n="contest_bases">
-            Bases del concurso (PDF)
-          </a>
-
-          <a class="btn outline" href="Solicitud.pdf" target="_blank" rel="noopener" data-i18n="contest_form">
-            Solicitud de participación (PDF editable)
-          </a>
+          <a class="btn" href="bases.pdf" target="_blank" data-i18n="contest_bases">Bases del concurso (PDF)</a>
+          <a class="btn outline" href="Solicitud.pdf" target="_blank" data-i18n="contest_form">Solicitud de participación (PDF editable)</a>
         </div>
 
         <p class="note" data-i18n="contest_note">
@@ -557,14 +572,56 @@
       </div>
     </section>
 
-    <section class="grid two" aria-label="Rutas y patrocinadores" style="margin-top:16px;">
-      <div class="card" id="rutas">
+    <!-- Rutas -->
+    <section class="grid two" id="rutas" aria-label="Rutas y patrocinadores">
+      <div class="card">
         <h3 data-i18n="routes_title">RUTAS MONACALES</h3>
         <p class="muted" data-i18n="routes_text">
           Rutas culturales y gastronómicas para conocer y adquirir productos artesanos.
         </p>
-        <div class="actions">
-          <div class="btn outline" data-i18n="in_prep">EN PREPARACIÓN</div>
+        <div class="badge" style="display:inline-block;margin-top:10px;" data-i18n="in_prep">EN PREPARACIÓN</div>
+
+        <div class="hr" style="margin:16px 0;"></div>
+
+        <h3 data-i18n="monasteries_title">MONASTERIOS Y PRODUCTOS</h3>
+        <p class="muted" data-i18n="monasteries_text">
+          Acceso directo a webs oficiales de monasterios y comunidades. DULCESOR ofrece únicamente el enlace para facilitar la consulta y, si procede,
+          la compra de productos en sus canales oficiales.
+        </p>
+
+        <div class="linkList" aria-label="Enlaces a monasterios">
+          <!-- Ejemplos / placeholders: cambia nombre + URL cuando tengas la lista -->
+          <a class="linkItem" href="#" target="_blank" rel="noopener">
+            <div>
+              <strong data-i18n="mon1_name">Monasterio / Convento (Ejemplo 1)</strong><br>
+              <small data-i18n="mon1_hint">Web oficial (enlace por confirmar)</small>
+            </div>
+            <span class="btn" style="padding:6px 10px;" data-i18n="visit_btn">Visitar</span>
+          </a>
+
+          <a class="linkItem" href="#" target="_blank" rel="noopener">
+            <div>
+              <strong data-i18n="mon2_name">Monasterio / Convento (Ejemplo 2)</strong><br>
+              <small data-i18n="mon2_hint">Tienda / productos (si existe)</small>
+            </div>
+            <span class="btn" style="padding:6px 10px;" data-i18n="visit_btn">Visitar</span>
+          </a>
+
+          <a class="linkItem" href="#" target="_blank" rel="noopener">
+            <div>
+              <strong data-i18n="mon3_name">Monasterio / Convento (Ejemplo 3)</strong><br>
+              <small data-i18n="mon3_hint">Información institucional</small>
+            </div>
+            <span class="btn" style="padding:6px 10px;" data-i18n="visit_btn">Visitar</span>
+          </a>
+
+          <div class="linkItem">
+            <div>
+              <strong data-i18n="mon_future">Próximos enlaces</strong><br>
+              <small data-i18n="mon_future_hint">Se añadirán nuevos monasterios conforme se confirmen los datos.</small>
+            </div>
+            <span class="badge" data-i18n="in_prep">EN PREPARACIÓN</span>
+          </div>
         </div>
       </div>
 
@@ -573,14 +630,13 @@
         <p class="muted" data-i18n="sponsors_text">
           Espacio para instituciones y entidades colaboradoras.
         </p>
-        <div class="actions">
-          <div class="btn outline" data-i18n="in_prep">EN PREPARACIÓN</div>
-        </div>
+        <div class="badge" style="display:inline-block;margin-top:10px;" data-i18n="in_prep">EN PREPARACIÓN</div>
       </div>
     </section>
 
-    <section id="contacto" aria-label="Contacto" style="margin-top:16px;">
-      <div class="card">
+    <!-- Contacto -->
+    <section id="contacto" aria-label="Contacto" style="margin-top:18px;">
+      <div class="card full">
         <h3 data-i18n="contact_title">CONTACTO INSTITUCIONAL</h3>
 
         <p class="contactLine">
@@ -594,30 +650,32 @@
         </p>
 
         <p class="contactLine">
-          <span data-i18n="contest_email_lbl">Contacto concurso:</span>
+          <span data-i18n="contest_email_lbl_2">Concurso:</span>
           <a class="email" href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a>
         </p>
 
-        <p class="muted" data-i18n="address">Plaza Santa Ana 2 · 47001 Valladolid (España)</p>
-        <p class="muted" data-i18n="no_phone">No se facilita teléfono en esta fase.</p>
+        <p class="muted" style="margin-top:14px;">
+          <span data-i18n="address">Plaza Santa Ana 2 · 47001 Valladolid (España)</span><br>
+          <em data-i18n="no_phone">No se facilita teléfono en esta fase.</em>
+        </p>
+
+        <p class="note" data-i18n="legal_note">
+          La asociación y sus proyectos se encuentran actualmente en fase de desarrollo y planificación. La información publicada es orientativa y podrá ser actualizada conforme avance la organización.
+        </p>
       </div>
     </section>
 
-    <hr class="footrule" />
-
+    <!-- Footer -->
     <footer>
-      <div data-i18n="footer_line_1">
-        © Asociación Cultural DULCESOR · Asociación cultural sin ánimo de lucro · Proyecto cultural en desarrollo
-      </div>
-      <div class="muted">
-        Plaza Santa Ana 2, 47001 Valladolid · <a class="email" href="mailto:info@dulcesor.org">info@dulcesor.org</a>
-      </div>
-      <div class="muted" data-i18n="footer_made_by">Web realizada por Apolo Studio Creativo</div>
+      <div data-i18n="footer_line_1">© Asociación Cultural DULCESOR · Asociación cultural sin ánimo de lucro · Proyecto cultural en desarrollo</div>
+      <div>Plaza Santa Ana 2, 47001 Valladolid · <a class="email" href="mailto:info@dulcesor.org">info@dulcesor.org</a></div>
+      <div class="apolo" data-i18n="footer_apolo">Web desarrollada por Apolo Studio Creativo (en preparación)</div>
     </footer>
+
   </main>
 
   <script>
-    const i18n = {
+    const I18N = {
       es: {
         brand_sub: "ASOCIACIÓN CULTURAL",
         nav_asociacion: "ASOCIACIÓN",
@@ -628,45 +686,16 @@
         nav_contacto: "CONTACTO",
 
         hero_title_1: "ASOCIACIÓN CULTURAL",
+        hero_title_2: "DULCESOR",
         tagline: "REPOSTERÍA MONACAL CONVENTUAL · PATRIMONIO GASTRONÓMICO · CULTURA Y TRADICIÓN",
         lead: "La <strong>Asociación Cultural <span class='gold'>DULCESOR</span></strong> impulsa la preservación, difusión y puesta en valor de la <strong>repostería monacal conventual</strong> y del patrimonio gastronómico ligado a comunidades religiosas, promoviendo proyectos culturales de alcance nacional e internacional.",
-
         project_main: "Proyecto principal en desarrollo:",
         project_name: "I Concurso Internacional de Postres Conventuales – Valladolid 2026",
         in_prep: "EN PREPARACIÓN",
 
-        assoc_title: "ASOCIACIÓN",
-        assoc_name: "Asociación Cultural “DULCESOR” – Repostería Monacal Conventual",
-        assoc_about: "Impulsada por profesionales del ámbito cultural y creativo, la Asociación Cultural DULCESOR nace con el propósito de preservar y difundir la repostería monacal conventual como parte del patrimonio gastronómico y cultural.",
-        assoc_scope_lbl: "Ámbito:",
-        assoc_scope_val: "Nacional (España)",
-        assoc_reach_lbl: "Proyección:",
-        assoc_reach_val: "Nacional e internacional",
-        assoc_status_lbl: "Estado:",
-        assoc_status_val: "En trámite",
-        assoc_seat_lbl: "Sede:",
-        assoc_seat_val: "Plaza Santa Ana 2 · 47001 Valladolid (España)",
-        assoc_purpose_title: "Fines de la asociación",
-        assoc_goal_1: "Preservar y difundir la repostería conventual como patrimonio cultural.",
-        assoc_goal_2: "Apoyar y dar visibilidad al trabajo artesanal de comunidades religiosas.",
-        assoc_goal_3: "Promover actividades culturales, gastronómicas y divulgativas.",
-        assoc_goal_4: "Fomentar el diálogo entre tradición, cultura y sociedad contemporánea.",
-        assoc_goal_5: "Organizar eventos, encuentros, concursos y actividades formativas.",
-        assoc_goal_6: "Impulsar la colaboración cultural con conventos y comunidades religiosas.",
-        assoc_routes_note: "Las “Rutas Monacales” se desarrollarán como itinerarios culturales y gastronómicos, facilitando el conocimiento del patrimonio conventual y el acceso a productos artesanos.",
-        assoc_legal_note: "La información publicada es de carácter orientativo y podrá actualizarse conforme avance la tramitación y el desarrollo de los proyectos.",
-
-        museums_title: "MUSEOS CONVENTUALES",
-        museums_intro: "La Asociación Cultural DULCESOR promueve la conservación y difusión del patrimonio cultural vinculado a la vida conventual, apoyando especialmente a los museos conventuales como espacios vivos de memoria, arte y tradición.",
-        museums_img_ph: "IMAGEN DEL MUSEO (PRÓXIMAMENTE)",
-        museum_featured_name: "Museo del Monasterio de San Joaquín y Santa Ana (Valladolid)",
-        museum_featured_desc: "Museo conventual de referencia vinculado al patrimonio monástico. Un espacio sobrio y valioso que reúne memoria, arte sacro y tradición.",
-        museum_btn: "Visitar web del museo",
-        museums_future: "Este espacio crecerá incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.",
-
         identity_title: "IDENTIDAD",
         identity_name_lbl: "Nombre:",
-        identity_name_val: "Asociación Cultural DULCESOR",
+        identity_name_val: "Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual",
         identity_nature_lbl: "Naturaleza:",
         identity_nature_val: "Asociación cultural sin ánimo de lucro",
         identity_scope_lbl: "Ámbito:",
@@ -675,6 +704,8 @@
         identity_reach_val: "Nacional e internacional",
         identity_seat_lbl: "Sede:",
         identity_seat_val: "Valladolid (España)",
+        identity_status_lbl: "Estado:",
+        identity_status_val: "Actualmente en trámite",
 
         goals_title: "FINES Y OBJETIVOS",
         goal_1: "Preservar y difundir la repostería conventual como patrimonio cultural.",
@@ -682,18 +713,43 @@
         goal_3: "Promover actividades culturales y divulgativas.",
         goal_4: "Fomentar el diálogo entre tradición y sociedad.",
         goal_5: "Organizar concursos, encuentros y actividades formativas.",
+        goal_6: "Colaborar con conventos y comunidades religiosas en iniciativas culturales (en desarrollo).",
 
-        contest_section: "CONCURSOS",
-        contest_intro: "Los concursos forman parte de los proyectos culturales impulsados por la Asociación Cultural DULCESOR. La información publicada es orientativa y podrá actualizarse conforme avance la organización.",
+        museums_title: "MUSEOS CONVENTUALES",
+        museums_intro: "La Asociación Cultural DULCESOR promueve la conservación y difusión del patrimonio cultural vinculado a la vida conventual, apoyando especialmente a los museos conventuales como espacios vivos de memoria, arte y tradición.",
+        museums_featured: "Museo destacado",
+        museum1_title: "Museo del Convento de San Joaquín y Santa Ana (Valladolid)",
+        museum1_text: "Un espacio cultural y patrimonial de referencia, vinculado a la tradición conventual y a la memoria artística de la vida monástica. Te invitamos a conocer el museo y su historia a través de su página oficial.",
+        museum1_btn: "Visitar web del museo",
+        museum_vr_kicker: "Experiencia virtual",
+        museum_vr_text: "Apolo Studio Creativo está desarrollando una experiencia de realidad virtual vinculada a piezas del museo (en preparación).",
+        museum_vr_btn: "Acceder a la experiencia virtual (próximamente)",
+        museums_future: "Este espacio crecerá incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.",
+        museum_future_1: "Próximo museo conventual",
+        museum_future_hint: "Se incorporará cuando exista acuerdo o confirmación institucional.",
+
         contest_title: "I Concurso Internacional de Postres Conventuales – Valladolid 2026",
+        contest_intro: "Los concursos forman parte de los proyectos culturales impulsados por la Asociación Cultural DULCESOR. La información publicada es orientativa y podrá actualizarse conforme avance la organización.",
         contest_desc: "Encuentro cultural y gastronómico de carácter internacional dedicado a la repostería elaborada en conventos y comunidades religiosas.",
         contest_email_lbl: "Contacto concurso:",
+        contest_email_lbl_2: "Concurso:",
         contest_bases: "Bases del concurso (PDF)",
         contest_form: "Solicitud de participación (PDF editable)",
         contest_note: "Las bases, plazos e información detallada se publicarán oficialmente en esta web. La participación no estará abierta hasta su anuncio oficial.",
 
         routes_title: "RUTAS MONACALES",
         routes_text: "Rutas culturales y gastronómicas para conocer y adquirir productos artesanos.",
+        monasteries_title: "MONASTERIOS Y PRODUCTOS",
+        monasteries_text: "Acceso directo a webs oficiales de monasterios y comunidades. DULCESOR ofrece únicamente el enlace para facilitar la consulta y, si procede, la compra de productos en sus canales oficiales.",
+        visit_btn: "Visitar",
+        mon1_name: "Monasterio / Convento (Ejemplo 1)",
+        mon1_hint: "Web oficial (enlace por confirmar)",
+        mon2_name: "Monasterio / Convento (Ejemplo 2)",
+        mon2_hint: "Tienda / productos (si existe)",
+        mon3_name: "Monasterio / Convento (Ejemplo 3)",
+        mon3_hint: "Información institucional",
+        mon_future: "Próximos enlaces",
+        mon_future_hint: "Se añadirán nuevos monasterios conforme se confirmen los datos.",
 
         sponsors_title: "PATROCINADORES",
         sponsors_text: "Espacio para instituciones y entidades colaboradoras.",
@@ -703,61 +759,32 @@
         mail_contact_lbl: "Contacto:",
         address: "Plaza Santa Ana 2 · 47001 Valladolid (España)",
         no_phone: "No se facilita teléfono en esta fase.",
-
+        legal_note: "La asociación y sus proyectos se encuentran actualmente en fase de desarrollo y planificación. La información publicada es orientativa y podrá ser actualizada conforme avance la organización.",
         footer_line_1: "© Asociación Cultural DULCESOR · Asociación cultural sin ánimo de lucro · Proyecto cultural en desarrollo",
-        footer_made_by: "Web realizada por Apolo Studio Creativo"
+        footer_apolo: "Web desarrollada por Apolo Studio Creativo (en preparación)"
       },
 
       en: {
         brand_sub: "CULTURAL ASSOCIATION",
         nav_asociacion: "ASSOCIATION",
         nav_proyectos: "PROJECTS",
-        nav_concursos: "CONTESTS",
+        nav_concursos: "CONTEST",
         nav_rutas: "MONASTIC ROUTES",
         nav_patrocinadores: "SPONSORS",
         nav_contacto: "CONTACT",
 
         hero_title_1: "CULTURAL ASSOCIATION",
+        hero_title_2: "DULCESOR",
         tagline: "MONASTIC CONVENT PASTRY · GASTRONOMIC HERITAGE · CULTURE & TRADITION",
-        lead: "The <strong>Cultural Association <span class='gold'>DULCESOR</span></strong> promotes the preservation, dissemination and appreciation of <strong>monastic convent pastry</strong> and the gastronomic heritage linked to religious communities, fostering cultural projects with national and international reach.",
-
+        lead: "The <strong>Cultural Association <span class='gold'>DULCESOR</span></strong> promotes the preservation, dissemination and enhancement of <strong>monastic convent pastry-making</strong> and the gastronomic heritage linked to religious communities, supporting cultural projects with national and international reach.",
         project_main: "Main project in development:",
-        project_name: "1st International Convent Pastry Contest – Valladolid 2026",
+        project_name: "I International Convent Desserts Contest – Valladolid 2026",
         in_prep: "IN PREPARATION",
-
-        assoc_title: "ASSOCIATION",
-        assoc_name: "Cultural Association “DULCESOR” – Monastic Convent Pastry",
-        assoc_about: "Driven by professionals from the cultural and creative fields, the DULCESOR Cultural Association was created to preserve and promote monastic convent pastry as part of our gastronomic and cultural heritage.",
-        assoc_scope_lbl: "Scope:",
-        assoc_scope_val: "National (Spain)",
-        assoc_reach_lbl: "Reach:",
-        assoc_reach_val: "National and international",
-        assoc_status_lbl: "Status:",
-        assoc_status_val: "In progress",
-        assoc_seat_lbl: "Headquarters:",
-        assoc_seat_val: "Plaza Santa Ana 2 · 47001 Valladolid (Spain)",
-        assoc_purpose_title: "Association purposes",
-        assoc_goal_1: "Preserve and promote convent pastry as cultural heritage.",
-        assoc_goal_2: "Support and give visibility to the artisanal work of religious communities.",
-        assoc_goal_3: "Promote cultural, gastronomic and outreach activities.",
-        assoc_goal_4: "Encourage dialogue between tradition, culture and contemporary society.",
-        assoc_goal_5: "Organize events, gatherings, contests and educational activities.",
-        assoc_goal_6: "Promote cultural collaboration with convents and religious communities.",
-        assoc_routes_note: "“Monastic Routes” will be developed as cultural and gastronomic itineraries, helping people discover convent heritage and access artisan products.",
-        assoc_legal_note: "The information published is indicative and may be updated as procedures progress and projects develop.",
-
-        museums_title: "CONVENT MUSEUMS",
-        museums_intro: "The DULCESOR Cultural Association promotes the preservation and dissemination of cultural heritage linked to convent life, with special support for convent museums as living spaces of memory, art and tradition.",
-        museums_img_ph: "MUSEUM IMAGE (COMING SOON)",
-        museum_featured_name: "Museum of the Monastery of San Joaquín y Santa Ana (Valladolid)",
-        museum_featured_desc: "A reference convent museum linked to monastic heritage. A sober and valuable space bringing together memory, sacred art and tradition.",
-        museum_btn: "Visit the museum website",
-        museums_future: "This space will grow by incorporating other convent museums that share DULCESOR’s cultural and heritage values.",
 
         identity_title: "IDENTITY",
         identity_name_lbl: "Name:",
-        identity_name_val: "Cultural Association DULCESOR",
-        identity_nature_lbl: "Type:",
+        identity_name_val: "Cultural Association ‘DULCESOR’ – Monastic Convent Pastry",
+        identity_nature_lbl: "Nature:",
         identity_nature_val: "Non-profit cultural association",
         identity_scope_lbl: "Scope:",
         identity_scope_val: "Cultural and gastronomic",
@@ -765,25 +792,52 @@
         identity_reach_val: "National and international",
         identity_seat_lbl: "Based in:",
         identity_seat_val: "Valladolid (Spain)",
+        identity_status_lbl: "Status:",
+        identity_status_val: "Currently in process",
 
         goals_title: "AIMS & OBJECTIVES",
-        goal_1: "Preserve and promote convent pastry as cultural heritage.",
-        goal_2: "Give visibility to the artisanal work of religious communities.",
+        goal_1: "Preserve and disseminate convent pastry as cultural heritage.",
+        goal_2: "Give visibility to the artisan work of religious communities.",
         goal_3: "Promote cultural and outreach activities.",
         goal_4: "Encourage dialogue between tradition and society.",
         goal_5: "Organize contests, gatherings and educational activities.",
+        goal_6: "Collaborate with convents and religious communities on cultural initiatives (in development).",
 
-        contest_section: "CONTESTS",
-        contest_intro: "Contests are part of the cultural projects promoted by the Cultural Association DULCESOR. The published information is indicative and may be updated as the organization progresses.",
-        contest_title: "1st International Convent Pastry Contest – Valladolid 2026",
-        contest_desc: "An international cultural and gastronomic gathering dedicated to pastry made in convents and religious communities.",
+        museums_title: "CONVENT MUSEUMS",
+        museums_intro: "DULCESOR promotes the conservation and dissemination of cultural heritage linked to convent life, especially supporting convent museums as living spaces of memory, art and tradition.",
+        museums_featured: "Featured museum",
+        museum1_title: "Museum of the Convent of San Joaquín y Santa Ana (Valladolid)",
+        museum1_text: "A reference cultural and heritage space linked to convent tradition and the artistic memory of monastic life. We invite you to visit the museum through its official website.",
+        museum1_btn: "Visit the museum website",
+        museum_vr_kicker: "Virtual experience",
+        museum_vr_text: "Apolo Studio Creativo is developing a virtual reality experience linked to museum pieces (in preparation).",
+        museum_vr_btn: "Access the virtual experience (coming soon)",
+        museums_future: "This area will grow by incorporating other convent museums aligned with DULCESOR’s cultural and heritage values.",
+        museum_future_1: "Next convent museum",
+        museum_future_hint: "Will be added when there is agreement or institutional confirmation.",
+
+        contest_title: "I International Convent Desserts Contest – Valladolid 2026",
+        contest_intro: "The contest is part of the Association’s cultural projects. Published information is indicative and may be updated as planning advances.",
+        contest_desc: "International cultural and gastronomic event devoted to desserts made in convents and religious communities.",
         contest_email_lbl: "Contest contact:",
+        contest_email_lbl_2: "Contest:",
         contest_bases: "Contest rules (PDF)",
         contest_form: "Participation form (editable PDF)",
-        contest_note: "Official rules, deadlines and detailed information will be published on this website. Participation will not open until the official announcement.",
+        contest_note: "Rules, deadlines and detailed information will be officially published on this website. Participation will not be open until the official announcement.",
 
         routes_title: "MONASTIC ROUTES",
         routes_text: "Cultural and gastronomic routes to discover and purchase artisan products.",
+        monasteries_title: "MONASTERIES & PRODUCTS",
+        monasteries_text: "Direct access to official monastery/community websites. DULCESOR only provides the link to facilitate consultation and, where applicable, purchases through official channels.",
+        visit_btn: "Visit",
+        mon1_name: "Monastery / Convent (Example 1)",
+        mon1_hint: "Official website (to be confirmed)",
+        mon2_name: "Monastery / Convent (Example 2)",
+        mon2_hint: "Shop / products (if available)",
+        mon3_name: "Monastery / Convent (Example 3)",
+        mon3_hint: "Institutional information",
+        mon_future: "More links soon",
+        mon_future_hint: "New monasteries will be added as details are confirmed.",
 
         sponsors_title: "SPONSORS",
         sponsors_text: "Space for collaborating institutions and entities.",
@@ -793,60 +847,31 @@
         mail_contact_lbl: "Contact:",
         address: "Plaza Santa Ana 2 · 47001 Valladolid (Spain)",
         no_phone: "No phone number is provided at this stage.",
-
+        legal_note: "The association and its projects are currently in a development and planning phase. Published information is indicative and may be updated as the organization advances.",
         footer_line_1: "© Cultural Association DULCESOR · Non-profit cultural association · Cultural project in development",
-        footer_made_by: "Website by Apolo Studio Creativo"
+        footer_apolo: "Website developed by Apolo Studio Creativo (in preparation)"
       },
 
       pt: {
         brand_sub: "ASSOCIAÇÃO CULTURAL",
         nav_asociacion: "ASSOCIAÇÃO",
         nav_proyectos: "PROJETOS",
-        nav_concursos: "CONCURSOS",
+        nav_concursos: "CONCURSO",
         nav_rutas: "ROTAS MONÁSTICAS",
         nav_patrocinadores: "PATROCINADORES",
         nav_contacto: "CONTACTO",
 
         hero_title_1: "ASSOCIAÇÃO CULTURAL",
-        tagline: "DOÇARIA MONÁSTICA CONVENTUAL · PATRIMÓNIO GASTRONÓMICO · CULTURA E TRADIÇÃO",
-        lead: "A <strong>Associação Cultural <span class='gold'>DULCESOR</span></strong> promove a preservação, divulgação e valorização da <strong>doçaria monástica conventual</strong> e do património gastronómico ligado a comunidades religiosas, impulsionando projetos culturais de alcance nacional e internacional.",
-
+        hero_title_2: "DULCESOR",
+        tagline: "DOÇARIA CONVENTUAL · PATRIMÓNIO GASTRONÓMICO · CULTURA E TRADIÇÃO",
+        lead: "A <strong>Associação Cultural <span class='gold'>DULCESOR</span></strong> promove a preservação, divulgação e valorização da <strong>doçaria conventual</strong> e do património gastronómico ligado a comunidades religiosas, impulsionando projetos culturais de alcance nacional e internacional.",
         project_main: "Projeto principal em desenvolvimento:",
         project_name: "I Concurso Internacional de Doces Conventuais – Valladolid 2026",
         in_prep: "EM PREPARAÇÃO",
 
-        assoc_title: "ASSOCIAÇÃO",
-        assoc_name: "Associação Cultural “DULCESOR” – Doçaria Monástica Conventual",
-        assoc_about: "Impulsionada por profissionais do âmbito cultural e criativo, a Associação Cultural DULCESOR nasce com o propósito de preservar e divulgar a doçaria monástica conventual como parte do património gastronómico e cultural.",
-        assoc_scope_lbl: "Âmbito:",
-        assoc_scope_val: "Nacional (Espanha)",
-        assoc_reach_lbl: "Projeção:",
-        assoc_reach_val: "Nacional e internacional",
-        assoc_status_lbl: "Estado:",
-        assoc_status_val: "Em tramitação",
-        assoc_seat_lbl: "Sede:",
-        assoc_seat_val: "Plaza Santa Ana 2 · 47001 Valladolid (Espanha)",
-        assoc_purpose_title: "Fins da associação",
-        assoc_goal_1: "Preservar e divulgar a doçaria conventual como património cultural.",
-        assoc_goal_2: "Apoiar e dar visibilidade ao trabalho artesanal de comunidades religiosas.",
-        assoc_goal_3: "Promover atividades culturais, gastronómicas e de divulgação.",
-        assoc_goal_4: "Fomentar o diálogo entre tradição, cultura e sociedade contemporânea.",
-        assoc_goal_5: "Organizar eventos, encontros, concursos e atividades formativas.",
-        assoc_goal_6: "Promover a colaboração cultural com conventos e comunidades religiosas.",
-        assoc_routes_note: "As “Rotas Monásticas” serão desenvolvidas como itinerários culturais e gastronómicos, facilitando o conhecimento do património conventual e o acesso a produtos artesanais.",
-        assoc_legal_note: "A informação publicada é indicativa e poderá ser atualizada à medida que a tramitação e os projetos avancem.",
-
-        museums_title: "MUSEUS CONVENTUAIS",
-        museums_intro: "A Associação Cultural DULCESOR promove a conservação e divulgação do património cultural ligado à vida conventual, apoiando especialmente os museus conventuais como espaços vivos de memória, arte e tradição.",
-        museums_img_ph: "IMAGEM DO MUSEU (EM BREVE)",
-        museum_featured_name: "Museu do Mosteiro de San Joaquín y Santa Ana (Valladolid)",
-        museum_featured_desc: "Museu conventual de referência ligado ao património monástico. Um espaço sóbrio e valioso que reúne memória, arte sacra e tradição.",
-        museum_btn: "Visitar o site do museu",
-        museums_future: "Este espaço crescerá incorporando outros museus conventuais que partilhem os valores culturais e patrimoniais de DULCESOR.",
-
         identity_title: "IDENTIDADE",
         identity_name_lbl: "Nome:",
-        identity_name_val: "Associação Cultural DULCESOR",
+        identity_name_val: "Associação Cultural ‘DULCESOR’ – Doçaria Monacal Conventual",
         identity_nature_lbl: "Natureza:",
         identity_nature_val: "Associação cultural sem fins lucrativos",
         identity_scope_lbl: "Âmbito:",
@@ -855,6 +880,8 @@
         identity_reach_val: "Nacional e internacional",
         identity_seat_lbl: "Sede:",
         identity_seat_val: "Valladolid (Espanha)",
+        identity_status_lbl: "Estado:",
+        identity_status_val: "Em tramitação",
 
         goals_title: "FINS E OBJETIVOS",
         goal_1: "Preservar e divulgar a doçaria conventual como património cultural.",
@@ -862,18 +889,43 @@
         goal_3: "Promover atividades culturais e de divulgação.",
         goal_4: "Fomentar o diálogo entre tradição e sociedade.",
         goal_5: "Organizar concursos, encontros e atividades formativas.",
+        goal_6: "Colaborar com conventos e comunidades religiosas em iniciativas culturais (em desenvolvimento).",
 
-        contest_section: "CONCURSOS",
-        contest_intro: "Os concursos fazem parte dos projetos culturais promovidos pela Associação Cultural DULCESOR. A informação publicada é orientativa e poderá ser atualizada à medida que a organização avance.",
+        museums_title: "MUSEUS CONVENTUAIS",
+        museums_intro: "A DULCESOR promove a conservação e divulgação do património cultural ligado à vida conventual, apoiando especialmente museus conventuais como espaços vivos de memória, arte e tradição.",
+        museums_featured: "Museu em destaque",
+        museum1_title: "Museu do Convento de San Joaquín y Santa Ana (Valladolid)",
+        museum1_text: "Um espaço cultural e patrimonial de referência ligado à tradição conventual e à memória artística da vida monástica. Convidamos a visitar o museu através do seu site oficial.",
+        museum1_btn: "Visitar site do museu",
+        museum_vr_kicker: "Experiência virtual",
+        museum_vr_text: "A Apolo Studio Creativo está a desenvolver uma experiência de realidade virtual com peças do museu (em preparação).",
+        museum_vr_btn: "Aceder à experiência virtual (em breve)",
+        museums_future: "Este espaço crescerá incorporando outros museus conventuais alinhados com os valores culturais e patrimoniais da DULCESOR.",
+        museum_future_1: "Próximo museu conventual",
+        museum_future_hint: "Será adicionado quando houver acordo ou confirmação institucional.",
+
         contest_title: "I Concurso Internacional de Doces Conventuais – Valladolid 2026",
-        contest_desc: "Encontro cultural e gastronómico de caráter internacional dedicado à doçaria elaborada em conventos e comunidades religiosas.",
+        contest_intro: "O concurso integra os projetos culturais da associação. A informação é indicativa e poderá ser atualizada conforme avance a organização.",
+        contest_desc: "Encontro cultural e gastronómico internacional dedicado à doçaria elaborada em conventos e comunidades religiosas.",
         contest_email_lbl: "Contacto do concurso:",
+        contest_email_lbl_2: "Concurso:",
         contest_bases: "Bases do concurso (PDF)",
         contest_form: "Formulário de participação (PDF editável)",
-        contest_note: "As bases, prazos e informação detalhada serão publicadas oficialmente neste site. A participação não estará aberta até ao anúncio oficial.",
+        contest_note: "As bases, prazos e informação detalhada serão publicados oficialmente neste site. A participação não estará aberta até anúncio oficial.",
 
         routes_title: "ROTAS MONÁSTICAS",
         routes_text: "Rotas culturais e gastronómicas para conhecer e adquirir produtos artesanais.",
+        monasteries_title: "MOSTEIROS E PRODUTOS",
+        monasteries_text: "Acesso direto a sites oficiais de mosteiros e comunidades. A DULCESOR fornece apenas o link para facilitar a consulta e, se aplicável, a compra nos canais oficiais.",
+        visit_btn: "Visitar",
+        mon1_name: "Mosteiro / Convento (Exemplo 1)",
+        mon1_hint: "Site oficial (por confirmar)",
+        mon2_name: "Mosteiro / Convento (Exemplo 2)",
+        mon2_hint: "Loja / produtos (se existir)",
+        mon3_name: "Mosteiro / Convento (Exemplo 3)",
+        mon3_hint: "Informação institucional",
+        mon_future: "Mais links em breve",
+        mon_future_hint: "Novos mosteiros serão adicionados conforme se confirmem os dados.",
 
         sponsors_title: "PATROCINADORES",
         sponsors_text: "Espaço para instituições e entidades colaboradoras.",
@@ -883,9 +935,9 @@
         mail_contact_lbl: "Contacto:",
         address: "Plaza Santa Ana 2 · 47001 Valladolid (Espanha)",
         no_phone: "Não é disponibilizado telefone nesta fase.",
-
+        legal_note: "A associação e os seus projetos encontram-se em fase de desenvolvimento e planeamento. A informação publicada é indicativa e poderá ser atualizada.",
         footer_line_1: "© Associação Cultural DULCESOR · Associação cultural sem fins lucrativos · Projeto cultural em desenvolvimento",
-        footer_made_by: "Website por Apolo Studio Creativo"
+        footer_apolo: "Site desenvolvido por Apolo Studio Creativo (em preparação)"
       },
 
       fr: {
@@ -898,45 +950,16 @@
         nav_contacto: "CONTACT",
 
         hero_title_1: "ASSOCIATION CULTURELLE",
-        tagline: "PÂTISSERIE MONASTIQUE · PATRIMOINE GASTRONOMIQUE · CULTURE ET TRADITION",
-        lead: "L’<strong>Association Culturelle <span class='gold'>DULCESOR</span></strong> œuvre à la préservation, la diffusion et la mise en valeur de la <strong>pâtisserie monastique</strong> et du patrimoine gastronomique lié aux communautés religieuses, en développant des projets culturels à portée nationale et internationale.",
-
+        hero_title_2: "DULCESOR",
+        tagline: "PÂTISSERIE CONVENTUELLE · PATRIMOINE GASTRONOMIQUE · CULTURE ET TRADITION",
+        lead: "L’<strong>Association Culturelle <span class='gold'>DULCESOR</span></strong> œuvre pour la préservation, la diffusion et la valorisation de la <strong>pâtisserie conventuelle</strong> et du patrimoine gastronomique lié aux communautés religieuses, en soutenant des projets culturels à portée nationale et internationale.",
         project_main: "Projet principal en développement :",
         project_name: "I Concours International de Pâtisserie Conventuelle – Valladolid 2026",
         in_prep: "EN PRÉPARATION",
 
-        assoc_title: "ASSOCIATION",
-        assoc_name: "Association Culturelle « DULCESOR » – Pâtisserie Monastique Conventuelle",
-        assoc_about: "Portée par des professionnels des domaines culturel et créatif, l’Association Culturelle DULCESOR a pour mission de préserver et de diffuser la pâtisserie monastique conventuelle comme patrimoine gastronomique et culturel.",
-        assoc_scope_lbl: "Champ d’action :",
-        assoc_scope_val: "National (Espagne)",
-        assoc_reach_lbl: "Rayonnement :",
-        assoc_reach_val: "National et international",
-        assoc_status_lbl: "Statut :",
-        assoc_status_val: "En cours",
-        assoc_seat_lbl: "Siège :",
-        assoc_seat_val: "Plaza Santa Ana 2 · 47001 Valladolid (Espagne)",
-        assoc_purpose_title: "Objectifs de l’association",
-        assoc_goal_1: "Préserver et diffuser la pâtisserie conventuelle comme patrimoine culturel.",
-        assoc_goal_2: "Soutenir et valoriser le travail artisanal des communautés religieuses.",
-        assoc_goal_3: "Promouvoir des activités culturelles, gastronomiques et de médiation.",
-        assoc_goal_4: "Favoriser le dialogue entre tradition, culture et société contemporaine.",
-        assoc_goal_5: "Organiser des événements, rencontres, concours et activités de formation.",
-        assoc_goal_6: "Encourager la collaboration culturelle avec les couvents et communautés religieuses.",
-        assoc_routes_note: "Les « Itinéraires Monastiques » seront développés comme des parcours culturels et gastronomiques, facilitant la découverte du patrimoine conventuel et l’accès à des produits artisanaux.",
-        assoc_legal_note: "Les informations publiées sont indicatives et pourront être mises à jour au fur et à mesure de l’avancement des démarches et des projets.",
-
-        museums_title: "MUSÉES CONVENTUELS",
-        museums_intro: "L’Association Culturelle DULCESOR promeut la conservation et la diffusion du patrimoine culturel lié à la vie conventuelle, en soutenant particulièrement les musées conventuels comme espaces vivants de mémoire, d’art et de tradition.",
-        museums_img_ph: "IMAGE DU MUSÉE (BIENTÔT)",
-        museum_featured_name: "Musée du Monastère de San Joaquín y Santa Ana (Valladolid)",
-        museum_featured_desc: "Musée conventuel de référence lié au patrimoine monastique. Un espace sobre et précieux réunissant mémoire, art sacré et tradition.",
-        museum_btn: "Visiter le site du musée",
-        museums_future: "Cet espace s’enrichira en intégrant d’autres musées conventuels partageant les valeurs culturelles et patrimoniales de DULCESOR.",
-
         identity_title: "IDENTITÉ",
         identity_name_lbl: "Nom :",
-        identity_name_val: "Association Culturelle DULCESOR",
+        identity_name_val: "Association Culturelle ‘DULCESOR’ – Pâtisserie Monastique Conventuelle",
         identity_nature_lbl: "Nature :",
         identity_nature_val: "Association culturelle à but non lucratif",
         identity_scope_lbl: "Domaine :",
@@ -945,25 +968,52 @@
         identity_reach_val: "National et international",
         identity_seat_lbl: "Siège :",
         identity_seat_val: "Valladolid (Espagne)",
+        identity_status_lbl: "Statut :",
+        identity_status_val: "En cours de formalisation",
 
-        goals_title: "BUTS ET OBJECTIFS",
+        goals_title: "MISSIONS ET OBJECTIFS",
         goal_1: "Préserver et diffuser la pâtisserie conventuelle comme patrimoine culturel.",
         goal_2: "Mettre en valeur le travail artisanal des communautés religieuses.",
         goal_3: "Promouvoir des activités culturelles et de médiation.",
         goal_4: "Favoriser le dialogue entre tradition et société.",
         goal_5: "Organiser des concours, rencontres et activités de formation.",
+        goal_6: "Collaborer avec des couvents et communautés religieuses sur des initiatives culturelles (en développement).",
 
-        contest_section: "CONCOURS",
-        contest_intro: "Les concours font partie des projets culturels portés par l’Association Culturelle DULCESOR. Les informations publiées sont indicatives et pourront évoluer au fil de l’organisation.",
+        museums_title: "MUSÉES CONVENTUELS",
+        museums_intro: "DULCESOR promeut la conservation et la diffusion du patrimoine culturel lié à la vie conventuelle, en soutenant particulièrement les musées conventuels comme espaces vivants de mémoire, d’art et de tradition.",
+        museums_featured: "Musée à la une",
+        museum1_title: "Musée du Couvent de San Joaquín y Santa Ana (Valladolid)",
+        museum1_text: "Un lieu culturel et patrimonial de référence, lié à la tradition conventuelle et à la mémoire artistique de la vie monastique. Nous vous invitons à découvrir le musée via son site officiel.",
+        museum1_btn: "Visiter le site du musée",
+        museum_vr_kicker: "Expérience virtuelle",
+        museum_vr_text: "Apolo Studio Creativo développe une expérience de réalité virtuelle liée à des pièces du musée (en préparation).",
+        museum_vr_btn: "Accéder à l’expérience virtuelle (bientôt)",
+        museums_future: "Cet espace s’enrichira en intégrant d’autres musées conventuels partageant les valeurs culturelles et patrimoniales de DULCESOR.",
+        museum_future_1: "Prochain musée conventuel",
+        museum_future_hint: "Sera ajouté lorsqu’un accord ou une confirmation institutionnelle existera.",
+
         contest_title: "I Concours International de Pâtisserie Conventuelle – Valladolid 2026",
-        contest_desc: "Rencontre culturelle et gastronomique de dimension internationale dédiée aux pâtisseries élaborées dans les couvents et communautés religieuses.",
+        contest_intro: "Le concours fait partie des projets culturels de l’association. Les informations publiées sont indicatives et pourront être mises à jour.",
+        contest_desc: "Rencontre culturelle et gastronomique internationale dédiée à la pâtisserie élaborée dans les couvents et communautés religieuses.",
         contest_email_lbl: "Contact concours :",
-        contest_bases: "Règlement du concours (PDF)",
-        contest_form: "Formulaire de participation (PDF éditable)",
-        contest_note: "Le règlement, les délais et les informations détaillées seront publiés officiellement sur ce site. Les inscriptions n’ouvriront qu’après l’annonce officielle.",
+        contest_email_lbl_2: "Concours :",
+        contest_bases: "Règlement (PDF)",
+        contest_form: "Formulaire de participation (PDF modifiable)",
+        contest_note: "Le règlement, les délais et les informations détaillées seront publiés officiellement sur ce site. La participation ne sera ouverte qu’après annonce officielle.",
 
         routes_title: "ITINÉRAIRES MONASTIQUES",
         routes_text: "Itinéraires culturels et gastronomiques pour découvrir et acheter des produits artisanaux.",
+        monasteries_title: "MONASTÈRES ET PRODUITS",
+        monasteries_text: "Accès direct aux sites officiels des monastères et communautés. DULCESOR fournit uniquement le lien pour faciliter la consultation et, le cas échéant, l’achat via les canaux officiels.",
+        visit_btn: "Visiter",
+        mon1_name: "Monastère / Couvent (Exemple 1)",
+        mon1_hint: "Site officiel (à confirmer)",
+        mon2_name: "Monastère / Couvent (Exemple 2)",
+        mon2_hint: "Boutique / produits (si disponible)",
+        mon3_name: "Monastère / Couvent (Exemple 3)",
+        mon3_hint: "Information institutionnelle",
+        mon_future: "Prochains liens",
+        mon_future_hint: "De nouveaux monastères seront ajoutés au fur et à mesure des confirmations.",
 
         sponsors_title: "PARTENAIRES",
         sponsors_text: "Espace pour les institutions et entités collaboratrices.",
@@ -972,61 +1022,32 @@
         mail_general_lbl: "Email général :",
         mail_contact_lbl: "Contact :",
         address: "Plaza Santa Ana 2 · 47001 Valladolid (Espagne)",
-        no_phone: "Aucun numéro de téléphone n’est communiqué à ce stade.",
-
+        no_phone: "Aucun téléphone n’est communiqué à ce stade.",
+        legal_note: "L’association et ses projets sont en phase de développement et de planification. Les informations publiées sont indicatives et pourront être mises à jour.",
         footer_line_1: "© Association Culturelle DULCESOR · Association à but non lucratif · Projet culturel en développement",
-        footer_made_by: "Site réalisé par Apolo Studio Creativo"
+        footer_apolo: "Site développé par Apolo Studio Creativo (en préparation)"
       },
 
       it: {
         brand_sub: "ASSOCIAZIONE CULTURALE",
         nav_asociacion: "ASSOCIAZIONE",
         nav_proyectos: "PROGETTI",
-        nav_concursos: "CONCORSI",
-        nav_rutas: "PERCORSI MONASTICI",
+        nav_concursos: "CONCORSO",
+        nav_rutas: "ITINERARI MONASTICI",
         nav_patrocinadores: "SPONSOR",
         nav_contacto: "CONTATTO",
 
         hero_title_1: "ASSOCIAZIONE CULTURALE",
-        tagline: "PASTICCERIA MONASTICA · PATRIMONIO GASTRONOMICO · CULTURA E TRADIZIONE",
-        lead: "L’<strong>Associazione Culturale <span class='gold'>DULCESOR</span></strong> promuove la conservazione, la diffusione e la valorizzazione della <strong>pasticceria monastica conventuale</strong> e del patrimonio gastronomico legato alle comunità religiose, sviluppando progetti culturali di respiro nazionale e internazionale.",
-
+        hero_title_2: "DULCESOR",
+        tagline: "PASTICCERIA CONVENTUALE · PATRIMONIO GASTRONOMICO · CULTURA E TRADIZIONE",
+        lead: "L’<strong>Associazione Culturale <span class='gold'>DULCESOR</span></strong> promuove la preservazione, la diffusione e la valorizzazione della <strong>pasticceria conventuale</strong> e del patrimonio gastronomico legato alle comunità religiose, sostenendo progetti culturali di portata nazionale e internazionale.",
         project_main: "Progetto principale in sviluppo:",
         project_name: "I Concorso Internazionale di Dolci Conventuali – Valladolid 2026",
         in_prep: "IN PREPARAZIONE",
 
-        assoc_title: "ASSOCIAZIONE",
-        assoc_name: "Associazione Culturale “DULCESOR” – Pasticceria Monastica Conventuale",
-        assoc_about: "Promossa da professionisti dell’ambito culturale e creativo, l’Associazione Culturale DULCESOR nasce con l’obiettivo di preservare e valorizzare la pasticceria monastica conventuale come parte del patrimonio gastronomico e culturale.",
-        assoc_scope_lbl: "Ambito:",
-        assoc_scope_val: "Nazionale (Spagna)",
-        assoc_reach_lbl: "Proiezione:",
-        assoc_reach_val: "Nazionale e internazionale",
-        assoc_status_lbl: "Stato:",
-        assoc_status_val: "In corso",
-        assoc_seat_lbl: "Sede:",
-        assoc_seat_val: "Plaza Santa Ana 2 · 47001 Valladolid (Spagna)",
-        assoc_purpose_title: "Finalità dell’associazione",
-        assoc_goal_1: "Preservare e diffondere la pasticceria conventuale come patrimonio culturale.",
-        assoc_goal_2: "Sostenere e dare visibilità al lavoro artigianale delle comunità religiose.",
-        assoc_goal_3: "Promuovere attività culturali, gastronomiche e divulgative.",
-        assoc_goal_4: "Favorire il dialogo tra tradizione, cultura e società contemporanea.",
-        assoc_goal_5: "Organizzare eventi, incontri, concorsi e attività formative.",
-        assoc_goal_6: "Promuovere la collaborazione culturale con conventi e comunità religiose.",
-        assoc_routes_note: "I “Percorsi Monastici” saranno sviluppati come itinerari culturali e gastronomici, facilitando la conoscenza del patrimonio conventuale e l’accesso a prodotti artigianali.",
-        assoc_legal_note: "Le informazioni pubblicate sono indicative e potranno essere aggiornate con l’avanzare delle procedure e lo sviluppo dei progetti.",
-
-        museums_title: "MUSEI CONVENTUALI",
-        museums_intro: "L’Associazione Culturale DULCESOR promuove la conservazione e la diffusione del patrimonio culturale legato alla vita conventuale, sostenendo in particolare i musei conventuali come spazi vivi di memoria, arte e tradizione.",
-        museums_img_ph: "IMMAGINE DEL MUSEO (PROSSIMAMENTE)",
-        museum_featured_name: "Museo del Monastero di San Joaquín y Santa Ana (Valladolid)",
-        museum_featured_desc: "Museo conventuale di riferimento legato al patrimonio monastico. Uno spazio sobrio e prezioso che unisce memoria, arte sacra e tradizione.",
-        museum_btn: "Visita il sito del museo",
-        museums_future: "Questo spazio crescerà includendo altri musei conventuali che condividano i valori culturali e patrimoniali di DULCESOR.",
-
         identity_title: "IDENTITÀ",
         identity_name_lbl: "Nome:",
-        identity_name_val: "Associazione Culturale DULCESOR",
+        identity_name_val: "Associazione Culturale ‘DULCESOR’ – Pasticceria Monastica Conventuale",
         identity_nature_lbl: "Natura:",
         identity_nature_val: "Associazione culturale senza scopo di lucro",
         identity_scope_lbl: "Ambito:",
@@ -1035,25 +1056,52 @@
         identity_reach_val: "Nazionale e internazionale",
         identity_seat_lbl: "Sede:",
         identity_seat_val: "Valladolid (Spagna)",
+        identity_status_lbl: "Stato:",
+        identity_status_val: "In fase di formalizzazione",
 
-        goals_title: "SCOPI E OBIETTIVI",
+        goals_title: "FINALITÀ E OBIETTIVI",
         goal_1: "Preservare e diffondere la pasticceria conventuale come patrimonio culturale.",
         goal_2: "Dare visibilità al lavoro artigianale delle comunità religiose.",
         goal_3: "Promuovere attività culturali e divulgative.",
         goal_4: "Favorire il dialogo tra tradizione e società.",
         goal_5: "Organizzare concorsi, incontri e attività formative.",
+        goal_6: "Collaborare con conventi e comunità religiose in iniziative culturali (in sviluppo).",
 
-        contest_section: "CONCORSI",
-        contest_intro: "I concorsi fanno parte dei progetti culturali promossi dall’Associazione Culturale DULCESOR. Le informazioni pubblicate sono indicative e potranno essere aggiornate man mano che l’organizzazione procede.",
+        museums_title: "MUSEI CONVENTUALI",
+        museums_intro: "DULCESOR promuove la conservazione e la diffusione del patrimonio culturale legato alla vita conventuale, sostenendo in particolare i musei conventuali come spazi vivi di memoria, arte e tradizione.",
+        museums_featured: "Museo in evidenza",
+        museum1_title: "Museo del Convento di San Joaquín y Santa Ana (Valladolid)",
+        museum1_text: "Uno spazio culturale e patrimoniale di riferimento, legato alla tradizione conventuale e alla memoria artistica della vita monastica. Ti invitiamo a scoprire il museo attraverso il suo sito ufficiale.",
+        museum1_btn: "Visita il sito del museo",
+        museum_vr_kicker: "Esperienza virtuale",
+        museum_vr_text: "Apolo Studio Creativo sta sviluppando un’esperienza di realtà virtuale legata a opere del museo (in preparazione).",
+        museum_vr_btn: "Accedi all’esperienza virtuale (prossimamente)",
+        museums_future: "Questo spazio crescerà includendo altri musei conventuali in linea con i valori culturali e patrimoniali di DULCESOR.",
+        museum_future_1: "Prossimo museo conventuale",
+        museum_future_hint: "Sarà aggiunto quando ci sarà un accordo o una conferma istituzionale.",
+
         contest_title: "I Concorso Internazionale di Dolci Conventuali – Valladolid 2026",
-        contest_desc: "Incontro culturale e gastronomico di carattere internazionale dedicato alla pasticceria realizzata in conventi e comunità religiose.",
+        contest_intro: "Il concorso fa parte dei progetti culturali dell’associazione. Le informazioni pubblicate sono indicative e potranno essere aggiornate.",
+        contest_desc: "Incontro culturale e gastronomico internazionale dedicato ai dolci realizzati in conventi e comunità religiose.",
         contest_email_lbl: "Contatto concorso:",
-        contest_bases: "Regolamento del concorso (PDF)",
+        contest_email_lbl_2: "Concorso:",
+        contest_bases: "Regolamento (PDF)",
         contest_form: "Modulo di partecipazione (PDF modificabile)",
         contest_note: "Regolamento, scadenze e informazioni dettagliate saranno pubblicati ufficialmente su questo sito. La partecipazione non sarà aperta fino all’annuncio ufficiale.",
 
-        routes_title: "PERCORSI MONASTICI",
-        routes_text: "Percorsi culturali e gastronomici per scoprire e acquistare prodotti artigianali.",
+        routes_title: "ITINERARI MONASTICI",
+        routes_text: "Itinerari culturali e gastronomici per conoscere e acquistare prodotti artigianali.",
+        monasteries_title: "MONASTERI E PRODOTTI",
+        monasteries_text: "Accesso diretto ai siti ufficiali di monasteri e comunità. DULCESOR fornisce solo il link per facilitare la consultazione e, se previsto, l’acquisto attraverso canali ufficiali.",
+        visit_btn: "Visita",
+        mon1_name: "Monastero / Convento (Esempio 1)",
+        mon1_hint: "Sito ufficiale (da confermare)",
+        mon2_name: "Monastero / Convento (Esempio 2)",
+        mon2_hint: "Negozio / prodotti (se disponibile)",
+        mon3_name: "Monastero / Convento (Esempio 3)",
+        mon3_hint: "Informazioni istituzionali",
+        mon_future: "Prossimi link",
+        mon_future_hint: "Verranno aggiunti nuovi monasteri man mano che i dati saranno confermati.",
 
         sponsors_title: "SPONSOR",
         sponsors_text: "Spazio per istituzioni ed enti collaboratori.",
@@ -1062,43 +1110,40 @@
         mail_general_lbl: "Email generale:",
         mail_contact_lbl: "Contatto:",
         address: "Plaza Santa Ana 2 · 47001 Valladolid (Spagna)",
-        no_phone: "In questa fase non è disponibile un numero di telefono.",
-
+        no_phone: "In questa fase non viene fornito un numero di telefono.",
+        legal_note: "L’associazione e i suoi progetti sono in fase di sviluppo e pianificazione. Le informazioni pubblicate sono indicative e potranno essere aggiornate.",
         footer_line_1: "© Associazione Culturale DULCESOR · Associazione senza scopo di lucro · Progetto culturale in sviluppo",
-        footer_made_by: "Sito web a cura di Apolo Studio Creativo"
+        footer_apolo: "Sito sviluppato da Apolo Studio Creativo (in preparazione)"
       }
     };
 
     function applyLang(lang){
-      const dict = i18n[lang] || i18n.es;
-
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        if (dict[key] !== undefined) el.textContent = dict[key];
-      });
-
-      document.querySelectorAll("[data-i18n-html]").forEach(el => {
-        const key = el.getAttribute("data-i18n-html");
-        if (dict[key] !== undefined) el.innerHTML = dict[key];
-      });
-
-      document.querySelectorAll(".lang a").forEach(a => {
-        a.classList.toggle("active", a.dataset.lang === lang);
-      });
-
+      const dict = I18N[lang] || I18N.es;
       document.documentElement.lang = lang;
-      localStorage.setItem("dulcesor_lang", lang);
+
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        if (!key) return;
+        const value = dict[key];
+        if (typeof value === "string"){
+          el.innerHTML = value;
+        }
+      });
+
+      document.querySelectorAll(".langBtn").forEach(b=>{
+        b.classList.toggle("active", b.dataset.lang === lang);
+      });
+
+      try { localStorage.setItem("dulcesor_lang", lang); } catch(e) {}
     }
 
-    document.querySelectorAll(".lang a").forEach(a => {
-      a.addEventListener("click", (e) => {
-        e.preventDefault();
-        applyLang(a.dataset.lang);
-      });
+    document.querySelectorAll(".langBtn").forEach(btn=>{
+      btn.addEventListener("click", ()=> applyLang(btn.dataset.lang));
     });
 
-    const saved = localStorage.getItem("dulcesor_lang") || "es";
-    applyLang(saved);
+    // init
+    const saved = (()=>{ try { return localStorage.getItem("dulcesor_lang"); } catch(e){ return null; }})();
+    applyLang(saved && I18N[saved] ? saved : "es");
   </script>
 </body>
 </html>
