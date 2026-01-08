@@ -4,202 +4,381 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Asociación Cultural DULCESOR</title>
-  <meta name="description" content="Asociación Cultural DULCESOR: patrimonio gastronómico, repostería conventual, cultura y tradición. Proyecto principal: I Concurso Internacional de Postres Conventuales – Valladolid 2026." />
+  <meta name="description" content="Asociación Cultural DULCESOR: repostería monacal conventual, patrimonio gastronómico, cultura y tradición. Valladolid (España)." />
+
   <style>
     :root{
-      --bg:#f6f4f1;
-      --text:#1f1f1f;
-      --muted:#555;
-      --card:#ffffff;
-      --line:#e6e1da;
-      --accent:#2b2b2b;
+      --gold: #91801A;   /* RGB(145,128,26) Oro viejo DULCESOR */
+      --bg: #f6f4f1;
+      --card: #ffffff;
+      --text: #1f1f1f;
+      --muted: #555;
+      --line: #e6e1da;
+      --soft: #fbfaf8;
     }
-    *{box-sizing:border-box}
+
+    *{ box-sizing: border-box; }
+
     body{
       margin:0;
-      font-family: Georgia, "Times New Roman", serif;
-      background:var(--bg);
-      color:var(--text);
+      font-family: "Century Gothic", CenturyGothic, AppleGothic, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+
     .wrap{
-      max-width: 980px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 56px 22px 40px;
+      padding: 18px 18px 44px;
     }
+
+    /* ===== TOP BAR ===== */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      padding: 10px 6px 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      text-decoration:none;
+      color: inherit;
+    }
+
+    /* LOGO (preparado para futuro) */
+    .logo{
+      height: 36px;      /* tamaño institucional */
+      width: auto;
+      display: none;     /* oculto hasta que exista logo */
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+
+    .brand-text .name{
+      color: var(--gold);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .brand-text .sub{
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    /* Idiomas */
+    .lang{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .lang a{
+      color: var(--muted);
+      text-decoration:none;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+    }
+
+    .lang a.active{
+      color: var(--text);
+      border-bottom-color: rgba(145,128,26,.55);
+      font-weight: 700;
+    }
+
+    /* ===== NAV ===== */
+    nav{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap: 10px 14px;
+      padding: 14px 6px 6px;
+    }
+
+    nav a{
+      text-decoration:none;
+      color: var(--text);
+      font-size: 12px;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+
+    nav a:hover{
+      border-color: var(--line);
+      background: var(--soft);
+    }
+
+    /* ===== HERO ===== */
     header{
       text-align:center;
-      padding: 28px 18px 10px;
+      padding: 34px 10px 8px;
     }
+
     h1{
-      margin:0 0 10px;
-      font-size: clamp(34px, 4vw, 54px);
-      letter-spacing: 2px;
+      margin: 0 0 10px;
+      font-size: clamp(32px, 4vw, 56px);
+      letter-spacing: .08em;
+      text-transform: uppercase;
       font-weight: 700;
-      color: var(--accent);
     }
+
+    .gold{
+      color: var(--gold);
+      font-weight: 800;
+    }
+
     .tagline{
-      margin:0 auto 18px;
-      font-size: 15px;
-      letter-spacing: .4px;
+      margin: 0 auto 18px;
       color: var(--muted);
+      font-size: 14px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      line-height: 1.6;
     }
-    .lead{
-      max-width: 860px;
-      margin: 18px auto 0;
-      font-size: 18px;
-      line-height: 1.75;
-      color: var(--text);
-    }
+
     .divider{
-      height:1px;
-      background: var(--line);
-      margin: 28px auto 8px;
-      max-width: 780px;
+      height: 1px;
+      background: rgba(145,128,26,.35);
+      max-width: 860px;
+      margin: 20px auto 12px;
     }
-    .cards{
+
+    .lead{
+      max-width: 920px;
+      margin: 14px auto 0;
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .callout{
+      max-width: 920px;
+      margin: 18px auto 0;
+      padding: 14px 16px;
+      border-left: 3px solid var(--gold);
+      background: var(--soft);
+      border-radius: 12px;
+      text-align:left;
+    }
+
+    .pill{
+      display:inline-block;
+      margin-top: 10px;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      background: var(--soft);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    /* ===== CONTENT ===== */
+    .grid{
       display:grid;
       grid-template-columns: 1fr;
       gap: 14px;
-      margin-top: 28px;
+      margin-top: 26px;
     }
+
+    @media (min-width: 920px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+      .span2{ grid-column: 1 / -1; }
+    }
+
     .card{
       background: var(--card);
-      border:1px solid var(--line);
+      border: 1px solid var(--line);
       border-radius: 14px;
       padding: 18px 18px;
       box-shadow: 0 1px 0 rgba(0,0,0,.02);
     }
-    h2{
-      margin:0 0 10px;
-      font-size: 18px;
-      letter-spacing: .6px;
+
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 14px;
+      letter-spacing: .10em;
       text-transform: uppercase;
-      color: var(--accent);
     }
+
     ul{
       margin: 0;
       padding-left: 18px;
-      line-height: 1.75;
+      line-height: 1.85;
+    }
+
+    .muted{ color: var(--muted); }
+
+    .links a{
       color: var(--text);
-    }
-    p{margin:0; line-height:1.75; color:var(--text)}
-    .muted{color:var(--muted)}
-    .project{
-      margin-top: 10px;
-      padding: 12px 14px;
-      border-left: 3px solid var(--accent);
-      background: #fbfaf8;
-      border-radius: 10px;
-    }
-    .contact{
-      text-align:center;
-      margin-top: 26px;
-      padding-top: 22px;
-    }
-    .email{
-      display:inline-block;
-      margin-top: 10px;
-      font-weight: 700;
-      color: var(--accent);
       text-decoration: none;
-      border-bottom: 1px solid rgba(0,0,0,.25);
+      border-bottom: 1px solid rgba(145,128,26,.45);
       padding-bottom: 2px;
     }
+
+    .links a:hover{
+      border-bottom-color: rgba(145,128,26,.85);
+    }
+
+    /* ===== FOOTER ===== */
     footer{
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
       text-align:center;
-      margin-top: 28px;
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.6;
+      line-height: 1.75;
     }
-    @media (min-width: 860px){
-      .cards{grid-template-columns: 1fr 1fr;}
-      .card.full{grid-column: 1 / -1;}
+
+    .foot-strong{
+      color: var(--text);
+      font-weight: 700;
     }
   </style>
 </head>
+
 <body>
   <main class="wrap">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <a class="brand" href="/">
+        <!-- Logo preparado para el futuro -->
+        <img src="logo-dulcesor.svg" alt="DULCESOR" class="logo" />
+        <div class="brand-text">
+          <div class="name">DULCESOR</div>
+          <div class="sub">Asociación Cultural</div>
+        </div>
+      </a>
+
+      <div class="lang">
+        <a class="active" href="/">ES</a>
+        <a href="/en/">EN</a>
+        <a href="/pt/">PT</a>
+        <a href="/fr/">FR</a>
+        <a href="/it/">IT</a>
+      </div>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+      <a href="/asociacion/">Asociación</a>
+      <a href="/proyectos/">Proyectos</a>
+      <a href="/concursos/">Concursos</a>
+      <a href="/rutas-monacales/">Rutas monacales</a>
+      <a href="/patrocinadores/">Patrocinadores</a>
+      <a href="/contacto/">Contacto</a>
+    </nav>
+
+    <!-- HERO -->
     <header>
-      <h1>ASOCIACIÓN CULTURAL DULCESOR</h1>
-      <div class="tagline">Patrimonio gastronómico · Repostería conventual · Cultura y tradición</div>
+      <h1>Asociación Cultural <span class="gold">DULCESOR</span></h1>
+      <div class="tagline">Repostería monacal conventual · Patrimonio gastronómico · Cultura y tradición</div>
 
       <div class="divider"></div>
 
       <p class="lead">
-        La <strong>Asociación Cultural DULCESOR</strong> trabaja en la preservación, difusión y puesta en valor de la
-        <strong>repostería conventual</strong> y del <strong>patrimonio gastronómico</strong> ligado a comunidades religiosas.
-        Su labor se orienta a reconocer y visibilizar una tradición artesanal de alto valor cultural, histórico y social,
-        promoviendo el diálogo entre la tradición y la sociedad contemporánea.
+        La <strong>Asociación Cultural <span class="gold">DULCESOR</span></strong> impulsa la preservación,
+        difusión y puesta en valor de la <strong>repostería monacal conventual</strong> y del patrimonio gastronómico
+        ligado a comunidades religiosas, promoviendo proyectos culturales de alcance nacional e internacional.
       </p>
 
-      <div class="project">
-        <p><strong>Proyecto principal en desarrollo:</strong><br>
-          I Concurso Internacional de Postres Conventuales – Valladolid 2026
-        </p>
+      <div class="callout">
+        <strong>Proyecto principal en desarrollo:</strong><br>
+        I Concurso Internacional de Postres Conventuales – Valladolid 2026
+        <div class="pill">Información en preparación</div>
       </div>
     </header>
 
-    <section class="cards">
+    <!-- CONTENT -->
+    <section class="grid">
       <article class="card">
-        <h2>Identidad de la Asociación</h2>
+        <h2>Identidad</h2>
         <ul>
-          <li><strong>Nombre completo:</strong> Asociación Cultural DULCESOR</li>
+          <li><strong>Nombre:</strong> Asociación Cultural DULCESOR</li>
           <li><strong>Naturaleza:</strong> Asociación cultural sin ánimo de lucro</li>
-          <li><strong>Ámbito de actuación:</strong> Cultural y gastronómico</li>
+          <li><strong>Ámbito:</strong> Cultural y gastronómico</li>
           <li><strong>Proyección:</strong> Nacional e internacional</li>
-          <li><strong>Sede de referencia:</strong> Valladolid (España)</li>
+          <li><strong>Sede:</strong> Valladolid (España)</li>
         </ul>
       </article>
 
       <article class="card">
         <h2>Fines y objetivos</h2>
         <ul>
-          <li>Preservar y difundir la repostería conventual como patrimonio cultural inmaterial.</li>
-          <li>Apoyar y dar visibilidad al trabajo artesanal desarrollado por comunidades religiosas.</li>
-          <li>Promover actividades culturales, gastronómicas y divulgativas.</li>
-          <li>Fomentar el encuentro entre tradición, cultura y sociedad contemporánea.</li>
-          <li>Organizar eventos, encuentros, concursos y actividades formativas relacionadas con sus fines.</li>
+          <li>Preservar y difundir la repostería conventual como patrimonio cultural.</li>
+          <li>Dar visibilidad al trabajo artesanal de comunidades religiosas.</li>
+          <li>Promover actividades culturales y divulgativas.</li>
+          <li>Fomentar el diálogo entre tradición y sociedad.</li>
+          <li>Organizar concursos, encuentros y actividades formativas.</li>
         </ul>
       </article>
 
-      <article class="card full">
-        <h2>Proyectos</h2>
-        <p><strong>Proyecto principal en desarrollo</strong></p>
+      <article class="card span2">
+        <h2>Concursos</h2>
         <p class="muted">
-          <strong>I Concurso Internacional de Postres Conventuales – Valladolid 2026</strong><br>
-          Encuentro cultural y gastronómico de carácter internacional dedicado a la repostería elaborada en conventos y comunidades religiosas,
-          que incluirá actividades divulgativas, concurso, exposiciones y venta de productos artesanos.
+          El concurso forma parte de los proyectos de la asociación. La información publicada es orientativa
+          y podrá actualizarse conforme avance la organización.
         </p>
-        <div style="height:12px"></div>
-        <p><strong>Otros proyectos en preparación</strong></p>
-        <ul>
-          <li>Jornadas culturales y conferencias.</li>
-          <li>Actividades divulgativas sobre patrimonio gastronómico.</li>
-          <li>Colaboraciones con escuelas de cocina e instituciones culturales.</li>
-          <li>Acciones educativas y culturales futuras.</li>
-        </ul>
+        <p class="links">
+          Concurso: <a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a>
+        </p>
+        <div class="pill">Bases y solicitud: próximamente (PDF descargable)</div>
       </article>
 
-      <article class="card full">
-        <h2>Estado actual</h2>
-        <p class="muted">
-          La asociación y sus proyectos se encuentran actualmente en <strong>fase de desarrollo y planificación</strong>.
-          La información publicada es de carácter orientativo y podrá ser actualizada conforme avance la organización y se aprueben oficialmente las bases y programas.
-        </p>
+      <article class="card">
+        <h2>Rutas monacales</h2>
+        <p class="muted">Rutas culturales y gastronómicas para conocer y adquirir productos artesanos.</p>
+        <div class="pill">En preparación</div>
       </article>
 
-      <article class="card full contact">
+      <article class="card">
+        <h2>Patrocinadores</h2>
+        <p class="muted">Espacio para instituciones y entidades colaboradoras.</p>
+        <div class="pill">En preparación</div>
+      </article>
+
+      <article class="card span2">
         <h2>Contacto institucional</h2>
-        <p class="muted">Para información institucional, colaboraciones culturales o futuras actividades de la asociación.</p>
-        <a class="email" href="mailto:info@dulcesor.org">info@dulcesor.org</a>
+        <p class="links">
+          Mail general: <a href="mailto:info@dulcesor.org">info@dulcesor.org</a><br>
+          Contacto: <a href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a>
+        </p>
+        <p class="muted">
+          Plaza Santa Ana 2 · 47001 Valladolid (España)<br>
+          <em>No se facilita teléfono en esta fase.</em>
+        </p>
       </article>
     </section>
 
     <footer>
-      © Asociación Cultural DULCESOR · Asociación cultural sin ánimo de lucro · Proyecto cultural en desarrollo<br>
-      La información publicada podrá ser modificada sin previo aviso.
+      <span class="foot-strong">© Asociación Cultural DULCESOR</span> · Asociación cultural sin ánimo de lucro · Proyecto cultural en desarrollo<br>
+      Plaza Santa Ana 2, 47001 Valladolid · <a class="links" href="mailto:info@dulcesor.org">info@dulcesor.org</a>
     </footer>
+
   </main>
 </body>
 </html>
