@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<head> 
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Asociación Cultural DULCESOR</title>
@@ -350,14 +350,14 @@
       letter-spacing: .6px;
     }
 
-    .linkList{
-      margin-top: 10px;
+    /* Clean list for "other museums" */
+    .cleanList{
+      margin-top: 12px;
       display:flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
     }
-
-    .linkItem{
+    .cleanRow{
       display:flex;
       align-items:center;
       justify-content: space-between;
@@ -367,7 +367,7 @@
       border: 1px solid var(--line);
       background: rgba(255,255,255,.7);
     }
-    .linkItem small{ color: var(--muted); }
+    .cleanRow small{ color: var(--muted); }
 
     footer{
       text-align:center;
@@ -392,7 +392,7 @@
     <!-- Top bar -->
     <div class="topbar">
       <div class="brand" aria-label="DULCESOR">
-        <!-- Logo placeholder: cuando tengas logo, sustituye el contenido o cambia a <img> -->
+        <!-- Logo placeholder -->
         <div class="logo" title="Logo (placeholder)">D</div>
         <div class="brandText">
           <div class="title"><span class="gold">DULCESOR</span></div>
@@ -421,6 +421,7 @@
 
     <!-- Hero -->
     <header class="hero" id="asociacion">
+      <!-- MISMO COLOR QUE DULCESOR -->
       <h1 class="gold" data-i18n="hero_title_1">ASOCIACIÓN CULTURAL</h1>
       <h2 class="gold" data-i18n="hero_title_2">DULCESOR</h2>
 
@@ -474,7 +475,7 @@
       </div>
     </section>
 
-    <!-- Museos Conventuales (dentro de Asociación) -->
+    <!-- Museos Conventuales -->
     <section id="museos" aria-label="Museos Conventuales" style="margin-top:18px;">
       <div class="card full">
         <h3 data-i18n="museums_title">MUSEOS CONVENTUALES</h3>
@@ -484,19 +485,18 @@
           apoyando especialmente a los museos conventuales como espacios vivos de memoria, arte y tradición.
         </p>
 
+        <!-- PRIORIDAD: Santa Ana (destacado) -->
         <div class="museumGrid" aria-label="Museo destacado">
           <div class="museumMedia" aria-label="Imagen del museo">
-            <!-- Imagen subida por ti al repo -->
-            <img src="dolorosa-santa-ana.jpeg" alt="La Dolorosa — Museo del Convento de San Joaquín y Santa Ana (Valladolid)">
+            <img src="dolorosa-santa-ana.jpeg" alt="La Dolorosa — Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)">
           </div>
 
           <div>
             <p class="kicker" data-i18n="museums_featured">Museo destacado</p>
-            <h4 class="museumTitle" data-i18n="museum1_title">Museo del Convento de San Joaquín y Santa Ana (Valladolid)</h4>
+            <h4 class="museumTitle" data-i18n="museum1_title">Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)</h4>
 
             <p data-i18n="museum1_text">
-              Un espacio cultural y patrimonial de referencia, vinculado a la tradición conventual y a la memoria artística de la vida monástica.
-              Te invitamos a conocer el museo y su historia a través de su página oficial.
+              Museo conventual de referencia vinculado a la tradición monástica y al patrimonio artístico. Te invitamos a conocer el museo a través de su web oficial.
             </p>
 
             <div class="actions">
@@ -512,7 +512,7 @@
               Apolo Studio Creativo está desarrollando una experiencia de realidad virtual vinculada a piezas del museo (en preparación).
             </p>
 
-            <!-- Cuando tengas la URL real, sustitúyela aquí -->
+            <!-- Pega aquí la URL real cuando la tengas (ahora queda preparado) -->
             <div class="actions">
               <a class="btn outline" href="#" target="_blank" rel="noopener" data-i18n="museum_vr_btn">
                 Acceder a la experiencia virtual (próximamente)
@@ -523,20 +523,39 @@
 
         <div class="hr"></div>
 
-        <p class="muted" data-i18n="museums_future">
-          Este espacio crecerá incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.
+        <!-- Lista limpia: 2 más -->
+        <h3 style="margin-top:0" data-i18n="museums_other_title">OTROS MUSEOS / ESPACIOS CONVENTUALES (SELECCIÓN)</h3>
+        <p class="muted" data-i18n="museums_other_text">
+          Selección inicial de espacios vinculados al patrimonio conventual. Este apartado se ampliará progresivamente.
         </p>
 
-        <!-- CONTENEDOR ESCALABLE: duplica este bloque para añadir otro museo -->
-        <div class="linkList" aria-label="Futuros museos">
-          <div class="linkItem">
+        <div class="cleanList" aria-label="Otros museos conventuales">
+          <div class="cleanRow">
             <div>
-              <strong data-i18n="museum_future_1">Próximo museo conventual</strong><br>
-              <small data-i18n="museum_future_hint">Se incorporará cuando exista acuerdo o confirmación institucional.</small>
+              <strong data-i18n="m2_name">Museo del Monasterio de Santa Isabel (Valladolid)</strong><br>
+              <small data-i18n="m2_hint">Museo en edificio monástico. Enlace institucional.</small>
             </div>
-            <span class="badge" data-i18n="in_prep">EN PREPARACIÓN</span>
+            <a class="btn" href="https://museoscastillayleon.jcyl.es/web/jcyl/MuseosCastillayLeon/es/Plantilla100Detalle/1258100892610/_/1261041547995/DirectorioPadre" target="_blank" rel="noopener" data-i18n="visit_btn">
+              Visitar web
+            </a>
           </div>
+
+          <div class="cleanRow">
+            <div>
+              <strong data-i18n="m3_name">Convento de San Pablo y San Gregorio – Dominicos (Valladolid)</strong><br>
+              <small data-i18n="m3_hint">Iglesia y espacios conventuales. Web oficial de la comunidad.</small>
+            </div>
+            <a class="btn" href="https://sanpabloysangregorio.dominicos.es/" target="_blank" rel="noopener" data-i18n="visit_btn">
+              Visitar web
+            </a>
+          </div>
+
+          <!-- Para añadir uno nuevo: duplica un bloque .cleanRow y cambia nombre/enlace -->
         </div>
+
+        <p class="note" data-i18n="museums_future">
+          Este espacio crecerá incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.
+        </p>
       </div>
     </section>
 
@@ -589,33 +608,8 @@
           la compra de productos en sus canales oficiales.
         </p>
 
-        <div class="linkList" aria-label="Enlaces a monasterios">
-          <!-- Ejemplos / placeholders: cambia nombre + URL cuando tengas la lista -->
-          <a class="linkItem" href="#" target="_blank" rel="noopener">
-            <div>
-              <strong data-i18n="mon1_name">Monasterio / Convento (Ejemplo 1)</strong><br>
-              <small data-i18n="mon1_hint">Web oficial (enlace por confirmar)</small>
-            </div>
-            <span class="btn" style="padding:6px 10px;" data-i18n="visit_btn">Visitar</span>
-          </a>
-
-          <a class="linkItem" href="#" target="_blank" rel="noopener">
-            <div>
-              <strong data-i18n="mon2_name">Monasterio / Convento (Ejemplo 2)</strong><br>
-              <small data-i18n="mon2_hint">Tienda / productos (si existe)</small>
-            </div>
-            <span class="btn" style="padding:6px 10px;" data-i18n="visit_btn">Visitar</span>
-          </a>
-
-          <a class="linkItem" href="#" target="_blank" rel="noopener">
-            <div>
-              <strong data-i18n="mon3_name">Monasterio / Convento (Ejemplo 3)</strong><br>
-              <small data-i18n="mon3_hint">Información institucional</small>
-            </div>
-            <span class="btn" style="padding:6px 10px;" data-i18n="visit_btn">Visitar</span>
-          </a>
-
-          <div class="linkItem">
+        <div class="cleanList" aria-label="Enlaces a monasterios (en preparación)">
+          <div class="cleanRow">
             <div>
               <strong data-i18n="mon_future">Próximos enlaces</strong><br>
               <small data-i18n="mon_future_hint">Se añadirán nuevos monasterios conforme se confirmen los datos.</small>
@@ -718,15 +712,24 @@
         museums_title: "MUSEOS CONVENTUALES",
         museums_intro: "La Asociación Cultural DULCESOR promueve la conservación y difusión del patrimonio cultural vinculado a la vida conventual, apoyando especialmente a los museos conventuales como espacios vivos de memoria, arte y tradición.",
         museums_featured: "Museo destacado",
-        museum1_title: "Museo del Convento de San Joaquín y Santa Ana (Valladolid)",
-        museum1_text: "Un espacio cultural y patrimonial de referencia, vinculado a la tradición conventual y a la memoria artística de la vida monástica. Te invitamos a conocer el museo y su historia a través de su página oficial.",
+        museum1_title: "Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)",
+        museum1_text: "Museo conventual de referencia vinculado a la tradición monástica y al patrimonio artístico. Te invitamos a conocer el museo a través de su web oficial.",
         museum1_btn: "Visitar web del museo",
+
         museum_vr_kicker: "Experiencia virtual",
         museum_vr_text: "Apolo Studio Creativo está desarrollando una experiencia de realidad virtual vinculada a piezas del museo (en preparación).",
         museum_vr_btn: "Acceder a la experiencia virtual (próximamente)",
+
+        museums_other_title: "OTROS MUSEOS / ESPACIOS CONVENTUALES (SELECCIÓN)",
+        museums_other_text: "Selección inicial de espacios vinculados al patrimonio conventual. Este apartado se ampliará progresivamente.",
+        m2_name: "Museo del Monasterio de Santa Isabel (Valladolid)",
+        m2_hint: "Museo en edificio monástico. Enlace institucional.",
+        m3_name: "Convento de San Pablo y San Gregorio – Dominicos (Valladolid)",
+        m3_hint: "Iglesia y espacios conventuales. Web oficial de la comunidad.",
+
+        visit_btn: "Visitar web",
+
         museums_future: "Este espacio crecerá incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.",
-        museum_future_1: "Próximo museo conventual",
-        museum_future_hint: "Se incorporará cuando exista acuerdo o confirmación institucional.",
 
         contest_title: "I Concurso Internacional de Postres Conventuales – Valladolid 2026",
         contest_intro: "Los concursos forman parte de los proyectos culturales impulsados por la Asociación Cultural DULCESOR. La información publicada es orientativa y podrá actualizarse conforme avance la organización.",
@@ -741,13 +744,6 @@
         routes_text: "Rutas culturales y gastronómicas para conocer y adquirir productos artesanos.",
         monasteries_title: "MONASTERIOS Y PRODUCTOS",
         monasteries_text: "Acceso directo a webs oficiales de monasterios y comunidades. DULCESOR ofrece únicamente el enlace para facilitar la consulta y, si procede, la compra de productos en sus canales oficiales.",
-        visit_btn: "Visitar",
-        mon1_name: "Monasterio / Convento (Ejemplo 1)",
-        mon1_hint: "Web oficial (enlace por confirmar)",
-        mon2_name: "Monasterio / Convento (Ejemplo 2)",
-        mon2_hint: "Tienda / productos (si existe)",
-        mon3_name: "Monasterio / Convento (Ejemplo 3)",
-        mon3_hint: "Información institucional",
         mon_future: "Próximos enlaces",
         mon_future_hint: "Se añadirán nuevos monasterios conforme se confirmen los datos.",
 
@@ -806,15 +802,24 @@
         museums_title: "CONVENT MUSEUMS",
         museums_intro: "DULCESOR promotes the conservation and dissemination of cultural heritage linked to convent life, especially supporting convent museums as living spaces of memory, art and tradition.",
         museums_featured: "Featured museum",
-        museum1_title: "Museum of the Convent of San Joaquín y Santa Ana (Valladolid)",
-        museum1_text: "A reference cultural and heritage space linked to convent tradition and the artistic memory of monastic life. We invite you to visit the museum through its official website.",
+        museum1_title: "Museum of the Royal Monastery of San Joaquín y Santa Ana (Valladolid)",
+        museum1_text: "A reference convent museum linked to monastic tradition and artistic heritage. We invite you to visit the museum through its official website.",
         museum1_btn: "Visit the museum website",
+
         museum_vr_kicker: "Virtual experience",
         museum_vr_text: "Apolo Studio Creativo is developing a virtual reality experience linked to museum pieces (in preparation).",
         museum_vr_btn: "Access the virtual experience (coming soon)",
+
+        museums_other_title: "OTHER CONVENT MUSEUMS / SPACES (SELECTION)",
+        museums_other_text: "Initial selection of spaces linked to convent heritage. This section will be expanded progressively.",
+        m2_name: "Museum of the Monastery of Santa Isabel (Valladolid)",
+        m2_hint: "Museum within a monastic building. Institutional link.",
+        m3_name: "Convent of San Pablo y San Gregorio – Dominicans (Valladolid)",
+        m3_hint: "Church and convent spaces. Official community website.",
+
+        visit_btn: "Visit website",
+
         museums_future: "This area will grow by incorporating other convent museums aligned with DULCESOR’s cultural and heritage values.",
-        museum_future_1: "Next convent museum",
-        museum_future_hint: "Will be added when there is agreement or institutional confirmation.",
 
         contest_title: "I International Convent Desserts Contest – Valladolid 2026",
         contest_intro: "The contest is part of the Association’s cultural projects. Published information is indicative and may be updated as planning advances.",
@@ -829,13 +834,6 @@
         routes_text: "Cultural and gastronomic routes to discover and purchase artisan products.",
         monasteries_title: "MONASTERIES & PRODUCTS",
         monasteries_text: "Direct access to official monastery/community websites. DULCESOR only provides the link to facilitate consultation and, where applicable, purchases through official channels.",
-        visit_btn: "Visit",
-        mon1_name: "Monastery / Convent (Example 1)",
-        mon1_hint: "Official website (to be confirmed)",
-        mon2_name: "Monastery / Convent (Example 2)",
-        mon2_hint: "Shop / products (if available)",
-        mon3_name: "Monastery / Convent (Example 3)",
-        mon3_hint: "Institutional information",
         mon_future: "More links soon",
         mon_future_hint: "New monasteries will be added as details are confirmed.",
 
@@ -894,15 +892,24 @@
         museums_title: "MUSEUS CONVENTUAIS",
         museums_intro: "A DULCESOR promove a conservação e divulgação do património cultural ligado à vida conventual, apoiando especialmente museus conventuais como espaços vivos de memória, arte e tradição.",
         museums_featured: "Museu em destaque",
-        museum1_title: "Museu do Convento de San Joaquín y Santa Ana (Valladolid)",
-        museum1_text: "Um espaço cultural e patrimonial de referência ligado à tradição conventual e à memória artística da vida monástica. Convidamos a visitar o museu através do seu site oficial.",
+        museum1_title: "Museu do Real Mosteiro de San Joaquín y Santa Ana (Valladolid)",
+        museum1_text: "Museu conventual de referência ligado à tradição monástica e ao património artístico. Convidamos a visitar o museu através do seu site oficial.",
         museum1_btn: "Visitar site do museu",
+
         museum_vr_kicker: "Experiência virtual",
         museum_vr_text: "A Apolo Studio Creativo está a desenvolver uma experiência de realidade virtual com peças do museu (em preparação).",
         museum_vr_btn: "Aceder à experiência virtual (em breve)",
+
+        museums_other_title: "OUTROS MUSEUS / ESPAÇOS CONVENTUAIS (SELEÇÃO)",
+        museums_other_text: "Seleção inicial de espaços ligados ao património conventual. Esta secção será ampliada progressivamente.",
+        m2_name: "Museu do Mosteiro de Santa Isabel (Valladolid)",
+        m2_hint: "Museu em edifício monástico. Link institucional.",
+        m3_name: "Convento de San Pablo y San Gregorio – Dominicanos (Valladolid)",
+        m3_hint: "Igreja e espaços conventuais. Site oficial da comunidade.",
+
+        visit_btn: "Visitar site",
+
         museums_future: "Este espaço crescerá incorporando outros museus conventuais alinhados com os valores culturais e patrimoniais da DULCESOR.",
-        museum_future_1: "Próximo museu conventual",
-        museum_future_hint: "Será adicionado quando houver acordo ou confirmação institucional.",
 
         contest_title: "I Concurso Internacional de Doces Conventuais – Valladolid 2026",
         contest_intro: "O concurso integra os projetos culturais da associação. A informação é indicativa e poderá ser atualizada conforme avance a organização.",
@@ -917,13 +924,6 @@
         routes_text: "Rotas culturais e gastronómicas para conhecer e adquirir produtos artesanais.",
         monasteries_title: "MOSTEIROS E PRODUTOS",
         monasteries_text: "Acesso direto a sites oficiais de mosteiros e comunidades. A DULCESOR fornece apenas o link para facilitar a consulta e, se aplicável, a compra nos canais oficiais.",
-        visit_btn: "Visitar",
-        mon1_name: "Mosteiro / Convento (Exemplo 1)",
-        mon1_hint: "Site oficial (por confirmar)",
-        mon2_name: "Mosteiro / Convento (Exemplo 2)",
-        mon2_hint: "Loja / produtos (se existir)",
-        mon3_name: "Mosteiro / Convento (Exemplo 3)",
-        mon3_hint: "Informação institucional",
         mon_future: "Mais links em breve",
         mon_future_hint: "Novos mosteiros serão adicionados conforme se confirmem os dados.",
 
@@ -982,15 +982,24 @@
         museums_title: "MUSÉES CONVENTUELS",
         museums_intro: "DULCESOR promeut la conservation et la diffusion du patrimoine culturel lié à la vie conventuelle, en soutenant particulièrement les musées conventuels comme espaces vivants de mémoire, d’art et de tradition.",
         museums_featured: "Musée à la une",
-        museum1_title: "Musée du Couvent de San Joaquín y Santa Ana (Valladolid)",
-        museum1_text: "Un lieu culturel et patrimonial de référence, lié à la tradition conventuelle et à la mémoire artistique de la vie monastique. Nous vous invitons à découvrir le musée via son site officiel.",
+        museum1_title: "Musée du Monastère Royal de San Joaquín y Santa Ana (Valladolid)",
+        museum1_text: "Musée conventuel de référence lié à la tradition monastique et au patrimoine artistique. Nous vous invitons à découvrir le musée via son site officiel.",
         museum1_btn: "Visiter le site du musée",
+
         museum_vr_kicker: "Expérience virtuelle",
         museum_vr_text: "Apolo Studio Creativo développe une expérience de réalité virtuelle liée à des pièces du musée (en préparation).",
         museum_vr_btn: "Accéder à l’expérience virtuelle (bientôt)",
+
+        museums_other_title: "AUTRES MUSÉES / ESPACES CONVENTUELS (SÉLECTION)",
+        museums_other_text: "Sélection initiale d’espaces liés au patrimoine conventuel. Cette section sera progressivement enrichie.",
+        m2_name: "Musée du Monastère de Santa Isabel (Valladolid)",
+        m2_hint: "Musée dans un bâtiment monastique. Lien institutionnel.",
+        m3_name: "Couvent de San Pablo y San Gregorio – Dominicains (Valladolid)",
+        m3_hint: "Église et espaces conventuels. Site officiel de la communauté.",
+
+        visit_btn: "Visiter le site",
+
         museums_future: "Cet espace s’enrichira en intégrant d’autres musées conventuels partageant les valeurs culturelles et patrimoniales de DULCESOR.",
-        museum_future_1: "Prochain musée conventuel",
-        museum_future_hint: "Sera ajouté lorsqu’un accord ou une confirmation institutionnelle existera.",
 
         contest_title: "I Concours International de Pâtisserie Conventuelle – Valladolid 2026",
         contest_intro: "Le concours fait partie des projets culturels de l’association. Les informations publiées sont indicatives et pourront être mises à jour.",
@@ -1005,13 +1014,6 @@
         routes_text: "Itinéraires culturels et gastronomiques pour découvrir et acheter des produits artisanaux.",
         monasteries_title: "MONASTÈRES ET PRODUITS",
         monasteries_text: "Accès direct aux sites officiels des monastères et communautés. DULCESOR fournit uniquement le lien pour faciliter la consultation et, le cas échéant, l’achat via les canaux officiels.",
-        visit_btn: "Visiter",
-        mon1_name: "Monastère / Couvent (Exemple 1)",
-        mon1_hint: "Site officiel (à confirmer)",
-        mon2_name: "Monastère / Couvent (Exemple 2)",
-        mon2_hint: "Boutique / produits (si disponible)",
-        mon3_name: "Monastère / Couvent (Exemple 3)",
-        mon3_hint: "Information institutionnelle",
         mon_future: "Prochains liens",
         mon_future_hint: "De nouveaux monastères seront ajoutés au fur et à mesure des confirmations.",
 
@@ -1070,15 +1072,24 @@
         museums_title: "MUSEI CONVENTUALI",
         museums_intro: "DULCESOR promuove la conservazione e la diffusione del patrimonio culturale legato alla vita conventuale, sostenendo in particolare i musei conventuali come spazi vivi di memoria, arte e tradizione.",
         museums_featured: "Museo in evidenza",
-        museum1_title: "Museo del Convento di San Joaquín y Santa Ana (Valladolid)",
-        museum1_text: "Uno spazio culturale e patrimoniale di riferimento, legato alla tradizione conventuale e alla memoria artistica della vita monastica. Ti invitiamo a scoprire il museo attraverso il suo sito ufficiale.",
+        museum1_title: "Museo del Real Monastero di San Joaquín y Santa Ana (Valladolid)",
+        museum1_text: "Museo conventuale di riferimento legato alla tradizione monastica e al patrimonio artistico. Ti invitiamo a scoprire il museo tramite il suo sito ufficiale.",
         museum1_btn: "Visita il sito del museo",
+
         museum_vr_kicker: "Esperienza virtuale",
         museum_vr_text: "Apolo Studio Creativo sta sviluppando un’esperienza di realtà virtuale legata a opere del museo (in preparazione).",
         museum_vr_btn: "Accedi all’esperienza virtuale (prossimamente)",
+
+        museums_other_title: "ALTRI MUSEI / SPAZI CONVENTUALI (SELEZIONE)",
+        museums_other_text: "Selezione iniziale di spazi legati al patrimonio conventuale. Questa sezione sarà ampliata progressivamente.",
+        m2_name: "Museo del Monastero di Santa Isabel (Valladolid)",
+        m2_hint: "Museo in edificio monastico. Link istituzionale.",
+        m3_name: "Convento di San Pablo y San Gregorio – Domenicani (Valladolid)",
+        m3_hint: "Chiesa e spazi conventuali. Sito ufficiale della comunità.",
+
+        visit_btn: "Visita il sito",
+
         museums_future: "Questo spazio crescerà includendo altri musei conventuali in linea con i valori culturali e patrimoniali di DULCESOR.",
-        museum_future_1: "Prossimo museo conventuale",
-        museum_future_hint: "Sarà aggiunto quando ci sarà un accordo o una conferma istituzionale.",
 
         contest_title: "I Concorso Internazionale di Dolci Conventuali – Valladolid 2026",
         contest_intro: "Il concorso fa parte dei progetti culturali dell’associazione. Le informazioni pubblicate sono indicative e potranno essere aggiornate.",
@@ -1093,13 +1104,6 @@
         routes_text: "Itinerari culturali e gastronomici per conoscere e acquistare prodotti artigianali.",
         monasteries_title: "MONASTERI E PRODOTTI",
         monasteries_text: "Accesso diretto ai siti ufficiali di monasteri e comunità. DULCESOR fornisce solo il link per facilitare la consultazione e, se previsto, l’acquisto attraverso canali ufficiali.",
-        visit_btn: "Visita",
-        mon1_name: "Monastero / Convento (Esempio 1)",
-        mon1_hint: "Sito ufficiale (da confermare)",
-        mon2_name: "Monastero / Convento (Esempio 2)",
-        mon2_hint: "Negozio / prodotti (se disponibile)",
-        mon3_name: "Monastero / Convento (Esempio 3)",
-        mon3_hint: "Informazioni istituzionali",
         mon_future: "Prossimi link",
         mon_future_hint: "Verranno aggiunti nuovi monasteri man mano che i dati saranno confermati.",
 
@@ -1123,11 +1127,8 @@
 
       document.querySelectorAll("[data-i18n]").forEach(el=>{
         const key = el.getAttribute("data-i18n");
-        if (!key) return;
         const value = dict[key];
-        if (typeof value === "string"){
-          el.innerHTML = value;
-        }
+        if (typeof value === "string") el.innerHTML = value;
       });
 
       document.querySelectorAll(".langBtn").forEach(b=>{
@@ -1141,7 +1142,6 @@
       btn.addEventListener("click", ()=> applyLang(btn.dataset.lang));
     });
 
-    // init
     const saved = (()=>{ try { return localStorage.getItem("dulcesor_lang"); } catch(e){ return null; }})();
     applyLang(saved && I18N[saved] ? saved : "es");
   </script>
