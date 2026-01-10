@@ -227,21 +227,14 @@
       color: var(--muted);
     }
 
-    /* Simple image placeholder (logo/photo later) */
+    /* Image box */
     .imgBox{
       margin-top: 12px;
       border-radius: 14px;
       overflow:hidden;
       border: 1px solid var(--line);
       background: #f2efe9;
-      height: 180px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
+      height: 220px;
       position: relative;
     }
     .imgBox img{
@@ -249,6 +242,16 @@
       height:100%;
       object-fit: cover;
       display:block;
+    }
+    .imgCaption{
+      position:absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 10px 12px;
+      background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
     /* ===== Standard Footer (fixed, NOT translated) ===== */
@@ -335,12 +338,12 @@
           Espacio vinculado a la identidad cultural de DULCESOR.
         </p>
 
-        <!-- Placeholder: cuando tengas la imagen, la pones en /assets/ y cambias src -->
-        <div class="imgBox" aria-label="Imagen del museo">
-          <span data-i18n="img_placeholder">IMAGEN DESTACADA (PRÓXIMAMENTE)</span>
-          <!-- Ejemplo futuro:
-          <img src="assets/santa-ana.jpg" alt="Museo del Real Monasterio de San Joaquín y Santa Ana">
-          -->
+        <!-- FOTO (ya incluida) -->
+        <div class="imgBox" aria-label="Dolorosa del museo">
+          <img src="dolorosa-santa-Ana.jpeg" alt="Dolorosa · Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)">
+          <div class="imgCaption" data-i18n="img_caption">
+            Pieza destacada · Museo San Joaquín y Santa Ana
+          </div>
         </div>
 
         <div class="badgeRow">
@@ -363,7 +366,7 @@
         </p>
       </div>
 
-      <!-- OTROS MUSEOS (contenedor escalable) -->
+      <!-- Otros museos (contenedor escalable) -->
       <div class="grid" style="margin-top:14px;">
         <div class="item">
           <h3 data-i18n="m2_title">Monasterio de Santa Clara (Tordesillas) · Conjunto monumental</h3>
@@ -388,6 +391,20 @@
 
       <p class="note" data-i18n="museos_growth">
         Este apartado crecerá incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.
+      </p>
+    </section>
+
+    <!-- =========================
+         RUTAS (EN PREPARACIÓN)
+         ========================= -->
+    <section class="card" aria-label="Rutas de una mañana">
+      <h2 data-i18n="routes_title">Rutas de una mañana</h2>
+      <p class="muted" data-i18n="routes_intro">
+        Prepararemos pequeñas rutas culturales (mañana o media jornada) para visitar tres o cuatro monasterios, museos o espacios patrimoniales, con posibilidad de enlazar a la compra de productos si la comunidad dispone de canales oficiales.
+      </p>
+      <span class="badge" data-i18n="in_prep">EN PREPARACIÓN</span>
+      <p class="note" data-i18n="routes_note">
+        Estas rutas se publicarán cuando estén contrastadas y presenten un enfoque cultural y respetuoso con las comunidades.
       </p>
     </section>
 
@@ -476,7 +493,7 @@
 
         m1_title: "Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)",
         m1_text: "Museo de arte sacro barroco en el monasterio cisterciense, con un conjunto patrimonial de gran relevancia. Espacio vinculado a la identidad cultural de DULCESOR.",
-        img_placeholder: "IMAGEN DESTACADA (PRÓXIMAMENTE)",
+        img_caption: "Pieza destacada · Museo San Joaquín y Santa Ana",
         priority: "PRIORITARIO",
         museum_badge: "MUSEO CONVENTUAL",
         valladolid: "VALLADOLID",
@@ -490,6 +507,10 @@
         m3_text: "Espacio vinculado al patrimonio conventual de la provincia. Este bloque está preparado para completarse con información institucional y enlace oficial.",
         in_prep: "EN PREPARACIÓN",
         museos_growth: "Este apartado crecerá incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.",
+
+        routes_title: "Rutas de una mañana",
+        routes_intro: "Prepararemos pequeñas rutas culturales (mañana o media jornada) para visitar tres o cuatro monasterios, museos o espacios patrimoniales, con posibilidad de enlazar a la compra de productos si la comunidad dispone de canales oficiales.",
+        routes_note: "Estas rutas se publicarán cuando estén contrastadas y presenten un enfoque cultural y respetuoso con las comunidades.",
 
         monasterios_title: "Conventos y Monasterios",
         monasterios_intro: "Enlaces directos a webs oficiales o canales institucionales de conventos y monasterios. Cuando existan tiendas online o sistemas de venta propios, se enlazarán para facilitar el acceso a sus productos.",
@@ -527,7 +548,7 @@
 
         m1_title: "Museum of the Royal Monastery of San Joaquín y Santa Ana (Valladolid)",
         m1_text: "Baroque sacred art museum in the Cistercian monastery, with a highly relevant heritage collection. A space linked to DULCESOR’s cultural identity.",
-        img_placeholder: "FEATURED IMAGE (COMING SOON)",
+        img_caption: "Featured piece · San Joaquín y Santa Ana Museum",
         priority: "PRIORITY",
         museum_badge: "CONVENT MUSEUM",
         valladolid: "VALLADOLID",
@@ -541,6 +562,10 @@
         m3_text: "A site linked to the convent heritage of the province. This block is ready to be completed with institutional information and an official link.",
         in_prep: "IN PREPARATION",
         museos_growth: "This section will grow by incorporating other convent museums sharing DULCESOR’s cultural and heritage values.",
+
+        routes_title: "Morning routes",
+        routes_intro: "We will prepare small cultural routes (morning or half-day) to visit three or four monasteries, museums or heritage spaces, with the option to link to official product purchases when available.",
+        routes_note: "These routes will be published once verified and aligned with a respectful cultural approach.",
 
         monasterios_title: "Convents and Monasteries",
         monasterios_intro: "Direct links to official websites or institutional channels of convents and monasteries. Where official online shops exist, they will be linked to facilitate access to their products.",
@@ -578,7 +603,7 @@
 
         m1_title: "Museu do Real Mosteiro de San Joaquín y Santa Ana (Valladolid)",
         m1_text: "Museu de arte sacra barroca no mosteiro cisterciense, com um conjunto patrimonial de grande relevância. Espaço ligado à identidade cultural da DULCESOR.",
-        img_placeholder: "IMAGEM EM DESTAQUE (EM BREVE)",
+        img_caption: "Peça em destaque · Museu San Joaquín y Santa Ana",
         priority: "PRIORITÁRIO",
         museum_badge: "MUSEU CONVENTUAL",
         valladolid: "VALLADOLID",
@@ -592,6 +617,10 @@
         m3_text: "Espaço ligado ao património conventual da província. Este bloco está preparado para ser completado com informação institucional e link oficial.",
         in_prep: "EM PREPARAÇÃO",
         museos_growth: "Este espaço crescerá incorporando outros museus conventuais que partilhem os valores culturais e patrimoniais da DULCESOR.",
+
+        routes_title: "Rotas de uma manhã",
+        routes_intro: "Prepararemos pequenas rotas culturais (manhã ou meia jornada) para visitar três ou quatro mosteiros, museus ou espaços patrimoniais, com a possibilidade de ligar à compra oficial de produtos quando existir.",
+        routes_note: "Estas rotas serão publicadas quando estiverem validadas e alinhadas com uma abordagem cultural respeitosa.",
 
         monasterios_title: "Conventos e Mosteiros",
         monasterios_intro: "Links diretos para websites oficiais ou canais institucionais de conventos e mosteiros. Quando existirem lojas online oficiais, serão incluídas para facilitar o acesso aos seus produtos.",
@@ -629,7 +658,7 @@
 
         m1_title: "Musée du Monastère Royal de San Joaquín y Santa Ana (Valladolid)",
         m1_text: "Musée d’art sacré baroque au sein du monastère cistercien, avec un ensemble patrimonial de grande valeur. Un lieu lié à l’identité culturelle de DULCESOR.",
-        img_placeholder: "IMAGE À LA UNE (BIENTÔT)",
+        img_caption: "Œuvre mise en avant · Musée San Joaquín y Santa Ana",
         priority: "PRIORITAIRE",
         museum_badge: "MUSÉE CONVENTUEL",
         valladolid: "VALLADOLID",
@@ -644,6 +673,10 @@
         in_prep: "EN PRÉPARATION",
         museos_growth: "Cet espace s’enrichira en intégrant d’autres musées conventuels partageant les valeurs culturelles et patrimoniales de DULCESOR.",
 
+        routes_title: "Parcours d’une matinée",
+        routes_intro: "Nous préparerons de petits parcours culturels (matinée ou demi-journée) pour visiter trois ou quatre monastères, musées ou lieux patrimoniaux, avec la possibilité de renvoyer vers l’achat officiel de produits lorsque disponible.",
+        routes_note: "Ces parcours seront publiés une fois vérifiés et alignés sur une approche culturelle respectueuse.",
+
         monasterios_title: "Couvents et monastères",
         monasterios_intro: "Liens directs vers les sites officiels ou canaux institutionnels des couvents et monastères. Lorsqu’il existe des boutiques en ligne officielles, elles seront indiquées pour faciliter l’accès à leurs produits.",
         disclaimer: "DULCESOR ne commercialise pas de produits sur ce site. Les liens redirigent vers des plateformes externes gérées par chaque communauté ou entité.",
@@ -655,7 +688,7 @@
         c_btn_web: "Site officiel · Bientôt",
         c_btn_shop: "Acheter des produits · Bientôt",
 
-        how_add: "Pour ajouter un nouveau couvent/monastère, dupliquez un bloc “Exemple” et modifiez titre, texte et liens."
+        how_add: "Pour ajouter un nouveau couvent/monastère, dupliquez un bloc « Exemple » et modifiez titre, texte et liens."
       },
 
       it: {
@@ -680,7 +713,7 @@
 
         m1_title: "Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)",
         m1_text: "Museo di arte sacra barocca nel monastero cistercense, con un patrimonio di grande rilievo. Spazio legato all’identità culturale di DULCESOR.",
-        img_placeholder: "IMMAGINE IN EVIDENZA (PROSSIMAMENTE)",
+        img_caption: "Opera in evidenza · Museo San Joaquín y Santa Ana",
         priority: "PRIORITÀ",
         museum_badge: "MUSEO CONVENTUALE",
         valladolid: "VALLADOLID",
@@ -694,6 +727,10 @@
         m3_text: "Spazio legato al patrimonio conventuale della provincia. Blocco pronto per essere completato con informazioni istituzionali e link ufficiale.",
         in_prep: "IN PREPARAZIONE",
         museos_growth: "Questo spazio crescerà includendo altri musei conventuali che condividono i valori culturali e patrimoniali di DULCESOR.",
+
+        routes_title: "Percorsi di una mattina",
+        routes_intro: "Prepareremo piccoli percorsi culturali (mattina o mezza giornata) per visitare tre o quattro monasteri, musei o luoghi di valore storico, con la possibilità di collegarsi all’acquisto ufficiale di prodotti quando disponibile.",
+        routes_note: "Questi percorsi saranno pubblicati una volta verificati e coerenti con un approccio culturale rispettoso.",
 
         monasterios_title: "Conventi e monasteri",
         monasterios_intro: "Link diretti a siti ufficiali o canali istituzionali di conventi e monasteri. Dove esistono shop online ufficiali, saranno indicati per facilitare l’accesso ai prodotti.",
