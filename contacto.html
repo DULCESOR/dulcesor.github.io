@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto — DULCESOR</title>
+  <title>Contacto · DULCESOR</title>
   <meta name="description" content="Contacto institucional de la Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual." />
 
   <style>
@@ -27,13 +27,14 @@
       line-height: 1.6;
     }
     a{color:inherit}
+
     .wrap{
       max-width: 1040px;
       margin: 0 auto;
       padding: 28px 20px 46px;
     }
 
-    /* Top bar */
+    /* ===== Standard Header (asociacion.html) ===== */
     .topbar{
       display:flex;
       align-items:center;
@@ -58,14 +59,16 @@
       letter-spacing: .5px;
       background: #fbfaf8;
     }
-    .brand strong{display:block;letter-spacing: .08em; color: var(--gold); font-weight: 800;}
+    .brand strong{display:block;letter-spacing: .08em}
     .brand small{
       display:block;
-      color: var(--gold);
+      color: var(--muted);
       letter-spacing: .18em;
       font-size: 12px;
       margin-top: -2px;
     }
+    .gold{color: var(--gold); font-weight: 800}
+
     .lang{
       display:flex;
       gap:10px;
@@ -89,7 +92,6 @@
       background: rgba(145,128,26,.08);
     }
 
-    /* Nav */
     nav{
       display:flex;
       gap: 22px;
@@ -116,133 +118,107 @@
       border: 1px solid rgba(145,128,26,.25);
     }
 
-    /* Hero */
+    /* ===== Content ===== */
     .hero{
       text-align:center;
-      padding: 34px 0 18px;
+      padding: 34px 0 10px;
     }
     .hero h1{
       margin: 0 0 10px;
-      font-size: clamp(28px, 4vw, 46px);
+      font-size: clamp(26px, 3.6vw, 40px);
       letter-spacing: .14em;
       color: var(--gold);
-      font-weight: 800;
+      font-weight: 900;
     }
     .hero p{
       margin: 0 auto;
-      max-width: 860px;
+      max-width: 900px;
       color: var(--muted);
       font-size: 15px;
     }
 
-    /* Cards */
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      margin-top: 16px;
-    }
-    .cards2{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
     .card{
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 18px 18px 16px;
+      margin-top: 18px;
     }
     .card h2{
-      margin: 0 0 10px;
+      margin: 0 0 12px;
       letter-spacing: .18em;
       font-size: 13px;
       color: var(--text);
       text-transform: uppercase;
     }
-    .muted{color: var(--muted)}
-    .contactLine{
-      display:flex;
-      align-items:flex-start;
-      gap:10px;
-      margin: 10px 0;
-      flex-wrap:wrap;
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    @media (min-width: 900px){
+      .grid{grid-template-columns: 1fr 1fr;}
+    }
+
+    .row{
+      padding: 14px 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fbfaf8;
     }
     .label{
-      min-width: 150px;
-      color: var(--muted);
-      letter-spacing: .08em;
-      font-size: 12.5px;
+      display:block;
+      font-size: 12px;
+      letter-spacing: .16em;
       text-transform: uppercase;
-      padding-top: 2px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .value{
+      font-size: 16px;
+      color: var(--text);
     }
     .value a{
-      text-decoration: none;
-      border-bottom: 1px dotted rgba(145,128,26,.55);
+      color: var(--gold);
+      text-decoration:none;
+      font-weight: 700;
     }
-    .value a:hover{
-      border-bottom-style: solid;
-    }
+    .value a:hover{ text-decoration: underline; }
 
-    .actions{
-      display:flex;
-      gap: 10px;
-      flex-wrap:wrap;
+    .note{
+      color: var(--muted);
+      font-size: 14px;
       margin-top: 12px;
     }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      border-radius: 999px;
-      border: 1px solid rgba(145,128,26,.35);
-      background: rgba(145,128,26,.10);
-      color: var(--text);
-      padding: 10px 14px;
-      font-size: 12px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      text-decoration:none;
-      cursor:pointer;
-    }
-    .btn:hover{background: rgba(145,128,26,.14)}
-    .btn.outline{
-      background: transparent;
-      border-color: var(--line);
-      color: var(--muted);
-    }
-    .btn.outline:hover{
-      background: rgba(0,0,0,.03);
-      color: var(--text);
-    }
 
-    /* Footer */
-    footer{
-      text-align:center;
-      margin-top: 28px;
-      color: var(--muted);
-      font-size: 12.5px;
+    /* ===== Standard Footer (fixed, NOT translated) ===== */
+    .siteFooter{
+      margin-top: 36px;
       border-top: 1px solid var(--line);
-      padding-top: 16px;
-      line-height: 1.8;
+      padding: 20px 16px 28px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
     }
-    .footerStrong{color: var(--text); font-weight: 700}
-    .apolo{color: var(--muted)}
-    @media (min-width: 920px){
-      .cards2{grid-template-columns: 1fr 1fr;}
-    }
+    .footerInner{max-width: 980px; margin: 0 auto;}
+    .footerLine1{font-weight: 600; color: var(--text);}
+    .footerLine4{margin-top: 6px;}
   </style>
 </head>
 
 <body>
   <main class="wrap">
+
+    <!-- Header (standard) -->
     <div class="topbar">
       <div class="brand">
         <div class="mark" aria-label="DULCESOR">D</div>
         <div>
-          <strong>DULCESOR</strong>
+          <strong class="gold">DULCESOR</strong>
           <small data-i18n="brand_sub">ASOCIACIÓN CULTURAL</small>
         </div>
       </div>
@@ -257,6 +233,7 @@
     </div>
 
     <nav aria-label="Menú">
+      <a href="index.html" data-i18n="nav_inicio">INICIO</a>
       <a href="asociacion.html" data-i18n="nav_asociacion">ASOCIACIÓN</a>
       <a href="proyectos.html" data-i18n="nav_proyectos">PROYECTOS</a>
       <a href="concursos.html" data-i18n="nav_concursos">CONCURSOS</a>
@@ -266,244 +243,159 @@
     </nav>
 
     <section class="hero" aria-label="Contacto">
-      <h1 data-i18n="hero_title">CONTACTO</h1>
-      <p data-i18n="hero_sub">
-        Contacto institucional de la Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual.
+      <h1 data-i18n="title">CONTACTO</h1>
+      <p data-i18n="subtitle">
+        Para información institucional, colaboraciones culturales y consultas generales.
       </p>
     </section>
 
-    <section class="cards2" aria-label="Datos de contacto">
-      <div class="card">
-        <h2 data-i18n="card_title">CONTACTO INSTITUCIONAL</h2>
+    <section class="card" aria-label="Datos de contacto">
+      <h2 data-i18n="card_title">Contacto institucional</h2>
 
-        <div class="contactLine">
-          <div class="label" data-i18n="lbl_mail_general">Mail general</div>
-          <div class="value">
+      <div class="grid">
+        <div class="row">
+          <span class="label" data-i18n="lbl_general">Mail general</span>
+          <span class="value">
             <a href="mailto:info@dulcesor.org">info@dulcesor.org</a>
-          </div>
+          </span>
         </div>
 
-        <div class="contactLine">
-          <div class="label" data-i18n="lbl_mail_contact">Contacto</div>
-          <div class="value">
-            <a href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a>
-          </div>
-        </div>
-
-        <div class="contactLine">
-          <div class="label" data-i18n="lbl_mail_contest">Concurso</div>
-          <div class="value">
+        <div class="row">
+          <span class="label" data-i18n="lbl_concurso">Concurso</span>
+          <span class="value">
             <a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a>
-          </div>
+          </span>
         </div>
 
-        <div class="contactLine">
-          <div class="label" data-i18n="lbl_address">Dirección</div>
-          <div class="value" data-i18n="address">
-            Plaza Santa Ana 2 · 47001 Valladolid (España)
-          </div>
+        <div class="row">
+          <span class="label" data-i18n="lbl_contacto">Contacto</span>
+          <span class="value">
+            <a href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a>
+          </span>
         </div>
 
-        <div class="contactLine">
-          <div class="label" data-i18n="lbl_phone">Teléfono</div>
-          <div class="value muted" data-i18n="no_phone">No se facilita teléfono en esta fase.</div>
-        </div>
-
-        <div class="actions">
-          <a class="btn" target="_blank"
-             href="https://www.google.com/maps/search/?api=1&query=Plaza%20Santa%20Ana%202%2C%2047001%20Valladolid"
-             data-i18n="btn_maps">VER UBICACIÓN</a>
-          <a class="btn outline" href="mailto:info@dulcesor.org" data-i18n="btn_write">ESCRIBIR EMAIL</a>
+        <div class="row">
+          <span class="label" data-i18n="lbl_dir">Dirección</span>
+          <span class="value">Plaza Santa Ana 2 · 47001 Valladolid (España)</span>
         </div>
       </div>
 
-      <div class="card">
-        <h2 data-i18n="card_note_title">NOTA</h2>
-        <p class="muted" data-i18n="card_note_text">
-          La información de contacto puede actualizarse conforme avance la organización y se definan los canales oficiales
-          de atención. Gracias por su comprensión.
-        </p>
-
-        <div class="actions">
-          <a class="btn outline" href="index.html" data-i18n="btn_home">VOLVER A INICIO</a>
-        </div>
-      </div>
+      <p class="note" data-i18n="note">
+        Nota: No se facilita teléfono en esta fase. La asociación se encuentra en proceso de inscripción.
+      </p>
     </section>
 
-    <footer aria-label="Pie">
-      <div class="footerStrong" data-i18n="footer_line_1">
-        © Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual · Asociación cultural sin ánimo de lucro · En proceso de inscripción
+    <!-- Footer (standard, fixed) -->
+    <footer class="siteFooter">
+      <div class="footerInner">
+        <div class="footerLine1">
+          © <span class="gold">Asociación Cultural ‘DULCESOR’</span> – Repostería Monacal Conventual
+        </div>
+        <div class="footerLine2">
+          Asociación cultural sin ánimo de lucro · En proceso de inscripción
+        </div>
+        <div class="footerLine3">
+          Valladolid (España)
+        </div>
+        <div class="footerLine4">
+          Sitio web desarrollado por Apolo Studio Creativo
+        </div>
       </div>
-      <div data-i18n="footer_line_2">Valladolid (España)</div>
-      <div class="apolo" data-i18n="footer_apolo">Sitio desarrollado por Apolo Studio Creativo (en preparación)</div>
     </footer>
+
   </main>
 
   <script>
     const I18N = {
       es: {
         brand_sub: "ASOCIACIÓN CULTURAL",
+        nav_inicio: "INICIO",
         nav_asociacion: "ASOCIACIÓN",
         nav_proyectos: "PROYECTOS",
         nav_concursos: "CONCURSOS",
         nav_rutas: "RUTAS MONACALES",
         nav_patrocinadores: "PATROCINADORES",
         nav_contacto: "CONTACTO",
-
-        hero_title: "CONTACTO",
-        hero_sub: "Contacto institucional de la Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual.",
-
-        card_title: "CONTACTO INSTITUCIONAL",
-        lbl_mail_general: "Mail general",
-        lbl_mail_contact: "Contacto",
-        lbl_mail_contest: "Concurso",
-        lbl_address: "Dirección",
-        address: "Plaza Santa Ana 2 · 47001 Valladolid (España)",
-        lbl_phone: "Teléfono",
-        no_phone: "No se facilita teléfono en esta fase.",
-
-        btn_maps: "VER UBICACIÓN",
-        btn_write: "ESCRIBIR EMAIL",
-
-        card_note_title: "NOTA",
-        card_note_text: "La información de contacto puede actualizarse conforme avance la organización y se definan los canales oficiales de atención. Gracias por su comprensión.",
-        btn_home: "VOLVER A INICIO",
-
-        footer_line_1: "© Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual · Asociación cultural sin ánimo de lucro · En proceso de inscripción",
-        footer_line_2: "Valladolid (España)",
-        footer_apolo: "Sitio desarrollado por Apolo Studio Creativo (en preparación)"
+        title: "CONTACTO",
+        subtitle: "Para información institucional, colaboraciones culturales y consultas generales.",
+        card_title: "Contacto institucional",
+        lbl_general: "Mail general",
+        lbl_concurso: "Concurso",
+        lbl_contacto: "Contacto",
+        lbl_dir: "Dirección",
+        note: "Nota: No se facilita teléfono en esta fase. La asociación se encuentra en proceso de inscripción."
       },
-
       en: {
         brand_sub: "CULTURAL ASSOCIATION",
+        nav_inicio: "HOME",
         nav_asociacion: "ASSOCIATION",
         nav_proyectos: "PROJECTS",
         nav_concursos: "CONTESTS",
         nav_rutas: "MONASTIC ROUTES",
         nav_patrocinadores: "SPONSORS",
         nav_contacto: "CONTACT",
-
-        hero_title: "CONTACT",
-        hero_sub: "Institutional contact for the Cultural Association ‘DULCESOR’ – Monastic Convent Pastry.",
-
-        card_title: "INSTITUTIONAL CONTACT",
-        lbl_mail_general: "General email",
-        lbl_mail_contact: "Contact",
-        lbl_mail_contest: "Contest",
-        lbl_address: "Address",
-        address: "Plaza Santa Ana 2 · 47001 Valladolid (Spain)",
-        lbl_phone: "Phone",
-        no_phone: "Phone number is not provided at this stage.",
-
-        btn_maps: "VIEW LOCATION",
-        btn_write: "WRITE EMAIL",
-
-        card_note_title: "NOTE",
-        card_note_text: "Contact information may be updated as the organization progresses and official channels are defined. Thank you for your understanding.",
-        btn_home: "BACK TO HOME",
-
-        footer_line_1: "© Cultural Association ‘DULCESOR’ – Monastic Convent Pastry · Non-profit cultural association · Registration in progress",
-        footer_line_2: "Valladolid (Spain)",
-        footer_apolo: "Site developed by Apolo Studio Creativo (in preparation)"
+        title: "CONTACT",
+        subtitle: "For institutional information, cultural collaborations and general enquiries.",
+        card_title: "Institutional contact",
+        lbl_general: "General email",
+        lbl_concurso: "Contest",
+        lbl_contacto: "Contact",
+        lbl_dir: "Address",
+        note: "Note: No phone number is provided at this stage. The association is in the registration process."
       },
-
       pt: {
         brand_sub: "ASSOCIAÇÃO CULTURAL",
+        nav_inicio: "INÍCIO",
         nav_asociacion: "ASSOCIAÇÃO",
         nav_proyectos: "PROJETOS",
         nav_concursos: "CONCURSOS",
         nav_rutas: "ROTAS MONÁSTICAS",
         nav_patrocinadores: "PATROCINADORES",
         nav_contacto: "CONTACTO",
-
-        hero_title: "CONTACTO",
-        hero_sub: "Contacto institucional da Associação Cultural ‘DULCESOR’ – Doçaria Monacal Conventual.",
-
-        card_title: "CONTACTO INSTITUCIONAL",
-        lbl_mail_general: "Email geral",
-        lbl_mail_contact: "Contacto",
-        lbl_mail_contest: "Concurso",
-        lbl_address: "Endereço",
-        address: "Plaza Santa Ana 2 · 47001 Valladolid (Espanha)",
-        lbl_phone: "Telefone",
-        no_phone: "Não é fornecido telefone nesta fase.",
-
-        btn_maps: "VER LOCALIZAÇÃO",
-        btn_write: "ESCREVER EMAIL",
-
-        card_note_title: "NOTA",
-        card_note_text: "As informações de contacto podem ser atualizadas à medida que a organização avance e os canais oficiais sejam definidos. Obrigado pela compreensão.",
-        btn_home: "VOLTAR AO INÍCIO",
-
-        footer_line_1: "© Associação Cultural ‘DULCESOR’ – Doçaria Monacal Conventual · Associação sem fins lucrativos · Em processo de inscrição",
-        footer_line_2: "Valladolid (Espanha)",
-        footer_apolo: "Site desenvolvido por Apolo Studio Creativo (em preparação)"
+        title: "CONTACTO",
+        subtitle: "Para informação institucional, colaborações culturais e questões gerais.",
+        card_title: "Contacto institucional",
+        lbl_general: "Email geral",
+        lbl_concurso: "Concurso",
+        lbl_contacto: "Contacto",
+        lbl_dir: "Endereço",
+        note: "Nota: Não é disponibilizado telefone nesta fase. A associação está em processo de inscrição."
       },
-
       fr: {
         brand_sub: "ASSOCIATION CULTURELLE",
+        nav_inicio: "ACCUEIL",
         nav_asociacion: "ASSOCIATION",
         nav_proyectos: "PROJETS",
         nav_concursos: "CONCOURS",
         nav_rutas: "ITINÉRAIRES MONASTIQUES",
         nav_patrocinadores: "PARTENAIRES",
         nav_contacto: "CONTACT",
-
-        hero_title: "CONTACT",
-        hero_sub: "Contact institutionnel de l’Association Culturelle « DULCESOR » – Pâtisserie monastique conventuelle.",
-
-        card_title: "CONTACT INSTITUTIONNEL",
-        lbl_mail_general: "Email général",
-        lbl_mail_contact: "Contact",
-        lbl_mail_contest: "Concours",
-        lbl_address: "Adresse",
-        address: "Plaza Santa Ana 2 · 47001 Valladolid (Espagne)",
-        lbl_phone: "Téléphone",
-        no_phone: "Aucun téléphone n’est communiqué à ce stade.",
-
-        btn_maps: "VOIR L’EMPLACEMENT",
-        btn_write: "ÉCRIRE UN EMAIL",
-
-        card_note_title: "NOTE",
-        card_note_text: "Les informations de contact peuvent être mises à jour au fur et à mesure de l’avancement de l’organisation et de la définition des canaux officiels. Merci de votre compréhension.",
-        btn_home: "RETOUR À L’ACCUEIL",
-
-        footer_line_1: "© Association Culturelle « DULCESOR » – Pâtisserie monastique conventuelle · Association à but non lucratif · Inscription en cours",
-        footer_line_2: "Valladolid (Espagne)",
-        footer_apolo: "Site développé par Apolo Studio Creativo (en préparation)"
+        title: "CONTACT",
+        subtitle: "Pour toute information institutionnelle, collaborations culturelles et demandes générales.",
+        card_title: "Contact institutionnel",
+        lbl_general: "Email général",
+        lbl_concurso: "Concours",
+        lbl_contacto: "Contact",
+        lbl_dir: "Adresse",
+        note: "Note : aucun téléphone n’est communiqué à ce stade. L’association est en cours d’inscription."
       },
-
       it: {
         brand_sub: "ASSOCIAZIONE CULTURALE",
+        nav_inicio: "HOME",
         nav_asociacion: "ASSOCIAZIONE",
         nav_proyectos: "PROGETTI",
         nav_concursos: "CONCORSI",
         nav_rutas: "PERCORSI MONASTICI",
         nav_patrocinadores: "SPONSOR",
         nav_contacto: "CONTATTI",
-
-        hero_title: "CONTATTI",
-        hero_sub: "Contatto istituzionale dell’Associazione Culturale « DULCESOR » – Pasticceria monastica conventuale.",
-
-        card_title: "CONTATTO ISTITUZIONALE",
-        lbl_mail_general: "Email generale",
-        lbl_mail_contact: "Contatto",
-        lbl_mail_contest: "Concorso",
-        lbl_address: "Indirizzo",
-        address: "Plaza Santa Ana 2 · 47001 Valladolid (Spagna)",
-        lbl_phone: "Telefono",
-        no_phone: "Il telefono non è disponibile in questa fase.",
-
-        btn_maps: "VEDI POSIZIONE",
-        btn_write: "SCRIVI EMAIL",
-
-        card_note_title: "NOTA",
-        card_note_text: "Le informazioni di contatto possono essere aggiornate man mano che l’organizzazione procede e vengono definiti i canali ufficiali. Grazie per la comprensione.",
-        btn_home: "TORNA ALL’INIZIO",
-
-        footer_line_1: "© Associazione Culturale « DULCESOR » – Pasticceria monastica conventuale · Associazione senza scopo di lucro · Iscrizione in corso",
-        footer_line_2: "Valladolid (Spagna)",
-        footer_apolo: "Sito sviluppato da Apolo Studio Creativo (in preparazione)"
+        title: "CONTATTI",
+        subtitle: "Per informazioni istituzionali, collaborazioni culturali e richieste generali.",
+        card_title: "Contatto istituzionale",
+        lbl_general: "Email generale",
+        lbl_concurso: "Concorso",
+        lbl_contacto: "Contatti",
+        lbl_dir: "Indirizzo",
+        note: "Nota: non viene fornito un numero di telefono in questa fase. L’associazione è in fase di iscrizione."
       }
     };
 
