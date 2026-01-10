@@ -2,9 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <title>Asociación Cultural DULCESOR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DULCESOR · Asociación Cultural</title>
-  <meta name="description" content="Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual. Patrimonio gastronómico, cultura y tradición." />
+  <meta name="description" content="Asociación Cultural DULCESOR – Repostería monacal conventual. Patrimonio gastronómico, cultura y tradición." />
 
   <style>
     :root{
@@ -13,522 +13,241 @@
       --text:#1f1f1f;
       --muted:#6b6b6b;
       --line:#e6e1d8;
-      --gold: rgb(145, 128, 26);
-      --shadow: 0 14px 40px rgba(0,0,0,.06);
-      --radius: 16px;
-      --font: "Century Gothic","CenturyGothic","AppleGothic",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      --gold:rgb(145,128,26);
+      --radius:16px;
+      --shadow:0 14px 40px rgba(0,0,0,.06);
+      --font:"Century Gothic","CenturyGothic","AppleGothic",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
     }
+
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    a{color:inherit}
-
-    .wrap{
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 28px 20px 46px;
+      font-family:var(--font);
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
     }
 
-    /* ===== Standard Header (from asociacion.html) ===== */
-    .topbar{
+    a{color:inherit;text-decoration:none}
+
+    /* ===== HEADER ===== */
+    header{
+      background:#f8f6f2;
+      border-bottom:1px solid var(--line);
+    }
+    .top{
+      max-width:1200px;
+      margin:auto;
+      padding:18px 20px;
       display:flex;
-      align-items:center;
       justify-content:space-between;
-      gap:14px;
-      padding: 8px 0 18px;
-      border-bottom: 1px solid var(--line);
+      align-items:center;
     }
     .brand{
       display:flex;
-      align-items:center;
       gap:12px;
-      min-width: 240px;
+      align-items:center;
     }
-    .mark{
-      width:38px;height:38px;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      display:flex;align-items:center;justify-content:center;
-      color: var(--gold);
-      font-weight: 700;
-      letter-spacing: .5px;
-      background: #fbfaf8;
+    .brand-logo{
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background:#efe9d8;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:var(--gold);
     }
-    .brand strong{display:block;letter-spacing: .08em}
-    .brand small{
-      display:block;
-      color: var(--muted);
-      letter-spacing: .18em;
-      font-size: 12px;
-      margin-top: -2px;
+    .brand-text{
+      font-size:14px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:var(--muted);
     }
-    .gold{color: var(--gold); font-weight: 800}
-
     .lang{
       display:flex;
       gap:10px;
-      align-items:center;
-      justify-content:flex-end;
-      flex-wrap:wrap;
     }
-    .langBtn{
-      font-size: 12px;
-      letter-spacing: .16em;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: transparent;
+    .lang span{
       cursor:pointer;
-      color: var(--muted);
+      font-size:13px;
+      padding:6px 8px;
+      border-radius:8px;
     }
-    .langBtn.active{
-      color: var(--text);
-      border-color: rgba(145,128,26,.35);
-      background: rgba(145,128,26,.08);
+    .lang .active{
+      background:#efe9d8;
+      color:var(--gold);
+      font-weight:600;
     }
 
     nav{
+      max-width:1200px;
+      margin:auto;
+      padding:14px 20px;
       display:flex;
-      gap: 22px;
       justify-content:center;
-      flex-wrap:wrap;
-      padding: 18px 0 12px;
-      border-bottom: 1px solid var(--line);
+      gap:36px;
+      font-size:13px;
+      letter-spacing:2px;
+      text-transform:uppercase;
     }
-    nav a{
-      text-decoration:none;
-      color: var(--muted);
-      letter-spacing: .18em;
-      font-size: 12px;
-      padding: 8px 10px;
-      border-radius: 10px;
-    }
-    nav a:hover{
-      background: rgba(0,0,0,.03);
-      color: var(--text);
-    }
-    nav a.current{
-      color: var(--text);
-      background: rgba(145,128,26,.08);
-      border: 1px solid rgba(145,128,26,.25);
-    }
+    nav a{color:#222}
+    nav a.active{color:var(--gold);font-weight:600}
 
-    /* ===== Page content ===== */
+    /* ===== HERO ===== */
     .hero{
+      max-width:1100px;
+      margin:70px auto 40px;
+      padding:0 20px;
       text-align:center;
-      padding: 38px 0 18px;
     }
     .hero h1{
-      margin: 0 0 10px;
-      font-size: clamp(30px, 4.2vw, 52px);
-      letter-spacing: .14em;
-      color: var(--gold);
-      font-weight: 900;
+      margin:0;
+      font-size:clamp(28px,4vw,44px);
+      letter-spacing:3px;
+      font-weight:300;
+    }
+    .hero h2{
+      margin:10px 0 0;
+      font-size:clamp(34px,5vw,56px);
+      font-weight:800;
+      letter-spacing:4px;
+      color:var(--gold);
+    }
+    .hero h3{
+      margin:12px 0 0;
+      font-size:clamp(18px,2.2vw,26px);
+      font-weight:600;
+      letter-spacing:2px;
     }
     .hero p{
-      margin: 0 auto;
-      max-width: 900px;
-      color: var(--muted);
-      font-size: 15px;
+      margin-top:22px;
+      font-size:14px;
+      color:var(--muted);
+      letter-spacing:1px;
     }
 
+    /* ===== SECTIONS ===== */
+    section{
+      max-width:1200px;
+      margin:60px auto;
+      padding:0 20px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:34px;
+    }
     .grid{
       display:grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-      margin-top: 18px;
+      gap:28px;
     }
-    @media (min-width: 920px){
-      .grid{grid-template-columns: 1fr 1fr;}
+    .two{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+    h3{
+      margin-top:0;
+      font-size:15px;
+      letter-spacing:2px;
+      text-transform:uppercase;
     }
+    ul{padding-left:18px}
+    li{margin-bottom:8px}
 
-    .card{
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px 18px 16px;
+    /* ===== FOOTER ===== */
+    footer{
+      margin-top:80px;
+      padding:34px 20px;
+      border-top:1px solid var(--line);
+      text-align:center;
+      font-size:13px;
+      color:#555;
     }
-    .card h2{
-      margin: 0 0 10px;
-      letter-spacing: .18em;
-      font-size: 13px;
-      color: var(--text);
-      text-transform: uppercase;
-    }
-    .muted{color: var(--muted)}
-    .pillRow{
-      display:flex;
-      gap: 10px;
-      flex-wrap:wrap;
-      margin-top: 12px;
-    }
-    .pill{
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 8px 12px;
-      font-size: 12px;
-      letter-spacing: .12em;
-      color: var(--muted);
-      background: #fbfaf8;
-      text-transform: uppercase;
-    }
-    .pill.gold{
-      border-color: rgba(145,128,26,.28);
-      background: rgba(145,128,26,.08);
-    }
-
-    .actions{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-    .btn{
-      display:inline-block;
-      text-decoration:none;
-      border: 1px solid rgba(145,128,26,.35);
-      background: rgba(145,128,26,.10);
-      color: var(--text);
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-size: 12px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-    .btn:hover{background: rgba(145,128,26,.14)}
-
-    /* ===== Standard Footer (fixed, NOT translated) ===== */
-    .siteFooter{
-      margin-top: 36px;
-      border-top: 1px solid var(--line);
-      padding: 20px 16px 28px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
-    }
-    .footerInner{max-width: 980px; margin: 0 auto;}
-    .footerLine1{font-weight: 600; color: var(--text);}
-    .footerLine4{margin-top: 6px;}
   </style>
 </head>
 
 <body>
-  <main class="wrap">
 
-    <!-- Header (standard) -->
-    <div class="topbar">
-      <div class="brand">
-        <div class="mark" aria-label="DULCESOR">D</div>
-        <div>
-          <strong class="gold">DULCESOR</strong>
-          <small data-i18n="brand_sub">ASOCIACIÓN CULTURAL</small>
-        </div>
-      </div>
+<header>
+  <div class="top">
+    <div class="brand">
+      <div class="brand-logo">D</div>
+      <div class="brand-text">Asociación Cultural</div>
+    </div>
+    <div class="lang">
+      <span class="active">ES</span>
+      <span>EN</span>
+      <span>PT</span>
+      <span>FR</span>
+      <span>IT</span>
+    </div>
+  </div>
 
-      <div class="lang" aria-label="Idiomas">
-        <button class="langBtn active" data-lang="es">ES</button>
-        <button class="langBtn" data-lang="en">EN</button>
-        <button class="langBtn" data-lang="pt">PT</button>
-        <button class="langBtn" data-lang="fr">FR</button>
-        <button class="langBtn" data-lang="it">IT</button>
-      </div>
+  <nav>
+    <a class="active" href="index.html">Inicio</a>
+    <a href="asociacion.html">Asociación</a>
+    <a href="proyectos.html">Proyectos</a>
+    <a href="concursos.html">Concursos</a>
+    <a href="rutas.html">Rutas monacales</a>
+    <a href="patrocinadores.html">Patrocinadores</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>ASOCIACIÓN CULTURAL</h1>
+    <h2>DULCESOR</h2>
+    <h3>REPOSTERÍA MONACAL</h3>
+    <p>Patrimonio gastronómico · Cultura y tradición</p>
+  </div>
+
+  <!-- INTRO -->
+  <section>
+    <div class="card">
+      <p>
+        La <strong>Asociación Cultural DULCESOR</strong> impulsa la preservación,
+        difusión y puesta en valor de la <strong>repostería monacal conventual</strong>
+        y del patrimonio gastronómico ligado a comunidades religiosas,
+        promoviendo proyectos culturales de alcance nacional e internacional.
+      </p>
+    </div>
+  </section>
+
+  <!-- IDENTIDAD / OBJETIVOS -->
+  <section class="grid two">
+    <div class="card">
+      <h3>Identidad</h3>
+      <ul>
+        <li><strong>Nombre:</strong> Asociación Cultural “DULCESOR” – Repostería Monacal Conventual</li>
+        <li><strong>Naturaleza:</strong> Asociación cultural sin ánimo de lucro</li>
+        <li><strong>Situación:</strong> En proceso de inscripción</li>
+        <li><strong>Ámbito:</strong> Cultural y gastronómico</li>
+        <li><strong>Sede:</strong> Valladolid (España)</li>
+      </ul>
     </div>
 
-    <nav aria-label="Menú">
-      <a class="current" href="index.html" data-i18n="nav_inicio">INICIO</a>
-      <a href="asociacion.html" data-i18n="nav_asociacion">ASOCIACIÓN</a>
-      <a href="proyectos.html" data-i18n="nav_proyectos">PROYECTOS</a>
-      <a href="concursos.html" data-i18n="nav_concursos">CONCURSOS</a>
-      <a href="rutas.html" data-i18n="nav_rutas">RUTAS MONACALES</a>
-      <a href="patrocinadores.html" data-i18n="nav_patrocinadores">PATROCINADORES</a>
-      <a href="contacto.html" data-i18n="nav_contacto">CONTACTO</a>
-    </nav>
+    <div class="card">
+      <h3>Fines y objetivos</h3>
+      <ul>
+        <li>Preservar y difundir la repostería conventual como patrimonio cultural.</li>
+        <li>Dar visibilidad al trabajo artesanal de comunidades religiosas.</li>
+        <li>Promover actividades culturales y divulgativas.</li>
+        <li>Fomentar el diálogo entre tradición y sociedad.</li>
+        <li>Organizar concursos, encuentros y actividades formativas.</li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- Hero -->
-    <section class="hero" aria-label="Portada">
-      <h1 data-i18n="hero_title">ASOCIACIÓN CULTURAL <span class="gold">DULCESOR</span></h1>
-      <p data-i18n="hero_text">
-        Patrimonio gastronómico · Repostería monacal conventual · Cultura y tradición
-      </p>
-    </section>
+</main>
 
-    <!-- Main cards -->
-    <section class="grid" aria-label="Contenido principal">
-      <div class="card">
-        <h2 data-i18n="card1_title">Propósito</h2>
-        <p class="muted" data-i18n="card1_text">
-          La Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual impulsa la preservación, difusión y puesta en valor
-          de la repostería conventual y del patrimonio cultural ligado a comunidades religiosas, con vocación institucional y
-          proyección nacional e internacional.
-        </p>
-        <div class="pillRow">
-          <span class="pill gold" data-i18n="pill1">Repostería</span>
-          <span class="pill" data-i18n="pill2">Patrimonio</span>
-          <span class="pill" data-i18n="pill3">Cultura</span>
-        </div>
-      </div>
+<footer>
+  © Asociación Cultural “DULCESOR” – Repostería Monacal Conventual · Asociación cultural sin ánimo de lucro · En proceso de inscripción · Valladolid (España)
+  <br><br>
+  Sitio desarrollado por <strong>Apolo Studio Creativo</strong>
+</footer>
 
-      <div class="card">
-        <h2 data-i18n="card2_title">Situación</h2>
-        <p class="muted" data-i18n="card2_text">
-          La asociación se encuentra en proceso de inscripción. La información publicada es orientativa y podrá actualizarse
-          conforme avance la organización y se formalicen los distintos proyectos culturales.
-        </p>
-        <div class="actions">
-          <a class="btn" href="asociacion.html" data-i18n="btn_about">Conocer la Asociación</a>
-          <a class="btn" href="contacto.html" data-i18n="btn_contact">Contacto institucional</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2 data-i18n="card3_title">Proyecto principal</h2>
-        <p class="muted" data-i18n="card3_text">
-          Actualmente se encuentra en fase de desarrollo el principal proyecto cultural de la asociación:
-          <strong>I Concurso Internacional de Reposteria Monacal – Valladolid 2026</strong>.
-        </p>
-        <div class="pillRow">
-          <span class="pill" data-i18n="in_prep">EN PREPARACIÓN</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2 data-i18n="card4_title">Líneas culturales</h2>
-        <p class="muted" data-i18n="card4_text">
-          Además del concurso, DULCESOR impulsa rutas monacales, difusión del patrimonio cultural y museos conventuales,
-          y futuras actividades divulgativas y formativas.
-        </p>
-        <div class="actions">
-          <a class="btn" href="rutas.html" data-i18n="btn_routes">Rutas monacales</a>
-          <a class="btn" href="proyectos.html" data-i18n="btn_projects">Ver proyectos</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer (standard, fixed) -->
-    <footer class="siteFooter">
-      <div class="footerInner">
-        <div class="footerLine1">
-          © <span class="gold">Asociación Cultural ‘DULCESOR’</span> – Repostería Monacal Conventual
-        </div>
-        <div class="footerLine2">
-          Asociación cultural sin ánimo de lucro · En proceso de inscripción
-        </div>
-        <div class="footerLine3">
-          Valladolid (España)
-        </div>
-        <div class="footerLine4">
-          Sitio web desarrollado por Apolo Studio Creativo
-        </div>
-      </div>
-    </footer>
-
-  </main>
-
-  <script>
-    const I18N = {
-      es: {
-        brand_sub: "ASOCIACIÓN CULTURAL",
-        nav_inicio: "INICIO",
-        nav_asociacion: "ASOCIACIÓN",
-        nav_proyectos: "PROYECTOS",
-        nav_concursos: "CONCURSOS",
-        nav_rutas: "RUTAS MONACALES",
-        nav_patrocinadores: "PATROCINADORES",
-        nav_contacto: "CONTACTO",
-
-        hero_title: "ASOCIACIÓN CULTURAL <span class='gold'>DULCESOR</span>",
-        hero_text: "Patrimonio gastronómico · Repostería monacal conventual · Cultura y tradición",
-
-        card1_title: "Propósito",
-        card1_text: "La Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual impulsa la preservación, difusión y puesta en valor de la repostería conventual y del patrimonio cultural ligado a comunidades religiosas, con vocación institucional y proyección nacional e internacional.",
-        pill1: "Repostería",
-        pill2: "Patrimonio",
-        pill3: "Cultura",
-
-        card2_title: "Situación",
-        card2_text: "La asociación se encuentra en proceso de inscripción. La información publicada es orientativa y podrá actualizarse conforme avance la organización y se formalicen los distintos proyectos culturales.",
-        btn_about: "Conocer la Asociación",
-        btn_contact: "Contacto institucional",
-
-        card3_title: "Proyecto principal",
-        card3_text: "Actualmente se encuentra en fase de desarrollo el principal proyecto cultural de la asociación: <strong>I Concurso Internacional de Postres Conventuales – Valladolid 2026</strong>.",
-        in_prep: "EN PREPARACIÓN",
-
-        card4_title: "Líneas culturales",
-        card4_text: "Además del concurso, DULCESOR impulsa rutas monacales, difusión del patrimonio cultural y museos conventuales, y futuras actividades divulgativas y formativas.",
-        btn_routes: "Rutas monacales",
-        btn_projects: "Ver proyectos"
-      },
-
-      en: {
-        brand_sub: "CULTURAL ASSOCIATION",
-        nav_inicio: "HOME",
-        nav_asociacion: "ASSOCIATION",
-        nav_proyectos: "PROJECTS",
-        nav_concursos: "CONTESTS",
-        nav_rutas: "MONASTIC ROUTES",
-        nav_patrocinadores: "SPONSORS",
-        nav_contacto: "CONTACT",
-
-        hero_title: "CULTURAL ASSOCIATION <span class='gold'>DULCESOR</span>",
-        hero_text: "Gastronomic heritage · Monastic convent pastry · Culture & tradition",
-
-        card1_title: "Purpose",
-        card1_text: "The Cultural Association ‘DULCESOR’ – Monastic Convent Pastry promotes the preservation, dissemination and enhancement of convent pastry and cultural heritage linked to religious communities, with an institutional vocation and national/international outreach.",
-        pill1: "Pastry",
-        pill2: "Heritage",
-        pill3: "Culture",
-
-        card2_title: "Status",
-        card2_text: "The association is currently in the registration process. The information published is indicative and may be updated as the organization progresses and cultural projects are formalized.",
-        btn_about: "About the Association",
-        btn_contact: "Institutional contact",
-
-        card3_title: "Main project",
-        card3_text: "The association’s main cultural project is currently under development: <strong>1st International Convent Desserts Contest – Valladolid 2026</strong>.",
-        in_prep: "IN PREPARATION",
-
-        card4_title: "Cultural lines",
-        card4_text: "In addition to the contest, DULCESOR promotes monastic routes, cultural heritage dissemination and convent museums, as well as future outreach and educational activities.",
-        btn_routes: "Monastic routes",
-        btn_projects: "View projects"
-      },
-
-      pt: {
-        brand_sub: "ASSOCIAÇÃO CULTURAL",
-        nav_inicio: "INÍCIO",
-        nav_asociacion: "ASSOCIAÇÃO",
-        nav_proyectos: "PROJETOS",
-        nav_concursos: "CONCURSOS",
-        nav_rutas: "ROTAS MONÁSTICAS",
-        nav_patrocinadores: "PATROCINADORES",
-        nav_contacto: "CONTACTO",
-
-        hero_title: "ASSOCIAÇÃO CULTURAL <span class='gold'>DULCESOR</span>",
-        hero_text: "Património gastronómico · Doçaria monacal conventual · Cultura e tradição",
-
-        card1_title: "Propósito",
-        card1_text: "A Associação Cultural ‘DULCESOR’ – Doçaria Monacal Conventual promove a preservação, divulgação e valorização da doçaria conventual e do património cultural ligado a comunidades religiosas, com vocação institucional e projeção nacional e internacional.",
-        pill1: "Doçaria",
-        pill2: "Património",
-        pill3: "Cultura",
-
-        card2_title: "Estado",
-        card2_text: "A associação encontra-se em processo de inscrição. A informação publicada é indicativa e poderá ser atualizada à medida que a organização avance e os projetos culturais sejam formalizados.",
-        btn_about: "Sobre a Associação",
-        btn_contact: "Contacto institucional",
-
-        card3_title: "Projeto principal",
-        card3_text: "Atualmente encontra-se em desenvolvimento o principal projeto cultural da associação: <strong>I Concurso Internacional de Doçaria Conventual – Valladolid 2026</strong>.",
-        in_prep: "EM PREPARAÇÃO",
-
-        card4_title: "Linhas culturais",
-        card4_text: "Para além do concurso, a DULCESOR promove rotas monásticas, divulgação do património cultural e museus conventuais, bem como futuras atividades de divulgação e formação.",
-        btn_routes: "Rotas monásticas",
-        btn_projects: "Ver projetos"
-      },
-
-      fr: {
-        brand_sub: "ASSOCIATION CULTURELLE",
-        nav_inicio: "ACCUEIL",
-        nav_asociacion: "ASSOCIATION",
-        nav_proyectos: "PROJETS",
-        nav_concursos: "CONCOURS",
-        nav_rutas: "ITINÉRAIRES MONASTIQUES",
-        nav_patrocinadores: "PARTENAIRES",
-        nav_contacto: "CONTACT",
-
-        hero_title: "ASSOCIATION CULTURELLE <span class='gold'>DULCESOR</span>",
-        hero_text: "Patrimoine gastronomique · Pâtisserie monastique conventuelle · Culture et tradition",
-
-        card1_title: "Mission",
-        card1_text: "L’Association Culturelle « DULCESOR » – Pâtisserie monastique conventuelle encourage la préservation, la diffusion et la mise en valeur de la pâtisserie conventuelle et du patrimoine culturel lié aux communautés religieuses, avec une vocation institutionnelle et une portée nationale et internationale.",
-        pill1: "Pâtisserie",
-        pill2: "Patrimoine",
-        pill3: "Culture",
-
-        card2_title: "Statut",
-        card2_text: "L’association est en cours d’inscription. Les informations publiées sont indicatives et peuvent être mises à jour au fur et à mesure de l’avancement de l’organisation et de la formalisation des projets culturels.",
-        btn_about: "Découvrir l’Association",
-        btn_contact: "Contact institutionnel",
-
-        card3_title: "Projet principal",
-        card3_text: "Le principal projet culturel de l’association est actuellement en cours de développement : <strong>I Concours International de Pâtisserie Conventuelle – Valladolid 2026</strong>.",
-        in_prep: "EN PRÉPARATION",
-
-        card4_title: "Axes culturels",
-        card4_text: "Au-delà du concours, DULCESOR promeut des itinéraires monastiques, la diffusion du patrimoine culturel et des musées conventuels, ainsi que de futures activités de médiation et de formation.",
-        btn_routes: "Itinéraires monastiques",
-        btn_projects: "Voir les projets"
-      },
-
-      it: {
-        brand_sub: "ASSOCIAZIONE CULTURALE",
-        nav_inicio: "HOME",
-        nav_asociacion: "ASSOCIAZIONE",
-        nav_proyectos: "PROGETTI",
-        nav_concursos: "CONCORSI",
-        nav_rutas: "PERCORSI MONASTICI",
-        nav_patrocinadores: "SPONSOR",
-        nav_contacto: "CONTATTI",
-
-        hero_title: "ASSOCIAZIONE CULTURALE <span class='gold'>DULCESOR</span>",
-        hero_text: "Patrimonio gastronomico · Pasticceria monastica conventuale · Cultura e tradizione",
-
-        card1_title: "Missione",
-        card1_text: "L’Associazione Culturale « DULCESOR » – Pasticceria monastica conventuale promuove la conservazione, la diffusione e la valorizzazione della pasticceria conventuale e del patrimonio culturale legato alle comunità religiose, con vocazione istituzionale e proiezione nazionale e internazionale.",
-        pill1: "Pasticceria",
-        pill2: "Patrimonio",
-        pill3: "Cultura",
-
-        card2_title: "Stato",
-        card2_text: "L’associazione è in fase di iscrizione. Le informazioni pubblicate sono indicative e possono essere aggiornate con l’avanzare dell’organizzazione e la formalizzazione dei progetti culturali.",
-        btn_about: "Scopri l’Associazione",
-        btn_contact: "Contatto istituzionale",
-
-        card3_title: "Progetto principale",
-        card3_text: "È attualmente in fase di sviluppo il principale progetto culturale dell’associazione: <strong>I Concorso Internazionale di Dolci Conventuali – Valladolid 2026</strong>.",
-        in_prep: "IN PREPARAZIONE",
-
-        card4_title: "Linee culturali",
-        card4_text: "Oltre al concorso, DULCESOR promuove percorsi monastici, la diffusione del patrimonio culturale e musei conventuali, oltre a future attività divulgative e formative.",
-        btn_routes: "Percorsi monastici",
-        btn_projects: "Vedi progetti"
-      }
-    };
-
-    function applyLang(lang){
-      const dict = I18N[lang] || I18N.es;
-      document.documentElement.lang = lang;
-
-      document.querySelectorAll("[data-i18n]").forEach(el=>{
-        const key = el.getAttribute("data-i18n");
-        if (typeof dict[key] === "string") el.innerHTML = dict[key];
-      });
-
-      document.querySelectorAll(".langBtn").forEach(btn=>{
-        btn.classList.toggle("active", btn.dataset.lang === lang);
-      });
-
-      try { localStorage.setItem("dulcesor_lang", lang); } catch(e){}
-    }
-
-    (function(){
-      let saved = "es";
-      try { saved = localStorage.getItem("dulcesor_lang") || "es"; } catch(e){}
-      applyLang(saved);
-
-      document.querySelectorAll(".langBtn").forEach(btn=>{
-        btn.addEventListener("click", ()=> applyLang(btn.dataset.lang));
-      });
-    })();
-  </script>
 </body>
 </html>
