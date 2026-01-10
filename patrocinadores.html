@@ -2,219 +2,505 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Patrocinadores · Asociación Cultural DULCESOR</title>
-  <meta name="description" content="Patrocinadores y apoyos institucionales de la Asociación Cultural DULCESOR (en preparación)." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patrocinadores · DULCESOR</title>
+  <meta name="description" content="Patrocinadores y apoyos culturales de la Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual." />
 
   <style>
-    body {
-      margin: 0;
-      font-family: "Century Gothic", Arial, sans-serif;
-      background: #faf9f6;
-      color: #333;
+    :root{
+      --bg:#f6f4f1;
+      --card:#ffffff;
+      --text:#1f1f1f;
+      --muted:#6b6b6b;
+      --line:#e6e1d8;
+      --gold: rgb(145, 128, 26);
+      --shadow: 0 14px 40px rgba(0,0,0,.06);
+      --radius: 16px;
+      --font: "Century Gothic","CenturyGothic","AppleGothic",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a{color:inherit}
+
+    .wrap{
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 28px 20px 46px;
     }
 
-    header {
-      background: #fff;
-      border-bottom: 1px solid #e0e0e0;
-      padding: 20px;
-      text-align: center;
+    /* ===== Standard Header (asociacion.html) ===== */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding: 8px 0 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 240px;
+    }
+    .mark{
+      width:38px;height:38px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      display:flex;align-items:center;justify-content:center;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: .5px;
+      background: #fbfaf8;
+    }
+    .brand strong{display:block;letter-spacing: .08em}
+    .brand small{
+      display:block;
+      color: var(--muted);
+      letter-spacing: .18em;
+      font-size: 12px;
+      margin-top: -2px;
+    }
+    .gold{color: var(--gold); font-weight: 800}
+
+    .lang{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+    }
+    .langBtn{
+      font-size: 12px;
+      letter-spacing: .16em;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: transparent;
+      cursor:pointer;
+      color: var(--muted);
+    }
+    .langBtn.active{
+      color: var(--text);
+      border-color: rgba(145,128,26,.35);
+      background: rgba(145,128,26,.08);
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-      font-weight: bold;
-      color: rgb(145,128,26);
-      letter-spacing: 1px;
+    nav{
+      display:flex;
+      gap: 22px;
+      justify-content:center;
+      flex-wrap:wrap;
+      padding: 18px 0 12px;
+      border-bottom: 1px solid var(--line);
     }
-
-    header p {
-      margin-top: 8px;
-      font-size: 14px;
-      letter-spacing: 1px;
-      color: #666;
-    }
-
-    nav {
-      background: #fff;
-      border-bottom: 1px solid #eee;
-      padding: 10px 0;
-      text-align: center;
-    }
-
-    nav a {
-      display: inline-block;
-      margin: 0 10px;
-      font-size: 13px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: #666;
+    nav a{
+      text-decoration:none;
+      color: var(--muted);
+      letter-spacing: .18em;
+      font-size: 12px;
       padding: 8px 10px;
       border-radius: 10px;
     }
-
-    nav a:hover {
+    nav a:hover{
       background: rgba(0,0,0,.03);
-      color: #333;
+      color: var(--text);
     }
-
-    nav a.current {
-      color: rgb(145,128,26);
-      font-weight: bold;
+    nav a.current{
+      color: var(--text);
       background: rgba(145,128,26,.08);
       border: 1px solid rgba(145,128,26,.25);
     }
 
-    main {
+    /* ===== Content ===== */
+    .hero{
+      text-align:center;
+      padding: 34px 0 10px;
+    }
+    .hero h1{
+      margin: 0 0 10px;
+      font-size: clamp(26px, 3.6vw, 40px);
+      letter-spacing: .14em;
+      color: var(--gold);
+      font-weight: 900;
+    }
+    .hero p{
+      margin: 0 auto;
       max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
+      color: var(--muted);
+      font-size: 15px;
     }
 
-    section {
-      margin-bottom: 50px;
-    }
-
-    h2 {
-      font-size: 22px;
-      color: rgb(145,128,26);
-      margin-bottom: 14px;
-    }
-
-    p {
-      line-height: 1.7;
-      font-size: 16px;
-      margin-top: 0;
-    }
-
-    .box {
-      background: #fff;
-      border: 1px solid #e5e5e5;
-      padding: 26px;
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px 18px 16px;
       margin-top: 18px;
     }
+    .card h2{
+      margin: 0 0 12px;
+      letter-spacing: .18em;
+      font-size: 13px;
+      color: var(--text);
+      text-transform: uppercase;
+    }
+    .muted{color: var(--muted)}
 
-    .tag {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      border: 1px solid #e5e5e5;
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    @media (min-width: 980px){
+      .grid{grid-template-columns: 1fr 1fr;}
+    }
+
+    .box{
+      border: 1px solid var(--line);
+      border-radius: 14px;
       background: #fbfaf8;
+      padding: 16px;
+    }
+    .box h3{
+      margin: 0 0 8px;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .pill{
+      display:inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      background: #fbfaf8;
+      color: var(--muted);
+      border-radius: 999px;
       font-size: 12px;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: #666;
     }
 
-    .tag.gold {
-      border-color: rgba(145,128,26,.28);
-      background: rgba(145,128,26,.08);
-      color: #333;
-      font-weight: bold;
+    .cta{
+      margin-top: 10px;
+      font-size: 14px;
     }
-
-    a {
-      color: rgb(145,128,26);
-      text-decoration: none;
+    .cta a{
+      color: var(--gold);
+      text-decoration:none;
+      font-weight: 800;
     }
-    a:hover { text-decoration: underline; }
+    .cta a:hover{ text-decoration: underline; }
 
-    footer {
-      background: #f2f1ed;
+    /* ===== Standard Footer (fixed, NOT translated) ===== */
+    .siteFooter{
+      margin-top: 36px;
+      border-top: 1px solid var(--line);
+      padding: 20px 16px 28px;
       text-align: center;
-      padding: 25px 15px;
+      color: var(--muted);
       font-size: 13px;
-      color: #666;
-      line-height: 1.8;
+      line-height: 1.7;
     }
+    .footerInner{max-width: 980px; margin: 0 auto;}
+    .footerLine1{font-weight: 600; color: var(--text);}
+    .footerLine4{margin-top: 6px;}
   </style>
 </head>
 
 <body>
+  <main class="wrap">
 
-  <header>
-    <h1>ASOCIACIÓN CULTURAL DULCESOR</h1>
-    <p>Patrocinadores y apoyos culturales</p>
-  </header>
-
-  <nav aria-label="Menú">
-    <a href="asociacion.html">Asociación</a>
-    <a href="proyectos.html">Proyectos</a>
-    <a href="concursos.html">Concursos</a>
-    <a href="rutas.html">Rutas monacales</a>
-    <a class="current" href="patrocinadores.html">Patrocinadores</a>
-    <a href="contacto.html">Contacto</a>
-  </nav>
-
-  <main>
-
-    <section>
-      <h2>Patrocinadores</h2>
-      <p>
-        La Asociación Cultural DULCESOR desarrolla su actividad gracias al compromiso de instituciones, entidades y personas
-        que comparten sus valores culturales y patrimoniales, vinculados a la vida monacal y a la repostería conventual.
-      </p>
-
-      <div class="box">
-        <p>
-          En esta fase inicial, la asociación se encuentra definiendo sus fórmulas de colaboración y apoyo cultural.
-          Este espacio se actualizará progresivamente, de forma transparente, conforme se formalicen los primeros apoyos
-          y se consolide la actividad institucional.
-        </p>
-        <span class="tag gold">EN PREPARACIÓN</span>
+    <!-- Header (standard) -->
+    <div class="topbar">
+      <div class="brand">
+        <div class="mark" aria-label="DULCESOR">D</div>
+        <div>
+          <strong class="gold">DULCESOR</strong>
+          <small data-i18n="brand_sub">ASOCIACIÓN CULTURAL</small>
+        </div>
       </div>
-    </section>
 
-    <section>
-      <h2>Instituciones y organismos públicos</h2>
-      <div class="box">
-        <p>
-          Administraciones públicas, organismos culturales y entidades institucionales que apoyen los fines culturales de la
-          Asociación Cultural DULCESOR, en el marco de programas de promoción cultural, patrimonial o gastronómica.
-        </p>
-        <span class="tag">LÍNEA INSTITUCIONAL</span>
+      <div class="lang" aria-label="Idiomas">
+        <button class="langBtn active" data-lang="es">ES</button>
+        <button class="langBtn" data-lang="en">EN</button>
+        <button class="langBtn" data-lang="pt">PT</button>
+        <button class="langBtn" data-lang="fr">FR</button>
+        <button class="langBtn" data-lang="it">IT</button>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <h2>Empresas y entidades privadas</h2>
-      <div class="box">
-        <p>
-          Empresas y entidades privadas comprometidas con la cultura, el patrimonio y la gastronomía, que deseen contribuir
-          al desarrollo de iniciativas culturales vinculadas a la tradición y a la calidad artesanal.
-        </p>
-        <span class="tag">COLABORACIÓN CULTURAL</span>
-      </div>
-    </section>
+    <nav aria-label="Menú">
+      <a href="index.html" data-i18n="nav_inicio">INICIO</a>
+      <a href="asociacion.html" data-i18n="nav_asociacion">ASOCIACIÓN</a>
+      <a href="proyectos.html" data-i18n="nav_proyectos">PROYECTOS</a>
+      <a href="concursos.html" data-i18n="nav_concursos">CONCURSOS</a>
+      <a href="rutas.html" data-i18n="nav_rutas">RUTAS MONACALES</a>
+      <a class="current" href="patrocinadores.html" data-i18n="nav_patrocinadores">PATROCINADORES</a>
+      <a href="contacto.html" data-i18n="nav_contacto">CONTACTO</a>
+    </nav>
 
-    <section>
-      <h2>Mecenazgo y apoyo particular</h2>
-      <div class="box">
-        <p>
-          Personas físicas o entidades que, a título particular, deseen apoyar los fines culturales de la asociación mediante
-          fórmulas de mecenazgo cultural o colaboración futura, conforme al marco legal aplicable.
-        </p>
-        <span class="tag">MECENAZGO</span>
-      </div>
-    </section>
-
-    <section>
-      <h2>Contacto para colaborar</h2>
-      <p>
-        Si desea colaborar con la Asociación Cultural DULCESOR, puede escribir a:
-        <strong><a href="mailto:contacto@dulcesor.org">contactoo@dulcesor.org</a></strong>
+    <section class="hero" aria-label="Patrocinadores">
+      <h1 data-i18n="title">PATROCINADORES</h1>
+      <p data-i18n="subtitle">
+        Modalidades de apoyo cultural e institucional (en preparación).
       </p>
     </section>
+
+    <section class="card" aria-label="Introducción">
+      <h2 data-i18n="intro_title">Patrocinio y apoyo cultural</h2>
+      <p class="muted" data-i18n="intro_text">
+        La Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual desarrolla su actividad con vocación
+        institucional y cultural. Este espacio se irá actualizando progresivamente para reflejar, de forma
+        transparente, a las entidades, instituciones y personas que apoyen los fines culturales de la asociación.
+      </p>
+      <span class="pill" data-i18n="in_prep">EN PREPARACIÓN</span>
+    </section>
+
+    <section class="card" aria-label="Modalidades">
+      <h2 data-i18n="modes_title">Modalidades de colaboración</h2>
+
+      <div class="grid">
+        <div class="box">
+          <h3 data-i18n="mode1_title">Instituciones y organismos públicos</h3>
+          <p class="muted" data-i18n="mode1_text">
+            Administraciones públicas, organismos culturales y entidades institucionales que, en el marco de programas
+            de promoción cultural, patrimonial o gastronómica, puedan respaldar los fines de la asociación.
+          </p>
+        </div>
+
+        <div class="box">
+          <h3 data-i18n="mode2_title">Empresas y entidades privadas</h3>
+          <p class="muted" data-i18n="mode2_text">
+            Empresas y entidades comprometidas con la cultura, el patrimonio y la gastronomía, interesadas en apoyar
+            iniciativas culturales alineadas con valores de tradición, calidad artesanal y conservación patrimonial.
+          </p>
+        </div>
+
+        <div class="box">
+          <h3 data-i18n="mode3_title">Mecenazgo cultural y apoyo particular</h3>
+          <p class="muted" data-i18n="mode3_text">
+            Personas físicas o entidades que deseen apoyar los fines culturales de la asociación mediante fórmulas
+            de colaboración o mecenazgo cultural, conforme al marco legal aplicable.
+          </p>
+        </div>
+
+        <div class="box">
+          <h3 data-i18n="mode4_title">Transparencia</h3>
+          <p class="muted" data-i18n="mode4_text">
+            Las modalidades concretas de colaboración se encuentran actualmente en fase de definición y se comunicarán
+            de forma transparente conforme estén disponibles.
+          </p>
+        </div>
+      </div>
+
+      <p class="cta" data-i18n="cta">
+        Para información institucional sobre colaboración cultural: <a href="mailto:info@dulcesor.org">info@dulcesor.org</a>
+      </p>
+    </section>
+
+    <!-- Footer (standard, fixed) -->
+    <footer class="siteFooter">
+      <div class="footerInner">
+        <div class="footerLine1">
+          © <span class="gold">Asociación Cultural ‘DULCESOR’</span> – Repostería Monacal Conventual
+        </div>
+        <div class="footerLine2">
+          Asociación cultural sin ánimo de lucro · En proceso de inscripción
+        </div>
+        <div class="footerLine3">
+          Valladolid (España)
+        </div>
+        <div class="footerLine4">
+          Sitio web desarrollado por Apolo Studio Creativo
+        </div>
+      </div>
+    </footer>
 
   </main>
 
-  <footer>
-    © Asociación Cultural DULCESOR · Asociación cultural sin ánimo de lucro · Proyecto cultural en desarrollo<br>
-    Sitio desarrollado por Apolo Studio Creativo
-  </footer>
+  <script>
+    const I18N = {
+      es: {
+        brand_sub: "ASOCIACIÓN CULTURAL",
+        nav_inicio: "INICIO",
+        nav_asociacion: "ASOCIACIÓN",
+        nav_proyectos: "PROYECTOS",
+        nav_concursos: "CONCURSOS",
+        nav_rutas: "RUTAS MONACALES",
+        nav_patrocinadores: "PATROCINADORES",
+        nav_contacto: "CONTACTO",
 
+        title: "PATROCINADORES",
+        subtitle: "Modalidades de apoyo cultural e institucional (en preparación).",
+
+        intro_title: "Patrocinio y apoyo cultural",
+        intro_text: "La Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual desarrolla su actividad con vocación institucional y cultural. Este espacio se irá actualizando progresivamente para reflejar, de forma transparente, a las entidades, instituciones y personas que apoyen los fines culturales de la asociación.",
+        in_prep: "EN PREPARACIÓN",
+
+        modes_title: "Modalidades de colaboración",
+        mode1_title: "Instituciones y organismos públicos",
+        mode1_text: "Administraciones públicas, organismos culturales y entidades institucionales que, en el marco de programas de promoción cultural, patrimonial o gastronómica, puedan respaldar los fines de la asociación.",
+        mode2_title: "Empresas y entidades privadas",
+        mode2_text: "Empresas y entidades comprometidas con la cultura, el patrimonio y la gastronomía, interesadas en apoyar iniciativas culturales alineadas con valores de tradición, calidad artesanal y conservación patrimonial.",
+        mode3_title: "Mecenazgo cultural y apoyo particular",
+        mode3_text: "Personas físicas o entidades que deseen apoyar los fines culturales de la asociación mediante fórmulas de colaboración o mecenazgo cultural, conforme al marco legal aplicable.",
+        mode4_title: "Transparencia",
+        mode4_text: "Las modalidades concretas de colaboración se encuentran actualmente en fase de definición y se comunicarán de forma transparente conforme estén disponibles.",
+        cta: "Para información institucional sobre colaboración cultural: <a href='mailto:info@dulcesor.org'>info@dulcesor.org</a>"
+      },
+
+      en: {
+        brand_sub: "CULTURAL ASSOCIATION",
+        nav_inicio: "HOME",
+        nav_asociacion: "ASSOCIATION",
+        nav_proyectos: "PROJECTS",
+        nav_concursos: "CONTESTS",
+        nav_rutas: "MONASTIC ROUTES",
+        nav_patrocinadores: "SPONSORS",
+        nav_contacto: "CONTACT",
+
+        title: "SPONSORS",
+        subtitle: "Cultural and institutional support options (in preparation).",
+
+        intro_title: "Sponsorship & cultural support",
+        intro_text: "The Cultural Association ‘DULCESOR’ – Monastic Convent Pastry acts with an institutional and cultural vocation. This space will be updated progressively to reflect, transparently, the entities, institutions and individuals supporting the association’s cultural aims.",
+        in_prep: "IN PREPARATION",
+
+        modes_title: "Ways to collaborate",
+        mode1_title: "Public institutions",
+        mode1_text: "Public administrations, cultural bodies and institutional entities that may support the association’s aims through cultural, heritage or gastronomic promotion programmes.",
+        mode2_title: "Companies and private entities",
+        mode2_text: "Companies and entities committed to culture, heritage and gastronomy, interested in supporting cultural initiatives aligned with tradition, craftsmanship and heritage preservation.",
+        mode3_title: "Cultural patronage & individual support",
+        mode3_text: "Individuals or entities willing to support the association’s cultural aims through collaboration or cultural patronage, in accordance with the applicable legal framework.",
+        mode4_title: "Transparency",
+        mode4_text: "Specific collaboration frameworks are currently being defined and will be communicated transparently when available.",
+        cta: "For institutional collaboration enquiries: <a href='mailto:info@dulcesor.org'>info@dulcesor.org</a>"
+      },
+
+      pt: {
+        brand_sub: "ASSOCIAÇÃO CULTURAL",
+        nav_inicio: "INÍCIO",
+        nav_asociacion: "ASSOCIAÇÃO",
+        nav_proyectos: "PROJETOS",
+        nav_concursos: "CONCURSOS",
+        nav_rutas: "ROTAS MONÁSTICAS",
+        nav_patrocinadores: "PATROCINADORES",
+        nav_contacto: "CONTACTO",
+
+        title: "PATROCINADORES",
+        subtitle: "Modalidades de apoio cultural e institucional (em preparação).",
+
+        intro_title: "Patrocínio e apoio cultural",
+        intro_text: "A Associação Cultural ‘DULCESOR’ – Doçaria Monacal Conventual atua com vocação institucional e cultural. Este espaço será atualizado progressivamente para refletir, de forma transparente, as entidades, instituições e pessoas que apoiem os fins culturais da associação.",
+        in_prep: "EM PREPARAÇÃO",
+
+        modes_title: "Modalidades de colaboração",
+        mode1_title: "Instituições e organismos públicos",
+        mode1_text: "Administrações públicas, organismos culturais e entidades institucionais que possam apoiar os fins da associação no âmbito de programas de promoção cultural, patrimonial ou gastronómica.",
+        mode2_title: "Empresas e entidades privadas",
+        mode2_text: "Empresas e entidades comprometidas com a cultura, o património e a gastronomia, interessadas em apoiar iniciativas culturais alinhadas com tradição, qualidade artesanal e conservação patrimonial.",
+        mode3_title: "Mecenato cultural e apoio particular",
+        mode3_text: "Pessoas físicas ou entidades que desejem apoiar os fins culturais da associação através de colaboração ou mecenato cultural, conforme o enquadramento legal aplicável.",
+        mode4_title: "Transparência",
+        mode4_text: "As modalidades concretas de colaboração estão em fase de definição e serão comunicadas de forma transparente quando estiverem disponíveis.",
+        cta: "Para informação institucional: <a href='mailto:info@dulcesor.org'>info@dulcesor.org</a>"
+      },
+
+      fr: {
+        brand_sub: "ASSOCIATION CULTURELLE",
+        nav_inicio: "ACCUEIL",
+        nav_asociacion: "ASSOCIATION",
+        nav_proyectos: "PROJETS",
+        nav_concursos: "CONCOURS",
+        nav_rutas: "ITINÉRAIRES MONASTIQUES",
+        nav_patrocinadores: "PARTENAIRES",
+        nav_contacto: "CONTACT",
+
+        title: "PARTENAIRES",
+        subtitle: "Modalités de soutien culturel et institutionnel (en préparation).",
+
+        intro_title: "Soutien et partenariat culturel",
+        intro_text: "L’Association Culturelle « DULCESOR » – Pâtisserie monastique conventuelle agit avec une vocation institutionnelle et culturelle. Cet espace sera mis à jour progressivement afin de refléter, en toute transparence, les entités, institutions et personnes soutenant les objectifs culturels de l’association.",
+        in_prep: "EN PRÉPARATION",
+
+        modes_title: "Modalités de collaboration",
+        mode1_title: "Institutions publiques",
+        mode1_text: "Administrations publiques, organismes culturels et entités institutionnelles pouvant soutenir les objectifs de l’association dans le cadre de programmes de promotion culturelle, patrimoniale ou gastronomique.",
+        mode2_title: "Entreprises et entités privées",
+        mode2_text: "Entreprises et entités engagées dans la culture, le patrimoine et la gastronomie, souhaitant soutenir des initiatives culturelles liées à la tradition, à l’artisanat et à la conservation patrimoniale.",
+        mode3_title: "Mécénat culturel et soutien particulier",
+        mode3_text: "Personnes physiques ou entités souhaitant soutenir les objectifs culturels de l’association via des formes de collaboration ou de mécénat culturel, conformément au cadre légal applicable.",
+        mode4_title: "Transparence",
+        mode4_text: "Les modalités concrètes de collaboration sont actuellement en cours de définition et seront communiquées de manière transparente lorsqu’elles seront disponibles.",
+        cta: "Pour toute collaboration institutionnelle : <a href='mailto:info@dulcesor.org'>info@dulcesor.org</a>"
+      },
+
+      it: {
+        brand_sub: "ASSOCIAZIONE CULTURALE",
+        nav_inicio: "HOME",
+        nav_asociacion: "ASSOCIAZIONE",
+        nav_proyectos: "PROGETTI",
+        nav_concursos: "CONCORSI",
+        nav_rutas: "PERCORSI MONASTICI",
+        nav_patrocinadores: "SPONSOR",
+        nav_contacto: "CONTATTI",
+
+        title: "SPONSOR",
+        subtitle: "Modalità di supporto culturale e istituzionale (in preparazione).",
+
+        intro_title: "Sponsorizzazione e supporto culturale",
+        intro_text: "L’Associazione Culturale « DULCESOR » – Pasticceria monastica conventuale opera con vocazione istituzionale e culturale. Questo spazio verrà aggiornato progressivamente per riflettere, in modo trasparente, enti, istituzioni e persone che sostengono le finalità culturali dell’associazione.",
+        in_prep: "IN PREPARAZIONE",
+
+        modes_title: "Modalità di collaborazione",
+        mode1_title: "Istituzioni pubbliche",
+        mode1_text: "Amministrazioni pubbliche, organismi culturali ed enti istituzionali che possano sostenere le finalità dell’associazione attraverso programmi di promozione culturale, patrimoniale o gastronomica.",
+        mode2_title: "Aziende ed enti privati",
+        mode2_text: "Aziende ed enti impegnati in cultura, patrimonio e gastronomia, interessati a sostenere iniziative culturali legate a tradizione, artigianalità e tutela del patrimonio.",
+        mode3_title: "Mecenatismo culturale e supporto individuale",
+        mode3_text: "Persone fisiche o enti che desiderino sostenere le finalità culturali dell’associazione tramite collaborazione o mecenatismo culturale, nel rispetto del quadro normativo applicabile.",
+        mode4_title: "Trasparenza",
+        mode4_text: "Le modalità concrete di collaborazione sono attualmente in fase di definizione e verranno comunicate in modo trasparente quando disponibili.",
+        cta: "Per informazioni istituzionali: <a href='mailto:info@dulcesor.org'>info@dulcesor.org</a>"
+      }
+    };
+
+    function applyLang(lang){
+      const dict = I18N[lang] || I18N.es;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        if (typeof dict[key] === "string") el.innerHTML = dict[key];
+      });
+
+      document.querySelectorAll(".langBtn").forEach(btn=>{
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+      });
+
+      try { localStorage.setItem("dulcesor_lang", lang); } catch(e){}
+    }
+
+    (function(){
+      let saved = "es";
+      try { saved = localStorage.getItem("dulcesor_lang") || "es"; } catch(e){}
+      applyLang(saved);
+
+      document.querySelectorAll(".langBtn").forEach(btn=>{
+        btn.addEventListener("click", ()=> applyLang(btn.dataset.lang));
+      });
+    })();
+  </script>
 </body>
 </html>
