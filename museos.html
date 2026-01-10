@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DULCESOR · Museos Conventuales</title>
+  <meta name="description" content="Museos Conventuales impulsados por la Asociación Cultural DULCESOR. Patrimonio monástico, cultura y tradición." />
+
+  <style>
+    :root{
+      --bg:#f6f4f1;
+      --text:#1f1f1f;
+      --muted:#6b6b6b;
+      --card:#ffffff;
+      --line:#e6e1d8;
+      --gold: rgb(145,128,26);
+      --shadow: 0 14px 40px rgba(0,0,0,.06);
+      --radius: 16px;
+      --font:"Century Gothic","CenturyGothic","AppleGothic",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:980px;margin:0 auto;padding:40px 22px 48px}
+
+    header{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:10px 0 18px;border-bottom:1px solid var(--line);
+    }
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{
+      width:44px;height:44px;border:1px dashed var(--line);
+      border-radius:12px;display:grid;place-items:center;
+      font-size:11px;color:var(--muted)
+    }
+    .brand h1{margin:0;font-size:16px;letter-spacing:.08em}
+    .brand .sub{font-size:12px;letter-spacing:.16em;color:var(--gold)}
+    nav{display:flex;gap:18px;font-size:12px;letter-spacing:.18em}
+    nav a{color:var(--muted)}
+    nav a.active{color:var(--text);font-weight:700}
+
+    h2{margin:30px 0 10px;font-size:22px;letter-spacing:.08em}
+    h3{margin:0 0 8px;font-size:18px}
+    p{margin:8px 0;line-height:1.6}
+    .muted{color:var(--muted)}
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:24px;
+      margin:22px 0;
+    }
+
+    .museum-feature{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:22px;
+      align-items:center;
+    }
+    .museum-feature img{
+      width:100%;
+      border-radius:14px;
+      box-shadow:var(--shadow);
+    }
+
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
+    .btn{
+      border:1px solid var(--line);
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      background:#fff;
+    }
+    .btn.primary{
+      background:var(--gold);
+      color:#fff;
+      border-color:var(--gold);
+    }
+
+    ul.clean{list-style:none;padding:0;margin:10px 0}
+    ul.clean li{
+      padding:10px 0;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+    }
+    footer{
+      margin-top:40px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      font-size:12px;
+      color:var(--muted);
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- CABECERA -->
+    <header>
+      <div class="brand">
+        <div class="logo">LOGO</div>
+        <div>
+          <h1>ASOCIACIÓN CULTURAL <span style="color:var(--gold)">DULCESOR</span></h1>
+          <div class="sub">REPOSTERÍA MONACAL CONVENTUAL</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">INICIO</a>
+        <a href="asociacion.html">ASOCIACIÓN</a>
+        <a href="museos.html" class="active">MUSEOS</a>
+        <a href="rutas.html">RUTAS</a>
+        <a href="patrocinadores.html">PATROCINADORES</a>
+        <a href="contacto.html">CONTACTO</a>
+      </nav>
+    </header>
+
+    <!-- INTRO -->
+    <section>
+      <h2>Museos Conventuales</h2>
+      <p class="muted">
+        La Asociación Cultural DULCESOR promueve la conservación y difusión del
+        patrimonio cultural vinculado a la vida conventual, apoyando especialmente
+        a los museos conventuales como espacios vivos de memoria, arte y tradición.
+      </p>
+    </section>
+
+    <!-- MUSEO PRIORITARIO -->
+    <section class="card">
+      <div class="museum-feature">
+        <img src="dolorosa-santa-ana.jpeg" alt="La Dolorosa – Museo del Real Monasterio de San Joaquín y Santa Ana" />
+        <div>
+          <h3>Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)</h3>
+          <p>
+            Museo conventual de referencia, vinculado a la vida monástica y al
+            patrimonio artístico del monasterio cisterciense. Un espacio de
+            especial valor cultural y espiritual en el contexto de la ciudad de Valladolid.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="https://museosanjoaquinysantaana.es/" target="_blank">
+              Visitar web del museo
+            </a>
+            <span class="btn">
+              Experiencia virtual · En preparación
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OTROS MUSEOS -->
+    <section class="card">
+      <h3>Otros museos y espacios conventuales</h3>
+      <ul class="clean">
+        <li>
+          <span>Museo del Monasterio de Santa Isabel (Valladolid)</span>
+          <a class="btn" href="https://es.wikipedia.org/wiki/Convento_de_Santa_Isabel_(Valladolid)" target="_blank">
+            Visitar web
+          </a>
+        </li>
+        <li>
+          <span>Iglesia Conventual de San Pablo – Dominicos (Valladolid)</span>
+          <a class="btn" href="https://www.dominicos.org/quienes-somos/dominicos-en-el-mundo/espana/valladolid/san-pablo/" target="_blank">
+            Visitar web
+          </a>
+        </li>
+      </ul>
+      <p class="muted">
+        Este apartado se ampliará progresivamente incorporando otros museos y
+        espacios conventuales que compartan los valores culturales y patrimoniales
+        de DULCESOR.
+      </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      © Asociación Cultural DULCESOR · Asociación cultural sin ánimo de lucro · Proyecto cultural en desarrollo<br/>
+      Web desarrollada por Apolo Studio Creativo
+    </footer>
+
+  </div>
+</body>
+</html>
