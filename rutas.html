@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rutas Monacales · Asociación Cultural DULCESOR</title>
+  <meta name="description" content="Rutas Monacales y Museos Conventuales · Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual." />
+
+  <style>
+    :root{
+      --bg:#f6f4f1;
+      --card:#ffffff;
+      --text:#1f1f1f;
+      --muted:#6b6b6b;
+      --line:#e6e1d8;
+      --gold: rgb(145, 128, 26);
+      --shadow: 0 14px 40px rgba(0,0,0,.06);
+      --radius: 16px;
+      --font: "Century Gothic","CenturyGothic","AppleGothic",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:var(--font);
+      line-height:1.55;
+    }
+
+    a{ color:inherit; }
+    .wrap{ max-width:1100px; margin:0 auto; padding:34px 20px 56px; }
+
+    /* Top bar */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:10px 2px 18px;
+      border-bottom:1px solid var(--line);
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      text-decoration:none;
+    }
+    .logoBox{
+      width:40px; height:40px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      display:grid; place-items:center;
+      color:var(--gold);
+      font-weight:700;
+      background:#fff7;
+    }
+    .brandText{ display:flex; flex-direction:column; gap:2px; }
+    .brandName{
+      letter-spacing:.18em;
+      font-size:14px;
+      font-weight:700;
+      color:var(--gold);
+    }
+    .brandSub{
+      letter-spacing:.14em;
+      font-size:11px;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .langs{ display:flex; gap:10px; align-items:center; }
+    .langBtn{
+      border:1px solid transparent;
+      background:transparent;
+      font:inherit;
+      font-size:12px;
+      letter-spacing:.12em;
+      padding:8px 10px;
+      border-radius:999px;
+      cursor:pointer;
+      color:var(--muted);
+    }
+    .langBtn.active{
+      border-color:var(--gold);
+      color:var(--text);
+      background:#fff;
+    }
+
+    /* Nav */
+    .nav{
+      display:flex; flex-wrap:wrap;
+      gap:16px 22px;
+      justify-content:center;
+      padding:16px 0 8px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:26px;
+    }
+    .nav a{
+      text-decoration:none;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-size:12px;
+      color:var(--text);
+      padding:8px 6px;
+      opacity:.9;
+    }
+    .nav a:hover{ opacity:1; }
+    .nav a.current{
+      color:var(--gold);
+      font-weight:700;
+    }
+
+    /* Head */
+    .hero{
+      text-align:center;
+      padding:12px 0 18px;
+    }
+    .kicker{
+      margin:0;
+      font-size:14px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+    h1{
+      margin:12px 0 10px;
+      font-size:42px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--gold);
+      line-height:1.1;
+    }
+    .lead{
+      margin:0 auto;
+      max-width:820px;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      margin-top:20px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+    .card h2{
+      margin:0 0 10px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-size:14px;
+    }
+    .muted{ color:var(--muted); }
+
+    /* Museum feature */
+    .feature{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .featureMedia{
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#fff;
+      min-height:260px;
+    }
+    .featureMedia img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .featureBody h3{
+      margin:0 0 10px;
+      font-size:22px;
+      line-height:1.25;
+    }
+
+    .pillRow{ display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid var(--gold);
+      background:var(--gold);
+      color:#fff;
+      text-decoration:none;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+    .btn.outline{
+      background:#fff;
+      color:var(--text);
+      border-color:var(--line);
+    }
+    .btn.outline:hover{ border-color:var(--gold); }
+
+    .note{
+      margin-top:14px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    /* Lists */
+    .list{
+      margin:10px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .list li{
+      padding:14px 14px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .liTitle{
+      font-weight:700;
+    }
+    .liHint{
+      color:var(--muted);
+      font-size:13px;
+    }
+    .liActions{
+      margin-top:6px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    /* Footer */
+    footer{
+      text-align:center;
+      margin-top:28px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.7;
+    }
+    .apolo{
+      margin-top:6px;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    @media (max-width: 860px){
+      h1{ font-size:34px; }
+      .feature{ grid-template-columns:1fr; }
+      .featureMedia{ min-height:220px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <div class="topbar">
+      <a class="brand" href="index.html" aria-label="Inicio DULCESOR">
+        <div class="logoBox" aria-hidden="true">D</div>
+        <div class="brandText">
+          <div class="brandName">DULCESOR</div>
+          <div class="brandSub" data-i18n="brand_sub">ASOCIACIÓN CULTURAL</div>
+        </div>
+      </a>
+
+      <div class="langs" aria-label="Idiomas">
+        <button class="langBtn active" data-lang="es">ES</button>
+        <button class="langBtn" data-lang="en">EN</button>
+        <button class="langBtn" data-lang="pt">PT</button>
+        <button class="langBtn" data-lang="fr">FR</button>
+        <button class="langBtn" data-lang="it">IT</button>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Menú principal">
+      <a href="index.html" data-i18n="nav_inicio">INICIO</a>
+      <a href="asociacion.html" data-i18n="nav_asociacion">ASOCIACIÓN</a>
+      <a href="proyectos.html" data-i18n="nav_proyectos">PROYECTOS</a>
+      <a href="concursos.html" data-i18n="nav_concursos">CONCURSOS</a>
+      <a class="current" href="rutas.html" data-i18n="nav_rutas">RUTAS MONACALES</a>
+      <a href="patrocinadores.html" data-i18n="nav_patrocinadores">PATROCINADORES</a>
+      <a href="contacto.html" data-i18n="nav_contacto">CONTACTO</a>
+    </nav>
+
+    <header class="hero">
+      <p class="kicker" data-i18n="kicker">CULTURA · TRADICIÓN · PATRIMONIO</p>
+      <h1 data-i18n="title">RUTAS MONACALES</h1>
+      <p class="lead" data-i18n="lead">
+        Itinerarios culturales y gastronómicos vinculados a la vida conventual. Accesos directos a webs oficiales de monasterios y museos conventuales.
+      </p>
+    </header>
+
+    <section class="grid" aria-label="Contenido">
+
+      <!-- RUTAS -->
+      <article class="card">
+        <h2 data-i18n="routes_title">Rutas culturales y compra de productos</h2>
+        <p class="muted" data-i18n="routes_text">
+          Esta sección facilita el acceso a páginas oficiales de monasterios y comunidades religiosas. DULCESOR actúa únicamente como enlace informativo para conocer y, cuando exista, acceder a la compra de productos artesanos.
+        </p>
+
+        <ul class="list" aria-label="Rutas y enlaces (en preparación)">
+          <li>
+            <div class="liTitle" data-i18n="route_block_title">Monasterios y comunidades (selección)</div>
+            <div class="liHint" data-i18n="route_block_hint">
+              En preparación. Añadiremos enlaces directos a webs oficiales, horarios de visita y acceso a compra cuando esté disponible.
+            </div>
+            <div class="liActions">
+              <span class="btn outline" data-i18n="in_prep" aria-disabled="true">EN PREPARACIÓN</span>
+            </div>
+          </li>
+        </ul>
+
+        <p class="note" data-i18n="routes_note">
+          Nota: Los enlaces se incorporarán progresivamente y podrán variar según disponibilidad y autorización de cada comunidad.
+        </p>
+      </article>
+
+      <!-- MUSEOS CONVENTUALES -->
+      <article class="card">
+        <h2 data-i18n="museums_title">Museos Conventuales</h2>
+        <p class="muted" data-i18n="museums_intro">
+          La Asociación Cultural DULCESOR promueve la conservación y difusión del patrimonio cultural vinculado a la vida conventual, apoyando especialmente a los museos conventuales como espacios vivos de memoria, arte y tradición.
+        </p>
+
+        <!-- Museo destacado -->
+        <div class="feature" style="margin-top:16px;">
+          <div class="featureMedia" aria-label="Imagen museo destacado">
+            <img src="dolorosa-santa-ana.jpeg" alt="Obra destacada del Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)" />
+          </div>
+
+          <div class="featureBody">
+            <h3 data-i18n="museum_main_title">Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)</h3>
+            <p class="muted" data-i18n="museum_main_text">
+              Museo conventual de referencia, vinculado a la vida monástica y al patrimonio artístico del monasterio cisterciense. Un espacio de especial valor cultural y espiritual en el contexto de la ciudad de Valladolid.
+            </p>
+
+            <div class="pillRow">
+              <a class="btn" href="https://museosanjoaquinysantaana.es/" target="_blank" rel="noopener" data-i18n="museum_visit_btn">
+                Visitar web del museo
+              </a>
+
+              <a class="btn outline" href="#" onclick="return false;" aria-disabled="true" data-i18n="museum_vr_btn">
+                Experiencia virtual · en preparación
+              </a>
+            </div>
+
+            <p class="note" data-i18n="museum_vr_note">
+              Apolo Studio Creativo está desarrollando una experiencia de realidad virtual vinculada a piezas del museo (en preparación).
+            </p>
+          </div>
+        </div>
+
+        <!-- Otros museos (escalable) -->
+        <h2 style="margin-top:22px;" data-i18n="museums_other_title">Otros museos / espacios conventuales (selección)</h2>
+
+        <ul class="list" aria-label="Otros museos">
+          <li>
+            <div class="liTitle" data-i18n="m2_name">Real Monasterio de Santa Clara (Tordesillas)</div>
+            <div class="liHint" data-i18n="m2_hint">
+              Conjunto monumental y museo visitable, relevante por su historia y patrimonio de arte sacro.
+            </div>
+            <div class="liActions">
+              <a class="btn outline" href="#" onclick="return false;" data-i18n="visit_btn">Visitar enlace (por añadir)</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="liTitle" data-i18n="m3_name">Museo del Convento de San Francisco (Medina de Rioseco)</div>
+            <div class="liHint" data-i18n="m3_hint">
+              Museo de arte sacro en antiguo convento; conserva arquitectura conventual y piezas religiosas.
+            </div>
+            <div class="liActions">
+              <a class="btn outline" href="#" onclick="return false;" data-i18n="visit_btn">Visitar enlace (por añadir)</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="liTitle" data-i18n="museums_future_title">Espacio en crecimiento</div>
+            <div class="liHint" data-i18n="museums_future_text">
+              Este apartado se ampliará incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.
+            </div>
+            <div class="liActions">
+              <span class="btn outline" data-i18n="in_prep" aria-disabled="true">EN PREPARACIÓN</span>
+            </div>
+          </li>
+        </ul>
+
+        <p class="note" data-i18n="museums_note">
+          Importante: este apartado se plantea como línea cultural e institucional. No constituye una web turística.
+        </p>
+      </article>
+
+    </section>
+
+    <footer>
+      <div data-i18n="footer_line_1">© Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual · Asociación cultural sin ánimo de lucro · Proyecto cultural en desarrollo</div>
+      <div class="apolo" data-i18n="footer_apolo">Sitio desarrollado por Apolo Studio Creativo (en preparación)</div>
+    </footer>
+
+  </main>
+
+  <script>
+    // Diccionario i18n
+    const I18N = {
+      es: {
+        brand_sub: "ASOCIACIÓN CULTURAL",
+        nav_inicio: "INICIO",
+        nav_asociacion: "ASOCIACIÓN",
+        nav_proyectos: "PROYECTOS",
+        nav_concursos: "CONCURSOS",
+        nav_rutas: "RUTAS MONACALES",
+        nav_patrocinadores: "PATROCINADORES",
+        nav_contacto: "CONTACTO",
+        kicker: "CULTURA · TRADICIÓN · PATRIMONIO",
+        title: "RUTAS MONACALES",
+        lead: "Itinerarios culturales y gastronómicos vinculados a la vida conventual. Accesos directos a webs oficiales de monasterios y museos conventuales.",
+        routes_title: "Rutas culturales y compra de productos",
+        routes_text: "Esta sección facilita el acceso a páginas oficiales de monasterios y comunidades religiosas. DULCESOR actúa únicamente como enlace informativo para conocer y, cuando exista, acceder a la compra de productos artesanos.",
+        route_block_title: "Monasterios y comunidades (selección)",
+        route_block_hint: "En preparación. Añadiremos enlaces directos a webs oficiales, horarios de visita y acceso a compra cuando esté disponible.",
+        routes_note: "Nota: Los enlaces se incorporarán progresivamente y podrán variar según disponibilidad y autorización de cada comunidad.",
+        museums_title: "Museos Conventuales",
+        museums_intro: "La Asociación Cultural DULCESOR promueve la conservación y difusión del patrimonio cultural vinculado a la vida conventual, apoyando especialmente a los museos conventuales como espacios vivos de memoria, arte y tradición.",
+        museum_main_title: "Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)",
+        museum_main_text: "Museo conventual de referencia, vinculado a la vida monástica y al patrimonio artístico del monasterio cisterciense. Un espacio de especial valor cultural y espiritual en el contexto de la ciudad de Valladolid.",
+        museum_visit_btn: "Visitar web del museo",
+        museum_vr_btn: "Experiencia virtual · en preparación",
+        museum_vr_note: "Apolo Studio Creativo está desarrollando una experiencia de realidad virtual vinculada a piezas del museo (en preparación).",
+        museums_other_title: "Otros museos / espacios conventuales (selección)",
+        m2_name: "Real Monasterio de Santa Clara (Tordesillas)",
+        m2_hint: "Conjunto monumental y museo visitable, relevante por su historia y patrimonio de arte sacro.",
+        m3_name: "Museo del Convento de San Francisco (Medina de Rioseco)",
+        m3_hint: "Museo de arte sacro en antiguo convento; conserva arquitectura conventual y piezas religiosas.",
+        visit_btn: "Visitar enlace (por añadir)",
+        museums_future_title: "Espacio en crecimiento",
+        museums_future_text: "Este apartado se ampliará incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.",
+        museums_note: "Importante: este apartado se plantea como línea cultural e institucional. No constituye una web turística.",
+        in_prep: "EN PREPARACIÓN",
+        footer_line_1: "© Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual · Asociación cultural sin ánimo de lucro · Proyecto cultural en desarrollo",
+        footer_apolo: "Sitio desarrollado por Apolo Studio Creativo (en preparación)"
+      },
+
+      en: {
+        brand_sub: "CULTURAL ASSOCIATION",
+        nav_inicio: "HOME",
+        nav_asociacion: "ASSOCIATION",
+        nav_proyectos: "PROJECTS",
+        nav_concursos: "CONTESTS",
+        nav_rutas: "MONASTIC ROUTES",
+        nav_patrocinadores: "SPONSORS",
+        nav_contacto: "CONTACT",
+        kicker: "CULTURE · TRADITION · HERITAGE",
+        title: "MONASTIC ROUTES",
+        lead: "Cultural and gastronomic itineraries linked to convent life. Direct access to official websites of monasteries and convent museums.",
+        routes_title: "Cultural routes and product access",
+        routes_text: "This section provides access to the official websites of monasteries and religious communities. DULCESOR acts only as an informative link to learn about and, when available, access the purchase of artisan products.",
+        route_block_title: "Monasteries and communities (selection)",
+        route_block_hint: "In preparation. We will add direct links to official websites, visiting hours and purchase access when available.",
+        routes_note: "Note: Links will be added progressively and may change depending on availability and authorization of each community.",
+        museums_title: "Convent Museums",
+        museums_intro: "The DULCESOR Cultural Association promotes the conservation and dissemination of cultural heritage linked to convent life, especially supporting convent museums as living spaces of memory, art and tradition.",
+        museum_main_title: "Museum of the Royal Monastery of San Joaquín y Santa Ana (Valladolid)",
+        museum_main_text: "A reference convent museum, linked to monastic life and the artistic heritage of the Cistercian monastery. A place of special cultural and spiritual value in the city of Valladolid.",
+        museum_visit_btn: "Visit museum website",
+        museum_vr_btn: "Virtual experience · in preparation",
+        museum_vr_note: "Apolo Studio Creativo is developing a virtual reality experience linked to museum pieces (in preparation).",
+        museums_other_title: "Other convent spaces (selection)",
+        m2_name: "Royal Monastery of Santa Clara (Tordesillas)",
+        m2_hint: "Monumental complex and visitable museum, notable for its history and sacred art heritage.",
+        m3_name: "Museum of the Convent of San Francisco (Medina de Rioseco)",
+        m3_hint: "Sacred art museum in an old convent; preserves convent architecture and religious works.",
+        visit_btn: "Visit link (to be added)",
+        museums_future_title: "Growing space",
+        museums_future_text: "This section will expand by including other convent museums that share DULCESOR’s cultural and heritage values.",
+        museums_note: "Important: this is an institutional cultural line. It is not a generic tourism website.",
+        in_prep: "IN PREPARATION",
+        footer_line_1: "© Cultural Association ‘DULCESOR’ – Monastic Convent Pastry · Non-profit cultural association · Cultural project in development",
+        footer_apolo: "Site developed by Apolo Studio Creativo (in preparation)"
+      },
+
+      pt: {
+        brand_sub: "ASSOCIAÇÃO CULTURAL",
+        nav_inicio: "INÍCIO",
+        nav_asociacion: "ASSOCIAÇÃO",
+        nav_proyectos: "PROJETOS",
+        nav_concursos: "CONCURSOS",
+        nav_rutas: "ROTAS MONÁSTICAS",
+        nav_patrocinadores: "PATROCINADORES",
+        nav_contacto: "CONTACTO",
+        kicker: "CULTURA · TRADIÇÃO · PATRIMÓNIO",
+        title: "ROTAS MONÁSTICAS",
+        lead: "Itinerários culturais e gastronómicos ligados à vida conventual. Acesso direto a sites oficiais de mosteiros e museus conventuais.",
+        routes_title: "Rotas culturais e acesso a produtos",
+        routes_text: "Esta secção facilita o acesso a sites oficiais de mosteiros e comunidades religiosas. A DULCESOR atua apenas como ligação informativa para conhecer e, quando exista, aceder à compra de produtos artesanais.",
+        route_block_title: "Mosteiros e comunidades (seleção)",
+        route_block_hint: "Em preparação. Iremos adicionar ligações diretas a sites oficiais, horários e acesso à compra quando disponível.",
+        routes_note: "Nota: As ligações serão incorporadas progressivamente e podem variar conforme a disponibilidade e autorização de cada comunidade.",
+        museums_title: "Museus Conventuais",
+        museums_intro: "A Associação Cultural DULCESOR promove a conservação e divulgação do património cultural ligado à vida conventual, apoiando especialmente os museus conventuais como espaços vivos de memória, arte e tradição.",
+        museum_main_title: "Museu do Real Mosteiro de San Joaquín y Santa Ana (Valladolid)",
+        museum_main_text: "Museu conventual de referência, ligado à vida monástica e ao património artístico do mosteiro cisterciense. Um espaço de especial valor cultural e espiritual na cidade de Valladolid.",
+        museum_visit_btn: "Visitar site do museu",
+        museum_vr_btn: "Experiência virtual · em preparação",
+        museum_vr_note: "A Apolo Studio Creativo está a desenvolver uma experiência de realidade virtual ligada a peças do museu (em preparação).",
+        museums_other_title: "Outros espaços conventuais (seleção)",
+        m2_name: "Real Mosteiro de Santa Clara (Tordesillas)",
+        m2_hint: "Conjunto monumental e museu visitável, relevante pela sua história e património de arte sacra.",
+        m3_name: "Museu do Convento de San Francisco (Medina de Rioseco)",
+        m3_hint: "Museu de arte sacra num antigo convento; conserva arquitetura conventual e peças religiosas.",
+        visit_btn: "Visitar ligação (a adicionar)",
+        museums_future_title: "Espaço em crescimento",
+        museums_future_text: "Este espaço irá crescer, incorporando outros museus conventuais que partilhem os valores culturais e patrimoniais da DULCESOR.",
+        museums_note: "Importante: este é um eixo cultural institucional. Não é um site turístico genérico.",
+        in_prep: "EM PREPARAÇÃO",
+        footer_line_1: "© Associação Cultural ‘DULCESOR’ – Doçaria Monacal Conventual · Associação cultural sem fins lucrativos · Projeto cultural em desenvolvimento",
+        footer_apolo: "Site desenvolvido pela Apolo Studio Creativo (em preparação)"
+      },
+
+      fr: {
+        brand_sub: "ASSOCIATION CULTURELLE",
+        nav_inicio: "ACCUEIL",
+        nav_asociacion: "ASSOCIATION",
+        nav_proyectos: "PROJETS",
+        nav_concursos: "CONCOURS",
+        nav_rutas: "ITINÉRAIRES MONASTIQUES",
+        nav_patrocinadores: "PARTENAIRES",
+        nav_contacto: "CONTACT",
+        kicker: "CULTURE · TRADITION · PATRIMOINE",
+        title: "ITINÉRAIRES MONASTIQUES",
+        lead: "Itinéraires culturels et gastronomiques liés à la vie conventuelle. Accès direct aux sites officiels de monastères et musées conventuels.",
+        routes_title: "Itinéraires culturels et accès aux produits",
+        routes_text: "Cette section facilite l’accès aux sites officiels des monastères et communautés religieuses. DULCESOR agit uniquement comme lien informatif pour découvrir et, lorsque c’est possible, accéder à l’achat de produits artisanaux.",
+        route_block_title: "Monastères et communautés (sélection)",
+        route_block_hint: "En préparation. Nous ajouterons des liens vers les sites officiels, les horaires et l’accès à l’achat lorsque disponible.",
+        routes_note: "Note : les liens seront ajoutés progressivement et pourront varier selon la disponibilité et l’autorisation de chaque communauté.",
+        museums_title: "Musées Conventuels",
+        museums_intro: "L’Association Culturelle DULCESOR promeut la conservation et la diffusion du patrimoine culturel lié à la vie conventuelle, en soutenant particulièrement les musées conventuels comme espaces vivants de mémoire, d’art et de tradition.",
+        museum_main_title: "Musée du Real Monasterio de San Joaquín y Santa Ana (Valladolid)",
+        museum_main_text: "Musée conventuel de référence, lié à la vie monastique et au patrimoine artistique du monastère cistercien. Un lieu de grande valeur culturelle et spirituelle à Valladolid.",
+        museum_visit_btn: "Visiter le site du musée",
+        museum_vr_btn: "Expérience virtuelle · en préparation",
+        museum_vr_note: "Apolo Studio Creativo développe une expérience de réalité virtuelle liée aux pièces du musée (en préparation).",
+        museums_other_title: "Autres espaces conventuels (sélection)",
+        m2_name: "Real Monasterio de Santa Clara (Tordesillas)",
+        m2_hint: "Ensemble monumental et musée visitable, remarquable pour son histoire et son patrimoine d’art sacré.",
+        m3_name: "Musée du Couvent de San Francisco (Medina de Rioseco)",
+        m3_hint: "Musée d’art sacré dans un ancien couvent ; conserve l’architecture conventuelle et des œuvres religieuses.",
+        visit_btn: "Visiter le lien (à ajouter)",
+        museums_future_title: "Espace évolutif",
+        museums_future_text: "Cet espace s’enrichira en intégrant d’autres musées conventuels partageant les valeurs culturelles et patrimoniales de DULCESOR.",
+        museums_note: "Important : il s’agit d’un axe culturel institutionnel. Ce n’est pas un site touristique générique.",
+        in_prep: "EN PRÉPARATION",
+        footer_line_1: "© Association Culturelle ‘DULCESOR’ – Pâtisserie Monacale Conventuelle · Association culturelle à but non lucratif · Projet culturel en développement",
+        footer_apolo: "Site développé par Apolo Studio Creativo (en préparation)"
+      },
+
+      it: {
+        brand_sub: "ASSOCIAZIONE CULTURALE",
+        nav_inicio: "HOME",
+        nav_asociacion: "ASSOCIAZIONE",
+        nav_proyectos: "PROGETTI",
+        nav_concursos: "CONCORSI",
+        nav_rutas: "ITINERARI MONASTICI",
+        nav_patrocinadores: "SPONSOR",
+        nav_contacto: "CONTATTI",
+        kicker: "CULTURA · TRADIZIONE · PATRIMONIO",
+        title: "ITINERARI MONASTICI",
+        lead: "Itinerari culturali e gastronomici legati alla vita conventuale. Accesso diretto ai siti ufficiali di monasteri e musei conventuali.",
+        routes_title: "Itinerari culturali e accesso ai prodotti",
+        routes_text: "Questa sezione facilita l’accesso ai siti ufficiali di monasteri e comunità religiose. DULCESOR agisce solo come collegamento informativo per conoscere e, quando disponibile, accedere all’acquisto di prodotti artigianali.",
+        route_block_title: "Monasteri e comunità (selezione)",
+        route_block_hint: "In preparazione. Aggiungeremo link diretti ai siti ufficiali, orari di visita e accesso all’acquisto quando disponibile.",
+        routes_note: "Nota: i link saranno aggiunti progressivamente e potranno variare in base alla disponibilità e autorizzazione di ciascuna comunità.",
+        museums_title: "Musei Conventuali",
+        museums_intro: "L’Associazione Culturale DULCESOR promuove la conservazione e la diffusione del patrimonio culturale legato alla vita conventuale, sostenendo in particolare i musei conventuali come spazi vivi di memoria, arte e tradizione.",
+        museum_main_title: "Museo del Real Monastero di San Joaquín y Santa Ana (Valladolid)",
+        museum_main_text: "Museo conventuale di riferimento, legato alla vita monastica e al patrimonio artistico del monastero cistercense. Uno spazio di speciale valore culturale e spirituale nella città di Valladolid.",
+        museum_visit_btn: "Visita il sito del museo",
+        museum_vr_btn: "Esperienza virtuale · in preparazione",
+        museum_vr_note: "Apolo Studio Creativo sta sviluppando un’esperienza di realtà virtuale legata a opere del museo (in preparazione).",
+        museums_other_title: "Altri spazi conventuali (selezione)",
+        m2_name: "Real Monastero di Santa Clara (Tordesillas)",
+        m2_hint: "Complesso monumentale e museo visitabile, rilevante per storia e patrimonio di arte sacra.",
+        m3_name: "Museo del Convento di San Francisco (Medina de Rioseco)",
+        m3_hint: "Museo di arte sacra in un antico convento; conserva architettura conventuale e opere religiose.",
+        visit_btn: "Visita link (da aggiungere)",
+        museums_future_title: "Spazio in crescita",
+        museums_future_text: "Questo spazio crescerà includendo altri musei conventuali che condividono i valori culturali e patrimoniali di DULCESOR.",
+        museums_note: "Importante: è una linea culturale istituzionale. Non è un sito turistico generico.",
+        in_prep: "IN PREPARAZIONE",
+        footer_line_1: "© Associazione Culturale ‘DULCESOR’ – Pasticceria Monastica Conventuale · Associazione culturale senza scopo di lucro · Progetto culturale in sviluppo",
+        footer_apolo: "Sito sviluppato da Apolo Studio Creativo (in preparazione)"
+      }
+    };
+
+    function applyLang(lang){
+      const dict = I18N[lang] || I18N.es;
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        if (typeof dict[key] === "string") el.textContent = dict[key];
+      });
+
+      // Botones activos
+      document.querySelectorAll(".langBtn").forEach(b=>{
+        b.classList.toggle("active", b.dataset.lang === lang);
+      });
+
+      try { localStorage.setItem("dulcesor_lang", lang); } catch(e){}
+    }
+
+    // Enlaces de idioma
+    document.querySelectorAll(".langBtn").forEach(btn=>{
+      btn.addEventListener("click", ()=> applyLang(btn.dataset.lang));
+    });
+
+    // Idioma inicial
+    let startLang = "es";
+    try{
+      const saved = localStorage.getItem("dulcesor_lang");
+      if (saved && I18N[saved]) startLang = saved;
+    } catch(e){}
+    applyLang(startLang);
+  </script>
+</body>
+</html>
