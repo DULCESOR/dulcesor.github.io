@@ -1,10 +1,10 @@
-!doctype html>
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DULCESOR · Concursos</title>
-  <meta name="description" content="I Concurso Internacional de Repostería Monacal DULCESOR · Valladolid 2026" />
+  <meta name="description" content="I Concurso Internacional de Repostería Monacal DULCESOR (Valladolid). Información institucional y documentación oficial." />
 
   <style>
     :root{
@@ -13,113 +13,135 @@
       --text:#1f1f1f;
       --muted:#6b6b6b;
       --line:#e6e1d8;
-      --gold: rgb(145, 128, 26);
-      --shadow: 0 10px 28px rgba(0,0,0,.06);
-      --radius: 16px;
-      --max: 1100px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --gold:#8b7a1a; /* oro */
+      --shadow:0 14px 40px rgba(0,0,0,.06);
+      --radius:16px;
+      --radiusSm:12px;
+      --max:1100px;
+      --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      --titleTrack:.18em;
     }
+
     *{box-sizing:border-box}
     body{
-      margin:0; background:var(--bg); color:var(--text);
-      font-family:var(--font); line-height:1.45;
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:var(--font);
     }
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px;}
 
-    /* Header (modelo: asociacion.html) */
+    /* ===== Header (igual que asociación.html) ===== */
     header{
-      background:rgba(246,244,241,.92);
-      backdrop-filter:saturate(140%) blur(6px);
       border-bottom:1px solid var(--line);
-      position:sticky; top:0; z-index:10;
+      background:rgba(246,244,241,.9);
+      backdrop-filter:saturate(140%) blur(6px);
+      position:sticky; top:0; z-index:50;
     }
     .topbar{
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 0;
-      gap:16px;
+      gap:12px;
     }
     .brand{
       display:flex; align-items:center; gap:12px;
       text-decoration:none;
     }
-    .mark{
-      width:34px; height:34px; border-radius:10px;
+    .brandMark{
+      width:38px; height:38px;
+      border-radius:12px;
       border:1px solid var(--line);
       display:grid; place-items:center;
+      background:#f3efe8;
       color:var(--gold);
-      font-weight:800;
-      background:#fbfaf8;
+      font-weight:700;
     }
-    .brandText{display:flex; flex-direction:column; line-height:1.05}
-    .brandText b{letter-spacing:.06em}
-    .brandText span{font-size:12px; color:var(--muted); letter-spacing:.10em}
-    .lang{
-      display:flex; gap:8px; align-items:center; flex-wrap:wrap;
+    .brandText{line-height:1.05}
+    .brandText .name{
+      font-weight:800; letter-spacing:.08em;
+      font-size:14px;
+    }
+    .brandText .sub{
+      font-size:11px; letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-top:4px;
+    }
+
+    .langs{
+      display:flex; gap:10px; align-items:center;
     }
     .langBtn{
       border:1px solid var(--line);
       background:#fff;
-      padding:6px 10px;
-      border-radius:10px;
-      cursor:pointer;
+      color:var(--text);
+      padding:8px 10px;
+      border-radius:12px;
       font-size:12px;
-      letter-spacing:.12em;
-      color:#333;
+      letter-spacing:.08em;
+      cursor:pointer;
+      user-select:none;
     }
     .langBtn.active{
-      border-color:rgba(145,128,26,.45);
-      background:rgba(145,128,26,.10);
-      color:#2b240a;
+      border-color:rgba(139,122,26,.35);
+      color:var(--gold);
       font-weight:700;
+      background:#fffdf7;
     }
 
     nav{
       border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-      background:rgba(246,244,241,.92);
     }
     .nav{
-      display:flex; justify-content:center; gap:28px;
-      padding:10px 0;
-      flex-wrap:wrap;
+      display:flex; flex-wrap:wrap;
+      justify-content:center;
+      gap:26px;
+      padding:14px 0;
+      margin:0;
+      list-style:none;
     }
     .nav a{
       text-decoration:none;
       font-size:12px;
       letter-spacing:.18em;
-      color:#2a2a2a;
-      padding:8px 10px;
-      border-radius:999px;
+      text-transform:uppercase;
+      color:var(--text);
+      padding:8px 2px;
+      border-bottom:2px solid transparent;
     }
     .nav a.active{
-      background:rgba(145,128,26,.12);
-      border:1px solid rgba(145,128,26,.22);
+      color:var(--gold);
+      border-bottom-color:var(--gold);
+      font-weight:700;
     }
 
-    /* Main */
-    main{padding:34px 0 40px}
-    h1{
+    /* ===== Main ===== */
+    main{padding:34px 0 26px;}
+    .pageTitle{
       text-align:center;
-      letter-spacing:.08em;
+      margin:8px 0 10px;
       font-size:34px;
-      margin:10px 0 8px;
+      letter-spacing:var(--titleTrack);
+      text-transform:uppercase;
+      color:var(--gold);
+      font-weight:800;
     }
-    .sub{
+    .pageLead{
       text-align:center;
       color:var(--muted);
-      margin:0 auto 22px;
       max-width:820px;
+      margin:0 auto 22px;
+      line-height:1.55;
     }
+
     .grid{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:18px;
-      align-items:start;
+      grid-template-columns: 1fr;
+      gap:16px;
     }
-    @media (max-width: 900px){
-      .grid{grid-template-columns:1fr}
-      h1{font-size:30px}
+    @media(min-width: 860px){
+      .grid.two{grid-template-columns: 1fr 1fr;}
     }
 
     .card{
@@ -127,418 +149,474 @@
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      overflow:hidden;
+      padding:18px 18px;
     }
-    .cardPad{padding:18px}
+    .card h3{
+      margin:0 0 10px;
+      font-size:14px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
     .muted{color:var(--muted)}
-    .tag{
-      display:inline-flex;
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:6px 10px;
-      font-size:12px;
-      letter-spacing:.12em;
-      color:#444;
-      background:#fbfaf8;
-      gap:8px;
-      align-items:center;
-    }
-    .tag b{color:var(--gold); letter-spacing:.08em}
+    .hr{height:1px;background:var(--line);margin:14px 0}
 
-    .poster{
-      display:block;
-      width:100%;
-      height:auto;
-      background:#f2eee6;
-    }
-    .actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:14px;
+    .btnRow{
+      display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;
     }
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
       padding:10px 14px;
       border-radius:999px;
-      border:1px solid rgba(145,128,26,.25);
-      background:rgba(145,128,26,.13);
+      border:1px solid rgba(139,122,26,.45);
+      background:var(--gold);
+      color:#fff;
       text-decoration:none;
-      font-size:13px;
-      letter-spacing:.08em;
-      cursor:pointer;
+      font-size:12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
       white-space:nowrap;
     }
-    .btn:hover{filter:brightness(0.98)}
     .btn.outline{
       background:#fff;
-      border:1px solid var(--line);
+      color:var(--gold);
     }
-    .list{
-      margin:10px 0 0;
-      padding:0 0 0 18px;
-    }
-    .list li{margin:8px 0}
-    .kpi{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-      margin-top:12px;
-    }
-    @media (max-width: 520px){ .kpi{grid-template-columns:1fr} }
-    .kpi .box{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:12px;
-      background:#fbfaf8;
-    }
-    .box .lbl{font-size:12px; letter-spacing:.14em; color:#444}
-    .box .val{margin-top:6px; font-weight:700}
-    .note{
-      margin-top:12px;
-      font-size:13px;
-      color:var(--muted);
-    }
-    .contactLine{
-      margin-top:10px;
-      font-size:14px;
-    }
-    .contactLine a{color:var(--gold); text-decoration:none; font-weight:700}
-    .hr{height:1px; background:var(--line); margin:14px 0}
 
-    /* Footer (igual en todas) */
+    /* Cartel: grande pero controlado */
+    .posterWrap{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+      align-items:start;
+    }
+    @media(min-width: 860px){
+      .posterWrap{grid-template-columns: 420px 1fr;}
+    }
+    .poster{
+      width:100%;
+      max-height:520px;       /* clave: evita “cartel enorme” */
+      object-fit:contain;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#fff;
+    }
+    .kvs{
+      margin:0;
+      padding-left:18px;
+      line-height:1.65;
+      color:var(--text);
+    }
+    .kvs li{margin:6px 0}
+    .note{
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.55;
+    }
+
+    /* ===== Footer (igual al “bueno”) ===== */
     footer{
       border-top:1px solid var(--line);
-      padding:18px 0 30px;
-      color:var(--muted);
-      font-size:13px;
+      padding:18px 0 24px;
       text-align:center;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.65;
     }
-    .gold{color:var(--gold)}
+    .footStrong{color:var(--text); font-weight:700}
+    .footGold{color:var(--gold); font-weight:800}
   </style>
 </head>
 
 <body>
-  <!-- Header -->
   <header>
     <div class="wrap">
       <div class="topbar">
-        <a class="brand" href="index.html" aria-label="Inicio">
-          <div class="mark">D</div>
+        <a class="brand" href="index.html" aria-label="DULCESOR">
+          <div class="brandMark">D</div>
           <div class="brandText">
-            <b>DULCESOR</b>
-            <span data-i18n="brand_sub">ASOCIACIÓN CULTURAL</span>
+            <div class="name">DULCESOR</div>
+            <div class="sub" data-i18n="brand_sub">ASOCIACIÓN CULTURAL</div>
           </div>
         </a>
 
-        <div class="lang" aria-label="Idiomas">
-          <button class="langBtn" data-lang="es">ES</button>
+        <div class="langs" aria-label="Idiomas">
+          <button class="langBtn active" data-lang="es">ES</button>
           <button class="langBtn" data-lang="en">EN</button>
           <button class="langBtn" data-lang="pt">PT</button>
           <button class="langBtn" data-lang="fr">FR</button>
           <button class="langBtn" data-lang="it">IT</button>
         </div>
       </div>
-    </div>
 
-    <nav>
-      <div class="wrap">
-        <div class="nav">
-          <a href="asociacion.html" data-i18n="nav_asociacion">ASOCIACIÓN</a>
-          <a href="proyectos.html" data-i18n="nav_proyectos">PROYECTOS</a>
-          <a href="concursos.html" class="active" data-i18n="nav_concursos">CONCURSOS</a>
-          <a href="rutas.html" data-i18n="nav_rutas">RUTAS MONACALES</a>
-          <a href="patrocinadores.html" data-i18n="nav_patrocinadores">PATROCINADORES</a>
-          <a href="contacto.html" data-i18n="nav_contacto">CONTACTO</a>
-        </div>
-      </div>
-    </nav>
+      <nav aria-label="Menú principal">
+        <ul class="nav">
+          <li><a href="asociacion.html" data-i18n="nav_asociacion">ASOCIACIÓN</a></li>
+          <li><a href="proyectos.html" data-i18n="nav_proyectos">PROYECTOS</a></li>
+          <li><a class="active" href="concursos.html" data-i18n="nav_concursos">CONCURSOS</a></li>
+          <li><a href="rutas.html" data-i18n="nav_rutas">RUTAS MONACALES</a></li>
+          <li><a href="patrocinadores.html" data-i18n="nav_patrocinadores">PATROCINADORES</a></li>
+          <li><a href="contacto.html" data-i18n="nav_contacto">CONTACTO</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Main -->
-  <main>
-    <div class="wrap">
-      <h1 data-i18n="page_title">CONCURSOS</h1>
-      <p class="sub" data-i18n="page_sub">
-        Información institucional del concurso y acceso a documentación oficial (bases y solicitud).
-      </p>
+  <main class="wrap">
+    <h1 class="pageTitle" data-i18n="page_title">CONCURSOS</h1>
+    <p class="pageLead" data-i18n="page_lead">
+      Información institucional del concurso y acceso a documentación oficial (cartel, bases y solicitud).
+    </p>
 
-      <div class="grid">
-        <!-- Poster + docs -->
-        <section class="card" aria-label="Cartel y documentación">
-          <img class="poster" src="cartel-I-concurso.jpeg" alt="Cartel I Concurso Internacional de Repostería Monacal DULCESOR" />
+    <div class="card">
+      <div class="posterWrap">
+        <img class="poster" src="cartel-I-concurso.jpeg" alt="Cartel del I Concurso Internacional de Repostería Monacal DULCESOR" />
 
-          <div class="cardPad">
-            <div class="tag">
-              <b data-i18n="contest_tag">I CONCURSO</b>
-              <span data-i18n="contest_tag_2">VALLADOLID · 2026</span>
-            </div>
+        <div>
+          <h2 style="margin:0 0 10px; font-size:20px; line-height:1.25" data-i18n="contest_name">
+            I Concurso Internacional de Repostería Monacal · DULCESOR
+          </h2>
 
-            <h2 style="margin:12px 0 6px" data-i18n="contest_title">
-              I Concurso Internacional de Postres Conventuales – Valladolid 2026
-            </h2>
+          <p class="muted" style="margin:0 0 10px; line-height:1.6" data-i18n="contest_intro">
+            Encuentro cultural y gastronómico de carácter internacional dedicado a la repostería elaborada en conventos y comunidades religiosas.
+          </p>
 
-            <p class="muted" style="margin:0" data-i18n="contest_intro">
-              Encuentro cultural y gastronómico de carácter internacional dedicado a la repostería elaborada en conventos y comunidades religiosas.
-            </p>
-
-            <div class="actions" aria-label="Accesos">
-              <a class="btn" href="bases.pdf" target="_blank" rel="noopener" data-i18n="btn_bases">
-                Bases del concurso (PDF)
-              </a>
-              <a class="btn outline" href="Solicitud.pdf" target="_blank" rel="noopener" data-i18n="btn_form">
-                Solicitud de participación (PDF editable)
-              </a>
-            </div>
-
-            <p class="note" data-i18n="contest_note">
-              La información publicada puede actualizarse conforme avance la organización. La participación no estará abierta hasta su anuncio oficial.
-            </p>
-
-            <p class="contactLine">
-              <span data-i18n="contact_lbl">Contacto concurso:</span>
+          <ul class="kvs">
+            <li><span class="footStrong" data-i18n="kv_place_lbl">Sede:</span> <span data-i18n="kv_place_val">Valladolid (España)</span></li>
+            <li><span class="footStrong" data-i18n="kv_dates_lbl">Fechas:</span> <span data-i18n="kv_dates_val">del 1 al 4 de octubre de 2026</span></li>
+            <li>
+              <span class="footStrong" data-i18n="kv_contact_lbl">Contacto:</span>
               <a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a>
-            </p>
+            </li>
+          </ul>
+
+          <div class="btnRow" style="margin-top:14px">
+            <a class="btn" href="bases.pdf" target="_blank" data-i18n="btn_bases">BASES (PDF)</a>
+            <a class="btn outline" href="solicitud.pdf" target="_blank" data-i18n="btn_form">SOLICITUD (PDF EDITABLE)</a>
+            <a class="btn outline" href="cartel-I-concurso.jpeg" target="_blank" data-i18n="btn_poster">CARTEL (IMAGEN)</a>
           </div>
-        </section>
 
-        <!-- Info (resumen sobrio) -->
-        <aside class="card" aria-label="Información clave">
-          <div class="cardPad">
-            <h3 style="margin:0 0 10px" data-i18n="key_title">INFORMACIÓN CLAVE</h3>
-
-            <div class="kpi">
-              <div class="box">
-                <div class="lbl" data-i18n="kpi_city_lbl">CIUDAD</div>
-                <div class="val" data-i18n="kpi_city_val">Valladolid (España)</div>
-              </div>
-              <div class="box">
-                <div class="lbl" data-i18n="kpi_scope_lbl">CARÁCTER</div>
-                <div class="val" data-i18n="kpi_scope_val">Cultural y gastronómico</div>
-              </div>
-            </div>
-
-            <div class="hr"></div>
-
-            <ul class="list">
-              <li data-i18n="li_1">Dirigido a religiosas vinculadas a comunidades conventuales o monacales.</li>
-              <li data-i18n="li_2">Cada participante presenta una única elaboración (según bases).</li>
-              <li data-i18n="li_3">La documentación oficial está disponible en PDF (bases y solicitud).</li>
-            </ul>
-
-            <div class="hr"></div>
-
-            <p class="note" data-i18n="legal_note">
-              DULCESOR es una asociación cultural sin ánimo de lucro. Este proyecto se encuentra en desarrollo.
-            </p>
-          </div>
-        </aside>
+          <p class="note" style="margin-top:12px" data-i18n="note_update">
+            La información publicada es orientativa y podrá actualizarse conforme avance la organización.
+          </p>
+        </div>
       </div>
+    </div>
+
+    <div class="grid two" style="margin-top:16px">
+      <section class="card" aria-label="Resumen del reglamento">
+        <h3 data-i18n="reg_title">Extracto institucional del reglamento</h3>
+        <p class="muted" style="margin:0 0 10px; line-height:1.6" data-i18n="reg_intro">
+          A continuación se recoge un resumen informativo (no sustitutivo) de los aspectos principales.
+        </p>
+        <div class="hr"></div>
+
+        <ul class="kvs" style="margin-top:0">
+          <li data-i18n="reg_1">Concurso dirigido a comunidades religiosas y a la repostería elaborada en conventos.</li>
+          <li data-i18n="reg_2">Enfoque cultural: preservación, reconocimiento y difusión de la tradición repostera monacal.</li>
+          <li data-i18n="reg_3">La participación y la entrega de documentación se formalizan mediante la Solicitud oficial.</li>
+          <li data-i18n="reg_4">Las Bases establecen categorías, criterios de valoración, calendario y condiciones generales.</li>
+          <li data-i18n="reg_5">La organización podrá concretar detalles logísticos conforme se acerque la fecha del evento.</li>
+        </ul>
+
+        <p class="note" style="margin:12px 0 0" data-i18n="reg_note">
+          Para requisitos, plazos y detalles completos, consulta siempre el PDF de Bases.
+        </p>
+      </section>
+
+      <section class="card" aria-label="Documentación">
+        <h3 data-i18n="docs_title">Documentación oficial</h3>
+        <p class="muted" style="margin:0 0 10px; line-height:1.6" data-i18n="docs_intro">
+          Descarga la documentación y consérvala como referencia.
+        </p>
+        <div class="hr"></div>
+
+        <ul class="kvs" style="margin-top:0">
+          <li><span class="footStrong" data-i18n="docs_bases_lbl">Bases:</span> <a href="bases.pdf" target="_blank" data-i18n="docs_open">Abrir PDF</a></li>
+          <li><span class="footStrong" data-i18n="docs_form_lbl">Solicitud:</span> <a href="solicitud.pdf" target="_blank" data-i18n="docs_open">Abrir PDF</a></li>
+          <li><span class="footStrong" data-i18n="docs_poster_lbl">Cartel:</span> <a href="cartel-I-concurso.jpeg" target="_blank" data-i18n="docs_open_img">Abrir imagen</a></li>
+        </ul>
+
+        <p class="note" style="margin:12px 0 0" data-i18n="docs_note">
+          Si tu navegador bloquea la apertura, prueba “Guardar enlace como…” o abre en una pestaña nueva.
+        </p>
+      </section>
     </div>
   </main>
 
-  <!-- Footer -->
   <footer>
     <div class="wrap">
-      <div data-i18n="footer_line_1">
-        © Asociación Cultural DULCESOR · Asociación cultural sin ánimo de lucro · Proyecto cultural en desarrollo
+      <div>
+        <span class="footStrong">©</span>
+        <span class="footStrong" data-i18n="foot_line_1_a">Asociación Cultural</span>
+        <span class="footStrong"> ‘</span><span class="footGold">DULCESOR</span><span class="footStrong">’</span>
+        <span class="footStrong"> – </span>
+        <span class="footStrong" data-i18n="foot_line_1_b">Repostería Monacal Conventual</span>
+        <span class="footStrong"> · </span>
+        <span data-i18n="foot_line_1_c">Asociación cultural sin ánimo de lucro</span>
+        <span class="footStrong"> · </span>
+        <span data-i18n="foot_line_1_d">En proceso de inscripción</span>
       </div>
-      <div data-i18n="footer_apolo" style="margin-top:6px;">
-        Sitio desarrollado por Apolo Studio Creativo (en preparación)
-      </div>
+
+      <div data-i18n="foot_line_2">Valladolid (España)</div>
+      <div data-i18n="foot_line_3">Sitio web desarrollado por Apolo Studio Creativo</div>
     </div>
   </footer>
 
   <script>
-    /* Traducciones básicas (mantenemos selector de idiomas).
-       Por ahora, fuera de ES dejo traducciones sencillas (las afinamos luego). */
     const I18N = {
       es: {
-        brand_sub: "ASOCIACIÓN CULTURAL",
-        nav_asociacion: "ASOCIACIÓN",
-        nav_proyectos: "PROYECTOS",
-        nav_concursos: "CONCURSOS",
-        nav_rutas: "RUTAS MONACALES",
-        nav_patrocinadores: "PATROCINADORES",
-        nav_contacto: "CONTACTO",
+        brand_sub:"ASOCIACIÓN CULTURAL",
+        nav_asociacion:"ASOCIACIÓN",
+        nav_proyectos:"PROYECTOS",
+        nav_concursos:"CONCURSOS",
+        nav_rutas:"RUTAS MONACALES",
+        nav_patrocinadores:"PATROCINADORES",
+        nav_contacto:"CONTACTO",
 
-        page_title: "CONCURSOS",
-        page_sub: "Información institucional del concurso y acceso a documentación oficial (bases y solicitud).",
+        page_title:"CONCURSOS",
+        page_lead:"Información institucional del concurso y acceso a documentación oficial (cartel, bases y solicitud).",
 
-        contest_tag: "I CONCURSO",
-        contest_tag_2: "VALLADOLID · 2026",
-        contest_title: "I Concurso Internacional de Postres Conventuales – Valladolid 2026",
-        contest_intro: "Encuentro cultural y gastronómico de carácter internacional dedicado a la repostería elaborada en conventos y comunidades religiosas.",
-        btn_bases: "Bases del concurso (PDF)",
-        btn_form: "Solicitud de participación (PDF editable)",
-        contest_note: "La información publicada puede actualizarse conforme avance la organización. La participación no estará abierta hasta su anuncio oficial.",
-        contact_lbl: "Contacto concurso:",
+        contest_name:"I Concurso Internacional de Repostería Monacal · DULCESOR",
+        contest_intro:"Encuentro cultural y gastronómico de carácter internacional dedicado a la repostería elaborada en conventos y comunidades religiosas.",
+        kv_place_lbl:"Sede:",
+        kv_place_val:"Valladolid (España)",
+        kv_dates_lbl:"Fechas:",
+        kv_dates_val:"del 1 al 4 de octubre de 2026",
+        kv_contact_lbl:"Contacto:",
 
-        key_title: "INFORMACIÓN CLAVE",
-        kpi_city_lbl: "CIUDAD",
-        kpi_city_val: "Valladolid (España)",
-        kpi_scope_lbl: "CARÁCTER",
-        kpi_scope_val: "Cultural y gastronómico",
+        btn_bases:"BASES (PDF)",
+        btn_form:"SOLICITUD (PDF EDITABLE)",
+        btn_poster:"CARTEL (IMAGEN)",
+        note_update:"La información publicada es orientativa y podrá actualizarse conforme avance la organización.",
 
-        li_1: "Dirigido a religiosas vinculadas a comunidades conventuales o monacales.",
-        li_2: "Cada participante presenta una única elaboración (según bases).",
-        li_3: "La documentación oficial está disponible en PDF (bases y solicitud).",
+        reg_title:"Extracto institucional del reglamento",
+        reg_intro:"A continuación se recoge un resumen informativo (no sustitutivo) de los aspectos principales.",
+        reg_1:"Concurso dirigido a comunidades religiosas y a la repostería elaborada en conventos.",
+        reg_2:"Enfoque cultural: preservación, reconocimiento y difusión de la tradición repostera monacal.",
+        reg_3:"La participación y la entrega de documentación se formalizan mediante la Solicitud oficial.",
+        reg_4:"Las Bases establecen categorías, criterios de valoración, calendario y condiciones generales.",
+        reg_5:"La organización podrá concretar detalles logísticos conforme se acerque la fecha del evento.",
+        reg_note:"Para requisitos, plazos y detalles completos, consulta siempre el PDF de Bases.",
 
-        legal_note: "DULCESOR es una asociación cultural sin ánimo de lucro. Este proyecto se encuentra en desarrollo.",
+        docs_title:"Documentación oficial",
+        docs_intro:"Descarga la documentación y consérvala como referencia.",
+        docs_bases_lbl:"Bases:",
+        docs_form_lbl:"Solicitud:",
+        docs_poster_lbl:"Cartel:",
+        docs_open:"Abrir PDF",
+        docs_open_img:"Abrir imagen",
+        docs_note:"Si tu navegador bloquea la apertura, prueba “Guardar enlace como…” o abre en una pestaña nueva.",
 
-        footer_line_1: "© Asociación Cultural DULCESOR · Asociación cultural sin ánimo de lucro · Proyecto cultural en desarrollo",
-        footer_apolo: "Sitio desarrollado por Apolo Studio Creativo (en preparación)"
+        foot_line_1_a:"Asociación Cultural",
+        foot_line_1_b:"Repostería Monacal Conventual",
+        foot_line_1_c:"Asociación cultural sin ánimo de lucro",
+        foot_line_1_d:"En proceso de inscripción",
+        foot_line_2:"Valladolid (España)",
+        foot_line_3:"Sitio web desarrollado por Apolo Studio Creativo"
       },
 
       en: {
-        brand_sub: "CULTURAL ASSOCIATION",
-        nav_asociacion: "ASSOCIATION",
-        nav_proyectos: "PROJECTS",
-        nav_concursos: "CONTESTS",
-        nav_rutas: "MONASTIC ROUTES",
-        nav_patrocinadores: "SPONSORS",
-        nav_contacto: "CONTACT",
+        brand_sub:"CULTURAL ASSOCIATION",
+        nav_asociacion:"ASSOCIATION",
+        nav_proyectos:"PROJECTS",
+        nav_concursos:"CONTEST",
+        nav_rutas:"MONASTIC ROUTES",
+        nav_patrocinadores:"SPONSORS",
+        nav_contacto:"CONTACT",
 
-        page_title: "CONTESTS",
-        page_sub: "Institutional information and access to official documents (rules and application form).",
+        page_title:"CONTEST",
+        page_lead:"Institutional information and access to official documents (poster, rules and application form).",
 
-        contest_tag: "1st CONTEST",
-        contest_tag_2: "VALLADOLID · 2026",
-        contest_title: "1st International Convent Pastry Contest – Valladolid 2026",
-        contest_intro: "International cultural and gastronomic event dedicated to pastries made in convents and religious communities.",
-        btn_bases: "Contest rules (PDF)",
-        btn_form: "Participation form (Editable PDF)",
-        contest_note: "Information may be updated as organization progresses. Participation will open upon official announcement.",
-        contact_lbl: "Contest contact:",
+        contest_name:"1st International Monastic Pastry Contest · DULCESOR",
+        contest_intro:"An international cultural and gastronomic event dedicated to pastry made in convents and religious communities.",
+        kv_place_lbl:"Based in:",
+        kv_place_val:"Valladolid (Spain)",
+        kv_dates_lbl:"Dates:",
+        kv_dates_val:"1–4 October 2026",
+        kv_contact_lbl:"Contact:",
 
-        key_title: "KEY INFO",
-        kpi_city_lbl: "CITY",
-        kpi_city_val: "Valladolid (Spain)",
-        kpi_scope_lbl: "SCOPE",
-        kpi_scope_val: "Cultural & gastronomic",
+        btn_bases:"RULES (PDF)",
+        btn_form:"APPLICATION (EDITABLE PDF)",
+        btn_poster:"POSTER (IMAGE)",
+        note_update:"The information published is indicative and may be updated as the organization progresses.",
 
-        li_1: "For nuns linked to convent or monastic communities.",
-        li_2: "One entry per participant (see rules).",
-        li_3: "Official documents available in PDF (rules and form).",
+        reg_title:"Institutional excerpt (summary)",
+        reg_intro:"Below is a brief informative summary (not a substitute for the official PDFs).",
+        reg_1:"A contest aimed at religious communities and pastry made in convents.",
+        reg_2:"Cultural focus: preservation, recognition and dissemination of monastic pastry tradition.",
+        reg_3:"Participation and submission of documents are formalized through the official Application form.",
+        reg_4:"The Rules define categories, evaluation criteria, timeline and general conditions.",
+        reg_5:"The organization may уточate logistics as the event date approaches.",
+        reg_note:"For full requirements and details, always refer to the Rules PDF.",
 
-        legal_note: "DULCESOR is a non-profit cultural association. This project is under development.",
+        docs_title:"Official documents",
+        docs_intro:"Download the documents and keep them as a reference.",
+        docs_bases_lbl:"Rules:",
+        docs_form_lbl:"Application:",
+        docs_poster_lbl:"Poster:",
+        docs_open:"Open PDF",
+        docs_open_img:"Open image",
+        docs_note:"If your browser blocks opening, try “Save link as…” or open in a new tab.",
 
-        footer_line_1: "© DULCESOR Cultural Association · Non-profit cultural association · Project under development",
-        footer_apolo: "Website developed by Apolo Studio Creativo (in progress)"
+        foot_line_1_a:"Cultural Association",
+        foot_line_1_b:"Monastic Convent Pastry",
+        foot_line_1_c:"Non-profit cultural association",
+        foot_line_1_d:"Registration in progress",
+        foot_line_2:"Valladolid (Spain)",
+        foot_line_3:"Website developed by Apolo Studio Creativo"
       },
 
       pt: {
-        brand_sub: "ASSOCIAÇÃO CULTURAL",
-        nav_asociacion: "ASSOCIAÇÃO",
-        nav_proyectos: "PROJETOS",
-        nav_concursos: "CONCURSOS",
-        nav_rutas: "ROTAS MONÁSTICAS",
-        nav_patrocinadores: "PATROCINADORES",
-        nav_contacto: "CONTACTO",
+        brand_sub:"ASSOCIAÇÃO CULTURAL",
+        nav_asociacion:"ASSOCIAÇÃO",
+        nav_proyectos:"PROJETOS",
+        nav_concursos:"CONCURSO",
+        nav_rutas:"ROTAS MONÁSTICAS",
+        nav_patrocinadores:"PATROCINADORES",
+        nav_contacto:"CONTACTO",
 
-        page_title: "CONCURSOS",
-        page_sub: "Informação institucional e acesso a documentos oficiais (regulamento e inscrição).",
+        page_title:"CONCURSO",
+        page_lead:"Informação institucional e acesso à documentação oficial (cartaz, bases e inscrição).",
 
-        contest_tag: "I CONCURSO",
-        contest_tag_2: "VALLADOLID · 2026",
-        contest_title: "I Concurso Internacional de Doçaria Conventual – Valladolid 2026",
-        contest_intro: "Encontro cultural e gastronómico internacional dedicado à doçaria feita em conventos e comunidades religiosas.",
-        btn_bases: "Regulamento (PDF)",
-        btn_form: "Formulário (PDF editável)",
-        contest_note: "A informação pode ser atualizada. A participação abrirá após anúncio oficial.",
-        contact_lbl: "Contacto do concurso:",
+        contest_name:"I Concurso Internacional de Doçaria Monástica · DULCESOR",
+        contest_intro:"Encontro cultural e gastronómico de carácter internacional dedicado à doçaria feita em conventos e comunidades religiosas.",
+        kv_place_lbl:"Local:",
+        kv_place_val:"Valladolid (Espanha)",
+        kv_dates_lbl:"Datas:",
+        kv_dates_val:"1–4 de outubro de 2026",
+        kv_contact_lbl:"Contacto:",
 
-        key_title: "INFORMAÇÃO",
-        kpi_city_lbl: "CIDADE",
-        kpi_city_val: "Valladolid (Espanha)",
-        kpi_scope_lbl: "ÂMBITO",
-        kpi_scope_val: "Cultural e gastronómico",
+        btn_bases:"BASES (PDF)",
+        btn_form:"INSCRIÇÃO (PDF EDITÁVEL)",
+        btn_poster:"CARTAZ (IMAGEM)",
+        note_update:"A informação publicada é indicativa e poderá ser atualizada à medida que a organização avance.",
 
-        li_1: "Dirigido a religiosas ligadas a comunidades conventuais.",
-        li_2: "Uma participação por concorrente (ver regulamento).",
-        li_3: "Documentos oficiais em PDF (regulamento e formulário).",
+        reg_title:"Excerto institucional (resumo)",
+        reg_intro:"Segue um resumo informativo (não substitui os PDFs oficiais).",
+        reg_1:"Concurso dirigido a comunidades religiosas e à doçaria elaborada em conventos.",
+        reg_2:"Foco cultural: preservação, reconhecimento e divulgação da tradição monástica.",
+        reg_3:"A participação formaliza-se através do formulário oficial de inscrição.",
+        reg_4:"As Bases definem categorias, critérios de avaliação, calendário e condições.",
+        reg_5:"A organização poderá concretizar detalhes logísticos com a aproximação do evento.",
+        reg_note:"Para requisitos completos, consulte sempre o PDF das Bases.",
 
-        legal_note: "DULCESOR é uma associação cultural sem fins lucrativos. Projeto em desenvolvimento.",
+        docs_title:"Documentação oficial",
+        docs_intro:"Faça download e guarde como referência.",
+        docs_bases_lbl:"Bases:",
+        docs_form_lbl:"Inscrição:",
+        docs_poster_lbl:"Cartaz:",
+        docs_open:"Abrir PDF",
+        docs_open_img:"Abrir imagem",
+        docs_note:"Se o navegador bloquear, tente “Guardar ligação como…” ou abra numa nova aba.",
 
-        footer_line_1: "© Associação Cultural DULCESOR · Sem fins lucrativos · Projeto em desenvolvimento",
-        footer_apolo: "Site desenvolvido por Apolo Studio Creativo (em preparação)"
+        foot_line_1_a:"Associação Cultural",
+        foot_line_1_b:"Doçaria Monástica Conventual",
+        foot_line_1_c:"Associação cultural sem fins lucrativos",
+        foot_line_1_d:"Inscrição em curso",
+        foot_line_2:"Valladolid (Espanha)",
+        foot_line_3:"Site desenvolvido por Apolo Studio Creativo"
       },
 
       fr: {
-        brand_sub: "ASSOCIATION CULTURELLE",
-        nav_asociacion: "ASSOCIATION",
-        nav_proyectos: "PROJETS",
-        nav_concursos: "CONCOURS",
-        nav_rutas: "ITINÉRAIRES",
-        nav_patrocinadores: "PARTENAIRES",
-        nav_contacto: "CONTACT",
+        brand_sub:"ASSOCIATION CULTURELLE",
+        nav_asociacion:"ASSOCIATION",
+        nav_proyectos:"PROJETS",
+        nav_concursos:"CONCOURS",
+        nav_rutas:"ITINÉRAIRES MONASTIQUES",
+        nav_patrocinadores:"PARTENAIRES",
+        nav_contacto:"CONTACT",
 
-        page_title: "CONCOURS",
-        page_sub: "Informations institutionnelles et accès aux documents officiels (règlement et inscription).",
+        page_title:"CONCOURS",
+        page_lead:"Information institutionnelle et accès à la documentation officielle (affiche, règlement et inscription).",
 
-        contest_tag: "1er CONCOURS",
-        contest_tag_2: "VALLADOLID · 2026",
-        contest_title: "1er Concours International de Pâtisserie Conventuelle – Valladolid 2026",
-        contest_intro: "Rencontre culturelle et gastronomique internationale dédiée à la pâtisserie élaborée dans les couvents.",
-        btn_bases: "Règlement (PDF)",
-        btn_form: "Formulaire (PDF éditable)",
-        contest_note: "Les informations peuvent être mises à jour. L’inscription ouvrira après annonce officielle.",
-        contact_lbl: "Contact concours :",
+        contest_name:"I Concours International de Pâtisserie Monastique · DULCESOR",
+        contest_intro:"Rencontre culturelle et gastronomique internationale dédiée à la pâtisserie élaborée dans les couvents et communautés religieuses.",
+        kv_place_lbl:"Lieu :",
+        kv_place_val:"Valladolid (Espagne)",
+        kv_dates_lbl:"Dates :",
+        kv_dates_val:"1–4 octobre 2026",
+        kv_contact_lbl:"Contact :",
 
-        key_title: "INFOS CLÉS",
-        kpi_city_lbl: "VILLE",
-        kpi_city_val: "Valladolid (Espagne)",
-        kpi_scope_lbl: "CADRE",
-        kpi_scope_val: "Culturel et gastronomique",
+        btn_bases:"RÈGLEMENT (PDF)",
+        btn_form:"INSCRIPTION (PDF MODIFIABLE)",
+        btn_poster:"AFFICHE (IMAGE)",
+        note_update:"Les informations publiées sont indicatives et peuvent être mises à jour au fur et à mesure de l’organisation.",
 
-        li_1: "Destiné aux religieuses liées à des communautés conventuelles.",
-        li_2: "Une création par participante (voir règlement).",
-        li_3: "Documents officiels disponibles en PDF (règlement et formulaire).",
+        reg_title:"Extrait institutionnel (résumé)",
+        reg_intro:"Voici un bref résumé informatif (ne remplace pas les PDFs officiels).",
+        reg_1:"Concours destiné aux communautés religieuses et à la pâtisserie conventuelle.",
+        reg_2:"Approche culturelle : préserver, reconnaître et diffuser la tradition monastique.",
+        reg_3:"La participation se formalise via le formulaire officiel d’inscription.",
+        reg_4:"Le règlement précise catégories, critères d’évaluation, calendrier et conditions.",
+        reg_5:"L’organisation pourra préciser la logistique à l’approche de l’événement.",
+        reg_note:"Pour les exigences complètes, consultez toujours le PDF du règlement.",
 
-        legal_note: "DULCESOR est une association culturelle à but non lucratif. Projet en développement.",
+        docs_title:"Documents officiels",
+        docs_intro:"Téléchargez et conservez comme référence.",
+        docs_bases_lbl:"Règlement :",
+        docs_form_lbl:"Inscription :",
+        docs_poster_lbl:"Affiche :",
+        docs_open:"Ouvrir le PDF",
+        docs_open_img:"Ouvrir l’image",
+        docs_note:"Si le navigateur bloque l’ouverture, essayez « Enregistrer le lien sous… » ou ouvrez dans un nouvel onglet.",
 
-        footer_line_1: "© Association Culturelle DULCESOR · À but non lucratif · Projet en développement",
-        footer_apolo: "Site développé par Apolo Studio Creativo (en préparation)"
+        foot_line_1_a:"Association Culturelle",
+        foot_line_1_b:"Pâtisserie Monastique Conventuelle",
+        foot_line_1_c:"Association culturelle à but non lucratif",
+        foot_line_1_d:"Inscription en cours",
+        foot_line_2:"Valladolid (Espagne)",
+        foot_line_3:"Site développé par Apolo Studio Creativo"
       },
 
       it: {
-        brand_sub: "ASSOCIAZIONE CULTURALE",
-        nav_asociacion: "ASSOCIAZIONE",
-        nav_proyectos: "PROGETTI",
-        nav_concursos: "CONCORSI",
-        nav_rutas: "ITINERARI",
-        nav_patrocinadores: "SPONSOR",
-        nav_contacto: "CONTATTI",
+        brand_sub:"ASSOCIAZIONE CULTURALE",
+        nav_asociacion:"ASSOCIAZIONE",
+        nav_proyectos:"PROGETTI",
+        nav_concursos:"CONCORSO",
+        nav_rutas:"ITINERARI MONASTICI",
+        nav_patrocinadores:"SPONSOR",
+        nav_contacto:"CONTATTO",
 
-        page_title: "CONCORSI",
-        page_sub: "Informazioni istituzionali e accesso ai documenti ufficiali (regolamento e domanda).",
+        page_title:"CONCORSO",
+        page_lead:"Informazioni istituzionali e accesso alla documentazione ufficiale (locandina, regolamento e iscrizione).",
 
-        contest_tag: "I CONCORSO",
-        contest_tag_2: "VALLADOLID · 2026",
-        contest_title: "I Concorso Internazionale di Pasticceria Conventuale – Valladolid 2026",
-        contest_intro: "Evento culturale e gastronomico internazionale dedicato alla pasticceria dei conventi e delle comunità religiose.",
-        btn_bases: "Regolamento (PDF)",
-        btn_form: "Domanda (PDF modificabile)",
-        contest_note: "Le informazioni possono essere aggiornate. La partecipazione aprirà con annuncio ufficiale.",
-        contact_lbl: "Contatto concorso:",
+        contest_name:"I Concorso Internazionale di Pasticceria Monastica · DULCESOR",
+        contest_intro:"Incontro culturale e gastronomico internazionale dedicato alla pasticceria realizzata in conventi e comunità religiose.",
+        kv_place_lbl:"Sede:",
+        kv_place_val:"Valladolid (Spagna)",
+        kv_dates_lbl:"Date:",
+        kv_dates_val:"1–4 ottobre 2026",
+        kv_contact_lbl:"Contatto:",
 
-        key_title: "INFO CHIAVE",
-        kpi_city_lbl: "CITTÀ",
-        kpi_city_val: "Valladolid (Spagna)",
-        kpi_scope_lbl: "AMBITO",
-        kpi_scope_val: "Culturale e gastronomico",
+        btn_bases:"REGOLAMENTO (PDF)",
+        btn_form:"ISCRIZIONE (PDF MODIFICABILE)",
+        btn_poster:"LOCANDINA (IMMAGINE)",
+        note_update:"Le informazioni pubblicate sono indicative e potranno essere aggiornate man mano che l’organizzazione avanza.",
 
-        li_1: "Rivolto a religiose di comunità conventuali o monastiche.",
-        li_2: "Una proposta per partecipante (vedi regolamento).",
-        li_3: "Documenti ufficiali in PDF (regolamento e domanda).",
+        reg_title:"Estratto istituzionale (riassunto)",
+        reg_intro:"Di seguito un breve riassunto informativo (non sostituisce i PDF ufficiali).",
+        reg_1:"Concorso rivolto alle comunità religiose e alla pasticceria realizzata nei conventi.",
+        reg_2:"Focus culturale: preservare, riconoscere e diffondere la tradizione monastica.",
+        reg_3:"La partecipazione si formalizza tramite il modulo ufficiale di iscrizione.",
+        reg_4:"Il regolamento definisce categorie, criteri di valutazione, calendario e condizioni.",
+        reg_5:"L’organizzazione potrà definire i dettagli logistici avvicinandosi alla data dell’evento.",
+        reg_note:"Per requisiti completi e dettagli, fare sempre riferimento al PDF del regolamento.",
 
-        legal_note: "DULCESOR è un’associazione culturale senza scopo di lucro. Progetto in sviluppo.",
+        docs_title:"Documenti ufficiali",
+        docs_intro:"Scarica e conserva come riferimento.",
+        docs_bases_lbl:"Regolamento:",
+        docs_form_lbl:"Iscrizione:",
+        docs_poster_lbl:"Locandina:",
+        docs_open:"Apri PDF",
+        docs_open_img:"Apri immagine",
+        docs_note:"Se il browser blocca l’apertura, prova “Salva link con nome…” o apri in una nuova scheda.",
 
-        footer_line_1: "© Associazione Culturale DULCESOR · Senza scopo di lucro · Progetto in sviluppo",
-        footer_apolo: "Sito sviluppato da Apolo Studio Creativo (in preparazione)"
+        foot_line_1_a:"Associazione Culturale",
+        foot_line_1_b:"Pasticceria Monastica Conventuale",
+        foot_line_1_c:"Associazione culturale senza scopo di lucro",
+        foot_line_1_d:"Iscrizione in corso",
+        foot_line_2:"Valladolid (Spagna)",
+        foot_line_3:"Sito sviluppato da Apolo Studio Creativo"
       }
     };
 
@@ -548,24 +626,22 @@
 
       document.querySelectorAll("[data-i18n]").forEach(el=>{
         const key = el.getAttribute("data-i18n");
-        if (typeof dict[key] === "string") el.innerHTML = dict[key];
+        if (typeof dict[key] === "string") el.textContent = dict[key];
       });
 
       document.querySelectorAll(".langBtn").forEach(b=>{
         b.classList.toggle("active", b.dataset.lang === lang);
       });
 
-      try { localStorage.setItem("dulcesor_lang", lang); } catch(e){}
+      try{ localStorage.setItem("dulcesor_lang", lang); }catch(e){}
     }
-
-    // init
-    const saved = (()=>{ try{return localStorage.getItem("dulcesor_lang")}catch(e){return null} })();
-    const startLang = saved || "es";
-    applyLang(startLang);
 
     document.querySelectorAll(".langBtn").forEach(btn=>{
       btn.addEventListener("click", ()=> applyLang(btn.dataset.lang));
     });
+
+    const saved = (()=>{ try{return localStorage.getItem("dulcesor_lang")}catch(e){return null} })();
+    applyLang(saved || "es");
   </script>
 </body>
 </html>
