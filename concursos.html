@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DULCESOR · Concurso</title>
-  <meta name="description" content="I Concurso Internacional de Repostería Monacal DULCESOR · Valladolid 2026 · Bases, solicitud y presentación institucional." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concursos · DULCESOR</title>
+  <meta name="description" content="Concursos culturales de la Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual." />
 
   <style>
     :root{
@@ -13,540 +13,543 @@
       --text:#1f1f1f;
       --muted:#6b6b6b;
       --line:#e6e1d8;
-      --gold: rgb(145, 128, 26); /* tu oro */
-      --shadow:0 14px 38px rgba(0,0,0,.06);
-      --radius:16px;
-      --max:1100px;
-      --track:.18em;
-      --font: "Century Gothic", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+      --gold: rgb(145, 128, 26);
+      --shadow: 0 14px 40px rgba(0,0,0,.06);
+      --radius: 16px;
+      --font: "Century Gothic","CenturyGothic","AppleGothic",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
     }
-
     *{box-sizing:border-box}
-    body{margin:0; background:var(--bg); color:var(--text); font-family:var(--font); line-height:1.5;}
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px;}
-
-    /* ===== Cabecera (estilo unificado) ===== */
-    header{
-      background:rgba(246,244,241,.92);
-      backdrop-filter:saturate(140%) blur(6px);
-      border-bottom:1px solid var(--line);
-      position:sticky; top:0; z-index:50;
+    body{
+      margin:0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
+    a{color:inherit}
+
+    .wrap{
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 28px 20px 46px;
+    }
+
+    /* ===== Standard Header (asociacion.html) ===== */
     .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; padding:14px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding: 8px 0 18px;
+      border-bottom: 1px solid var(--line);
     }
     .brand{
-      display:flex; align-items:center; gap:12px;
-      text-decoration:none;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 240px;
     }
     .mark{
-      width:38px; height:38px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      display:grid; place-items:center;
-      background:#f3efe8;
-      color:var(--gold);
-      font-weight:800;
-      letter-spacing:.04em;
+      width:38px;height:38px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      display:flex;align-items:center;justify-content:center;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: .5px;
+      background: #fbfaf8;
     }
-    .brandTxt{line-height:1.05}
-    .brandTxt .l1{
-      font-weight:900;
-      letter-spacing:.10em;
-      font-size:14px;
-      color:var(--gold);
-      text-transform:uppercase;
+    .brand strong{display:block;letter-spacing: .08em}
+    .brand small{
+      display:block;
+      color: var(--muted);
+      letter-spacing: .18em;
+      font-size: 12px;
+      margin-top: -2px;
     }
-    .brandTxt .l2{
-      margin-top:4px;
-      font-size:11px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--gold); /* como pediste: mismo color que DULCESOR */
-      font-weight:800;
-    }
+    .gold{color: var(--gold); font-weight: 800}
 
-    .langs{display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
-    .langBtn{
-      border:1px solid var(--line);
-      background:#fff;
-      color:#2a2a2a;
-      padding:8px 10px;
-      border-radius:12px;
-      font-size:12px;
-      letter-spacing:.10em;
-      cursor:pointer;
-      user-select:none;
-    }
-    .langBtn.active{
-      border-color:rgba(145,128,26,.35);
-      background:#fffdf6;
-      color:var(--gold);
-      font-weight:800;
-    }
-
-    nav{border-top:1px solid var(--line);}
-    .nav{
-      display:flex; justify-content:center; gap:26px;
-      padding:14px 0;
+    .lang{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:flex-end;
       flex-wrap:wrap;
     }
-    .nav a{
-      text-decoration:none;
-      font-size:12px;
-      letter-spacing:var(--track);
-      text-transform:uppercase;
-      color:#2a2a2a;
-      padding:8px 2px;
-      border-bottom:2px solid transparent;
+    .langBtn{
+      font-size: 12px;
+      letter-spacing: .16em;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: transparent;
+      cursor:pointer;
+      color: var(--muted);
     }
-    .nav a.active{
-      color:var(--gold);
-      border-bottom-color:var(--gold);
-      font-weight:800;
+    .langBtn.active{
+      color: var(--text);
+      border-color: rgba(145,128,26,.35);
+      background: rgba(145,128,26,.08);
     }
 
-    /* ===== Contenido ===== */
-    main{padding:34px 0 26px;}
-    .pageTitle{
-      text-align:center;
-      margin:8px 0 10px;
-      font-size:34px;
-      letter-spacing:var(--track);
-      text-transform:uppercase;
-      color:var(--gold);
-      font-weight:900;
+    nav{
+      display:flex;
+      gap: 22px;
+      justify-content:center;
+      flex-wrap:wrap;
+      padding: 18px 0 12px;
+      border-bottom: 1px solid var(--line);
     }
-    .pageLead{
+    nav a{
+      text-decoration:none;
+      color: var(--muted);
+      letter-spacing: .18em;
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+    nav a:hover{
+      background: rgba(0,0,0,.03);
+      color: var(--text);
+    }
+    nav a.current{
+      color: var(--text);
+      background: rgba(145,128,26,.08);
+      border: 1px solid rgba(145,128,26,.25);
+    }
+
+    /* ===== Content ===== */
+    .hero{
       text-align:center;
-      color:var(--muted);
-      max-width:860px;
-      margin:0 auto 22px;
+      padding: 34px 0 10px;
+    }
+    .hero h1{
+      margin: 0 0 10px;
+      font-size: clamp(26px, 3.6vw, 40px);
+      letter-spacing: .14em;
+      color: var(--gold);
+      font-weight: 900;
+    }
+    .hero p{
+      margin: 0 auto;
+      max-width: 900px;
+      color: var(--muted);
+      font-size: 15px;
     }
 
     .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px 18px 16px;
+      margin-top: 18px;
     }
+    .card h2{
+      margin: 0 0 12px;
+      letter-spacing: .18em;
+      font-size: 13px;
+      color: var(--text);
+      text-transform: uppercase;
+    }
+    .muted{color: var(--muted)}
 
     .grid{
       display:grid;
-      grid-template-columns: 420px 1fr;
-      gap:18px;
-      align-items:start;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 12px;
     }
-    @media (max-width: 920px){
-      .grid{grid-template-columns:1fr;}
-    }
-
-    .poster{
-      width:100%;
-      max-height:460px; /* reduce el cartel */
-      object-fit:contain;
-      border-radius:14px;
-      border:1px solid var(--line);
-      background:#fff;
-      display:block;
+    @media (min-width: 980px){
+      .grid{grid-template-columns: 1fr 1fr;}
     }
 
-    h2{
-      margin:0 0 8px;
-      font-size:20px;
-      line-height:1.25;
+    .box{
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fbfaf8;
+      padding: 16px;
     }
-    .muted{color:var(--muted)}
-    .hr{height:1px;background:var(--line);margin:14px 0}
+    .box h3{
+      margin: 0 0 8px;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
 
-    .btnRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;}
+    .pill{
+      display:inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      background: #fbfaf8;
+      color: var(--muted);
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid rgba(145,128,26,.40);
-      background:var(--gold);
-      color:#fff;
+      display:inline-block;
       text-decoration:none;
-      font-size:12px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      white-space:nowrap;
+      border: 1px solid rgba(145,128,26,.35);
+      background: rgba(145,128,26,.10);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
     }
-    .btn.outline{
-      background:#fff;
-      color:var(--gold);
-      border:1px solid var(--line);
+    .btn:hover{background: rgba(145,128,26,.14)}
+
+    /* Cartel (sin botón “ver cartel”) */
+    .poster{
+      width: 100%;
+      max-width: 520px;
+      display:block;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      margin: 10px 0 6px;
+    }
+    .posterWrap{
+      display:flex;
+      justify-content:flex-start;
+    }
+    .posterCaption{
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
     }
 
-    .kvs{
-      margin:10px 0 0;
-      padding-left:18px;
-      line-height:1.7;
+    /* ===== Standard Footer (fixed, NOT translated) ===== */
+    .siteFooter{
+      margin-top: 36px;
+      border-top: 1px solid var(--line);
+      padding: 20px 16px 28px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
     }
-    .kvs li{margin:6px 0}
-    .strong{font-weight:800; color:#2a2a2a}
-    .note{
-      margin-top:12px;
-      font-size:12.5px;
-      color:var(--muted);
-      line-height:1.6;
-    }
-
-    /* ===== Faldón (el “bueno”) ===== */
-    footer{
-      border-top:1px solid var(--line);
-      padding:18px 0 24px;
-      text-align:center;
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.65;
-    }
-    .footStrong{color:#2a2a2a; font-weight:800}
-    .footGold{color:var(--gold); font-weight:900}
+    .footerInner{max-width: 980px; margin: 0 auto;}
+    .footerLine1{font-weight: 600; color: var(--text);}
+    .footerLine4{margin-top: 6px;}
   </style>
 </head>
 
 <body>
-  <!-- CABECERA -->
-  <header>
-    <div class="wrap">
-      <div class="topbar">
-        <a class="brand" href="index.html" aria-label="Inicio">
-          <div class="mark">D</div>
-          <div class="brandTxt">
-            <div class="l2" data-i18n="brand_sub">ASOCIACIÓN CULTURAL</div>
-            <div class="l1">DULCESOR</div>
-          </div>
-        </a>
+  <main class="wrap">
 
-        <div class="langs" aria-label="Idiomas">
-          <button class="langBtn active" data-lang="es">ES</button>
-          <button class="langBtn" data-lang="en">EN</button>
-          <button class="langBtn" data-lang="pt">PT</button>
-          <button class="langBtn" data-lang="fr">FR</button>
-          <button class="langBtn" data-lang="it">IT</button>
+    <!-- Header (standard) -->
+    <div class="topbar">
+      <div class="brand">
+        <div class="mark" aria-label="DULCESOR">D</div>
+        <div>
+          <strong class="gold">DULCESOR</strong>
+          <small data-i18n="brand_sub">ASOCIACIÓN CULTURAL</small>
         </div>
       </div>
 
-      <nav aria-label="Menú principal">
-        <div class="nav">
-          <a href="asociacion.html" data-i18n="nav_asociacion">ASOCIACIÓN</a>
-          <a href="proyectos.html" data-i18n="nav_proyectos">PROYECTOS</a>
-          <a href="concursos.html" class="active" data-i18n="nav_concursos">CONCURSOS</a>
-          <a href="rutas.html" data-i18n="nav_rutas">RUTAS MONACALES</a>
-          <a href="patrocinadores.html" data-i18n="nav_patrocinadores">PATROCINADORES</a>
-          <a href="contacto.html" data-i18n="nav_contacto">CONTACTO</a>
-        </div>
-      </nav>
+      <div class="lang" aria-label="Idiomas">
+        <button class="langBtn active" data-lang="es">ES</button>
+        <button class="langBtn" data-lang="en">EN</button>
+        <button class="langBtn" data-lang="pt">PT</button>
+        <button class="langBtn" data-lang="fr">FR</button>
+        <button class="langBtn" data-lang="it">IT</button>
+      </div>
     </div>
-  </header>
 
-  <!-- CONTENIDO -->
-  <main class="wrap">
-    <h1 class="pageTitle" data-i18n="page_title">CONCURSOS</h1>
-    <p class="pageLead" data-i18n="page_lead">
-      Presentación institucional del certamen y acceso a la documentación oficial (bases y solicitud).
-    </p>
+    <nav aria-label="Menú">
+      <a href="index.html" data-i18n="nav_inicio">INICIO</a>
+      <a href="asociacion.html" data-i18n="nav_asociacion">ASOCIACIÓN</a>
+      <a href="proyectos.html" data-i18n="nav_proyectos">PROYECTOS</a>
+      <a class="current" href="concursos.html" data-i18n="nav_concursos">CONCURSOS</a>
+      <a href="rutas.html" data-i18n="nav_rutas">RUTAS MONACALES</a>
+      <a href="patrocinadores.html" data-i18n="nav_patrocinadores">PATROCINADORES</a>
+      <a href="contacto.html" data-i18n="nav_contacto">CONTACTO</a>
+    </nav>
 
-    <section class="card">
+    <section class="hero" aria-label="Concursos">
+      <h1 data-i18n="title">CONCURSOS</h1>
+      <p data-i18n="subtitle">
+        Convocatorias culturales impulsadas por la Asociación Cultural DULCESOR.
+      </p>
+    </section>
+
+    <section class="card" aria-label="Marco general">
+      <h2 data-i18n="frame_title">Marco cultural</h2>
+      <p class="muted" data-i18n="frame_text">
+        DULCESOR promueve concursos como iniciativas culturales orientadas a la preservación y difusión de la repostería monacal conventual
+        y del patrimonio cultural asociado a la vida monástica. La información publicada es orientativa y podrá actualizarse conforme avance la organización.
+      </p>
+      <span class="pill" data-i18n="in_prep">EN PREPARACIÓN</span>
+    </section>
+
+    <section class="card" aria-label="Concurso destacado">
+      <h2 data-i18n="list_title">Concurso destacado</h2>
+
       <div class="grid">
-        <!-- Cartel -->
-        <div>
-          <img class="poster" src="cartel-I-concurso.jpeg" alt="Cartel del I Concurso Internacional de Repostería Monacal DULCESOR" />
-          <div class="btnRow" style="margin-top:12px">
-            <a class="btn outline" href="cartel-I-concurso.jpeg" target="_blank" rel="noopener" data-i18n="btn_poster">
-              VER CARTEL
-            </a>
+        <!-- REGLAMENTO (solo el texto, sin notas) -->
+        <div class="box">
+          <h3 data-i18n="reg_title">Reglamento · Introducción</h3>
+
+          <div class="posterWrap">
+            <img class="poster" src="cartel-I-concurso.jpeg" alt="Cartel del I Concurso Internacional de Repostería Monacal DULCESOR" />
           </div>
+          <p class="posterCaption muted" data-i18n="poster_caption">Cartel oficial del concurso.</p>
+
+          <p class="muted" data-i18n="reg_text">
+            La repostería monacal constituye uno de los patrimonios gastronómicos más singulares y valiosos de nuestra historia. Nacida en el silencio de monasterios y conventos, ha sido durante siglos expresión de recogimiento, dedicación y saber hacer, transmitido de generación en generación y preservado con fidelidad al espíritu y las recetas originales.
+            <br><br>
+            Estas elaboraciones, fruto del trabajo paciente y vocacional de las comunidades religiosas, tienen sus raíces en la Edad Media y han llegado hasta nuestros días como testimonio vivo de una cocina ligada al territorio, al calendario litúrgico y al aprovechamiento respetuoso de los recursos. Dulces elaborados a partir de ingredientes sencillos —harinas, huevos, frutos secos, miel, azúcar y especias— que, mediante técnicas depuradas por el tiempo, han alcanzado un elevado nivel de excelencia y reconocimiento nacional e internacional.
+            <br><br>
+            Más allá de su valor culinario, la repostería monacal representa una herencia cultural inmaterial de incalculable valor, en la que convergen espiritualidad, hospitalidad y artesanía gastronómica. Sus recetas, celosamente custodiadas durante siglos, han trascendido los muros conventuales para convertirse en símbolo de autenticidad, tradición y calidad, contribuyendo a la conservación de un legado que forma parte esencial de nuestra identidad cultural.
+            <br><br>
+            La ciudad de Valladolid, estrechamente vinculada a la historia, la cultura y el patrimonio religioso, se erige como un enclave idóneo para acoger esta cita, consolidándose como espacio de encuentro y reconocimiento de esta tradición gastronómica.
+            <br><br>
+            Con el objetivo de preservar, reconocer y difundir la repostería monacal, así como poner en valor el trabajo de las comunidades religiosas y profesionales que mantienen viva esta tradición religiosa, se convoca la I Edición del Concurso Internacional de Repostería Monacal “DULCESOR”.
+          </p>
+
+          <span class="pill" data-i18n="pill_intl">CONVOCATORIA INTERNACIONAL</span>
         </div>
 
-        <!-- Texto + docs -->
-        <div>
-          <h2 data-i18n="contest_name">I Concurso Internacional de Repostería Monacal · DULCESOR</h2>
-          <p class="muted" style="margin:0 0 10px" data-i18n="contest_intro">
-            Encuentro cultural y gastronómico de carácter internacional dedicado a la repostería elaborada en conventos y comunidades religiosas.
+        <!-- BASES (separado) -->
+        <div class="box">
+          <h3 data-i18n="docs_title">Documentación oficial</h3>
+          <p class="muted" data-i18n="docs_text">
+            Acceso a la documentación oficial de la convocatoria (bases y solicitud de inscripción).
           </p>
 
-          <ul class="kvs">
-            <li><span class="strong" data-i18n="kv_place_lbl">Sede:</span> <span data-i18n="kv_place_val">Valladolid (España)</span></li>
-            <li><span class="strong" data-i18n="kv_contact_lbl">Contacto:</span> <a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a></li>
-          </ul>
-
-          <div class="hr"></div>
-
-          <h3 style="margin:0 0 10px; font-size:13px; letter-spacing:.18em; text-transform:uppercase;" data-i18n="docs_title">
-            Documentación oficial
-          </h3>
-          <div class="btnRow">
-            <a class="btn" href="bases.pdf" target="_blank" rel="noopener" data-i18n="btn_bases">BASES (PDF)</a>
-            <a class="btn outline" href="solicitud.pdf" target="_blank" rel="noopener" data-i18n="btn_form">SOLICITUD (PDF EDITABLE)</a>
+          <div class="actions">
+            <a class="btn" href="bases.pdf" target="_blank" rel="noopener" data-i18n="btn_bases">Bases (PDF)</a>
+            <a class="btn" href="solicitud.pdf" target="_blank" rel="noopener" data-i18n="btn_form">Solicitud (PDF)</a>
           </div>
 
-          <p class="note" data-i18n="note_official">
-            Las bases y la solicitud en PDF constituyen la referencia documental oficial del concurso.
-          </p>
-
-          <div class="hr"></div>
-
-          <h3 style="margin:0 0 10px; font-size:13px; letter-spacing:.18em; text-transform:uppercase;" data-i18n="reg_title">
-            Introducción del reglamento (versión web)
-          </h3>
-
-          <p style="margin:0 0 10px" data-i18n="reg_web_1">
-            El I Concurso Internacional de Repostería Monacal “DULCESOR” nace como una iniciativa cultural destinada a preservar, reconocer y difundir la tradición repostera desarrollada en conventos y comunidades religiosas.
-          </p>
-          <p style="margin:0 0 10px" data-i18n="reg_web_2">
-            El certamen pretende poner en valor el trabajo artesanal, la excelencia y el conocimiento transmitido durante generaciones, creando un espacio de encuentro respetuoso entre tradición, cultura y sociedad contemporánea.
-          </p>
-          <p style="margin:0" data-i18n="reg_web_3">
-            La participación y el desarrollo del concurso se rigen por la documentación oficial publicada en esta web (Bases y Solicitud). Cualquier información adicional de carácter organizativo podrá concretarse conforme avance la planificación del evento.
-          </p>
-
-          <p class="note" data-i18n="reg_note">
-            Nota: el documento completo y vinculante se encuentra en el PDF oficial de Bases.
-          </p>
+          <span class="pill" data-i18n="pill_pdf">DOCUMENTACIÓN EN PDF</span>
         </div>
       </div>
     </section>
-  </main>
 
-  <!-- FALDÓN (el correcto) -->
-  <footer>
-    <div class="wrap">
-      <div>
-        <span class="footStrong">© </span>
-        <span class="footStrong" data-i18n="foot_line_1_a">Asociación Cultural</span>
-        <span class="footStrong"> ‘</span><span class="footGold">DULCESOR</span><span class="footStrong">’</span>
-        <span class="footStrong"> – </span>
-        <span class="footStrong" data-i18n="foot_line_1_b">Repostería Monacal Conventual</span>
-        <span class="footStrong"> · </span>
-        <span data-i18n="foot_line_1_c">Asociación cultural sin ánimo de lucro</span>
-        <span class="footStrong"> · </span>
-        <span data-i18n="foot_line_1_d">En proceso de inscripción</span>
+    <!-- Footer (standard, fixed) -->
+    <footer class="siteFooter">
+      <div class="footerInner">
+        <div class="footerLine1">
+          © <span class="gold">Asociación Cultural ‘DULCESOR’</span> – Repostería Monacal Conventual
+        </div>
+        <div class="footerLine2">
+          Asociación cultural sin ánimo de lucro · En proceso de inscripción
+        </div>
+        <div class="footerLine3">
+          Valladolid (España)
+        </div>
+        <div class="footerLine4">
+          Sitio web desarrollado por Apolo Studio Creativo
+        </div>
       </div>
+    </footer>
 
-      <div data-i18n="foot_line_2">Valladolid (España)</div>
-      <div data-i18n="foot_line_3">Sitio web desarrollado por Apolo Studio Creativo (en preparación)</div>
-    </div>
-  </footer>
+  </main>
 
   <script>
     const I18N = {
       es: {
-        brand_sub:"ASOCIACIÓN CULTURAL",
-        nav_asociacion:"ASOCIACIÓN",
-        nav_proyectos:"PROYECTOS",
-        nav_concursos:"CONCURSOS",
-        nav_rutas:"RUTAS MONACALES",
-        nav_patrocinadores:"PATROCINADORES",
-        nav_contacto:"CONTACTO",
+        brand_sub: "ASOCIACIÓN CULTURAL",
+        nav_inicio: "INICIO",
+        nav_asociacion: "ASOCIACIÓN",
+        nav_proyectos: "PROYECTOS",
+        nav_concursos: "CONCURSOS",
+        nav_rutas: "RUTAS MONACALES",
+        nav_patrocinadores: "PATROCINADORES",
+        nav_contacto: "CONTACTO",
 
-        page_title:"CONCURSOS",
-        page_lead:"Presentación institucional del certamen y acceso a la documentación oficial (bases y solicitud).",
+        title: "CONCURSOS",
+        subtitle: "Convocatorias culturales impulsadas por la Asociación Cultural DULCESOR.",
 
-        contest_name:"I Concurso Internacional de Repostería Monacal · DULCESOR",
-        contest_intro:"Encuentro cultural y gastronómico de carácter internacional dedicado a la repostería elaborada en conventos y comunidades religiosas.",
-        kv_place_lbl:"Sede:",
-        kv_place_val:"Valladolid (España)",
-        kv_contact_lbl:"Contacto:",
-        btn_poster:"VER CARTEL",
-        docs_title:"Documentación oficial",
-        btn_bases:"BASES (PDF)",
-        btn_form:"SOLICITUD (PDF EDITABLE)",
-        note_official:"Las bases y la solicitud en PDF constituyen la referencia documental oficial del concurso.",
+        frame_title: "Marco cultural",
+        frame_text: "DULCESOR promueve concursos como iniciativas culturales orientadas a la preservación y difusión de la repostería monacal conventual y del patrimonio cultural asociado a la vida monástica. La información publicada es orientativa y podrá actualizarse conforme avance la organización.",
+        in_prep: "EN PREPARACIÓN",
 
-        reg_title:"Introducción del reglamento (versión web)",
-        reg_web_1:"El I Concurso Internacional de Repostería Monacal “DULCESOR” nace como una iniciativa cultural destinada a preservar, reconocer y difundir la tradición repostera desarrollada en conventos y comunidades religiosas.",
-        reg_web_2:"El certamen pretende poner en valor el trabajo artesanal, la excelencia y el conocimiento transmitido durante generaciones, creando un espacio de encuentro respetuoso entre tradición, cultura y sociedad contemporánea.",
-        reg_web_3:"La participación y el desarrollo del concurso se rigen por la documentación oficial publicada en esta web (Bases y Solicitud). Cualquier información adicional de carácter organizativo podrá concretarse conforme avance la planificación del evento.",
-        reg_note:"Nota: el documento completo y vinculante se encuentra en el PDF oficial de Bases.",
+        list_title: "Concurso destacado",
 
-        foot_line_1_a:"Asociación Cultural",
-        foot_line_1_b:"Repostería Monacal Conventual",
-        foot_line_1_c:"Asociación cultural sin ánimo de lucro",
-        foot_line_1_d:"En proceso de inscripción",
-        foot_line_2:"Valladolid (España)",
-        foot_line_3:"Sitio web desarrollado por Apolo Studio Creativo (en preparación)"
+        reg_title: "Reglamento · Introducción",
+        poster_caption: "Cartel oficial del concurso.",
+        reg_text: "La repostería monacal constituye uno de los patrimonios gastronómicos más singulares y valiosos de nuestra historia. Nacida en el silencio de monasterios y conventos, ha sido durante siglos expresión de recogimiento, dedicación y saber hacer, transmitido de generación en generación y preservado con fidelidad al espíritu y las recetas originales.\n\nEstas elaboraciones, fruto del trabajo paciente y vocacional de las comunidades religiosas, tienen sus raíces en la Edad Media y han llegado hasta nuestros días como testimonio vivo de una cocina ligada al territorio, al calendario litúrgico y al aprovechamiento respetuoso de los recursos. Dulces elaborados a partir de ingredientes sencillos —harinas, huevos, frutos secos, miel, azúcar y especias— que, mediante técnicas depuradas por el tiempo, han alcanzado un elevado nivel de excelencia y reconocimiento nacional e internacional.\n\nMás allá de su valor culinario, la repostería monacal representa una herencia cultural inmaterial de incalculable valor, en la que convergen espiritualidad, hospitalidad y artesanía gastronómica. Sus recetas, celosamente custodiadas durante siglos, han trascendido los muros conventuales para convertirse en símbolo de autenticidad, tradición y calidad, contribuyendo a la conservación de un legado que forma parte esencial de nuestra identidad cultural.\n\nLa ciudad de Valladolid, estrechamente vinculada a la historia, la cultura y el patrimonio religioso, se erige como un enclave idóneo para acoger esta cita, consolidándose como espacio de encuentro y reconocimiento de esta tradición gastronómica.\n\nCon el objetivo de preservar, reconocer y difundir la repostería monacal, así como poner en valor el trabajo de las comunidades religiosas y profesionales que mantienen viva esta tradición religiosa, se convoca la I Edición del Concurso Internacional de Repostería Monacal “DULCESOR”.",
+        pill_intl: "CONVOCATORIA INTERNACIONAL",
+
+        docs_title: "Documentación oficial",
+        docs_text: "Acceso a la documentación oficial de la convocatoria (bases y solicitud de inscripción).",
+        btn_bases: "Bases (PDF)",
+        btn_form: "Solicitud (PDF)",
+        pill_pdf: "DOCUMENTACIÓN EN PDF"
       },
 
       en: {
-        brand_sub:"CULTURAL ASSOCIATION",
-        nav_asociacion:"ASSOCIATION",
-        nav_proyectos:"PROJECTS",
-        nav_concursos:"CONTEST",
-        nav_rutas:"MONASTIC ROUTES",
-        nav_patrocinadores:"SPONSORS",
-        nav_contacto:"CONTACT",
+        brand_sub: "CULTURAL ASSOCIATION",
+        nav_inicio: "HOME",
+        nav_asociacion: "ASSOCIATION",
+        nav_proyectos: "PROJECTS",
+        nav_concursos: "CONTESTS",
+        nav_rutas: "MONASTIC ROUTES",
+        nav_patrocinadores: "SPONSORS",
+        nav_contacto: "CONTACT",
 
-        page_title:"CONTEST",
-        page_lead:"Institutional presentation and access to official documents (rules and application form).",
+        title: "CONTESTS",
+        subtitle: "Cultural calls promoted by the DULCESOR Cultural Association.",
 
-        contest_name:"1st International Monastic Pastry Contest · DULCESOR",
-        contest_intro:"An international cultural and gastronomic event dedicated to pastry made in convents and religious communities.",
-        kv_place_lbl:"Based in:",
-        kv_place_val:"Valladolid (Spain)",
-        kv_contact_lbl:"Contact:",
-        btn_poster:"VIEW POSTER",
-        docs_title:"Official documents",
-        btn_bases:"RULES (PDF)",
-        btn_form:"APPLICATION (EDITABLE PDF)",
-        note_official:"The Rules and Application PDFs are the official reference documents of the contest.",
+        frame_title: "Cultural framework",
+        frame_text: "DULCESOR promotes contests as cultural initiatives aimed at preserving and disseminating monastic convent pastry and the cultural heritage linked to monastic life. The information published is indicative and may be updated as the organization progresses.",
+        in_prep: "IN PREPARATION",
 
-        reg_title:"Regulations introduction (web version)",
-        reg_web_1:"The 1st International Monastic Pastry Contest “DULCESOR” is a cultural initiative created to preserve, recognize and share the pastry tradition developed in convents and religious communities.",
-        reg_web_2:"The contest highlights artisanal work, excellence and knowledge passed down through generations, creating a respectful meeting point between tradition, culture and contemporary society.",
-        reg_web_3:"Participation and contest development are governed by the official documents published on this website (Rules and Application). Additional organizational information may be specified as planning progresses.",
-        reg_note:"Note: the full and binding document is the official Rules PDF.",
+        list_title: "Featured contest",
 
-        foot_line_1_a:"Cultural Association",
-        foot_line_1_b:"Monastic Convent Pastry",
-        foot_line_1_c:"Non-profit cultural association",
-        foot_line_1_d:"Registration in progress",
-        foot_line_2:"Valladolid (Spain)",
-        foot_line_3:"Website developed by Apolo Studio Creativo (in preparation)"
+        reg_title: "Regulations · Introduction",
+        poster_caption: "Official contest poster.",
+        reg_text: "Monastic pastry is one of the most distinctive and valuable gastronomic heritages in our history. Born in the silence of monasteries and convents, it has for centuries been an expression of devotion, dedication and craftsmanship, passed down from generation to generation and preserved with fidelity to the spirit and original recipes.\n\nThese creations, the result of the patient and vocational work of religious communities, have their roots in the Middle Ages and have reached our days as living testimony of a cuisine linked to territory, the liturgical calendar and a respectful use of resources. Sweets made from simple ingredients—flours, eggs, nuts, honey, sugar and spices—which, through time-refined techniques, have achieved a high level of excellence and national and international recognition.\n\nBeyond their culinary value, monastic pastry represents an intangible cultural heritage of incalculable value, where spirituality, hospitality and gastronomic craftsmanship converge. Carefully safeguarded recipes have transcended convent walls to become a symbol of authenticity, tradition and quality, helping preserve a legacy that is an essential part of our cultural identity.\n\nThe city of Valladolid, closely linked to history, culture and religious heritage, stands as an ideal setting to host this event, consolidating itself as a meeting place and a space of recognition for this gastronomic tradition.\n\nWith the aim of preserving, recognizing and disseminating monastic pastry, as well as valuing the work of religious communities and professionals who keep this tradition alive, the 1st International Monastic Pastry Contest “DULCESOR” is announced.",
+        pill_intl: "INTERNATIONAL CALL",
+
+        docs_title: "Official documents",
+        docs_text: "Access to the official documents of the call (rules and application form).",
+        btn_bases: "Rules (PDF)",
+        btn_form: "Application (PDF)",
+        pill_pdf: "PDF DOCUMENTATION"
       },
 
       pt: {
-        brand_sub:"ASSOCIAÇÃO CULTURAL",
-        nav_asociacion:"ASSOCIAÇÃO",
-        nav_proyectos:"PROJETOS",
-        nav_concursos:"CONCURSO",
-        nav_rutas:"ROTAS MONÁSTICAS",
-        nav_patrocinadores:"PATROCINADORES",
-        nav_contacto:"CONTACTO",
+        brand_sub: "ASSOCIAÇÃO CULTURAL",
+        nav_inicio: "INÍCIO",
+        nav_asociacion: "ASSOCIAÇÃO",
+        nav_proyectos: "PROJETOS",
+        nav_concursos: "CONCURSOS",
+        nav_rutas: "ROTAS MONÁSTICAS",
+        nav_patrocinadores: "PATROCINADORES",
+        nav_contacto: "CONTACTO",
 
-        page_title:"CONCURSO",
-        page_lead:"Apresentação institucional e acesso à documentação oficial (bases e inscrição).",
+        title: "CONCURSOS",
+        subtitle: "Convocatórias culturais promovidas pela Associação Cultural DULCESOR.",
 
-        contest_name:"I Concurso Internacional de Doçaria Monástica · DULCESOR",
-        contest_intro:"Encontro cultural e gastronómico internacional dedicado à doçaria feita em conventos e comunidades religiosas.",
-        kv_place_lbl:"Local:",
-        kv_place_val:"Valladolid (Espanha)",
-        kv_contact_lbl:"Contacto:",
-        btn_poster:"VER CARTAZ",
-        docs_title:"Documentação oficial",
-        btn_bases:"BASES (PDF)",
-        btn_form:"INSCRIÇÃO (PDF EDITÁVEL)",
-        note_official:"As Bases e a Inscrição em PDF são os documentos oficiais de referência do concurso.",
+        frame_title: "Enquadramento cultural",
+        frame_text: "A DULCESOR promove concursos como iniciativas culturais orientadas para a preservação e divulgação da doçaria monacal conventual e do património cultural ligado à vida monástica. A informação publicada é indicativa e poderá ser atualizada.",
+        in_prep: "EM PREPARAÇÃO",
 
-        reg_title:"Introdução do regulamento (versão web)",
-        reg_web_1:"O I Concurso Internacional de Doçaria Monástica “DULCESOR” nasce como uma iniciativa cultural para preservar, reconhecer e divulgar a tradição doceira desenvolvida em conventos e comunidades religiosas.",
-        reg_web_2:"O concurso valoriza o trabalho artesanal, a excelência e o conhecimento transmitido ao longo de gerações, promovendo um encontro respeitoso entre tradição, cultura e sociedade contemporânea.",
-        reg_web_3:"A participação e o desenvolvimento do concurso regem-se pelos documentos oficiais publicados neste site (Bases e Inscrição). Informações organizativas adicionais poderão ser concretizadas conforme o planeamento avance.",
-        reg_note:"Nota: o documento completo e vinculativo é o PDF oficial das Bases.",
+        list_title: "Concurso em destaque",
 
-        foot_line_1_a:"Associação Cultural",
-        foot_line_1_b:"Doçaria Monástica Conventual",
-        foot_line_1_c:"Associação cultural sem fins lucrativos",
-        foot_line_1_d:"Inscrição em curso",
-        foot_line_2:"Valladolid (Espanha)",
-        foot_line_3:"Site desenvolvido por Apolo Studio Creativo (em preparação)"
+        reg_title: "Regulamento · Introdução",
+        poster_caption: "Cartaz oficial do concurso.",
+        reg_text: "A doçaria monacal constitui um dos patrimónios gastronómicos mais singulares e valiosos da nossa história. Nascida no silêncio de mosteiros e conventos, foi durante séculos expressão de recolhimento, dedicação e saber-fazer, transmitido de geração em geração e preservado com fidelidade ao espírito e às receitas originais.\n\nEstas elaborações, fruto do trabalho paciente e vocacional das comunidades religiosas, têm raízes na Idade Média e chegaram aos nossos dias como testemunho vivo de uma cozinha ligada ao território, ao calendário litúrgico e ao aproveitamento respeitoso dos recursos. Doces elaborados a partir de ingredientes simples —farinhas, ovos, frutos secos, mel, açúcar e especiarias— que, mediante técnicas apuradas pelo tempo, alcançaram um elevado nível de excelência e reconhecimento nacional e internacional.\n\nPara além do seu valor culinário, a doçaria monacal representa uma herança cultural imaterial de valor incalculável, na qual convergem espiritualidade, hospitalidade e artesanato gastronómico. As suas receitas, cuidadosamente guardadas durante séculos, ultrapassaram os muros conventuais para se tornarem símbolo de autenticidade, tradição e qualidade, contribuindo para a conservação de um legado essencial da nossa identidade cultural.\n\nA cidade de Valladolid, estreitamente ligada à história, cultura e património religioso, afirma-se como um enclave ideal para acolher esta iniciativa, consolidando-se como espaço de encontro e reconhecimento desta tradição gastronómica.\n\nCom o objetivo de preservar, reconhecer e divulgar a doçaria monacal, bem como valorizar o trabalho das comunidades religiosas e profissionais que mantêm viva esta tradição, convoca-se a I Edição do Concurso Internacional de Doçaria Monástica “DULCESOR”.",
+        pill_intl: "CONVOCATÓRIA INTERNACIONAL",
+
+        docs_title: "Documentação oficial",
+        docs_text: "Acesso à documentação oficial da convocatória (bases e formulário de inscrição).",
+        btn_bases: "Bases (PDF)",
+        btn_form: "Inscrição (PDF)",
+        pill_pdf: "DOCUMENTAÇÃO EM PDF"
       },
 
       fr: {
-        brand_sub:"ASSOCIATION CULTURELLE",
-        nav_asociacion:"ASSOCIATION",
-        nav_proyectos:"PROJETS",
-        nav_concursos:"CONCOURS",
-        nav_rutas:"ITINÉRAIRES MONASTIQUES",
-        nav_patrocinadores:"PARTENAIRES",
-        nav_contacto:"CONTACT",
+        brand_sub: "ASSOCIATION CULTURELLE",
+        nav_inicio: "ACCUEIL",
+        nav_asociacion: "ASSOCIATION",
+        nav_proyectos: "PROJETS",
+        nav_concursos: "CONCOURS",
+        nav_rutas: "ITINÉRAIRES MONASTIQUES",
+        nav_patrocinadores: "PARTENAIRES",
+        nav_contacto: "CONTACT",
 
-        page_title:"CONCOURS",
-        page_lead:"Présentation institutionnelle et accès aux documents officiels (règlement et inscription).",
+        title: "CONCOURS",
+        subtitle: "Appels culturels portés par l’Association Culturelle DULCESOR.",
 
-        contest_name:"1er Concours International de Pâtisserie Monastique · DULCESOR",
-        contest_intro:"Rencontre culturelle et gastronomique internationale dédiée à la pâtisserie élaborée dans les couvents et communautés religieuses.",
-        kv_place_lbl:"Lieu :",
-        kv_place_val:"Valladolid (Espagne)",
-        kv_contact_lbl:"Contact :",
-        btn_poster:"VOIR L’AFFICHE",
-        docs_title:"Documents officiels",
-        btn_bases:"RÈGLEMENT (PDF)",
-        btn_form:"INSCRIPTION (PDF MODIFIABLE)",
-        note_official:"Le règlement et le formulaire PDF constituent les documents officiels de référence du concours.",
+        frame_title: "Cadre culturel",
+        frame_text: "DULCESOR promeut des concours comme initiatives culturelles visant à préserver et diffuser la pâtisserie monastique conventuelle et le patrimoine culturel lié à la vie monastique. Les informations publiées sont indicatives et peuvent être mises à jour.",
+        in_prep: "EN PRÉPARATION",
 
-        reg_title:"Introduction du règlement (version web)",
-        reg_web_1:"Le 1er Concours International de Pâtisserie Monastique « DULCESOR » est une initiative culturelle destinée à préserver, reconnaître et diffuser la tradition pâtissière développée dans les couvents et communautés religieuses.",
-        reg_web_2:"Le concours met en valeur le travail artisanal, l’excellence et le savoir transmis de génération en génération, créant un espace de rencontre respectueux entre tradition, culture et société contemporaine.",
-        reg_web_3:"La participation et le déroulement du concours sont régis par les documents officiels publiés sur ce site (Règlement et Inscription). Des informations organisationnelles complémentaires pourront être précisées au fur et à mesure de la préparation.",
-        reg_note:"Note : le document complet et contraignant est le PDF officiel du règlement.",
+        list_title: "Concours mis en avant",
 
-        foot_line_1_a:"Association Culturelle",
-        foot_line_1_b:"Pâtisserie Monastique Conventuelle",
-        foot_line_1_c:"Association culturelle à but non lucratif",
-        foot_line_1_d:"Inscription en cours",
-        foot_line_2:"Valladolid (Espagne)",
-        foot_line_3:"Site développé par Apolo Studio Creativo (en préparation)"
+        reg_title: "Règlement · Introduction",
+        poster_caption: "Affiche officielle du concours.",
+        reg_text: "La pâtisserie monastique constitue l’un des patrimoines gastronomiques les plus singuliers et précieux de notre histoire. Née dans le silence des monastères et des couvents, elle a été pendant des siècles l’expression du recueillement, du dévouement et du savoir-faire, transmis de génération en génération et préservé fidèlement dans l’esprit et les recettes originales.\n\nCes élaborations, fruit du travail patient et vocationnel des communautés religieuses, trouvent leurs racines au Moyen Âge et nous sont parvenues comme témoignage vivant d’une cuisine liée au territoire, au calendrier liturgique et à l’utilisation respectueuse des ressources. Des douceurs à base d’ingrédients simples —farines, œufs, fruits secs, miel, sucre et épices— qui, grâce à des techniques affinées par le temps, ont atteint un haut niveau d’excellence et une reconnaissance nationale et internationale.\n\nAu-delà de leur valeur culinaire, la pâtisserie monastique représente un patrimoine culturel immatériel d’une valeur inestimable, où se rejoignent spiritualité, hospitalité et artisanat gastronomique. Ses recettes, jalousement conservées pendant des siècles, ont dépassé les murs conventuels pour devenir un symbole d’authenticité, de tradition et de qualité, contribuant à préserver un héritage essentiel de notre identité culturelle.\n\nLa ville de Valladolid, étroitement liée à l’histoire, à la culture et au patrimoine religieux, apparaît comme un lieu idéal pour accueillir cette rencontre, se consolidant comme un espace de rencontre et de reconnaissance de cette tradition gastronomique.\n\nAfin de préserver, reconnaître et diffuser la pâtisserie monastique, et de mettre en valeur le travail des communautés religieuses et des professionnels qui maintiennent vivante cette tradition, est annoncée la Ire Édition du Concours International de Pâtisserie Monastique « DULCESOR ».",
+        pill_intl: "APPEL INTERNATIONAL",
+
+        docs_title: "Documents officiels",
+        docs_text: "Accès aux documents officiels (règlement et formulaire d’inscription).",
+        btn_bases: "Règlement (PDF)",
+        btn_form: "Inscription (PDF)",
+        pill_pdf: "DOCUMENTS PDF"
       },
 
       it: {
-        brand_sub:"ASSOCIAZIONE CULTURALE",
-        nav_asociacion:"ASSOCIAZIONE",
-        nav_proyectos:"PROGETTI",
-        nav_concursos:"CONCORSO",
-        nav_rutas:"ITINERARI MONASTICI",
-        nav_patrocinadores:"SPONSOR",
-        nav_contacto:"CONTATTO",
+        brand_sub: "ASSOCIAZIONE CULTURALE",
+        nav_inicio: "HOME",
+        nav_asociacion: "ASSOCIAZIONE",
+        nav_proyectos: "PROGETTI",
+        nav_concursos: "CONCORSI",
+        nav_rutas: "PERCORSI MONASTICI",
+        nav_patrocinadores: "SPONSOR",
+        nav_contacto: "CONTATTI",
 
-        page_title:"CONCORSO",
-        page_lead:"Presentazione istituzionale e accesso alla documentazione ufficiale (regolamento e domanda).",
+        title: "CONCORSI",
+        subtitle: "Convocazioni culturali promosse dall’Associazione Culturale DULCESOR.",
 
-        contest_name:"I Concorso Internazionale di Pasticceria Monastica · DULCESOR",
-        contest_intro:"Evento culturale e gastronomico internazionale dedicato alla pasticceria realizzata in conventi e comunità religiose.",
-        kv_place_lbl:"Sede:",
-        kv_place_val:"Valladolid (Spagna)",
-        kv_contact_lbl:"Contatto:",
-        btn_poster:"VEDI LOCANDINA",
-        docs_title:"Documenti ufficiali",
-        btn_bases:"REGOLAMENTO (PDF)",
-        btn_form:"DOMANDA (PDF MODIFICABILE)",
-        note_official:"Regolamento e domanda in PDF sono i documenti ufficiali di riferimento del concorso.",
+        frame_title: "Quadro culturale",
+        frame_text: "DULCESOR promuove concorsi come iniziative culturali orientate alla conservazione e diffusione della pasticceria monastica conventuale e del patrimonio culturale legato alla vita monastica. Le informazioni pubblicate sono indicative e possono essere aggiornate.",
+        in_prep: "IN PREPARAZIONE",
 
-        reg_title:"Introduzione del regolamento (versione web)",
-        reg_web_1:"Il I Concorso Internazionale di Pasticceria Monastica “DULCESOR” nasce come iniziativa culturale per preservare, riconoscere e diffondere la tradizione dolciaria sviluppata nei conventi e nelle comunità religiose.",
-        reg_web_2:"Il concorso valorizza il lavoro artigianale, l’eccellenza e il sapere tramandato per generazioni, creando un punto d’incontro rispettoso tra tradizione, cultura e società contemporanea.",
-        reg_web_3:"La partecipazione e lo svolgimento del concorso sono disciplinati dai documenti ufficiali pubblicati su questo sito (Regolamento e Domanda). Ulteriori informazioni organizzative potranno essere definite con l’avanzare della pianificazione.",
-        reg_note:"Nota: il documento completo e vincolante è il PDF ufficiale del regolamento.",
+        list_title: "Concorso principale",
 
-        foot_line_1_a:"Associazione Culturale",
-        foot_line_1_b:"Pasticceria Monastica Conventuale",
-        foot_line_1_c:"Associazione culturale senza scopo di lucro",
-        foot_line_1_d:"Iscrizione in corso",
-        foot_line_2:"Valladolid (Spagna)",
-        foot_line_3:"Sito sviluppato da Apolo Studio Creativo (in preparazione)"
+        reg_title: "Regolamento · Introduzione",
+        poster_caption: "Locandina ufficiale del concorso.",
+        reg_text: "La pasticceria monastica costituisce uno dei patrimoni gastronomici più singolari e preziosi della nostra storia. Nata nel silenzio di monasteri e conventi, è stata per secoli espressione di raccoglimento, dedizione e maestria, tramandata di generazione in generazione e preservata con fedeltà allo spirito e alle ricette originali.\n\nQueste preparazioni, frutto del lavoro paziente e vocazionale delle comunità religiose, affondano le radici nel Medioevo e sono giunte fino a noi come testimonianza viva di una cucina legata al territorio, al calendario liturgico e all’uso rispettoso delle risorse. Dolci realizzati con ingredienti semplici —farine, uova, frutta secca, miele, zucchero e spezie— che, attraverso tecniche affinate dal tempo, hanno raggiunto un elevato livello di eccellenza e un riconoscimento nazionale e internazionale.\n\nOltre al valore culinario, la pasticceria monastica rappresenta un patrimonio culturale immateriale di valore incalcolabile, in cui convergono spiritualità, ospitalità e artigianato gastronomico. Le sue ricette, custodite gelosamente per secoli, hanno oltrepassato le mura conventuali per diventare simbolo di autenticità, tradizione e qualità, contribuendo alla conservazione di un’eredità essenziale della nostra identità culturale.\n\nLa città di Valladolid, strettamente legata alla storia, alla cultura e al patrimonio religioso, si configura come luogo ideale per ospitare questo appuntamento, consolidandosi come spazio di incontro e riconoscimento di questa tradizione gastronomica.\n\nCon l’obiettivo di preservare, riconoscere e diffondere la pasticceria monastica, nonché valorizzare il lavoro delle comunità religiose e dei professionisti che mantengono viva questa tradizione, si indice la I Edizione del Concorso Internazionale di Pasticceria Monastica “DULCESOR”.",
+        pill_intl: "BANDO INTERNAZIONALE",
+
+        docs_title: "Documentazione ufficiale",
+        docs_text: "Accesso alla documentazione ufficiale (regolamento e modulo di iscrizione).",
+        btn_bases: "Regolamento (PDF)",
+        btn_form: "Iscrizione (PDF)",
+        pill_pdf: "DOCUMENTI PDF"
       }
     };
 
-    function applyLang(lang){
+    function applyI18n(lang){
       const dict = I18N[lang] || I18N.es;
       document.documentElement.lang = lang;
 
       document.querySelectorAll("[data-i18n]").forEach(el=>{
         const key = el.getAttribute("data-i18n");
-        if (typeof dict[key] === "string") el.textContent = dict[key];
+        if(!(key in dict)) return;
+
+        const val = dict[key];
+        if(typeof val !== "string") return;
+
+        // Si el texto tiene saltos de línea (para párrafos largos), lo convertimos a <br><br>
+        if(val.includes("\n")){
+          el.innerHTML = val.replace(/\n\n/g, "<br><br>").replace(/\n/g, "<br>");
+        } else {
+          el.textContent = val;
+        }
       });
 
-      document.querySelectorAll(".langBtn").forEach(b=>{
-        b.classList.toggle("active", b.dataset.lang === lang);
+      document.querySelectorAll(".langBtn").forEach(btn=>{
+        btn.classList.toggle("active", btn.dataset.lang === lang);
       });
 
       try{ localStorage.setItem("dulcesor_lang", lang); }catch(e){}
     }
 
     document.querySelectorAll(".langBtn").forEach(btn=>{
-      btn.addEventListener("click", ()=> applyLang(btn.dataset.lang));
+      btn.addEventListener("click", ()=> applyI18n(btn.dataset.lang));
     });
 
     const saved = (()=>{ try{return localStorage.getItem("dulcesor_lang")}catch(e){return null} })();
-    applyLang(saved || "es");
+    applyI18n(saved || "es");
   </script>
 </body>
 </html>
