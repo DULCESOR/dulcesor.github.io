@@ -6,424 +6,68 @@
   <title>Contacto · DULCESOR</title>
   <meta name="description" content="Contacto institucional de la Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual." />
 
-  <style>
-    :root{
-      --bg:#f6f4f1;
-      --card:#ffffff;
-      --text:#1f1f1f;
-      --muted:#6b6b6b;
-      --line:#e6e1d8;
-      --gold: rgb(145, 128, 26);
-      --shadow: 0 14px 40px rgba(0,0,0,.06);
-      --radius: 16px;
-      --font: "Century Gothic","CenturyGothic","AppleGothic",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    a{color:inherit}
-
-    .wrap{
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 28px 20px 46px;
-    }
-
-    /* ===== Standard Header (asociacion.html) ===== */
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding: 8px 0 18px;
-      border-bottom: 1px solid var(--line);
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width: 240px;
-    }
-    .mark{
-      width:38px;height:38px;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      display:flex;align-items:center;justify-content:center;
-      color: var(--gold);
-      font-weight: 700;
-      letter-spacing: .5px;
-      background: #fbfaf8;
-    }
-    .brand strong{display:block;letter-spacing: .08em}
-    .brand small{
-      display:block;
-      color: var(--muted);
-      letter-spacing: .18em;
-      font-size: 12px;
-      margin-top: -2px;
-    }
-    .gold{color: var(--gold); font-weight: 800}
-
-    .lang{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:flex-end;
-      flex-wrap:wrap;
-    }
-    .langBtn{
-      font-size: 12px;
-      letter-spacing: .16em;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: transparent;
-      cursor:pointer;
-      color: var(--muted);
-    }
-    .langBtn.active{
-      color: var(--text);
-      border-color: rgba(145,128,26,.35);
-      background: rgba(145,128,26,.08);
-    }
-
-    nav{
-      display:flex;
-      gap: 22px;
-      justify-content:center;
-      flex-wrap:wrap;
-      padding: 18px 0 12px;
-      border-bottom: 1px solid var(--line);
-    }
-    nav a{
-      text-decoration:none;
-      color: var(--muted);
-      letter-spacing: .18em;
-      font-size: 12px;
-      padding: 8px 10px;
-      border-radius: 10px;
-    }
-    nav a:hover{
-      background: rgba(0,0,0,.03);
-      color: var(--text);
-    }
-    nav a.current{
-      color: var(--text);
-      background: rgba(145,128,26,.08);
-      border: 1px solid rgba(145,128,26,.25);
-    }
-
-    /* ===== Content ===== */
-    .hero{
-      text-align:center;
-      padding: 34px 0 10px;
-    }
-    .hero h1{
-      margin: 0 0 10px;
-      font-size: clamp(26px, 3.6vw, 40px);
-      letter-spacing: .14em;
-      color: var(--gold);
-      font-weight: 900;
-    }
-    .hero p{
-      margin: 0 auto;
-      max-width: 900px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .card{
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px 18px 16px;
-      margin-top: 18px;
-    }
-    .card h2{
-      margin: 0 0 12px;
-      letter-spacing: .18em;
-      font-size: 13px;
-      color: var(--text);
-      text-transform: uppercase;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 10px;
-    }
-    @media (min-width: 900px){
-      .grid{grid-template-columns: 1fr 1fr;}
-    }
-
-    .row{
-      padding: 14px 14px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: #fbfaf8;
-    }
-    .label{
-      display:block;
-      font-size: 12px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .value{
-      font-size: 16px;
-      color: var(--text);
-    }
-    .value a{
-      color: var(--gold);
-      text-decoration:none;
-      font-weight: 700;
-    }
-    .value a:hover{ text-decoration: underline; }
-
-    .note{
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 12px;
-    }
-
-    /* ===== Standard Footer (fixed, NOT translated) ===== */
-    .siteFooter{
-      margin-top: 36px;
-      border-top: 1px solid var(--line);
-      padding: 20px 16px 28px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
-    }
-    .footerInner{max-width: 980px; margin: 0 auto;}
-    .footerLine1{font-weight: 600; color: var(--text);}
-    .footerLine4{margin-top: 6px;}
-  </style>
+  <!-- CSS común -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body data-page="contacto">
   <main class="wrap">
 
-    <!-- Header (standard) -->
-    <div class="topbar">
-      <div class="brand">
-        <div class="mark" aria-label="DULCESOR">D</div>
-        <div>
-          <strong class="gold">DULCESOR</strong>
-          <small data-i18n="brand_sub">ASOCIACIÓN CULTURAL</small>
-        </div>
-      </div>
+    <!-- Header común (se inyecta por JS) -->
+    <div id="site-header"></div>
 
-      <div class="lang" aria-label="Idiomas">
-        <button class="langBtn active" data-lang="es">ES</button>
-        <button class="langBtn" data-lang="en">EN</button>
-        <button class="langBtn" data-lang="pt">PT</button>
-        <button class="langBtn" data-lang="fr">FR</button>
-        <button class="langBtn" data-lang="it">IT</button>
-      </div>
-    </div>
-
-    <nav aria-label="Menú">
-      <a href="index.html" data-i18n="nav_inicio">INICIO</a>
-      <a href="asociacion.html" data-i18n="nav_asociacion">ASOCIACIÓN</a>
-      <a href="proyectos.html" data-i18n="nav_proyectos">PROYECTOS</a>
-      <a href="concursos.html" data-i18n="nav_concursos">CONCURSOS</a>
-      <a href="rutas.html" data-i18n="nav_rutas">RUTAS MONACALES</a>
-      <a href="patrocinadores.html" data-i18n="nav_patrocinadores">PATROCINADORES</a>
-      <a class="current" href="contacto.html" data-i18n="nav_contacto">CONTACTO</a>
-    </nav>
-
+    <!-- CONTENIDO DE LA PÁGINA -->
     <section class="hero" aria-label="Contacto">
-      <h1 data-i18n="title">CONTACTO</h1>
-      <p data-i18n="subtitle">
+      <h1 data-i18n="contacto.title">CONTACTO</h1>
+      <p data-i18n="contacto.subtitle">
         Para información institucional, colaboraciones culturales y consultas generales.
       </p>
     </section>
 
     <section class="card" aria-label="Datos de contacto">
-      <h2 data-i18n="card_title">Contacto institucional</h2>
+      <h2 data-i18n="contacto.card_title">Contacto institucional</h2>
 
       <div class="grid">
         <div class="row">
-          <span class="label" data-i18n="lbl_general">Mail general</span>
+          <span class="label" data-i18n="contacto.lbl_general">Mail general</span>
           <span class="value">
             <a href="mailto:info@dulcesor.org">info@dulcesor.org</a>
           </span>
         </div>
 
         <div class="row">
-          <span class="label" data-i18n="lbl_concurso">Concurso</span>
+          <span class="label" data-i18n="contacto.lbl_concurso">Concurso</span>
           <span class="value">
             <a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a>
           </span>
         </div>
 
         <div class="row">
-          <span class="label" data-i18n="lbl_contacto">Contacto</span>
+          <span class="label" data-i18n="contacto.lbl_contacto">Contacto</span>
           <span class="value">
             <a href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a>
           </span>
         </div>
 
         <div class="row">
-          <span class="label" data-i18n="lbl_dir">Dirección</span>
-          <span class="value">Plaza Santa Ana 2 · 47001 Valladolid (España)</span>
+          <span class="label" data-i18n="contacto.lbl_dir">Dirección</span>
+          <span class="value" data-i18n="contacto.address">Plaza Santa Ana 2 · 47001 Valladolid (España)</span>
         </div>
       </div>
 
-      <p class="note" data-i18n="note">
+      <p class="note" data-i18n="contacto.note">
         Nota: No se facilita teléfono en esta fase. La asociación se encuentra en proceso de inscripción.
       </p>
     </section>
 
-    <!-- Footer (standard, fixed) -->
-    <footer class="siteFooter">
-      <div class="footerInner">
-        <div class="footerLine1">
-          © <span class="gold">Asociación Cultural ‘DULCESOR’</span> – Repostería Monacal Conventual
-        </div>
-        <div class="footerLine2">
-          Asociación cultural sin ánimo de lucro · En proceso de inscripción
-        </div>
-        <div class="footerLine3">
-          Valladolid (España)
-        </div>
-        <div class="footerLine4">
-          Sitio web desarrollado por Apolo Studio Creativo
-        </div>
-      </div>
-    </footer>
+    <!-- Footer común (se inyecta por JS) -->
+    <div id="site-footer"></div>
 
   </main>
 
-  <script>
-    const I18N = {
-      es: {
-        brand_sub: "ASOCIACIÓN CULTURAL",
-        nav_inicio: "INICIO",
-        nav_asociacion: "ASOCIACIÓN",
-        nav_proyectos: "PROYECTOS",
-        nav_concursos: "CONCURSOS",
-        nav_rutas: "RUTAS MONACALES",
-        nav_patrocinadores: "PATROCINADORES",
-        nav_contacto: "CONTACTO",
-        title: "CONTACTO",
-        subtitle: "Para información institucional, colaboraciones culturales y consultas generales.",
-        card_title: "Contacto institucional",
-        lbl_general: "Mail general",
-        lbl_concurso: "Concurso",
-        lbl_contacto: "Contacto",
-        lbl_dir: "Dirección",
-        note: "Nota: No se facilita teléfono en esta fase. La asociación se encuentra en proceso de inscripción."
-      },
-      en: {
-        brand_sub: "CULTURAL ASSOCIATION",
-        nav_inicio: "HOME",
-        nav_asociacion: "ASSOCIATION",
-        nav_proyectos: "PROJECTS",
-        nav_concursos: "CONTESTS",
-        nav_rutas: "MONASTIC ROUTES",
-        nav_patrocinadores: "SPONSORS",
-        nav_contacto: "CONTACT",
-        title: "CONTACT",
-        subtitle: "For institutional information, cultural collaborations and general enquiries.",
-        card_title: "Institutional contact",
-        lbl_general: "General email",
-        lbl_concurso: "Contest",
-        lbl_contacto: "Contact",
-        lbl_dir: "Address",
-        note: "Note: No phone number is provided at this stage. The association is in the registration process."
-      },
-      pt: {
-        brand_sub: "ASSOCIAÇÃO CULTURAL",
-        nav_inicio: "INÍCIO",
-        nav_asociacion: "ASSOCIAÇÃO",
-        nav_proyectos: "PROJETOS",
-        nav_concursos: "CONCURSOS",
-        nav_rutas: "ROTAS MONÁSTICAS",
-        nav_patrocinadores: "PATROCINADORES",
-        nav_contacto: "CONTACTO",
-        title: "CONTACTO",
-        subtitle: "Para informação institucional, colaborações culturais e questões gerais.",
-        card_title: "Contacto institucional",
-        lbl_general: "Email geral",
-        lbl_concurso: "Concurso",
-        lbl_contacto: "Contacto",
-        lbl_dir: "Endereço",
-        note: "Nota: Não é disponibilizado telefone nesta fase. A associação está em processo de inscrição."
-      },
-      fr: {
-        brand_sub: "ASSOCIATION CULTURELLE",
-        nav_inicio: "ACCUEIL",
-        nav_asociacion: "ASSOCIATION",
-        nav_proyectos: "PROJETS",
-        nav_concursos: "CONCOURS",
-        nav_rutas: "ITINÉRAIRES MONASTIQUES",
-        nav_patrocinadores: "PARTENAIRES",
-        nav_contacto: "CONTACT",
-        title: "CONTACT",
-        subtitle: "Pour toute information institutionnelle, collaborations culturelles et demandes générales.",
-        card_title: "Contact institutionnel",
-        lbl_general: "Email général",
-        lbl_concurso: "Concours",
-        lbl_contacto: "Contact",
-        lbl_dir: "Adresse",
-        note: "Note : aucun téléphone n’est communiqué à ce stade. L’association est en cours d’inscription."
-      },
-      it: {
-        brand_sub: "ASSOCIAZIONE CULTURALE",
-        nav_inicio: "HOME",
-        nav_asociacion: "ASSOCIAZIONE",
-        nav_proyectos: "PROGETTI",
-        nav_concursos: "CONCORSI",
-        nav_rutas: "PERCORSI MONASTICI",
-        nav_patrocinadores: "SPONSOR",
-        nav_contacto: "CONTATTI",
-        title: "CONTATTI",
-        subtitle: "Per informazioni istituzionali, collaborazioni culturali e richieste generali.",
-        card_title: "Contatto istituzionale",
-        lbl_general: "Email generale",
-        lbl_concurso: "Concorso",
-        lbl_contacto: "Contatti",
-        lbl_dir: "Indirizzo",
-        note: "Nota: non viene fornito un numero di telefono in questa fase. L’associazione è in fase di iscrizione."
-      }
-    };
-
-    function applyLang(lang){
-      const dict = I18N[lang] || I18N.es;
-      document.documentElement.lang = lang;
-
-      document.querySelectorAll("[data-i18n]").forEach(el=>{
-        const key = el.getAttribute("data-i18n");
-        if (typeof dict[key] === "string") el.innerHTML = dict[key];
-      });
-
-      document.querySelectorAll(".langBtn").forEach(btn=>{
-        btn.classList.toggle("active", btn.dataset.lang === lang);
-      });
-
-      try { localStorage.setItem("dulcesor_lang", lang); } catch(e){}
-    }
-
-    (function(){
-      let saved = "es";
-      try { saved = localStorage.getItem("dulcesor_lang") || "es"; } catch(e){}
-      applyLang(saved);
-
-      document.querySelectorAll(".langBtn").forEach(btn=>{
-        btn.addEventListener("click", ()=> applyLang(btn.dataset.lang));
-      });
-    })();
-  </script>
+  <!-- JS común -->
+  <script src="i18n.js"></script>
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
 </body>
 </html>
