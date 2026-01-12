@@ -5,69 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto · DULCESOR</title>
   <meta name="description" content="Contacto institucional de la Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual." />
-
-  <!-- CSS común -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body data-page="contacto">
+<body>
   <main class="wrap">
 
-    <!-- Header común (se inyecta por JS) -->
+    <!-- Header injected -->
     <div id="site-header"></div>
 
-    <!-- CONTENIDO DE LA PÁGINA -->
     <section class="hero" aria-label="Contacto">
-      <h1 data-i18n="contacto.title">CONTACTO</h1>
-      <p data-i18n="contacto.subtitle">
-        Para información institucional, colaboraciones culturales y consultas generales.
-      </p>
+      <h1 data-i18n="c_title">CONTACTO</h1>
+      <p data-i18n="c_subtitle">Para información institucional, colaboraciones culturales y consultas generales.</p>
     </section>
 
     <section class="card" aria-label="Datos de contacto">
-      <h2 data-i18n="contacto.card_title">Contacto institucional</h2>
+      <h2 data-i18n="c_card_title">Contacto institucional</h2>
 
       <div class="grid">
         <div class="row">
-          <span class="label" data-i18n="contacto.lbl_general">Mail general</span>
+          <span class="label" data-i18n="c_lbl_general">Mail general</span>
           <span class="value">
             <a href="mailto:info@dulcesor.org">info@dulcesor.org</a>
           </span>
         </div>
 
         <div class="row">
-          <span class="label" data-i18n="contacto.lbl_concurso">Concurso</span>
+          <span class="label" data-i18n="c_lbl_concurso">Concurso</span>
           <span class="value">
             <a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a>
           </span>
         </div>
 
         <div class="row">
-          <span class="label" data-i18n="contacto.lbl_contacto">Contacto</span>
+          <span class="label" data-i18n="c_lbl_contacto">Contacto</span>
           <span class="value">
             <a href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a>
           </span>
         </div>
 
         <div class="row">
-          <span class="label" data-i18n="contacto.lbl_dir">Dirección</span>
-          <span class="value" data-i18n="contacto.address">Plaza Santa Ana 2 · 47001 Valladolid (España)</span>
+          <span class="label" data-i18n="c_lbl_dir">Dirección</span>
+          <span class="value" data-i18n="c_addr">Plaza Santa Ana 2 · 47001 Valladolid (España)</span>
         </div>
       </div>
 
-      <p class="note" data-i18n="contacto.note">
+      <p class="note" data-i18n="c_note">
         Nota: No se facilita teléfono en esta fase. La asociación se encuentra en proceso de inscripción.
       </p>
     </section>
 
-    <!-- Footer común (se inyecta por JS) -->
+    <!-- Footer injected -->
     <div id="site-footer"></div>
 
   </main>
 
-  <!-- JS común -->
   <script src="i18n.js"></script>
   <script src="header.js"></script>
   <script src="footer.js"></script>
+  <script>
+    // pinta cabecera/menú marcando la sección actual
+    window.DULCESOR.renderHeader("contacto");
+    window.DULCESOR.renderFooter();
+  </script>
 </body>
 </html>
