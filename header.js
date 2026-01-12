@@ -4,7 +4,7 @@
     return `
       <div class="topbar">
         <a class="brand brandLogoOnly" href="index.html" aria-label="DULCESOR">
-          <img class="brandLogo" src="logos/logo-asociación.png" alt="DULCESOR" />
+          <img class="brandLogo" src="logos/logo-asociacion.png" alt="DULCESOR" />
         </a>
 
         <div class="lang" aria-label="Idiomas">
