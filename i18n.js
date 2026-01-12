@@ -1,7 +1,8 @@
-(function(){
-  // Diccionario base (común)
-  const BASE_I18N = {
+// i18n.js
+(() => {
+  const I18N = {
     es: {
+      // Brand / Nav
       brand_sub: "ASOCIACIÓN CULTURAL",
       nav_inicio: "INICIO",
       nav_asociacion: "ASOCIACIÓN",
@@ -10,7 +11,19 @@
       nav_rutas: "RUTAS MONACALES",
       nav_patrocinadores: "PATROCINADORES",
       nav_contacto: "CONTACTO",
+
+      // Contacto (cuerpo)
+      c_title: "CONTACTO",
+      c_subtitle: "Para información institucional, colaboraciones culturales y consultas generales.",
+      c_card_title: "Contacto institucional",
+      c_lbl_general: "Mail general",
+      c_lbl_concurso: "Concurso",
+      c_lbl_contacto: "Contacto",
+      c_lbl_dir: "Dirección",
+      c_addr: "Plaza Santa Ana 2 · 47001 Valladolid (España)",
+      c_note: "Nota: No se facilita teléfono en esta fase. La asociación se encuentra en proceso de inscripción."
     },
+
     en: {
       brand_sub: "CULTURAL ASSOCIATION",
       nav_inicio: "HOME",
@@ -20,7 +33,18 @@
       nav_rutas: "MONASTIC ROUTES",
       nav_patrocinadores: "SPONSORS",
       nav_contacto: "CONTACT",
+
+      c_title: "CONTACT",
+      c_subtitle: "For institutional information, cultural collaborations and general enquiries.",
+      c_card_title: "Institutional contact",
+      c_lbl_general: "General email",
+      c_lbl_concurso: "Contest",
+      c_lbl_contacto: "Contact",
+      c_lbl_dir: "Address",
+      c_addr: "Plaza Santa Ana 2 · 47001 Valladolid (Spain)",
+      c_note: "Note: No phone number is provided at this stage. The association is in the registration process."
     },
+
     pt: {
       brand_sub: "ASSOCIAÇÃO CULTURAL",
       nav_inicio: "INÍCIO",
@@ -30,7 +54,18 @@
       nav_rutas: "ROTAS MONÁSTICAS",
       nav_patrocinadores: "PATROCINADORES",
       nav_contacto: "CONTACTO",
+
+      c_title: "CONTACTO",
+      c_subtitle: "Para informação institucional, colaborações culturais e questões gerais.",
+      c_card_title: "Contacto institucional",
+      c_lbl_general: "Email geral",
+      c_lbl_concurso: "Concurso",
+      c_lbl_contacto: "Contacto",
+      c_lbl_dir: "Endereço",
+      c_addr: "Plaza Santa Ana 2 · 47001 Valladolid (Espanha)",
+      c_note: "Nota: Não é disponibilizado telefone nesta fase. A associação está em processo de inscrição."
     },
+
     fr: {
       brand_sub: "ASSOCIATION CULTURELLE",
       nav_inicio: "ACCUEIL",
@@ -40,7 +75,18 @@
       nav_rutas: "ITINÉRAIRES MONASTIQUES",
       nav_patrocinadores: "PARTENAIRES",
       nav_contacto: "CONTACT",
+
+      c_title: "CONTACT",
+      c_subtitle: "Pour toute information institutionnelle, collaborations culturelles et demandes générales.",
+      c_card_title: "Contact institutionnel",
+      c_lbl_general: "Email général",
+      c_lbl_concurso: "Concours",
+      c_lbl_contacto: "Contact",
+      c_lbl_dir: "Adresse",
+      c_addr: "Plaza Santa Ana 2 · 47001 Valladolid (Espagne)",
+      c_note: "Note : aucun téléphone n’est communiqué à ce stade. L’association est en cours d’inscription."
     },
+
     it: {
       brand_sub: "ASSOCIAZIONE CULTURALE",
       nav_inicio: "HOME",
@@ -50,64 +96,41 @@
       nav_rutas: "PERCORSI MONASTICI",
       nav_patrocinadores: "SPONSOR",
       nav_contacto: "CONTATTI",
+
+      c_title: "CONTATTI",
+      c_subtitle: "Per informazioni istituzionali, collaborazioni culturali e richieste generali.",
+      c_card_title: "Contatto istituzionale",
+      c_lbl_general: "Email generale",
+      c_lbl_concurso: "Concorso",
+      c_lbl_contacto: "Contatti",
+      c_lbl_dir: "Indirizzo",
+      c_addr: "Plaza Santa Ana 2 · 47001 Valladolid (Spagna)",
+      c_note: "Nota: non viene fornito un numero di telefono in questa fase. L’associazione è in fase di iscrizione."
     }
   };
 
-  function mergeDict(base, extra){
-    if(!extra) return base;
-    const out = JSON.parse(JSON.stringify(base));
-    Object.keys(extra).forEach(lang=>{
-      out[lang] = out[lang] || {};
-      Object.assign(out[lang], extra[lang]);
-    });
-    return out;
-  }
-
-  function getSavedLang(){
-    try{ return localStorage.getItem("dulcesor_lang"); }catch(e){ return null; }
-  }
-  function saveLang(lang){
-    try{ localStorage.setItem("dulcesor_lang", lang); }catch(e){}
-  }
-
-  function applyI18n(lang, dict){
-    const d = (dict && dict[lang]) ? dict[lang] : (dict && dict.es) ? dict.es : {};
+  function applyLang(lang) {
+    const dict = I18N[lang] || I18N.es;
     document.documentElement.lang = lang;
 
-    document.querySelectorAll("[data-i18n]").forEach(el=>{
+    document.querySelectorAll("[data-i18n]").forEach(el => {
       const key = el.getAttribute("data-i18n");
-      if(!(key in d)) return;
-
-      const val = d[key];
-      if(typeof val !== "string") return;
-
-      // Soporta textos largos con saltos de línea
-      if(val.includes("\n")){
-        el.innerHTML = val.replace(/\n\n/g, "<br><br>").replace(/\n/g, "<br>");
-      }else{
-        el.textContent = val;
-      }
+      if (typeof dict[key] === "string") el.innerHTML = dict[key];
     });
 
-    document.querySelectorAll(".langBtn").forEach(btn=>{
+    document.querySelectorAll(".langBtn").forEach(btn => {
       btn.classList.toggle("active", btn.dataset.lang === lang);
     });
 
-    saveLang(lang);
+    try { localStorage.setItem("dulcesor_lang", lang); } catch (e) {}
   }
 
-  function initI18n(){
-    // PAGE_I18N lo define la página (opcional) con sus textos propios
-    const dict = mergeDict(BASE_I18N, window.PAGE_I18N);
-
-    // Bind botones idioma (si están en el DOM)
-    document.querySelectorAll(".langBtn").forEach(btn=>{
-      btn.addEventListener("click", ()=> applyI18n(btn.dataset.lang, dict));
-    });
-
-    const saved = getSavedLang();
-    applyI18n(saved || "es", dict);
+  function getSavedLang() {
+    try { return localStorage.getItem("dulcesor_lang") || "es"; } catch (e) { return "es"; }
   }
 
-  window.DULCESOR_I18N = { initI18n, applyI18n };
+  // API pública
+  window.DULCESOR = window.DULCESOR || {};
+  window.DULCESOR.applyLang = applyLang;
+  window.DULCESOR.getSavedLang = getSavedLang;
 })();
