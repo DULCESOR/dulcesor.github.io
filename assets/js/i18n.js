@@ -1,136 +1,118 @@
-// i18n.js
+// /assets/js/i18n.js
 (() => {
-  const I18N = {
+  // 1) Traducciones (añade/ajusta textos aquí)
+  const DICT = {
     es: {
-      // Brand / Nav
-      brand_sub: "ASOCIACIÓN CULTURAL",
-      nav_inicio: "INICIO",
-      nav_asociacion: "ASOCIACIÓN",
-      nav_proyectos: "PROYECTOS",
-      nav_concursos: "CONCURSOS",
-      nav_rutas: "RUTAS MONACALES",
-      nav_patrocinadores: "PATROCINADORES",
-      nav_contacto: "CONTACTO",
+      nav_home: "INICIO",
+      nav_assoc: "ASOCIACIÓN",
+      nav_projects: "PROYECTOS",
+      nav_contests: "CONCURSOS",
+      nav_routes: "RUTAS MONACALES",
+      nav_sponsors: "PATROCINADORES",
+      nav_contact: "CONTACTO",
 
-      // Contacto (cuerpo)
-      c_title: "CONTACTO",
-      c_subtitle: "Para información institucional, colaboraciones culturales y consultas generales.",
-      c_card_title: "Contacto institucional",
-      c_lbl_general: "Mail general",
-      c_lbl_concurso: "Concurso",
-      c_lbl_contacto: "Contacto",
-      c_lbl_dir: "Dirección",
-      c_addr: "Plaza Santa Ana 2 · 47001 Valladolid (España)",
-      c_note: "Nota: No se facilita teléfono en esta fase. La asociación se encuentra en proceso de inscripción."
+      footer_line1: "© Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual",
+      footer_line2:
+        "Asociación cultural sin ánimo de lucro · En proceso de inscripción · Valladolid (España) · Sitio web desarrollado por Apolo Studio Creativo",
     },
 
     en: {
-      brand_sub: "CULTURAL ASSOCIATION",
-      nav_inicio: "HOME",
-      nav_asociacion: "ASSOCIATION",
-      nav_proyectos: "PROJECTS",
-      nav_concursos: "CONTESTS",
-      nav_rutas: "MONASTIC ROUTES",
-      nav_patrocinadores: "SPONSORS",
-      nav_contacto: "CONTACT",
+      nav_home: "HOME",
+      nav_assoc: "ASSOCIATION",
+      nav_projects: "PROJECTS",
+      nav_contests: "CONTESTS",
+      nav_routes: "MONASTIC ROUTES",
+      nav_sponsors: "SPONSORS",
+      nav_contact: "CONTACT",
 
-      c_title: "CONTACT",
-      c_subtitle: "For institutional information, cultural collaborations and general enquiries.",
-      c_card_title: "Institutional contact",
-      c_lbl_general: "General email",
-      c_lbl_concurso: "Contest",
-      c_lbl_contacto: "Contact",
-      c_lbl_dir: "Address",
-      c_addr: "Plaza Santa Ana 2 · 47001 Valladolid (Spain)",
-      c_note: "Note: No phone number is provided at this stage. The association is in the registration process."
+      footer_line1: "© Cultural Association ‘DULCESOR’ – Monastic Convent Pastry",
+      footer_line2:
+        "Non-profit cultural association · Registration in progress · Valladolid (Spain) · Website developed by Apolo Studio Creativo",
     },
 
     pt: {
-      brand_sub: "ASSOCIAÇÃO CULTURAL",
-      nav_inicio: "INÍCIO",
-      nav_asociacion: "ASSOCIAÇÃO",
-      nav_proyectos: "PROJETOS",
-      nav_concursos: "CONCURSOS",
-      nav_rutas: "ROTAS MONÁSTICAS",
-      nav_patrocinadores: "PATROCINADORES",
-      nav_contacto: "CONTACTO",
+      nav_home: "INÍCIO",
+      nav_assoc: "ASSOCIAÇÃO",
+      nav_projects: "PROJETOS",
+      nav_contests: "CONCURSOS",
+      nav_routes: "ROTAS MONÁSTICAS",
+      nav_sponsors: "PATROCINADORES",
+      nav_contact: "CONTACTO",
 
-      c_title: "CONTACTO",
-      c_subtitle: "Para informação institucional, colaborações culturais e questões gerais.",
-      c_card_title: "Contacto institucional",
-      c_lbl_general: "Email geral",
-      c_lbl_concurso: "Concurso",
-      c_lbl_contacto: "Contacto",
-      c_lbl_dir: "Endereço",
-      c_addr: "Plaza Santa Ana 2 · 47001 Valladolid (Espanha)",
-      c_note: "Nota: Não é disponibilizado telefone nesta fase. A associação está em processo de inscrição."
+      footer_line1: "© Associação Cultural ‘DULCESOR’ – Doçaria Monástica Conventual",
+      footer_line2:
+        "Associação cultural sem fins lucrativos · Registo em curso · Valladolid (Espanha) · Site desenvolvido por Apolo Studio Creativo",
     },
 
     fr: {
-      brand_sub: "ASSOCIATION CULTURELLE",
-      nav_inicio: "ACCUEIL",
-      nav_asociacion: "ASSOCIATION",
-      nav_proyectos: "PROJETS",
-      nav_concursos: "CONCOURS",
-      nav_rutas: "ITINÉRAIRES MONASTIQUES",
-      nav_patrocinadores: "PARTENAIRES",
-      nav_contacto: "CONTACT",
+      nav_home: "ACCUEIL",
+      nav_assoc: "ASSOCIATION",
+      nav_projects: "PROJETS",
+      nav_contests: "CONCOURS",
+      nav_routes: "ROUTES MONASTIQUES",
+      nav_sponsors: "MÉCÈNES",
+      nav_contact: "CONTACT",
 
-      c_title: "CONTACT",
-      c_subtitle: "Pour toute information institutionnelle, collaborations culturelles et demandes générales.",
-      c_card_title: "Contact institutionnel",
-      c_lbl_general: "Email général",
-      c_lbl_concurso: "Concours",
-      c_lbl_contacto: "Contact",
-      c_lbl_dir: "Adresse",
-      c_addr: "Plaza Santa Ana 2 · 47001 Valladolid (Espagne)",
-      c_note: "Note : aucun téléphone n’est communiqué à ce stade. L’association est en cours d’inscription."
+      footer_line1: "© Association Culturelle ‘DULCESOR’ – Pâtisserie Monastique Conventuelle",
+      footer_line2:
+        "Association culturelle à but non lucratif · Inscription en cours · Valladolid (Espagne) · Site développé par Apolo Studio Creativo",
     },
 
     it: {
-      brand_sub: "ASSOCIAZIONE CULTURALE",
-      nav_inicio: "HOME",
-      nav_asociacion: "ASSOCIAZIONE",
-      nav_proyectos: "PROGETTI",
-      nav_concursos: "CONCORSI",
-      nav_rutas: "PERCORSI MONASTICI",
-      nav_patrocinadores: "SPONSOR",
-      nav_contacto: "CONTATTI",
+      nav_home: "HOME",
+      nav_assoc: "ASSOCIAZIONE",
+      nav_projects: "PROGETTI",
+      nav_contests: "CONCORSI",
+      nav_routes: "ITINERARI MONASTICI",
+      nav_sponsors: "SPONSOR",
+      nav_contact: "CONTATTI",
 
-      c_title: "CONTATTI",
-      c_subtitle: "Per informazioni istituzionali, collaborazioni culturali e richieste generali.",
-      c_card_title: "Contatto istituzionale",
-      c_lbl_general: "Email generale",
-      c_lbl_concurso: "Concorso",
-      c_lbl_contacto: "Contatti",
-      c_lbl_dir: "Indirizzo",
-      c_addr: "Plaza Santa Ana 2 · 47001 Valladolid (Spagna)",
-      c_note: "Nota: non viene fornito un numero di telefono in questa fase. L’associazione è in fase di iscrizione."
-    }
+      footer_line1: "© Associazione Culturale ‘DULCESOR’ – Pasticceria Monastica Conventuale",
+      footer_line2:
+        "Associazione culturale senza scopo di lucro · Iscrizione in corso · Valladolid (Spagna) · Sito sviluppato da Apolo Studio Creativo",
+    },
   };
 
-  function applyLang(lang) {
-    const dict = I18N[lang] || I18N.es;
-    document.documentElement.lang = lang;
+  const SUPPORTED = Object.keys(DICT);
 
-    document.querySelectorAll("[data-i18n]").forEach(el => {
+  function getLanguage() {
+    const saved = (localStorage.getItem("lang") || "es").toLowerCase();
+    return SUPPORTED.includes(saved) ? saved : "es";
+  }
+
+  function t(key, lang = getLanguage()) {
+    return (DICT[lang] && DICT[lang][key]) || (DICT.es && DICT.es[key]) || key;
+  }
+
+  // 2) Aplica traducciones a cualquier elemento con data-i18n="clave"
+  function applyI18n(lang = getLanguage()) {
+    document.documentElement.setAttribute("lang", lang);
+
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
-      if (typeof dict[key] === "string") el.innerHTML = dict[key];
+      el.textContent = t(key, lang);
     });
 
-    document.querySelectorAll(".langBtn").forEach(btn => {
-      btn.classList.toggle("active", btn.dataset.lang === lang);
+    // También soporta placeholders: data-i18n-placeholder="clave"
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      el.setAttribute("placeholder", t(key, lang));
     });
-
-    try { localStorage.setItem("dulcesor_lang", lang); } catch (e) {}
   }
 
-  function getSavedLang() {
-    try { return localStorage.getItem("dulcesor_lang") || "es"; } catch (e) { return "es"; }
+  function setLanguage(lang) {
+    const normalized = (lang || "es").toLowerCase();
+    const finalLang = SUPPORTED.includes(normalized) ? normalized : "es";
+    localStorage.setItem("lang", finalLang);
+    applyI18n(finalLang);
   }
 
-  // API pública
-  window.DULCESOR = window.DULCESOR || {};
-  window.DULCESOR.applyLang = applyLang;
-  window.DULCESOR.getSavedLang = getSavedLang;
+  // Expone funciones globales para header.js
+  window.getLanguage = getLanguage;
+  window.setLanguage = setLanguage;
+  window.applyI18n = applyI18n;
+  window.t = t;
+
+  // Aplica al cargar
+  document.addEventListener("DOMContentLoaded", () => applyI18n(getLanguage()));
 })();
