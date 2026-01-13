@@ -1,18 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DULCESOR · Contacto</title>
-  <meta name="description" content="Contacto institucional de la Asociación Cultural DULCESOR." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <title>Contacto · DULCESOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Contacto institucional de la Asociación Cultural DULCESOR.">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 
 <body>
-  <!-- Header inyectado (mismo en todas las páginas) -->
-  <div id="site-header"></div>
+
+  <!-- HEADER (inyectado) -->
+  <header id="site-header"></header>
 
   <main class="wrap">
+
     <section class="hero">
       <h1 data-i18n="contact_title">CONTACTO</h1>
       <p data-i18n="contact_subtitle">
@@ -55,89 +60,16 @@
         Nota: No se facilita teléfono en esta fase. La asociación se encuentra en proceso de inscripción.
       </p>
     </section>
+
   </main>
 
-  <!-- Footer inyectado (mismo en todas las páginas) -->
-  <div id="site-footer"></div>
+  <!-- FOOTER (inyectado) -->
+  <footer id="site-footer"></footer>
 
-  <!-- JS común -->
-  <script src="i18n.js"></script>
-  <script src="header.js"></script>
-  <script src="footer.js"></script>
+  <!-- JS globales (orden correcto) -->
+  <script src="/assets/js/i18n.js" defer></script>
+  <script src="/assets/js/header.js" defer></script>
+  <script src="/assets/js/footer.js" defer></script>
 
-  <!-- Clave de página para resaltar menú -->
-  <script>
-    window.DULCESOR_PAGE = "contacto";
-  </script>
-
-  <!-- Textos i18n específicos de esta página (se mezclan con i18n.js si ya tienes más) -->
-  <script>
-    // Si tu i18n.js ya define window.I18N, lo ampliamos sin romper nada.
-    window.I18N = window.I18N || {};
-    window.I18N.es = Object.assign(window.I18N.es || {}, {
-      contact_title: "CONTACTO",
-      contact_subtitle: "Para información institucional, colaboraciones culturales y consultas generales.",
-      contact_block_title: "CONTACTO INSTITUCIONAL",
-      contact_email_label: "Mail general",
-      contact_contact_label: "Contacto",
-      contact_contest_label: "Concurso",
-      contact_address_label: "Dirección",
-      contact_address_value: "Plaza Santa Ana 2 · 47001 Valladolid (España)",
-      contact_note: "Nota: No se facilita teléfono en esta fase. La asociación se encuentra en proceso de inscripción."
-    });
-
-    window.I18N.en = Object.assign(window.I18N.en || {}, {
-      contact_title: "CONTACT",
-      contact_subtitle: "For institutional information, cultural collaborations and general enquiries.",
-      contact_block_title: "INSTITUTIONAL CONTACT",
-      contact_email_label: "General email",
-      contact_contact_label: "Contact",
-      contact_contest_label: "Contest",
-      contact_address_label: "Address",
-      contact_address_value: "Plaza Santa Ana 2 · 47001 Valladolid (Spain)",
-      contact_note: "Note: We do not provide a phone number at this stage. The association is currently in the registration process."
-    });
-
-    window.I18N.pt = Object.assign(window.I18N.pt || {}, {
-      contact_title: "CONTACTO",
-      contact_subtitle: "Para informação institucional, colaborações culturais e questões gerais.",
-      contact_block_title: "CONTACTO INSTITUCIONAL",
-      contact_email_label: "Email geral",
-      contact_contact_label: "Contacto",
-      contact_contest_label: "Concurso",
-      contact_address_label: "Endereço",
-      contact_address_value: "Plaza Santa Ana 2 · 47001 Valladolid (Espanha)",
-      contact_note: "Nota: Nesta fase não disponibilizamos telefone. A associação encontra-se em processo de registo."
-    });
-
-    window.I18N.fr = Object.assign(window.I18N.fr || {}, {
-      contact_title: "CONTACT",
-      contact_subtitle: "Pour toute information institutionnelle, collaborations culturelles et demandes générales.",
-      contact_block_title: "CONTACT INSTITUTIONNEL",
-      contact_email_label: "Email général",
-      contact_contact_label: "Contact",
-      contact_contest_label: "Concours",
-      contact_address_label: "Adresse",
-      contact_address_value: "Plaza Santa Ana 2 · 47001 Valladolid (Espagne)",
-      contact_note: "Note : aucun numéro de téléphone n’est communiqué à ce stade. L’association est en cours d’inscription."
-    });
-
-    window.I18N.it = Object.assign(window.I18N.it || {}, {
-      contact_title: "CONTATTO",
-      contact_subtitle: "Per informazioni istituzionali, collaborazioni culturali e richieste generali.",
-      contact_block_title: "CONTATTO ISTITUZIONALE",
-      contact_email_label: "Email generale",
-      contact_contact_label: "Contatto",
-      contact_contest_label: "Concorso",
-      contact_address_label: "Indirizzo",
-      contact_address_value: "Plaza Santa Ana 2 · 47001 Valladolid (Spagna)",
-      contact_note: "Nota: in questa fase non forniamo un numero di telefono. L’associazione è in fase di registrazione."
-    });
-
-    // Aplica idioma actual si tu i18n.js expone una función; si no, no pasa nada.
-    if (typeof window.applyLang === "function") {
-      window.applyLang(window.localStorage.getItem("dulcesor_lang") || "es");
-    }
-  </script>
 </body>
 </html>
