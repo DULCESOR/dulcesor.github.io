@@ -1,1 +1,406 @@
+/* =========================================================
+   DULCESOR — styles.css (GLOBAL)
+   - Diseño sobrio, institucional, limpio
+   - Variables CSS para cambios globales
+   ========================================================= */
 
+/* -------------------------
+   1) Variables globales
+------------------------- */
+:root{
+  /* Fondo / superficies */
+  --bg: #f7f4ef;          /* crema */
+  --surface: #ffffff;     /* tarjetas */
+  --surface-2: #fbf8f2;   /* tarjetas suaves */
+  --border: #e6ddcf;      /* líneas */
+
+  /* Texto */
+  --text: #2b2b2b;        /* texto principal */
+  --text-2: #5b5b5b;      /* texto secundario (gris institucional) */
+  --muted: #7a7a7a;       /* notas */
+  --heading: #1f1f1f;     /* títulos (negro suave) */
+
+  /* Marca */
+  --gold: #8f7b2a;        /* oro DULCESOR */
+  --gold-2: #b59b3a;      /* oro claro */
+  --gold-ink: #2b240c;    /* texto sobre dorado */
+  --accent: var(--gold);  /* acento por defecto */
+
+  /* Links / botones */
+  --link: #6b5a1f;
+  --link-hover: #8f7b2a;
+
+  --btn-bg: var(--gold);
+  --btn-bg-hover: #7a6822;
+  --btn-text: #ffffff;
+
+  --btn-ghost-bg: transparent;
+  --btn-ghost-border: #d8caa6;
+  --btn-ghost-text: #4a3f14;
+
+  /* Layout */
+  --container: 1060px;
+  --radius: 18px;
+  --radius-sm: 12px;
+
+  /* Tipografía (sin dependencias externas) */
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --tracking-wide: 0.22em;
+
+  /* Sombra */
+  --shadow: 0 10px 30px rgba(0,0,0,0.06);
+
+  /* Separadores */
+  --divider: 1px solid var(--border);
+
+  /* Títulos tamaño (ajustables globalmente) */
+  --h1-size: 44px;
+  --h1-size-mobile: 34px;
+  --h2-size: 16px; /* título de tarjetas */
+  --body-size: 16px;
+}
+
+/* -------------------------
+   2) Reset básico
+------------------------- */
+*{ box-sizing:border-box; }
+html, body{
+  margin:0;
+  padding:0;
+  font-family: var(--font);
+  font-size: var(--body-size);
+  color: var(--text);
+  background: var(--bg);
+}
+img{ max-width:100%; height:auto; }
+a{ color: var(--link); text-decoration: none; }
+a:hover{ color: var(--link-hover); text-decoration: underline; }
+button{ font-family: var(--font); }
+::selection{ background: rgba(143,123,42,0.25); }
+
+/* -------------------------
+   3) Contenedor
+------------------------- */
+.wrap{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 26px 18px 34px;
+}
+
+/* -------------------------
+   4) Header (inyectado)
+   - topbar + nav + idiomas
+------------------------- */
+#site-header{
+  margin-bottom: 18px;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding: 10px 6px 14px;
+  border-bottom: var(--divider);
+}
+
+/* Logo solo */
+.brandLogoOnly{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+}
+.brandLogo{
+  height: 46px;          /* ajusta 40–52 si quieres */
+  width:auto;
+  display:block;
+}
+
+/* Idiomas */
+.lang{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.langBtn{
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text-2);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform .08s ease, border-color .15s ease, color .15s ease;
+}
+.langBtn:hover{
+  border-color: #d4c7ae;
+  color: var(--heading);
+  transform: translateY(-1px);
+}
+.langBtn.active{
+  border-color: #111;
+  color: #111;
+  font-weight: 600;
+}
+
+/* Menú */
+nav{
+  display:flex;
+  justify-content:center;
+  gap: 34px;
+  padding: 16px 6px;
+  border-bottom: var(--divider);
+}
+nav a{
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  color: var(--text-2);
+  padding: 10px 8px;
+  border-radius: 999px;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+  border: 1px solid transparent;
+}
+nav a:hover{
+  text-decoration:none;
+  color: var(--heading);
+  background: rgba(255,255,255,0.65);
+  border-color: var(--border);
+}
+nav a.current{
+  color: var(--heading);
+  border-color: #d9cfae;
+  background: rgba(255,255,255,0.9);
+}
+
+/* Responsive nav */
+@media (max-width: 900px){
+  nav{
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+  nav a{
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+  .brandLogo{
+    height: 42px;
+  }
+}
+
+/* -------------------------
+   5) Hero (título de página)
+------------------------- */
+.hero{
+  text-align:center;
+  padding: 22px 8px 16px;
+}
+.hero h1{
+  margin: 8px 0 10px;
+  font-size: var(--h1-size);
+  letter-spacing: var(--tracking-wide);
+  font-weight: 600;
+  color: var(--accent); /* oro */
+  text-transform: uppercase;
+}
+.hero p{
+  margin:0;
+  color: var(--text-2);
+  line-height: 1.6;
+  max-width: 780px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+@media (max-width: 600px){
+  .hero h1{ font-size: var(--h1-size-mobile); }
+}
+
+/* -------------------------
+   6) Tarjetas / secciones
+------------------------- */
+.card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px 22px;
+  margin: 18px 0;
+}
+
+.card.soft{
+  background: var(--surface-2);
+}
+
+.card h2{
+  margin: 0 0 14px;
+  font-size: var(--h2-size);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--heading);
+}
+
+/* Grid de filas tipo contacto */
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 24px;
+}
+@media (max-width: 760px){
+  .grid{ grid-template-columns: 1fr; }
+}
+.row{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap: 14px;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(230,221,207,0.75);
+}
+.row:last-child{ border-bottom: none; }
+
+.label{
+  color: var(--text-2);
+  min-width: 140px;
+  font-weight: 500;
+}
+.value{
+  text-align:right;
+  color: var(--heading);
+}
+.value a{
+  font-weight: 600;
+}
+
+/* Nota */
+.note{
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* -------------------------
+   7) Botones
+------------------------- */
+.btnRow{
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items:center;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor:pointer;
+  text-decoration:none !important;
+  transition: transform .08s ease, background .15s ease, border-color .15s ease, color .15s ease;
+  user-select:none;
+}
+
+.btn.primary{
+  background: var(--btn-bg);
+  color: var(--btn-text);
+}
+.btn.primary:hover{
+  background: var(--btn-bg-hover);
+  transform: translateY(-1px);
+}
+
+.btn.ghost{
+  background: var(--btn-ghost-bg);
+  border-color: var(--btn-ghost-border);
+  color: var(--btn-ghost-text);
+}
+.btn.ghost:hover{
+  border-color: #cbbd96;
+  background: rgba(255,255,255,0.75);
+  transform: translateY(-1px);
+}
+
+/* -------------------------
+   8) Imagen / cartel controlado
+------------------------- */
+.mediaCard{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 22px;
+  align-items:center;
+}
+@media (max-width: 900px){
+  .mediaCard{
+    grid-template-columns: 1fr;
+  }
+}
+
+.poster{
+  width: 100%;
+  max-height: 520px;   /* evita scroll enorme */
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+/* -------------------------
+   9) Separador
+------------------------- */
+.hr{
+  height:1px;
+  background: var(--border);
+  border:0;
+  margin: 18px 0;
+}
+
+/* -------------------------
+   10) Footer (inyectado)
+------------------------- */
+.siteFooter{
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: var(--divider);
+  text-align:center;
+  color: var(--text-2);
+}
+.footerInner{
+  padding: 18px 10px 6px;
+}
+.footerLine1{
+  font-weight: 600;
+  color: var(--heading);
+}
+.footerLine2, .footerLine3, .footerLine4{
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--text-2);
+}
+
+/* helper para texto dorado */
+.gold{ color: var(--gold); }
+
+/* -------------------------
+   11) Utilidades
+------------------------- */
+.center{ text-align:center; }
+.small{ font-size:14px; color: var(--text-2); }
+.pill{
+  display:inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.75);
+  color: var(--text-2);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
