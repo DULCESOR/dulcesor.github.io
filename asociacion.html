@@ -1,680 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
   <title>Asociación · DULCESOR</title>
-  <meta name="description" content="Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual. Identidad, fines y principios culturales." />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    :root{
-      --bg:#f6f4f1;
-      --card:#ffffff;
-      --text:#1f1f1f;
-      --muted:#6b6b6b;
-      --line:#e6e1d8;
-      --gold: rgb(145, 128, 26);
-      --shadow: 0 14px 40px rgba(0,0,0,.06);
-      --radius: 16px;
-      --font: "Century Gothic","CenturyGothic","AppleGothic",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    a{color:inherit}
+  <meta name="description"
+        content="Asociación Cultural DULCESOR – Identidad, misión, fines y principios culturales. Repostería Monacal Conventual.">
 
-    .wrap{
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 28px 20px 46px;
-    }
-
-    /* ===== Standard Header (used in all pages) ===== */
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding: 8px 0 18px;
-      border-bottom: 1px solid var(--line);
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width: 240px;
-    }
-    .mark{
-      width:38px;height:38px;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      display:flex;align-items:center;justify-content:center;
-      color: var(--gold);
-      font-weight: 700;
-      letter-spacing: .5px;
-      background: #fbfaf8;
-    }
-    .brand strong{display:block;letter-spacing: .08em}
-    .brand small{
-      display:block;
-      color: var(--muted);
-      letter-spacing: .18em;
-      font-size: 12px;
-      margin-top: -2px;
-    }
-    .gold{color: var(--gold); font-weight: 800}
-
-    .lang{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:flex-end;
-      flex-wrap:wrap;
-    }
-    .langBtn{
-      font-size: 12px;
-      letter-spacing: .16em;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: transparent;
-      cursor:pointer;
-      color: var(--muted);
-    }
-    .langBtn.active{
-      color: var(--text);
-      border-color: rgba(145,128,26,.35);
-      background: rgba(145,128,26,.08);
-    }
-
-    nav{
-      display:flex;
-      gap: 22px;
-      justify-content:center;
-      flex-wrap:wrap;
-      padding: 18px 0 12px;
-      border-bottom: 1px solid var(--line);
-    }
-    nav a{
-      text-decoration:none;
-      color: var(--muted);
-      letter-spacing: .18em;
-      font-size: 12px;
-      padding: 8px 10px;
-      border-radius: 10px;
-    }
-    nav a:hover{
-      background: rgba(0,0,0,.03);
-      color: var(--text);
-    }
-    nav a.current{
-      color: var(--text);
-      background: rgba(145,128,26,.08);
-      border: 1px solid rgba(145,128,26,.25);
-    }
-
-    /* ===== Content ===== */
-    .hero{
-      text-align:center;
-      padding: 34px 0 10px;
-    }
-    .hero h1{
-      margin: 0 0 10px;
-      font-size: clamp(26px, 3.6vw, 40px);
-      letter-spacing: .14em;
-      color: var(--gold);
-      font-weight: 900;
-    }
-    .hero p{
-      margin: 0 auto;
-      max-width: 900px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .card{
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px 18px 16px;
-      margin-top: 18px;
-    }
-    .card h2{
-      margin: 0 0 12px;
-      letter-spacing: .18em;
-      font-size: 13px;
-      color: var(--text);
-      text-transform: uppercase;
-    }
-    .muted{color: var(--muted)}
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 12px;
-    }
-    @media (min-width: 980px){
-      .grid{grid-template-columns: 1fr 1fr;}
-    }
-
-    .box{
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: #fbfaf8;
-      padding: 16px;
-    }
-    .box h3{
-      margin: 0 0 8px;
-      font-size: 12px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--text);
-    }
-
-    ul{
-      margin: 10px 0 0 18px;
-      padding: 0;
-      color: var(--muted);
-    }
-    li{ margin: 7px 0; }
-
-    .pill{
-      display:inline-block;
-      margin-top: 10px;
-      padding: 8px 12px;
-      border: 1px solid var(--line);
-      background: #fbfaf8;
-      color: var(--muted);
-      border-radius: 999px;
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .note{
-      margin-top: 10px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .contactLine{
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-    .contactLine a{
-      color: var(--gold);
-      text-decoration:none;
-      font-weight: 800;
-    }
-    .contactLine a:hover{ text-decoration: underline; }
-
-    /* ===== Standard Footer (fixed, NOT translated) ===== */
-    .siteFooter{
-      margin-top: 36px;
-      border-top: 1px solid var(--line);
-      padding: 20px 16px 28px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
-    }
-    .footerInner{max-width: 980px; margin: 0 auto;}
-    .footerLine1{font-weight: 600; color: var(--text);}
-    .footerLine4{margin-top: 6px;}
-  </style>
+  <!-- CSS global -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 
 <body>
+
+  <!-- HEADER (inyectado) -->
+  <header id="site-header"></header>
+
+  <!-- CONTENIDO -->
   <main class="wrap">
 
-    <!-- Header (standard) -->
-    <div class="topbar">
-      <div class="brand">
-        <div class="mark" aria-label="DULCESOR">D</div>
-        <div>
-          <strong class="gold">DULCESOR</strong>
-          <small data-i18n="brand_sub">ASOCIACIÓN CULTURAL</small>
-        </div>
-      </div>
-
-      <div class="lang" aria-label="Idiomas">
-        <button class="langBtn active" data-lang="es">ES</button>
-        <button class="langBtn" data-lang="en">EN</button>
-        <button class="langBtn" data-lang="pt">PT</button>
-        <button class="langBtn" data-lang="fr">FR</button>
-        <button class="langBtn" data-lang="it">IT</button>
-      </div>
-    </div>
-
-    <nav aria-label="Menú">
-      <a href="index.html" data-i18n="nav_inicio">INICIO</a>
-      <a class="current" href="asociacion.html" data-i18n="nav_asociacion">ASOCIACIÓN</a>
-      <a href="proyectos.html" data-i18n="nav_proyectos">PROYECTOS</a>
-      <a href="concursos.html" data-i18n="nav_concursos">CONCURSOS</a>
-      <a href="rutas.html" data-i18n="nav_rutas">RUTAS MONACALES</a>
-      <a href="patrocinadores.html" data-i18n="nav_patrocinadores">PATROCINADORES</a>
-      <a href="contacto.html" data-i18n="nav_contacto">CONTACTO</a>
-    </nav>
-
-    <section class="hero" aria-label="Asociación">
-      <h1 data-i18n="title">ASOCIACIÓN</h1>
-      <p data-i18n="subtitle">
+    <!-- HERO -->
+    <section class="hero">
+      <h1 data-i18n="assoc_title">ASOCIACIÓN</h1>
+      <p data-i18n="assoc_subtitle">
         Identidad, fines y principios de la Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual.
       </p>
     </section>
 
-    <section class="card" aria-label="Identidad">
-      <h2 data-i18n="id_title">Identidad</h2>
+    <!-- IDENTIDAD -->
+    <section class="card">
+      <h2 data-i18n="assoc_identity_title">Identidad</h2>
 
       <div class="grid">
-        <div class="box">
-          <h3 data-i18n="name_title">Denominación</h3>
-          <p class="muted" data-i18n="name_text">
+        <div class="card soft">
+          <h3 data-i18n="assoc_name_title">Denominación</h3>
+          <p data-i18n="assoc_name_text">
             Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual
           </p>
-          <span class="pill" data-i18n="nonprofit">SIN ÁNIMO DE LUCRO</span>
+          <span class="pill" data-i18n="assoc_nonprofit">Sin ánimo de lucro</span>
         </div>
 
-        <div class="box">
-          <h3 data-i18n="status_title">Situación</h3>
-          <p class="muted" data-i18n="status_text">
-            Entidad en proceso de inscripción. La información publicada es de carácter orientativo y podrá actualizarse conforme avance la tramitación.
+        <div class="card soft">
+          <h3 data-i18n="assoc_status_title">Situación</h3>
+          <p data-i18n="assoc_status_text">
+            Entidad en proceso de inscripción. La información publicada es orientativa y podrá actualizarse conforme avance la tramitación.
           </p>
-          <span class="pill" data-i18n="in_prep">EN PREPARACIÓN</span>
+          <span class="pill" data-i18n="assoc_inprep">En preparación</span>
         </div>
       </div>
 
       <div class="grid">
-        <div class="box">
-          <h3 data-i18n="scope_title">Ámbito</h3>
-          <p class="muted" data-i18n="scope_text">
-            Asociación cultural orientada a la preservación y difusión del patrimonio gastronómico y cultural vinculado a la vida monástica, con proyección nacional e internacional.
+        <div class="card soft">
+          <h3 data-i18n="assoc_scope_title">Ámbito</h3>
+          <p data-i18n="assoc_scope_text">
+            Asociación cultural orientada a la preservación y difusión del patrimonio gastronómico y cultural vinculado a la vida monástica,
+            con proyección nacional e internacional.
           </p>
         </div>
 
-        <div class="box">
-          <h3 data-i18n="seat_title">Sede de referencia</h3>
-          <p class="muted" data-i18n="seat_text">
-            Valladolid (España)
-          </p>
+        <div class="card soft">
+          <h3 data-i18n="assoc_seat_title">Sede de referencia</h3>
+          <p data-i18n="assoc_seat_text">Valladolid (España)</p>
         </div>
       </div>
     </section>
 
-    <section class="card" aria-label="Misión">
-      <h2 data-i18n="mission_title">Misión</h2>
-      <p class="muted" data-i18n="mission_text">
+    <!-- MISIÓN -->
+    <section class="card">
+      <h2 data-i18n="assoc_mission_title">Misión</h2>
+      <p data-i18n="assoc_mission_text">
         La Asociación Cultural DULCESOR impulsa la preservación, difusión y puesta en valor de la repostería monacal conventual
         y del patrimonio gastronómico ligado a comunidades religiosas, promoviendo iniciativas culturales de carácter divulgativo,
         patrimonial y social.
       </p>
     </section>
 
-    <section class="card" aria-label="Fines y objetivos">
-      <h2 data-i18n="goals_title">Fines y objetivos</h2>
+    <!-- FINES Y OBJETIVOS -->
+    <section class="card">
+      <h2 data-i18n="assoc_goals_title">Fines y objetivos</h2>
 
       <div class="grid">
-        <div class="box">
-          <h3 data-i18n="goals_a_title">Patrimonio gastronómico</h3>
+        <div class="card soft">
+          <h3 data-i18n="assoc_goals_a_title">Patrimonio gastronómico</h3>
           <ul>
-            <li data-i18n="g1">Preservar y difundir la repostería monacal conventual como expresión cultural y tradición artesana.</li>
-            <li data-i18n="g2">Dar visibilidad al trabajo elaborado por comunidades religiosas y a su valor patrimonial.</li>
-            <li data-i18n="g3">Promover acciones culturales y divulgativas vinculadas al patrimonio gastronómico.</li>
+            <li data-i18n="assoc_g1">Preservar y difundir la repostería monacal conventual como expresión cultural y tradición artesana.</li>
+            <li data-i18n="assoc_g2">Dar visibilidad al trabajo elaborado por comunidades religiosas y a su valor patrimonial.</li>
+            <li data-i18n="assoc_g3">Promover acciones culturales y divulgativas vinculadas al patrimonio gastronómico.</li>
           </ul>
         </div>
 
-        <div class="box">
-          <h3 data-i18n="goals_b_title">Cultura y tradición</h3>
+        <div class="card soft">
+          <h3 data-i18n="assoc_goals_b_title">Cultura y tradición</h3>
           <ul>
-            <li data-i18n="g4">Fomentar el diálogo entre tradición, cultura y sociedad contemporánea desde un enfoque respetuoso.</li>
-            <li data-i18n="g5">Organizar encuentros, jornadas, concursos y actividades formativas coherentes con los fines culturales de la asociación.</li>
-            <li data-i18n="g6">Impulsar líneas culturales vinculadas al patrimonio monástico (museos conventuales, rutas y recursos culturales).</li>
+            <li data-i18n="assoc_g4">Fomentar el diálogo entre tradición, cultura y sociedad contemporánea desde un enfoque respetuoso.</li>
+            <li data-i18n="assoc_g5">Organizar encuentros, jornadas, concursos y actividades formativas coherentes con los fines culturales de la asociación.</li>
+            <li data-i18n="assoc_g6">Impulsar líneas culturales vinculadas al patrimonio monástico.</li>
           </ul>
         </div>
       </div>
 
-      <p class="note" data-i18n="goals_note">
+      <p class="note" data-i18n="assoc_goals_note">
         La programación y los proyectos se publicarán progresivamente conforme se vayan definiendo y aprobando oficialmente.
       </p>
     </section>
 
-    <section class="card" aria-label="Transparencia">
-      <h2 data-i18n="trans_title">Transparencia</h2>
-      <p class="muted" data-i18n="trans_text">
-        DULCESOR incorporará un espacio de transparencia para publicar, de forma ordenada, la información institucional y económica que corresponda,
-        conforme avance la constitución efectiva de la entidad y su actividad.
+    <!-- TRANSPARENCIA -->
+    <section class="card">
+      <h2 data-i18n="assoc_transparency_title">Transparencia</h2>
+      <p data-i18n="assoc_transparency_text">
+        DULCESOR incorporará un espacio de transparencia para publicar, de forma ordenada, la información institucional y económica
+        conforme avance la constitución efectiva de la entidad.
       </p>
-      <span class="pill" data-i18n="trans_pill">ESPACIO EN CONSTRUCCIÓN</span>
+      <span class="pill" data-i18n="assoc_transparency_pill">Espacio en construcción</span>
     </section>
 
-    <section class="card" aria-label="Donaciones">
-      <h2 data-i18n="don_title">Donaciones y apoyo</h2>
-      <p class="muted" data-i18n="don_text">
-        Se habilitarán, en su caso, fórmulas de apoyo o colaboración con los fines culturales de la asociación, conforme al marco legal aplicable.
+    <!-- DONACIONES -->
+    <section class="card">
+      <h2 data-i18n="assoc_support_title">Donaciones y apoyo</h2>
+      <p data-i18n="assoc_support_text">
+        Se habilitarán, en su caso, fórmulas de apoyo o colaboración con los fines culturales de la asociación,
+        conforme al marco legal aplicable.
       </p>
-      <span class="pill" data-i18n="don_pill">EN PREPARACIÓN</span>
+      <span class="pill" data-i18n="assoc_support_pill">En preparación</span>
 
-      <p class="contactLine" data-i18n="don_contact">
-        Para información institucional: <a href="mailto:info@dulcesor.org">info@dulcesor.org</a>
+      <p class="note">
+        <span data-i18n="assoc_contact_label">Para información institucional:</span>
+        <a href="mailto:info@dulcesor.org">info@dulcesor.org</a>
       </p>
     </section>
-
-    <!-- Footer (standard, fixed) -->
-    <footer class="siteFooter">
-      <div class="footerInner">
-        <div class="footerLine1">
-          © <span class="gold">Asociación Cultural ‘DULCESOR’</span> – Repostería Monacal Conventual
-        </div>
-        <div class="footerLine2">
-          Asociación cultural sin ánimo de lucro · En proceso de inscripción
-        </div>
-        <div class="footerLine3">
-          Valladolid (España)
-        </div>
-        <div class="footerLine4">
-          Sitio web desarrollado por Apolo Studio Creativo
-        </div>
-      </div>
-    </footer>
 
   </main>
 
-  <script>
-    const I18N = {
-      es: {
-        brand_sub: "ASOCIACIÓN CULTURAL",
-        nav_inicio: "INICIO",
-        nav_asociacion: "ASOCIACIÓN",
-        nav_proyectos: "PROYECTOS",
-        nav_concursos: "CONCURSOS",
-        nav_rutas: "RUTAS MONACALES",
-        nav_patrocinadores: "PATROCINADORES",
-        nav_contacto: "CONTACTO",
+  <!-- FOOTER (inyectado) -->
+  <footer id="site-footer"></footer>
 
-        title: "ASOCIACIÓN",
-        subtitle: "Identidad, fines y principios de la Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual.",
+  <!-- JS -->
+  <script src="/assets/js/i18n.js" defer></script>
+  <script src="/assets/js/header.js" defer></script>
+  <script src="/assets/js/footer.js" defer></script>
 
-        id_title: "Identidad",
-        name_title: "Denominación",
-        name_text: "Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual",
-        nonprofit: "SIN ÁNIMO DE LUCRO",
-
-        status_title: "Situación",
-        status_text: "Entidad en proceso de inscripción. La información publicada es de carácter orientativo y podrá actualizarse conforme avance la tramitación.",
-        in_prep: "EN PREPARACIÓN",
-
-        scope_title: "Ámbito",
-        scope_text: "Asociación cultural orientada a la preservación y difusión del patrimonio gastronómico y cultural vinculado a la vida monástica, con proyección nacional e internacional.",
-
-        seat_title: "Sede de referencia",
-        seat_text: "Valladolid (España)",
-
-        mission_title: "Misión",
-        mission_text: "La Asociación Cultural DULCESOR impulsa la preservación, difusión y puesta en valor de la repostería monacal conventual y del patrimonio gastronómico ligado a comunidades religiosas, promoviendo iniciativas culturales de carácter divulgativo, patrimonial y social.",
-
-        goals_title: "Fines y objetivos",
-        goals_a_title: "Patrimonio gastronómico",
-        g1: "Preservar y difundir la repostería monacal conventual como expresión cultural y tradición artesana.",
-        g2: "Dar visibilidad al trabajo elaborado por comunidades religiosas y a su valor patrimonial.",
-        g3: "Promover acciones culturales y divulgativas vinculadas al patrimonio gastronómico.",
-        goals_b_title: "Cultura y tradición",
-        g4: "Fomentar el diálogo entre tradición, cultura y sociedad contemporánea desde un enfoque respetuoso.",
-        g5: "Organizar encuentros, jornadas, concursos y actividades formativas coherentes con los fines culturales de la asociación.",
-        g6: "Impulsar líneas culturales vinculadas al patrimonio monástico (museos conventuales, rutas y recursos culturales).",
-        goals_note: "La programación y los proyectos se publicarán progresivamente conforme se vayan definiendo y aprobando oficialmente.",
-
-        trans_title: "Transparencia",
-        trans_text: "DULCESOR incorporará un espacio de transparencia para publicar, de forma ordenada, la información institucional y económica que corresponda, conforme avance la constitución efectiva de la entidad y su actividad.",
-        trans_pill: "ESPACIO EN CONSTRUCCIÓN",
-
-        don_title: "Donaciones y apoyo",
-        don_text: "Se habilitarán, en su caso, fórmulas de apoyo o colaboración con los fines culturales de la asociación, conforme al marco legal aplicable.",
-        don_pill: "EN PREPARACIÓN",
-        don_contact: "Para información institucional: <a href='mailto:info@dulcesor.org'>info@dulcesor.org</a>"
-      },
-
-      en: {
-        brand_sub: "CULTURAL ASSOCIATION",
-        nav_inicio: "HOME",
-        nav_asociacion: "ASSOCIATION",
-        nav_proyectos: "PROJECTS",
-        nav_concursos: "CONTESTS",
-        nav_rutas: "MONASTIC ROUTES",
-        nav_patrocinadores: "SPONSORS",
-        nav_contacto: "CONTACT",
-
-        title: "ASSOCIATION",
-        subtitle: "Identity, aims and principles of the Cultural Association ‘DULCESOR’ – Monastic Convent Pastry.",
-
-        id_title: "Identity",
-        name_title: "Name",
-        name_text: "Cultural Association ‘DULCESOR’ – Monastic Convent Pastry",
-        nonprofit: "NON-PROFIT",
-
-        status_title: "Status",
-        status_text: "Entity in the process of registration. The information published is indicative and may be updated as procedures progress.",
-        in_prep: "IN PREPARATION",
-
-        scope_title: "Scope",
-        scope_text: "A cultural association focused on preserving and disseminating gastronomic and cultural heritage linked to monastic life, with national and international projection.",
-
-        seat_title: "Reference location",
-        seat_text: "Valladolid (Spain)",
-
-        mission_title: "Mission",
-        mission_text: "The DULCESOR Cultural Association promotes the preservation, dissemination and appreciation of monastic convent pastry and the gastronomic heritage linked to religious communities, fostering cultural initiatives with outreach, heritage and social value.",
-
-        goals_title: "Aims and objectives",
-        goals_a_title: "Gastronomic heritage",
-        g1: "Preserve and disseminate monastic convent pastry as a cultural expression and artisan tradition.",
-        g2: "Give visibility to the work made by religious communities and its heritage value.",
-        g3: "Promote cultural and outreach actions linked to gastronomic heritage.",
-        goals_b_title: "Culture and tradition",
-        g4: "Encourage dialogue between tradition, culture and contemporary society with a respectful approach.",
-        g5: "Organize meetings, events, contests and training activities consistent with the association’s cultural aims.",
-        g6: "Promote cultural lines linked to monastic heritage (convent museums, routes and cultural resources).",
-        goals_note: "Programming and projects will be published progressively as they are defined and officially approved.",
-
-        trans_title: "Transparency",
-        trans_text: "DULCESOR will incorporate a transparency space to publish, in an orderly way, the institutional and financial information that applies, as the entity and its activity evolve.",
-        trans_pill: "SECTION UNDER CONSTRUCTION",
-
-        don_title: "Donations and support",
-        don_text: "Where appropriate, forms of support or collaboration aligned with the association’s cultural aims will be enabled, in accordance with the applicable legal framework.",
-        don_pill: "IN PREPARATION",
-        don_contact: "For institutional information: <a href='mailto:info@dulcesor.org'>info@dulcesor.org</a>"
-      },
-
-      pt: {
-        brand_sub: "ASSOCIAÇÃO CULTURAL",
-        nav_inicio: "INÍCIO",
-        nav_asociacion: "ASSOCIAÇÃO",
-        nav_proyectos: "PROJETOS",
-        nav_concursos: "CONCURSOS",
-        nav_rutas: "ROTAS MONÁSTICAS",
-        nav_patrocinadores: "PATROCINADORES",
-        nav_contacto: "CONTACTO",
-
-        title: "ASSOCIAÇÃO",
-        subtitle: "Identidade, fins e princípios da Associação Cultural ‘DULCESOR’ – Doçaria Monacal Conventual.",
-
-        id_title: "Identidade",
-        name_title: "Denominação",
-        name_text: "Associação Cultural ‘DULCESOR’ – Doçaria Monacal Conventual",
-        nonprofit: "SEM FINS LUCRATIVOS",
-
-        status_title: "Situação",
-        status_text: "Entidade em processo de inscrição. A informação publicada é indicativa e poderá ser atualizada conforme o processo avance.",
-        in_prep: "EM PREPARAÇÃO",
-
-        scope_title: "Âmbito",
-        scope_text: "Associação cultural orientada para a preservação e divulgação do património gastronómico e cultural ligado à vida monástica, com projeção nacional e internacional.",
-
-        seat_title: "Sede de referência",
-        seat_text: "Valladolid (Espanha)",
-
-        mission_title: "Missão",
-        mission_text: "A Associação Cultural DULCESOR promove a preservação, divulgação e valorização da doçaria monacal conventual e do património gastronómico ligado a comunidades religiosas, impulsionando iniciativas culturais de caráter divulgativo, patrimonial e social.",
-
-        goals_title: "Fins e objetivos",
-        goals_a_title: "Património gastronómico",
-        g1: "Preservar e divulgar a doçaria monacal conventual como expressão cultural e tradição artesanal.",
-        g2: "Dar visibilidade ao trabalho elaborado por comunidades religiosas e ao seu valor patrimonial.",
-        g3: "Promover ações culturais e de divulgação ligadas ao património gastronómico.",
-        goals_b_title: "Cultura e tradição",
-        g4: "Fomentar o diálogo entre tradição, cultura e sociedade contemporânea com uma abordagem respeitosa.",
-        g5: "Organizar encontros, jornadas, concursos e atividades formativas coerentes com os fins culturais da associação.",
-        g6: "Impulsionar linhas culturais ligadas ao património monástico (museus conventuais, rotas e recursos culturais).",
-        goals_note: "A programação e os projetos serão publicados progressivamente à medida que forem definidos e aprovados oficialmente.",
-
-        trans_title: "Transparência",
-        trans_text: "A DULCESOR incorporará um espaço de transparência para publicar, de forma organizada, a informação institucional e económica aplicável, conforme a entidade e a sua atividade avancem.",
-        trans_pill: "SECÇÃO EM CONSTRUÇÃO",
-
-        don_title: "Doações e apoio",
-        don_text: "Quando aplicável, serão disponibilizadas formas de apoio ou colaboração com os fins culturais da associação, conforme o enquadramento legal aplicável.",
-        don_pill: "EM PREPARAÇÃO",
-        don_contact: "Para informação institucional: <a href='mailto:info@dulcesor.org'>info@dulcesor.org</a>"
-      },
-
-      fr: {
-        brand_sub: "ASSOCIATION CULTURELLE",
-        nav_inicio: "ACCUEIL",
-        nav_asociacion: "ASSOCIATION",
-        nav_proyectos: "PROJETS",
-        nav_concursos: "CONCOURS",
-        nav_rutas: "ITINÉRAIRES MONASTIQUES",
-        nav_patrocinadores: "PARTENAIRES",
-        nav_contacto: "CONTACT",
-
-        title: "ASSOCIATION",
-        subtitle: "Identité, objectifs et principes de l’Association Culturelle « DULCESOR » – Pâtisserie monastique conventuelle.",
-
-        id_title: "Identité",
-        name_title: "Dénomination",
-        name_text: "Association Culturelle « DULCESOR » – Pâtisserie monastique conventuelle",
-        nonprofit: "À BUT NON LUCRATIF",
-
-        status_title: "Statut",
-        status_text: "Entité en cours d’inscription. Les informations publiées sont indicatives et peuvent être mises à jour au fil de la procédure.",
-        in_prep: "EN PRÉPARATION",
-
-        scope_title: "Champ d’action",
-        scope_text: "Association culturelle dédiée à la préservation et à la diffusion du patrimoine gastronomique et culturel lié à la vie monastique, avec une projection nationale et internationale.",
-
-        seat_title: "Ville de référence",
-        seat_text: "Valladolid (Espagne)",
-
-        mission_title: "Mission",
-        mission_text: "L’Association Culturelle DULCESOR promeut la préservation, la diffusion et la mise en valeur de la pâtisserie monastique conventuelle et du patrimoine gastronomique lié aux communautés religieuses, en impulsant des initiatives culturelles de médiation, patrimoniales et sociales.",
-
-        goals_title: "Objectifs",
-        goals_a_title: "Patrimoine gastronomique",
-        g1: "Préserver et diffuser la pâtisserie monastique conventuelle comme expression culturelle et tradition artisanale.",
-        g2: "Donner de la visibilité au travail des communautés religieuses et à sa valeur patrimoniale.",
-        g3: "Promouvoir des actions culturelles et de médiation liées au patrimoine gastronomique.",
-        goals_b_title: "Culture et tradition",
-        g4: "Favoriser le dialogue entre tradition, culture et société contemporaine avec une approche respectueuse.",
-        g5: "Organiser des rencontres, événements, concours et activités de formation cohérents avec les objectifs culturels de l’association.",
-        g6: "Développer des axes culturels liés au patrimoine monastique (musées conventuels, itinéraires et ressources culturelles).",
-        goals_note: "La programmation et les projets seront publiés progressivement à mesure qu’ils seront définis et approuvés officiellement.",
-
-        trans_title: "Transparence",
-        trans_text: "DULCESOR intégrera un espace de transparence afin de publier, de manière structurée, les informations institutionnelles et financières applicables, à mesure que l’entité et son activité se développent.",
-        trans_pill: "ESPACE EN CONSTRUCTION",
-
-        don_title: "Dons et soutien",
-        don_text: "Le cas échéant, des modalités de soutien ou de collaboration alignées sur les objectifs culturels de l’association seront mises en place, conformément au cadre légal applicable.",
-        don_pill: "EN PRÉPARATION",
-        don_contact: "Pour toute information institutionnelle : <a href='mailto:info@dulcesor.org'>info@dulcesor.org</a>"
-      },
-
-      it: {
-        brand_sub: "ASSOCIAZIONE CULTURALE",
-        nav_inicio: "HOME",
-        nav_asociacion: "ASSOCIAZIONE",
-        nav_proyectos: "PROGETTI",
-        nav_concursos: "CONCORSI",
-        nav_rutas: "PERCORSI MONASTICI",
-        nav_patrocinadores: "SPONSOR",
-        nav_contacto: "CONTATTI",
-
-        title: "ASSOCIAZIONE",
-        subtitle: "Identità, finalità e principi dell’Associazione Culturale « DULCESOR » – Pasticceria monastica conventuale.",
-
-        id_title: "Identità",
-        name_title: "Denominazione",
-        name_text: "Associazione Culturale « DULCESOR » – Pasticceria monastica conventuale",
-        nonprofit: "SENZA SCOPO DI LUCRO",
-
-        status_title: "Stato",
-        status_text: "Ente in fase di registrazione. Le informazioni pubblicate sono indicative e possono essere aggiornate con l’avanzamento della procedura.",
-        in_prep: "IN PREPARAZIONE",
-
-        scope_title: "Ambito",
-        scope_text: "Associazione culturale orientata alla conservazione e diffusione del patrimonio gastronomico e culturale legato alla vita monastica, con proiezione nazionale e internazionale.",
-
-        seat_title: "Sede di riferimento",
-        seat_text: "Valladolid (Spagna)",
-
-        mission_title: "Missione",
-        mission_text: "L’Associazione Culturale DULCESOR promuove la conservazione, la diffusione e la valorizzazione della pasticceria monastica conventuale e del patrimonio gastronomico legato alle comunità religiose, sviluppando iniziative culturali divulgative, patrimoniali e sociali.",
-
-        goals_title: "Finalità e obiettivi",
-        goals_a_title: "Patrimonio gastronomico",
-        g1: "Conservare e diffondere la pasticceria monastica conventuale come espressione culturale e tradizione artigianale.",
-        g2: "Dare visibilità al lavoro delle comunità religiose e al suo valore patrimoniale.",
-        g3: "Promuovere azioni culturali e divulgative legate al patrimonio gastronomico.",
-        goals_b_title: "Cultura e tradizione",
-        g4: "Favorire il dialogo tra tradizione, cultura e società contemporanea con un approccio rispettoso.",
-        g5: "Organizzare incontri, eventi, concorsi e attività formative coerenti con le finalità culturali dell’associazione.",
-        g6: "Sviluppare linee culturali legate al patrimonio monastico (musei conventuali, percorsi e risorse culturali).",
-        goals_note: "Programmazione e progetti saranno pubblicati progressivamente man mano che verranno definiti e approvati ufficialmente.",
-
-        trans_title: "Trasparenza",
-        trans_text: "DULCESOR inserirà uno spazio di trasparenza per pubblicare, in modo ordinato, le informazioni istituzionali ed economiche applicabili, con l’evoluzione dell’ente e delle sue attività.",
-        trans_pill: "SEZIONE IN COSTRUZIONE",
-
-        don_title: "Donazioni e supporto",
-        don_text: "Se del caso, verranno attivate modalità di supporto o collaborazione in linea con le finalità culturali dell’associazione, nel rispetto del quadro normativo applicabile.",
-        don_pill: "IN PREPARAZIONE",
-        don_contact: "Per informazioni istituzionali: <a href='mailto:info@dulcesor.org'>info@dulcesor.org</a>"
-      }
-    };
-
-    function applyLang(lang){
-      const dict = I18N[lang] || I18N.es;
-      document.documentElement.lang = lang;
-
-      document.querySelectorAll("[data-i18n]").forEach(el=>{
-        const key = el.getAttribute("data-i18n");
-        if (typeof dict[key] === "string") el.innerHTML = dict[key];
-      });
-
-      document.querySelectorAll(".langBtn").forEach(btn=>{
-        btn.classList.toggle("active", btn.dataset.lang === lang);
-      });
-
-      try { localStorage.setItem("dulcesor_lang", lang); } catch(e){}
-    }
-
-    (function(){
-      let saved = "es";
-      try { saved = localStorage.getItem("dulcesor_lang") || "es"; } catch(e){}
-      applyLang(saved);
-
-      document.querySelectorAll(".langBtn").forEach(btn=>{
-        btn.addEventListener("click", ()=> applyLang(btn.dataset.lang));
-      });
-    })();
-  </script>
 </body>
 </html>
