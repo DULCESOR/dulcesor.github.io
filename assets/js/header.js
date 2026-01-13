@@ -1,77 +1,63 @@
 // /assets/js/header.js
 document.addEventListener("DOMContentLoaded", () => {
-  const headerHost = document.getElementById("site-header");
-  if (!headerHost) return;
+  const host = document.getElementById("site-header");
+  if (!host) return;
 
-  const navItems = [
-    { href: "/index.html", label: "INICIO" },
-    { href: "/asociacion.html", label: "ASOCIACIÓN" },
-    { href: "/proyectos.html", label: "PROYECTOS" },
-    { href: "/concursos.html", label: "CONCURSOS" },
-    { href: "/rutas.html", label: "RUTAS MONACALES" },
-    { href: "/patrocinadores.html", label: "PATROCINADORES" },
-    { href: "/contacto.html", label: "CONTACTO" },
-  ];
-
-  const langItems = ["ES", "EN", "PT", "FR", "IT"];
-
-  headerHost.innerHTML = `
+  host.innerHTML = `
     <div class="topbar">
       <a class="brandLogoOnly" href="/index.html" aria-label="DULCESOR - Inicio">
         <img class="brandLogo" src="/assets/logos/logo-asociacion.png" alt="DULCESOR">
       </a>
 
       <div class="lang" aria-label="Idiomas">
-        ${langItems
-          .map(
-            (l) =>
-              `<button class="langBtn" type="button" data-lang="${l.toLowerCase()}">${l}</button>`
-          )
-          .join("")}
+        <button class="langBtn" type="button" data-lang="es">ES</button>
+        <button class="langBtn" type="button" data-lang="en">EN</button>
+        <button class="langBtn" type="button" data-lang="pt">PT</button>
+        <button class="langBtn" type="button" data-lang="fr">FR</button>
+        <button class="langBtn" type="button" data-lang="it">IT</button>
       </div>
     </div>
 
     <nav aria-label="Menú principal">
-      ${navItems.map((it) => `<a href="${it.href}">${it.label}</a>`).join("")}
+      <a href="/index.html" data-i18n="nav_home">INICIO</a>
+      <a href="/asociacion.html" data-i18n="nav_assoc">ASOCIACIÓN</a>
+      <a href="/proyectos.html" data-i18n="nav_projects">PROYECTOS</a>
+      <a href="/concursos.html" data-i18n="nav_contests">CONCURSOS</a>
+      <a href="/rutas.html" data-i18n="nav_routes">RUTAS MONACALES</a>
+      <a href="/patrocinadores.html" data-i18n="nav_sponsors">PATROCINADORES</a>
+      <a href="/contacto.html" data-i18n="nav_contact">CONTACTO</a>
     </nav>
   `;
 
-  // 1) Marcar link actual del menú
-  const path = window.location.pathname || "/index.html";
+  // Marca "current"
+  const path = (window.location.pathname || "/index.html").toLowerCase();
   const normalized = path.endsWith("/") ? "/index.html" : path;
 
-  headerHost.querySelectorAll("nav a").forEach((a) => {
-    const href = a.getAttribute("href");
-    if (href === normalized) a.classList.add("current");
-    // Caso típico: al entrar por "/" sin index.html
-    if (normalized === "/" && href === "/index.html") a.classList.add("current");
+  host.querySelectorAll("nav a").forEach((a) => {
+    const href = (a.getAttribute("href") || "").toLowerCase();
+    if (href === normalized || (normalized === "/" && href === "/index.html")) {
+      a.classList.add("current");
+    }
   });
 
-  // 2) Idiomas: marca activo y delega a i18n.js si existe
-  const getSavedLang = () => (localStorage.getItem("lang") || "es").toLowerCase();
-  const setActiveLangUI = (lang) => {
-    headerHost.querySelectorAll(".langBtn").forEach((b) => {
+  // Idiomas (UI + llamada a setLanguage)
+  const activeLang = typeof window.getLanguage === "function" ? window.getLanguage() : "es";
+
+  const setActiveBtn = (lang) => {
+    host.querySelectorAll(".langBtn").forEach((b) => {
       b.classList.toggle("active", b.dataset.lang === lang);
     });
   };
+  setActiveBtn(activeLang);
 
-  setActiveLangUI(getSavedLang());
-
-  headerHost.querySelectorAll(".langBtn").forEach((btn) => {
+  host.querySelectorAll(".langBtn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const lang = btn.dataset.lang;
-
-      localStorage.setItem("lang", lang);
-      setActiveLangUI(lang);
-
-      // Si tu i18n.js expone alguna función, la usamos. Si no, recargamos.
-      if (typeof window.setLanguage === "function") {
-        window.setLanguage(lang);
-      } else if (typeof window.applyI18n === "function") {
-        window.applyI18n(lang);
-      } else {
-        window.location.reload();
-      }
+      setActiveBtn(lang);
+      if (typeof window.setLanguage === "function") window.setLanguage(lang);
     });
   });
+
+  // Aplica traducciones al header recién inyectado
+  if (typeof window.applyI18n === "function") window.applyI18n(activeLang);
 });
