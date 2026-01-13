@@ -1,4 +1,3 @@
-// /assets/js/header.js
 document.addEventListener("DOMContentLoaded", () => {
   const host = document.getElementById("site-header");
   if (!host) return;
@@ -6,15 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
   host.innerHTML = `
     <div class="topbar">
       <a class="brandLogoOnly" href="/index.html" aria-label="DULCESOR - Inicio">
-        <img class="brandLogo" src="/assets/logos/logo-asociacion.png" alt="DULCESOR">
+        <img
+          class="brandLogo"
+          src="/assets/logos/logo-asociacion.png"
+          alt="Asociación Cultural DULCESOR"
+        >
       </a>
 
       <div class="lang" aria-label="Idiomas">
-        <button class="langBtn" type="button" data-lang="es">ES</button>
-        <button class="langBtn" type="button" data-lang="en">EN</button>
-        <button class="langBtn" type="button" data-lang="pt">PT</button>
-        <button class="langBtn" type="button" data-lang="fr">FR</button>
-        <button class="langBtn" type="button" data-lang="it">IT</button>
+        <button class="langBtn" data-lang="es">ES</button>
+        <button class="langBtn" data-lang="en">EN</button>
+        <button class="langBtn" data-lang="pt">PT</button>
+        <button class="langBtn" data-lang="fr">FR</button>
+        <button class="langBtn" data-lang="it">IT</button>
       </div>
     </div>
 
@@ -29,35 +32,30 @@ document.addEventListener("DOMContentLoaded", () => {
     </nav>
   `;
 
-  // Marca "current"
-  const path = (window.location.pathname || "/index.html").toLowerCase();
-  const normalized = path.endsWith("/") ? "/index.html" : path;
-
-  host.querySelectorAll("nav a").forEach((a) => {
-    const href = (a.getAttribute("href") || "").toLowerCase();
-    if (href === normalized || (normalized === "/" && href === "/index.html")) {
+  // Marcar página activa
+  const current = (location.pathname === "/" ? "/index.html" : location.pathname).toLowerCase();
+  host.querySelectorAll("nav a").forEach(a => {
+    if (a.getAttribute("href").toLowerCase() === current) {
       a.classList.add("current");
     }
   });
 
-  // Idiomas (UI + llamada a setLanguage)
-  const activeLang = typeof window.getLanguage === "function" ? window.getLanguage() : "es";
-
-  const setActiveBtn = (lang) => {
-    host.querySelectorAll(".langBtn").forEach((b) => {
-      b.classList.toggle("active", b.dataset.lang === lang);
-    });
+  // Idiomas
+  const setActive = (lang) => {
+    host.querySelectorAll(".langBtn").forEach(b =>
+      b.classList.toggle("active", b.dataset.lang === lang)
+    );
   };
-  setActiveBtn(activeLang);
 
-  host.querySelectorAll(".langBtn").forEach((btn) => {
+  const lang = window.getLanguage ? window.getLanguage() : "es";
+  setActive(lang);
+
+  host.querySelectorAll(".langBtn").forEach(btn => {
     btn.addEventListener("click", () => {
-      const lang = btn.dataset.lang;
-      setActiveBtn(lang);
-      if (typeof window.setLanguage === "function") window.setLanguage(lang);
+      setActive(btn.dataset.lang);
+      if (window.setLanguage) window.setLanguage(btn.dataset.lang);
     });
   });
 
-  // Aplica traducciones al header recién inyectado
-  if (typeof window.applyI18n === "function") window.applyI18n(activeLang);
+  if (window.applyI18n) window.applyI18n(lang);
 });
