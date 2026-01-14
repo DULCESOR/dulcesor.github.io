@@ -1,43 +1,20 @@
 (function () {
-  // Devuelve el nombre del archivo actual (por ejemplo "index.html")
-  function normalizePath(pathname) {
-    const clean = (pathname || "").split("?")[0].split("#")[0];
-    const file = clean.split("/").pop();
-    return file && file.length ? file : "index.html";
+  function normalizePath(p) {
+    const file = (p || "").split("?")[0].split("#")[0].split("/").pop();
+    return file || "index.html";
   }
 
   function buildHeader(currentFile) {
     const logoSrc = "assets/logos/logo-asociacion.png";
 
-    const navItems = [
-      { href: "index.html", key: "nav_home", fallback: "Inicio" },
-      { href: "asociacion.html", key: "nav_association", fallback: "Asociación" },
-      { href: "proyectos.html", key: "nav_projects", fallback: "Proyectos" },
-      { href: "concursos.html", key: "nav_contests", fallback: "Concursos" },
-      { href: "rutas.html", key: "nav_routes", fallback: "Rutas monacales" },
-      { href: "patrocinadores.html", key: "nav_sponsors", fallback: "Patrocinadores" },
-      { href: "contacto.html", key: "nav_contact", fallback: "Contacto" },
-    ];
-
-    const navHtml = navItems
-      .map((it) => {
-        const isCurrent = currentFile === it.href;
-        return `
-          <a href="${it.href}" class="siteNavLink ${isCurrent ? "current" : ""}" data-nav="${it.href}">
-            <span data-i18n="${it.key}">${it.fallback}</span>
-          </a>
-        `;
-      })
-      .join("");
+    const is = (f) => (currentFile === f ? "current" : "");
 
     return `
-      <header class="siteHeader" role="banner">
+      <header id="site-header" role="banner">
         <div class="headerInner">
-
-          <!-- Fila 1: logo izquierda / idiomas derecha -->
           <div class="headerTop">
             <a class="brandLogoOnly" href="index.html" aria-label="DULCESOR - inicio">
-              <img class="brandLogo" src="${logoSrc}" alt="Logotipo Asociación Cultural DULCESOR">
+              <img class="brandLogo" src="${logoSrc}" alt="Logotipo Asociación Cultural DULCESOR" />
             </a>
 
             <div class="lang" aria-label="Selección de idioma">
@@ -49,11 +26,15 @@
             </div>
           </div>
 
-          <!-- Fila 2: menú abajo alineado a la izquierda (INICIO en vertical con logo) -->
-          <nav class="siteNav" aria-label="Navegación principal">
-            ${navHtml}
+          <nav class="headerNav" aria-label="Navegación principal">
+            <a href="index.html" class="${is("index.html")}"><span data-i18n="nav_home">Inicio</span></a>
+            <a href="asociacion.html" class="${is("asociacion.html")}"><span data-i18n="nav_association">Asociación</span></a>
+            <a href="proyectos.html" class="${is("proyectos.html")}"><span data-i18n="nav_projects">Proyectos</span></a>
+            <a href="concursos.html" class="${is("concursos.html")}"><span data-i18n="nav_contests">Concursos</span></a>
+            <a href="rutas.html" class="${is("rutas.html")}"><span data-i18n="nav_routes">Rutas monacales</span></a>
+            <a href="patrocinadores.html" class="${is("patrocinadores.html")}"><span data-i18n="nav_sponsors">Patrocinadores</span></a>
+            <a href="contacto.html" class="${is("contacto.html")}"><span data-i18n="nav_contact">Contacto</span></a>
           </nav>
-
         </div>
       </header>
     `;
@@ -62,20 +43,19 @@
   function markActiveLang() {
     const lang = window.dulcesorI18n?.getLang?.() || "es";
     document.querySelectorAll(".langBtn").forEach((b) => {
-      const active = (b.dataset.lang || "es") === lang;
+      const active = b.dataset.lang === lang;
       b.classList.toggle("active", active);
       b.setAttribute("aria-current", active ? "true" : "false");
     });
   }
 
-  function initHeader() {
+  function init() {
     const mount = document.getElementById("site-header");
     if (!mount) return;
 
     const currentFile = normalizePath(window.location.pathname);
-    mount.innerHTML = buildHeader(currentFile);
+    mount.outerHTML = buildHeader(currentFile);
 
-    // Click idioma
     document.querySelectorAll(".langBtn").forEach((btn) => {
       btn.addEventListener("click", () => {
         window.dulcesorI18n?.setLanguage?.(btn.dataset.lang);
@@ -84,10 +64,9 @@
       });
     });
 
-    // Aplicar i18n al header recién inyectado
     markActiveLang();
     window.dulcesorI18n?.applyI18n?.();
   }
 
-  document.addEventListener("DOMContentLoaded", initHeader);
+  document.addEventListener("DOMContentLoaded", init);
 })();
