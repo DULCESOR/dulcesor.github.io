@@ -1,32 +1,26 @@
 /* =========================================================
    DULCESOR — styles.css (GLOBAL)
-   - Diseño sobrio, institucional, limpio
-   - Variables CSS para cambios globales
+   Diseño sobrio, institucional y limpio
    ========================================================= */
 
 /* -------------------------
    1) Variables globales
 ------------------------- */
 :root{
-  /* Fondo / superficies */
-  --bg: #f7f4ef;          /* crema */
-  --surface: #ffffff;     /* tarjetas */
-  --surface-2: #fbf8f2;   /* tarjetas suaves */
-  --border: #e6ddcf;      /* líneas */
+  --bg: #f7f4ef;
+  --surface: #ffffff;
+  --surface-2: #fbf8f2;
+  --border: #e6ddcf;
 
-  /* Texto */
-  --text: #2b2b2b;        /* texto principal */
-  --text-2: #5b5b5b;      /* texto secundario */
-  --muted: #7a7a7a;       /* notas */
-  --heading: #1f1f1f;     /* títulos */
+  --text: #2b2b2b;
+  --text-2: #5b5b5b;
+  --muted: #7a7a7a;
+  --heading: #1f1f1f;
 
-  /* Marca */
-  --gold: #8f7b2a;        /* oro DULCESOR */
-  --gold-2: #b59b3a;      /* oro claro */
-  --gold-ink: #2b240c;    /* texto sobre dorado */
+  --gold: #8f7b2a;
+  --gold-2: #b59b3a;
   --accent: var(--gold);
 
-  /* Links / botones */
   --link: #6b5a1f;
   --link-hover: #8f7b2a;
 
@@ -38,22 +32,16 @@
   --btn-ghost-border: #d8caa6;
   --btn-ghost-text: #4a3f14;
 
-  /* Layout */
   --container: 1060px;
   --radius: 18px;
   --radius-sm: 12px;
 
-  /* Tipografía */
   --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   --tracking-wide: 0.22em;
 
-  /* Sombra */
   --shadow: 0 10px 30px rgba(0,0,0,0.06);
-
-  /* Separadores */
   --divider: 1px solid var(--border);
 
-  /* Títulos tamaño */
   --h1-size: 44px;
   --h1-size-mobile: 34px;
   --h2-size: 16px;
@@ -61,7 +49,7 @@
 }
 
 /* -------------------------
-   2) Reset básico
+   2) Reset
 ------------------------- */
 *{ box-sizing:border-box; }
 html, body{
@@ -72,7 +60,7 @@ html, body{
   color: var(--text);
   background: var(--bg);
 }
-img{ max-width:100%; height:auto; }
+img{ max-width:100%; height:auto; display:block; }
 a{ color: var(--link); text-decoration: none; }
 a:hover{ color: var(--link-hover); text-decoration: underline; }
 button{ font-family: var(--font); }
@@ -87,21 +75,22 @@ button{ font-family: var(--font); }
   padding: 26px 18px 34px;
 }
 
-/* -------------------------
-   4) Header (inyectado)
-------------------------- */
+/* =========================================================
+   4) HEADER (inyectado)
+   Una sola barra: logo | nav | idiomas
+   (logo alineado con INICIO y idiomas con CONTACTO)
+   ========================================================= */
 #site-header{ margin-bottom: 18px; }
 
 .headerBar{
-  display:flex;
+  display:grid;
+  grid-template-columns: auto 1fr auto;
   align-items:center;
-  justify-content:space-between;
   gap:16px;
-  padding: 10px 10px;
+  padding: 10px 6px;
   border-bottom: var(--divider);
 }
 
-/* Logo */
 .brandLogoOnly{
   display:flex;
   align-items:center;
@@ -110,17 +99,15 @@ button{ font-family: var(--font); }
 .brandLogo{
   height: 46px;
   width:auto;
-  display:block;
 }
 
-/* Nav */
+/* NAV dentro del header */
 .headerNav{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap: 28px;
-  flex: 1; /* centra */
-  padding: 0 10px;
+  gap: 34px;
+  flex-wrap: wrap;
 }
 
 .headerNav a{
@@ -130,17 +117,17 @@ button{ font-family: var(--font); }
   color: var(--text-2);
   padding: 10px 8px;
   border-radius: 999px;
-  transition: background .15s ease, color .15s ease, border-color .15s ease, transform .08s ease;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
   border: 1px solid transparent;
-  white-space: nowrap;
 }
+
 .headerNav a:hover{
   text-decoration:none;
   color: var(--heading);
   background: rgba(255,255,255,0.65);
   border-color: var(--border);
-  transform: translateY(-1px);
 }
+
 .headerNav a.current{
   color: var(--heading);
   border-color: #d9cfae;
@@ -152,7 +139,9 @@ button{ font-family: var(--font); }
   display:flex;
   gap:10px;
   align-items:center;
+  justify-content:flex-end;
 }
+
 .langBtn{
   border: 1px solid var(--border);
   background: #fff;
@@ -163,6 +152,7 @@ button{ font-family: var(--font); }
   cursor: pointer;
   transition: transform .08s ease, border-color .15s ease, color .15s ease;
 }
+
 .langBtn:hover{
   border-color: #d4c7ae;
   color: var(--heading);
@@ -174,29 +164,24 @@ button{ font-family: var(--font); }
   font-weight: 600;
 }
 
-/* Responsive header */
+/* Responsive */
 @media (max-width: 980px){
   .headerBar{
-    flex-wrap: wrap;
-    justify-content:center;
-    gap: 10px 14px;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "logo lang"
+      "nav  nav";
+    row-gap: 10px;
   }
-  .headerNav{
-    order: 2;
-    flex: 1 1 100%;
-    flex-wrap: wrap;
-    gap: 10px 18px;
-  }
-  .lang{ order: 3; }
+  .brandLogoOnly{ grid-area: logo; }
+  .lang{ grid-area: lang; }
+  .headerNav{ grid-area: nav; gap: 12px 18px; }
   .brandLogo{ height: 42px; }
-}
-@media (max-width: 520px){
   .headerNav a{ font-size: 11px; padding: 8px 10px; }
-  .langBtn{ font-size: 12px; padding: 6px 10px; }
 }
 
 /* -------------------------
-   5) Hero (título de página)
+   5) Hero
 ------------------------- */
 .hero{
   text-align:center;
@@ -234,6 +219,7 @@ button{ font-family: var(--font); }
   margin: 18px 0;
 }
 .card.soft{ background: var(--surface-2); }
+
 .card h2{
   margin: 0 0 14px;
   font-size: var(--h2-size);
@@ -251,28 +237,7 @@ button{ font-family: var(--font); }
 @media (max-width: 760px){
   .grid{ grid-template-columns: 1fr; }
 }
-.row{
-  display:flex;
-  align-items:baseline;
-  justify-content:space-between;
-  gap: 14px;
-  padding: 8px 0;
-  border-bottom: 1px dashed rgba(230,221,207,0.75);
-}
-.row:last-child{ border-bottom: none; }
 
-.label{
-  color: var(--text-2);
-  min-width: 140px;
-  font-weight: 500;
-}
-.value{
-  text-align:right;
-  color: var(--heading);
-}
-.value a{ font-weight: 600; }
-
-/* Nota */
 .note{
   margin: 14px 0 0;
   color: var(--muted);
@@ -305,14 +270,9 @@ button{ font-family: var(--font); }
   transition: transform .08s ease, background .15s ease, border-color .15s ease, color .15s ease;
   user-select:none;
 }
-.btn.primary{
-  background: var(--btn-bg);
-  color: var(--btn-text);
-}
-.btn.primary:hover{
-  background: var(--btn-bg-hover);
-  transform: translateY(-1px);
-}
+.btn.primary{ background: var(--btn-bg); color: var(--btn-text); }
+.btn.primary:hover{ background: var(--btn-bg-hover); transform: translateY(-1px); }
+
 .btn.ghost{
   background: var(--btn-ghost-bg);
   border-color: var(--btn-ghost-border);
@@ -325,7 +285,7 @@ button{ font-family: var(--font); }
 }
 
 /* -------------------------
-   8) Imagen / cartel
+   8) Media
 ------------------------- */
 .mediaCard{
   display:grid;
@@ -336,6 +296,7 @@ button{ font-family: var(--font); }
 @media (max-width: 900px){
   .mediaCard{ grid-template-columns: 1fr; }
 }
+
 .poster{
   width: 100%;
   max-height: 520px;
@@ -346,17 +307,7 @@ button{ font-family: var(--font); }
 }
 
 /* -------------------------
-   9) Separador
-------------------------- */
-.hr{
-  height:1px;
-  background: var(--border);
-  border:0;
-  margin: 18px 0;
-}
-
-/* -------------------------
-   10) Footer (inyectado)
+   9) Footer (inyectado)
 ------------------------- */
 .siteFooter{
   margin-top: 22px;
@@ -370,16 +321,15 @@ button{ font-family: var(--font); }
   font-weight: 600;
   color: var(--heading);
 }
-.footerLine2, .footerLine3, .footerLine4{
+.footerLine2, .footerLine3{
   margin-top: 6px;
   font-size: 14px;
   color: var(--text-2);
 }
 
-/* helper */
-.gold{ color: var(--gold); }
-.center{ text-align:center; }
-.small{ font-size:14px; color: var(--text-2); }
+/* -------------------------
+   10) Utilidades
+------------------------- */
 .pill{
   display:inline-block;
   padding: 6px 10px;
