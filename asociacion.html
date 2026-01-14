@@ -78,24 +78,24 @@
     <!-- INFORMACIÓN ADMINISTRATIVA -->
     <section class="card">
       <h2 data-i18n="assoc_admin_title">Información administrativa</h2>
+
+      <!-- Ajuste: estructura alineada con tu CSS (.grid + .row + .label/.value) -->
       <div class="grid">
-        <div>
-          <p>
-            <span class="label" data-i18n="assoc_admin_scope_label">Ámbito de actuación</span>
-            <span class="value" data-i18n="assoc_admin_scope">
-              Cultural y gastronómico (ámbito nacional e internacional)
-            </span>
-          </p>
+        <div class="row">
+          <span class="label" data-i18n="assoc_admin_scope_label">Ámbito de actuación</span>
+          <span class="value" data-i18n="assoc_admin_scope">
+            Cultural y gastronómico (ámbito nacional e internacional)
+          </span>
         </div>
-        <div>
-          <p>
-            <span class="label" data-i18n="assoc_admin_nature_label">Naturaleza jurídica</span>
-            <span class="value" data-i18n="assoc_admin_nature">
-              Asociación cultural sin ánimo de lucro
-            </span>
-          </p>
+
+        <div class="row">
+          <span class="label" data-i18n="assoc_admin_nature_label">Naturaleza jurídica</span>
+          <span class="value" data-i18n="assoc_admin_nature">
+            Asociación cultural sin ánimo de lucro
+          </span>
         </div>
       </div>
+
       <p class="note" data-i18n="assoc_admin_note">
         La asociación se encuentra en proceso de inscripción oficial conforme a la legislación vigente.
       </p>
@@ -110,24 +110,6 @@
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/header.js" defer></script>
   <script src="assets/js/footer.js" defer></script>
-
-  <!-- Sincroniza el atributo lang del documento con el idioma activo -->
-  <script defer>
-    document.addEventListener("DOMContentLoaded", () => {
-      if (window.dulcesorI18n?.getLang) {
-        const lang = window.dulcesorI18n.getLang();
-        document.documentElement.lang = lang;
-      }
-
-      if (window.dulcesorI18n?.setLanguage) {
-        const originalSet = window.dulcesorI18n.setLanguage;
-        window.dulcesorI18n.setLanguage = function (lang) {
-          originalSet(lang);
-          document.documentElement.lang = lang;
-        };
-      }
-    });
-  </script>
 
 </body>
 </html>
