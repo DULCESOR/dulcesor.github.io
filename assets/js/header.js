@@ -1,22 +1,16 @@
 (function () {
-  /**
-   * Devuelve el nombre del archivo actual (por ejemplo "index.html")
-   */
   function normalizePath(p) {
     const file = (p || "").split("?")[0].split("#")[0].split("/").pop();
     return file || "index.html";
   }
 
-  /**
-   * Construye el HTML completo del header
-   */
   function buildHeader(currentFile) {
-    // Ruta relativa funcional tanto en local como en producción (www.dulcesor.org)
+    // IMPORTANTE: esta ruta coincide con tu repo (assets/logos/...)
     const logoSrc = "assets/logos/logo-asociacion.png";
 
     return `
-      <header id="site-header" role="banner">
-        <div class="topbar">
+      <header role="banner">
+        <div class="headerBar">
           <a class="brandLogoOnly" href="index.html" aria-label="DULCESOR - inicio">
             <img class="brandLogo" src="${logoSrc}" alt="Logotipo Asociación Cultural DULCESOR" />
           </a>
@@ -57,33 +51,34 @@
     `;
   }
 
-  /**
-   * Inicializa la inyección del header y la lógica de idioma
-   */
-  function init() {
-    const mount = document.getElementById("site-header");
-    if (!mount) return;
-
-    const currentFile = normalizePath(window.location.pathname);
-    mount.outerHTML = buildHeader(currentFile);
-
-    // Gestión de idioma
-    document.querySelectorAll(".langBtn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        window.dulcesorI18n?.setLanguage?.(btn.dataset.lang);
-      });
-    });
-
-    // Marcar el idioma activo
+  function refreshLangUI() {
     const lang = window.dulcesorI18n?.getLang?.() || "es";
+    document.documentElement.lang = lang;
+
     document.querySelectorAll(".langBtn").forEach((b) => {
       const active = b.dataset.lang === lang;
       b.classList.toggle("active", active);
       b.setAttribute("aria-current", active ? "true" : "false");
     });
+  }
 
-    // Aplica traducciones al header inyectado
+  function init() {
+    const mount = document.getElementById("site-header");
+    if (!mount) return;
+
+    const currentFile = normalizePath(window.location.pathname);
+    mount.innerHTML = buildHeader(currentFile);
+
+    document.querySelectorAll(".langBtn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        window.dulcesorI18n?.setLanguage?.(btn.dataset.lang);
+        window.dulcesorI18n?.applyI18n?.();
+        refreshLangUI();
+      });
+    });
+
     window.dulcesorI18n?.applyI18n?.();
+    refreshLangUI();
   }
 
   document.addEventListener("DOMContentLoaded", init);
