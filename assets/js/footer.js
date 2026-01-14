@@ -1,23 +1,32 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const host = document.getElementById("site-footer");
-  if (!host) return;
+(function () {
+  function buildFooter() {
+    return `
+      <footer class="siteFooter" role="contentinfo">
+        <div class="footerInner">
+          <div class="footerLine1">
+            © <span id="footer-year"></span>
+            <span data-i18n="footer_line1">Asociación Cultural 'DULCESOR' – Repostería Monacal Conventual</span>
+          </div>
 
-  // Año actual dinámico
-  const year = new Date().getFullYear();
-
-  host.innerHTML = `
-    <footer class="siteFooter" role="contentinfo">
-      <div class="footerInner">
-        <div class="footerLine1" data-i18n="footer_line1">
-          © ${year} Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual
+          <div class="footerLine2" data-i18n="footer_line2">
+            Asociación cultural sin ánimo de lucro · En proceso de inscripción · Valladolid (España) · Web desarrollada por Apolo Studio Creativo
+          </div>
         </div>
-        <div class="footerLine2" data-i18n="footer_line2">
-          Asociación cultural sin ánimo de lucro · En proceso de inscripción · Valladolid (España) · Web desarrollada por Apolo Studio Creativo
-        </div>
-      </div>
-    </footer>
-  `;
+      </footer>
+    `;
+  }
 
-  // Aplicar traducciones (por si se cambia el idioma)
-  window.dulcesorI18n?.applyI18n?.();
-});
+  function init() {
+    const host = document.getElementById("site-footer");
+    if (!host) return;
+
+    host.innerHTML = buildFooter();
+
+    const yearEl = document.getElementById("footer-year");
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+    window.dulcesorI18n?.applyI18n?.();
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
+})();
