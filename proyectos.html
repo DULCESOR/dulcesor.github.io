@@ -35,7 +35,7 @@
       <h2 data-i18n="projects_intro_title">Presentación general</h2>
       <p data-i18n="projects_intro_text">
         Los proyectos de la Asociación Cultural DULCESOR tienen como objetivo poner en valor el patrimonio repostero de
-        los conventos y monasterios, fortalecer el vínculo entre gastronomía y cultura, y abrir un espacio de colaboración 
+        los conventos y monasterios, fortalecer el vínculo entre gastronomía y cultura, y abrir un espacio de colaboración
         entre artesanas, instituciones y ciudadanía.
       </p>
     </section>
@@ -59,20 +59,31 @@
       </ul>
     </section>
 
-    <!-- CONVOCATORIAS DESTACADAS -->
+    <!-- PROYECTOS DESTACADOS -->
     <section class="card">
       <h2 data-i18n="projects_featured_title">Proyectos destacados</h2>
 
       <div class="mediaCard">
-        <img src="assets/img/cartel-I-concurso.jpeg" alt="Cartel del I Concurso Internacional de Repostería Monacal Conventual" class="poster">
+        <img
+          src="assets/img/cartel-I-concurso.jpeg"
+          alt="Cartel del I Concurso Internacional de Repostería Monacal Conventual"
+          class="poster"
+          loading="lazy"
+        >
+
         <div>
-          <h3 data-i18n="projects_featured_project_title">I Concurso Internacional de Repostería Monacal Conventual</h3>
+          <h3 data-i18n="projects_featured_project_title">
+            I Concurso Internacional de Repostería Monacal Conventual
+          </h3>
           <p data-i18n="projects_featured_project_text">
             Primera convocatoria internacional impulsada por DULCESOR, dedicada a reconocer y difundir la
             repostería tradicional elaborada en monasterios y conventos, con la ciudad de Valladolid como primer escenario.
           </p>
+
           <div class="btnRow">
-            <a href="concursos.html" class="btn ghost" data-i18n="projects_featured_more">Ver más sobre los concursos</a>
+            <a href="concursos.html" class="btn ghost" data-i18n="projects_featured_more">
+              Ver más sobre los concursos
+            </a>
           </div>
         </div>
       </div>
@@ -100,24 +111,6 @@
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/header.js" defer></script>
   <script src="assets/js/footer.js" defer></script>
-
-  <!-- Sincroniza el atributo lang del documento con el idioma activo -->
-  <script defer>
-    document.addEventListener("DOMContentLoaded", () => {
-      if (window.dulcesorI18n?.getLang) {
-        const lang = window.dulcesorI18n.getLang();
-        document.documentElement.lang = lang;
-      }
-
-      if (window.dulcesorI18n?.setLanguage) {
-        const originalSet = window.dulcesorI18n.setLanguage;
-        window.dulcesorI18n.setLanguage = function (lang) {
-          originalSet(lang);
-          document.documentElement.lang = lang;
-        };
-      }
-    });
-  </script>
 
 </body>
 </html>
