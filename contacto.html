@@ -5,53 +5,59 @@
   <title>Contacto · DULCESOR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- SEO -->
   <meta name="description" content="Contacto institucional de la Asociación Cultural DULCESOR.">
+  <meta name="keywords" content="DULCESOR, contacto, asociación cultural, repostería monacal, patrimonio gastronómico, cultura">
+  <!-- <link rel="canonical" href="https://www.dulcesor.org/contacto.html"> -->
 
   <!-- CSS global -->
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
 
-  <!-- HEADER (inyectado) -->
-  <header id="site-header"></header>
+  <!-- HEADER (inyectado por JS) -->
+  <div id="site-header"></div>
 
+  <!-- CONTENIDO PRINCIPAL -->
   <main class="wrap">
 
+    <!-- HERO -->
     <section class="hero">
-      <h1 data-i18n="contact_title">CONTACTO</h1>
+      <h1 data-i18n="contact_title">Contacto</h1>
       <p data-i18n="contact_subtitle">
         Para información institucional, colaboraciones culturales y consultas generales.
       </p>
     </section>
 
+    <!-- BLOQUE PRINCIPAL -->
     <section class="card">
-      <h2 data-i18n="contact_block_title">CONTACTO INSTITUCIONAL</h2>
+      <h2 data-i18n="contact_block_title">Contacto institucional</h2>
 
       <div class="grid">
         <div>
           <div class="row">
-            <div class="label" data-i18n="contact_email_label">Mail general</div>
-            <div class="value"><a href="mailto:info@dulcesor.org">info@dulcesor.org</a></div>
+            <span class="label" data-i18n="contact_email_label">Mail general</span>
+            <span class="value"><a href="mailto:info@dulcesor.org">info@dulcesor.org</a></span>
           </div>
 
           <div class="row">
-            <div class="label" data-i18n="contact_contact_label">Contacto</div>
-            <div class="value"><a href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a></div>
+            <span class="label" data-i18n="contact_contact_label">Contacto</span>
+            <span class="value"><a href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a></span>
           </div>
         </div>
 
         <div>
           <div class="row">
-            <div class="label" data-i18n="contact_contest_label">Concurso</div>
-            <div class="value"><a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a></div>
+            <span class="label" data-i18n="contact_contest_label">Concurso</span>
+            <span class="value"><a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a></span>
           </div>
 
           <div class="row">
-            <div class="label" data-i18n="contact_address_label">Dirección</div>
-            <div class="value" data-i18n="contact_address_value">
+            <span class="label" data-i18n="contact_address_label">Dirección</span>
+            <span class="value" data-i18n="contact_address_value">
               Plaza Santa Ana 2 · 47001 Valladolid (España)
-            </div>
+            </span>
           </div>
         </div>
       </div>
@@ -63,13 +69,13 @@
 
   </main>
 
-  <!-- FOOTER (inyectado) -->
-  <footer id="site-footer"></footer>
+  <!-- FOOTER (inyectado por JS) -->
+  <div id="site-footer"></div>
 
-  <!-- JS globales (orden correcto) -->
-  <script src="/assets/js/i18n.js" defer></script>
-  <script src="/assets/js/header.js" defer></script>
-  <script src="/assets/js/footer.js" defer></script>
+  <!-- JS globales -->
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/header.js" defer></script>
+  <script src="assets/js/footer.js" defer></script>
 
 </body>
 </html>
