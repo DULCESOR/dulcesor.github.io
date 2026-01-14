@@ -87,28 +87,33 @@ button{ font-family: var(--font); }
   padding: 26px 18px 34px;
 }
 
-/* -------------------------
-   4) Header (inyectado)
-   - topbar + nav + idiomas
-------------------------- */
+/* =========================================================
+   4) HEADER (inyectado)
+   Objetivo:
+   - Logo alineado con "INICIO"
+   - Idiomas alineados con "CONTACTO"
+   Solución:
+   - 1 sola fila con CSS Grid (logo | nav | idiomas)
+========================================================= */
+
 #site-header{
   margin-bottom: 18px;
 }
 
-.topbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  padding: 10px 6px 14px;
+.headerBar{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+
+  padding: 14px 6px;
   border-bottom: var(--divider);
 }
 
-/* Logo solo */
+/* Logo */
 .brandLogoOnly{
   display:flex;
   align-items:center;
-  gap:12px;
   text-decoration:none;
 }
 .brandLogo{
@@ -117,12 +122,47 @@ button{ font-family: var(--font); }
   display:block;
 }
 
+/* Nav */
+.headerNav{
+  display:flex;
+  justify-content:center;
+  gap: 34px;
+  min-width: 0;
+}
+
+.headerNav a{
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  color: var(--text-2);
+  padding: 10px 8px;
+  border-radius: 999px;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.headerNav a:hover{
+  text-decoration:none;
+  color: var(--heading);
+  background: rgba(255,255,255,0.65);
+  border-color: var(--border);
+}
+
+.headerNav a.current{
+  color: var(--heading);
+  border-color: #d9cfae;
+  background: rgba(255,255,255,0.9);
+}
+
 /* Idiomas */
 .lang{
   display:flex;
   gap:10px;
   align-items:center;
+  justify-content: flex-end;
 }
+
 .langBtn{
   border: 1px solid var(--border);
   background: #fff;
@@ -133,56 +173,29 @@ button{ font-family: var(--font); }
   cursor: pointer;
   transition: transform .08s ease, border-color .15s ease, color .15s ease;
 }
+
 .langBtn:hover{
   border-color: #d4c7ae;
   color: var(--heading);
   transform: translateY(-1px);
 }
+
 .langBtn.active{
   border-color: #111;
   color: #111;
   font-weight: 600;
 }
 
-/* Menú */
-nav{
-  display:flex;
-  justify-content:center;
-  gap: 34px;
-  padding: 16px 6px;
-  border-bottom: var(--divider);
-}
-nav a{
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 12px;
-  color: var(--text-2);
-  padding: 10px 8px;
-  border-radius: 999px;
-  transition: background .15s ease, color .15s ease, border-color .15s ease;
-  border: 1px solid transparent;
-}
-nav a:hover{
-  text-decoration:none;
-  color: var(--heading);
-  background: rgba(255,255,255,0.65);
-  border-color: var(--border);
-}
-nav a.current{
-  color: var(--heading);
-  border-color: #d9cfae;
-  background: rgba(255,255,255,0.9);
-}
-
-/* Responsive nav */
+/* Responsive */
 @media (max-width: 900px){
-  nav{
+  .headerBar{
+    grid-template-columns: 1fr; /* apila */
+    justify-items: center;
+    gap: 12px;
+  }
+  .headerNav{
     flex-wrap: wrap;
     gap: 12px 18px;
-  }
-  nav a{
-    font-size: 11px;
-    padding: 8px 10px;
   }
   .brandLogo{
     height: 42px;
@@ -201,7 +214,7 @@ nav a.current{
   font-size: var(--h1-size);
   letter-spacing: var(--tracking-wide);
   font-weight: 600;
-  color: var(--accent); /* oro */
+  color: var(--accent);
   text-transform: uppercase;
 }
 .hero p{
@@ -212,7 +225,6 @@ nav a.current{
   margin-left:auto;
   margin-right:auto;
 }
-
 @media (max-width: 600px){
   .hero h1{ font-size: var(--h1-size-mobile); }
 }
@@ -228,11 +240,9 @@ nav a.current{
   padding: 22px 22px;
   margin: 18px 0;
 }
-
 .card.soft{
   background: var(--surface-2);
 }
-
 .card h2{
   margin: 0 0 14px;
   font-size: var(--h2-size);
@@ -241,7 +251,7 @@ nav a.current{
   color: var(--heading);
 }
 
-/* Grid de filas tipo contacto */
+/* Grid de filas */
 .grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -269,11 +279,8 @@ nav a.current{
   text-align:right;
   color: var(--heading);
 }
-.value a{
-  font-weight: 600;
-}
+.value a{ font-weight: 600; }
 
-/* Nota */
 .note{
   margin: 14px 0 0;
   color: var(--muted);
@@ -338,14 +345,12 @@ nav a.current{
   align-items:center;
 }
 @media (max-width: 900px){
-  .mediaCard{
-    grid-template-columns: 1fr;
-  }
+  .mediaCard{ grid-template-columns: 1fr; }
 }
 
 .poster{
   width: 100%;
-  max-height: 520px;   /* evita scroll enorme */
+  max-height: 520px;
   object-fit: contain;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
@@ -385,7 +390,6 @@ nav a.current{
   color: var(--text-2);
 }
 
-/* helper para texto dorado */
 .gold{ color: var(--gold); }
 
 /* -------------------------
