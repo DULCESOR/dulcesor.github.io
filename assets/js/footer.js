@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
           © Asociación Cultural ‘DULCESOR’ – Repostería Monacal Conventual
         </div>
         <div class="footerLine2" data-i18n="footer_line2">
-          Asociación cultural sin ánimo de lucro · En proceso de inscripción · Valladolid (España) · Sitio web desarrollado por Apolo Studio Creativo
+          Asociación cultural sin ánimo de lucro · En proceso de inscripción · Valladolid (España) · Web desarrollada por Apolo Studio Creativo
         </div>
       </div>
     </div>
