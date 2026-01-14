@@ -1,59 +1,91 @@
 /* =====================================================
-   header.js — Header global DULCESOR
-   - 1 fila: logo | nav | idiomas
+   header.js — Inyección del header global
+   - Logo alineado con INICIO
+   - Idiomas alineados con CONTACTO
+   - Re-aplica i18n tras inyectar (clave del bug)
    ===================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
-  const mount = document.getElementById("site-header");
+(function () {
+  function normalizePath(p) {
+    const file = (p || "").split("?")[0].split("#")[0].split("/").pop();
+    return file || "index.html";
+  }
 
-  // Si no existe el contenedor, no hacemos nada
-  if (!mount) return;
+  function buildHeader(currentFile) {
+    // Ajusta este logo si quieres otro nombre/archivo
+    const logoSrc = "/assets/logos/logo-asociacion.png";
 
-  const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    return `
+      <header id="site-header">
+        <div class="topbar">
+          <a class="brandLogoOnly" href="/index.html" aria-label="DULCESOR">
+            <img class="brandLogo" src="${logoSrc}" alt="DULCESOR" />
+          </a>
 
-  const links = [
-    { href: "index.html", key: "nav_home", fallback: "Inicio" },
-    { href: "asociacion.html", key: "nav_association", fallback: "Asociación" },
-    { href: "proyectos.html", key: "nav_projects", fallback: "Proyectos" },
-    { href: "concursos.html", key: "nav_contests", fallback: "Concursos" },
-    { href: "rutas.html", key: "nav_routes", fallback: "Rutas monacales" },
-    { href: "patrocinadores.html", key: "nav_sponsors", fallback: "Patrocinadores" },
-    { href: "contacto.html", key: "nav_contact", fallback: "Contacto" },
-  ];
+          <nav aria-label="Navegación principal">
+            <a href="/index.html" data-nav="index.html" class="${currentFile === "index.html" ? "current" : ""}">
+              <span data-i18n="nav_home">Inicio</span>
+            </a>
+            <a href="/asociacion.html" data-nav="asociacion.html" class="${currentFile === "asociacion.html" ? "current" : ""}">
+              <span data-i18n="nav_association">Asociación</span>
+            </a>
+            <a href="/proyectos.html" data-nav="proyectos.html" class="${currentFile === "proyectos.html" ? "current" : ""}">
+              <span data-i18n="nav_projects">Proyectos</span>
+            </a>
+            <a href="/concursos.html" data-nav="concursos.html" class="${currentFile === "concursos.html" ? "current" : ""}">
+              <span data-i18n="nav_contests">Concursos</span>
+            </a>
+            <a href="/rutas.html" data-nav="rutas.html" class="${currentFile === "rutas.html" ? "current" : ""}">
+              <span data-i18n="nav_routes">Rutas monacales</span>
+            </a>
+            <a href="/patrocinadores.html" data-nav="patrocinadores.html" class="${currentFile === "patrocinadores.html" ? "current" : ""}">
+              <span data-i18n="nav_sponsors">Patrocinadores</span>
+            </a>
+            <a href="/contacto.html" data-nav="contacto.html" class="${currentFile === "contacto.html" ? "current" : ""}">
+              <span data-i18n="nav_contact">Contacto</span>
+            </a>
+          </nav>
 
-  const navHTML = links.map(l => {
-    const isCurrent = path === l.href.toLowerCase();
-    return `<a href="${l.href}" class="${isCurrent ? "current" : ""}" data-i18n="${l.key}">${l.fallback}</a>`;
-  }).join("");
+          <div class="lang" aria-label="Idiomas">
+            <button class="langBtn" type="button" data-lang="es">ES</button>
+            <button class="langBtn" type="button" data-lang="en">EN</button>
+            <button class="langBtn" type="button" data-lang="pt">PT</button>
+            <button class="langBtn" type="button" data-lang="fr">FR</button>
+            <button class="langBtn" type="button" data-lang="it">IT</button>
+          </div>
+        </div>
+      </header>
+    `;
+  }
 
-  mount.innerHTML = `
-    <div class="headerBar">
-      <a class="brandLogoOnly" href="index.html" aria-label="DULCESOR">
-        <img class="brandLogo" src="assets/logos/logo-asociacion.png" alt="DULCESOR">
-      </a>
+  function init() {
+    const mount = document.getElementById("site-header");
+    // Si la página NO tiene contenedor, no rompemos nada
+    if (!mount) return;
 
-      <nav class="headerNav" aria-label="Navegación principal">
-        ${navHTML}
-      </nav>
+    const currentFile = normalizePath(window.location.pathname);
+    mount.outerHTML = buildHeader(currentFile);
 
-      <div class="lang" aria-label="Idiomas">
-        <button class="langBtn" type="button" data-lang="es">ES</button>
-        <button class="langBtn" type="button" data-lang="en">EN</button>
-        <button class="langBtn" type="button" data-lang="pt">PT</button>
-        <button class="langBtn" type="button" data-lang="fr">FR</button>
-        <button class="langBtn" type="button" data-lang="it">IT</button>
-      </div>
-    </div>
-  `;
-
-  // Activar idioma con setLanguage() (definido en i18n.js)
-  const langButtons = mount.querySelectorAll(".langBtn");
-  langButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const lang = btn.getAttribute("data-lang");
-      if (typeof setLanguage === "function") setLanguage(lang);
-      langButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+    // Eventos idioma
+    document.querySelectorAll(".langBtn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (window.dulcesorI18n?.setLanguage) {
+          window.dulcesorI18n.setLanguage(btn.dataset.lang);
+        }
+      });
     });
-  });
-});
+
+    // Activar botón según idioma actual
+    const lang = window.dulcesorI18n?.getLang ? window.dulcesorI18n.getLang() : "es";
+    document.querySelectorAll(".langBtn").forEach((b) => {
+      b.classList.toggle("active", b.dataset.lang === lang);
+    });
+
+    // CLAVE: re-aplicar i18n tras inyectar el header
+    if (window.dulcesorI18n?.applyI18n) {
+      window.dulcesorI18n.applyI18n();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
+})();
