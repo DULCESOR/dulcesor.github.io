@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- SEO -->
-  <meta name="description" content="Concursos culturales y gastronómicos impulsados por la Asociación Cultural DULCESOR – Repostería Monacal Conventual.">
-  <meta name="keywords" content="DULCESOR, concursos, repostería conventual, cultura, gastronomía, patrimonio">
+  <meta name="description" content="Convocatorias culturales y gastronómicas impulsadas por la Asociación Cultural DULCESOR.">
+  <meta name="keywords" content="DULCESOR, concursos, repostería monacal, patrimonio gastronómico, Valladolid, conventos">
   <!-- <link rel="canonical" href="https://www.dulcesor.org/concursos.html"> -->
 
   <!-- CSS global -->
@@ -34,28 +34,43 @@
     <section class="card">
       <h2 data-i18n="contests_frame_title">Marco general</h2>
       <p data-i18n="contests_frame_text">
-        La Asociación Cultural DULCESOR promueve concursos culturales y gastronómicos destinados a preservar y
-        difundir la repostería monacal conventual, incentivando su reconocimiento como patrimonio cultural,
-        gastronómico y espiritual.
+        La Asociación Cultural DULCESOR promueve concursos culturales y gastronómicos destinados a preservar y difundir la repostería monacal conventual.
       </p>
+
+      <p class="pill" data-i18n="contests_in_prep">En preparación</p>
     </section>
 
     <!-- CONVOCATORIA DESTACADA -->
     <section class="card">
       <h2 data-i18n="contests_featured_title">Convocatoria destacada</h2>
+
       <div class="mediaCard">
-        <img src="assets/img/cartel-I-concurso.jpeg" alt="Cartel del I Concurso Internacional de Repostería Monacal Conventual" class="poster">
+        <img
+          src="assets/img/cartel-I-concurso.jpeg"
+          alt="Cartel del I Concurso Internacional de Repostería Monacal Conventual"
+          class="poster"
+          loading="lazy"
+        >
+
         <div>
-          <h3 data-i18n="contests_pill_init">I Concurso Internacional de Repostería Monacal Conventual</h3>
-          <p data-i18n="contests_frame_text">
-            Concurso cultural y gastronómico organizado por la Asociación Cultural DULCESOR, con el propósito de
-            reconocer y difundir la calidad, historia y valor artesanal de la repostería tradicional elaborada
-            en conventos y monasterios.
+          <p class="pill" data-i18n="contests_pill_init">Convocatoria inicial</p>
+
+          <h3 data-i18n="contests_reg_title">Inscripción</h3>
+          <p data-i18n="contests_reg_text">
+            La participación estará abierta conforme a las bases oficiales de cada convocatoria.
+          </p>
+
+          <div class="hr"></div>
+
+          <h3 data-i18n="contests_docs_title">Documentación oficial</h3>
+          <p data-i18n="contests_docs_text">
+            Acceso a la documentación oficial de la convocatoria (bases y solicitud).
           </p>
 
           <div class="btnRow">
-            <a href="#" class="btn primary" data-i18n="contests_btn_bases">Bases (PDF)</a>
-            <a href="#" class="btn ghost" data-i18n="contests_btn_form">Solicitud (PDF)</a>
+            <a class="btn ghost" href="assets/docs/bases-concurso.pdf" data-i18n="contests_btn_bases">Bases (PDF)</a>
+            <a class="btn ghost" href="assets/docs/solicitud-concurso.pdf" data-i18n="contests_btn_form">Solicitud (PDF)</a>
+            <span class="pill" data-i18n="contests_pill_pdf">Documentación en PDF</span>
           </div>
 
           <p class="note" data-i18n="contests_poster_caption">
@@ -63,18 +78,6 @@
           </p>
         </div>
       </div>
-    </section>
-
-    <!-- DOCUMENTACIÓN Y ESTADO -->
-    <section class="card soft">
-      <h2 data-i18n="contests_docs_title">Documentación oficial</h2>
-      <p data-i18n="contests_docs_text">
-        Acceso a la documentación oficial de la convocatoria, incluyendo las bases reguladoras y el formulario de inscripción.
-      </p>
-
-      <p class="note" data-i18n="contests_in_prep">
-        Actualmente en fase de preparación. Publicación prevista proximamente.
-      </p>
     </section>
 
   </main>
@@ -86,24 +89,6 @@
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/header.js" defer></script>
   <script src="assets/js/footer.js" defer></script>
-
-  <!-- Sincroniza atributo lang con idioma activo -->
-  <script defer>
-    document.addEventListener("DOMContentLoaded", () => {
-      if (window.dulcesorI18n?.getLang) {
-        const lang = window.dulcesorI18n.getLang();
-        document.documentElement.lang = lang;
-      }
-
-      if (window.dulcesorI18n?.setLanguage) {
-        const originalSet = window.dulcesorI18n.setLanguage;
-        window.dulcesorI18n.setLanguage = function(lang) {
-          originalSet(lang);
-          document.documentElement.lang = lang;
-        };
-      }
-    });
-  </script>
 
 </body>
 </html>
