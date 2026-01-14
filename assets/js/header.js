@@ -5,11 +5,10 @@
   }
 
   function buildHeader(currentFile) {
-    // IMPORTANTE: esta ruta coincide con tu repo (assets/logos/...)
     const logoSrc = "assets/logos/logo-asociacion.png";
 
     return `
-      <header role="banner">
+      <header id="site-header" role="banner">
         <div class="headerBar">
           <a class="brandLogoOnly" href="index.html" aria-label="DULCESOR - inicio">
             <img class="brandLogo" src="${logoSrc}" alt="Logotipo Asociación Cultural DULCESOR" />
@@ -51,10 +50,8 @@
     `;
   }
 
-  function refreshLangUI() {
+  function markActiveLang() {
     const lang = window.dulcesorI18n?.getLang?.() || "es";
-    document.documentElement.lang = lang;
-
     document.querySelectorAll(".langBtn").forEach((b) => {
       const active = b.dataset.lang === lang;
       b.classList.toggle("active", active);
@@ -67,18 +64,18 @@
     if (!mount) return;
 
     const currentFile = normalizePath(window.location.pathname);
-    mount.innerHTML = buildHeader(currentFile);
+    mount.outerHTML = buildHeader(currentFile);
 
     document.querySelectorAll(".langBtn").forEach((btn) => {
       btn.addEventListener("click", () => {
         window.dulcesorI18n?.setLanguage?.(btn.dataset.lang);
+        markActiveLang();
         window.dulcesorI18n?.applyI18n?.();
-        refreshLangUI();
       });
     });
 
+    markActiveLang();
     window.dulcesorI18n?.applyI18n?.();
-    refreshLangUI();
   }
 
   document.addEventListener("DOMContentLoaded", init);
