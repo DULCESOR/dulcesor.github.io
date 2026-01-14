@@ -1,22 +1,48 @@
-/* assets/js/header.js */
 (function () {
   function normalizePath(p) {
-    const file = (p || "").split("?")[0].split("#")[0].split("/").pop();
+    const file = (p || "")
+      .split("?")[0]
+      .split("#")[0]
+      .split("/")
+      .filter(Boolean)
+      .pop();
     return file || "index.html";
   }
 
   function buildHeader(currentFile) {
-    // Ruta correcta según tu repo: /assets/logos/logo-asociacion.png
+    // Estructura REAL del repo: assets/logos/...
     const logoSrc = "assets/logos/logo-asociacion.png";
 
-    const isCurrent = (file) => (currentFile === file ? "current" : "");
-
     return `
-      <header id="site-header" role="banner">
+      <header class="siteHeader" role="banner">
         <div class="topbar">
           <a class="brandLogoOnly" href="index.html" aria-label="DULCESOR - inicio">
             <img class="brandLogo" src="${logoSrc}" alt="Logotipo Asociación Cultural DULCESOR" />
           </a>
+
+          <nav class="headerNav" aria-label="Navegación principal">
+            <a href="index.html" class="${currentFile === "index.html" ? "current" : ""}">
+              <span data-i18n="nav_home">Inicio</span>
+            </a>
+            <a href="asociacion.html" class="${currentFile === "asociacion.html" ? "current" : ""}">
+              <span data-i18n="nav_association">Asociación</span>
+            </a>
+            <a href="proyectos.html" class="${currentFile === "proyectos.html" ? "current" : ""}">
+              <span data-i18n="nav_projects">Proyectos</span>
+            </a>
+            <a href="concursos.html" class="${currentFile === "concursos.html" ? "current" : ""}">
+              <span data-i18n="nav_contests">Concursos</span>
+            </a>
+            <a href="rutas.html" class="${currentFile === "rutas.html" ? "current" : ""}">
+              <span data-i18n="nav_routes">Rutas monacales</span>
+            </a>
+            <a href="patrocinadores.html" class="${currentFile === "patrocinadores.html" ? "current" : ""}">
+              <span data-i18n="nav_sponsors">Patrocinadores</span>
+            </a>
+            <a href="contacto.html" class="${currentFile === "contacto.html" ? "current" : ""}">
+              <span data-i18n="nav_contact">Contacto</span>
+            </a>
+          </nav>
 
           <div class="lang" aria-label="Selección de idioma">
             <button class="langBtn" type="button" data-lang="es">ES</button>
@@ -26,27 +52,21 @@
             <button class="langBtn" type="button" data-lang="it">IT</button>
           </div>
         </div>
-
-        <nav aria-label="Navegación principal">
-          <a href="index.html" class="${isCurrent("index.html")}"><span data-i18n="nav_home">Inicio</span></a>
-          <a href="asociacion.html" class="${isCurrent("asociacion.html")}"><span data-i18n="nav_association">Asociación</span></a>
-          <a href="proyectos.html" class="${isCurrent("proyectos.html")}"><span data-i18n="nav_projects">Proyectos</span></a>
-          <a href="concursos.html" class="${isCurrent("concursos.html")}"><span data-i18n="nav_contests">Concursos</span></a>
-          <a href="rutas.html" class="${isCurrent("rutas.html")}"><span data-i18n="nav_routes">Rutas monacales</span></a>
-          <a href="patrocinadores.html" class="${isCurrent("patrocinadores.html")}"><span data-i18n="nav_sponsors">Patrocinadores</span></a>
-          <a href="contacto.html" class="${isCurrent("contacto.html")}"><span data-i18n="nav_contact">Contacto</span></a>
-        </nav>
       </header>
     `;
   }
 
   function markActiveLang() {
     const lang = window.dulcesorI18n?.getLang?.() || "es";
+
     document.querySelectorAll(".langBtn").forEach((b) => {
       const active = b.dataset.lang === lang;
       b.classList.toggle("active", active);
       b.setAttribute("aria-current", active ? "true" : "false");
     });
+
+    // sincroniza <html lang="">
+    document.documentElement.lang = lang;
   }
 
   function init() {
@@ -55,21 +75,28 @@
 
     const currentFile = normalizePath(window.location.pathname);
 
-    // Reemplaza el <div id="site-header"></div> por el <header> completo
-    mount.outerHTML = buildHeader(currentFile);
+    // NO usamos outerHTML: mantenemos el contenedor estable (menos errores)
+    mount.innerHTML = buildHeader(currentFile);
 
-    // Click idioma
+    // Enlaces nav: el CSS global ya los pinta (nav a / nav a.current)
+    // Idiomas
     document.querySelectorAll(".langBtn").forEach((btn) => {
       btn.addEventListener("click", () => {
-        window.dulcesorI18n?.setLanguage?.(btn.dataset.lang);
+        const lang = btn.dataset.lang;
+
+        // setLanguage ya hace applyI18n()
+        window.dulcesorI18n?.setLanguage?.(lang);
+
+        // marca activo + lang del documento
         markActiveLang();
+
+        // notifica a otros componentes (footer.js)
+        document.dispatchEvent(new CustomEvent("dulcesor:langchange"));
       });
     });
 
     // Estado inicial
     markActiveLang();
-
-    // Traduce el header recién inyectado
     window.dulcesorI18n?.applyI18n?.();
   }
 
