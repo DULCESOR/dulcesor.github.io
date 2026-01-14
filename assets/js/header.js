@@ -1,25 +1,32 @@
 (function () {
   function normalizePath(p) {
-    const file = (p || "")
-      .split("?")[0]
-      .split("#")[0]
-      .split("/")
-      .filter(Boolean)
-      .pop();
+    const file = (p || "").split("?")[0].split("#")[0].split("/").pop();
     return file || "index.html";
   }
 
   function buildHeader(currentFile) {
-    // Estructura REAL del repo: assets/logos/...
+    // ✅ RUTA REAL según tu árbol: assets/logos/...
     const logoSrc = "assets/logos/logo-asociacion.png";
 
     return `
-      <header class="siteHeader" role="banner">
-        <div class="topbar">
-          <a class="brandLogoOnly" href="index.html" aria-label="DULCESOR - inicio">
-            <img class="brandLogo" src="${logoSrc}" alt="Logotipo Asociación Cultural DULCESOR" />
-          </a>
+      <header id="site-header" role="banner">
+        <div class="headerInner">
+          <!-- FILA 1: logo izquierda / idiomas derecha -->
+          <div class="headerTop">
+            <a class="brandLogoOnly" href="index.html" aria-label="DULCESOR - inicio">
+              <img class="brandLogo" src="${logoSrc}" alt="Logotipo Asociación Cultural DULCESOR" />
+            </a>
 
+            <div class="lang" aria-label="Selección de idioma">
+              <button class="langBtn" type="button" data-lang="es">ES</button>
+              <button class="langBtn" type="button" data-lang="en">EN</button>
+              <button class="langBtn" type="button" data-lang="pt">PT</button>
+              <button class="langBtn" type="button" data-lang="fr">FR</button>
+              <button class="langBtn" type="button" data-lang="it">IT</button>
+            </div>
+          </div>
+
+          <!-- FILA 2: menú debajo -->
           <nav class="headerNav" aria-label="Navegación principal">
             <a href="index.html" class="${currentFile === "index.html" ? "current" : ""}">
               <span data-i18n="nav_home">Inicio</span>
@@ -43,14 +50,6 @@
               <span data-i18n="nav_contact">Contacto</span>
             </a>
           </nav>
-
-          <div class="lang" aria-label="Selección de idioma">
-            <button class="langBtn" type="button" data-lang="es">ES</button>
-            <button class="langBtn" type="button" data-lang="en">EN</button>
-            <button class="langBtn" type="button" data-lang="pt">PT</button>
-            <button class="langBtn" type="button" data-lang="fr">FR</button>
-            <button class="langBtn" type="button" data-lang="it">IT</button>
-          </div>
         </div>
       </header>
     `;
@@ -58,7 +57,6 @@
 
   function markActiveLang() {
     const lang = window.dulcesorI18n?.getLang?.() || "es";
-
     document.querySelectorAll(".langBtn").forEach((b) => {
       const active = b.dataset.lang === lang;
       b.classList.toggle("active", active);
@@ -75,23 +73,15 @@
 
     const currentFile = normalizePath(window.location.pathname);
 
-    // NO usamos outerHTML: mantenemos el contenedor estable (menos errores)
-    mount.innerHTML = buildHeader(currentFile);
+    // Reemplaza el placeholder <div id="site-header"></div> por el header real
+    mount.outerHTML = buildHeader(currentFile);
 
-    // Enlaces nav: el CSS global ya los pinta (nav a / nav a.current)
-    // Idiomas
+    // Click idiomas
     document.querySelectorAll(".langBtn").forEach((btn) => {
       btn.addEventListener("click", () => {
-        const lang = btn.dataset.lang;
-
-        // setLanguage ya hace applyI18n()
-        window.dulcesorI18n?.setLanguage?.(lang);
-
-        // marca activo + lang del documento
+        window.dulcesorI18n?.setLanguage?.(btn.dataset.lang);
         markActiveLang();
-
-        // notifica a otros componentes (footer.js)
-        document.dispatchEvent(new CustomEvent("dulcesor:langchange"));
+        window.dulcesorI18n?.applyI18n?.();
       });
     });
 
