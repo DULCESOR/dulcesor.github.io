@@ -14,7 +14,7 @@
     <!-- FILA 1: logo izquierda / idiomas derecha -->
     <div class="topbar">
       <a class="brand" href="index.html" aria-label="DULCESOR - inicio">
-        <img class="brandLogo" src="${logoSrc}" alt="Logotipo Asociación Cultural DULCESOR" style="width:225%; height:auto;" />
+        <img class="brandLogo" src="${logoSrc}" alt="Logotipo Asociación Cultural DULCESOR" style="width:175%; height:auto;" />
       </a>
 
       <div class="lang" aria-label="Selección de idioma">
