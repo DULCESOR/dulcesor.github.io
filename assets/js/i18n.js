@@ -179,4 +179,3 @@ window.dulcesorI18n = {
 document.addEventListener("DOMContentLoaded", () => {
   applyI18n();
 });
-
