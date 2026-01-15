@@ -38,19 +38,25 @@
         <div>
           <div class="row">
             <span class="label" data-i18n="contact_email_label">Mail general</span>
-            <span class="value"><a href="mailto:info@dulcesor.org">info@dulcesor.org</a></span>
+            <span class="value">
+              <a href="mailto:info@dulcesor.org">info@dulcesor.org</a>
+            </span>
           </div>
 
           <div class="row">
             <span class="label" data-i18n="contact_contact_label">Contacto</span>
-            <span class="value"><a href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a></span>
+            <span class="value">
+              <a href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a>
+            </span>
           </div>
         </div>
 
         <div>
           <div class="row">
             <span class="label" data-i18n="contact_contest_label">Concurso</span>
-            <span class="value"><a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a></span>
+            <span class="value">
+              <a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a>
+            </span>
           </div>
 
           <div class="row">
@@ -72,10 +78,34 @@
   <!-- FOOTER (inyectado por JS) -->
   <div id="site-footer"></div>
 
-  <!-- JS globales -->
+  <!-- JS globales (orden importante) -->
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/header.js" defer></script>
   <script src="assets/js/footer.js" defer></script>
+
+  <!-- Sincroniza el atributo lang del documento con el idioma activo -->
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const api = window.dulcesorI18n;
+      if (!api || typeof api.getLang !== "function") return;
+
+      // Set inicial
+      document.documentElement.lang = api.getLang() || "es";
+
+      // Evita re-parchear si ya está hecho
+      if (api.__langPatched) return;
+      api.__langPatched = true;
+
+      // Patch seguro: cuando se cambie idioma, actualiza <html lang="">
+      if (typeof api.setLanguage === "function") {
+        const originalSet = api.setLanguage.bind(api);
+        api.setLanguage = function (lang) {
+          originalSet(lang);
+          document.documentElement.lang = api.getLang() || (lang || "es");
+        };
+      }
+    });
+  </script>
 
 </body>
 </html>
