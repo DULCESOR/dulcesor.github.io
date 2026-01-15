@@ -1,7 +1,5 @@
 /* =====================================================
-   i18n.js — Sistema de idiomas global (DULCESOR)
-   - Traducciones centralizadas
-   - NO muestra la KEY si falta traducción: deja el texto del HTML
+   i18n.js — DULCESOR (mínimo sólido + evento langchange)
    ===================================================== */
 
 const translations = {
@@ -24,8 +22,10 @@ const translations = {
     contact_address_value: "Valladolid (España)",
     contact_note: "Si deseas colaborar o ampliar información, escríbenos y te responderemos a la mayor brevedad.",
 
-    footer_line1: "Asociación Cultural “DULCESOR” – Repostería Monacal Conventual",
-    footer_line2: "Asociación cultural sin ánimo de lucro · En proceso de inscripción · Valladolid (España) · Web desarrollada por Apolo Studio Creativo",
+    footer_line1_prefix: "©",
+    footer_line1_suffix: "Asociación Cultural “DULCESOR” – Repostería Monacal Conventual",
+    footer_line2:
+      "Asociación cultural sin ánimo de lucro · En proceso de inscripción · Valladolid (España) · Web desarrollada por Apolo Studio Creativo",
   },
 
   en: {
@@ -43,12 +43,14 @@ const translations = {
     contact_email_label: "General information",
     contact_contact_label: "Institutional contact",
     contact_contest_label: "Contests",
-    contact_address_label: "Location",
+    contact_address_label: "Headquarters",
     contact_address_value: "Valladolid (Spain)",
     contact_note: "If you wish to collaborate or request more information, write to us and we will reply as soon as possible.",
 
-    footer_line1: "Cultural Association “DULCESOR” – Monastic Conventual Pastry",
-    footer_line2: "Non-profit cultural association · Registration in progress · Valladolid (Spain) · Website by Apolo Studio Creativo",
+    footer_line1_prefix: "©",
+    footer_line1_suffix: "Cultural Association “DULCESOR” – Monastic Conventual Pastry",
+    footer_line2:
+      "Non-profit cultural association · Registration in progress · Valladolid (Spain) · Website developed by Apolo Studio Creativo",
   },
 
   pt: {
@@ -68,10 +70,12 @@ const translations = {
     contact_contest_label: "Concursos",
     contact_address_label: "Sede",
     contact_address_value: "Valladolid (Espanha)",
-    contact_note: "Se desejar colaborar ou obter mais informação, escreva-nos e responderemos com a maior brevidade possível.",
+    contact_note: "Se deseja colaborar ou obter mais informação, escreva-nos e responderemos o mais breve possível.",
 
-    footer_line1: "Associação Cultural “DULCESOR” – Doçaria Monástica Conventual",
-    footer_line2: "Associação cultural sem fins lucrativos · Registo em curso · Valladolid (Espanha) · Website por Apolo Studio Creativo",
+    footer_line1_prefix: "©",
+    footer_line1_suffix: "Associação Cultural “DULCESOR” – Doçaria Monástica Conventual",
+    footer_line2:
+      "Associação cultural sem fins lucrativos · Inscrição em curso · Valladolid (Espanha) · Site desenvolvido por Apolo Studio Creativo",
   },
 
   fr: {
@@ -91,10 +95,12 @@ const translations = {
     contact_contest_label: "Concours",
     contact_address_label: "Siège",
     contact_address_value: "Valladolid (Espagne)",
-    contact_note: "Si vous souhaitez collaborer ou obtenir plus d’informations, écrivez-nous et nous répondrons dès que possible.",
+    contact_note: "Si vous souhaitez collaborer ou demander plus d’informations, écrivez-nous et nous vous répondrons au plus vite.",
 
-    footer_line1: "Association Culturelle “DULCESOR” – Pâtisserie monastique conventuelle",
-    footer_line2: "Association culturelle à but non lucratif · Inscription en cours · Valladolid (Espagne) · Site par Apolo Studio Creativo",
+    footer_line1_prefix: "©",
+    footer_line1_suffix: "Association Culturelle “DULCESOR” – Pâtisserie monastique conventuelle",
+    footer_line2:
+      "Association culturelle à but non lucratif · Inscription en cours · Valladolid (Espagne) · Site développé par Apolo Studio Creativo",
   },
 
   it: {
@@ -114,10 +120,12 @@ const translations = {
     contact_contest_label: "Concorsi",
     contact_address_label: "Sede",
     contact_address_value: "Valladolid (Spagna)",
-    contact_note: "Se desideri collaborare o richiedere più informazioni, scrivici e risponderemo il prima possibile.",
+    contact_note: "Se desideri collaborare o ricevere più informazioni, scrivici e ti risponderemo al più presto.",
 
-    footer_line1: "Associazione Culturale “DULCESOR” – Pasticceria monastica conventuale",
-    footer_line2: "Associazione culturale senza scopo di lucro · Registrazione in corso · Valladolid (Spagna) · Sito di Apolo Studio Creativo",
+    footer_line1_prefix: "©",
+    footer_line1_suffix: "Associazione Culturale “DULCESOR” – Pasticceria monastica conventuale",
+    footer_line2:
+      "Associazione culturale senza scopo di lucro · Iscrizione in corso · Valladolid (Spagna) · Sito sviluppato da Apolo Studio Creativo",
   },
 };
 
@@ -129,20 +137,10 @@ function applyI18n() {
   const dict = translations[currentLang] || {};
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
-
-    // Guarda el texto original como fallback (solo 1 vez)
-    if (!el.hasAttribute("data-i18n-fallback")) {
-      el.setAttribute("data-i18n-fallback", el.textContent.trim());
-    }
-
-    if (Object.prototype.hasOwnProperty.call(dict, key)) {
-      el.textContent = dict[key];
-    } else {
-      // Si no existe traducción, deja el texto del HTML (no mostrar la KEY)
-      el.textContent = el.getAttribute("data-i18n-fallback") || el.textContent;
-    }
+    el.textContent = dict[key] ?? key;
   });
 
+  // sincroniza <html lang="">
   document.documentElement.lang = currentLang;
 }
 
@@ -155,11 +153,8 @@ function setLanguage(lang) {
 
   applyI18n();
 
-  document.querySelectorAll(".langBtn").forEach((b) => {
-    const active = b.dataset.lang === currentLang;
-    b.classList.toggle("active", active);
-    b.setAttribute("aria-current", active ? "true" : "false");
-  });
+  // notifica a header/footer para que re-marque botones, etc.
+  document.dispatchEvent(new CustomEvent("dulcesor:langchange", { detail: { lang: currentLang } }));
 }
 
 window.dulcesorI18n = {
@@ -168,4 +163,6 @@ window.dulcesorI18n = {
   applyI18n,
 };
 
-document.addEventListener("DOMContentLoaded", applyI18n);
+document.addEventListener("DOMContentLoaded", () => {
+  applyI18n();
+});
