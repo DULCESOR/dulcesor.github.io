@@ -80,6 +80,7 @@ a { color: inherit; }
   flex-wrap: wrap;
   gap: 14px 26px;
   align-items: center;
+ justify-content: center; /* <-- AÑADE ESTA */
 }
 .mainNav a {
   text-decoration: none;
