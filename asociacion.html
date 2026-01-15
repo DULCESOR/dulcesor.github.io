@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Asociación · DULCESOR</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- SEO -->
-  <meta name="description" content="Identidad, fines y principios de la Asociación Cultural DULCESOR – Repostería Monacal Conventual.">
-  <meta name="keywords" content="DULCESOR, asociación cultural, repostería monacal, patrimonio gastronómico, cultura">
+  <meta name="description" content="Identidad, fines y principios de la Asociación Cultural DULCESOR – Repostería Monacal Conventual." />
+  <meta name="keywords" content="DULCESOR, asociación cultural, repostería monacal, patrimonio gastronómico, cultura" />
   <!-- <link rel="canonical" href="https://www.dulcesor.org/asociacion.html"> -->
 
+  <!-- Evita el 404 de favicon.ico -->
+  <link rel="icon" href="assets/logos/logo-asociacion.png" />
+
   <!-- CSS global -->
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 
 <body>
@@ -24,16 +27,16 @@
 
     <!-- HERO -->
     <section class="hero">
-      <h1 data-i18n="assoc_title">Asociación</h1>
-      <p data-i18n="assoc_subtitle">
+      <h1>Asociación</h1>
+      <p>
         Identidad, fines y principios de la Asociación Cultural DULCESOR – Repostería Monacal Conventual
       </p>
     </section>
 
     <!-- IDENTIDAD -->
     <section class="card">
-      <h2 data-i18n="assoc_identity_title">Identidad</h2>
-      <p data-i18n="assoc_identity_text">
+      <h2>Identidad</h2>
+      <p>
         La Asociación Cultural DULCESOR se constituye como una entidad sin ánimo de lucro dedicada a la
         preservación, investigación, promoción y difusión del patrimonio repostero monacal y conventual,
         entendiendo la repostería como una manifestación cultural, artística y gastronómica con valor
@@ -43,21 +46,21 @@
 
     <!-- FINES Y OBJETIVOS -->
     <section class="card">
-      <h2 data-i18n="assoc_purpose_title">Fines y objetivos</h2>
+      <h2>Fines y objetivos</h2>
       <ul>
-        <li data-i18n="assoc_purpose_1">
+        <li>
           Preservar y difundir la tradición repostera de los monasterios y conventos como parte esencial del
           patrimonio cultural inmaterial.
         </li>
-        <li data-i18n="assoc_purpose_2">
+        <li>
           Promover actividades culturales, gastronómicas y académicas que favorezcan el conocimiento y la
           valoración social de la repostería monacal conventual.
         </li>
-        <li data-i18n="assoc_purpose_3">
+        <li>
           Fomentar la investigación, recopilación y documentación de recetas, técnicas y procesos
           tradicionales transmitidos por comunidades religiosas.
         </li>
-        <li data-i18n="assoc_purpose_4">
+        <li>
           Establecer vínculos de cooperación con instituciones culturales, educativas y religiosas para impulsar
           proyectos conjuntos de conservación y difusión.
         </li>
@@ -66,8 +69,8 @@
 
     <!-- PRINCIPIOS Y VALORES -->
     <section class="card soft">
-      <h2 data-i18n="assoc_values_title">Principios y valores</h2>
-      <p data-i18n="assoc_values_text">
+      <h2>Principios y valores</h2>
+      <p>
         La Asociación Cultural DULCESOR desarrolla su labor bajo criterios de rigor histórico, respeto
         patrimonial y compromiso ético con las comunidades religiosas productoras. Promueve el reconocimiento
         de la repostería monacal como una expresión gastronómica y, al mismo tiempo, como testimonio vivo de
@@ -77,26 +80,22 @@
 
     <!-- INFORMACIÓN ADMINISTRATIVA -->
     <section class="card">
-      <h2 data-i18n="assoc_admin_title">Información administrativa</h2>
+      <h2>Información administrativa</h2>
 
-      <!-- Ajuste: estructura alineada con tu CSS (.grid + .row + .label/.value) -->
+      <!-- Alineado con tu CSS: .grid + .row + .label/.value -->
       <div class="grid">
         <div class="row">
-          <span class="label" data-i18n="assoc_admin_scope_label">Ámbito de actuación</span>
-          <span class="value" data-i18n="assoc_admin_scope">
-            Cultural y gastronómico (ámbito nacional e internacional)
-          </span>
+          <span class="label">Ámbito de actuación</span>
+          <span class="value">Cultural y gastronómico (ámbito nacional e internacional)</span>
         </div>
 
         <div class="row">
-          <span class="label" data-i18n="assoc_admin_nature_label">Naturaleza jurídica</span>
-          <span class="value" data-i18n="assoc_admin_nature">
-            Asociación cultural sin ánimo de lucro
-          </span>
+          <span class="label">Naturaleza jurídica</span>
+          <span class="value">Asociación cultural sin ánimo de lucro</span>
         </div>
       </div>
 
-      <p class="note" data-i18n="assoc_admin_note">
+      <p class="note">
         La asociación se encuentra en proceso de inscripción oficial conforme a la legislación vigente.
       </p>
     </section>
@@ -106,7 +105,7 @@
   <!-- FOOTER (inyectado por JS) -->
   <div id="site-footer"></div>
 
-  <!-- JS globales -->
+  <!-- JS globales (orden obligatorio) -->
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/header.js" defer></script>
   <script src="assets/js/footer.js" defer></script>
