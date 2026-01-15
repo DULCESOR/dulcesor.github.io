@@ -157,3 +157,12 @@ a { color: inherit; }
 .footerLine1 { font-weight: 600; }
 .footerYear { margin: 0 6px; }
 .footerLine2 { margin-top: 6px; }
+/* Imagen de contenido: tamaño controlado y responsive */
+.pageImage {
+  width: 100%;
+  max-width: 520px; /* AJUSTA aquí el tamaño visual */
+  height: auto;
+  display: block;
+  margin: 18px auto;
+  border-radius: 14px;
+}
