@@ -1,777 +1,198 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
   <title>Rutas Monacales · DULCESOR</title>
-  <meta name="description" content="Rutas monacales, museos conventuales y enlaces institucionales a monasterios y conventos. Asociación Cultural ‘DULCESOR’." />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    :root{
-      --bg:#f6f4f1;
-      --card:#ffffff;
-      --text:#1f1f1f;
-      --muted:#6b6b6b;
-      --line:#e6e1d8;
-      --gold: rgb(145, 128, 26);
-      --shadow: 0 14px 40px rgba(0,0,0,.06);
-      --radius: 16px;
-      --font: "Century Gothic","CenturyGothic","AppleGothic",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    a{color:inherit}
+  <!-- SEO -->
+  <meta name="description" content="Rutas monacales, museos conventuales y enlaces institucionales a monasterios y conventos. Asociación Cultural DULCESOR.">
+  <meta name="keywords" content="DULCESOR, rutas monacales, museos conventuales, monasterios, conventos, patrimonio cultural">
 
-    .wrap{
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 28px 20px 46px;
-    }
+  <!-- Evita el 404 de favicon.ico -->
+  <link rel="icon" href="assets/logos/logo-asociacion.png">
 
-    /* ===== Standard Header (asociacion.html) ===== */
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding: 8px 0 18px;
-      border-bottom: 1px solid var(--line);
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width: 240px;
-    }
-    .mark{
-      width:38px;height:38px;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      display:flex;align-items:center;justify-content:center;
-      color: var(--gold);
-      font-weight: 700;
-      letter-spacing: .5px;
-      background: #fbfaf8;
-    }
-    .brand strong{display:block;letter-spacing: .08em}
-    .brand small{
-      display:block;
-      color: var(--muted);
-      letter-spacing: .18em;
-      font-size: 12px;
-      margin-top: -2px;
-    }
-    .gold{color: var(--gold); font-weight: 800}
-
-    .lang{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:flex-end;
-      flex-wrap:wrap;
-    }
-    .langBtn{
-      font-size: 12px;
-      letter-spacing: .16em;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: transparent;
-      cursor:pointer;
-      color: var(--muted);
-    }
-    .langBtn.active{
-      color: var(--text);
-      border-color: rgba(145,128,26,.35);
-      background: rgba(145,128,26,.08);
-    }
-
-    nav{
-      display:flex;
-      gap: 22px;
-      justify-content:center;
-      flex-wrap:wrap;
-      padding: 18px 0 12px;
-      border-bottom: 1px solid var(--line);
-    }
-    nav a{
-      text-decoration:none;
-      color: var(--muted);
-      letter-spacing: .18em;
-      font-size: 12px;
-      padding: 8px 10px;
-      border-radius: 10px;
-    }
-    nav a:hover{
-      background: rgba(0,0,0,.03);
-      color: var(--text);
-    }
-    nav a.current{
-      color: var(--text);
-      background: rgba(145,128,26,.08);
-      border: 1px solid rgba(145,128,26,.25);
-    }
-
-    /* ===== Content ===== */
-    .hero{
-      text-align:center;
-      padding: 34px 0 10px;
-    }
-    .hero h1{
-      margin: 0 0 10px;
-      font-size: clamp(26px, 3.6vw, 40px);
-      letter-spacing: .14em;
-      color: var(--gold);
-      font-weight: 900;
-    }
-    .hero p{
-      margin: 0 auto;
-      max-width: 900px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .card{
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px 18px 16px;
-      margin-top: 18px;
-    }
-    .card h2{
-      margin: 0 0 12px;
-      letter-spacing: .18em;
-      font-size: 13px;
-      color: var(--text);
-      text-transform: uppercase;
-    }
-    .muted{color: var(--muted)}
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 12px;
-    }
-    @media (min-width: 980px){
-      .grid{grid-template-columns: 1fr 1fr;}
-    }
-
-    .item{
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: #fbfaf8;
-      padding: 16px;
-    }
-    .item h3{
-      margin: 0 0 8px;
-      font-size: 12px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--text);
-    }
-    .badgeRow{display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px;}
-    .badge{
-      display:inline-block;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: #fbfaf8;
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .badge.gold{
-      border-color: rgba(145,128,26,.28);
-      background: rgba(145,128,26,.08);
-      color: var(--text);
-    }
-
-    .actions{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-    .btn{
-      display:inline-block;
-      text-decoration:none;
-      border: 1px solid rgba(145,128,26,.35);
-      background: rgba(145,128,26,.10);
-      color: var(--text);
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-size: 12px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-    .btn:hover{background: rgba(145,128,26,.14)}
-    .btn.outline{
-      background: transparent;
-      border-color: var(--line);
-      color: var(--muted);
-    }
-    .btn.outline:hover{background: rgba(0,0,0,.03); color: var(--text);}
-
-    .note{
-      margin-top: 10px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    /* Image box */
-    .imgBox{
-      margin-top: 12px;
-      border-radius: 14px;
-      overflow:hidden;
-      border: 1px solid var(--line);
-      background: #f2efe9;
-      height: 220px;
-      position: relative;
-    }
-    .imgBox img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      display:block;
-    }
-    .imgCaption{
-      position:absolute;
-      left: 0; right: 0; bottom: 0;
-      padding: 10px 12px;
-      background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
-      color: #fff;
-      font-size: 12px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    /* ===== Standard Footer (fixed, NOT translated) ===== */
-    .siteFooter{
-      margin-top: 36px;
-      border-top: 1px solid var(--line);
-      padding: 20px 16px 28px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
-    }
-    .footerInner{max-width: 980px; margin: 0 auto;}
-    .footerLine1{font-weight: 600; color: var(--text);}
-    .footerLine4{margin-top: 6px;}
-  </style>
+  <!-- CSS global -->
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
+
+  <!-- HEADER (inyectado por JS) -->
+  <div id="site-header"></div>
+
+  <!-- CONTENIDO PRINCIPAL -->
   <main class="wrap">
 
-    <!-- Header (standard) -->
-    <div class="topbar">
-      <div class="brand">
-        <div class="mark" aria-label="DULCESOR">D</div>
-        <div>
-          <strong class="gold">DULCESOR</strong>
-          <small data-i18n="brand_sub">ASOCIACIÓN CULTURAL</small>
-        </div>
-      </div>
-
-      <div class="lang" aria-label="Idiomas">
-        <button class="langBtn active" data-lang="es">ES</button>
-        <button class="langBtn" data-lang="en">EN</button>
-        <button class="langBtn" data-lang="pt">PT</button>
-        <button class="langBtn" data-lang="fr">FR</button>
-        <button class="langBtn" data-lang="it">IT</button>
-      </div>
-    </div>
-
-    <nav aria-label="Menú">
-      <a href="index.html" data-i18n="nav_inicio">INICIO</a>
-      <a href="asociacion.html" data-i18n="nav_asociacion">ASOCIACIÓN</a>
-      <a href="proyectos.html" data-i18n="nav_proyectos">PROYECTOS</a>
-      <a href="concursos.html" data-i18n="nav_concursos">CONCURSOS</a>
-      <a class="current" href="rutas.html" data-i18n="nav_rutas">RUTAS MONACALES</a>
-      <a href="patrocinadores.html" data-i18n="nav_patrocinadores">PATROCINADORES</a>
-      <a href="contacto.html" data-i18n="nav_contacto">CONTACTO</a>
-    </nav>
-
-    <section class="hero" aria-label="Rutas">
-      <h1 data-i18n="title">RUTAS MONACALES</h1>
-      <p data-i18n="subtitle">
-        Línea cultural de DULCESOR dedicada a la difusión del patrimonio monástico y la tradición artesana, con enlaces institucionales y recursos culturales.
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Rutas monacales</h1>
+      <p>
+        Línea cultural de DULCESOR dedicada a la difusión del patrimonio monástico y la tradición artesana,
+        con enlaces institucionales y recursos culturales.
       </p>
     </section>
 
-    <section class="card" aria-label="Enfoque">
-      <h2 data-i18n="frame_title">Enfoque cultural</h2>
-      <p class="muted" data-i18n="frame_text">
+    <!-- ENFOQUE -->
+    <section class="card">
+      <h2>Enfoque cultural</h2>
+      <p>
         Este espacio se concibe como una línea de difusión cultural y patrimonial. No es una web turística genérica:
-        aquí se prioriza un tono institucional, sobrio y respetuoso, promoviendo el conocimiento y la puesta en valor
-        del patrimonio monástico y la repostería artesanal.
+        se prioriza un tono institucional, sobrio y respetuoso, promoviendo el conocimiento y la puesta en valor del
+        patrimonio monástico y la repostería artesanal.
       </p>
-      <p class="note" data-i18n="frame_note">
+      <p class="note">
         La información y los listados se ampliarán progresivamente conforme avance la actividad de la asociación.
       </p>
     </section>
 
-    <!-- =========================
-         MUSEOS CONVENTUALES
-         ========================= -->
-    <section class="card" id="panel-museos" aria-label="Museos Conventuales">
-      <h2 data-i18n="museos_title">Museos Conventuales</h2>
-      <p class="muted" data-i18n="museos_intro">
-        DULCESOR apoya la conservación y difusión del patrimonio cultural vinculado a la vida conventual, promoviendo los museos conventuales como espacios vivos de memoria, arte y tradición.
+    <!-- MUSEOS CONVENTUALES -->
+    <section class="card">
+      <h2>Museos conventuales</h2>
+      <p>
+        DULCESOR apoya la conservación y difusión del patrimonio cultural vinculado a la vida conventual,
+        promoviendo los museos conventuales como espacios vivos de memoria, arte y tradición.
       </p>
 
+      <div class="hr"></div>
+
       <!-- PRIORITARIO -->
-      <div class="item">
-        <h3 data-i18n="m1_title">Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)</h3>
-        <p class="muted" data-i18n="m1_text">
+      <section class="card soft">
+        <h2 style="margin-top:0;">Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)</h2>
+        <p>
           Museo de arte sacro barroco en el monasterio cisterciense, con un conjunto patrimonial de gran relevancia.
           Espacio vinculado a la identidad cultural de DULCESOR.
         </p>
 
-        <!-- FOTO (ya incluida) -->
-        <div class="imgBox" aria-label="Dolorosa del museo">
-          <img src="dolorosa-santa-ana.jpeg" alt="Dolorosa · Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)">
-          <div class="imgCaption" data-i18n="img_caption">
-            Pieza destacada · Museo San Joaquín y Santa Ana
+        <!-- Imagen: se mantiene como en tu archivo original -->
+        <div class="mediaCard" style="margin-top:14px;">
+          <img
+            class="poster"
+            src="dolorosa-santa-ana.jpeg"
+            alt="Dolorosa · Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)"
+            loading="lazy"
+          >
+          <div>
+            <div class="btnRow" style="margin-bottom:10px;">
+              <span class="pill">Prioritario</span>
+              <span class="pill">Museo conventual</span>
+              <span class="pill">Valladolid</span>
+            </div>
+
+            <div class="btnRow">
+              <a class="btn ghost" href="https://museosanjoaquinysantaana.es/" target="_blank" rel="noopener">
+                Web oficial del museo
+              </a>
+              <a class="btn ghost" href="#" onclick="return false;" aria-disabled="true">
+                Experiencia virtual (RV) · Próximamente
+              </a>
+            </div>
+
+            <p class="note" style="margin-top:12px;">
+              Se está desarrollando una experiencia virtual (RV) vinculada a piezas del museo, que se presentará próximamente.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- OTROS MUSEOS -->
+      <section class="card">
+        <h2>Otros museos (en preparación)</h2>
+
+        <div class="grid">
+          <div class="card soft" style="margin:0;">
+            <h2 style="margin-top:0;">Monasterio de Santa Clara (Tordesillas) · Conjunto monumental</h2>
+            <p>
+              Espacio monástico con valor histórico y patrimonial destacado. Este bloque está preparado para completarse con
+              información institucional y enlace oficial.
+            </p>
+            <div class="btnRow">
+              <span class="pill">En preparación</span>
+            </div>
+          </div>
+
+          <div class="card soft" style="margin:0;">
+            <h2 style="margin-top:0;">Convento de San Francisco (Medina de Rioseco) · Patrimonio sacro</h2>
+            <p>
+              Espacio vinculado al patrimonio conventual de la provincia. Este bloque está preparado para completarse con
+              información institucional y enlace oficial.
+            </p>
+            <div class="btnRow">
+              <span class="pill">En preparación</span>
+            </div>
           </div>
         </div>
 
-        <div class="badgeRow">
-          <span class="badge gold" data-i18n="priority">PRIORITARIO</span>
-          <span class="badge" data-i18n="museum_badge">MUSEO CONVENTUAL</span>
-          <span class="badge" data-i18n="valladolid">VALLADOLID</span>
-        </div>
-
-        <div class="actions">
-          <a class="btn" href="https://museosanjoaquinysantaana.es/" target="_blank" rel="noopener" data-i18n="btn_web">
-            Web oficial del museo
-          </a>
-          <a class="btn outline" href="#" onclick="return false;" data-i18n="btn_vr">
-            Experiencia virtual (RV) · Próximamente
-          </a>
-        </div>
-
-        <p class="note" data-i18n="vr_note">
-          Se está desarrollando una experiencia virtual (RV) vinculada a piezas del museo, que se presentará próximamente.
+        <p class="note">
+          Este apartado crecerá incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.
         </p>
-      </div>
-
-      <!-- Otros museos (contenedor escalable) -->
-      <div class="grid" style="margin-top:14px;">
-        <div class="item">
-          <h3 data-i18n="m2_title">Monasterio de Santa Clara (Tordesillas) · Conjunto monumental</h3>
-          <p class="muted" data-i18n="m2_text">
-            Espacio monástico con valor histórico y patrimonial destacado. Este bloque está preparado para completarse con información institucional y enlace oficial.
-          </p>
-          <div class="badgeRow">
-            <span class="badge" data-i18n="in_prep">EN PREPARACIÓN</span>
-          </div>
-        </div>
-
-        <div class="item">
-          <h3 data-i18n="m3_title">Convento de San Francisco (Medina de Rioseco) · Patrimonio sacro</h3>
-          <p class="muted" data-i18n="m3_text">
-            Espacio vinculado al patrimonio conventual de la provincia. Este bloque está preparado para completarse con información institucional y enlace oficial.
-          </p>
-          <div class="badgeRow">
-            <span class="badge" data-i18n="in_prep">EN PREPARACIÓN</span>
-          </div>
-        </div>
-      </div>
-
-      <p class="note" data-i18n="museos_growth">
-        Este apartado crecerá incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.
-      </p>
+      </section>
     </section>
 
-    <!-- =========================
-         RUTAS (EN PREPARACIÓN)
-         ========================= -->
-    <section class="card" aria-label="Rutas de una mañana">
-      <h2 data-i18n="routes_title">Rutas de una mañana</h2>
-      <p class="muted" data-i18n="routes_intro">
-        Prepararemos pequeñas rutas culturales (mañana o media jornada) para visitar tres o cuatro monasterios, museos o espacios patrimoniales, con posibilidad de enlazar a la compra de productos si la comunidad dispone de canales oficiales.
+    <!-- RUTAS (EN PREPARACIÓN) -->
+    <section class="card">
+      <h2>Rutas de una mañana</h2>
+      <p>
+        Prepararemos pequeñas rutas culturales (mañana o media jornada) para visitar tres o cuatro monasterios, museos o espacios patrimoniales,
+        con posibilidad de enlazar a la compra de productos si la comunidad dispone de canales oficiales.
       </p>
-      <span class="badge" data-i18n="in_prep">EN PREPARACIÓN</span>
-      <p class="note" data-i18n="routes_note">
+      <div class="btnRow">
+        <span class="pill">En preparación</span>
+      </div>
+      <p class="note">
         Estas rutas se publicarán cuando estén contrastadas y presenten un enfoque cultural y respetuoso con las comunidades.
       </p>
     </section>
 
-    <!-- =========================
-         CONVENTOS / MONASTERIOS
-         ========================= -->
-    <section class="card" aria-label="Conventos y monasterios">
-      <h2 data-i18n="monasterios_title">Conventos y Monasterios</h2>
-      <p class="muted" data-i18n="monasterios_intro">
-        Enlaces directos a webs oficiales o canales institucionales de conventos y monasterios. Cuando existan tiendas online o sistemas de venta propios, se enlazarán para facilitar el acceso a sus productos.
+    <!-- CONVENTOS / MONASTERIOS -->
+    <section class="card">
+      <h2>Conventos y monasterios</h2>
+      <p>
+        Enlaces directos a webs oficiales o canales institucionales de conventos y monasterios. Cuando existan tiendas online o sistemas
+        de venta propios, se enlazarán para facilitar el acceso a sus productos.
       </p>
-      <p class="note" data-i18n="disclaimer">
+      <p class="note">
         DULCESOR no comercializa productos en esta web. Los enlaces dirigen a plataformas externas gestionadas por cada comunidad o entidad.
       </p>
 
       <div class="grid">
-        <div class="item">
-          <h3 data-i18n="c1_title">Convento / Monasterio (Ejemplo 1)</h3>
-          <p class="muted" data-i18n="c1_text">
+        <div class="card soft" style="margin:0;">
+          <h2 style="margin-top:0;">Convento / Monasterio (Ejemplo 1)</h2>
+          <p>
             Bloque preparado para incorporar nombre, localidad, breve descripción institucional y enlace oficial.
           </p>
-          <div class="actions">
-            <a class="btn outline" href="#" onclick="return false;" data-i18n="c_btn_web">Web oficial · Próximamente</a>
-            <a class="btn outline" href="#" onclick="return false;" data-i18n="c_btn_shop">Compra de productos · Próximamente</a>
+          <div class="btnRow">
+            <a class="btn ghost" href="#" onclick="return false;" aria-disabled="true">Web oficial · Próximamente</a>
+            <a class="btn ghost" href="#" onclick="return false;" aria-disabled="true">Compra de productos · Próximamente</a>
           </div>
         </div>
 
-        <div class="item">
-          <h3 data-i18n="c2_title">Convento / Monasterio (Ejemplo 2)</h3>
-          <p class="muted" data-i18n="c2_text">
+        <div class="card soft" style="margin:0;">
+          <h2 style="margin-top:0;">Convento / Monasterio (Ejemplo 2)</h2>
+          <p>
             Bloque preparado para incorporar nombre, localidad, breve descripción institucional y enlace oficial.
           </p>
-          <div class="actions">
-            <a class="btn outline" href="#" onclick="return false;" data-i18n="c_btn_web">Web oficial · Próximamente</a>
-            <a class="btn outline" href="#" onclick="return false;" data-i18n="c_btn_shop">Compra de productos · Próximamente</a>
+          <div class="btnRow">
+            <a class="btn ghost" href="#" onclick="return false;" aria-disabled="true">Web oficial · Próximamente</a>
+            <a class="btn ghost" href="#" onclick="return false;" aria-disabled="true">Compra de productos · Próximamente</a>
           </div>
         </div>
       </div>
 
-      <p class="note" data-i18n="how_add">
+      <p class="note">
         Para añadir un nuevo convento/monasterio, duplica uno de los bloques “Ejemplo” y cambia título, texto y enlaces.
       </p>
     </section>
 
-    <!-- Footer (standard, fixed) -->
-    <footer class="siteFooter">
-      <div class="footerInner">
-        <div class="footerLine1">
-          © <span class="gold">Asociación Cultural ‘DULCESOR’</span> – Repostería Monacal Conventual
-        </div>
-        <div class="footerLine2">
-          Asociación cultural sin ánimo de lucro · En proceso de inscripción
-        </div>
-        <div class="footerLine3">
-          Valladolid (España)
-        </div>
-        <div class="footerLine4">
-          Sitio web desarrollado por Apolo Studio Creativo
-        </div>
-      </div>
-    </footer>
-
   </main>
 
-  <script>
-    const I18N = {
-      es: {
-        brand_sub: "ASOCIACIÓN CULTURAL",
-        nav_inicio: "INICIO",
-        nav_asociacion: "ASOCIACIÓN",
-        nav_proyectos: "PROYECTOS",
-        nav_concursos: "CONCURSOS",
-        nav_rutas: "RUTAS MONACALES",
-        nav_patrocinadores: "PATROCINADORES",
-        nav_contacto: "CONTACTO",
+  <!-- FOOTER (inyectado por JS) -->
+  <div id="site-footer"></div>
 
-        title: "RUTAS MONACALES",
-        subtitle: "Línea cultural de DULCESOR dedicada a la difusión del patrimonio monástico y la tradición artesana, con enlaces institucionales y recursos culturales.",
+  <!-- JS globales (orden obligatorio) -->
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/header.js" defer></script>
+  <script src="assets/js/footer.js" defer></script>
 
-        frame_title: "Enfoque cultural",
-        frame_text: "Este espacio se concibe como una línea de difusión cultural y patrimonial. No es una web turística genérica: aquí se prioriza un tono institucional, sobrio y respetuoso, promoviendo el conocimiento y la puesta en valor del patrimonio monástico y la repostería artesanal.",
-        frame_note: "La información y los listados se ampliarán progresivamente conforme avance la actividad de la asociación.",
-
-        museos_title: "Museos Conventuales",
-        museos_intro: "DULCESOR apoya la conservación y difusión del patrimonio cultural vinculado a la vida conventual, promoviendo los museos conventuales como espacios vivos de memoria, arte y tradición.",
-
-        m1_title: "Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)",
-        m1_text: "Museo de arte sacro barroco en el monasterio cisterciense, con un conjunto patrimonial de gran relevancia. Espacio vinculado a la identidad cultural de DULCESOR.",
-        img_caption: "Pieza destacada · Museo San Joaquín y Santa Ana",
-        priority: "PRIORITARIO",
-        museum_badge: "MUSEO CONVENTUAL",
-        valladolid: "VALLADOLID",
-        btn_web: "Web oficial del museo",
-        btn_vr: "Experiencia virtual (RV) · Próximamente",
-        vr_note: "",
-
-        m2_title: "Monasterio de Santa Clara (Tordesillas) · Conjunto monumental",
-        m2_text: "Espacio monástico con valor histórico y patrimonial destacado. Este bloque está preparado para completarse con información institucional y enlace oficial.",
-        m3_title: "Convento de San Francisco (Medina de Rioseco) · Patrimonio sacro",
-        m3_text: "Espacio vinculado al patrimonio conventual de la provincia. Este bloque está preparado para completarse con información institucional y enlace oficial.",
-        in_prep: "EN PREPARACIÓN",
-        museos_growth: "Este apartado crecerá incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.",
-
-        routes_title: "Rutas de una mañana",
-        routes_intro: "Prepararemos pequeñas rutas culturales (mañana o media jornada) para visitar tres o cuatro monasterios, museos o espacios patrimoniales, con posibilidad de enlazar a la compra de productos si la comunidad dispone de canales oficiales.",
-        routes_note: "Estas rutas se publicarán cuando estén contrastadas y presenten un enfoque cultural y respetuoso con las comunidades.",
-
-        monasterios_title: "Conventos y Monasterios",
-        monasterios_intro: "Enlaces directos a webs oficiales o canales institucionales de conventos y monasterios. Cuando existan tiendas online o sistemas de venta propios, se enlazarán para facilitar el acceso a sus productos.",
-        disclaimer: "DULCESOR no comercializa productos en esta web. Los enlaces dirigen a plataformas externas gestionadas por cada comunidad o entidad.",
-
-        c1_title: "Convento / Monasterio (Ejemplo 1)",
-        c1_text: "Bloque preparado para incorporar nombre, localidad, breve descripción institucional y enlace oficial.",
-        c2_title: "Convento / Monasterio (Ejemplo 2)",
-        c2_text: "Bloque preparado para incorporar nombre, localidad, breve descripción institucional y enlace oficial.",
-        c_btn_web: "Web oficial · Próximamente",
-        c_btn_shop: "Compra de productos · Próximamente",
-
-        how_add: "Para añadir un nuevo convento/monasterio, duplica uno de los bloques “Ejemplo” y cambia título, texto y enlaces."
-      },
-
-      en: {
-        brand_sub: "CULTURAL ASSOCIATION",
-        nav_inicio: "HOME",
-        nav_asociacion: "ASSOCIATION",
-        nav_proyectos: "PROJECTS",
-        nav_concursos: "CONTESTS",
-        nav_rutas: "MONASTIC ROUTES",
-        nav_patrocinadores: "SPONSORS",
-        nav_contacto: "CONTACT",
-
-        title: "MONASTIC ROUTES",
-        subtitle: "A DULCESOR cultural line focused on monastic heritage and artisan tradition, with institutional links and cultural resources.",
-
-        frame_title: "Cultural approach",
-        frame_text: "This space is designed as a cultural and heritage dissemination line. It is not a generic tourism website: we prioritize an institutional, sober and respectful tone, promoting knowledge and appreciation of monastic heritage and artisan pastry.",
-        frame_note: "Information and listings will be expanded progressively as the association’s activity develops.",
-
-        museos_title: "Convent Museums",
-        museos_intro: "DULCESOR supports the preservation and dissemination of cultural heritage linked to convent life, promoting convent museums as living spaces of memory, art and tradition.",
-
-        m1_title: "Museum of the Royal Monastery of San Joaquín y Santa Ana (Valladolid)",
-        m1_text: "Baroque sacred art museum in the Cistercian monastery, with a highly relevant heritage collection. A space linked to DULCESOR’s cultural identity.",
-        img_caption: "Featured piece · San Joaquín y Santa Ana Museum",
-        priority: "PRIORITY",
-        museum_badge: "CONVENT MUSEUM",
-        valladolid: "VALLADOLID",
-        btn_web: "Official museum website",
-        btn_vr: "Virtual experience (VR) · Coming soon",
-        vr_note: "Apolo Studio Creativo is developing a virtual reality (VR) experience related to museum pieces, to be presented soon.",
-
-        m2_title: "Monastery of Santa Clara (Tordesillas) · Monumental complex",
-        m2_text: "A monastic space with outstanding historical and heritage value. This block is ready to be completed with institutional information and an official link.",
-        m3_title: "Convent of San Francisco (Medina de Rioseco) · Sacred heritage",
-        m3_text: "A site linked to the convent heritage of the province. This block is ready to be completed with institutional information and an official link.",
-        in_prep: "IN PREPARATION",
-        museos_growth: "This section will grow by incorporating other convent museums sharing DULCESOR’s cultural and heritage values.",
-
-        routes_title: "Morning routes",
-        routes_intro: "We will prepare small cultural routes (morning or half-day) to visit three or four monasteries, museums or heritage spaces, with the option to link to official product purchases when available.",
-        routes_note: "These routes will be published once verified and aligned with a respectful cultural approach.",
-
-        monasterios_title: "Convents and Monasteries",
-        monasterios_intro: "Direct links to official websites or institutional channels of convents and monasteries. Where official online shops exist, they will be linked to facilitate access to their products.",
-        disclaimer: "DULCESOR does not sell products on this website. Links point to external platforms managed by each community or entity.",
-
-        c1_title: "Convent / Monastery (Example 1)",
-        c1_text: "Block prepared to include name, location, brief institutional description and official link.",
-        c2_title: "Convent / Monastery (Example 2)",
-        c2_text: "Block prepared to include name, location, brief institutional description and official link.",
-        c_btn_web: "Official website · Coming soon",
-        c_btn_shop: "Buy products · Coming soon",
-
-        how_add: "To add a new convent/monastery, duplicate one of the “Example” blocks and update title, text and links."
-      },
-
-      pt: {
-        brand_sub: "ASSOCIAÇÃO CULTURAL",
-        nav_inicio: "INÍCIO",
-        nav_asociacion: "ASSOCIAÇÃO",
-        nav_proyectos: "PROJETOS",
-        nav_concursos: "CONCURSOS",
-        nav_rutas: "ROTAS MONÁSTICAS",
-        nav_patrocinadores: "PATROCINADORES",
-        nav_contacto: "CONTACTO",
-
-        title: "ROTAS MONÁSTICAS",
-        subtitle: "Linha cultural da DULCESOR dedicada à divulgação do património monástico e da tradição artesanal, com links institucionais e recursos culturais.",
-
-        frame_title: "Enfoque cultural",
-        frame_text: "Este espaço foi concebido como uma linha de divulgação cultural e patrimonial. Não é um site turístico genérico: prioriza um tom institucional, sóbrio e respeitoso, promovendo o conhecimento e a valorização do património monástico e da doçaria artesanal.",
-        frame_note: "As informações e listagens serão ampliadas progressivamente conforme a atividade da associação avance.",
-
-        museos_title: "Museus Conventuais",
-        museos_intro: "A DULCESOR apoia a preservação e divulgação do património cultural ligado à vida conventual, promovendo os museus conventuais como espaços vivos de memória, arte e tradição.",
-
-        m1_title: "Museu do Real Mosteiro de San Joaquín y Santa Ana (Valladolid)",
-        m1_text: "Museu de arte sacra barroca no mosteiro cisterciense, com um conjunto patrimonial de grande relevância. Espaço ligado à identidade cultural da DULCESOR.",
-        img_caption: "Peça em destaque · Museu San Joaquín y Santa Ana",
-        priority: "PRIORITÁRIO",
-        museum_badge: "MUSEU CONVENTUAL",
-        valladolid: "VALLADOLID",
-        btn_web: "Site oficial do museu",
-        btn_vr: "Experiência virtual (RV) · Em breve",
-        vr_note: "A Apolo Studio Creativo está a desenvolver uma experiência de realidade virtual (RV) ligada a peças do museu, a apresentar em breve.",
-
-        m2_title: "Mosteiro de Santa Clara (Tordesilhas) · Conjunto monumental",
-        m2_text: "Espaço monástico com valor histórico e patrimonial destacado. Este bloco está preparado para ser completado com informação institucional e link oficial.",
-        m3_title: "Convento de San Francisco (Medina de Rioseco) · Património sacro",
-        m3_text: "Espaço ligado ao património conventual da província. Este bloco está preparado para ser completado com informação institucional e link oficial.",
-        in_prep: "EM PREPARAÇÃO",
-        museos_growth: "Este espaço crescerá incorporando outros museus conventuais que partilhem os valores culturais e patrimoniais da DULCESOR.",
-
-        routes_title: "Rotas de uma manhã",
-        routes_intro: "Prepararemos pequenas rotas culturais (manhã ou meia jornada) para visitar três ou quatro mosteiros, museus ou espaços patrimoniais, com a possibilidade de ligar à compra oficial de produtos quando existir.",
-        routes_note: "Estas rotas serão publicadas quando estiverem validadas e alinhadas com uma abordagem cultural respeitosa.",
-
-        monasterios_title: "Conventos e Mosteiros",
-        monasterios_intro: "Links diretos para websites oficiais ou canais institucionais de conventos e mosteiros. Quando existirem lojas online oficiais, serão incluídas para facilitar o acesso aos seus produtos.",
-        disclaimer: "A DULCESOR não comercializa produtos neste site. Os links encaminham para plataformas externas geridas por cada comunidade ou entidade.",
-
-        c1_title: "Convento / Mosteiro (Exemplo 1)",
-        c1_text: "Bloco preparado para incluir nome, localidade, breve descrição institucional e link oficial.",
-        c2_title: "Convento / Mosteiro (Exemplo 2)",
-        c2_text: "Bloco preparado para incluir nome, localidade, breve descrição institucional e link oficial.",
-        c_btn_web: "Website oficial · Em breve",
-        c_btn_shop: "Comprar produtos · Em breve",
-
-        how_add: "Para adicionar um novo convento/mosteiro, duplique um dos blocos “Exemplo” e altere título, texto e links."
-      },
-
-      fr: {
-        brand_sub: "ASSOCIATION CULTURELLE",
-        nav_inicio: "ACCUEIL",
-        nav_asociacion: "ASSOCIATION",
-        nav_proyectos: "PROJETS",
-        nav_concursos: "CONCOURS",
-        nav_rutas: "ITINÉRAIRES MONASTIQUES",
-        nav_patrocinadores: "PARTENAIRES",
-        nav_contacto: "CONTACT",
-
-        title: "ITINÉRAIRES MONASTIQUES",
-        subtitle: "Axe culturel de DULCESOR dédié à la diffusion du patrimoine monastique et de la tradition artisanale, avec liens institutionnels et ressources culturelles.",
-
-        frame_title: "Approche culturelle",
-        frame_text: "Cet espace est conçu comme une démarche de diffusion culturelle et patrimoniale. Ce n’est pas un site touristique générique : le ton est institutionnel, sobre et respectueux, afin de valoriser le patrimoine monastique et la pâtisserie artisanale.",
-        frame_note: "Les informations et les listes seront enrichies progressivement au fil du développement des activités de l’association.",
-
-        museos_title: "Musées conventuels",
-        museos_intro: "DULCESOR soutient la préservation et la diffusion du patrimoine culturel lié à la vie conventuelle, en promouvant les musées conventuels comme espaces vivants de mémoire, d’art et de tradition.",
-
-        m1_title: "Musée du Monastère Royal de San Joaquín y Santa Ana (Valladolid)",
-        m1_text: "Musée d’art sacré baroque au sein du monastère cistercien, avec un ensemble patrimonial de grande valeur. Un lieu lié à l’identité culturelle de DULCESOR.",
-        img_caption: "Œuvre mise en avant · Musée San Joaquín y Santa Ana",
-        priority: "PRIORITAIRE",
-        museum_badge: "MUSÉE CONVENTUEL",
-        valladolid: "VALLADOLID",
-        btn_web: "Site officiel du musée",
-        btn_vr: "Expérience virtuelle (RV) · Bientôt",
-        vr_note: "Apolo Studio Creativo développe une expérience de réalité virtuelle (RV) liée à des pièces du musée, qui sera présentée prochainement.",
-
-        m2_title: "Monastère de Santa Clara (Tordesillas) · Ensemble monumental",
-        m2_text: "Espace monastique à forte valeur historique et patrimoniale. Bloc prêt à être complété par des informations institutionnelles et un lien officiel.",
-        m3_title: "Couvent de San Francisco (Medina de Rioseco) · Patrimoine sacré",
-        m3_text: "Lieu lié au patrimoine conventuel de la province. Bloc prêt à être complété par des informations institutionnelles et un lien officiel.",
-        in_prep: "EN PRÉPARATION",
-        museos_growth: "Cet espace s’enrichira en intégrant d’autres musées conventuels partageant les valeurs culturelles et patrimoniales de DULCESOR.",
-
-        routes_title: "Parcours d’une matinée",
-        routes_intro: "Nous préparerons de petits parcours culturels (matinée ou demi-journée) pour visiter trois ou quatre monastères, musées ou lieux patrimoniaux, avec la possibilité de renvoyer vers l’achat officiel de produits lorsque disponible.",
-        routes_note: "Ces parcours seront publiés une fois vérifiés et alignés sur une approche culturelle respectueuse.",
-
-        monasterios_title: "Couvents et monastères",
-        monasterios_intro: "Liens directs vers les sites officiels ou canaux institutionnels des couvents et monastères. Lorsqu’il existe des boutiques en ligne officielles, elles seront indiquées pour faciliter l’accès à leurs produits.",
-        disclaimer: "DULCESOR ne commercialise pas de produits sur ce site. Les liens redirigent vers des plateformes externes gérées par chaque communauté ou entité.",
-
-        c1_title: "Couvent / Monastère (Exemple 1)",
-        c1_text: "Bloc prêt à inclure nom, localisation, brève description institutionnelle et lien officiel.",
-        c2_title: "Couvent / Monastère (Exemple 2)",
-        c2_text: "Bloc prêt à inclure nom, localisation, brève description institutionnelle et lien officiel.",
-        c_btn_web: "Site officiel · Bientôt",
-        c_btn_shop: "Acheter des produits · Bientôt",
-
-        how_add: "Pour ajouter un nouveau couvent/monastère, dupliquez un bloc « Exemple » et modifiez titre, texte et liens."
-      },
-
-      it: {
-        brand_sub: "ASSOCIAZIONE CULTURALE",
-        nav_inicio: "HOME",
-        nav_asociacion: "ASSOCIAZIONE",
-        nav_proyectos: "PROGETTI",
-        nav_concursos: "CONCORSI",
-        nav_rutas: "PERCORSI MONASTICI",
-        nav_patrocinadores: "SPONSOR",
-        nav_contacto: "CONTATTI",
-
-        title: "PERCORSI MONASTICI",
-        subtitle: "Linea culturale di DULCESOR dedicata alla diffusione del patrimonio monastico e della tradizione artigianale, con link istituzionali e risorse culturali.",
-
-        frame_title: "Approccio culturale",
-        frame_text: "Questo spazio è concepito come una linea di diffusione culturale e patrimoniale. Non è un sito turistico generico: si privilegia un tono istituzionale, sobrio e rispettoso, promuovendo la conoscenza e la valorizzazione del patrimonio monastico e della pasticceria artigianale.",
-        frame_note: "Le informazioni e gli elenchi saranno ampliati progressivamente con lo sviluppo delle attività dell’associazione.",
-
-        museos_title: "Musei conventuali",
-        museos_intro: "DULCESOR sostiene la conservazione e la diffusione del patrimonio culturale legato alla vita conventuale, promuovendo i musei conventuali come spazi vivi di memoria, arte e tradizione.",
-
-        m1_title: "Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)",
-        m1_text: "Museo di arte sacra barocca nel monastero cistercense, con un patrimonio di grande rilievo. Spazio legato all’identità culturale di DULCESOR.",
-        img_caption: "Opera in evidenza · Museo San Joaquín y Santa Ana",
-        priority: "PRIORITÀ",
-        museum_badge: "MUSEO CONVENTUALE",
-        valladolid: "VALLADOLID",
-        btn_web: "Sito ufficiale del museo",
-        btn_vr: "Esperienza virtuale (RV) · Prossimamente",
-        vr_note: "Apolo Studio Creativo sta sviluppando un’esperienza di realtà virtuale (RV) legata a opere del museo, che sarà presentata prossimamente.",
-
-        m2_title: "Monastero di Santa Clara (Tordesillas) · Complesso monumentale",
-        m2_text: "Spazio monastico di grande valore storico e patrimoniale. Blocco pronto per essere completato con informazioni istituzionali e link ufficiale.",
-        m3_title: "Convento di San Francisco (Medina de Rioseco) · Patrimonio sacro",
-        m3_text: "Spazio legato al patrimonio conventuale della provincia. Blocco pronto per essere completato con informazioni istituzionali e link ufficiale.",
-        in_prep: "IN PREPARAZIONE",
-        museos_growth: "Questo spazio crescerà includendo altri musei conventuali che condividono i valori culturali e patrimoniali di DULCESOR.",
-
-        routes_title: "Percorsi di una mattina",
-        routes_intro: "Prepareremo piccoli percorsi culturali (mattina o mezza giornata) per visitare tre o quattro monasteri, musei o luoghi di valore storico, con la possibilità di collegarsi all’acquisto ufficiale di prodotti quando disponibile.",
-        routes_note: "Questi percorsi saranno pubblicati una volta verificati e coerenti con un approccio culturale rispettoso.",
-
-        monasterios_title: "Conventi e monasteri",
-        monasterios_intro: "Link diretti a siti ufficiali o canali istituzionali di conventi e monasteri. Dove esistono shop online ufficiali, saranno indicati per facilitare l’accesso ai prodotti.",
-        disclaimer: "DULCESOR non vende prodotti su questo sito. I link rimandano a piattaforme esterne gestite da ciascuna comunità o entità.",
-
-        c1_title: "Convento / Monastero (Esempio 1)",
-        c1_text: "Blocco pronto per includere nome, località, breve descrizione istituzionale e link ufficiale.",
-        c2_title: "Convento / Monastero (Esempio 2)",
-        c2_text: "Blocco pronto per includere nome, località, breve descrizione istituzionale e link ufficiale.",
-        c_btn_web: "Sito ufficiale · Prossimamente",
-        c_btn_shop: "Acquisto prodotti · Prossimamente",
-
-        how_add: "Per aggiungere un nuovo convento/monastero, duplica un blocco “Esempio” e modifica titolo, testo e link."
-      }
-    };
-
-    function applyLang(lang){
-      const dict = I18N[lang] || I18N.es;
-      document.documentElement.lang = lang;
-
-      document.querySelectorAll("[data-i18n]").forEach(el=>{
-        const key = el.getAttribute("data-i18n");
-        if (typeof dict[key] === "string") el.innerHTML = dict[key];
-      });
-
-      document.querySelectorAll(".langBtn").forEach(btn=>{
-        btn.classList.toggle("active", btn.dataset.lang === lang);
-      });
-
-      try { localStorage.setItem("dulcesor_lang", lang); } catch(e){}
-    }
-
-    (function(){
-      let saved = "es";
-      try { saved = localStorage.getItem("dulcesor_lang") || "es"; } catch(e){}
-      applyLang(saved);
-
-      document.querySelectorAll(".langBtn").forEach(btn=>{
-        btn.addEventListener("click", ()=> applyLang(btn.dataset.lang));
-      });
-    })();
-  </script>
 </body>
 </html>
