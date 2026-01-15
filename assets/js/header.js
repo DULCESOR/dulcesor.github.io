@@ -1,72 +1,130 @@
-(function () {
-  function normalizePath(p) {
-    const file = (p || "").split("?")[0].split("#")[0].split("/").pop();
-    return file || "index.html";
+/* -------------------------
+   HEADER (definitivo 2 filas)
+   - Fila 1: logo izq / idiomas dcha
+   - Fila 2: nav debajo alineado a la izquierda
+------------------------- */
+
+#site-header{
+  margin-bottom: 18px;
+}
+
+.headerShell{
+  padding-top: 10px;
+}
+
+/* Fila superior */
+.headerTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding: 6px 0 14px;
+  border-bottom: var(--divider);
+}
+
+/* Marca: SOLO icono (sin texto) */
+.brand{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+}
+
+/* ⬅️ aquí va el “doble de tamaño” */
+.brandMark{
+  width: 64px;            /* antes estaba pequeño: ahora x2 aprox */
+  height: 64px;
+  border-radius: 16px;    /* cuadrado redondeado */
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+.brandMark img{
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+  display:block;
+}
+
+/* Idiomas */
+.lang{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.langBtn{
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text-2);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform .08s ease, border-color .15s ease, color .15s ease;
+}
+
+.langBtn:hover{
+  border-color: #d4c7ae;
+  color: var(--heading);
+  transform: translateY(-1px);
+}
+
+.langBtn.active{
+  border-color: #111;
+  color: #111;
+  font-weight: 600;
+}
+
+/* Fila inferior: NAV */
+.headerNav{
+  display:flex;
+  justify-content:flex-start;   /* ✅ alineado a la izquierda */
+  gap: 34px;
+  padding: 16px 0;
+  border-bottom: var(--divider);
+}
+
+.headerNav a{
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  color: var(--text-2);
+  padding: 10px 8px;
+  border-radius: 999px;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+  border: 1px solid transparent;
+}
+
+.headerNav a:hover{
+  text-decoration:none;
+  color: var(--heading);
+  background: rgba(255,255,255,0.65);
+  border-color: var(--border);
+}
+
+.headerNav a.current{
+  color: var(--heading);
+  border-color: #d9cfae;
+  background: rgba(255,255,255,0.9);
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .headerNav{
+    flex-wrap: wrap;
+    gap: 12px 18px;
   }
-
-  function buildHeader(currentFile) {
-    const logoSrc = "assets/logos/logo-asociacion.png";
-
-    const is = (f) => (currentFile === f ? "current" : "");
-
-    return `
-      <header id="site-header" role="banner">
-        <div class="headerInner">
-          <div class="headerTop">
-            <a class="brandLogoOnly" href="index.html" aria-label="DULCESOR - inicio">
-              <img class="brandLogo" src="${logoSrc}" alt="Logotipo Asociación Cultural DULCESOR" />
-            </a>
-
-            <div class="lang" aria-label="Selección de idioma">
-              <button class="langBtn" type="button" data-lang="es">ES</button>
-              <button class="langBtn" type="button" data-lang="en">EN</button>
-              <button class="langBtn" type="button" data-lang="pt">PT</button>
-              <button class="langBtn" type="button" data-lang="fr">FR</button>
-              <button class="langBtn" type="button" data-lang="it">IT</button>
-            </div>
-          </div>
-
-          <nav class="headerNav" aria-label="Navegación principal">
-            <a href="index.html" class="${is("index.html")}"><span data-i18n="nav_home">Inicio</span></a>
-            <a href="asociacion.html" class="${is("asociacion.html")}"><span data-i18n="nav_association">Asociación</span></a>
-            <a href="proyectos.html" class="${is("proyectos.html")}"><span data-i18n="nav_projects">Proyectos</span></a>
-            <a href="concursos.html" class="${is("concursos.html")}"><span data-i18n="nav_contests">Concursos</span></a>
-            <a href="rutas.html" class="${is("rutas.html")}"><span data-i18n="nav_routes">Rutas monacales</span></a>
-            <a href="patrocinadores.html" class="${is("patrocinadores.html")}"><span data-i18n="nav_sponsors">Patrocinadores</span></a>
-            <a href="contacto.html" class="${is("contacto.html")}"><span data-i18n="nav_contact">Contacto</span></a>
-          </nav>
-        </div>
-      </header>
-    `;
+  .headerNav a{
+    font-size: 11px;
+    padding: 8px 10px;
   }
-
-  function markActiveLang() {
-    const lang = window.dulcesorI18n?.getLang?.() || "es";
-    document.querySelectorAll(".langBtn").forEach((b) => {
-      const active = b.dataset.lang === lang;
-      b.classList.toggle("active", active);
-      b.setAttribute("aria-current", active ? "true" : "false");
-    });
+  .brandMark{
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
   }
-
-  function init() {
-    const mount = document.getElementById("site-header");
-    if (!mount) return;
-
-    const currentFile = normalizePath(window.location.pathname);
-    mount.outerHTML = buildHeader(currentFile);
-
-    document.querySelectorAll(".langBtn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        window.dulcesorI18n?.setLanguage?.(btn.dataset.lang);
-        markActiveLang();
-        window.dulcesorI18n?.applyI18n?.();
-      });
-    });
-
-    markActiveLang();
-    window.dulcesorI18n?.applyI18n?.();
-  }
-
-  document.addEventListener("DOMContentLoaded", init);
-})();
+}
