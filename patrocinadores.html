@@ -5,14 +5,12 @@
   <title>Patrocinadores · DULCESOR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- SEO -->
   <meta name="description" content="Entidades colaboradoras y patrocinadores de la Asociación Cultural DULCESOR.">
   <meta name="keywords" content="DULCESOR, patrocinadores, colaboradores, NB21, repostería monacal, cultura">
 
-  <!-- CSS global -->
   <link rel="stylesheet" href="assets/css/styles.css">
 
-  <!-- Ajustes SOLO de esta página (sin tocar styles.css) -->
+  <!-- Estilos SOLO de esta página -->
   <style>
     .sponsorsBox { margin-top: 16px; }
 
@@ -32,6 +30,7 @@
     }
 
     .center { text-align:center; }
+    .noMargin { margin:0; }
 
     .btnRow{
       display:flex;
@@ -41,7 +40,6 @@
       flex-wrap:wrap;
     }
 
-    /* Botón simple (por si tu styles.css aún no tiene .btn/.ghost) */
     .btn{
       display:inline-block;
       text-decoration:none;
@@ -82,14 +80,11 @@
       <div class="card sponsorsBox">
         <div class="sponsorsLogoWrap">
           <a href="https://www.nb21.es/" target="_blank" rel="noopener noreferrer" aria-label="NB21">
-            <img
-              class="sponsorsLogo"
-              src="assets/logos/logo-nb21.png"
-              alt="NB21">
+            <img class="sponsorsLogo" src="assets/logos/logo-nb21.png" alt="NB21">
           </a>
         </div>
 
-        <p class="center" style="margin:0;" data-i18n="sponsors_nb21_text">
+        <p class="center noMargin" data-i18n="sponsors_nb21_text">
           Patrocinador de la Asociación Cultural DULCESOR.
         </p>
 
