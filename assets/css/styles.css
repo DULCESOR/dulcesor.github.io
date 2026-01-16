@@ -24,10 +24,11 @@ a { color: inherit; }
   background: #f7f3ee;
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
+
 .headerInner {
   width: min(1100px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 14px 0;
+  padding: 12px 0; /* un pelín más compacto */
 }
 
 .topbar {
@@ -37,17 +38,21 @@ a { color: inherit; }
   gap: 16px;
 }
 
-/* Logo: SOLO icono, tamaño x2 aprox */
+/* Logo (control real por CSS) */
 .brand {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
 }
+
+/* AJUSTA SOLO ESTE VALOR para hacerlo más pequeño/grande */
 .brandLogo {
-  width: 50px;
-  height: 50px;
+  height: 90px;      /* <-- Baja a 70px si lo quieres más pequeño */
+  width: auto;
+  max-width: 420px;  /* evita que se desmadre en pantallas grandes */
+  display: block;
   object-fit: contain;
-  border-radius: 16px;
+  border-radius: 0;  /* tu logo es rectangular; si quieres, pon 12px */
 }
 
 /* Idiomas */
@@ -80,8 +85,9 @@ a { color: inherit; }
   flex-wrap: wrap;
   gap: 14px 26px;
   align-items: center;
- justify-content: center; /* <-- AÑADE ESTA */
+  justify-content: center; /* <-- AÑADE ESTA */
 }
+
 .mainNav a {
   text-decoration: none;
   text-transform: uppercase;
@@ -94,6 +100,13 @@ a { color: inherit; }
 .mainNav a.current {
   border: 1px solid rgba(0,0,0,0.22);
   background: rgba(255,255,255,0.45);
+}
+
+/* Responsive: en móvil reduce logo */
+@media (max-width: 768px) {
+  .headerInner { padding: 10px 0; }
+  .brandLogo { height: 60px; max-width: 260px; }
+  .langBtn { padding: 7px 10px; font-size: 11px; }
 }
 
 /* =========================
@@ -158,6 +171,7 @@ a { color: inherit; }
 .footerLine1 { font-weight: 600; }
 .footerYear { margin: 0 6px; }
 .footerLine2 { margin-top: 6px; }
+
 /* Imagen de contenido: tamaño controlado y responsive */
 .pageImage {
   width: 100%;
