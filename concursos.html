@@ -10,17 +10,115 @@
   <meta name="keywords" content="DULCESOR, concursos, repostería monacal, patrimonio gastronómico, convocatoria">
   <!-- <link rel="canonical" href="https://www.dulcesor.org/concursos.html"> -->
 
-  <!-- Evita el 404 de favicon.ico -->
-  <link rel="icon" href="assets/logos/logo-asociacion.png">
-
   <!-- CSS global -->
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Estilos SOLO de esta página -->
+  <style>
+    /* Cambia SOLO este valor para hacer el cartel más grande/pequeño */
+    :root{
+      --poster-max: 360px; /* prueba 320-520px */
+    }
+
+    .pill{
+      display:inline-block;
+      border: 1px solid rgba(0,0,0,0.18);
+      background: rgba(255,255,255,0.55);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.72);
+    }
+
+    .mediaCard{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+      margin-top: 14px;
+    }
+
+    /* Cartel del concurso: tamaño fácil y responsive */
+    .poster{
+      width: min(100%, var(--poster-max));
+      height: auto;
+      display:block;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,0.10);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    }
+
+    .hr{
+      height:1px;
+      background: rgba(0,0,0,0.08);
+      margin: 14px 0;
+    }
+
+    .note{
+      margin-top: 12px;
+      color: rgba(0,0,0,0.72);
+    }
+
+    .small{
+      margin-top: 6px;
+      color: rgba(0,0,0,0.72);
+      font-size: 13px;
+    }
+
+    .btnRow{
+      display:flex;
+      justify-content:flex-start;
+      gap:12px;
+      margin-top:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    /* Botón simple por si no está en styles.css */
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      border-radius:999px;
+      padding:10px 14px;
+      font-size:12px;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      cursor:pointer;
+    }
+    .btn.ghost{
+      border:1px solid rgba(0,0,0,0.22);
+      background: rgba(255,255,255,0.45);
+      color: rgba(0,0,0,0.78);
+    }
+
+    /* Logos patrocinadores del concurso */
+    .contestSponsors{
+      display:flex;
+      gap:22px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:center;
+      padding:10px 0;
+    }
+    .contestSponsors img{
+      height:60px;
+      width:auto;
+      display:block;
+    }
+
+    @media (max-width: 768px){
+      :root{ --poster-max: 320px; }
+      .mediaCard{ gap:14px; }
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- HEADER (inyectado por JS) -->
-  <div id="site-header"></div>
+  <header id="site-header"></header>
 
   <!-- CONTENIDO PRINCIPAL -->
   <main class="wrap">
@@ -71,7 +169,6 @@
           </p>
 
           <div class="btnRow">
-            <!-- Si aún no tienes los PDFs, dejamos botones desactivados -->
             <a class="btn ghost" href="#" aria-disabled="true" onclick="return false;" data-i18n="contests_btn_bases">Bases (PDF)</a>
             <a class="btn ghost" href="#" aria-disabled="true" onclick="return false;" data-i18n="contests_btn_form">Solicitud (PDF)</a>
             <span class="pill" data-i18n="contests_pill_pdf">Documentación en PDF</span>
@@ -84,15 +181,15 @@
       </p>
     </section>
 
-    <!-- Patrocinadores del concurso (NO confundir con patrocinadores de la asociación) -->
+    <!-- Patrocinadores del concurso -->
     <section class="card soft">
-      <h2>Patrocinadores del concurso</h2>
-      <p class="small">Entidades colaboradoras del concurso (edición actual).</p>
+      <h2 data-i18n="contests_sponsors_title">Patrocinadores del concurso</h2>
+      <p class="small" data-i18n="contests_sponsors_subtitle">Entidades colaboradoras del concurso (edición actual).</p>
 
-      <div style="display:flex; gap:22px; flex-wrap:wrap; align-items:center; justify-content:center; padding:10px 0;">
-        <img src="assets/logos/logo-diputacion-valladolid.png" alt="Diputación de Valladolid" style="height:60px; width:auto;">
-        <img src="assets/logos/logo-ayuntamiento-valladolid.png" alt="Ayuntamiento de Valladolid" style="height:60px; width:auto;">
-        <img src="assets/logos/logo-junta-cyl.png" alt="Junta de Castilla y León" style="height:60px; width:auto;">
+      <div class="contestSponsors">
+        <img src="assets/logos/logo-diputacion-valladolid.png" alt="Diputación de Valladolid">
+        <img src="assets/logos/logo-ayuntamiento-valladolid.png" alt="Ayuntamiento de Valladolid">
+        <img src="assets/logos/logo-junta-cyl.png" alt="Junta de Castilla y León">
       </div>
     </section>
 
