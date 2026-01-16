@@ -181,3 +181,65 @@ a { color: inherit; }
   margin: 18px auto;
   border-radius: 14px;
 }
+
+/* =========================
+   Utilidades globales (NUEVO)
+   - Para no repetir estilos por página
+========================= */
+
+/* Centrar texto */
+.center { text-align: center; }
+
+/* Quitar margen (útil en textos bajo logos, etc.) */
+.noMargin { margin: 0; }
+
+/* Card más suave / secundaria (para secciones menos “pesadas”) */
+.card.soft{
+  background: rgba(255,255,255,0.55);
+  border-color: rgba(0,0,0,0.08);
+}
+
+/* “Pastilla” (estado/etiqueta) */
+.pill{
+  display:inline-block;
+  border: 1px solid rgba(0,0,0,0.18);
+  background: rgba(255,255,255,0.55);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.72);
+}
+
+/* Fila de botones */
+.btnRow{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+/* Botón base */
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  border-radius:999px;
+  padding:10px 14px;
+  font-size:12px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+
+/* Botón “ghost” */
+.btn.ghost{
+  border:1px solid rgba(0,0,0,0.22);
+  background: rgba(255,255,255,0.45);
+  color: rgba(0,0,0,0.78);
+}
+.btn.ghost:hover{
+  border-color: rgba(0,0,0,0.35);
+}
