@@ -8,16 +8,43 @@
   <!-- SEO -->
   <meta name="description" content="Proyectos culturales y gastronómicos impulsados por la Asociación Cultural DULCESOR.">
   <meta name="keywords" content="DULCESOR, proyectos culturales, repostería monacal, patrimonio gastronómico, concursos, rutas">
-  <!-- <link rel="canonical" href="https://www.dulcesor.org/proyectos.html"> -->
 
   <!-- CSS global -->
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Estilos SOLO de esta página (para el bloque con imagen) -->
+  <style>
+    /* Cambia SOLO este valor para ajustar tamaño del cartel */
+    :root{ --poster-max: 360px; } /* prueba 320-520px */
+
+    .mediaCard{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+      margin-top: 14px;
+    }
+
+    .poster{
+      width: min(100%, var(--poster-max));
+      height: auto;
+      display:block;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,0.10);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    }
+
+    @media (max-width: 768px){
+      :root{ --poster-max: 320px; }
+      .mediaCard{ gap:14px; }
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- HEADER (inyectado por JS) -->
-  <div id="site-header"></div>
+  <header id="site-header"></header>
 
   <!-- CONTENIDO PRINCIPAL -->
   <main class="wrap">
