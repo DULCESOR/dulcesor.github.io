@@ -33,11 +33,13 @@
       text-transform:uppercase;
       color: rgba(0,0,0,0.78);
     }
-    .sectionNav a:hover{
-      border-color: rgba(0,0,0,0.35);
+    .sectionNav a:hover{ border-color: rgba(0,0,0,0.35); }
+    .sectionNav a.active{
+      border-color: rgba(0,0,0,0.55);
+      font-weight: 700;
     }
 
-    /* Mejor scroll a anclas */
+    /* Mejor scroll a anclas (no queda tapado) */
     #rutas, #museos { scroll-margin-top: 18px; }
 
     /* Separador fino */
@@ -47,8 +49,8 @@
       margin: 14px 0;
     }
 
-    /* Bloque imagen + texto */
-    :root{ --poster-max: 360px; } /* ajusta si quieres (320–520px) */
+    /* Bloque imagen + texto (museo) */
+    :root{ --poster-max: 360px; } /* Ajusta si quieres (320–520px) */
     .mediaCard{
       display:flex;
       gap:18px;
@@ -80,6 +82,8 @@
     }
 
     .mt0{ margin-top: 0; }
+    .tagRow{ margin-bottom: 10px; }
+    .left{ justify-content:flex-start; }
   </style>
 </head>
 
@@ -102,8 +106,8 @@
 
     <!-- Navegación interna (como “dos páginas” dentro de una) -->
     <nav class="sectionNav" aria-label="Secciones de rutas">
-      <a href="#rutas" data-i18n="routes_nav_routes">Rutas</a>
-      <a href="#museos" data-i18n="routes_nav_museums">Museos</a>
+      <a href="#rutas" id="nav-rutas" data-i18n="routes_nav_routes">Rutas</a>
+      <a href="#museos" id="nav-museos" data-i18n="routes_nav_museums">Museos</a>
     </nav>
 
     <!-- =========================
@@ -190,8 +194,8 @@
     <section id="museos" class="card">
       <h2 data-i18n="museums_section_title">Museos</h2>
       <p data-i18n="museums_section_intro">
-        DULCESOR apoya la conservación y difusión del patrimonio cultural vinculado a la vida conventual,
-        promoviendo los museos conventuales como espacios vivos de memoria, arte y tradición.
+        La Asociación Cultural DULCESOR promueve la conservación y difusión del patrimonio cultural vinculado a la vida conventual,
+        apoyando especialmente a los museos conventuales como espacios vivos de memoria, arte y tradición.
       </p>
     </section>
 
@@ -212,13 +216,13 @@
         >
 
         <div>
-          <div class="btnRow" style="margin-bottom:10px;">
+          <div class="btnRow tagRow">
             <span class="pill" data-i18n="museums_pill_priority">Prioritario</span>
             <span class="pill" data-i18n="museums_pill_conventual">Museo conventual</span>
             <span class="pill" data-i18n="museums_pill_city">Valladolid</span>
           </div>
 
-          <div class="btnRow" style="justify-content:flex-start;">
+          <div class="btnRow left">
             <a class="btn ghost" href="https://museosanjoaquinysantaana.es/" target="_blank" rel="noopener"
                data-i18n="museums_btn_official">
               Web oficial del museo
@@ -242,10 +246,8 @@
       <div class="museumGrid">
         <div class="card soft" style="margin:0;">
           <h2 class="mt0" data-i18n="museums_item_santa_isabel_title">Museo del Monasterio de Santa Isabel (Valladolid)</h2>
-          <p data-i18n="museums_item_santa_isabel_text">
-            Enlace informativo institucional disponible.
-          </p>
-          <div class="btnRow" style="justify-content:flex-start;">
+          <p data-i18n="museums_item_santa_isabel_text">Enlace informativo institucional disponible.</p>
+          <div class="btnRow left">
             <a class="btn ghost"
                href="https://es.wikipedia.org/wiki/Convento_de_Santa_Isabel_(Valladolid)"
                target="_blank" rel="noopener"
@@ -257,10 +259,8 @@
 
         <div class="card soft" style="margin:0;">
           <h2 class="mt0" data-i18n="museums_item_san_pablo_title">Iglesia Conventual de San Pablo – Dominicos (Valladolid)</h2>
-          <p data-i18n="museums_item_san_pablo_text">
-            Enlace institucional disponible.
-          </p>
-          <div class="btnRow" style="justify-content:flex-start;">
+          <p data-i18n="museums_item_san_pablo_text">Enlace institucional disponible.</p>
+          <div class="btnRow left">
             <a class="btn ghost"
                href="https://www.dominicos.org/quienes-somos/dominicos-en-el-mundo/espana/valladolid/san-pablo/"
                target="_blank" rel="noopener"
@@ -273,7 +273,7 @@
 
       <div class="hr"></div>
 
-      <!-- OTROS MUSEOS EN PREPARACIÓN (de tu rutas.html original) -->
+      <!-- OTROS MUSEOS EN PREPARACIÓN -->
       <h2 data-i18n="museums_more_prep_title">Otros museos (en preparación)</h2>
 
       <div class="grid">
@@ -301,7 +301,7 @@
       </div>
 
       <p class="note" data-i18n="museums_more_note">
-        Este apartado crecerá incorporando otros museos y espacios conventuales que compartan los valores culturales y patrimoniales de DULCESOR.
+        Este apartado se ampliará progresivamente incorporando otros museos y espacios conventuales que compartan los valores culturales y patrimoniales de DULCESOR.
       </p>
     </section>
 
@@ -314,6 +314,24 @@
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/header.js" defer></script>
   <script src="assets/js/footer.js" defer></script>
+
+  <!-- JS SOLO para marcar activo Rutas/Museos -->
+  <script>
+    (function(){
+      function setActive(){
+        const hash = (location.hash || "#rutas").toLowerCase();
+        const rutas = document.getElementById("nav-rutas");
+        const museos = document.getElementById("nav-museos");
+        if (!rutas || !museos) return;
+
+        rutas.classList.toggle("active", hash === "#rutas");
+        museos.classList.toggle("active", hash === "#museos");
+      }
+
+      window.addEventListener("hashchange", setActive);
+      document.addEventListener("DOMContentLoaded", setActive);
+    })();
+  </script>
 
 </body>
 </html>
