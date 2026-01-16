@@ -6,181 +6,302 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- SEO -->
-  <meta name="description" content="Rutas monacales, museos conventuales y enlaces institucionales a monasterios y conventos. Asociación Cultural DULCESOR.">
+  <meta name="description" content="Rutas monacales y museos conventuales. Línea cultural de DULCESOR dedicada a la difusión del patrimonio monástico y la tradición artesana.">
   <meta name="keywords" content="DULCESOR, rutas monacales, museos conventuales, monasterios, conventos, patrimonio cultural">
-
-  <!-- Evita el 404 de favicon.ico -->
-  <link rel="icon" href="assets/logos/logo-asociacion.png">
 
   <!-- CSS global -->
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Estilos SOLO de esta página (navegación interna + media) -->
+  <style>
+    /* Navegación interna (Rutas / Museos) */
+    .sectionNav{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin: 6px 0 18px;
+    }
+    .sectionNav a{
+      text-decoration:none;
+      border:1px solid rgba(0,0,0,0.18);
+      background: rgba(255,255,255,0.55);
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:12px;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color: rgba(0,0,0,0.78);
+    }
+    .sectionNav a:hover{
+      border-color: rgba(0,0,0,0.35);
+    }
+
+    /* Mejor scroll a anclas */
+    #rutas, #museos { scroll-margin-top: 18px; }
+
+    /* Separador fino */
+    .hr{
+      height:1px;
+      background: rgba(0,0,0,0.08);
+      margin: 14px 0;
+    }
+
+    /* Bloque imagen + texto */
+    :root{ --poster-max: 360px; } /* ajusta si quieres (320–520px) */
+    .mediaCard{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+      margin-top: 14px;
+    }
+    .poster{
+      width: min(100%, var(--poster-max));
+      height:auto;
+      display:block;
+      border-radius:14px;
+      border: 1px solid rgba(0,0,0,0.10);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    }
+    @media (max-width: 768px){
+      :root{ --poster-max: 320px; }
+      .mediaCard{ gap:14px; }
+    }
+
+    /* Grid para museos con enlace */
+    .museumGrid{
+      display:grid;
+      gap:10px;
+      margin-top: 10px;
+    }
+    @media (min-width: 820px){
+      .museumGrid{ grid-template-columns: 1fr 1fr; }
+    }
+
+    .mt0{ margin-top: 0; }
+  </style>
 </head>
 
 <body>
 
   <!-- HEADER (inyectado por JS) -->
-  <div id="site-header"></div>
+  <header id="site-header"></header>
 
   <!-- CONTENIDO PRINCIPAL -->
   <main class="wrap">
 
     <!-- HERO -->
     <section class="hero">
-      <h1>Rutas monacales</h1>
-      <p>
+      <h1 data-i18n="routes_title">Rutas monacales</h1>
+      <p data-i18n="routes_subtitle">
         Línea cultural de DULCESOR dedicada a la difusión del patrimonio monástico y la tradición artesana,
         con enlaces institucionales y recursos culturales.
       </p>
     </section>
 
+    <!-- Navegación interna (como “dos páginas” dentro de una) -->
+    <nav class="sectionNav" aria-label="Secciones de rutas">
+      <a href="#rutas" data-i18n="routes_nav_routes">Rutas</a>
+      <a href="#museos" data-i18n="routes_nav_museums">Museos</a>
+    </nav>
+
+    <!-- =========================
+         SECCIÓN RUTAS
+    ========================== -->
+    <section id="rutas" class="card">
+      <h2 data-i18n="routes_section_title">Rutas</h2>
+      <p class="note" data-i18n="routes_section_note">
+        Accede también a la sección de Museos desde la navegación superior.
+      </p>
+    </section>
+
     <!-- ENFOQUE -->
     <section class="card">
-      <h2>Enfoque cultural</h2>
-      <p>
+      <h2 data-i18n="routes_focus_title">Enfoque cultural</h2>
+      <p data-i18n="routes_focus_text_1">
         Este espacio se concibe como una línea de difusión cultural y patrimonial. No es una web turística genérica:
         se prioriza un tono institucional, sobrio y respetuoso, promoviendo el conocimiento y la puesta en valor del
         patrimonio monástico y la repostería artesanal.
       </p>
-      <p class="note">
+      <p class="note" data-i18n="routes_focus_note">
         La información y los listados se ampliarán progresivamente conforme avance la actividad de la asociación.
       </p>
     </section>
 
-    <!-- MUSEOS CONVENTUALES -->
-    <section class="card">
-      <h2>Museos conventuales</h2>
-      <p>
-        DULCESOR apoya la conservación y difusión del patrimonio cultural vinculado a la vida conventual,
-        promoviendo los museos conventuales como espacios vivos de memoria, arte y tradición.
-      </p>
-
-      <div class="hr"></div>
-
-      <!-- PRIORITARIO -->
-      <section class="card soft">
-        <h2 style="margin-top:0;">Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)</h2>
-        <p>
-          Museo de arte sacro barroco en el monasterio cisterciense, con un conjunto patrimonial de gran relevancia.
-          Espacio vinculado a la identidad cultural de DULCESOR.
-        </p>
-
-        <!-- Imagen: se mantiene como en tu archivo original -->
-        <div class="mediaCard" style="margin-top:14px;">
-          <img
-            class="poster"
-            src="assets/img/dolorosa-santa-ana.jpg"
-            alt="Dolorosa · Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)"
-            loading="lazy"
-          >
-          <div>
-            <div class="btnRow" style="margin-bottom:10px;">
-              <span class="pill">Prioritario</span>
-              <span class="pill">Museo conventual</span>
-              <span class="pill">Valladolid</span>
-            </div>
-
-            <div class="btnRow">
-              <a class="btn ghost" href="https://museosanjoaquinysantaana.es/" target="_blank" rel="noopener">
-                Web oficial del museo
-              </a>
-              <a class="btn ghost" href="#" onclick="return false;" aria-disabled="true">
-                Experiencia virtual (RV) · Próximamente
-              </a>
-            </div>
-
-            <p class="note" style="margin-top:12px;">
-              Se está desarrollando una experiencia virtual (RV) vinculada a piezas del museo, que se presentará próximamente.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- OTROS MUSEOS -->
-      <section class="card">
-        <h2>Otros museos (en preparación)</h2>
-
-        <div class="grid">
-          <div class="card soft" style="margin:0;">
-            <h2 style="margin-top:0;">Monasterio de Santa Clara (Tordesillas) · Conjunto monumental</h2>
-            <p>
-              Espacio monástico con valor histórico y patrimonial destacado. Este bloque está preparado para completarse con
-              información institucional y enlace oficial.
-            </p>
-            <div class="btnRow">
-              <span class="pill">En preparación</span>
-            </div>
-          </div>
-
-          <div class="card soft" style="margin:0;">
-            <h2 style="margin-top:0;">Convento de San Francisco (Medina de Rioseco) · Patrimonio sacro</h2>
-            <p>
-              Espacio vinculado al patrimonio conventual de la provincia. Este bloque está preparado para completarse con
-              información institucional y enlace oficial.
-            </p>
-            <div class="btnRow">
-              <span class="pill">En preparación</span>
-            </div>
-          </div>
-        </div>
-
-        <p class="note">
-          Este apartado crecerá incorporando otros museos conventuales que compartan los valores culturales y patrimoniales de DULCESOR.
-        </p>
-      </section>
-    </section>
-
     <!-- RUTAS (EN PREPARACIÓN) -->
     <section class="card">
-      <h2>Rutas de una mañana</h2>
-      <p>
+      <h2 data-i18n="routes_morning_title">Rutas de una mañana</h2>
+      <p data-i18n="routes_morning_text">
         Prepararemos pequeñas rutas culturales (mañana o media jornada) para visitar tres o cuatro monasterios, museos o espacios patrimoniales,
         con posibilidad de enlazar a la compra de productos si la comunidad dispone de canales oficiales.
       </p>
       <div class="btnRow">
-        <span class="pill">En preparación</span>
+        <span class="pill" data-i18n="routes_in_prep">En preparación</span>
       </div>
-      <p class="note">
+      <p class="note" data-i18n="routes_morning_note">
         Estas rutas se publicarán cuando estén contrastadas y presenten un enfoque cultural y respetuoso con las comunidades.
       </p>
     </section>
 
     <!-- CONVENTOS / MONASTERIOS -->
     <section class="card">
-      <h2>Conventos y monasterios</h2>
-      <p>
+      <h2 data-i18n="routes_monasteries_title">Conventos y monasterios</h2>
+      <p data-i18n="routes_monasteries_text">
         Enlaces directos a webs oficiales o canales institucionales de conventos y monasterios. Cuando existan tiendas online o sistemas
         de venta propios, se enlazarán para facilitar el acceso a sus productos.
       </p>
-      <p class="note">
+      <p class="note" data-i18n="routes_monasteries_note">
         DULCESOR no comercializa productos en esta web. Los enlaces dirigen a plataformas externas gestionadas por cada comunidad o entidad.
       </p>
 
       <div class="grid">
         <div class="card soft" style="margin:0;">
-          <h2 style="margin-top:0;">Convento / Monasterio (Ejemplo 1)</h2>
-          <p>
+          <h2 class="mt0" data-i18n="routes_example_1_title">Convento / Monasterio (Ejemplo 1)</h2>
+          <p data-i18n="routes_example_1_text">
             Bloque preparado para incorporar nombre, localidad, breve descripción institucional y enlace oficial.
           </p>
           <div class="btnRow">
-            <a class="btn ghost" href="#" onclick="return false;" aria-disabled="true">Web oficial · Próximamente</a>
-            <a class="btn ghost" href="#" onclick="return false;" aria-disabled="true">Compra de productos · Próximamente</a>
+            <a class="btn ghost" href="#" onclick="return false;" aria-disabled="true" data-i18n="routes_example_web_soon">Web oficial · Próximamente</a>
+            <a class="btn ghost" href="#" onclick="return false;" aria-disabled="true" data-i18n="routes_example_shop_soon">Compra de productos · Próximamente</a>
           </div>
         </div>
 
         <div class="card soft" style="margin:0;">
-          <h2 style="margin-top:0;">Convento / Monasterio (Ejemplo 2)</h2>
-          <p>
+          <h2 class="mt0" data-i18n="routes_example_2_title">Convento / Monasterio (Ejemplo 2)</h2>
+          <p data-i18n="routes_example_2_text">
             Bloque preparado para incorporar nombre, localidad, breve descripción institucional y enlace oficial.
           </p>
           <div class="btnRow">
-            <a class="btn ghost" href="#" onclick="return false;" aria-disabled="true">Web oficial · Próximamente</a>
-            <a class="btn ghost" href="#" onclick="return false;" aria-disabled="true">Compra de productos · Próximamente</a>
+            <a class="btn ghost" href="#" onclick="return false;" aria-disabled="true" data-i18n="routes_example_web_soon">Web oficial · Próximamente</a>
+            <a class="btn ghost" href="#" onclick="return false;" aria-disabled="true" data-i18n="routes_example_shop_soon">Compra de productos · Próximamente</a>
           </div>
         </div>
       </div>
 
-      <p class="note">
+      <p class="note" data-i18n="routes_example_hint">
         Para añadir un nuevo convento/monasterio, duplica uno de los bloques “Ejemplo” y cambia título, texto y enlaces.
+      </p>
+    </section>
+
+    <!-- =========================
+         SECCIÓN MUSEOS
+    ========================== -->
+    <section id="museos" class="card">
+      <h2 data-i18n="museums_section_title">Museos</h2>
+      <p data-i18n="museums_section_intro">
+        DULCESOR apoya la conservación y difusión del patrimonio cultural vinculado a la vida conventual,
+        promoviendo los museos conventuales como espacios vivos de memoria, arte y tradición.
+      </p>
+    </section>
+
+    <!-- MUSEO PRIORITARIO -->
+    <section class="card soft">
+      <h2 class="mt0" data-i18n="museums_priority_title">Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)</h2>
+      <p data-i18n="museums_priority_text">
+        Museo de arte sacro barroco en el monasterio cisterciense, con un conjunto patrimonial de gran relevancia.
+        Espacio vinculado a la identidad cultural de DULCESOR.
+      </p>
+
+      <div class="mediaCard">
+        <img
+          class="poster"
+          src="assets/img/dolorosa-santa-ana.jpg"
+          alt="Dolorosa · Museo del Real Monasterio de San Joaquín y Santa Ana (Valladolid)"
+          loading="lazy"
+        >
+
+        <div>
+          <div class="btnRow" style="margin-bottom:10px;">
+            <span class="pill" data-i18n="museums_pill_priority">Prioritario</span>
+            <span class="pill" data-i18n="museums_pill_conventual">Museo conventual</span>
+            <span class="pill" data-i18n="museums_pill_city">Valladolid</span>
+          </div>
+
+          <div class="btnRow" style="justify-content:flex-start;">
+            <a class="btn ghost" href="https://museosanjoaquinysantaana.es/" target="_blank" rel="noopener"
+               data-i18n="museums_btn_official">
+              Web oficial del museo
+            </a>
+            <a class="btn ghost" href="#" onclick="return false;" aria-disabled="true" data-i18n="museums_btn_vr_soon">
+              Experiencia virtual (RV) · Próximamente
+            </a>
+          </div>
+
+          <p class="note" data-i18n="museums_priority_note">
+            Se está desarrollando una experiencia virtual (RV) vinculada a piezas del museo, que se presentará próximamente.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OTROS MUSEOS (CON ENLACE) -->
+    <section class="card">
+      <h2 data-i18n="museums_other_title">Otros museos y espacios conventuales</h2>
+
+      <div class="museumGrid">
+        <div class="card soft" style="margin:0;">
+          <h2 class="mt0" data-i18n="museums_item_santa_isabel_title">Museo del Monasterio de Santa Isabel (Valladolid)</h2>
+          <p data-i18n="museums_item_santa_isabel_text">
+            Enlace informativo institucional disponible.
+          </p>
+          <div class="btnRow" style="justify-content:flex-start;">
+            <a class="btn ghost"
+               href="https://es.wikipedia.org/wiki/Convento_de_Santa_Isabel_(Valladolid)"
+               target="_blank" rel="noopener"
+               data-i18n="museums_btn_visit_web">
+              Visitar web
+            </a>
+          </div>
+        </div>
+
+        <div class="card soft" style="margin:0;">
+          <h2 class="mt0" data-i18n="museums_item_san_pablo_title">Iglesia Conventual de San Pablo – Dominicos (Valladolid)</h2>
+          <p data-i18n="museums_item_san_pablo_text">
+            Enlace institucional disponible.
+          </p>
+          <div class="btnRow" style="justify-content:flex-start;">
+            <a class="btn ghost"
+               href="https://www.dominicos.org/quienes-somos/dominicos-en-el-mundo/espana/valladolid/san-pablo/"
+               target="_blank" rel="noopener"
+               data-i18n="museums_btn_visit_web">
+              Visitar web
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <!-- OTROS MUSEOS EN PREPARACIÓN (de tu rutas.html original) -->
+      <h2 data-i18n="museums_more_prep_title">Otros museos (en preparación)</h2>
+
+      <div class="grid">
+        <div class="card soft" style="margin:0;">
+          <h2 class="mt0" data-i18n="museums_prep_1_title">Monasterio de Santa Clara (Tordesillas) · Conjunto monumental</h2>
+          <p data-i18n="museums_prep_1_text">
+            Espacio monástico con valor histórico y patrimonial destacado. Este bloque está preparado para completarse con
+            información institucional y enlace oficial.
+          </p>
+          <div class="btnRow">
+            <span class="pill" data-i18n="routes_in_prep">En preparación</span>
+          </div>
+        </div>
+
+        <div class="card soft" style="margin:0;">
+          <h2 class="mt0" data-i18n="museums_prep_2_title">Convento de San Francisco (Medina de Rioseco) · Patrimonio sacro</h2>
+          <p data-i18n="museums_prep_2_text">
+            Espacio vinculado al patrimonio conventual de la provincia. Este bloque está preparado para completarse con
+            información institucional y enlace oficial.
+          </p>
+          <div class="btnRow">
+            <span class="pill" data-i18n="routes_in_prep">En preparación</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="note" data-i18n="museums_more_note">
+        Este apartado crecerá incorporando otros museos y espacios conventuales que compartan los valores culturales y patrimoniales de DULCESOR.
       </p>
     </section>
 
