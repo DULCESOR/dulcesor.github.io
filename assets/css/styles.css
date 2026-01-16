@@ -47,7 +47,7 @@ a { color: inherit; }
 
 /* AJUSTA SOLO ESTE VALOR para hacerlo más pequeño/grande */
 .brandLogo {
-  height: 50px;      /* <-- Baja a 70px si lo quieres más pequeño */
+  height: 70px;      /* <-- Baja a 70px si lo quieres más pequeño */
   width: auto;
   max-width: 420px;  /* evita que se desmadre en pantallas grandes */
   display: block;
