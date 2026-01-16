@@ -11,12 +11,60 @@
 
   <!-- CSS global -->
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Ajustes SOLO de esta página (sin tocar styles.css) -->
+  <style>
+    .sponsorsBox { margin-top: 16px; }
+
+    .sponsorsLogoWrap{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px 10px;
+    }
+
+    .sponsorsLogo{
+      width:25%;
+      max-width:240px;
+      min-width:150px;
+      height:auto;
+      display:block;
+    }
+
+    .center { text-align:center; }
+
+    .btnRow{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      margin-top:12px;
+      flex-wrap:wrap;
+    }
+
+    /* Botón simple (por si tu styles.css aún no tiene .btn/.ghost) */
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      border-radius:999px;
+      padding:10px 14px;
+      font-size:12px;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      cursor:pointer;
+    }
+
+    .btn.ghost{
+      border:1px solid rgba(0,0,0,0.22);
+      background: rgba(255,255,255,0.45);
+      color: rgba(0,0,0,0.78);
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- HEADER (inyectado por JS) -->
-  <div id="site-header"></div>
+  <header id="site-header"></header>
 
   <main class="wrap">
 
@@ -31,14 +79,13 @@
         Estas entidades apoyan el desarrollo general de la Asociación Cultural DULCESOR.
       </p>
 
-      <div class="card soft" style="margin-top:16px;">
-        <div style="display:flex; align-items:center; justify-content:center; padding:18px 10px;">
+      <div class="card sponsorsBox">
+        <div class="sponsorsLogoWrap">
           <a href="https://www.nb21.es/" target="_blank" rel="noopener noreferrer" aria-label="NB21">
             <img
+              class="sponsorsLogo"
               src="assets/logos/logo-nb21.png"
-              alt="NB21"
-              style="width:25%; max-width:240px; min-width:150px; height:auto;"
-            >
+              alt="NB21">
           </a>
         </div>
 
@@ -46,7 +93,7 @@
           Patrocinador de la Asociación Cultural DULCESOR.
         </p>
 
-        <div class="btnRow" style="justify-content:center; margin-top:12px;">
+        <div class="btnRow">
           <a class="btn ghost" href="https://www.nb21.es/" target="_blank" rel="noopener noreferrer" data-i18n="sponsors_visit_web">
             Visitar web
           </a>
@@ -59,7 +106,7 @@
   <!-- FOOTER (inyectado por JS) -->
   <div id="site-footer"></div>
 
-  <!-- JS globales -->
+  <!-- JS globales (orden obligatorio) -->
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/header.js" defer></script>
   <script src="assets/js/footer.js" defer></script>
