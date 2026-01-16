@@ -5,8 +5,8 @@
   }
 
   function buildHeader(currentFile) {
-    // Ruta real en tu repo:
-    const logoSrc = "assets/logos/logo-asociacion.png";
+    // Ruta correcta según tu repo (assets/img/)
+    const logoSrc = "assets/img/logo-asociacion.png";
 
     return `
 <header id="site-header" class="siteHeader" role="banner">
@@ -14,7 +14,7 @@
     <!-- FILA 1: logo izquierda / idiomas derecha -->
     <div class="topbar">
       <a class="brand" href="index.html" aria-label="DULCESOR - inicio">
-        <img class="brandLogo" src="${logoSrc}" alt="Logotipo Asociación Cultural DULCESOR" style="width:175%; height:auto;" />
+        <img class="brandLogo" src="${logoSrc}" alt="Logotipo Asociación Cultural DULCESOR" />
       </a>
 
       <div class="lang" aria-label="Selección de idioma">
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <!-- FILA 2: menú alineado a la izquierda (INICIO bajo el logo) -->
+    <!-- FILA 2: menú -->
     <nav class="mainNav" aria-label="Navegación principal">
       <a href="index.html" class="${currentFile === "index.html" ? "current" : ""}"><span data-i18n="nav_home">Inicio</span></a>
       <a href="asociacion.html" class="${currentFile === "asociacion.html" ? "current" : ""}"><span data-i18n="nav_association">Asociación</span></a>
