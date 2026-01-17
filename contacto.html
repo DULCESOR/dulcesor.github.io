@@ -5,9 +5,14 @@
   <title>Contacto · DULCESOR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- SEO -->
   <meta name="description" content="Canales de comunicación de la Asociación Cultural DULCESOR.">
   <meta name="keywords" content="DULCESOR, contacto, asociación cultural, repostería monacal, Valladolid">
 
+  <!-- Evita el 404 de favicon.ico -->
+  <link rel="icon" href="assets/logos/logo-asociacion.png">
+
+  <!-- CSS global -->
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
@@ -23,34 +28,61 @@
       <p data-i18n="contact_subtitle">Canales de comunicación de la Asociación Cultural DULCESOR.</p>
     </section>
 
-    <section class="card">
-      <h2 data-i18n="contact_block_title">Información de contacto</h2>
+    <!-- BLOQUES -->
+    <section class="pageGrid" aria-label="Bloques de contacto">
 
-      <div class="grid">
-        <div class="row">
-          <span class="label" data-i18n="contact_email_label">Información general</span>
-          <span class="value"><a href="mailto:info@dulcesor.org">info@dulcesor.org</a></span>
+      <!-- (1) Información de contacto -->
+      <section class="card" aria-label="Información de contacto">
+        <h2 data-i18n="contact_block_title">Información de contacto</h2>
+
+        <div class="grid">
+          <div class="row">
+            <span class="label" data-i18n="contact_email_label">Información general</span>
+            <span class="value"><a href="mailto:info@dulcesor.org">info@dulcesor.org</a></span>
+          </div>
+
+          <div class="row">
+            <span class="label" data-i18n="contact_contact_label">Contacto institucional</span>
+            <span class="value"><a href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a></span>
+          </div>
+
+          <div class="row">
+            <span class="label" data-i18n="contact_contest_label">Concursos</span>
+            <span class="value"><a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a></span>
+          </div>
+
+          <div class="row">
+            <span class="label" data-i18n="contact_address_label">Sede</span>
+            <span class="value" data-i18n="contact_address_value">
+              Plaza Santa Ana, 4 · 47001 Valladolid (España)
+            </span>
+          </div>
         </div>
 
-        <div class="row">
-          <span class="label" data-i18n="contact_contact_label">Contacto institucional</span>
-          <span class="value"><a href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a></span>
+        <p class="note" data-i18n="contact_note">
+          Si deseas colaborar o ampliar información, escríbenos y te responderemos a la mayor brevedad.
+        </p>
+      </section>
+
+      <!-- (2) Bloque de colaboración -->
+      <section class="card soft" aria-label="Colaboración">
+        <h2 data-i18n="contact_collab_title">Colabora con DULCESOR</h2>
+        <p data-i18n="contact_collab_text">
+          Si eres una institución, entidad o colectivo interesado en apoyar proyectos culturales o actividades,
+          podemos estudiar vías de colaboración y participación.
+        </p>
+
+        <div class="btnRow" style="justify-content:flex-start;">
+          <a class="btn ghost" href="patrocinadores.html" data-i18n="contact_collab_btn">
+            Ver patrocinadores
+          </a>
         </div>
 
-        <div class="row">
-          <span class="label" data-i18n="contact_contest_label">Concursos</span>
-          <span class="value"><a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a></span>
-        </div>
+        <p class="note" data-i18n="contact_collab_note">
+          También puedes escribirnos directamente a contacto@dulcesor.org.
+        </p>
+      </section>
 
-        <div class="row">
-          <span class="label" data-i18n="contact_address_label">Sede</span>
-          <span class="value" data-i18n="contact_address_value">Plaza Santa Ana, 4  47001 Valladolid (España)</span>
-        </div>
-      </div>
-
-      <p class="note" data-i18n="contact_note">
-        Si deseas colaborar o ampliar información, escríbenos y te responderemos a la mayor brevedad.
-      </p>
     </section>
 
   </main>
@@ -65,3 +97,4 @@
 
 </body>
 </html>
+
