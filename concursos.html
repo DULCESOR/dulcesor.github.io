@@ -5,85 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Concurso | Dulcesor</title>
 
-  <!-- Si ya tienes CSS global, déjalo -->
+  <!-- Tu CSS global -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
 
-  <!-- CSS SOLO para esta página (no afecta al resto) -->
+  <!-- Estilos SOLO para esta página (compacta + recortes de imágenes) -->
   <style>
-    /* =========================
-       Ajustes página concursos
-       ========================= */
-    body.page-concursos{
+    body.page-concurso{
       background: #faf8f3;
       color: #1e1e1e;
     }
 
-    .page-wrap{
+    .wrap{
       max-width: 1120px;
       margin: 0 auto;
-      padding: 28px 18px 56px;
-    }
-
-    .page-head{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      margin-bottom: 18px;
+      padding: 28px 18px 64px;
     }
 
     .kicker{
       letter-spacing: .22em;
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 12px;
-      opacity: .75;
+      opacity: .7;
+      margin: 0;
     }
 
     .title{
-      font-size: clamp(28px, 3.2vw, 40px);
-      line-height: 1.1;
-      margin: 0;
+      margin: 10px 0 8px;
+      font-size: clamp(28px, 3.2vw, 42px);
+      line-height: 1.05;
     }
 
     .lead{
       margin: 0;
       max-width: 72ch;
+      line-height: 1.55;
       opacity: .9;
-      line-height: 1.5;
+      font-size: 15px;
     }
 
-    /* =========================
-       Imagen artesanal (horizontal, compacta)
-       ========================= */
-    .hero-media{
-      margin: 18px 0 14px;
-      display: grid;
-      gap: 10px;
-    }
+    .section{ margin-top: 18px; }
 
+    /* Marcos (para que las imágenes no “rompan” y queden todas consistentes) */
     .media-frame{
       border-radius: 16px;
       overflow: hidden;
       border: 1px solid rgba(0,0,0,.10);
       background: rgba(255,255,255,.7);
-      max-width: 640px; /* para que no se vaya gigante */
     }
 
-    .media-frame.media-frame--wide{
-      aspect-ratio: 16 / 9;     /* controla el alto */
+    /* Horizontal compacta (como “IMAGEN ARTESANAL”) */
+    .media-wide{
+      aspect-ratio: 16 / 9;
+      max-width: 680px;
+    }
+
+    /* Imagen icónica del concurso (también horizontal compacta, un poco más pequeña) */
+    .media-wide.small{
+      max-width: 520px;
+      aspect-ratio: 16 / 10;
+    }
+
+    /* Vertical recortada y LIMITADA (para que no crezca infinita) */
+    .media-tall{
+      aspect-ratio: 4 / 5;
+      max-height: 340px; /* CLAVE para que sea compacto */
     }
 
     .media-frame img{
       width: 100%;
       height: 100%;
       display: block;
-      object-fit: cover;        /* recorte bonito sin deformar */
+      object-fit: cover;      /* recorta bonito sin deformar */
       object-position: center;
+      background: rgba(0,0,0,.04);
     }
 
-    /* =========================
-       CTA anticipado (inscripción)
-       ========================= */
+    /* CTA inscripción arriba */
     .cta-mini{
       display: flex;
       align-items: center;
@@ -92,8 +90,8 @@
       padding: 14px 16px;
       border-radius: 14px;
       border: 1px solid rgba(0,0,0,.12);
-      background: rgba(255,255,255,.75);
-      margin: 12px 0 18px;
+      background: rgba(255,255,255,.78);
+      margin: 16px 0 18px;
     }
 
     .cta-mini h3{
@@ -104,9 +102,9 @@
 
     .cta-mini p{
       margin: 0;
-      opacity: .9;
       font-size: 14px;
       line-height: 1.4;
+      opacity: .9;
     }
 
     .btn{
@@ -116,33 +114,24 @@
       padding: 10px 14px;
       border-radius: 999px;
       border: 1px solid rgba(0,0,0,.20);
-      text-decoration: none;
-      color: inherit;
       background: #fff;
+      color: inherit;
+      text-decoration: none;
       white-space: nowrap;
     }
+    .btn:hover{ filter: brightness(.98); }
 
-    .btn:hover{ filter: brightness(0.98); }
-
-    /* =========================
-       Grid de bloques / tarjetas compactas
-       ========================= */
+    /* Grid de tarjetas más compactas */
     .grid{
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
       align-items: start;
-    }
-
-    @media (max-width: 900px){
-      .grid{ grid-template-columns: 1fr; }
-      .cta-mini{ flex-direction: column; align-items: flex-start; }
-      .btn{ width: 100%; }
-      .media-frame{ max-width: 100%; }
+      margin-top: 16px;
     }
 
     .card{
-      background: rgba(255,255,255,.82);
+      background: rgba(255,255,255,.85);
       border: 1px solid rgba(0,0,0,.10);
       border-radius: 18px;
       overflow: hidden;
@@ -150,7 +139,7 @@
     }
 
     .card-body{
-      padding: 18px 18px 16px; /* más compacto */
+      padding: 18px 18px 14px;
     }
 
     .card h2{
@@ -180,73 +169,29 @@
       font-size: 14.5px;
     }
 
-    /* =========================
-       Imágenes dentro de tarjetas (control de tamaño)
-       ========================= */
-    .card-media{
-      border-top: 1px solid rgba(0,0,0,.08);
-      background: rgba(0,0,0,.02);
-      overflow: hidden;
-    }
-
-    /* horizontal: tipo banner */
-    .card-media--wide{
-      aspect-ratio: 16 / 10;
-      max-height: 280px;
-    }
-
-    /* vertical: recortada para no “romper” el layout */
-    .card-media--tall{
-      aspect-ratio: 4 / 5;
-      max-height: 340px; /* CLAVE: limita la altura */
-    }
-
-    .card-media img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
-    /* Etiqueta tipo “FUERA DE CONCURSO” */
+    /* Badge */
     .badge{
       display: inline-flex;
       align-items: center;
-      gap: 6px;
       border: 1px solid rgba(0,0,0,.18);
       border-radius: 999px;
       padding: 6px 10px;
       font-size: 11px;
       letter-spacing: .12em;
       text-transform: uppercase;
-      margin-top: 8px;
+      margin-top: 6px;
       background: rgba(255,255,255,.7);
     }
 
-    /* =========================
-       Sección inscripción (abajo)
-       ========================= */
-    .section{
-      margin-top: 22px;
-    }
-
-    .section h2{
-      margin: 0 0 10px;
-      font-size: 16px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
+    /* Descargas */
     .downloads{
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-top: 12px;
     }
 
-    /* =========================
-       Patrocinadores: grid limpio + logos controlados
-       ========================= */
+    /* Patrocinadores (sin institucional/privado, solo logos) */
     .sponsor-grid{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -270,36 +215,62 @@
     .sponsor img{
       width: 100%;
       max-width: 180px;
-      max-height: 54px; /* evita logos verticales enormes */
+      max-height: 54px;
       height: auto;
       object-fit: contain;
       display:block;
     }
+
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      .cta-mini{ flex-direction: column; align-items: flex-start; }
+      .btn{ width: 100%; }
+      .media-wide{ max-width: 100%; }
+    }
   </style>
 </head>
 
-<body class="page-concursos">
-  <main class="page-wrap">
+<body class="page-concurso">
+  <main class="wrap">
 
-    <!-- CABECERA -->
-    <header class="page-head">
-      <div class="kicker">Concurso</div>
+    <!-- =========================
+         CABECERA (solo esta página)
+         ========================= -->
+    <header>
+      <p class="kicker">Concurso</p>
       <h1 class="title">Título del concurso</h1>
       <p class="lead">
         Texto introductorio del concurso (lugar, fechas, idea principal). Mantén esto corto.
       </p>
     </header>
 
-    <!-- IMAGEN ARTESANAL (compacta, horizontal) -->
-    <section class="hero-media" aria-label="Imagen artesanal">
-      <div class="kicker">Imagen artesanal</div>
-      <figure class="media-frame media-frame--wide">
-        <!-- Cambia por tu imagen horizontal -->
-        <img src="/assets/img/imagen-artesanal.jpg" alt="Imagen artesanal" loading="lazy">
+    <!-- =========================
+         CONFIG IMÁGENES (MUY fácil)
+         Cambia solo estos nombres
+         ========================= -->
+    <!--
+      Archivos disponibles en /assets/img/ (según tu repo):
+      - concurso-imagen0.jpg
+      - concurso-imagen1.jpg
+      - concurso-imagen2.jpg
+      - concurso-imagen3.jpg
+      - concurso-imagen5.jpg
+      - cartel-I-concurso.jpeg
+      (y otros de asociación)
+    -->
+
+    <!-- =========================
+         IMAGEN ARTESANAL (horizontal compacta)
+         ========================= -->
+    <section class="section" aria-label="Imagen artesanal">
+      <p class="kicker">Imagen artesanal</p>
+      <figure class="media-frame media-wide">
+        <!-- Cambia solo el nombre del archivo aquí si quieres otra -->
+        <img id="img-artesanal" src="/assets/img/concurso-imagen1.jpg" alt="Imagen artesanal" loading="lazy">
       </figure>
     </section>
 
-    <!-- CTA anticipado (solo la llamada, no duplicar contenido) -->
+    <!-- CTA anticipado -->
     <section class="cta-mini" aria-label="Inscripción">
       <div>
         <h3>INSCRIPCIÓN · Convocatoria inicial</h3>
@@ -308,7 +279,9 @@
       <a class="btn" href="#inscripcion">INSCRIPCIÓN – PRÓXIMAMENTE</a>
     </section>
 
-    <!-- BLOQUES PRINCIPALES (más compactos) -->
+    <!-- =========================
+         BLOQUES (compactos + imágenes recortadas)
+         ========================= -->
     <section class="grid" aria-label="Contenido del concurso">
 
       <!-- BLOQUE 1 -->
@@ -331,10 +304,9 @@
           <p>Estas actividades refuerzan el carácter cultural y reflexivo del concurso.</p>
         </div>
 
-        <!-- Imagen vertical recortada (ya NO rompe) -->
-        <figure class="card-media card-media--tall">
-          <!-- Cambia por tu imagen vertical -->
-          <img src="/assets/img/imagen-vertical-1.jpg" alt="Actividad cultural" loading="lazy">
+        <!-- Imagen vertical controlada (NO rompe) -->
+        <figure class="media-frame media-tall">
+          <img id="img-bloque1" src="/assets/img/concurso-imagen2.jpg" alt="Actividad cultural" loading="lazy">
         </figure>
       </article>
 
@@ -357,55 +329,56 @@
           <span class="badge">Fuera de concurso</span>
         </div>
 
-        <!-- Si quieres una imagen aquí, usa wide para que no crezca -->
-        <!--
-        <figure class="card-media card-media--wide">
-          <img src="/assets/img/imagen-horizontal-2.jpg" alt="Innovación" loading="lazy">
+        <!-- Si quieres imagen aquí, usa otra vertical controlada -->
+        <figure class="media-frame media-tall">
+          <img id="img-bloque2" src="/assets/img/concurso-imagen3.jpg" alt="Innovación" loading="lazy">
         </figure>
-        -->
       </article>
 
     </section>
 
-    <!-- AQUÍ es donde va concurso-imagen0 SOLO en esta página -->
+    <!-- =========================
+         IMAGEN ICÓNICA (concurso-imagen0)
+         SOLO en esta página
+         ========================= -->
     <section class="section" aria-label="Imagen icónica del concurso">
-      <div class="kicker">Imagen del concurso</div>
-      <div class="media-frame media-frame--wide" style="max-width: 520px;">
-        <img src="/assets/img/concurso-imagen0.jpg" alt="Imagen icónica del concurso" loading="lazy">
-      </div>
+      <p class="kicker">Imagen del concurso</p>
+      <figure class="media-frame media-wide small">
+        <img id="img-iconica" src="/assets/img/concurso-imagen0.jpg" alt="Imagen icónica del concurso" loading="lazy">
+      </figure>
     </section>
 
-    <!-- INSCRIPCIÓN (bloque completo abajo, como ya querías) -->
+    <!-- =========================
+         INSCRIPCIÓN (bloque completo abajo)
+         ========================= -->
     <section id="inscripcion" class="section" aria-label="Inscripción">
-      <h2>Inscripción · Convocatoria inicial</h2>
-
+      <p class="kicker">Inscripción</p>
+      <h2 style="margin:10px 0 6px; font-size:18px;">INSCRIPCIÓN · Convocatoria inicial</h2>
       <p class="lead" style="margin-top:0;">
         Aquí mantienes el bloque completo de inscripción. Si aún no está disponible, deja el texto “próximamente”.
       </p>
 
-      <div class="downloads" style="margin-top:12px;">
-        <!-- Solicitud (PDF) -->
+      <div class="downloads">
         <a class="btn" href="/assets/docs/solicitud-inscripcion.pdf" download>Descargar solicitud (PDF)</a>
-
-        <!-- Bases (si existe) -->
         <!-- <a class="btn" href="/assets/docs/bases.pdf" download>Descargar bases (PDF)</a> -->
       </div>
     </section>
 
-    <!-- PATROCINADORES (sin “institucional/privado”; solo logos) -->
+    <!-- =========================
+         PATROCINADORES (solo logos)
+         ========================= -->
     <section class="section" aria-label="Patrocinadores">
-      <h2>Patrocinadores</h2>
+      <p class="kicker">Patrocinadores</p>
+      <h2 style="margin:10px 0 6px; font-size:18px;">Patrocinadores</h2>
 
       <div class="sponsor-grid">
-        <!-- Cambia rutas y ALT. Elimina categorías: solo logos -->
+        <!-- Reemplaza los src por tus logos reales en /assets/logos/ -->
         <a class="sponsor" href="#" target="_blank" rel="noopener">
           <img src="/assets/logos/logo1.png" alt="Patrocinador 1">
         </a>
-
         <a class="sponsor" href="#" target="_blank" rel="noopener">
           <img src="/assets/logos/logo2.png" alt="Patrocinador 2">
         </a>
-
         <a class="sponsor" href="#" target="_blank" rel="noopener">
           <img src="/assets/logos/logo3.png" alt="Patrocinador 3">
         </a>
@@ -413,5 +386,32 @@
     </section>
 
   </main>
+
+  <!-- =========================
+       OPCIONAL: cambiar imágenes desde 1 solo sitio
+       (si prefieres, edita aquí y NO tocas el HTML)
+       ========================= -->
+  <script>
+    // ✅ Cambia SOLO estos nombres cuando quieras probar otras imágenes:
+    const IMG = {
+      artesanal: "concurso-imagen1.jpg",
+      bloque1: "concurso-imagen2.jpg",
+      bloque2: "concurso-imagen3.jpg",
+      iconica: "concurso-imagen0.jpg"
+      // también puedes usar: "cartel-I-concurso.jpeg" o "concurso-imagen5.jpg"
+    };
+
+    // Aplica rutas
+    const base = "/assets/img/";
+    const set = (id, file) => {
+      const el = document.getElementById(id);
+      if (el && file) el.src = base + file;
+    };
+
+    set("img-artesanal", IMG.artesanal);
+    set("img-bloque1", IMG.bloque1);
+    set("img-bloque2", IMG.bloque2);
+    set("img-iconica", IMG.iconica);
+  </script>
 </body>
 </html>
