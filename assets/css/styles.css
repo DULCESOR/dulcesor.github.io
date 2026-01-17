@@ -247,3 +247,49 @@ a { color: inherit; }
 .btn.ghost:hover{
   border-color: rgba(0,0,0,0.35);
 }
+/* =========================
+   Page Blocks (reutilizable 1-2-3-4...)
+   - 2 columnas en escritorio
+   - 1 columna en móvil
+   - Bloques crecen según contenido
+========================= */
+
+:root{
+  --text-soft: rgba(0,0,0,0.72);   /* gris oscuro elegante */
+  --text-strong: rgba(0,0,0,0.86);
+}
+
+/* Contenedor de bloques */
+.pageGrid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+/* 1 columna en pantallas medianas/móvil */
+@media (max-width: 860px){
+  .pageGrid{ grid-template-columns: 1fr; }
+}
+
+/* Los bloques dentro de pageGrid no necesitan margen extra */
+.pageGrid .card{ margin: 0; }
+
+/* Texto dentro de los bloques: menos negro, más gris */
+.pageGrid .card,
+.pageGrid .card p,
+.pageGrid .card li{
+  color: var(--text-soft);
+}
+
+/* Títulos un poco más marcados para jerarquía */
+.pageGrid .card h2{
+  color: var(--text-strong);
+}
+
+/* Por si necesitas un bloque que ocupe 2 columnas (ancho completo) */
+.pageGrid .span2{ grid-column: 1 / -1; }
+
+/* Por si quieres el hero alineado a la izquierda (como Asociación) */
+.heroLeft{ text-align: left; }
+
