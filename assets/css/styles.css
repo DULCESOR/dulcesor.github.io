@@ -64,10 +64,10 @@ a { color: inherit; }
 .langBtn {
   border: 1px solid rgba(0,0,0,0.18);
   background: #fff;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 999px;
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  font-size: 11px;
+  letter-spacing: 0.07em;
   cursor: pointer;
 }
 .langBtn.active {
