@@ -8,35 +8,43 @@
   <!-- SEO -->
   <meta name="description" content="Proyectos culturales y gastronómicos impulsados por la Asociación Cultural DULCESOR.">
   <meta name="keywords" content="DULCESOR, proyectos culturales, repostería monacal, patrimonio gastronómico, concursos, rutas">
+  <!-- <link rel="canonical" href="https://www.dulcesor.org/proyectos.html"> -->
+
+  <!-- Evita el 404 de favicon.ico -->
+  <link rel="icon" href="assets/logos/logo-asociacion.png">
 
   <!-- CSS global -->
   <link rel="stylesheet" href="assets/css/styles.css">
 
-  <!-- Estilos SOLO de esta página (para el bloque con imagen) -->
+  <!-- Ajustes SOLO de esta página: tamaño del cartel -->
   <style>
-    /* Cambia SOLO este valor para ajustar tamaño del cartel */
-    :root{ --poster-max: 280px; } /* prueba 320-520px */
+    :root{ --poster-max: 280px; } /* <-- cambia aquí si lo quieres aún más pequeño */
 
-    .mediaCard{
-      display:flex;
-      gap:18px;
-      align-items:flex-start;
-      flex-wrap:wrap;
-      margin-top: 14px;
-    }
-
-    .poster{
-      width: min(100%, var(--poster-max));
+    /* Seguridad: si no existiera en tu CSS global, aquí garantizamos el tamaño */
+    .mediaCard .poster{
+      width: 100%;
+      max-width: var(--poster-max);
       height: auto;
-      display:block;
+      display: block;
       border-radius: 14px;
-      border: 1px solid rgba(0,0,0,0.10);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      object-fit: contain;
     }
 
-    @media (max-width: 768px){
-      :root{ --poster-max: 280px; }
-      .mediaCard{ gap:14px; }
+    /* Si tu CSS global ya tiene .mediaCard, esto no estorba; si no, lo asegura */
+    .mediaCard{
+      display: grid;
+      grid-template-columns: var(--poster-max) 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+    @media (max-width: 860px){
+      .mediaCard{
+        grid-template-columns: 1fr;
+      }
+      .mediaCard .poster{
+        max-width: 320px;
+        margin: 0 auto;
+      }
     }
   </style>
 </head>
@@ -57,76 +65,82 @@
       </p>
     </section>
 
-    <!-- INTRODUCCIÓN GENERAL -->
-    <section class="card">
-      <h2 data-i18n="projects_intro_title">Presentación general</h2>
-      <p data-i18n="projects_intro_text">
-        Los proyectos de la Asociación Cultural DULCESOR tienen como objetivo poner en valor el patrimonio repostero de
-        los conventos y monasterios, fortalecer el vínculo entre gastronomía y cultura, y abrir un espacio de colaboración
-        entre artesanas, instituciones y ciudadanía.
-      </p>
-    </section>
+    <!-- BLOQUES (1-4) -->
+    <section class="pageGrid" aria-label="Bloques de proyectos">
 
-    <!-- LÍNEAS DE ACCIÓN -->
-    <section class="card soft">
-      <h2 data-i18n="projects_lines_title">Líneas de acción</h2>
-      <ul>
-        <li data-i18n="projects_line_1">
-          Organización de concursos, muestras y jornadas dedicadas a la repostería conventual.
-        </li>
-        <li data-i18n="projects_line_2">
-          Desarrollo de rutas y encuentros culturales para promover la visita a monasterios y museos relacionados con la tradición repostera.
-        </li>
-        <li data-i18n="projects_line_3">
-          Edición de materiales divulgativos y educativos sobre historia, técnicas y legado repostero.
-        </li>
-        <li data-i18n="projects_line_4">
-          Colaboraciones con instituciones académicas y culturales para investigación y difusión.
-        </li>
-      </ul>
-    </section>
+      <!-- (1) INTRODUCCIÓN GENERAL -->
+      <section class="card" aria-label="Presentación general">
+        <h2 data-i18n="projects_intro_title">Presentación general</h2>
+        <p data-i18n="projects_intro_text">
+          Los proyectos de la Asociación Cultural DULCESOR tienen como objetivo poner en valor el patrimonio repostero de
+          los conventos y monasterios, fortalecer el vínculo entre gastronomía y cultura, y abrir un espacio de colaboración
+          entre artesanas, instituciones y ciudadanía.
+        </p>
+      </section>
 
-    <!-- PROYECTOS DESTACADOS -->
-    <section class="card">
-      <h2 data-i18n="projects_featured_title">Proyectos destacados</h2>
+      <!-- (2) LÍNEAS DE ACCIÓN -->
+      <section class="card soft" aria-label="Líneas de acción">
+        <h2 data-i18n="projects_lines_title">Líneas de acción</h2>
+        <ul>
+          <li data-i18n="projects_line_1">
+            Organización de concursos, muestras y jornadas dedicadas a la repostería conventual.
+          </li>
+          <li data-i18n="projects_line_2">
+            Desarrollo de rutas y encuentros culturales para promover la visita a monasterios y museos relacionados con la tradición repostera.
+          </li>
+          <li data-i18n="projects_line_3">
+            Edición de materiales divulgativos y educativos sobre historia, técnicas y legado repostero.
+          </li>
+          <li data-i18n="projects_line_4">
+            Colaboraciones con instituciones académicas y culturales para investigación y difusión.
+          </li>
+        </ul>
+      </section>
 
-      <div class="mediaCard">
-        <img
-          src="assets/img/cartel-I-concurso.jpeg"
-          alt="Cartel del I Concurso Internacional de Repostería Monacal Conventual"
-          class="poster"
-          loading="lazy"
-        >
+      <!-- (3) PROYECTOS DESTACADOS (ancho completo) -->
+      <section class="card span2" aria-label="Proyectos destacados">
+        <h2 data-i18n="projects_featured_title">Proyectos destacados</h2>
 
-        <div>
-          <h3 data-i18n="projects_featured_project_title">
-            I Concurso Internacional de Repostería Monacal Conventual
-          </h3>
-          <p data-i18n="projects_featured_project_text">
-            Primera convocatoria internacional impulsada por DULCESOR, dedicada a reconocer y difundir la
-            repostería tradicional elaborada en monasterios y conventos, con la ciudad de Valladolid como primer escenario.
-          </p>
+        <div class="mediaCard">
+          <img
+            src="assets/img/cartel-I-concurso.jpeg"
+            alt="Cartel del I Concurso Internacional de Repostería Monacal Conventual"
+            class="poster"
+            loading="lazy"
+          >
 
-          <div class="btnRow">
-            <a href="concursos.html" class="btn ghost" data-i18n="projects_featured_more">
-              Ver más sobre los concursos
-            </a>
+          <div>
+            <h3 data-i18n="projects_featured_project_title">
+              I Concurso Internacional de Repostería Monacal Conventual
+            </h3>
+
+            <p data-i18n="projects_featured_project_text">
+              Primera convocatoria internacional impulsada por DULCESOR, dedicada a reconocer y difundir la
+              repostería tradicional elaborada en monasterios y conventos, con la ciudad de Valladolid como primer escenario.
+            </p>
+
+            <div class="btnRow">
+              <a href="concursos.html" class="btn ghost" data-i18n="projects_featured_more">
+                Ver más sobre los concursos
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- FUTUROS PROYECTOS -->
-    <section class="card soft">
-      <h2 data-i18n="projects_future_title">Futuros proyectos</h2>
-      <p data-i18n="projects_future_text">
-        Actualmente la Asociación Cultural DULCESOR trabaja en el diseño de nuevas iniciativas vinculadas a la
-        investigación y divulgación del patrimonio conventual, así como en la creación de alianzas internacionales que
-        fortalezcan la difusión cultural y gastronómica del legado repostero.
-      </p>
-      <p class="note" data-i18n="projects_future_note">
-        Si eres una institución, entidad o colectivo interesado en colaborar, puedes ponerte en contacto para explorar formas de participación.
-      </p>
+      <!-- (4) FUTUROS PROYECTOS (ancho completo) -->
+      <section class="card soft span2" aria-label="Futuros proyectos">
+        <h2 data-i18n="projects_future_title">Futuros proyectos</h2>
+        <p data-i18n="projects_future_text">
+          Actualmente la Asociación Cultural DULCESOR trabaja en el diseño de nuevas iniciativas vinculadas a la
+          investigación y divulgación del patrimonio conventual, así como en la creación de alianzas internacionales que
+          fortalezcan la difusión cultural y gastronómica del legado repostero.
+        </p>
+        <p class="note" data-i18n="projects_future_note">
+          Si eres una institución, entidad o colectivo interesado en colaborar, puedes ponerte en contacto para explorar formas de participación.
+        </p>
+      </section>
+
     </section>
 
   </main>
@@ -134,7 +148,7 @@
   <!-- FOOTER (inyectado por JS) -->
   <div id="site-footer"></div>
 
-  <!-- JS globales -->
+  <!-- JS globales (orden obligatorio) -->
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/header.js" defer></script>
   <script src="assets/js/footer.js" defer></script>
