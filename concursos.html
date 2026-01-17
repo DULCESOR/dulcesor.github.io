@@ -1,417 +1,391 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Concurso | Dulcesor</title>
+  <meta charset="utf-8">
+  <title>I Concurso Internacional de Repostería Monacal · DULCESOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Tu CSS global -->
-  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <!-- SEO -->
+  <meta name="description" content="I Concurso Internacional de Repostería Monacal. Valladolid · 1–4 de octubre. Actividades culturales, venta al público e innovación fuera de concurso.">
+  <meta name="keywords" content="DULCESOR, concurso, repostería monacal, repostería conventual, Valladolid, tradición, artesanía, cultura, innovación">
 
-  <!-- Estilos SOLO para esta página (compacta + recortes de imágenes) -->
+  <!-- CSS global -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" href="assets/logos/logo-asociacion.png">
+
+  <!-- Estilos SOLO de esta página (manteniendo la línea de la web) -->
   <style>
-    body.page-concurso{
-      background: #faf8f3;
-      color: #1e1e1e;
-    }
+    /* =========================
+       Ajustes visuales compactos
+       (solo afecta a esta página)
+       ========================= */
 
-    .wrap{
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 28px 18px 64px;
-    }
-
-    .kicker{
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      font-weight: 800;
-      font-size: 12px;
-      opacity: .7;
-      margin: 0;
-    }
-
-    .title{
-      margin: 10px 0 8px;
-      font-size: clamp(28px, 3.2vw, 42px);
-      line-height: 1.05;
-    }
-
-    .lead{
-      margin: 0;
-      max-width: 72ch;
-      line-height: 1.55;
-      opacity: .9;
-      font-size: 15px;
-    }
-
-    .section{ margin-top: 18px; }
-
-    /* Marcos (para que las imágenes no “rompan” y queden todas consistentes) */
-    .media-frame{
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(0,0,0,.10);
-      background: rgba(255,255,255,.7);
-    }
-
-    /* Horizontal compacta (como “IMAGEN ARTESANAL”) */
-    .media-wide{
-      aspect-ratio: 16 / 9;
-      max-width: 680px;
-    }
-
-    /* Imagen icónica del concurso (también horizontal compacta, un poco más pequeña) */
-    .media-wide.small{
-      max-width: 520px;
-      aspect-ratio: 16 / 10;
-    }
-
-    /* Vertical recortada y LIMITADA (para que no crezca infinita) */
-    .media-tall{
-      aspect-ratio: 4 / 5;
-      max-height: 340px; /* CLAVE para que sea compacto */
-    }
-
-    .media-frame img{
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;      /* recorta bonito sin deformar */
-      object-position: center;
-      background: rgba(0,0,0,.04);
-    }
-
-    /* CTA inscripción arriba */
-    .cta-mini{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 14px 16px;
-      border-radius: 14px;
-      border: 1px solid rgba(0,0,0,.12);
-      background: rgba(255,255,255,.78);
-      margin: 16px 0 18px;
-    }
-
-    .cta-mini h3{
-      margin: 0 0 4px;
-      font-size: 15px;
-      letter-spacing: .02em;
-    }
-
-    .cta-mini p{
-      margin: 0;
-      font-size: 14px;
-      line-height: 1.4;
-      opacity: .9;
-    }
-
-    .btn{
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(0,0,0,.20);
-      background: #fff;
-      color: inherit;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-    .btn:hover{ filter: brightness(.98); }
-
-    /* Grid de tarjetas más compactas */
-    .grid{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      align-items: start;
-      margin-top: 16px;
-    }
-
-    .card{
-      background: rgba(255,255,255,.85);
-      border: 1px solid rgba(0,0,0,.10);
+    /* Imagen conceptual (Bloque 1) */
+    .concursoHeroFigure{
+      margin: 0 0 14px;
       border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 1px 0 rgba(0,0,0,.03);
+      border: 1px solid rgba(0,0,0,0.10);
+      background: rgba(255,255,255,0.55);
+    }
+    .concursoHeroFigure img{
+      width: 100%;
+      height: 300px;          /* compacto */
+      object-fit: contain;    /* ilustración: no recortar */
+      display: block;
+      background: rgba(0,0,0,0.02);
+    }
+    @media (max-width: 860px){
+      .concursoHeroFigure img{ height: 240px; }
     }
 
-    .card-body{
-      padding: 18px 18px 14px;
+    /* Rejilla 2 columnas dentro de una tarjeta (para bloque destacado, etc.) */
+    .concursoInnerGrid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 860px){
+      .concursoInnerGrid{ grid-template-columns: 1fr; }
     }
 
-    .card h2{
-      margin: 0 0 8px;
-      font-size: 16px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
+    /* Bloques con imagen: marco + altura fija para que NO rompa */
+    .concursoImgFrame{
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.10);
+      background: rgba(255,255,255,0.55);
+    }
+    .concursoImgFrame img{
+      width: 100%;
+      height: 220px;        /* compacto */
+      object-fit: cover;    /* recorta bonito sin deformar */
+      display: block;
     }
 
-    .card h3{
-      margin: 0 0 10px;
-      font-size: 18px;
-      line-height: 1.25;
+    /* Imagen “cartel” un poco más alta */
+    .concursoImgFrame.isPoster img{
+      height: 280px;
+      object-fit: contain;  /* cartel: mejor sin recorte */
+      background: rgba(0,0,0,0.02);
     }
 
-    .card p{
-      margin: 0 0 10px;
-      line-height: 1.55;
-      opacity: .92;
-      font-size: 14.5px;
+    /* Imagen bajo texto (Bloque 5 - izquierda) */
+    .concursoImgFrame.isUnderText{
+      margin-top: 10px;
+    }
+    .concursoImgFrame.isUnderText img{
+      height: 200px; /* más bajita aún */
+      object-fit: cover;
     }
 
-    .card ul{
-      margin: 10px 0 0 18px;
-      padding: 0;
-      line-height: 1.55;
-      font-size: 14.5px;
+    /* Textos compactos dentro de cards (sin tocar tu CSS global) */
+    .concursoSmallNote{
+      margin: 10px 0 0;
+      font-size: 12.5px;
+      line-height: 1.45;
+      color: rgba(0,0,0,0.70);
     }
 
-    /* Badge */
-    .badge{
+    /* Etiqueta “Fuera de concurso” */
+    .concursoBadge{
       display: inline-flex;
       align-items: center;
-      border: 1px solid rgba(0,0,0,.18);
-      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.18);
+      background: rgba(255,255,255,0.65);
       padding: 6px 10px;
+      border-radius: 999px;
       font-size: 11px;
-      letter-spacing: .12em;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
-      margin-top: 6px;
-      background: rgba(255,255,255,.7);
-    }
-
-    /* Descargas */
-    .downloads{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    /* Patrocinadores (sin institucional/privado, solo logos) */
-    .sponsor-grid{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 14px;
       margin-top: 10px;
     }
 
-    .sponsor{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding: 12px;
-      border: 1px solid rgba(0,0,0,.10);
-      border-radius: 14px;
-      background: rgba(255,255,255,.85);
-      min-height: 86px;
-      text-decoration: none;
-      color: inherit;
+    /* Bloque 6 destacado */
+    .concursoHighlight{
+      border: 1px solid rgba(0,0,0,0.10);
+      background: rgba(255,255,255,0.72);
+      position: relative;
+    }
+    .concursoHighlight:before{
+      content: "";
+      position: absolute;
+      left: 0; right: 0; top: 0;
+      height: 4px;
+      background: rgba(0,0,0,0.22); /* línea superior discreta */
     }
 
-    .sponsor img{
+    /* Botones “próximamente” (no clicables) */
+    .btn.disabled,
+    .btn[aria-disabled="true"]{
+      pointer-events: none;
+      opacity: 0.6;
+      filter: grayscale(0.2);
+    }
+
+    /* Patrocinadores: grid limpio y logos controlados */
+    .sponsorGrid{
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    @media (max-width: 980px){
+      .sponsorGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    .sponsorLogo{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.10);
+      background: rgba(255,255,255,0.55);
+      padding: 12px;
+      min-height: 78px;
+    }
+    .sponsorLogo img{
       width: 100%;
       max-width: 180px;
-      max-height: 54px;
-      height: auto;
+      max-height: 52px;
       object-fit: contain;
-      display:block;
+      display: block;
     }
 
-    @media (max-width: 900px){
-      .grid{ grid-template-columns: 1fr; }
-      .cta-mini{ flex-direction: column; align-items: flex-start; }
-      .btn{ width: 100%; }
-      .media-wide{ max-width: 100%; }
+    /* Texto tipo título auxiliar (como en asociación) */
+    .blockTitleMini{
+      margin: 0 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      color: rgba(0,0,0,0.86);
     }
   </style>
 </head>
 
-<body class="page-concurso">
+<body>
+
+  <!-- HEADER (inyectado por JS) -->
+  <header id="site-header"></header>
+
   <main class="wrap">
 
-    <!-- =========================
-         CABECERA (solo esta página)
-         ========================= -->
-    <header>
-      <p class="kicker">Concurso</p>
-      <h1 class="title">Título del concurso</h1>
-      <p class="lead">
-        Texto introductorio del concurso (lugar, fechas, idea principal). Mantén esto corto.
-      </p>
-    </header>
-
-    <!-- =========================
-         CONFIG IMÁGENES (MUY fácil)
-         Cambia solo estos nombres
-         ========================= -->
-    <!--
-      Archivos disponibles en /assets/img/ (según tu repo):
-      - concurso-imagen0.jpg
-      - concurso-imagen1.jpg
-      - concurso-imagen2.jpg
-      - concurso-imagen3.jpg
-      - concurso-imagen5.jpg
-      - cartel-I-concurso.jpeg
-      (y otros de asociación)
-    -->
-
-    <!-- =========================
-         IMAGEN ARTESANAL (horizontal compacta)
-         ========================= -->
-    <section class="section" aria-label="Imagen artesanal">
-      <p class="kicker">Imagen artesanal</p>
-      <figure class="media-frame media-wide">
-        <!-- Cambia solo el nombre del archivo aquí si quieres otra -->
-        <img id="img-artesanal" src="/assets/img/concurso-imagen1.jpg" alt="Imagen artesanal" loading="lazy">
-      </figure>
+    <!-- HERO (misma línea que asociación) -->
+    <section class="hero heroLeft">
+      <h1>I Concurso Internacional de Repostería Monacal</h1>
+      <p>Valladolid · 1–4 de octubre</p>
     </section>
 
-    <!-- CTA anticipado -->
-    <section class="cta-mini" aria-label="Inscripción">
-      <div>
-        <h3>INSCRIPCIÓN · Convocatoria inicial</h3>
-        <p>La convocatoria se encuentra en preparación. Bases y solicitud disponibles próximamente.</p>
-      </div>
-      <a class="btn" href="#inscripcion">INSCRIPCIÓN – PRÓXIMAMENTE</a>
-    </section>
+    <!-- BLOQUES (misma estructura pageGrid) -->
+    <section class="pageGrid" aria-label="Contenido del concurso">
 
-    <!-- =========================
-         BLOQUES (compactos + imágenes recortadas)
-         ========================= -->
-    <section class="grid" aria-label="Contenido del concurso">
-
-      <!-- BLOQUE 1 -->
-      <article class="card">
-        <div class="card-body">
-          <h2>Tradición, diálogo e innovación</h2>
-          <h3>Mesas redondas y actividades culturales</h3>
-
-          <p>
-            De forma paralela al concurso, se desarrollará un programa de mesas redondas y encuentros
-            divulgativos dedicados a la repostería monacal y artesanal, abordando cuestiones como:
-          </p>
-
-          <ul>
-            <li>la transmisión del saber tradicional,</li>
-            <li>el valor cultural de la repostería artesanal frente a la producción industrial,</li>
-            <li>el papel de la tradición en la gastronomía contemporánea.</li>
-          </ul>
-
-          <p>Estas actividades refuerzan el carácter cultural y reflexivo del concurso.</p>
-        </div>
-
-        <!-- Imagen vertical controlada (NO rompe) -->
-        <figure class="media-frame media-tall">
-          <img id="img-bloque1" src="/assets/img/concurso-imagen2.jpg" alt="Actividad cultural" loading="lazy">
+      <!-- BLOQUE 1 (ANCHO COMPLETO) -->
+      <section class="card soft span2" aria-label="Introducción">
+        <figure class="concursoHeroFigure" aria-label="Imagen conceptual del concurso">
+          <img src="assets/img/concurso-imagen0.jpg" alt="Ilustración conceptual del concurso" loading="lazy">
         </figure>
-      </article>
 
-      <!-- BLOQUE 2 -->
-      <article class="card">
-        <div class="card-body">
-          <h2>Innovación</h2>
-          <h3>Un postre experimental creado con inteligencia artificial</h3>
+        <h2 style="margin-top:0;">I Concurso Internacional de Repostería Monacal</h2>
+        <p style="margin-top:6px; color: rgba(0,0,0,0.72);">
+          Valladolid · 1–4 de octubre
+        </p>
 
-          <p>
-            Como experiencia cultural y fuera de concurso, se elaborará un postre experimental cuya receta ha sido
-            desarrollada mediante inteligencia artificial, en colaboración con la asociación Spain AI.
-          </p>
+        <p>
+          Un encuentro cultural dedicado a la repostería monacal-conventual como patrimonio vivo: tradición, artesanía,
+          transmisión del saber y diálogo con la gastronomía contemporánea.
+        </p>
+      </section>
 
-          <p>
-            Esta iniciativa se plantea como un ejercicio de reflexión y diálogo entre tradición e innovación,
-            explorando los límites y posibilidades de la creación gastronómica desde una perspectiva cultural.
-          </p>
+      <!-- BLOQUE 2 — PRESENTACIÓN + CARTEL (2 COLUMNAS) -->
 
-          <span class="badge">Fuera de concurso</span>
-        </div>
+      <!-- Columna izquierda: Cartel -->
+      <section class="card" aria-label="Cartel oficial">
+        <p class="blockTitleMini">Cartel oficial</p>
 
-        <!-- Si quieres imagen aquí, usa otra vertical controlada -->
-        <figure class="media-frame media-tall">
-          <img id="img-bloque2" src="/assets/img/concurso-imagen3.jpg" alt="Innovación" loading="lazy">
+        <figure class="concursoImgFrame isPoster">
+          <img src="assets/img/cartel-I-concurso.jpeg" alt="Cartel oficial del concurso" loading="lazy">
         </figure>
-      </article>
+
+        <p class="concursoSmallNote">El cartel aparece como sello oficial del concurso.</p>
+      </section>
+
+      <!-- Columna derecha: Presentación -->
+      <section class="card" aria-label="Presentación">
+        <h2 style="margin-top:0;">Presentación</h2>
+        <p>
+          El concurso nace con vocación cultural e internacional para reconocer y poner en valor la repostería monacal
+          como legado histórico y expresión de artesanía. Reúne a comunidades, instituciones y ciudadanía en torno a un
+          programa que combina elaboración, divulgación y encuentro.
+        </p>
+        <p class="concursoSmallNote">
+          (La información detallada de participación, criterios y calendario se recogerá en las bases oficiales).
+        </p>
+      </section>
+
+      <!-- BLOQUE 3 — EL CONCURSO + IMAGEN ARTESANAL (2 COLUMNAS) -->
+
+      <!-- Columna izquierda: Texto -->
+      <section class="card" aria-label="El concurso">
+        <h2 style="margin-top:0;">El concurso</h2>
+        <h3 style="margin: 10px 0 8px;">Elaboración y evaluación</h3>
+
+        <ul>
+          <li>Elaboración: jueves 1 de octubre (Escuela Internacional de Cocina).</li>
+          <li>Entrega de premios (tarde): Capilla del Convento de Santa Ana.</li>
+          <li>Nota: detalles completos en las bases.</li>
+        </ul>
+      </section>
+
+      <!-- Columna derecha: Imagen manos amasando -->
+      <section class="card" aria-label="Imagen artesanal">
+        <p class="blockTitleMini">Imagen artesanal</p>
+        <figure class="concursoImgFrame">
+          <img src="assets/img/concurso-imagen3.jpg" alt="Manos amasando masa" loading="lazy">
+        </figure>
+      </section>
+
+      <!-- BLOQUE 4 — VENTA Y ENCUENTRO + IMAGEN (2 COLUMNAS) -->
+
+      <!-- Columna izquierda: Texto -->
+      <section class="card" aria-label="Venta y encuentro con el público">
+        <h2 style="margin-top:0;">Venta y encuentro con el público</h2>
+        <p>
+          De viernes a domingo, el concurso se abre a la ciudadanía en un espacio de encuentro, venta y divulgación.
+        </p>
+        <ul>
+          <li>Viernes a domingo</li>
+          <li>Espacio La Granja (Valladolid)</li>
+          <li>Encuentro con la ciudadanía</li>
+        </ul>
+      </section>
+
+      <!-- Columna derecha: Imagen mesa de dulces -->
+      <section class="card" aria-label="Imagen de exposición">
+        <p class="blockTitleMini">Encuentro</p>
+        <figure class="concursoImgFrame">
+          <img src="assets/img/concurso-imagen1.jpg" alt="Mesa de dulces y exposición" loading="lazy">
+        </figure>
+      </section>
+
+      <!-- BLOQUE 5 — TRADICIÓN Y DIÁLOGO + INNOVACIÓN (2 COLUMNAS) -->
+
+      <!-- Columna izquierda: Tradición + lista + imagen debajo -->
+      <section class="card" aria-label="Tradición, diálogo e innovación">
+        <h2 style="margin-top:0;">Tradición, diálogo e innovación</h2>
+        <h3 style="margin: 10px 0 8px;">Mesas redondas y actividades culturales</h3>
+
+        <p>
+          De forma paralela al concurso, se desarrollará un programa de mesas redondas y encuentros divulgativos
+          dedicados a la repostería monacal y artesanal, abordando cuestiones como:
+        </p>
+
+        <ul>
+          <li>la transmisión del saber tradicional,</li>
+          <li>el valor cultural de la repostería artesanal frente a la producción industrial,</li>
+          <li>el papel de la tradición en la gastronomía contemporánea.</li>
+        </ul>
+
+        <figure class="concursoImgFrame isUnderText">
+          <img src="assets/img/concurso-imagen5.jpg" alt="Recetario antiguo y tecnología" loading="lazy">
+        </figure>
+      </section>
+
+      <!-- Columna derecha: Innovación + badge -->
+      <section class="card" aria-label="Innovación">
+        <h2 style="margin-top:0;">Innovación</h2>
+        <h3 style="margin: 10px 0 8px;">Un postre experimental creado con inteligencia artificial</h3>
+
+        <p>
+          Como experiencia cultural y fuera de concurso, se elaborará un postre experimental cuya receta ha sido
+          desarrollada mediante inteligencia artificial, en colaboración con la asociación Spain AI.
+        </p>
+
+        <p>
+          Esta iniciativa se plantea como un ejercicio de reflexión y diálogo entre tradición e innovación,
+          explorando los límites y posibilidades de la creación gastronómica desde una perspectiva cultural.
+        </p>
+
+        <span class="concursoBadge">Fuera de concurso</span>
+      </section>
+
+      <!-- BLOQUE 6 — INSCRIPCIÓN + DOCUMENTACIÓN (2 COLUMNAS, DESTACADO) -->
+      <section class="card span2 concursoHighlight" aria-label="Inscripción y documentación">
+        <div class="concursoInnerGrid">
+
+          <!-- Columna izquierda -->
+          <div aria-label="Inscripción">
+            <h2 style="margin-top:0;">INSCRIPCIÓN · Convocatoria inicial</h2>
+            <p style="margin-top:6px; color: rgba(0,0,0,0.72);">
+              Estado: <strong>en preparación</strong>
+            </p>
+            <p>
+              La convocatoria inicial se encuentra en preparación. En esta sección se publicarán las bases y la
+              documentación oficial para participar.
+            </p>
+          </div>
+
+          <!-- Columna derecha -->
+          <div aria-label="Documentación oficial">
+            <h2 style="margin-top:0;">Documentación oficial</h2>
+
+            <div class="btnRow" style="justify-content:flex-start; flex-wrap:wrap;">
+              <!-- Bases (próximamente) -->
+              <a class="btn ghost disabled" href="#" aria-disabled="true">Bases (PDF) · Próximamente</a>
+
+              <!-- Solicitud (si ya existe el PDF, esta sí puede estar activa) -->
+              <a class="btn ghost" href="assets/docs/solicitud-inscripcion.pdf" download>Solicitud (PDF)</a>
+
+              <!-- Info (próximamente) -->
+              <a class="btn ghost disabled" href="#" aria-disabled="true">Info (PDF) · Próximamente</a>
+            </div>
+
+            <p class="concursoSmallNote">
+              Si algún enlace no estuviese publicado aún, aparecerá marcado como “Próximamente”.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- BLOQUE 7 — MARCO INSTITUCIONAL (ANCHO COMPLETO) -->
+      <section class="card soft span2" aria-label="Marco institucional">
+        <h2 style="margin-top:0;">Marco institucional</h2>
+        <p>
+          El concurso se desarrolla con vocación de continuidad y colaboración. DULCESOR articula relaciones con
+          instituciones culturales, educativas y administraciones públicas, así como con entidades colaboradoras,
+          para reforzar su dimensión patrimonial, cultural y divulgativa.
+        </p>
+      </section>
+
+      <!-- BLOQUE 8 — PATROCINADORES (ANCHO COMPLETO) -->
+      <section class="card span2" aria-label="Patrocinadores del concurso">
+        <h2 style="margin-top:0;">Patrocinadores del concurso</h2>
+        <p class="concursoSmallNote" style="margin-top:0;">
+          Logos institucionales (estructura ampliable). Carpeta: <strong>assets/logos/</strong>
+        </p>
+
+        <div class="sponsorGrid" aria-label="Logos de patrocinadores">
+          <!-- Sustituye/añade aquí los logos reales. Ejemplos: -->
+          <div class="sponsorLogo"><img src="assets/logos/logo-asociacion.png" alt="DULCESOR"></div>
+
+          <!--
+          <div class="sponsorLogo"><img src="assets/logos/NOMBRE-LOGO-1.png" alt="Patrocinador 1"></div>
+          <div class="sponsorLogo"><img src="assets/logos/NOMBRE-LOGO-2.png" alt="Patrocinador 2"></div>
+          <div class="sponsorLogo"><img src="assets/logos/NOMBRE-LOGO-3.png" alt="Patrocinador 3"></div>
+          -->
+        </div>
+      </section>
 
     </section>
-
-    <!-- =========================
-         IMAGEN ICÓNICA (concurso-imagen0)
-         SOLO en esta página
-         ========================= -->
-    <section class="section" aria-label="Imagen icónica del concurso">
-      <p class="kicker">Imagen del concurso</p>
-      <figure class="media-frame media-wide small">
-        <img id="img-iconica" src="/assets/img/concurso-imagen0.jpg" alt="Imagen icónica del concurso" loading="lazy">
-      </figure>
-    </section>
-
-    <!-- =========================
-         INSCRIPCIÓN (bloque completo abajo)
-         ========================= -->
-    <section id="inscripcion" class="section" aria-label="Inscripción">
-      <p class="kicker">Inscripción</p>
-      <h2 style="margin:10px 0 6px; font-size:18px;">INSCRIPCIÓN · Convocatoria inicial</h2>
-      <p class="lead" style="margin-top:0;">
-        Aquí mantienes el bloque completo de inscripción. Si aún no está disponible, deja el texto “próximamente”.
-      </p>
-
-      <div class="downloads">
-        <a class="btn" href="/assets/docs/solicitud-inscripcion.pdf" download>Descargar solicitud (PDF)</a>
-        <!-- <a class="btn" href="/assets/docs/bases.pdf" download>Descargar bases (PDF)</a> -->
-      </div>
-    </section>
-
-    <!-- =========================
-         PATROCINADORES (solo logos)
-         ========================= -->
-    <section class="section" aria-label="Patrocinadores">
-      <p class="kicker">Patrocinadores</p>
-      <h2 style="margin:10px 0 6px; font-size:18px;">Patrocinadores</h2>
-
-      <div class="sponsor-grid">
-        <!-- Reemplaza los src por tus logos reales en /assets/logos/ -->
-        <a class="sponsor" href="#" target="_blank" rel="noopener">
-          <img src="/assets/logos/logo1.png" alt="Patrocinador 1">
-        </a>
-        <a class="sponsor" href="#" target="_blank" rel="noopener">
-          <img src="/assets/logos/logo2.png" alt="Patrocinador 2">
-        </a>
-        <a class="sponsor" href="#" target="_blank" rel="noopener">
-          <img src="/assets/logos/logo3.png" alt="Patrocinador 3">
-        </a>
-      </div>
-    </section>
-
   </main>
 
-  <!-- =========================
-       OPCIONAL: cambiar imágenes desde 1 solo sitio
-       (si prefieres, edita aquí y NO tocas el HTML)
-       ========================= -->
-  <script>
-    // ✅ Cambia SOLO estos nombres cuando quieras probar otras imágenes:
-    const IMG = {
-      artesanal: "concurso-imagen1.jpg",
-      bloque1: "concurso-imagen2.jpg",
-      bloque2: "concurso-imagen3.jpg",
-      iconica: "concurso-imagen0.jpg"
-      // también puedes usar: "cartel-I-concurso.jpeg" o "concurso-imagen5.jpg"
-    };
+  <!-- FOOTER (inyectado por JS) -->
+  <div id="site-footer"></div>
 
-    // Aplica rutas
-    const base = "/assets/img/";
-    const set = (id, file) => {
-      const el = document.getElementById(id);
-      if (el && file) el.src = base + file;
-    };
+  <!-- JS globales -->
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/header.js" defer></script>
+  <script src="assets/js/footer.js" defer></script>
 
-    set("img-artesanal", IMG.artesanal);
-    set("img-bloque1", IMG.bloque1);
-    set("img-bloque2", IMG.bloque2);
-    set("img-iconica", IMG.iconica);
-  </script>
 </body>
 </html>
