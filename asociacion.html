@@ -6,11 +6,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- SEO -->
-  <meta name="description" content="Qué somos y qué hacemos: preservar la repostería monacal-conventual e impulsar proyectos culturales, incluido el Concurso Internacional de Postres Conventuales.">
-  <meta name="keywords" content="DULCESOR, asociación cultural, repostería monacal, patrimonio gastronómico, cultura">
+  <meta name="description" content="Identidad, fines, valores y colaboración institucional de la Asociación Cultural DULCESOR.">
+  <meta name="keywords" content="DULCESOR, asociación cultural, repostería monacal, patrimonio cultural, colaboración, patrocinio">
 
   <!-- CSS global -->
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Estilos SOLO de esta página: bloque visual de 3 tarjetas -->
+  <style>
+    .linesBlockTitle{
+      margin: 0 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      color: rgba(0,0,0,0.86);
+    }
+
+    .linesGrid{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 860px){
+      .linesGrid{ grid-template-columns: 1fr; }
+    }
+
+    .lineCard{
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.10);
+      background: rgba(255,255,255,0.55);
+    }
+
+    .lineCard img{
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .lineCardBody{
+      padding: 12px 14px 14px;
+    }
+
+    .lineCardTitle{
+      margin: 0 0 6px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgba(0,0,0,0.86);
+    }
+
+    .lineCardText{
+      margin: 0;
+      color: rgba(0,0,0,0.72);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+  </style>
 </head>
 
 <body>
@@ -25,7 +81,7 @@
     <section class="hero heroLeft">
       <h1 data-i18n="assoc_title">Asociación</h1>
       <p data-i18n="assoc_subtitle">
-        Identidad, fines y valores de la Asociación Cultural DULCESOR – Repostería Monacal Conventual.
+        Identidad, fines y valores de la Asociación Cultural DULCESOR – Repostería Monacal Conventual
       </p>
     </section>
 
@@ -35,12 +91,15 @@
       <!-- (1) IDENTIDAD -->
       <section class="card" aria-label="Identidad">
         <h2 data-i18n="assoc_identity_title">Identidad</h2>
-        <p data-i18n="assoc_identity_text">
-          La Asociación Cultural DULCESOR Repostería Monacal Conventual es una entidad sin ánimo de lucro dedicada a
-          proteger, investigar y difundir el patrimonio repostero monacal y conventual, entendiendo la repostería como
-          una manifestación cultural y gastronómica de alto valor histórico y espiritual.
-          A efectos de comunicación e identidad, la asociación utiliza la denominación “DULCESOR” y sus adaptaciones
-          lingüísticas en contextos internacionales.
+
+        <p data-i18n="assoc_identity_p1">
+          La Asociación Cultural DULCESOR es una entidad sin ánimo de lucro dedicada a preservar, investigar y difundir
+          la repostería monacal-conventual como patrimonio cultural.
+        </p>
+
+        <p data-i18n="assoc_identity_p2">
+          Trabajamos para poner en valor un legado vivo de recetas, técnicas y saberes transmitidos durante siglos,
+          con respeto patrimonial y vocación de colaboración.
         </p>
       </section>
 
@@ -49,34 +108,73 @@
         <h2 data-i18n="assoc_goals_title">Fines y objetivos</h2>
         <ul>
           <li data-i18n="assoc_goal_1">
-            Organizar, promover y desarrollar el Concurso Internacional de Postres Conventuales.
+            Preservar y difundir la tradición repostera de monasterios y conventos como patrimonio cultural inmaterial.
           </li>
           <li data-i18n="assoc_goal_2">
-            Proteger y difundir la repostería conventual como patrimonio cultural y gastronómico.
+            Promover actividades culturales, gastronómicas y académicas que impulsen su conocimiento y valoración social.
           </li>
           <li data-i18n="assoc_goal_3">
-            Facilitar la participación de comunidades religiosas, respetando su identidad y circunstancias propias.
+            Fomentar la investigación, recopilación y documentación de recetas, técnicas y procesos tradicionales.
           </li>
           <li data-i18n="assoc_goal_4">
-            Promover actividades culturales, formativas y divulgativas vinculadas a la tradición conventual.
+            Establecer vínculos de cooperación con instituciones culturales, educativas y religiosas.
           </li>
           <li data-i18n="assoc_goal_5">
             Colaborar con administraciones públicas, instituciones culturales y entidades privadas.
           </li>
           <li data-i18n="assoc_goal_6">
-            Impulsar publicaciones y ediciones (libros y materiales de difusión) que contribuyan a la conservación de este patrimonio.
+            Impulsar publicaciones y materiales de divulgación que contribuyan a su conservación.
+          </li>
+          <li data-i18n="assoc_goal_7">
+            Organizar y promover el Concurso Internacional de Postres Conventuales.
           </li>
         </ul>
+      </section>
+
+      <!-- (BLOQUE VISUAL) NUESTRAS LÍNEAS DE TRABAJO -->
+      <section class="card soft span2" aria-label="Nuestras líneas de trabajo">
+        <h2 class="linesBlockTitle" data-i18n="assoc_lines_title">NUESTRAS LÍNEAS DE TRABAJO</h2>
+
+        <div class="linesGrid" aria-label="Tarjetas de líneas de trabajo">
+
+          <article class="lineCard" aria-label="Patrimonio y memoria">
+            <img src="assets/im/asociacion-imagen2.jpg" alt="Patrimonio y memoria" loading="lazy">
+            <div class="lineCardBody">
+              <h3 class="lineCardTitle" data-i18n="assoc_lines_1_title">Patrimonio y memoria</h3>
+              <p class="lineCardText" data-i18n="assoc_lines_1_text">Preservación cultural.</p>
+            </div>
+          </article>
+
+          <article class="lineCard" aria-label="Artesanía">
+            <img src="assets/im/asociacion-imagen3.jpg" alt="Artesanía" loading="lazy">
+            <div class="lineCardBody">
+              <h3 class="lineCardTitle" data-i18n="assoc_lines_2_title">Artesanía</h3>
+              <p class="lineCardText" data-i18n="assoc_lines_2_text">Saber hacer conventual.</p>
+            </div>
+          </article>
+
+          <article class="lineCard" aria-label="Encuentro y cultura">
+            <img src="assets/im/asociacion-imagen4.jpg" alt="Encuentro y cultura" loading="lazy">
+            <div class="lineCardBody">
+              <h3 class="lineCardTitle" data-i18n="assoc_lines_3_title">Encuentro y cultura</h3>
+              <p class="lineCardText" data-i18n="assoc_lines_3_text">Actividades y comunidad.</p>
+            </div>
+          </article>
+
+        </div>
       </section>
 
       <!-- (3) PRINCIPIOS Y VALORES -->
       <section class="card soft" aria-label="Principios y valores">
         <h2 data-i18n="assoc_values_title">Principios y valores</h2>
-        <p data-i18n="assoc_values_text">
-          La Asociación Cultural DULCESOR desarrolla su labor bajo criterios de rigor, respeto patrimonial y compromiso ético con
-          las comunidades religiosas productoras. Trabajamos para que la repostería monacal sea reconocida no solo por su excelencia
-          gastronómica, sino también como testimonio cultural vivo: tradición, espiritualidad y dedicación artesanal transmitida a través
-          de los siglos.
+
+        <p data-i18n="assoc_values_p1">
+          DULCESOR actúa con rigor histórico, respeto patrimonial y compromiso ético con las comunidades religiosas productoras.
+        </p>
+
+        <p data-i18n="assoc_values_p2">
+          Promovemos el reconocimiento de la repostería monacal como expresión cultural y gastronómica y como testimonio vivo de
+          tradición, espiritualidad y artesanía.
         </p>
       </section>
 
@@ -87,23 +185,17 @@
         <div class="grid">
           <div class="row">
             <span class="label" data-i18n="assoc_admin_scope_label">Ámbito de actuación</span>
-            <span class="value" data-i18n="assoc_admin_scope_value">
-              Ámbito estatal, pudiendo desarrollar actividades, colaboraciones y eventos de carácter nacional e internacional conforme a sus fines.
-            </span>
+            <span class="value" data-i18n="assoc_admin_scope_value">Cultural y gastronómico (ámbito nacional e internacional)</span>
           </div>
 
           <div class="row">
             <span class="label" data-i18n="assoc_admin_legal_label">Naturaleza jurídica</span>
-            <span class="value" data-i18n="assoc_admin_legal_value">
-              Asociación cultural sin ánimo de lucro (Ley Orgánica 1/2002).
-            </span>
+            <span class="value" data-i18n="assoc_admin_legal_value">Asociación cultural sin ánimo de lucro</span>
           </div>
 
           <div class="row">
             <span class="label" data-i18n="assoc_admin_address_label">Domicilio social</span>
-            <span class="value" data-i18n="assoc_admin_address_value">
-              Convento de Santa Ana (Valladolid).
-            </span>
+            <span class="value" data-i18n="assoc_admin_address_value">Convento de Santa Ana (Valladolid)</span>
           </div>
 
           <div class="row">
@@ -113,7 +205,7 @@
 
           <div class="row">
             <span class="label" data-i18n="assoc_admin_registry_label">Situación registral</span>
-            <span class="value" data-i18n="assoc_admin_registry_value">Entidad en proceso de inscripción oficial</span>
+            <span class="value" data-i18n="assoc_admin_registry_value">Entidad en proceso de inscripción oficial (NIF/CIF solicitado)</span>
           </div>
         </div>
       </section>
@@ -123,17 +215,17 @@
         <h2 data-i18n="assoc_collab_title">Cómo colaborar</h2>
 
         <p data-i18n="assoc_collab_intro">
-          Como entidad cultural, DULCESOR establece colaboraciones, patrocinios y apoyos mediante convenios, acuerdos o contratos,
+          Como entidad cultural, DULCESOR formaliza colaboraciones, patrocinios y apoyos mediante convenios, acuerdos o contratos,
           sin que dichas relaciones otorguen la condición de socio.
         </p>
 
-        <h3 data-i18n="assoc_collab_forms_title" style="margin: 12px 0 8px;">Formas de colaboración</h3>
+        <h3 style="margin: 12px 0 8px;" data-i18n="assoc_collab_forms_title">Formas de colaboración</h3>
         <ul>
           <li data-i18n="assoc_collab_1">
             <strong>Alianza institucional</strong> (ayuntamientos, diputaciones, universidades, museos, archivos, entidades culturales).
           </li>
           <li data-i18n="assoc_collab_2">
-            <strong>Patrocinio</strong> del concurso y/o actividades culturales y divulgativas.
+            <strong>Patrocinio</strong> del concurso y/o de actividades culturales y divulgativas.
           </li>
           <li data-i18n="assoc_collab_3">
             <strong>Apoyo en especie o servicios</strong> (espacios, logística, comunicación, impresión, materiales, etc.).
