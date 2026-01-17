@@ -27,10 +27,10 @@
   /* 2) Bloque 1: título + Valladolid en la misma línea (si cabe) */
   .c-titleRow{
     display: flex !important;
-  align-items: baseline;
-  justify-content: space-between; /* <- esto es lo que la manda a la derecha */
-  gap: 14px;
-  flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between; /* Valladolid/botón a la derecha */
+    gap: 14px;
+    flex-wrap: wrap;
   }
   .c-title{
     margin: 0;
@@ -39,7 +39,19 @@
     color: rgba(0,0,0,0.72);
     font-size: 14px;
     white-space: nowrap;
-    font-weight: 700; /* <- NEGRITA */
+    font-weight: 700; /* negrita */
+  }
+
+  /* === LO ÚLTIMO QUE FALTABA (para el botón bajo la fecha) === */
+  .c-rightBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centra el botón bajo la fecha */
+    gap: 8px;
+  }
+  .c-topBtn{
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   /* Título auxiliar */
@@ -207,9 +219,9 @@
   @media (max-width: 520px){
     .docButtons__row .btn{ width: 100%; }
   }
-</style>
-    
- </head>
+  </style>
+
+</head>
 
 <body class="page-concurso">
 
@@ -221,35 +233,35 @@
     <!-- HERO -->
     <section class="hero heroLeft">
       <h1>I Concurso Internacional de Repostería Monacal y Conventual</h1>
-         </section>
+    </section>
 
     <section class="pageGrid" aria-label="Contenido del concurso">
 
       <!-- BLOQUE 1 -->
-<section class="card soft span2" aria-label="Introducción">
-  <figure class="concursoIconFigure" aria-label="Ilustración icono del concurso">
-    <img src="assets/img/concurso-imagen0.jpg" alt="Ilustración del concurso (icono)" loading="lazy">
-  </figure>
+      <section class="card soft span2" aria-label="Introducción">
+        <figure class="concursoIconFigure" aria-label="Ilustración icono del concurso">
+          <img src="assets/img/concurso-imagen0.jpg" alt="Ilustración del concurso (icono)" loading="lazy">
+        </figure>
 
- <div class="c-titleRow">
-  <h2 class="c-title">I Concurso Internacional de Repostería Monacal y Conventual</h2>
+        <div class="c-titleRow">
+          <h2 class="c-title">I Concurso Internacional de Repostería Monacal y Conventual</h2>
 
-  <div class="c-rightBox">
-    <span class="c-placeDate">Valladolid · 1–4 de octubre</span>
+          <div class="c-rightBox">
+            <span class="c-placeDate">Valladolid · 1–4 de octubre</span>
 
-    <a class="btn ghost c-topBtn"
-       href="/assets/docs/solicitud-inscripcion.pdf"
-       target="_blank" rel="noopener">
-      Solicitud inscripción
-    </a>
-  </div>
-</div>
+            <a class="btn ghost c-topBtn"
+               href="/assets/docs/solicitud-inscripcion.pdf"
+               target="_blank" rel="noopener">
+              Solicitud inscripción
+            </a>
+          </div>
+        </div>
 
-  <p>
-    Un encuentro cultural dedicado a la repostería monacal-conventual como patrimonio vivo: tradición, artesanía,
-    transmisión del saber y diálogo con la gastronomía contemporánea.
-  </p>
-</section>
+        <p>
+          Un encuentro cultural dedicado a la repostería monacal-conventual como patrimonio vivo: tradición, artesanía,
+          transmisión del saber y diálogo con la gastronomía contemporánea.
+        </p>
+      </section>
 
       <!-- BLOQUE 2 -->
       <section class="card" aria-label="Cartel oficial">
@@ -379,7 +391,6 @@
           <div aria-label="Documentación oficial">
             <h2 style="margin-top:0;">Documentación oficial</h2>
 
-            <!-- filas estables + SOLO 1 botón de solicitud -->
             <div class="docButtons" aria-label="Descargas">
               <div class="docButtons__row" aria-label="Fila 1">
                 <a class="btn ghost disabled" href="#" aria-disabled="true">Bases (PDF) · Próximamente</a>
