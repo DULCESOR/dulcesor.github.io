@@ -106,9 +106,13 @@ a { color: inherit; }
 @media (max-width: 768px) {
   .headerInner { padding: 10px 0; }
   .brandLogo { height: 60px; max-width: 260px; }
-  .langBtn { padding: 7px 10px; font-size: 11px; }
+  .lang { gap: 8px; }
+  .langBtn { 
+     padding: 5px 8px; 
+     font-size: 10px; }
+     letter-spacing: 0.06em;
+  }
 }
-
 /* =========================
    Contenido
 ========================= */
