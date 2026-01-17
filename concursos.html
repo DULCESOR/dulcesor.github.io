@@ -12,202 +12,203 @@
   <link rel="icon" href="assets/logos/logo-asociacion.png">
 
   <style>
-    /* =========================================================
-       SOLO para esta página (no pisa el resto del sitio)
-       ========================================================= */
+  /* =========================================================
+     SOLO para esta página (no pisa el resto del sitio)
+     ========================================================= */
 
-    /* 1) Quitar “aire” arriba del HERO en esta página */
-    body.page-concurso main.wrap{ padding-top: 0; }
-    body.page-concurso .hero.heroLeft{
-      margin-top: 0;
-      padding-top: 10px;   /* antes estaba más alto visualmente */
-      padding-bottom: 12px;
-    }
+  /* 1) Quitar “aire” arriba del HERO en esta página */
+  body.page-concurso main.wrap{ padding-top: 0; }
+  body.page-concurso .hero.heroLeft{
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 12px;
+  }
 
-    /* 2) Subtítulo en la MISMA línea del título (si cabe) */
-    body.page-concurso .hero.heroLeft h1{ display: inline; }
-    body.page-concurso .hero.heroLeft p{
-      display: inline;
-      margin: 0 0 0 12px;
-      white-space: nowrap;
-      opacity: .8;
-    }
-    @media (max-width: 860px){
-      body.page-concurso .hero.heroLeft h1{ display: block; }
-      body.page-concurso .hero.heroLeft p{
-        display: block;
-        margin: 6px 0 0;
-        white-space: normal;
-      }
-    }
+  /* 2) Bloque 1: título + Valladolid en la misma línea (si cabe) */
+  .c-titleRow{
+    display: flex !important;
+  align-items: baseline;
+  justify-content: space-between; /* <- esto es lo que la manda a la derecha */
+  gap: 14px;
+  flex-wrap: wrap;
+  }
+  .c-title{
+    margin: 0;
+  }
+  .c-placeDate{
+    color: rgba(0,0,0,0.72);
+    font-size: 14px;
+    white-space: nowrap;
+  }
 
-    /* Título auxiliar */
-    .blockTitleMini{
-      margin: 0 0 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 12px;
-      color: rgba(0,0,0,0.86);
-    }
+  /* Título auxiliar */
+  .blockTitleMini{
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 12px;
+    color: rgba(0,0,0,0.86);
+  }
 
-    /* ---------- BLOQUE 1: ICONO (monja) ---------- */
-    .concursoIconFigure{
-      margin: 0 0 14px;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(0,0,0,0.10);
-      background: rgba(255,255,255,0.60);
-      padding: 14px; /* aire blanco */
-      display: flex;
-      justify-content: center;
-    }
-    .concursoIconFigure img{
-      width: 100%;
-      max-width: 520px;   /* tamaño medio */
-      height: 260px;      /* compacto */
-      object-fit: contain;/* ilustración: no recortar */
-      display: block;
-      background: transparent;
-    }
-    @media (max-width: 860px){
-      .concursoIconFigure img{ height: 230px; }
-    }
+  /* ---------- BLOQUE 1: ICONO (monja) ---------- */
+  .concursoIconFigure{
+    margin: 0 0 14px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.10);
+    background: rgba(255,255,255,0.60);
+    padding: 14px; /* aire blanco */
+    display: flex;
+    justify-content: center;
+  }
+  .concursoIconFigure img{
+    width: 100%;
+    max-width: 520px;   /* tamaño medio */
+    height: 260px;      /* compacto */
+    object-fit: contain;/* ilustración: no recortar */
+    display: block;
+    background: transparent;
+  }
+  @media (max-width: 860px){
+    .concursoIconFigure img{ height: 230px; }
+  }
 
-    /* ---------- Marcos de imágenes ---------- */
-    .concursoImgFrame{
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(0,0,0,0.10);
-      background: rgba(255,255,255,0.55);
-    }
-    .concursoImgFrame img{
-      width: 100%;
-      display: block;
-    }
+  /* ---------- Marcos de imágenes ---------- */
+  .concursoImgFrame{
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.10);
+    background: rgba(255,255,255,0.55);
+  }
+  .concursoImgFrame img{
+    width: 100%;
+    display: block;
+  }
 
-    .concursoImgFrame.isPoster img{
-      height: 300px;
-      object-fit: contain;
-      background: rgba(0,0,0,0.02);
-    }
+  .concursoImgFrame.isPoster img{
+    height: 300px;
+    object-fit: contain;
+    background: rgba(0,0,0,0.02);
+  }
 
-    .concursoImgFrame.isHands img{
-      height: 210px;
-      object-fit: cover;
-    }
+  .concursoImgFrame.isHands img{
+    height: 210px;
+    object-fit: cover;
+  }
 
-    .concursoImgFrame.isMarket img{
-      height: 250px;
-      object-fit: cover;
-    }
+  .concursoImgFrame.isMarket img{
+    height: 250px;
+    object-fit: cover;
+  }
 
-    .concursoImgFrame.isReflect img{
-      height: 190px;
-      object-fit: cover;
-      filter: saturate(0.85) brightness(0.92);
-    }
+  .concursoImgFrame.isReflect img{
+    height: 190px;
+    object-fit: cover;
+    filter: saturate(0.85) brightness(0.92);
+  }
 
-    .concursoImgFrame.isInnov img{
-      height: 220px;
-      object-fit: cover;
-    }
+  .concursoImgFrame.isInnov img{
+    height: 220px;
+    object-fit: cover;
+  }
 
-    .concursoSmallNote{
-      margin: 10px 0 0;
-      font-size: 12.5px;
-      line-height: 1.45;
-      color: rgba(0,0,0,0.70);
-    }
+  .concursoSmallNote{
+    margin: 10px 0 0;
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: rgba(0,0,0,0.70);
+  }
 
-    .concursoBadge{
-      display: inline-flex;
-      align-items: center;
-      border: 1px solid rgba(0,0,0,0.18);
-      background: rgba(255,255,255,0.65);
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-      margin-top: 10px;
-    }
+  .concursoBadge{
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.18);
+    background: rgba(255,255,255,0.65);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
 
-    .concursoHighlight{
-      border: 1px solid rgba(0,0,0,0.10);
-      background: rgba(255,255,255,0.72);
-      position: relative;
-    }
-    .concursoHighlight:before{
-      content: "";
-      position: absolute;
-      left: 0; right: 0; top: 0;
-      height: 4px;
-      background: rgba(0,0,0,0.22);
-    }
+  .concursoHighlight{
+    border: 1px solid rgba(0,0,0,0.10);
+    background: rgba(255,255,255,0.72);
+    position: relative;
+  }
+  .concursoHighlight:before{
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 4px;
+    background: rgba(0,0,0,0.22);
+  }
 
-    .concursoInnerGrid{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    @media (max-width: 860px){
-      .concursoInnerGrid{ grid-template-columns: 1fr; }
-    }
+  .concursoInnerGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 860px){
+    .concursoInnerGrid{ grid-template-columns: 1fr; }
+  }
 
-    .btn.disabled,
-    .btn[aria-disabled="true"]{
-      pointer-events: none;
-      opacity: 0.6;
-      filter: grayscale(0.2);
-    }
+  .btn.disabled,
+  .btn[aria-disabled="true"]{
+    pointer-events: none;
+    opacity: 0.6;
+    filter: grayscale(0.2);
+  }
 
-    /* Patrocinadores */
-    .sponsorGrid{
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 10px;
-    }
-    @media (max-width: 980px){
-      .sponsorGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    .sponsorLogo{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(0,0,0,0.10);
-      background: rgba(255,255,255,0.55);
-      padding: 12px;
-      min-height: 78px;
-    }
-    .sponsorLogo img{
-      width: 100%;
-      max-width: 190px;
-      max-height: 56px;
-      object-fit: contain;
-      display: block;
-    }
+  /* Patrocinadores */
+  .sponsorGrid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+  }
+  @media (max-width: 980px){
+    .sponsorGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  .sponsorLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.10);
+    background: rgba(255,255,255,0.55);
+    padding: 12px;
+    min-height: 78px;
+  }
+  .sponsorLogo img{
+    width: 100%;
+    max-width: 190px;
+    max-height: 56px;
+    object-fit: contain;
+    display: block;
+  }
 
-    /* MINI WRAPPER (Documentación oficial): filas fijas */
-    .docButtons{
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 8px;
-    }
-    .docButtons__row{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: flex-start;
-    }
-    @media (max-width: 520px){
-      .docButtons__row .btn{ width: 100%; }
-    }
-  </style>
-</head>
+  /* MINI WRAPPER (Documentación oficial): filas fijas */
+  .docButtons{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .docButtons__row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+  @media (max-width: 520px){
+    .docButtons__row .btn{ width: 100%; }
+  }
+</style>
+    
+ </head>
 
 <body class="page-concurso">
 
@@ -219,27 +220,26 @@
     <!-- HERO -->
     <section class="hero heroLeft">
       <h1>I Concurso Internacional de Repostería Monacal y Conventual</h1>
-      <p>Valladolid · 1–4 de octubre</p>
-    </section>
+         </section>
 
     <section class="pageGrid" aria-label="Contenido del concurso">
 
       <!-- BLOQUE 1 -->
-      <section class="card soft span2" aria-label="Introducción">
-        <figure class="concursoIconFigure" aria-label="Ilustración icono del concurso">
-          <img src="assets/img/concurso-imagen0.jpg" alt="Ilustración del concurso (icono)" loading="lazy">
-        </figure>
+<section class="card soft span2" aria-label="Introducción">
+  <figure class="concursoIconFigure" aria-label="Ilustración icono del concurso">
+    <img src="assets/img/concurso-imagen0.jpg" alt="Ilustración del concurso (icono)" loading="lazy">
+  </figure>
 
-        <h2 style="margin-top:0;">I Concurso Internacional de Repostería Monacal y Conventual</h2>
-        <p style="margin-top:6px; color: rgba(0,0,0,0.72);">
-          Valladolid · 1–4 de octubre
-        </p>
+  <div class="c-titleRow">
+    <h2 class="c-title">I Concurso Internacional de Repostería Monacal y Conventual</h2>
+    <span class="c-placeDate">Valladolid · 1–4 de octubre</span>
+  </div>
 
-        <p>
-          Un encuentro cultural dedicado a la repostería monacal-conventual como patrimonio vivo: tradición, artesanía,
-          transmisión del saber y diálogo con la gastronomía contemporánea.
-        </p>
-      </section>
+  <p>
+    Un encuentro cultural dedicado a la repostería monacal-conventual como patrimonio vivo: tradición, artesanía,
+    transmisión del saber y diálogo con la gastronomía contemporánea.
+  </p>
+</section>
 
       <!-- BLOQUE 2 -->
       <section class="card" aria-label="Cartel oficial">
