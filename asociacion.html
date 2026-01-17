@@ -11,6 +11,36 @@
 
   <!-- CSS global -->
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Estilos SOLO de esta página (layout 1-4 + color texto grisáceo) -->
+  <style>
+    .assocGrid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    /* En móvil: 1 columna */
+    @media (max-width: 860px){
+      .assocGrid{ grid-template-columns: 1fr; }
+    }
+
+    /* Para que encajen como “bloques” sin márgenes extra */
+    .assocGrid .card{ margin: 0; }
+
+    /* Texto de bloques: gris oscuro (menos duro que negro) */
+    .assocGrid .card,
+    .assocGrid .card p,
+    .assocGrid .card li{
+      color: rgba(0,0,0,0.72);
+    }
+
+    /* Títulos un pelín más marcados */
+    .assocGrid .card h2{
+      color: rgba(0,0,0,0.86);
+    }
+  </style>
 </head>
 
 <body>
@@ -22,77 +52,82 @@
   <main class="wrap">
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" style="text-align:left;">
       <h1 data-i18n="assoc_title">Asociación</h1>
       <p data-i18n="assoc_subtitle">
         Identidad, fines y principios de la Asociación Cultural DULCESOR – Repostería Monacal Conventual
       </p>
     </section>
 
-    <!-- IDENTIDAD -->
-    <section class="card">
-      <h2 data-i18n="assoc_identity_title">Identidad</h2>
-      <p data-i18n="assoc_identity_text">
-        La Asociación Cultural DULCESOR se constituye como una entidad sin ánimo de lucro dedicada a la
-        preservación, investigación, promoción y difusión del patrimonio repostero monacal y conventual,
-        entendiendo la repostería como una manifestación cultural, artística y gastronómica con valor
-        histórico y espiritual.
-      </p>
-    </section>
+    <!-- CUERPO EN 4 BLOQUES (1-4) -->
+    <section class="assocGrid" aria-label="Contenido de la asociación">
 
-    <!-- FINES Y OBJETIVOS -->
-    <section class="card">
-      <h2 data-i18n="assoc_goals_title">Fines y objetivos</h2>
-      <ul>
-        <li data-i18n="assoc_goal_1">
-          Preservar y difundir la tradición repostera de los monasterios y conventos como parte esencial del
-          patrimonio cultural inmaterial.
-        </li>
-        <li data-i18n="assoc_goal_2">
-          Promover actividades culturales, gastronómicas y académicas que favorezcan el conocimiento y la
-          valoración social de la repostería monacal conventual.
-        </li>
-        <li data-i18n="assoc_goal_3">
-          Fomentar la investigación, recopilación y documentación de recetas, técnicas y procesos
-          tradicionales transmitidos por comunidades religiosas.
-        </li>
-        <li data-i18n="assoc_goal_4">
-          Establecer vínculos de cooperación con instituciones culturales, educativas y religiosas para impulsar
-          proyectos conjuntos de conservación y difusión.
-        </li>
-      </ul>
-    </section>
+      <!-- (1) IDENTIDAD -->
+      <section class="card" aria-label="Identidad">
+        <h2 data-i18n="assoc_identity_title">Identidad</h2>
+        <p data-i18n="assoc_identity_text">
+          La Asociación Cultural DULCESOR se constituye como una entidad sin ánimo de lucro dedicada a la
+          preservación, investigación, promoción y difusión del patrimonio repostero monacal y conventual,
+          entendiendo la repostería como una manifestación cultural, artística y gastronómica con valor
+          histórico y espiritual.
+        </p>
+      </section>
 
-    <!-- PRINCIPIOS Y VALORES -->
-    <section class="card soft">
-      <h2 data-i18n="assoc_values_title">Principios y valores</h2>
-      <p data-i18n="assoc_values_text">
-        La Asociación Cultural DULCESOR desarrolla su labor bajo criterios de rigor histórico, respeto
-        patrimonial y compromiso ético con las comunidades religiosas productoras. Promueve el reconocimiento
-        de la repostería monacal como una expresión gastronómica y, al mismo tiempo, como testimonio vivo de
-        espiritualidad, tradición y dedicación artesanal transmitida a través de los siglos.
-      </p>
-    </section>
+      <!-- (2) FINES Y OBJETIVOS -->
+      <section class="card" aria-label="Fines y objetivos">
+        <h2 data-i18n="assoc_goals_title">Fines y objetivos</h2>
+        <ul>
+          <li data-i18n="assoc_goal_1">
+            Preservar y difundir la tradición repostera de los monasterios y conventos como parte esencial del
+            patrimonio cultural inmaterial.
+          </li>
+          <li data-i18n="assoc_goal_2">
+            Promover actividades culturales, gastronómicas y académicas que favorezcan el conocimiento y la
+            valoración social de la repostería monacal conventual.
+          </li>
+          <li data-i18n="assoc_goal_3">
+            Fomentar la investigación, recopilación y documentación de recetas, técnicas y procesos
+            tradicionales transmitidos por comunidades religiosas.
+          </li>
+          <li data-i18n="assoc_goal_4">
+            Establecer vínculos de cooperación con instituciones culturales, educativas y religiosas para impulsar
+            proyectos conjuntos de conservación y difusión.
+          </li>
+        </ul>
+      </section>
 
-    <!-- INFORMACIÓN ADMINISTRATIVA -->
-    <section class="card">
-      <h2 data-i18n="assoc_admin_title">Información administrativa</h2>
+      <!-- (3) PRINCIPIOS Y VALORES -->
+      <section class="card soft" aria-label="Principios y valores">
+        <h2 data-i18n="assoc_values_title">Principios y valores</h2>
+        <p data-i18n="assoc_values_text">
+          La Asociación Cultural DULCESOR desarrolla su labor bajo criterios de rigor histórico, respeto
+          patrimonial y compromiso ético con las comunidades religiosas productoras. Promueve el reconocimiento
+          de la repostería monacal como una expresión gastronómica y, al mismo tiempo, como testimonio vivo de
+          espiritualidad, tradición y dedicación artesanal transmitida a través de los siglos.
+        </p>
+      </section>
 
-      <div class="grid">
-        <div class="row">
-          <span class="label" data-i18n="assoc_admin_scope_label">Ámbito de actuación</span>
-          <span class="value" data-i18n="assoc_admin_scope_value">Cultural y gastronómico (ámbito nacional e internacional)</span>
+      <!-- (4) INFORMACIÓN ADMINISTRATIVA -->
+      <section class="card" aria-label="Información administrativa">
+        <h2 data-i18n="assoc_admin_title">Información administrativa</h2>
+
+        <div class="grid">
+          <div class="row">
+            <span class="label" data-i18n="assoc_admin_scope_label">Ámbito de actuación</span>
+            <span class="value" data-i18n="assoc_admin_scope_value">Cultural y gastronómico (ámbito nacional e internacional)</span>
+          </div>
+
+          <div class="row">
+            <span class="label" data-i18n="assoc_admin_legal_label">Naturaleza jurídica</span>
+            <span class="value" data-i18n="assoc_admin_legal_value">Asociación cultural sin ánimo de lucro</span>
+          </div>
         </div>
 
-        <div class="row">
-          <span class="label" data-i18n="assoc_admin_legal_label">Naturaleza jurídica</span>
-          <span class="value" data-i18n="assoc_admin_legal_value">Asociación cultural sin ánimo de lucro</span>
-        </div>
-      </div>
+        <p class="note" data-i18n="assoc_admin_note">
+          La asociación se encuentra en proceso de inscripción oficial conforme a la legislación vigente.
+        </p>
+      </section>
 
-      <p class="note" data-i18n="assoc_admin_note">
-        La asociación se encuentra en proceso de inscripción oficial conforme a la legislación vigente.
-      </p>
     </section>
 
   </main>
@@ -107,3 +142,4 @@
 
 </body>
 </html>
+
