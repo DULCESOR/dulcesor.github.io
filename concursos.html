@@ -16,6 +16,31 @@
        SOLO para esta página (no pisa el resto del sitio)
        ========================================================= */
 
+    /* 1) Quitar “aire” arriba del HERO en esta página */
+    body.page-concurso main.wrap{ padding-top: 0; }
+    body.page-concurso .hero.heroLeft{
+      margin-top: 0;
+      padding-top: 10px;   /* antes estaba más alto visualmente */
+      padding-bottom: 12px;
+    }
+
+    /* 2) Subtítulo en la MISMA línea del título (si cabe) */
+    body.page-concurso .hero.heroLeft h1{ display: inline; }
+    body.page-concurso .hero.heroLeft p{
+      display: inline;
+      margin: 0 0 0 12px;
+      white-space: nowrap;
+      opacity: .8;
+    }
+    @media (max-width: 860px){
+      body.page-concurso .hero.heroLeft h1{ display: block; }
+      body.page-concurso .hero.heroLeft p{
+        display: block;
+        margin: 6px 0 0;
+        white-space: normal;
+      }
+    }
+
     /* Título auxiliar */
     .blockTitleMini{
       margin: 0 0 10px;
@@ -25,8 +50,7 @@
       color: rgba(0,0,0,0.86);
     }
 
-    /* ---------- BLOQUE 1: ICONO (monja) ----------
-       Debe respirar, tamaño medio, sin competir con cartel */
+    /* ---------- BLOQUE 1: ICONO (monja) ---------- */
     .concursoIconFigure{
       margin: 0 0 14px;
       border-radius: 18px;
@@ -49,7 +73,7 @@
       .concursoIconFigure img{ height: 230px; }
     }
 
-    /* ---------- Marcos de imágenes (compactos) ---------- */
+    /* ---------- Marcos de imágenes ---------- */
     .concursoImgFrame{
       border-radius: 16px;
       overflow: hidden;
@@ -61,39 +85,33 @@
       display: block;
     }
 
-    /* Cartel: contenido institucional, sin recortar */
     .concursoImgFrame.isPoster img{
       height: 300px;
       object-fit: contain;
       background: rgba(0,0,0,0.02);
     }
 
-    /* Manos (HACER): horizontal, no muy grande */
     .concursoImgFrame.isHands img{
       height: 210px;
       object-fit: cover;
     }
 
-    /* Mesa de dulces (ENCUENTRO): un poco más protagonista */
     .concursoImgFrame.isMarket img{
       height: 250px;
       object-fit: cover;
     }
 
-    /* Libro+tablet (REFLEXIÓN): más pequeña y "suave" */
     .concursoImgFrame.isReflect img{
       height: 190px;
       object-fit: cover;
-      filter: saturate(0.85) brightness(0.92); /* leve efecto reflexivo */
+      filter: saturate(0.85) brightness(0.92);
     }
 
-    /* Innovación: imagen propia (concurso-imagen2) controlada */
     .concursoImgFrame.isInnov img{
       height: 220px;
       object-fit: cover;
     }
 
-    /* Nota pequeña */
     .concursoSmallNote{
       margin: 10px 0 0;
       font-size: 12.5px;
@@ -101,7 +119,6 @@
       color: rgba(0,0,0,0.70);
     }
 
-    /* Badge “Fuera de concurso” */
     .concursoBadge{
       display: inline-flex;
       align-items: center;
@@ -115,7 +132,6 @@
       margin-top: 10px;
     }
 
-    /* Bloque 6 destacado */
     .concursoHighlight{
       border: 1px solid rgba(0,0,0,0.10);
       background: rgba(255,255,255,0.72);
@@ -129,7 +145,6 @@
       background: rgba(0,0,0,0.22);
     }
 
-    /* Grid 2 columnas dentro de una card */
     .concursoInnerGrid{
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -139,7 +154,6 @@
       .concursoInnerGrid{ grid-template-columns: 1fr; }
     }
 
-    /* Botones “próximamente” */
     .btn.disabled,
     .btn[aria-disabled="true"]{
       pointer-events: none;
@@ -147,7 +161,7 @@
       filter: grayscale(0.2);
     }
 
-    /* Patrocinadores: grid y control de logos */
+    /* Patrocinadores */
     .sponsorGrid{
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -175,17 +189,34 @@
       object-fit: contain;
       display: block;
     }
+
+    /* MINI WRAPPER (Documentación oficial): filas fijas */
+    .docButtons{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .docButtons__row{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-start;
+    }
+    @media (max-width: 520px){
+      .docButtons__row .btn{ width: 100%; }
+    }
   </style>
 </head>
 
-<body>
+<body class="page-concurso">
 
-  <!-- HEADER (inyectado por JS, igual que en asociacion.html) -->
+  <!-- HEADER (inyectado por JS) -->
   <header id="site-header"></header>
 
   <main class="wrap">
 
-    <!-- HERO (misma línea que asociación) -->
+    <!-- HERO -->
     <section class="hero heroLeft">
       <h1>I Concurso Internacional de Repostería Monacal y Conventual</h1>
       <p>Valladolid · 1–4 de octubre</p>
@@ -193,7 +224,7 @@
 
     <section class="pageGrid" aria-label="Contenido del concurso">
 
-      <!-- BLOQUE 1 (ANCHO COMPLETO) — ICONO (monja) -->
+      <!-- BLOQUE 1 -->
       <section class="card soft span2" aria-label="Introducción">
         <figure class="concursoIconFigure" aria-label="Ilustración icono del concurso">
           <img src="assets/img/concurso-imagen0.jpg" alt="Ilustración del concurso (icono)" loading="lazy">
@@ -210,9 +241,7 @@
         </p>
       </section>
 
-      <!-- BLOQUE 2 — CARTEL OFICIAL + PRESENTACIÓN (2 columnas) -->
-
-      <!-- Columna izquierda: Cartel -->
+      <!-- BLOQUE 2 -->
       <section class="card" aria-label="Cartel oficial">
         <p class="blockTitleMini">Cartel oficial del concurso</p>
 
@@ -225,7 +254,6 @@
         </p>
       </section>
 
-      <!-- Columna derecha: Presentación -->
       <section class="card" aria-label="Presentación">
         <h2 style="margin-top:0;">Presentación</h2>
         <p>
@@ -238,7 +266,7 @@
         </p>
       </section>
 
-      <!-- BLOQUE 3 — EL CONCURSO (texto) + MANOS AMASANDO (derecha) -->
+      <!-- BLOQUE 3 -->
       <section class="card" aria-label="El concurso · Elaboración y evaluación">
         <h2 style="margin-top:0;">El concurso</h2>
         <h3 style="margin: 10px 0 8px;">Elaboración y evaluación</h3>
@@ -258,7 +286,7 @@
         <p class="concursoSmallNote">Proceso, oficio, trabajo humano.</p>
       </section>
 
-      <!-- BLOQUE 4 — VENTA Y ENCUENTRO + MESA DULCES -->
+      <!-- BLOQUE 4 -->
       <section class="card" aria-label="Venta y encuentro con el público">
         <h2 style="margin-top:0;">Venta y encuentro con el público</h2>
         <p>
@@ -279,8 +307,7 @@
         <p class="concursoSmallNote">Evento vivo, comunidad y apertura.</p>
       </section>
 
-      <!-- BLOQUE 5 — TRADICIÓN (con libro+tablet) + INNOVACIÓN (con imagen concurso-imagen2) -->
-
+      <!-- BLOQUE 5 -->
       <section class="card" aria-label="Tradición, diálogo e innovación">
         <h2 style="margin-top:0;">Tradición, diálogo e innovación</h2>
         <h3 style="margin: 10px 0 8px;">Mesas redondas y actividades culturales</h3>
@@ -323,7 +350,7 @@
         <span class="concursoBadge">Fuera de concurso</span>
       </section>
 
-      <!-- BLOQUE 6 — INSCRIPCIÓN + DOCUMENTACIÓN (destacado) -->
+      <!-- BLOQUE 6 -->
       <section class="card span2 concursoHighlight" aria-label="Inscripción y documentación">
         <div class="concursoInnerGrid">
 
@@ -341,20 +368,18 @@
           <div aria-label="Documentación oficial">
             <h2 style="margin-top:0;">Documentación oficial</h2>
 
-            <div class="btnRow" style="justify-content:flex-start; flex-wrap:wrap;">
-              <a class="btn ghost disabled" href="#" aria-disabled="true">Bases (PDF) · Próximamente</a>
+            <!-- filas estables + SOLO 1 botón de solicitud -->
+            <div class="docButtons" aria-label="Descargas">
+              <div class="docButtons__row" aria-label="Fila 1">
+                <a class="btn ghost disabled" href="#" aria-disabled="true">Bases (PDF) · Próximamente</a>
+                <a class="btn ghost" href="/assets/docs/solicitud-inscripcion.pdf" target="_blank" rel="noopener">
+                  Solicitud inscripción
+                </a>
+              </div>
 
-              <!-- NUEVO: botón arriba -->
-              <a class="btn ghost" href="/assets/docs/solicitud-inscripcion.pdf" target="_blank" rel="noopener">
-                Solicitud inscripción
-              </a>
-
-              <a class="btn ghost disabled" href="#" aria-disabled="true">Info (PDF) · Próximamente</a>
-
-              <!-- EXISTENTE (mismo lugar): renombrado -->
-              <a class="btn ghost" href="/assets/docs/solicitud-inscripcion.pdf" target="_blank" rel="noopener">
-                Solicitud inscripción
-              </a>
+              <div class="docButtons__row" aria-label="Fila 2">
+                <a class="btn ghost disabled" href="#" aria-disabled="true">Info (PDF) · Próximamente</a>
+              </div>
             </div>
 
             <p class="concursoSmallNote">
@@ -365,7 +390,7 @@
         </div>
       </section>
 
-      <!-- BLOQUE 7 — MARCO INSTITUCIONAL (ancho completo) -->
+      <!-- BLOQUE 7 -->
       <section class="card soft span2" aria-label="Marco institucional">
         <h2 style="margin-top:0;">Marco institucional</h2>
         <p>
@@ -375,7 +400,7 @@
         </p>
       </section>
 
-      <!-- BLOQUE 8 — PATROCINADORES (ancho completo) -->
+      <!-- BLOQUE 8 -->
       <section class="card span2" aria-label="Patrocinadores del concurso">
         <h2 style="margin-top:0;">Patrocinadores del concurso</h2>
         <p class="concursoSmallNote" style="margin-top:0;">
@@ -410,7 +435,6 @@
   <!-- FOOTER (inyectado por JS) -->
   <div id="site-footer"></div>
 
-  <!-- JS globales (igual que en tu web) -->
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/header.js" defer></script>
   <script src="assets/js/footer.js" defer></script>
