@@ -10,107 +10,67 @@
   <meta name="keywords" content="DULCESOR, concursos, repostería monacal, patrimonio gastronómico, convocatoria">
   <!-- <link rel="canonical" href="https://www.dulcesor.org/concursos.html"> -->
 
+  <!-- Evita el 404 de favicon.ico -->
+  <link rel="icon" href="assets/logos/logo-asociacion.png">
+
   <!-- CSS global -->
   <link rel="stylesheet" href="assets/css/styles.css">
 
-  <!-- Estilos SOLO de esta página -->
+  <!-- Ajustes SOLO de esta página -->
   <style>
-    /* Cambia SOLO este valor para hacer el cartel más grande/pequeño */
-    :root{
-      --poster-max: 280px; /* prueba 320-520px */
-    }
+    :root{ --poster-max: 280px; } /* Tamaño del cartel (igual que proyectos) */
 
-    .pill{
-      display:inline-block;
-      border: 1px solid rgba(0,0,0,0.18);
-      background: rgba(255,255,255,0.55);
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: rgba(0,0,0,0.72);
-    }
-
+    /* Layout cartel + texto */
     .mediaCard{
-      display:flex;
-      gap:18px;
-      align-items:flex-start;
-      flex-wrap:wrap;
-      margin-top: 14px;
+      display: grid;
+      grid-template-columns: var(--poster-max) 1fr;
+      gap: 18px;
+      align-items: start;
+      margin-top: 12px;
     }
 
-    /* Cartel del concurso: tamaño fácil y responsive */
     .poster{
-      width: min(100%, var(--poster-max));
+      width: 100%;
+      max-width: var(--poster-max);
       height: auto;
-      display:block;
+      display: block;
       border-radius: 14px;
+      object-fit: contain;
       border: 1px solid rgba(0,0,0,0.10);
       box-shadow: 0 10px 24px rgba(0,0,0,0.08);
     }
 
+    @media (max-width: 860px){
+      .mediaCard{ grid-template-columns: 1fr; }
+      .poster{ max-width: 320px; margin: 0 auto; }
+    }
+
+    /* Separador fino */
     .hr{
-      height:1px;
-      background: rgba(0,0,0,0.08);
+      height: 1px;
+      background: rgba(0,0,0,0.10);
       margin: 14px 0;
     }
 
-    .note{
-      margin-top: 12px;
-      color: rgba(0,0,0,0.72);
-    }
-
-    .small{
-      margin-top: 6px;
-      color: rgba(0,0,0,0.72);
-      font-size: 13px;
-    }
-
-    .btnRow{
+    /* Patrocinadores (flexible y fácil de ampliar) */
+    .logoRow{
       display:flex;
-      justify-content:flex-start;
-      gap:12px;
-      margin-top:12px;
-      flex-wrap:wrap;
-      align-items:center;
+      gap: 22px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0 0;
     }
-
-    /* Botón simple por si no está en styles.css */
-    .btn{
-      display:inline-block;
-      text-decoration:none;
-      border-radius:999px;
-      padding:10px 14px;
-      font-size:12px;
-      letter-spacing:0.08em;
-      text-transform:uppercase;
-      cursor:pointer;
-    }
-    .btn.ghost{
-      border:1px solid rgba(0,0,0,0.22);
-      background: rgba(255,255,255,0.45);
-      color: rgba(0,0,0,0.78);
-    }
-
-    /* Logos patrocinadores del concurso */
-    .contestSponsors{
-      display:flex;
-      gap:22px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:center;
-      padding:10px 0;
-    }
-    .contestSponsors img{
-      height:60px;
-      width:auto;
+    .sponsorLogo{
+      height: 56px;
+      width: auto;
       display:block;
+      object-fit: contain;
+      filter: none;
     }
-
-    @media (max-width: 768px){
-      :root{ --poster-max: 280px; }
-      .mediaCard{ gap:14px; }
+    @media (max-width: 420px){
+      .sponsorLogo{ height: 48px; }
+      .logoRow{ gap: 16px; }
     }
   </style>
 </head>
@@ -131,66 +91,76 @@
       </p>
     </section>
 
-    <!-- MARCO GENERAL -->
-    <section class="card">
-      <h2 data-i18n="contests_frame_title">Marco general</h2>
-      <p data-i18n="contests_frame_text">
-        La Asociación Cultural DULCESOR promueve concursos culturales y gastronómicos destinados a preservar y difundir la repostería monacal conventual.
-      </p>
+    <!-- BLOQUES -->
+    <section class="pageGrid" aria-label="Bloques de concursos">
 
-      <span class="pill" data-i18n="contests_in_prep">En preparación</span>
-    </section>
+      <!-- (1) MARCO GENERAL -->
+      <section class="card" aria-label="Marco general">
+        <h2 data-i18n="contests_frame_title">Marco general</h2>
+        <p data-i18n="contests_frame_text">
+          La Asociación Cultural DULCESOR promueve concursos culturales y gastronómicos destinados a preservar y difundir la repostería monacal conventual.
+        </p>
 
-    <!-- CONVOCATORIA DESTACADA -->
-    <section class="card">
-      <h2 data-i18n="contests_featured_title">Convocatoria destacada</h2>
+        <div class="btnRow" style="justify-content:flex-start;">
+          <span class="pill" data-i18n="contests_in_prep">En preparación</span>
+        </div>
+      </section>
 
-      <div class="mediaCard">
-        <img
-          src="assets/img/cartel-I-concurso.jpeg"
-          alt="Cartel del I Concurso Internacional de Repostería Monacal Conventual"
-          class="poster"
-          loading="lazy"
-        >
+      <!-- (2) CONVOCATORIA DESTACADA (ancho completo) -->
+      <section class="card span2" aria-label="Convocatoria destacada">
+        <h2 data-i18n="contests_featured_title">Convocatoria destacada</h2>
 
-        <div>
-          <span class="pill" data-i18n="contests_pill_init">Convocatoria inicial</span>
+        <div class="mediaCard">
+          <img
+            src="assets/img/cartel-I-concurso.jpeg"
+            alt="Cartel del I Concurso Internacional de Repostería Monacal Conventual"
+            class="poster"
+            loading="lazy"
+          >
 
-          <h3 data-i18n="contests_reg_title" style="margin-top:14px;">Inscripción</h3>
-          <p data-i18n="contests_reg_text">
-            La participación estará abierta conforme a las bases oficiales de cada convocatoria.
-          </p>
+          <div>
+            <div class="btnRow" style="justify-content:flex-start; margin-bottom:10px;">
+              <span class="pill" data-i18n="contests_pill_init">Convocatoria inicial</span>
+            </div>
 
-          <div class="hr"></div>
+            <h3 data-i18n="contests_reg_title" style="margin: 8px 0 6px;">Inscripción</h3>
+            <p data-i18n="contests_reg_text">
+              La participación estará abierta conforme a las bases oficiales de cada convocatoria.
+            </p>
 
-          <h3 data-i18n="contests_docs_title">Documentación oficial</h3>
-          <p data-i18n="contests_docs_text">
-            Acceso a la documentación oficial de la convocatoria (bases y solicitud).
-          </p>
+            <div class="hr"></div>
 
-          <div class="btnRow">
-            <a class="btn ghost" href="#" aria-disabled="true" onclick="return false;" data-i18n="contests_btn_bases">Bases (PDF)</a>
-            <a class="btn ghost" href="#" aria-disabled="true" onclick="return false;" data-i18n="contests_btn_form">Solicitud (PDF)</a>
-            <span class="pill" data-i18n="contests_pill_pdf">Documentación en PDF</span>
+            <h3 data-i18n="contests_docs_title" style="margin: 0 0 6px;">Documentación oficial</h3>
+            <p data-i18n="contests_docs_text">
+              Acceso a la documentación oficial de la convocatoria (bases y solicitud).
+            </p>
+
+            <div class="btnRow" style="justify-content:flex-start; flex-wrap:wrap;">
+              <!-- Si aún no tienes los PDFs, dejamos botones desactivados -->
+              <a class="btn ghost" href="#" aria-disabled="true" onclick="return false;" data-i18n="contests_btn_bases">Bases (PDF)</a>
+              <a class="btn ghost" href="#" aria-disabled="true" onclick="return false;" data-i18n="contests_btn_form">Solicitud (PDF)</a>
+              <span class="pill" data-i18n="contests_pill_pdf">Documentación en PDF</span>
+            </div>
+
+            <p class="note" data-i18n="contests_poster_caption" style="margin-top:12px;">
+              Cartel del I Concurso Internacional de Repostería Monacal Conventual DULCESOR
+            </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <p class="note" data-i18n="contests_poster_caption">
-        Cartel del I Concurso Internacional de Repostería Monacal Conventual DULCESOR
-      </p>
-    </section>
+      <!-- (3) PATROCINADORES DEL CONCURSO (ancho completo) -->
+      <section class="card soft span2" aria-label="Patrocinadores del concurso">
+        <h2 data-i18n="contests_sponsors_title">Patrocinadores del concurso</h2>
+        <p class="note" data-i18n="contests_sponsors_subtitle">Entidades colaboradoras del concurso (edición actual).</p>
 
-    <!-- Patrocinadores del concurso -->
-    <section class="card soft">
-      <h2 data-i18n="contests_sponsors_title">Patrocinadores del concurso</h2>
-      <p class="small" data-i18n="contests_sponsors_subtitle">Entidades colaboradoras del concurso (edición actual).</p>
+        <div class="logoRow" aria-label="Logotipos de patrocinadores del concurso">
+          <img class="sponsorLogo" src="assets/logos/logo-diputacion-valladolid.png" alt="Diputación de Valladolid" loading="lazy">
+          <img class="sponsorLogo" src="assets/logos/logo-ayuntamiento-valladolid.png" alt="Ayuntamiento de Valladolid" loading="lazy">
+          <img class="sponsorLogo" src="assets/logos/logo-junta-cyl.png" alt="Junta de Castilla y León" loading="lazy">
+        </div>
+      </section>
 
-      <div class="contestSponsors">
-        <img src="assets/logos/logo-diputacion-valladolid.png" alt="Diputación de Valladolid">
-        <img src="assets/logos/logo-ayuntamiento-valladolid.png" alt="Ayuntamiento de Valladolid">
-        <img src="assets/logos/logo-junta-cyl.png" alt="Junta de Castilla y León">
-      </div>
     </section>
 
   </main>
