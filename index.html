@@ -9,6 +9,9 @@
   <meta name="description" content="Asociación Cultural DULCESOR. Repostería Monacal Conventual, patrimonio gastronómico, cultura y tradición.">
   <meta name="keywords" content="DULCESOR, repostería monacal, cultura, conventos, patrimonio gastronómico">
 
+  <!-- Evita el 404 de favicon.ico -->
+  <link rel="icon" href="assets/logos/logo-asociacion.png">
+
   <!-- CSS global -->
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -21,7 +24,7 @@
   <!-- CONTENIDO -->
   <main class="wrap">
 
-    <!-- HERO / CABECERA DE PÁGINA -->
+    <!-- HERO -->
     <section class="hero">
       <h1 data-i18n="home_title">ASOCIACIÓN CULTURAL DULCESOR</h1>
       <p data-i18n="home_subtitle">
@@ -29,34 +32,35 @@
       </p>
     </section>
 
-    <!-- TEXTO INTRODUCTORIO -->
-    <section class="card soft center">
-      <p data-i18n="home_intro">
-        La Asociación Cultural <strong>DULCESOR</strong> impulsa la preservación, difusión y puesta en valor de la
-        <strong>repostería monacal conventual</strong> y del patrimonio gastronómico ligado a comunidades religiosas,
-        promoviendo proyectos culturales de alcance nacional e internacional.
-      </p>
-    </section>
+    <!-- BLOQUES (layout 1-2-3-4...) -->
+    <section class="pageGrid" aria-label="Bloques de inicio">
 
-    <!-- PROYECTO PRINCIPAL -->
-    <section class="card">
-      <h2 data-i18n="home_project_title">Proyecto principal en desarrollo</h2>
+      <!-- (1) INTRO -->
+      <section class="card soft span2" aria-label="Introducción">
+        <p data-i18n="home_intro" style="margin:0;">
+          La Asociación Cultural <strong>DULCESOR</strong> impulsa la preservación, difusión y puesta en valor de la
+          <strong>repostería monacal conventual</strong> y del patrimonio gastronómico ligado a comunidades religiosas,
+          promoviendo proyectos culturales de alcance nacional e internacional.
+        </p>
+      </section>
 
-      <p data-i18n="home_project_desc">
-        I Concurso Internacional de Postres Conventuales – Valladolid 2026
-      </p>
+      <!-- (2) PROYECTO PRINCIPAL -->
+      <section class="card span2" aria-label="Proyecto principal">
+        <h2 data-i18n="home_project_title">Proyecto principal en desarrollo</h2>
 
-      <div class="btnRow">
-        <span class="pill" data-i18n="home_project_status">Información en preparación</span>
-      </div>
-    </section>
+        <p data-i18n="home_project_desc">
+          I Concurso Internacional de Postres Conventuales – Valladolid 2026
+        </p>
 
-    <!-- BLOQUES INFORMATIVOS -->
-    <section class="grid">
+        <div class="btnRow" style="justify-content:flex-start;">
+          <span class="pill" data-i18n="home_project_status">Información en preparación</span>
+        </div>
+      </section>
 
-      <div class="card">
+      <!-- (3) IDENTIDAD -->
+      <section class="card" aria-label="Identidad">
         <h2 data-i18n="home_identity_title">Identidad</h2>
-        <p>
+        <p style="margin:0;">
           <strong data-i18n="home_identity_name_label">Nombre:</strong>
           <span data-i18n="home_identity_name">Asociación Cultural DULCESOR</span><br>
 
@@ -66,16 +70,17 @@
           <strong data-i18n="home_identity_scope_label">Ámbito:</strong>
           <span data-i18n="home_identity_scope">Cultural y gastronómico</span>
         </p>
-      </div>
+      </section>
 
-      <div class="card">
+      <!-- (4) FINES Y OBJETIVOS -->
+      <section class="card" aria-label="Fines y objetivos">
         <h2 data-i18n="home_goals_title">Fines y objetivos</h2>
-        <ul>
+        <ul style="margin:0; padding-left: 18px;">
           <li data-i18n="home_goal_1">Preservar y difundir la repostería conventual como patrimonio cultural.</li>
           <li data-i18n="home_goal_2">Dar visibilidad al trabajo artesanal de comunidades religiosas.</li>
           <li data-i18n="home_goal_3">Impulsar proyectos culturales y gastronómicos de proyección internacional.</li>
         </ul>
-      </div>
+      </section>
 
     </section>
 
@@ -91,4 +96,3 @@
 
 </body>
 </html>
-
