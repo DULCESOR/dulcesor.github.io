@@ -1,16 +1,23 @@
 /* ============================================================
-   DULCESOR i18n (ES/EN) - Protocolo único
+   DULCESOR i18n (ES/EN) - Protocolo único (COMPAT HEADER)
    - Traduce: data-i18n (texto), data-i18n-alt, data-i18n-title,
               data-i18n-aria-label, data-i18n-placeholder,
               data-i18n-content (meta content)
    - Re-aplica al inyectar header/footer (MutationObserver)
    - Expone API: window.DULCESOR_I18N.{t, apply, setLang, getLang}
+   - COMPAT: funciona con headers antiguos SIN tocarlos:
+       * Lee/escribe también localStorage: lang / language / site_lang
+       * Define funciones globales: setLanguage / changeLanguage / setLang
+         y applyTranslations
    ============================================================ */
 
 (() => {
   "use strict";
 
+  // Clave nueva (la que usa este i18n)
   const STORAGE_KEY = "dulcesor_lang";
+  // Claves antiguas típicas que puede usar tu header.js
+  const LEGACY_KEYS = ["lang", "language", "site_lang"];
   const SUPPORTED = new Set(["es", "en"]);
 
   // ---------- Diccionarios ----------
@@ -40,6 +47,10 @@
       home_goal_3: "Impulsar proyectos culturales y gastronómicos de proyección internacional.",
 
       // ===== ASOCIACIÓN =====
+      assoc_page_title: "Asociación · DULCESOR",
+      assoc_meta_description:
+        "Quiénes somos y para qué trabajamos: preservar la repostería monacal-conventual e impulsar proyectos culturales y el Concurso Internacional de Postres Conventuales.",
+
       assoc_title: "Asociación",
       assoc_subtitle:
         "Quiénes somos y para qué trabajamos: preservar la repostería monacal-conventual e impulsar proyectos culturales y el Concurso Internacional de Postres Conventuales.",
@@ -62,7 +73,7 @@
       assoc_goal_6: "Impulsar publicaciones y materiales de divulgación que contribuyan a su conservación.",
       assoc_goal_7: "Organizar y promover el Concurso Internacional de Postres Conventuales.",
 
-      // Botón (compatibilidad)
+      // Botón (compatibilidad antigua)
       assoc_goals_readmore_btn: "Leer más…",
       // Protocolo nuevo (recomendado)
       assoc_goals_readmore_more: "Leer más…",
@@ -111,6 +122,8 @@
       assoc_collab_cta_2: "Contacto institucional",
 
       // ===== CONTACTO =====
+      contact_page_title: "Contacto · DULCESOR",
+      contact_meta_description: "Contacto de la Asociación Cultural DULCESOR.",
       contact_title: "Contacto",
       contact_subtitle: "Canales de comunicación de la Asociación Cultural DULCESOR.",
       contact_block_title: "Información de contacto",
@@ -127,6 +140,8 @@
       contact_collab_note: "También puedes escribirnos directamente a contacto@dulcesor.org.",
 
       // ===== PATROCINADORES =====
+      sponsors_page_title: "Patrocinadores · DULCESOR",
+      sponsors_meta_description: "Patrocinadores y colaboradores de la Asociación Cultural DULCESOR.",
       sponsors_title: "Patrocinadores",
       sponsors_subtitle: "Entidades colaboradoras de la Asociación Cultural DULCESOR.",
       sponsors_assoc_title: "Patrocinadores de la asociación",
@@ -148,10 +163,11 @@
       sponsors_private: "Colaboradores",
       sponsors_private_text:
         "Empresas y entidades colaboradoras que hacen posible el desarrollo de actividades, comunicación y soporte.",
-      sponsors_page_title: "Patrocinadores · DULCESOR",
-      sponsors_meta_description: "Patrocinadores y colaboradores de la Asociación Cultural DULCESOR.",
 
       // ===== PROYECTOS =====
+      projects_page_title: "Proyectos · DULCESOR",
+      projects_meta_description:
+        "Proyectos culturales y gastronómicos de la Asociación Cultural DULCESOR.",
       projects_title: "Proyectos",
       projects_subtitle:
         "Iniciativas culturales y gastronómicas dedicadas a la preservación y difusión de la repostería monacal conventual.",
@@ -177,6 +193,8 @@
         "Si eres una institución, entidad o colectivo interesado en colaborar, puedes ponerte en contacto para explorar formas de participación.",
 
       // ===== RUTAS =====
+      routes_page_title: "Rutas · DULCESOR",
+      routes_meta_description: "Rutas monacales y museos conventuales: línea cultural de DULCESOR.",
       routes_title: "Rutas monacales",
       routes_subtitle:
         "Línea cultural de DULCESOR dedicada a la difusión del patrimonio monástico y la tradición artesana, con enlaces institucionales y recursos culturales.",
@@ -249,7 +267,7 @@
       routes_convents_howto:
         "Para añadir un nuevo convento/monasterio, duplica uno de los bloques “Ejemplo” y cambia título, texto y enlaces.",
 
-      // ===== CONCURSOS (contest_*) - para el concursos.html MODIFICADO =====
+      // ===== CONCURSOS (contest_*) =====
       contest_hero_title: "I Concurso Internacional de Repostería Monacal y Conventual",
       contest_title: "I Concurso Internacional de Repostería Monacal y Conventual",
       contest_place_date: "Valladolid · 1–4 de octubre",
@@ -356,6 +374,10 @@
       home_goal_3: "Foster cultural and gastronomic projects with international reach.",
 
       // ===== ASOCIACIÓN =====
+      assoc_page_title: "Association · DULCESOR",
+      assoc_meta_description:
+        "Who we are and what we work for: preserving monastic-convent pastry and promoting cultural projects and the International Convent Desserts Competition.",
+
       assoc_title: "Association",
       assoc_subtitle:
         "Who we are and what we work for: preserving monastic-convent pastry and promoting cultural projects and the International Convent Desserts Competition.",
@@ -378,9 +400,7 @@
       assoc_goal_6: "Promote publications and outreach materials that contribute to its preservation.",
       assoc_goal_7: "Organise and promote the International Convent Desserts Competition.",
 
-      // Button (compat)
       assoc_goals_readmore_btn: "Read more…",
-      // New protocol
       assoc_goals_readmore_more: "Read more…",
       assoc_goals_readmore_less: "Read less",
 
@@ -426,6 +446,8 @@
       assoc_collab_cta_2: "Institutional contact",
 
       // ===== CONTACTO =====
+      contact_page_title: "Contact · DULCESOR",
+      contact_meta_description: "Contact the DULCESOR Cultural Association.",
       contact_title: "Contact",
       contact_subtitle: "Communication channels of the DULCESOR Cultural Association.",
       contact_block_title: "Contact information",
@@ -442,6 +464,8 @@
       contact_collab_note: "You can also write us directly at contacto@dulcesor.org.",
 
       // ===== PATROCINADORES =====
+      sponsors_page_title: "Sponsors · DULCESOR",
+      sponsors_meta_description: "Sponsors and collaborators of the DULCESOR Cultural Association.",
       sponsors_title: "Sponsors",
       sponsors_subtitle: "Partner entities of the DULCESOR Cultural Association.",
       sponsors_assoc_title: "Association sponsors",
@@ -463,10 +487,11 @@
       sponsors_private: "Collaborators",
       sponsors_private_text:
         "Companies and partner entities that make activities, communication and support possible.",
-      sponsors_page_title: "Sponsors · DULCESOR",
-      sponsors_meta_description: "Sponsors and collaborators of the DULCESOR Cultural Association.",
 
       // ===== PROYECTOS =====
+      projects_page_title: "Projects · DULCESOR",
+      projects_meta_description:
+        "Cultural and gastronomic projects of the DULCESOR Cultural Association.",
       projects_title: "Projects",
       projects_subtitle:
         "Cultural and gastronomic initiatives devoted to preserving and disseminating monastic and convent pastry-making.",
@@ -492,6 +517,8 @@
         "If you are an institution, entity or collective interested in collaborating, you can get in touch to explore participation options.",
 
       // ===== RUTAS =====
+      routes_page_title: "Routes · DULCESOR",
+      routes_meta_description: "Monastic routes and convent museums: DULCESOR cultural line.",
       routes_title: "Monastic routes",
       routes_subtitle:
         "A DULCESOR cultural line devoted to disseminating monastic heritage and craft tradition, with institutional links and cultural resources.",
@@ -661,8 +688,15 @@
     const fromQuery = qsLang();
     if (fromQuery) return fromQuery;
 
+    // Preferimos la clave nueva
     const saved = (localStorage.getItem(STORAGE_KEY) || "").toLowerCase();
     if (SUPPORTED.has(saved)) return saved;
+
+    // Compat: header antiguo suele usar "lang" / "language" / etc.
+    for (const k of LEGACY_KEYS) {
+      const v = (localStorage.getItem(k) || "").toLowerCase();
+      if (SUPPORTED.has(v)) return v;
+    }
 
     const htmlLang = (document.documentElement.getAttribute("lang") || "").toLowerCase();
     if (SUPPORTED.has(htmlLang)) return htmlLang;
@@ -673,7 +707,13 @@
   const setLang = (lang) => {
     const l = (lang || "").toLowerCase();
     if (!SUPPORTED.has(l)) return;
+
+    // Guardamos en clave nueva
     localStorage.setItem(STORAGE_KEY, l);
+
+    // Compat: guardamos también donde el header viejo mira
+    for (const k of LEGACY_KEYS) localStorage.setItem(k, l);
+
     document.documentElement.setAttribute("lang", l);
     api.apply();
   };
@@ -743,9 +783,6 @@
       const val = dict[key];
       if (key && val != null) el.setAttribute("content", String(val));
     });
-
-    // 4) Si hay un toggle de idioma (si lo implementas en header)
-    //    puedes asignar: data-i18n="common_lang_btn" etc.
   };
 
   // Re-aplicar cuando header/footer se inyectan
@@ -778,5 +815,24 @@
     apply();
     observe();
   });
+
+  // ============================================================
+  // COMPAT con header antiguo (sin tocar header.js)
+  // ============================================================
+  window.setLanguage = window.setLanguage || function (lang) {
+    if (window.DULCESOR_I18N && typeof window.DULCESOR_I18N.setLang === "function") {
+      window.DULCESOR_I18N.setLang(lang);
+    }
+  };
+  window.changeLanguage = window.changeLanguage || window.setLanguage;
+  window.setLang = window.setLang || window.setLanguage;
+
+  // Por si el header llama algo tipo applyTranslations()
+  window.applyTranslations = window.applyTranslations || function () {
+    if (window.DULCESOR_I18N && typeof window.DULCESOR_I18N.apply === "function") {
+      window.DULCESOR_I18N.apply();
+    }
+  };
 })();
+
 
