@@ -5,13 +5,11 @@
   }
 
   function buildHeader(currentFile) {
-    // Ruta correcta según tu repo (assets/img/)
     const logoSrc = "assets/img/logo-asociacion.png";
 
     return `
 <header id="site-header" class="siteHeader" role="banner">
   <div class="headerInner">
-    <!-- FILA 1: logo izquierda / idiomas derecha -->
     <div class="topbar">
       <a class="brand" href="index.html" aria-label="DULCESOR - inicio">
         <img class="brandLogo" src="${logoSrc}" alt="Logotipo Asociación Cultural DULCESOR" />
@@ -26,7 +24,6 @@
       </div>
     </div>
 
-    <!-- FILA 2: menú -->
     <nav class="mainNav" aria-label="Navegación principal">
       <a href="index.html" class="${currentFile === "index.html" ? "current" : ""}"><span data-i18n="nav_home">Inicio</span></a>
       <a href="asociacion.html" class="${currentFile === "asociacion.html" ? "current" : ""}"><span data-i18n="nav_association">Asociación</span></a>
@@ -41,13 +38,66 @@
 `.trim();
   }
 
+  function getStoredLangFallback() {
+    return (
+      (localStorage.getItem("dulcesor_lang") ||
+        localStorage.getItem("lang") ||
+        localStorage.getItem("language") ||
+        localStorage.getItem("site_lang") ||
+        "es"
+      ).toLowerCase()
+    );
+  }
+
   function markActiveLang() {
-    const lang = window.dulcesorI18n?.getLang?.() || "es";
+    const lang =
+      window.dulcesorI18n?.getLang?.() ||
+      window.DULCESOR_I18N?.getLang?.() ||
+      getStoredLangFallback();
+
     document.querySelectorAll(".langBtn").forEach((b) => {
       const active = b.dataset.lang === lang;
       b.classList.toggle("active", active);
       b.setAttribute("aria-current", active ? "true" : "false");
     });
+  }
+
+  function setLangSafe(lang) {
+    const l = (lang || "").toLowerCase();
+
+    if (window.dulcesorI18n?.setLanguage) {
+      window.dulcesorI18n.setLanguage(l);
+      return;
+    }
+
+    if (typeof window.setLanguage === "function") {
+      window.setLanguage(l);
+      return;
+    }
+
+    try {
+      localStorage.setItem("dulcesor_lang", l);
+      localStorage.setItem("lang", l);
+      localStorage.setItem("language", l);
+      localStorage.setItem("site_lang", l);
+      document.documentElement.setAttribute("lang", l);
+      document.dispatchEvent(new CustomEvent("dulcesor:langchange"));
+    } catch {}
+  }
+
+  function applyI18nSafe() {
+    if (window.dulcesorI18n?.applyI18n) {
+      window.dulcesorI18n.applyI18n();
+      return;
+    }
+    if (typeof window.applyTranslations === "function") {
+      window.applyTranslations();
+      return;
+    }
+    if (window.DULCESOR_I18N?.apply) {
+      window.DULCESOR_I18N.apply();
+      return;
+    }
   }
 
   function init() {
@@ -59,18 +109,18 @@
 
     document.querySelectorAll(".langBtn").forEach((btn) => {
       btn.addEventListener("click", () => {
-        window.dulcesorI18n?.setLanguage?.(btn.dataset.lang);
+        setLangSafe(btn.dataset.lang);
+        markActiveLang();
+        applyI18nSafe();
       });
     });
 
-    // primera marca + traducción del header
     markActiveLang();
-    window.dulcesorI18n?.applyI18n?.();
+    applyI18nSafe();
 
-    // si cambia idioma desde cualquier sitio, actualiza estado
     document.addEventListener("dulcesor:langchange", () => {
       markActiveLang();
-      window.dulcesorI18n?.applyI18n?.();
+      applyI18nSafe();
     });
   }
 
