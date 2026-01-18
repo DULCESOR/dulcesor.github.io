@@ -18,8 +18,7 @@
   const STORAGE_KEY = "dulcesor_lang";
   // Claves antiguas típicas que puede usar tu header.js
   const LEGACY_KEYS = ["lang", "language", "site_lang"];
-  const SUPPORTED = new Set(["es", "en"]);
-
+  const SUPPORTED = new Set(["es", "en", "pt", "fr", "it"]);
   // ---------- Diccionarios ----------
   const DICT = {
     es: {
@@ -716,6 +715,7 @@
 
     document.documentElement.setAttribute("lang", l);
     api.apply();
+    document.dispatchEvent(new CustomEvent("dulcesor:langchange"));
   };
 
   const t = (key, fallback = "") => {
@@ -786,17 +786,12 @@
   };
 
   // Re-aplicar cuando header/footer se inyectan
-  const observe = () => {
-    const targets = [
-      document.getElementById("site-header"),
-      document.getElementById("site-footer")
-    ].filter(Boolean);
+  const target = document.body;
+  if (!target) return;
 
-    if (!targets.length) return;
-
-    const mo = new MutationObserver(() => apply());
-    targets.forEach((t) => mo.observe(t, { childList: true, subtree: true }));
-  };
+  const mo = new MutationObserver(() => apply());
+  mo.observe(target, { childList: true, subtree: true });
+};
 
   // API pública
   const api = {
@@ -808,6 +803,18 @@
   };
 
   window.DULCESOR_I18N = api;
+// ------------------------------------------------------------
+// PUENTE COMPATIBLE con header.js (window.dulcesorI18n.*)
+// ------------------------------------------------------------
+window.dulcesorI18n = window.dulcesorI18n || {
+  getLang: api.getLang,
+  applyI18n: api.apply,
+  setLanguage: (lang) => {
+    api.setLang(lang);
+    document.dispatchEvent(new CustomEvent("dulcesor:langchange"));
+  }
+};
+
 
   // Init
   document.addEventListener("DOMContentLoaded", () => {
