@@ -1,53 +1,155 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title data-i18n="sponsors_page_title">Patrocinadores · DULCESOR</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description" content="Patrocinadores y colaboradores de la Asociación Cultural DULCESOR." data-i18n-content="sponsors_meta_description" />
-  <meta name="keywords" content="DULCESOR, patrocinadores, colaboradores, instituciones" />
+  <!-- SEO -->
+  <meta name="description" content="Entidades colaboradoras y patrocinadores de la Asociación Cultural DULCESOR." data-i18n-content="sponsors_meta_description">
+  <meta name="keywords" content="DULCESOR, patrocinadores, colaboradores, NB21, APOLO, Spain AI, repostería monacal, cultura">
 
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="icon" href="assets/logos/logo-asociacion.png" />
+  <link rel="icon" href="assets/logos/logo-asociacion.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Estilos SOLO de esta página -->
+  <style>
+    :root{
+      --sponsor-logo-h: 58px;
+      --sponsor-card-gap: 14px;
+    }
+
+    /* Rejilla de patrocinadores (NB21 / APOLO / etc.) */
+    .sponsorGrid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+    @media (max-width: 860px){
+      .sponsorGrid{ grid-template-columns: 1fr; }
+    }
+
+    .sponsorItem{
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--sponsor-card-gap);
+      align-items: center;
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.55);
+    }
+
+    .sponsorLogo{
+      height: var(--sponsor-logo-h);
+      width: auto;
+      max-width: 220px;
+      display: block;
+      object-fit: contain;
+    }
+    .sponsorText p{ margin: 0; }
+
+    @media (max-width: 420px){
+      :root{ --sponsor-logo-h: 48px; }
+      .sponsorItem{
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+      }
+      .btnRow{ justify-content: center; }
+    }
+
+    /* ====== INSTITUCIONALES: rejilla + marcos (evita logos enormes) ====== */
+    .instGrid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    @media (max-width: 860px){
+      .instGrid{ grid-template-columns: 1fr; }
+    }
+
+    .instTile{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: rgba(255,255,255,0.55);
+      min-height: 110px;
+      overflow: hidden;
+    }
+
+    .instTile img{
+      max-width: 100%;
+      max-height: 80px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+  </style>
 </head>
 
 <body class="page-patrocinadores">
+
   <!-- HEADER (inyectado por JS) -->
   <header id="site-header"></header>
 
   <main class="wrap">
 
+    <!-- HERO (mismo criterio que el resto) -->
     <section class="hero heroLeft">
       <h1 data-i18n="sponsors_title">Patrocinadores</h1>
-      <p data-i18n="sponsors_subtitle">Instituciones y entidades colaboradoras.</p>
+      <p data-i18n="sponsors_subtitle">Entidades colaboradoras de la Asociación Cultural DULCESOR.</p>
     </section>
 
-    <section class="pageGrid" aria-label="Listado de patrocinadores">
+    <section class="pageGrid" aria-label="Bloques de patrocinadores">
 
-      <section class="card soft span2">
+      <!-- (1) INSTITUCIONALES (layout corregido: rejilla + marcos) -->
+      <section class="card soft span2" aria-label="Institucionales">
         <h2 data-i18n="sponsors_institutional">Institucionales</h2>
         <p data-i18n="sponsors_institutional_text">
           Entidades públicas e instituciones que apoyan el proyecto cultural y el concurso.
         </p>
 
-        <div class="logosRow">
-          <img src="assets/logos/logo-ayuntamiento-valladolid.png" alt="Ayuntamiento de Valladolid" loading="lazy" />
-          <img src="assets/logos/logo-diputacion-valladolid.png" alt="Diputación de Valladolid" loading="lazy" />
-          <img src="assets/logos/logo-junta-cyl.png" alt="Junta de Castilla y León" loading="lazy" />
-          <img src="assets/logos/logo-escueladecocina.png" alt="Escuela de Cocina" loading="lazy" />
+        <div class="instGrid" aria-label="Logos institucionales">
+          <div class="instTile">
+            <img src="assets/logos/logo-ayuntamiento-valladolid.png" alt="Ayuntamiento de Valladolid" loading="lazy">
+          </div>
+          <div class="instTile">
+            <img src="assets/logos/logo-diputacion-valladolid.png" alt="Diputación de Valladolid" loading="lazy">
+          </div>
+          <div class="instTile">
+            <img src="assets/logos/logo-junta-cyl.png" alt="Junta de Castilla y León" loading="lazy">
+          </div>
+          <div class="instTile">
+            <img src="assets/logos/logo-escueladecocina.png" alt="Escuela de Cocina" loading="lazy">
+          </div>
         </div>
       </section>
 
-      <section class="card span2">
-        <h2 data-i18n="sponsors_private">Colaboradores</h2>
-        <p data-i18n="sponsors_private_text">
-          Empresas y entidades colaboradoras que hacen posible el desarrollo de actividades, comunicación y soporte.
+      <!-- (2) CTA (contacto) -->
+      <section class="card soft" aria-label="Colabora con DULCESOR">
+        <h2 data-i18n="sponsors_collab_title">¿Quieres colaborar?</h2>
+        <p data-i18n="sponsors_collab_text">
+          Si tu entidad desea apoyar los proyectos culturales de DULCESOR, escríbenos y te informaremos sobre las modalidades de colaboración.
         </p>
+        <div class="btnRow" style="justify-content:flex-start;">
+          <a class="btn ghost" href="contacto.html" data-i18n="sponsors_collab_btn">Ir a contacto</a>
+        </div>
+      </section>
 
-        <div class="sponsorsList">
+      <!-- (3) COLABORADORES (NB21/APOLO) -->
+      <section class="card span2" aria-label="Listado de patrocinadores">
+        <h2 data-i18n="sponsors_list_title">Listado</h2>
 
-          <!-- Patrocinador 1: NB21 -->
+        <div class="sponsorGrid" aria-label="Rejilla de patrocinadores">
+
+          <!-- NB21 -->
           <div class="sponsorItem">
             <a href="https://www.nb21.es/" target="_blank" rel="noopener noreferrer" aria-label="NB21">
               <img class="sponsorLogo" src="assets/logos/logo-nb21.png" alt="NB21" loading="lazy">
@@ -55,7 +157,6 @@
 
             <div class="sponsorText">
               <p data-i18n="sponsors_nb21_text">Patrocinador de la Asociación Cultural DULCESOR.</p>
-
               <div class="btnRow" style="justify-content:flex-start; margin-top:10px;">
                 <a class="btn ghost" href="https://www.nb21.es/" target="_blank" rel="noopener noreferrer" data-i18n="sponsors_visit_web">
                   Visitar web
@@ -64,14 +165,14 @@
             </div>
           </div>
 
-          <!-- Patrocinador 2: APOLO -->
+          <!-- APOLO (CORREGIDO: clave propia) -->
           <div class="sponsorItem">
             <a href="https://www.apolostudio.es/" target="_blank" rel="noopener noreferrer" aria-label="APOLO">
               <img class="sponsorLogo" src="assets/logos/logo-apolo.png" alt="APOLO" loading="lazy">
             </a>
 
             <div class="sponsorText">
-              <!-- ✅ clave propia para APOLO -->
+              <!-- ✅ aquí estaba el fallo: antes repetía sponsors_nb21_text -->
               <p data-i18n="sponsors_apolo_text">Patrocinador de la Asociación Cultural DULCESOR.</p>
 
               <div class="btnRow" style="justify-content:flex-start; margin-top:10px;">
@@ -82,27 +183,7 @@
             </div>
           </div>
 
-          <!-- Patrocinador 3: Spain AI -->
-          <div class="sponsorItem">
-            <a href="https://www.spain-ai.com/" target="_blank" rel="noopener noreferrer" aria-label="Spain AI">
-              <img class="sponsorLogo" src="assets/logos/logo-spain-ai.png" alt="Spain AI" loading="lazy">
-            </a>
-
-            <div class="sponsorText">
-              <p data-i18n="sponsors_spainai_text">Colaborador tecnológico y cultural en la línea de innovación.</p>
-
-              <div class="btnRow" style="justify-content:flex-start; margin-top:10px;">
-                <a class="btn ghost" href="https://www.spain-ai.com/" target="_blank" rel="noopener noreferrer" data-i18n="sponsors_visit_web">
-                  Visitar web
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="btnRow" style="justify-content:flex-start; margin-top:18px;">
-          <a class="btn" href="contacto.html" data-i18n="sponsors_cta">Proponer patrocinio</a>
+          <!-- Si quieres añadir Spain AI aquí, dímelo y lo meto en este mismo formato -->
         </div>
       </section>
 
@@ -111,8 +192,10 @@
 
   <div id="site-footer"></div>
 
+  <!-- JS globales (orden) -->
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/header.js" defer></script>
   <script src="assets/js/footer.js" defer></script>
+
 </body>
 </html>
