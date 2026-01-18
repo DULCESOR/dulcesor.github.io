@@ -1,17 +1,25 @@
 (function () {
-  function normalizePath(p) {
-    const file = (p || "").split("?")[0].split("#")[0].split("/").pop();
-    return file || "index.html";
+  function normalizePath(pathname) {
+    const clean = (pathname || "").split("?")[0].split("#")[0];
+    let last = clean.split("/").filter(Boolean).pop() || "index.html";
+
+    // Si entras por /proyectos o /proyectos/ (sin extensión), lo convertimos a .html
+    if (!last.includes(".")) last = `${last}.html`;
+
+    // Si por lo que sea queda vacío
+    return last || "index.html";
   }
 
   function buildHeader(currentFile) {
-    const logoSrc = "assets/img/logo-asociacion.png";
+    // RUTA ABSOLUTA para que no falle con /proyectos/ (slash final) u otras rutas
+    const logoSrc = "/assets/img/logo-asociacion.png";
 
     return `
 <header id="site-header" class="siteHeader" role="banner">
   <div class="headerInner">
+    <!-- FILA 1: logo izquierda / idiomas derecha -->
     <div class="topbar">
-      <a class="brand" href="index.html" aria-label="DULCESOR - inicio">
+      <a class="brand" href="/index.html" aria-label="DULCESOR - inicio">
         <img class="brandLogo" src="${logoSrc}" alt="Logotipo Asociación Cultural DULCESOR" />
       </a>
 
@@ -24,14 +32,15 @@
       </div>
     </div>
 
+    <!-- FILA 2: menú -->
     <nav class="mainNav" aria-label="Navegación principal">
-      <a href="index.html" class="${currentFile === "index.html" ? "current" : ""}"><span data-i18n="nav_home">Inicio</span></a>
-      <a href="asociacion.html" class="${currentFile === "asociacion.html" ? "current" : ""}"><span data-i18n="nav_association">Asociación</span></a>
-      <a href="proyectos.html" class="${currentFile === "proyectos.html" ? "current" : ""}"><span data-i18n="nav_projects">Proyectos</span></a>
-      <a href="concursos.html" class="${currentFile === "concursos.html" ? "current" : ""}"><span data-i18n="nav_contests">Concursos</span></a>
-      <a href="rutas.html" class="${currentFile === "rutas.html" ? "current" : ""}"><span data-i18n="nav_routes">Rutas monacales</span></a>
-      <a href="patrocinadores.html" class="${currentFile === "patrocinadores.html" ? "current" : ""}"><span data-i18n="nav_sponsors">Patrocinadores</span></a>
-      <a href="contacto.html" class="${currentFile === "contacto.html" ? "current" : ""}"><span data-i18n="nav_contact">Contacto</span></a>
+      <a href="/index.html" class="${currentFile === "index.html" ? "current" : ""}"><span data-i18n="nav_home">Inicio</span></a>
+      <a href="/asociacion.html" class="${currentFile === "asociacion.html" ? "current" : ""}"><span data-i18n="nav_association">Asociación</span></a>
+      <a href="/proyectos.html" class="${currentFile === "proyectos.html" ? "current" : ""}"><span data-i18n="nav_projects">Proyectos</span></a>
+      <a href="/concursos.html" class="${currentFile === "concursos.html" ? "current" : ""}"><span data-i18n="nav_contests">Concursos</span></a>
+      <a href="/rutas.html" class="${currentFile === "rutas.html" ? "current" : ""}"><span data-i18n="nav_routes">Rutas monacales</span></a>
+      <a href="/patrocinadores.html" class="${currentFile === "patrocinadores.html" ? "current" : ""}"><span data-i18n="nav_sponsors">Patrocinadores</span></a>
+      <a href="/contacto.html" class="${currentFile === "contacto.html" ? "current" : ""}"><span data-i18n="nav_contact">Contacto</span></a>
     </nav>
   </div>
 </header>
@@ -86,18 +95,9 @@
   }
 
   function applyI18nSafe() {
-    if (window.dulcesorI18n?.applyI18n) {
-      window.dulcesorI18n.applyI18n();
-      return;
-    }
-    if (typeof window.applyTranslations === "function") {
-      window.applyTranslations();
-      return;
-    }
-    if (window.DULCESOR_I18N?.apply) {
-      window.DULCESOR_I18N.apply();
-      return;
-    }
+    if (window.dulcesorI18n?.applyI18n) return window.dulcesorI18n.applyI18n();
+    if (typeof window.applyTranslations === "function") return window.applyTranslations();
+    if (window.DULCESOR_I18N?.apply) return window.DULCESOR_I18N.apply();
   }
 
   function init() {
