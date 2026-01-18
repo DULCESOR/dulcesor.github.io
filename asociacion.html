@@ -1,112 +1,167 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <title data-i18n="sponsors_page_title">Patrocinadores · DULCESOR</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <title data-i18n="assoc_page_title">Asociación · DULCESOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description" content="Patrocinadores y colaboradores de la Asociación Cultural DULCESOR." data-i18n-content="sponsors_meta_description" />
-  <meta name="keywords" content="DULCESOR, patrocinadores, colaboradores, instituciones" />
+  <meta name="description" content="Asociación Cultural DULCESOR: identidad, fines y objetivos, líneas de trabajo y cómo colaborar." data-i18n-content="assoc_meta_description">
+  <meta name="keywords" content="DULCESOR, asociación cultural, repostería monacal, patrimonio, Valladolid">
 
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="icon" href="assets/logos/logo-asociacion.png" />
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" href="assets/logos/logo-asociacion.png">
 </head>
 
-<body class="page-patrocinadores">
+<body class="page-asociacion">
+
   <!-- HEADER (inyectado por JS) -->
   <header id="site-header"></header>
 
   <main class="wrap">
 
+    <!-- HERO -->
     <section class="hero heroLeft">
-      <h1 data-i18n="sponsors_title">Patrocinadores</h1>
-      <p data-i18n="sponsors_subtitle">Instituciones y entidades colaboradoras.</p>
+      <h1 data-i18n="assoc_title">Asociación</h1>
+      <p data-i18n="assoc_subtitle">
+        Quiénes somos y para qué trabajamos: preservar la repostería monacal-conventual e impulsar proyectos culturales
+        y el Concurso Internacional de Postres Conventuales.
+      </p>
     </section>
 
-    <section class="pageGrid" aria-label="Listado de patrocinadores">
+    <section class="pageGrid" aria-label="Contenido de la asociación">
 
+      <!-- IDENTIDAD -->
       <section class="card soft span2">
-        <h2 data-i18n="sponsors_institutional">Institucionales</h2>
-        <p data-i18n="sponsors_institutional_text">
-          Entidades públicas e instituciones que apoyan el proyecto cultural y el concurso.
+        <h2 data-i18n="assoc_identity_title">Identidad</h2>
+        <p data-i18n="assoc_identity_p1">
+          La Asociación Cultural DULCESOR es una entidad sin ánimo de lucro dedicada a preservar, investigar y difundir la
+          repostería monacal-conventual como patrimonio cultural.
         </p>
+        <p data-i18n="assoc_identity_p2">
+          Trabajamos para poner en valor un legado vivo de recetas, técnicas y saberes transmitidos durante siglos, con
+          respeto patrimonial y vocación de colaboración.
+        </p>
+      </section>
 
-        <div class="logosRow">
-          <img src="assets/logos/logo-ayuntamiento-valladolid.png" alt="Ayuntamiento de Valladolid" loading="lazy" />
-          <img src="assets/logos/logo-diputacion-valladolid.png" alt="Diputación de Valladolid" loading="lazy" />
-          <img src="assets/logos/logo-junta-cyl.png" alt="Junta de Castilla y León" loading="lazy" />
-          <img src="assets/logos/logo-escueladecocina.png" alt="Escuela de Cocina" loading="lazy" />
+      <!-- FINES -->
+      <section class="card span2">
+        <h2 data-i18n="assoc_goals_title">Fines y objetivos</h2>
+
+        <ul class="cleanList">
+          <li data-i18n="assoc_goal_1">Preservar y difundir la tradición repostera de monasterios y conventos como patrimonio cultural inmaterial.</li>
+          <li data-i18n="assoc_goal_2">Promover actividades culturales, gastronómicas y académicas que impulsen su conocimiento y valoración social.</li>
+          <li data-i18n="assoc_goal_3">Fomentar la investigación, recopilación y documentación de recetas, técnicas y procesos tradicionales.</li>
+          <li data-i18n="assoc_goal_4">Establecer vínculos de cooperación con instituciones culturales, educativas y religiosas.</li>
+          <li data-i18n="assoc_goal_5">Colaborar con administraciones públicas, instituciones culturales y entidades privadas.</li>
+        </ul>
+
+        <div id="goalsMore" class="isHidden" aria-hidden="true">
+          <ul class="cleanList">
+            <li data-i18n="assoc_goal_6">Impulsar publicaciones y materiales de divulgación que contribuyan a su conservación.</li>
+            <li data-i18n="assoc_goal_7">Organizar y promover el Concurso Internacional de Postres Conventuales.</li>
+          </ul>
+        </div>
+
+        <div class="readMoreWrap">
+          <button
+            id="goalsToggle"
+            class="readMoreBtn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="goalsMore"
+            data-i18n="assoc_goals_readmore_more"
+          >
+            Leer más…
+          </button>
         </div>
       </section>
 
+      <!-- LÍNEAS DE TRABAJO -->
+      <section class="card soft span2">
+        <h2 data-i18n="assoc_lines_title">NUESTRAS LÍNEAS DE TRABAJO</h2>
+
+        <div class="cards3">
+          <div class="miniCard">
+            <h3 data-i18n="assoc_lines_1_title">Patrimonio y memoria</h3>
+            <p data-i18n="assoc_lines_1_text">Investigación y preservación del patrimonio repostero monacal-conventual.</p>
+          </div>
+
+          <div class="miniCard">
+            <h3 data-i18n="assoc_lines_2_title">Artesanía</h3>
+            <p data-i18n="assoc_lines_2_text">Puesta en valor del trabajo artesanal y de los procesos tradicionales.</p>
+          </div>
+
+          <div class="miniCard">
+            <h3 data-i18n="assoc_lines_3_title">Encuentro y cultura</h3>
+            <p data-i18n="assoc_lines_3_text">Actividades culturales y fomento del Concurso Internacional de Postres Conventuales.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRINCIPIOS -->
       <section class="card span2">
-        <h2 data-i18n="sponsors_private">Colaboradores</h2>
-        <p data-i18n="sponsors_private_text">
-          Empresas y entidades colaboradoras que hacen posible el desarrollo de actividades, comunicación y soporte.
+        <h2 data-i18n="assoc_values_title">Principios y valores</h2>
+        <p data-i18n="assoc_values_p1">
+          DULCESOR actúa con rigor histórico, respeto patrimonial y compromiso ético con las comunidades religiosas productoras.
+        </p>
+        <p data-i18n="assoc_values_p2">
+          Promovemos el reconocimiento de la repostería monacal como expresión cultural y gastronómica y como testimonio vivo
+          de tradición, espiritualidad y artesanía.
+        </p>
+      </section>
+
+      <!-- INFO ADMIN -->
+      <section class="card soft span2">
+        <h2 data-i18n="assoc_admin_title">Información administrativa</h2>
+
+        <dl class="kv">
+          <div>
+            <dt data-i18n="assoc_admin_scope_label">Ámbito de actuación</dt>
+            <dd data-i18n="assoc_admin_scope_value">Cultural y gastronómico (ámbito nacional e internacional)</dd>
+          </div>
+          <div>
+            <dt data-i18n="assoc_admin_legal_label">Naturaleza jurídica</dt>
+            <dd data-i18n="assoc_admin_legal_value">Asociación cultural sin ánimo de lucro</dd>
+          </div>
+          <div>
+            <dt data-i18n="assoc_admin_address_label">Domicilio social</dt>
+            <dd data-i18n="assoc_admin_address_value">Convento de Santa Ana (Valladolid)</dd>
+          </div>
+          <div>
+            <dt data-i18n="assoc_admin_duration_label">Duración</dt>
+            <dd data-i18n="assoc_admin_duration_value">Indefinida</dd>
+          </div>
+          <div>
+            <dt data-i18n="assoc_admin_registry_label">Situación registral</dt>
+            <dd data-i18n="assoc_admin_registry_value">Entidad en proceso de inscripción oficial (NIF/CIF solicitado)</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- CÓMO COLABORAR -->
+      <section class="card span2">
+        <h2 data-i18n="assoc_collab_title">Cómo colaborar</h2>
+        <p data-i18n="assoc_collab_intro">
+          Como entidad cultural, DULCESOR formaliza colaboraciones, patrocinios y apoyos mediante convenios, acuerdos o contratos,
+          sin que dichas relaciones otorguen la condición de socio.
         </p>
 
-        <div class="sponsorsList">
+        <h3 data-i18n="assoc_collab_forms_title">Formas de colaboración</h3>
+        <ul class="cleanList">
+          <li data-i18n="assoc_collab_1">Alianza institucional (ayuntamientos, diputaciones, universidades, museos, archivos, entidades culturales).</li>
+          <li data-i18n="assoc_collab_2">Patrocinio del concurso y/o de actividades culturales y divulgativas.</li>
+          <li data-i18n="assoc_collab_3">Apoyo en especie o servicios (espacios, logística, comunicación, impresión, materiales, etc.).</li>
+          <li data-i18n="assoc_collab_4">Difusión y red cultural (medios, prescriptores, entidades colaboradoras).</li>
+        </ul>
 
-          <!-- Patrocinador 1: NB21 -->
-          <div class="sponsorItem">
-            <a href="https://www.nb21.es/" target="_blank" rel="noopener noreferrer" aria-label="NB21">
-              <img class="sponsorLogo" src="assets/logos/logo-nb21.png" alt="NB21" loading="lazy">
-            </a>
-
-            <div class="sponsorText">
-              <p data-i18n="sponsors_nb21_text">Patrocinador de la Asociación Cultural DULCESOR.</p>
-
-              <div class="btnRow" style="justify-content:flex-start; margin-top:10px;">
-                <a class="btn ghost" href="https://www.nb21.es/" target="_blank" rel="noopener noreferrer" data-i18n="sponsors_visit_web">
-                  Visitar web
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Patrocinador 2: APOLO -->
-          <div class="sponsorItem">
-            <a href="https://www.apolostudio.es/" target="_blank" rel="noopener noreferrer" aria-label="APOLO">
-              <img class="sponsorLogo" src="assets/logos/logo-apolo.png" alt="APOLO" loading="lazy">
-            </a>
-
-            <div class="sponsorText">
-              <!-- ✅ clave propia para APOLO -->
-              <p data-i18n="sponsors_apolo_text">Patrocinador de la Asociación Cultural DULCESOR.</p>
-
-              <div class="btnRow" style="justify-content:flex-start; margin-top:10px;">
-                <a class="btn ghost" href="https://www.apolostudio.es/" target="_blank" rel="noopener noreferrer" data-i18n="sponsors_visit_web">
-                  Visitar web
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Patrocinador 3: Spain AI -->
-          <div class="sponsorItem">
-            <a href="https://www.spain-ai.com/" target="_blank" rel="noopener noreferrer" aria-label="Spain AI">
-              <img class="sponsorLogo" src="assets/logos/logo-spain-ai.png" alt="Spain AI" loading="lazy">
-            </a>
-
-            <div class="sponsorText">
-              <p data-i18n="sponsors_spainai_text">Colaborador tecnológico y cultural en la línea de innovación.</p>
-
-              <div class="btnRow" style="justify-content:flex-start; margin-top:10px;">
-                <a class="btn ghost" href="https://www.spain-ai.com/" target="_blank" rel="noopener noreferrer" data-i18n="sponsors_visit_web">
-                  Visitar web
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="btnRow" style="justify-content:flex-start; margin-top:18px;">
-          <a class="btn" href="contacto.html" data-i18n="sponsors_cta">Proponer patrocinio</a>
+        <div class="btnRow" style="justify-content:flex-start; margin-top:14px;">
+          <a class="btn" href="contacto.html" data-i18n="assoc_collab_cta_1">Proponer colaboración</a>
+          <a class="btn ghost" href="contacto.html" data-i18n="assoc_collab_cta_2">Contacto institucional</a>
         </div>
       </section>
 
     </section>
+
   </main>
 
   <div id="site-footer"></div>
@@ -114,5 +169,35 @@
   <script src="assets/js/i18n.js" defer></script>
   <script src="assets/js/header.js" defer></script>
   <script src="assets/js/footer.js" defer></script>
+
+  <!-- JS SOLO de esta página: Leer más -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const more = document.getElementById("goalsMore");
+      const btn = document.getElementById("goalsToggle");
+      if (!more || !btn) return;
+
+      const setState = (expanded) => {
+        btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+        more.classList.toggle("isHidden", !expanded);
+        more.setAttribute("aria-hidden", expanded ? "false" : "true");
+
+        // Texto del botón via i18n (protocolo único)
+        const key = expanded ? "assoc_goals_readmore_less" : "assoc_goals_readmore_more";
+        btn.setAttribute("data-i18n", key);
+        if (window.DULCESOR_I18N && typeof window.DULCESOR_I18N.t === "function") {
+          btn.textContent = window.DULCESOR_I18N.t(key);
+        }
+      };
+
+      btn.addEventListener("click", () => {
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        setState(!expanded);
+      });
+
+      setState(false);
+    });
+  </script>
+
 </body>
 </html>
