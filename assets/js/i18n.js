@@ -378,7 +378,7 @@
       home_intro:
         'The cultural association <strong>DULCESOR</strong> promotes the preservation, dissemination and appreciation of <strong>monastic and convent pastry</strong> and the culinary heritage linked to religious communities, fostering cultural projects with national and international reach.',
       home_project_title: "Main project in development",
-      home_project_desc: "1st International Convent Pastry Competition – Valladolid 2026",
+      home_project_desc: "I International Convent Pastry Competition -DULSESOR-– Valladolid 2026",
       home_project_status: "Information in preparation",
       home_identity_title: "Identity",
       home_identity_name_label: "Name:",
@@ -1050,7 +1050,7 @@
       home_intro:
         'L’Association culturelle <strong>DULCESOR</strong> promeut la préservation, la diffusion et la valorisation de la <strong>pâtisserie monastique et conventuelle</strong> ainsi que du patrimoine gastronomique lié aux communautés religieuses, en développant des projets culturels d’envergure nationale et internationale.',
       home_project_title: "Projet principal en développement",
-      home_project_desc: "1er Concours international de desserts conventuels – Valladolid 2026",
+      home_project_desc: "I Concours international de desserts conventuels -DULCESOR-  Valladolid 2026",
       home_project_status: "Informations en préparation",
       home_identity_title: "Identité",
       home_identity_name_label: "Nom :",
@@ -1386,7 +1386,7 @@
       home_intro:
         'L’Associazione culturale <strong>DULCESOR</strong> promuove la conservazione, la diffusione e la valorizzazione della <strong>pasticceria monastica e conventuale</strong> e del patrimonio gastronomico legato alle comunità religiose, sviluppando progetti culturali di portata nazionale e internazionale.',
       home_project_title: "Progetto principale in sviluppo",
-      home_project_desc: "I Concorso internazionale di dolci conventuali – Valladolid 2026",
+      home_project_desc: "I Concorso internazionale di dolci conventuali -DULCESOR- Valladolid 2026",
       home_project_status: "Informazioni in preparazione",
       home_identity_title: "Identità",
       home_identity_name_label: "Nome:",
