@@ -170,31 +170,38 @@
 
   /* Patrocinadores */
   .sponsorGrid{
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-    margin-top: 10px;
+     display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+/* Responsive: 2 columnas en tablet, 1 en móvil */
+@media (max-width: 980px){
+  .sponsorGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px){
+  .sponsorGrid{ grid-template-columns: 1fr; }
   }
-  @media (max-width: 980px){
-    .sponsorGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  }
+ /* Cada “caja” de logo */ 
   .sponsor{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.10);
-    background: rgba(255,255,255,0.55);
-    padding: 12px;
-    min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.55);
+  padding: 14px;
+  height: 110px;          /* altura fija para que todos queden alineados */
   }
   .sponsor img{
-    width: 100%;
-    max-width: 190px;
-    max-height: 56px;
-    object-fit: contain;
-    display: block;
+  max-width: 190px;       /* ancho máximo del logo */
+  max-height: 70px;       /* alto máximo del logo */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
   }
 
   /* MINI WRAPPER (Documentación oficial): filas fijas */
@@ -383,12 +390,12 @@ body.page-concurso .c-topBtn:hover{
         </p>
 <div aria-label="s de patrocinadores" class="sponsorGrid">
 <div class="sponsor"><img alt="Ayuntamiento de Valladolid" src="assets/logos/logo-ayuntamiento-valladolid.png"/></div>
-<div class="sponsorLogo"><img alt="Diputación de Valladolid" src="assets/logos/logo-diputacion-valladolid.png"/></div>
-<div class="sponsorLogo"><img alt="Junta de Castilla y León" src="assets/logos/logo-junta-cyl.png"/></div>
-<div class="sponsorLogo"><img alt="Spain AI" src="assets/logos/logo-spain-ai.png"/></div>
-<div class="sponsorLogo"><img alt="Spain AI" src="assets/logos/logo-camara-valladolid.png"/></div>
-<div class="sponsorLogo"><img alt="Spain AI" src="assets/logos/logo-escueladecocina.png"/></div>
-<div class="sponsorLogo"><img alt="NB21" src="assets/logos/logo-nb21.png"/></div>
+<div class="sponsor"><img alt="Diputación de Valladolid" src="assets/logos/logo-diputacion-valladolid.png"/></div>
+<div class="sponsor"><img alt="Junta de Castilla y León" src="assets/logos/logo-junta-cyl.png"/></div>
+<div class="sponsor"><img alt="Spain AI" src="assets/logos/logo-spain-ai.png"/></div>
+<div class="sponsor"><img alt="Spain AI" src="assets/logos/logo-camara-valladolid.png"/></div>
+<div class="sponsor"><img alt="Spain AI" src="assets/logos/logo-escueladecocina.png"/></div>
+<div class="sponsor"><img alt="NB21" src="assets/logos/logo-nb21.png"/></div>
 </div>
 </section>
 </section>
