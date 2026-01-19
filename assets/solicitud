@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Solicitud inscripción · Concurso · DULCESOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description" content="Solicitud de inscripción al concurso de DULCESOR." />
+  <meta name="robots" content="noindex,nofollow" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/logos/logo-asociacion.png" />
+
+  <style>
+    /* Solo ajustes de esta página (sin tocar tu diseño global) */
+    .formGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 860px){
+      .formGrid{ grid-template-columns: 1fr; }
+    }
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .field label{
+      font-weight: 700;
+      color: rgba(0,0,0,0.78);
+      font-size: 13px;
+    }
+    .field input,
+    .field textarea,
+    .field select{
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.12);
+      background: rgba(255,255,255,0.7);
+      font: inherit;
+      outline: none;
+    }
+    .field textarea{ min-height: 110px; resize: vertical; }
+
+    .span2{ grid-column: 1 / -1; }
+
+    .helpNote{
+      font-size: 12.5px;
+      line-height: 1.45;
+      color: rgba(0,0,0,0.68);
+      margin-top: 8px;
+    }
+
+    .btnRow{
+      display:flex;
+      gap:10px;
+      flex-wrap: wrap;
+      align-items:center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="site-header"></header>
+
+  <main class="wrap">
+    <section class="hero heroLeft">
+      <h1>Solicitud de inscripción</h1>
+      <p class="helpNote">
+        Completa los datos y pulsa “Enviar solicitud”. Se abrirá tu cliente de correo con toda la información preparada.
+      </p>
+    </section>
+
+    <section class="pageGrid" aria-label="Formulario de inscripción">
+      <section class="card span2" aria-label="Datos del formulario">
+        <form id="inscripcionForm" novalidate>
+          <div class="formGrid">
+
+            <!-- Datos de la entidad -->
+            <div class="field">
+              <label for="entidad">Convento / Monasterio / Comunidad</label>
+              <input id="entidad" name="entidad" type="text" required />
+            </div>
+
+            <div class="field">
+              <label for="pais">País</label>
+              <input id="pais" name="pais" type="text" required />
+            </div>
+
+            <div class="field">
+              <label for="ciudad">Ciudad / Localidad</label>
+              <input id="ciudad" name="ciudad" type="text" required />
+            </div>
+
+            <div class="field">
+              <label for="direccion">Dirección (opcional)</label>
+              <input id="direccion" name="direccion" type="text" />
+            </div>
+
+            <!-- Persona de contacto -->
+            <div class="field">
+              <label for="contactoNombre">Persona de contacto</label>
+              <input id="contactoNombre" name="contactoNombre" type="text" required />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+
+            <div class="field">
+              <label for="telefono">Teléfono (opcional)</label>
+              <input id="telefono" name="telefono" type="tel" />
+            </div>
+
+            <div class="field">
+              <label for="web">Web / RRSS (opcional)</label>
+              <input id="web" name="web" type="text" />
+            </div>
+
+            <!-- Postre -->
+            <div class="field span2">
+              <label for="postre">Nombre del postre</label>
+              <input id="postre" name="postre" type="text" required />
+            </div>
+
+            <div class="field span2">
+              <label for="descripcion">Descripción breve</label>
+              <textarea id="descripcion" name="descripcion" required></textarea>
+            </div>
+
+            <div class="field span2">
+              <label for="ingredientes">Ingredientes (opcional)</label>
+              <textarea id="ingredientes" name="ingredientes"></textarea>
+            </div>
+
+            <div class="field span2">
+              <label for="alergenos">Alérgenos (si aplica)</label>
+              <input id="alergenos" name="alergenos" type="text" />
+            </div>
+
+            <!-- Observaciones -->
+            <div class="field span2">
+              <label for="observaciones">Observaciones (opcional)</label>
+              <textarea id="observaciones" name="observaciones"></textarea>
+            </div>
+
+            <!-- Consentimiento -->
+            <div class="field span2">
+              <label>
+                <input id="consent" type="checkbox" required />
+                Confirmo que los datos son correctos y autorizo el contacto para esta inscripción.
+              </label>
+            </div>
+
+          </div>
+
+          <div class="btnRow">
+            <a id="sendBtn" class="btn" href="#" role="button">Enviar solicitud</a>
+            <a class="btn ghost" href="concursos.html">Volver</a>
+          </div>
+
+          <p class="helpNote">
+            Nota: si necesitas adjuntar archivos (imágenes, documentos, etc.), añádelos manualmente al correo antes de enviarlo.
+          </p>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script defer src="assets/js/i18n.js"></script>
+  <script defer src="assets/js/header.js"></script>
+  <script defer src="assets/js/footer.js"></script>
+
+  <script>
+    (function(){
+      "use strict";
+
+      // ✅ DESTINATARIO (CAMBIADO A concurso@dulcesor.org)
+      const TO_EMAIL = "concurso@dulcesor.org";
+
+      const form = document.getElementById("inscripcionForm");
+      const sendBtn = document.getElementById("sendBtn");
+
+      function val(id){ return (document.getElementById(id)?.value || "").trim(); }
+
+      function buildBody(){
+        const lines = [
+          "SOLICITUD DE INSCRIPCIÓN - DULCESOR",
+          "-----------------------------------",
+          "",
+          "ENTIDAD",
+          `Convento/Monasterio/Comunidad: ${val("entidad")}`,
+          `País: ${val("pais")}`,
+          `Ciudad/Localidad: ${val("ciudad")}`,
+          `Dirección: ${val("direccion")}`,
+          "",
+          "CONTACTO",
+          `Persona de contacto: ${val("contactoNombre")}`,
+          `Email: ${val("email")}`,
+          `Teléfono: ${val("telefono")}`,
+          `Web/RRSS: ${val("web")}`,
+          "",
+          "POSTRE",
+          `Nombre del postre: ${val("postre")}`,
+          `Descripción: ${val("descripcion")}`,
+          `Ingredientes: ${val("ingredientes")}`,
+          `Alérgenos: ${val("alergenos")}`,
+          "",
+          "OBSERVACIONES",
+          `${val("observaciones")}`,
+          "",
+          "-----------------------------------",
+          "Enviado desde www.dulcesor.org"
+        ];
+        return lines.join("\n");
+      }
+
+      function encode(s){ return encodeURIComponent(s); }
+
+      sendBtn.addEventListener("click", function(e){
+        e.preventDefault();
+
+        // Validación mínima
+        if(!form.checkValidity() || !document.getElementById("consent").checked){
+          form.reportValidity();
+          return;
+        }
+
+        const subject = `Solicitud inscripción - ${val("entidad")} - ${val("postre")}`;
+        const body = buildBody();
+
+        const mailto = `mailto:${TO_EMAIL}?subject=${encode(subject)}&body=${encode(body)}`;
+        window.location.href = mailto;
+      });
+    })();
+  </script>
+</body>
+</html>
