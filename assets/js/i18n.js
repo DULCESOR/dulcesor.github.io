@@ -527,7 +527,7 @@
         "Publishing outreach and educational materials about history, techniques and pastry legacy.",
       projects_line_4: "Collaborations with academic and cultural institutions for research and dissemination.",
       projects_featured_title: "Featured projects",
-      projects_featured_project_title: "1st International Monastic & Convent Pastry Competition",
+      projects_featured_project_title: "I International Monastic & Convent Pastry Competition",
       projects_featured_project_text:
         "First international call promoted by DULCESOR, devoted to recognising and disseminating traditional pastry made in monasteries and convents, with the city of Valladolid as the first venue.",
       projects_featured_more: "Learn more about the competitions",
@@ -1198,7 +1198,7 @@
         "Édition de supports de diffusion et éducatifs sur l’histoire, les techniques et l’héritage pâtissier.",
       projects_line_4: "Collaborations avec des institutions académiques et culturelles pour la recherche et la diffusion.",
       projects_featured_title: "Projets phares",
-      projects_featured_project_title: "1er Concours international de pâtisserie monastique et conventuelle",
+      projects_featured_project_title: "I Concours international de pâtisserie monastique et conventuelle",
       projects_featured_project_text:
         "Première édition internationale portée par DULCESOR, dédiée à la reconnaissance et à la diffusion de la pâtisserie traditionnelle élaborée dans les monastères et couvents, avec la ville de Valladolid comme premier cadre.",
       projects_featured_more: "En savoir plus sur les concours",
@@ -1620,7 +1620,7 @@
         "Per aggiungere un nuovo convento/monastero, duplica uno dei blocchi “Esempio” e modifica titolo, testo e link.",
 
       // ===== CONCURSOS (contest_*) =====
-      contest_hero_title: "1° Concorso internazionale di pasticceria monastica e conventuale",
+      contest_hero_title: "I Concorso internazionale di pasticceria monastica e conventuale",
       contest_title: "1° Concorso internazionale di pasticceria monastica e conventuale",
       contest_place_date: "Valladolid · 1–4 ottobre",
       contest_btn_registration_top: "Domanda di iscrizione",
