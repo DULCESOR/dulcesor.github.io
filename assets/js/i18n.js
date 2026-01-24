@@ -192,7 +192,7 @@
         "Edición de materiales divulgativos y educativos sobre historia, técnicas y legado repostero.",
       projects_line_4: "Colaboraciones con instituciones académicas y culturales para investigación y difusión.",
       projects_featured_title: "Proyectos destacados",
-      projects_featured_project_title: "I Concurso Internacional de Repostería Monacal -DULCESOR- Julio",
+      projects_featured_project_title: "I Concurso Internacional de Repostería Monacal -DULCESOR-",
       projects_featured_project_text:
         "Primera convocatoria internacional impulsada por DULCESOR, dedicada a reconocer y difundir la repostería tradicional elaborada en monasterios y conventos, con la ciudad de Valladolid como primer escenario.",
       projects_featured_more: "Ver más sobre los concursos",
@@ -278,8 +278,8 @@
         "Para añadir un nuevo convento/monasterio, duplica uno de los bloques “Ejemplo” y cambia título, texto y enlaces.",
 
       // ===== CONCURSOS (contest_*) =====
-      contest_hero_title: "I Concurso Internacional de Repostería Monacal -DULCESOR- 2026 07",
-      contest_title: "I Concurso Internacional de Repostería Monacal -DULCESOR- 2026 08",
+      contest_hero_title: "I Concurso Internacional de Repostería Monacal DULCESOR",
+      contest_title: "I Concurso Internacional de Repostería Monacal DULCESOR 2026",
       contest_place_date: "Valladolid · 1–4 de octubre",
       contest_btn_registration_top: "Solicitud inscripción",
       contest_intro_p:
@@ -288,7 +288,7 @@
       contest_poster_kicker: "Cartel oficial del concurso",
       contest_poster_alt: "Cartel oficial del concurso",
       contest_poster_note:
-        "El cartel aparece como imagen oficial del I Concurso Internacional de Repostería Monacal -DULCESOR- 2026 09",
+        "El cartel aparece como imagen oficial del I Concurso Internacional de Repostería Monacal DULCESOR 2026",
 
       contest_presentation_title: "Presentación",
       contest_presentation_p1:
