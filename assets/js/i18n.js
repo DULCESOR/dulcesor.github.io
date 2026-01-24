@@ -614,7 +614,7 @@
 
       // ===== CONCURSOS (contest_*) =====
       contest_hero_title: "1st International Competition<br>of Monastic Pastry DULCESOR",
-      contest_title: "1st International Competition<br>of Monastic Pastry DULCESOR 2026",
+      contest_title: "1st International Competition of Monastic Pastry DULCESOR 2026",
       contest_place_date: "Valladolid · 1–4 October",
       contest_btn_registration_top: "Registration form",
       contest_intro_p:
