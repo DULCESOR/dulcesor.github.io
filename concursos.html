@@ -250,7 +250,8 @@ body.page-concurso .c-topBtn:hover{
 <h2 class="c-title" data-i18n="contest_title">I Concurso Internacional de Repostería Monacal DULCESOR</h2>
 <div class="c-rightBox">
 <span class="c-placeDate" data-i18n="contest_place_date">Valladolid · 1–4 de octubre</span>
-<a class="btn ghost c-topBtn" data-i18n="contest_btn_registration_top" href="/assets/docs/solicitud-inscripcion.pdf" rel="noopener" target="_blank">Solicitud inscripción</a>
+<a class="btn ghost c-topBtn js-solicitud" ... href="/assets/docs/solicitud-inscripcion.pdf" ...>...</a>
+
 </div>
 </div>
 <p data-i18n="contest_intro_p">
@@ -361,9 +362,9 @@ body.page-concurso .c-topBtn:hover{
 <div aria-label="Descargas" class="docButtons">
 <div aria-label="Fila 1" class="docButtons__row">
 <a aria-disabled="true" class="btn ghost disabled" data-i18n="contest_docs_bases_soon" href="#">Bases (PDF) · Próximamente</a>
-<a class="btn ghost" data-i18n="contest_docs_application" href="/assets/docs/solicitud-inscripcion.pdf" rel="noopener" target="_blank">
-                  Solicitud inscripción
-                </a>
+<a class="btn ghost" ... href="/assets/docs/solicitud-inscripcion.pdf" ...>...</a>
+
+                
 </div>
 <div aria-label="Fila 2" class="docButtons__row">
 <a aria-disabled="true" class="btn ghost disabled" data-i18n="contest_docs_info_soon" href="#">Info (PDF) · Próximamente</a>
@@ -392,7 +393,7 @@ body.page-concurso .c-topBtn:hover{
 <div class="sponsor"><img alt="Ayuntamiento de Valladolid" src="assets/logos/logo-ayuntamiento-valladolid.png"/></div>
 <div class="sponsor"><img alt="Diputación de Valladolid" src="assets/logos/logo-diputacion-valladolid.png"/></div>
 <div class="sponsor"><img alt="Junta de Castilla y León" src="assets/logos/logo-junta-cyl.png"/></div>
-<div class="sponsor"><img alt="MUSEO" src="assets/logos/logo-arzobispado.png"/></div>  
+<div class="sponsor"><img alt="Arzobispado" src="assets/logos/logo-arzobispado.png"/></div>  
 <div class="sponsor"><img alt="MUSEO" src="assets/logos/logo-museosantaana.png"/></div>  
 <div class="sponsor"><img alt="Camara de Valladolid" src="assets/logos/logo-camara-valladolid.png"/></div>
 <div class="sponsor"><img alt="Escuela de cocina" src="assets/logos/logo-escueladecocina.png"/></div>
@@ -408,5 +409,38 @@ body.page-concurso .c-topBtn:hover{
 <script defer="" src="assets/js/i18n.js"></script>
 <script defer="" src="assets/js/header.js"></script>
 <script defer="" src="assets/js/footer.js"></script>
+<script>
+(() => {
+  // Ajusta estos nombres EXACTOS a como están en assets/docs
+  const pdfByLang = {
+    es: "/assets/docs/solicitud-inscripcion.pdf",
+    en: "/assets/docs/solicitud-inscripcion_EN_.pdf",
+    fr: "/assets/docs/solicitud-inscripcion_FR.pdf",
+    it: "/assets/docs/solicitud-inscripcion_IT.pdf",
+    pt: "/assets/docs/solicitud-inscripcion_PT.pdf"
+  };
+
+  function getLangSafe(){
+    if (window.DULCESOR_I18N && typeof window.DULCESOR_I18N.getLang === "function") {
+      return window.DULCESOR_I18N.getLang();
+    }
+    if (window.dulcesorI18n && typeof window.dulcesorI18n.getLang === "function") {
+      return window.dulcesorI18n.getLang();
+    }
+    return (document.documentElement.getAttribute("lang") || "es").toLowerCase();
+  }
+
+  function updateSolicitudLinks(){
+    const lang = getLangSafe();
+    const href = pdfByLang[lang] || pdfByLang.es;
+    document.querySelectorAll("a.js-solicitud").forEach(a => a.setAttribute("href", href));
+  }
+
+  document.addEventListener("DOMContentLoaded", updateSolicitudLinks);
+  document.addEventListener("dulcesor:langchange", updateSolicitudLinks);
+})();
+</script>
+
+  
 </body>
 </html>
