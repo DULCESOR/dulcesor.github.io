@@ -183,7 +183,7 @@
 @media (max-width: 520px){
   .sponsorGrid{ grid-template-columns: 1fr; }
   }
- /* Cada “caja” de logo */ 
+ /* Cada “caja” de logo */
   .sponsor{
   display: flex;
   align-items: center;
@@ -250,9 +250,8 @@ body.page-concurso .c-topBtn:hover{
 <h2 class="c-title" data-i18n="contest_title">I Concurso Internacional de Repostería Monacal DULCESOR</h2>
 <div class="c-rightBox">
 <span class="c-placeDate" data-i18n="contest_place_date">Valladolid · 1–4 de octubre</span>
-<a class="btn ghost c-topBtn js-solicitud" ... href="/assets/docs/solicitud-inscripcion.pdf" ...>...</a>
-solicitud inscripción
-  <a/>
+<!-- AJUSTE 1/2: clase js-solicitud -->
+<a class="btn ghost c-topBtn js-solicitud" data-i18n="contest_btn_registration_top" href="/assets/docs/solicitud-inscripcion.pdf" rel="noopener" target="_blank">Solicitud inscripción</a>
 </div>
 </div>
 <p data-i18n="contest_intro_p">
@@ -363,9 +362,10 @@ solicitud inscripción
 <div aria-label="Descargas" class="docButtons">
 <div aria-label="Fila 1" class="docButtons__row">
 <a aria-disabled="true" class="btn ghost disabled" data-i18n="contest_docs_bases_soon" href="#">Bases (PDF) · Próximamente</a>
-<a class="btn ghost" ... href="/assets/docs/solicitud-inscripcion.pdf" ...>...</a>
-
-                
+<!-- AJUSTE 2/2: clase js-solicitud -->
+<a class="btn ghost js-solicitud" data-i18n="contest_docs_application" href="/assets/docs/solicitud-inscripcion.pdf" rel="noopener" target="_blank">
+                  Solicitud inscripción
+                </a>
 </div>
 <div aria-label="Fila 2" class="docButtons__row">
 <a aria-disabled="true" class="btn ghost disabled" data-i18n="contest_docs_info_soon" href="#">Info (PDF) · Próximamente</a>
@@ -394,8 +394,8 @@ solicitud inscripción
 <div class="sponsor"><img alt="Ayuntamiento de Valladolid" src="assets/logos/logo-ayuntamiento-valladolid.png"/></div>
 <div class="sponsor"><img alt="Diputación de Valladolid" src="assets/logos/logo-diputacion-valladolid.png"/></div>
 <div class="sponsor"><img alt="Junta de Castilla y León" src="assets/logos/logo-junta-cyl.png"/></div>
-<div class="sponsor"><img alt="Arzobispado" src="assets/logos/logo-arzobispado.png"/></div>  
-<div class="sponsor"><img alt="MUSEO" src="assets/logos/logo-museosantaana.png"/></div>  
+<div class="sponsor"><img alt="MUSEO" src="assets/logos/logo-arzobispado.png"/></div>
+<div class="sponsor"><img alt="MUSEO" src="assets/logos/logo-museosantaana.png"/></div>
 <div class="sponsor"><img alt="Camara de Valladolid" src="assets/logos/logo-camara-valladolid.png"/></div>
 <div class="sponsor"><img alt="Escuela de cocina" src="assets/logos/logo-escueladecocina.png"/></div>
 <div class="sponsor"><img alt="APOLO" src="assets/logos/logo-apolo.png"/></div>
@@ -410,38 +410,63 @@ solicitud inscripción
 <script defer="" src="assets/js/i18n.js"></script>
 <script defer="" src="assets/js/header.js"></script>
 <script defer="" src="assets/js/footer.js"></script>
+
+<!-- Script: cambia el PDF según el idioma seleccionado -->
 <script>
 (() => {
-  // Ajusta estos nombres EXACTOS a como están en assets/docs
-  const pdfByLang = {
-    es: "/assets/docs/solicitud-inscripcion.pdf",
-    en: "/assets/docs/solicitud-inscripcion_EN_.pdf",
-    fr: "/assets/docs/solicitud-inscripcion_FR.pdf",
-    it: "/assets/docs/solicitud-inscripcion_IT.pdf",
-    pt: "/assets/docs/solicitud-inscripcion_PT.pdf"
+  "use strict";
+
+  const PDF_BY_LANG = {
+    es: "solicitud-inscripcion.pdf",
+    en: "solicitud-inscripcion_EN.pdf",
+    fr: "solicitud-inscripcion_FR.pdf",
+    it: "solicitud-inscripcion_IT.pdf",
+    pt: "solicitud-inscripcion_PT.pdf"
   };
 
-  function getLangSafe(){
-    if (window.DULCESOR_I18N && typeof window.DULCESOR_I18N.getLang === "function") {
-      return window.DULCESOR_I18N.getLang();
-    }
-    if (window.dulcesorI18n && typeof window.dulcesorI18n.getLang === "function") {
-      return window.dulcesorI18n.getLang();
-    }
-    return (document.documentElement.getAttribute("lang") || "es").toLowerCase();
-  }
+  const BASE = "/assets/docs/";
 
-  function updateSolicitudLinks(){
-    const lang = getLangSafe();
-    const href = pdfByLang[lang] || pdfByLang.es;
-    document.querySelectorAll("a.js-solicitud").forEach(a => a.setAttribute("href", href));
-  }
+  const normalizeLang = (l) => {
+    l = (l || "").toLowerCase();
+    if (l.startsWith("pt")) return "pt";
+    if (l.startsWith("en")) return "en";
+    if (l.startsWith("fr")) return "fr";
+    if (l.startsWith("it")) return "it";
+    return "es";
+  };
 
-  document.addEventListener("DOMContentLoaded", updateSolicitudLinks);
-  document.addEventListener("dulcesor:langchange", updateSolicitudLinks);
+  const getCurrentLang = () => {
+    try {
+      if (window.DULCESOR_I18N && typeof window.DULCESOR_I18N.getLang === "function") {
+        return normalizeLang(window.DULCESOR_I18N.getLang());
+      }
+    } catch (e) {}
+
+    try {
+      const v =
+        localStorage.getItem("dulcesor_lang") ||
+        localStorage.getItem("lang") ||
+        localStorage.getItem("language") ||
+        localStorage.getItem("site_lang");
+      if (v) return normalizeLang(v);
+    } catch (e) {}
+
+    return normalizeLang(document.documentElement.getAttribute("lang"));
+  };
+
+  const applyPdfLinks = () => {
+    const lang = getCurrentLang();
+    const file = PDF_BY_LANG[lang] || PDF_BY_LANG.es;
+    const url = BASE + file;
+
+    document.querySelectorAll("a.js-solicitud").forEach((a) => {
+      a.setAttribute("href", url);
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", applyPdfLinks);
+  document.addEventListener("dulcesor:langchange", applyPdfLinks);
 })();
 </script>
-
-  
 </body>
 </html>
