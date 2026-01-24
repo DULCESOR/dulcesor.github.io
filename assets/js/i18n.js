@@ -278,8 +278,8 @@
         "Para añadir un nuevo convento/monasterio, duplica uno de los bloques “Ejemplo” y cambia título, texto y enlaces.",
 
       // ===== CONCURSOS (contest_*) =====
-      contest_hero_title: "I Concurso Internacional de Repostería Monacal -DULCESOR- 2026",
-      contest_title: "I Concurso Internacional de Repostería Monacal -DULCESOR- 2026",
+      contest_hero_title: "I Concurso Internacional de Repostería Monacal -DULCESOR- 2026 07",
+      contest_title: "I Concurso Internacional de Repostería Monacal -DULCESOR- 2026 08",
       contest_place_date: "Valladolid · 1–4 de octubre",
       contest_btn_registration_top: "Solicitud inscripción",
       contest_intro_p:
@@ -288,7 +288,7 @@
       contest_poster_kicker: "Cartel oficial del concurso",
       contest_poster_alt: "Cartel oficial del concurso",
       contest_poster_note:
-        "El cartel aparece como imagen oficial del I Concurso Internacional de Repostería Monacal -DULCESOR- 2026",
+        "El cartel aparece como imagen oficial del I Concurso Internacional de Repostería Monacal -DULCESOR- 2026 09",
 
       contest_presentation_title: "Presentación",
       contest_presentation_p1:
