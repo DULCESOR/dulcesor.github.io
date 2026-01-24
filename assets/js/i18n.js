@@ -278,7 +278,7 @@
         "Para añadir un nuevo convento/monasterio, duplica uno de los bloques “Ejemplo” y cambia título, texto y enlaces.",
 
       // ===== CONCURSOS (contest_*) =====
-      contest_hero_title: "I Concurso Internacional de Repostería Monacal DULCESOR",
+      contest_hero_title: "I Concurso Internacional<br>de Repostería Monacal DULCESOR",
       contest_title: "I Concurso Internacional de Repostería Monacal DULCESOR 2026",
       contest_place_date: "Valladolid · 1–4 de octubre",
       contest_btn_registration_top: "Solicitud inscripción",
@@ -613,8 +613,8 @@
         "To add a new convent/monastery, duplicate one of the “Example” blocks and change title, text and links.",
 
       // ===== CONCURSOS (contest_*) =====
-      contest_hero_title: "I International Monastic Pastry Competition DULCESOR",
-      contest_title: "I International Monastic Pastry Competition DULCESOR 2026",
+      contest_hero_title: "I International Competition<br>of Monastic Pastry DULCESOR",
+      contest_title: "I International Competition<br>of Monastic Pastry DULCESOR 2026",
       contest_place_date: "Valladolid · 1–4 October",
       contest_btn_registration_top: "Registration form",
       contest_intro_p:
@@ -948,7 +948,7 @@
         "Para adicionar um novo convento/mosteiro, duplique um dos blocos “Exemplo” e altere título, texto e ligações.",
 
       // ===== CONCURSOS (contest_*) =====
-      contest_hero_title: "I Concurso Internacional de Doçaria Monacal DULCESOR",
+      contest_hero_title: "I Concurso Internacional<br>de Doçaria Monacal DULCESOR",
       contest_title: "I Concurso Internacional de Doçaria Monacal DULCESOR 2026",
       contest_place_date: "Valladolid · 1–4 de outubro",
       contest_btn_registration_top: "Pedido de inscrição",
@@ -1284,7 +1284,7 @@
         "Pour ajouter un nouveau couvent/monastère, dupliquez l’un des blocs “Exemple” et modifiez titre, texte et liens.",
 
       // ===== CONCURSOS (contest_*) =====
-      contest_hero_title: "I Concours international de pâtisserie monastique DULCESOR",
+      contest_hero_title: "I Concours international<br>de pâtisserie monastique DULCESOR",
       contest_title: "I Concours international de pâtisserie monastique DULCESOR 2026",
       contest_place_date: "Valladolid · 1–4 octobre",
       contest_btn_registration_top: "Demande d’inscription",
@@ -1620,7 +1620,7 @@
         "Per aggiungere un nuovo convento/monastero, duplica uno dei blocchi “Esempio” e modifica titolo, testo e link.",
 
       // ===== CONCURSOS (contest_*) =====
-      contest_hero_title: "I Concorso internazionale di pasticceria monastica DULCESOR",
+      contest_hero_title: "I Concorso internazionale<br>di pasticceria monastica DULCESOR",
       contest_title: "IConcorso internazionale di pasticceria monastica DULCESOR 2026",
       contest_place_date: "Valladolid · 1–4 ottobre",
       contest_btn_registration_top: "Domanda di iscrizione",
