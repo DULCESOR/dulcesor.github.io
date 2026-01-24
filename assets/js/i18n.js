@@ -356,7 +356,7 @@
 
       contest_sponsors_title: "Entidades colaboradoras del concurso",
       contest_sponsors_note:
-        "Logos institucionales y colaboradores (carpeta: assets/logos/)."    },
+        ""    },
 
     en: {
 
