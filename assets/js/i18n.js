@@ -690,7 +690,7 @@
         "The competition is developed with a vocation of continuity and collaboration. DULCESOR articulates relationships with cultural and educational institutions and public administrations, as well as partner entities, to strengthen its heritage, cultural and outreach dimension.",
 
       contest_sponsors_title: "Competition sponsors",
-      contest_sponsors_note: "Institutional and partner logos (folder: assets/logos/)."    },
+      contest_sponsors_note: ""    },
 
     // =========================================================
     // PORTUGUES (Portugal)
@@ -1025,7 +1025,7 @@
         "O concurso desenvolve-se com vocação de continuidade e colaboração. A DULCESOR articula relações com instituições culturais e educativas e com administrações públicas, bem como com entidades colaboradoras, para reforçar a sua dimensão patrimonial, cultural e de divulgação.",
 
       contest_sponsors_title: "Patrocinadores do concurso",
-      contest_sponsors_note: "Logótipos institucionais e colaboradores (pasta: assets/logos/)."
+      contest_sponsors_note: ""
     },
 
     // =========================================================
@@ -1361,7 +1361,7 @@
         "Le concours s’inscrit dans une logique de continuité et de collaboration. DULCESOR articule des relations avec des institutions culturelles et éducatives et avec les administrations publiques, ainsi qu’avec des entités partenaires, afin de renforcer sa dimension patrimoniale, culturelle et de diffusion.",
 
       contest_sponsors_title: "Partenaires du concours",
-      contest_sponsors_note: "Logos institutionnels et partenaires (dossier : assets/logos/)."
+      contest_sponsors_note: ""
     },
 
     // =========================================================
@@ -1697,7 +1697,7 @@
         "Il concorso si sviluppa con vocazione di continuità e collaborazione. DULCESOR articola relazioni con istituzioni culturali ed educative e con le amministrazioni pubbliche, nonché con enti partner, per rafforzare la sua dimensione patrimoniale, culturale e divulgativa.",
 
       contest_sponsors_title: "Sponsor del concorso",
-      contest_sponsors_note: "Loghi istituzionali e partner (cartella: assets/logos/)."
+      contest_sponsors_note: ""
     }
   };
 
