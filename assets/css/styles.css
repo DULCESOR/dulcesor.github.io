@@ -101,7 +101,10 @@ a { color: inherit; }
   border: 1px solid rgba(0,0,0,0.22);
   background: rgba(255,255,255,0.45);
 }
-
+/* Mantener "st/er" en minúscula aunque el h1 sea uppercase */
+.hero h1 .noCaps{
+  text-transform: none;
+}
 /* Responsive: en móvil reduce logo */
 @media (max-width: 768px) {
   .headerInner { padding: 10px 0; }
