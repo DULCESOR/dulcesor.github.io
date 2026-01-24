@@ -354,7 +354,7 @@
       contest_institutional_p1:
         "El concurso se desarrolla con vocación de continuidad y colaboración. DULCESOR articula relaciones con instituciones culturales, educativas y administraciones públicas, así como con entidades colaboradoras, para reforzar su dimensión patrimonial, cultural y divulgativa.",
 
-      contest_sponsors_title: "Patrocinadores del concurso",
+      contest_sponsors_title: "Entidades colaboradoras del concurso",
       contest_sponsors_note:
         "Logos institucionales y colaboradores (carpeta: assets/logos/)."    },
 
