@@ -286,6 +286,13 @@ a { color: inherit; }
 .pageGrid .card h2{
   color: var(--text-strong);
 }
+/* Centrar el título con salto de línea (i18n <br>) */
+[data-i18n="contest_hero_title"]{
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Por si necesitas un bloque que ocupe 2 columnas (ancho completo) */
 .pageGrid .span2{ grid-column: 1 / -1; }
