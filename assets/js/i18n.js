@@ -42,7 +42,7 @@
       home_intro:
         'La Asociación Cultural <strong>DULCESOR</strong> impulsa la preservación, difusión y puesta en valor de la <strong>repostería monacal conventual</strong> y del patrimonio gastronómico ligado a comunidades religiosas, promoviendo proyectos culturales de alcance nacional e internacional.',
       home_project_title: "Proyecto principal en desarrollo",
-      home_project_desc: "I Concurso Internacional de Postres Monacal –DULCESOR- Valladolid 2026",
+      home_project_desc: "I Concurso Internacional de Postres Monacal –DULCESOR- Valladolid",
       home_project_status: "Información en preparación",
       home_identity_title: "Identidad",
       home_identity_name_label: "Nombre:",
@@ -192,7 +192,7 @@
         "Edición de materiales divulgativos y educativos sobre historia, técnicas y legado repostero.",
       projects_line_4: "Colaboraciones con instituciones académicas y culturales para investigación y difusión.",
       projects_featured_title: "Proyectos destacados",
-      projects_featured_project_title: "I Concurso Internacional de Repostería Monacal -DULCESOR- 2026",
+      projects_featured_project_title: "I Concurso Internacional de Repostería Monacal -DULCESOR- Julio",
       projects_featured_project_text:
         "Primera convocatoria internacional impulsada por DULCESOR, dedicada a reconocer y difundir la repostería tradicional elaborada en monasterios y conventos, con la ciudad de Valladolid como primer escenario.",
       projects_featured_more: "Ver más sobre los concursos",
