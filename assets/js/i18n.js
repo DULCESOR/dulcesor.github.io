@@ -192,7 +192,7 @@
         "Edición de materiales divulgativos y educativos sobre historia, técnicas y legado repostero.",
       projects_line_4: "Colaboraciones con instituciones académicas y culturales para investigación y difusión.",
       projects_featured_title: "Proyectos destacados",
-      projects_featured_project_title: "I Concurso Internacional de Repostería Monacal -DULCESOR-",
+      projects_featured_project_title: "I Concurso Internacional de Repostería Monacal -DULCESOR- 2026",
       projects_featured_project_text:
         "Primera convocatoria internacional impulsada por DULCESOR, dedicada a reconocer y difundir la repostería tradicional elaborada en monasterios y conventos, con la ciudad de Valladolid como primer escenario.",
       projects_featured_more: "Ver más sobre los concursos",
@@ -278,8 +278,8 @@
         "Para añadir un nuevo convento/monasterio, duplica uno de los bloques “Ejemplo” y cambia título, texto y enlaces.",
 
       // ===== CONCURSOS (contest_*) =====
-      contest_hero_title: "I Concurso Internacional de Repostería Monacal -DULCESOR-",
-      contest_title: "I Concurso Internacional de Repostería Monacal -DULCESOR-",
+      contest_hero_title: "I Concurso Internacional de Repostería Monacal -DULCESOR- 2026",
+      contest_title: "I Concurso Internacional de Repostería Monacal -DULCESOR- 2026",
       contest_place_date: "Valladolid · 1–4 de octubre",
       contest_btn_registration_top: "Solicitud inscripción",
       contest_intro_p:
@@ -288,7 +288,7 @@
       contest_poster_kicker: "Cartel oficial del concurso",
       contest_poster_alt: "Cartel oficial del concurso",
       contest_poster_note:
-        "El cartel aparece como imagen oficial del I Concurso Internacional de Repostería Monacal -DULCESOR-",
+        "El cartel aparece como imagen oficial del I Concurso Internacional de Repostería Monacal -DULCESOR- 2026",
 
       contest_presentation_title: "Presentación",
       contest_presentation_p1:
@@ -613,8 +613,8 @@
         "To add a new convent/monastery, duplicate one of the “Example” blocks and change title, text and links.",
 
       // ===== CONCURSOS (contest_*) =====
-      contest_hero_title: "I International Monastic & Convent Pastry Competition",
-      contest_title: "I International Monastic & Convent Pastry Competition",
+      contest_hero_title: "I International Monastic Pastry Competition -DULCESOR- 2026",
+      contest_title: "I International Monastic Pastry Competition -DULCESOR- 2026",
       contest_place_date: "Valladolid · 1–4 October",
       contest_btn_registration_top: "Registration form",
       contest_intro_p:
@@ -862,7 +862,7 @@
         "Edição de materiais de divulgação e educativos sobre história, técnicas e legado doceiro.",
       projects_line_4: "Colaborações com instituições académicas e culturais para investigação e divulgação.",
       projects_featured_title: "Projetos em destaque",
-      projects_featured_project_title: "I Concurso Internacional de Doçaria Monacal -DULCESOR-",
+      projects_featured_project_title: "I Concurso Internacional de Doçaria Monacal -DULCESOR- 2026",
       projects_featured_project_text:
         "Primeira convocatória internacional promovida pela DULCESOR, dedicada a reconhecer e divulgar a doçaria tradicional elaborada em mosteiros e conventos, com a cidade de Valladolid como primeiro cenário.",
       projects_featured_more: "Ver mais sobre os concursos",
@@ -948,8 +948,8 @@
         "Para adicionar um novo convento/mosteiro, duplique um dos blocos “Exemplo” e altere título, texto e ligações.",
 
       // ===== CONCURSOS (contest_*) =====
-      contest_hero_title: "I Concurso Internacional de Doçaria Monacal -DULCESOR-",
-      contest_title: "I Concurso Internacional de Doçaria Monacal -DULCESOR-",
+      contest_hero_title: "I Concurso Internacional de Doçaria Monacal -DULCESOR- 2026",
+      contest_title: "I Concurso Internacional de Doçaria Monacal -DULCESOR- 2026",
       contest_place_date: "Valladolid · 1–4 de outubro",
       contest_btn_registration_top: "Pedido de inscrição",
       contest_intro_p:
@@ -958,7 +958,7 @@
       contest_poster_kicker: "Cartaz oficial do concurso",
       contest_poster_alt: "Cartaz oficial do concurso",
       contest_poster_note:
-        "O cartaz aparece como imagem oficial do I Concurso Internacional de Doçaria Monacal -DULCESOR-.",
+        "O cartaz aparece como imagem oficial do I Concurso Internacional de Doçaria Monacal -DULCESOR- 2026.",
 
       contest_presentation_title: "Apresentação",
       contest_presentation_p1:
@@ -1198,7 +1198,7 @@
         "Édition de supports de diffusion et éducatifs sur l’histoire, les techniques et l’héritage pâtissier.",
       projects_line_4: "Collaborations avec des institutions académiques et culturelles pour la recherche et la diffusion.",
       projects_featured_title: "Projets phares",
-      projects_featured_project_title: "I Concours international de pâtisserie monastique et conventuelle",
+      projects_featured_project_title: "I Concours international de pâtisserie monastique -DULCESOR- 2026",
       projects_featured_project_text:
         "Première édition internationale portée par DULCESOR, dédiée à la reconnaissance et à la diffusion de la pâtisserie traditionnelle élaborée dans les monastères et couvents, avec la ville de Valladolid comme premier cadre.",
       projects_featured_more: "En savoir plus sur les concours",
@@ -1284,8 +1284,8 @@
         "Pour ajouter un nouveau couvent/monastère, dupliquez l’un des blocs “Exemple” et modifiez titre, texte et liens.",
 
       // ===== CONCURSOS (contest_*) =====
-      contest_hero_title: "I Concours international de pâtisserie monastique et conventuelle",
-      contest_title: "I Concours international de pâtisserie monastique et conventuelle",
+      contest_hero_title: "I Concours international de pâtisserie monastique -DULCESOR- 2026",
+      contest_title: "I Concours international de pâtisserie monastique -DULCESOR- 2026",
       contest_place_date: "Valladolid · 1–4 octobre",
       contest_btn_registration_top: "Demande d’inscription",
       contest_intro_p:
@@ -1294,7 +1294,7 @@
       contest_poster_kicker: "Affiche officielle du concours",
       contest_poster_alt: "Affiche officielle du concours",
       contest_poster_note:
-        "L’affiche apparaît comme l’image officielle du I Concours international de pâtisserie monastique et conventuelle.",
+        "L’affiche apparaît comme l’image officielle du I Concours international de pâtisserie monastique.",
 
       contest_presentation_title: "Présentation",
       contest_presentation_p1:
@@ -1534,7 +1534,7 @@
         "Pubblicazione di materiali divulgativi ed educativi su storia, tecniche ed eredità dolciaria.",
       projects_line_4: "Collaborazioni con istituzioni accademiche e culturali per ricerca e diffusione.",
       projects_featured_title: "Progetti in evidenza",
-      projects_featured_project_title: "1° Concorso internazionale di pasticceria monastica e conventuale",
+      projects_featured_project_title: "I Concorso internazionale di pasticceria monastica -DULCESOR- 2026",
       projects_featured_project_text:
         "Prima convocazione internazionale promossa da DULCESOR, dedicata al riconoscimento e alla diffusione della pasticceria tradizionale realizzata in monasteri e conventi, con la città di Valladolid come primo scenario.",
       projects_featured_more: "Scopri di più sui concorsi",
@@ -1620,8 +1620,8 @@
         "Per aggiungere un nuovo convento/monastero, duplica uno dei blocchi “Esempio” e modifica titolo, testo e link.",
 
       // ===== CONCURSOS (contest_*) =====
-      contest_hero_title: "I Concorso internazionale di pasticceria monastica e conventuale",
-      contest_title: "1° Concorso internazionale di pasticceria monastica e conventuale",
+      contest_hero_title: "I Concorso internazionale di pasticceria monastica -DULCESOR- 2026",
+      contest_title: "IConcorso internazionale di pasticceria monastica -DULCESOR- 2026",
       contest_place_date: "Valladolid · 1–4 ottobre",
       contest_btn_registration_top: "Domanda di iscrizione",
       contest_intro_p:
@@ -1630,7 +1630,7 @@
       contest_poster_kicker: "Locandina ufficiale del concorso",
       contest_poster_alt: "Locandina ufficiale del concorso",
       contest_poster_note:
-        "La locandina appare come immagine ufficiale del 1° Concorso internazionale di pasticceria monastica e conventuale.",
+        "La locandina appare come immagine ufficiale del IConcorso internazionale di pasticceria monastica -DULCESOR- 2026.",
 
       contest_presentation_title: "Presentazione",
       contest_presentation_p1:
