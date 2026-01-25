@@ -371,3 +371,23 @@ a { color: inherit; }
 .socialBtn[aria-disabled="true"]{
   opacity: .70;
 }
+
+/* Cartel: paspartú + borde sutil (recomendado) */
+.concursoImgFrame.isPoster{
+  background: #fff !important;
+  padding: 14px;                 /* paspartú */
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 16px;
+}
+
+.concursoImgFrame.isPoster img{
+  height: auto;                  /* deja que respete proporción */
+  max-height: 360px;             /* ajusta si lo quieres más grande */
+  width: 100%;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.18);
+  border-radius: 10px;
+  filter: none !important;
+}
+
