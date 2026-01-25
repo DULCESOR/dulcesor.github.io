@@ -280,7 +280,7 @@
       // ===== CONCURSOS (contest_*) =====
       contest_hero_title: "I Concurso Internacional<br>de Repostería Monacal DULCESOR",
       contest_title: "I Concurso Internacional de Repostería Monacal DULCESOR 2026",
-      contest_place_date: "Valladolid · 1–4 de octubre",
+      contest_place_date: "España - Valladolid · 1–4 de octubre",
       contest_btn_registration_top: "Solicitud inscripción",
       contest_intro_p:
         "Un encuentro cultural dedicado a la repostería monacal-conventual como patrimonio vivo: tradición, artesanía, transmisión del saber y diálogo con la gastronomía contemporánea.",
@@ -615,7 +615,7 @@
       // ===== CONCURSOS (contest_*) =====
       contest_hero_title: '1<span class="ordinal">st</span> INTERNATIONAL COMPETITION<br>OF MONASTIC PASTRY DULCESOR',
       contest_title: "1<sup class='ord'>st</sup> International Competition of Monastic Pastry DULCESOR 2026",
-      contest_place_date: "Valladolid · 1–4 October",
+      contest_place_date: "Spain - Valladolid · 1–4 October",
       contest_btn_registration_top: "Registration form",
       contest_intro_p:
         "A cultural gathering dedicated to monastic-convent pastry as living heritage: tradition, craft, transmission of know-how and dialogue with contemporary gastronomy.",
@@ -950,7 +950,7 @@
       // ===== CONCURSOS (contest_*) =====
       contest_hero_title: "1º Concurso Internacional<br>de Doçaria Monacal DULCESOR",
       contest_title: "1º Concurso Internacional de Doçaria Monacal DULCESOR 2026",
-      contest_place_date: "Valladolid · 1–4 de outubro",
+      contest_place_date: "Espanha - Valladolid · 1–4 de outubro",
       contest_btn_registration_top: "Pedido de inscrição",
       contest_intro_p:
         "Um encontro cultural dedicado à doçaria monástica-conventual como património vivo: tradição, artesanato, transmissão do saber e diálogo com a gastronomia contemporânea.",
@@ -1286,7 +1286,7 @@
       // ===== CONCURSOS (contest_*) =====
       contest_hero_title: '1<span class="ordinal">er</span> CONCOURS INTERNATIONAL<br>DE PÂTISSERIE MONASTIQUE DULCESOR',
       contest_title: "1<sup class='ord'>er</sup> Concours international de pâtisserie monastique DULCESOR 2026",
-      contest_place_date: "Valladolid · 1–4 octobre",
+      contest_place_date: "Espagne - Valladolid · 1–4 octobre",
       contest_btn_registration_top: "Demande d’inscription",
       contest_intro_p:
         "Une rencontre culturelle dédiée à la pâtisserie monastique-conventuelle en tant que patrimoine vivant : tradition, artisanat, transmission du savoir-faire et dialogue avec la gastronomie contemporaine.",
@@ -1622,7 +1622,7 @@
       // ===== CONCURSOS (contest_*) =====
       contest_hero_title: "I Concorso internazionale<br>di pasticceria monastica DULCESOR",
       contest_title: "IConcorso internazionale di pasticceria monastica DULCESOR 2026",
-      contest_place_date: "Valladolid · 1–4 ottobre",
+      contest_place_date: "Spagna -Valladolid · 1–4 ottobre",
       contest_btn_registration_top: "Domanda di iscrizione",
       contest_intro_p:
         "Un incontro culturale dedicato alla pasticceria monastica-conventuale come patrimonio vivo: tradizione, artigianato, trasmissione del sapere e dialogo con la gastronomia contemporanea.",
