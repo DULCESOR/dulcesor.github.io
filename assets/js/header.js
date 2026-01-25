@@ -2,97 +2,59 @@
   function normalizePath(pathname) {
     const clean = (pathname || "").split("?")[0].split("#")[0];
     let last = clean.split("/").filter(Boolean).pop() || "index.html";
-
-    // Si entras por /proyectos o /proyectos/ (sin extensión), lo convertimos a .html
     if (!last.includes(".")) last = `${last}.html`;
-
-    // Si por lo que sea queda vacío
     return last || "index.html";
   }
 
   function buildHeader(currentFile) {
-    // RUTA ABSOLUTA para que no falle con /proyectos/ (slash final) u otras rutas
     const logoSrc = "/assets/img/logo-asociacion.png";
 
-    // SVG inline (sin archivos) + desactivados "Próximamente"
+    // RRSS (por ahora "Próximamente"): botones sin enlace, pero con hover (color)
     const socials = `
-      <div class="socials" aria-label="Redes sociales (Próximamente)"
-           style="display:flex; align-items:center; gap:10px;">
-        <button class="socialBtn isDisabled" type="button" tabindex="-1"
-                aria-disabled="true" title="Próximamente" aria-label="Instagram (Próximamente)"
-                style="display:inline-flex; align-items:center; justify-content:center; padding:0; width:34px; height:34px; border:0; background:transparent; opacity:.55; cursor:not-allowed;">
-          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <rect x="3" y="3" width="18" height="18" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"></rect>
-            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"></circle>
-            <circle cx="17" cy="7" r="1.2" fill="currentColor"></circle>
-          </svg>
-        </button>
-
-        <button class="socialBtn isDisabled" type="button" tabindex="-1"
-                aria-disabled="true" title="Próximamente" aria-label="Facebook (Próximamente)"
-                style="display:inline-flex; align-items:center; justify-content:center; padding:0; width:34px; height:34px; border:0; background:transparent; opacity:.55; cursor:not-allowed;">
-          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path fill="currentColor" d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v3H7v3h3v6h3v-6h3.2l.8-3H13v-3c0-.6.4-1 1-1z"/>
-          </svg>
-        </button>
-
-        <button class="socialBtn isDisabled" type="button" tabindex="-1"
-                aria-disabled="true" title="Próximamente" aria-label="LinkedIn (Próximamente)"
-                style="display:inline-flex; align-items:center; justify-content:center; padding:0; width:34px; height:34px; border:0; background:transparent; opacity:.55; cursor:not-allowed;">
-          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path fill="currentColor" d="M6 6.5C6 7.33 5.33 8 4.5 8S3 7.33 3 6.5 3.67 5 4.5 5 6 5.67 6 6.5zM3.5 21h2.2V9H3.5v12zM8.2 9H10.3v1.6h.03c.3-.57 1.05-1.17 2.17-1.17 2.32 0 2.75 1.53 2.75 3.52V21h-2.2v-6.4c0-1.53-.03-3.5-2.13-3.5-2.13 0-2.46 1.66-2.46 3.38V21H8.2V9z"/>
-          </svg>
-        </button>
-
-        <button class="socialBtn isDisabled" type="button" tabindex="-1"
-                aria-disabled="true" title="Próximamente" aria-label="WhatsApp Business (Próximamente)"
-                style="display:inline-flex; align-items:center; justify-content:center; padding:0; width:34px; height:34px; border:0; background:transparent; opacity:.55; cursor:not-allowed;">
-          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M20 11.5a8.5 8.5 0 0 1-12.8 7.3L4 20l1.3-3.1A8.5 8.5 0 1 1 20 11.5z"
-                  fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-            <path fill="currentColor" d="M9.2 8.8c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.4-.2.3-.8.8-.8 2s.8 2.4.9 2.6c.1.2 1.6 2.5 3.9 3.4 1.9.8 2.3.6 2.7.6.4 0 1.3-.5 1.5-1 .2-.5.2-.9.1-1-.1-.1-.4-.2-.8-.4-.4-.2-1.3-.6-1.5-.7-.2-.1-.4-.2-.6.2-.2.4-.7.7-.9.9-.2.2-.3.2-.6.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.6-1.4-1.9-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.5-1.3-.7-1.8z"/>
-          </svg>
-        </button>
+      <div class="socials" aria-label="Redes sociales (Próximamente)">
+        <button class="socialBtn ig" type="button" aria-disabled="true" title="Próximamente" aria-label="Instagram (Próximamente)"></button>
+        <button class="socialBtn fb" type="button" aria-disabled="true" title="Próximamente" aria-label="Facebook (Próximamente)"></button>
+        <button class="socialBtn in" type="button" aria-disabled="true" title="Próximamente" aria-label="LinkedIn (Próximamente)"></button>
+        <button class="socialBtn wa" type="button" aria-disabled="true" title="Próximamente" aria-label="WhatsApp Business (Próximamente)"></button>
       </div>
     `.trim();
 
     return `
 <header id="site-header" class="siteHeader" role="banner">
   <div class="headerInner">
-    <!-- FILA 1: logo izquierda / idiomas derecha -->
+
     <div class="topbar">
       <a class="brand" href="/index.html" aria-label="DULCESOR - inicio">
         <img class="brandLogo" src="${logoSrc}" alt="Logotipo Asociación Cultural DULCESOR" />
       </a>
 
-      <div class="topbarRight" style="display:flex; align-items:center; gap:14px;">
+      <div class="topbarRight">
         ${socials}
 
         <div class="lang" aria-label="Selección de idioma">
           <button class="langBtn" type="button" data-lang="es" aria-label="Español" title="Español">
-    <img class="langFlag" src="/assets/iccons/es.svg" alt="ES">
-  </button>
+            <img class="langFlag" src="/assets/icons/es.svg" alt="" />
+          </button>
 
-  <button class="langBtn" type="button" data-lang="en" aria-label="English" title="English">
-    <img class="langFlag" src="/assets/iccons/gb.svg" alt="EN">
-  </button>
+          <button class="langBtn" type="button" data-lang="en" aria-label="English" title="English">
+            <img class="langFlag" src="/assets/icons/gb.svg" alt="" />
+          </button>
 
-  <button class="langBtn" type="button" data-lang="pt" aria-label="Português" title="Português">
-    <img class="langFlag" src="/assets/iccons/pt.svg" alt="PT">
-  </button>
+          <button class="langBtn" type="button" data-lang="pt" aria-label="Português" title="Português">
+            <img class="langFlag" src="/assets/icons/pt.svg" alt="" />
+          </button>
 
-  <button class="langBtn" type="button" data-lang="fr" aria-label="Français" title="Français">
-    <img class="langFlag" src="/assets/iccons/fr.svg" alt="FR">
-  </button>
+          <button class="langBtn" type="button" data-lang="fr" aria-label="Français" title="Français">
+            <img class="langFlag" src="/assets/icons/fr.svg" alt="" />
+          </button>
 
-  <button class="langBtn" type="button" data-lang="it" aria-label="Italiano" title="Italiano">
-    <img class="langFlag" src="/assets/iccons/it.svg" alt="IT">
-  </button>
+          <button class="langBtn" type="button" data-lang="it" aria-label="Italiano" title="Italiano">
+            <img class="langFlag" src="/assets/icons/it.svg" alt="" />
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- FILA 2: menú -->
     <nav class="mainNav" aria-label="Navegación principal">
       <a href="/index.html" class="${currentFile === "index.html" ? "current" : ""}"><span data-i18n="nav_home">Inicio</span></a>
       <a href="/asociacion.html" class="${currentFile === "asociacion.html" ? "current" : ""}"><span data-i18n="nav_association">Asociación</span></a>
@@ -102,6 +64,7 @@
       <a href="/patrocinadores.html" class="${currentFile === "patrocinadores.html" ? "current" : ""}"><span data-i18n="nav_sponsors">Patrocinadores</span></a>
       <a href="/contacto.html" class="${currentFile === "contacto.html" ? "current" : ""}"><span data-i18n="nav_contact">Contacto</span></a>
     </nav>
+
   </div>
 </header>
 `.trim();
@@ -138,7 +101,6 @@
       window.dulcesorI18n.setLanguage(l);
       return;
     }
-
     if (typeof window.setLanguage === "function") {
       window.setLanguage(l);
       return;
@@ -172,6 +134,14 @@
         setLangSafe(btn.dataset.lang);
         markActiveLang();
         applyI18nSafe();
+      });
+    });
+
+    // RRSS: mientras estén “Próximamente”, no hacen nada al click
+    document.querySelectorAll(".socialBtn[aria-disabled='true']").forEach((b) => {
+      b.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
       });
     });
 
