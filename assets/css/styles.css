@@ -132,7 +132,7 @@ body.page-concurso .hero h1 .ordinal{
   text-transform: none;     /* evita que uppercase lo convierta en ST/ER */
   font-size: 0.55em;        /* más pequeño */
   letter-spacing: 0;        /* para que no herede tanto espaciado */
-  vertical-align: sub;      /* lo baja respecto al número */
+  vertical-align: super;      /* lo sube respecto al número */
 }
 .hero p { margin: 0; color: rgba(0,0,0,0.7); }
 
