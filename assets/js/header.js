@@ -36,20 +36,20 @@
             <img class="langFlag" src="/assets/iccons/es.svg" alt="" />
           </button>
 
-          <button class="langBtn" type="button" data-lang="en" aria-label="English" title="English">
-            <img class="langFlag" src="/assets/iccons/gb.svg" alt="" />
-          </button>
-
-          <button class="langBtn" type="button" data-lang="pt" aria-label="Português" title="Português">
-            <img class="langFlag" src="/assets/iccons/pt.svg" alt="" />
-          </button>
-
           <button class="langBtn" type="button" data-lang="fr" aria-label="Français" title="Français">
             <img class="langFlag" src="/assets/iccons/fr.svg" alt="" />
           </button>
 
           <button class="langBtn" type="button" data-lang="it" aria-label="Italiano" title="Italiano">
             <img class="langFlag" src="/assets/iccons/it.svg" alt="" />
+          </button>
+          
+            <button class="langBtn" type="button" data-lang="pt" aria-label="Português" title="Português">
+            <img class="langFlag" src="/assets/iccons/pt.svg" alt="" />
+          </button>
+
+            <button class="langBtn" type="button" data-lang="en" aria-label="English" title="English">
+            <img class="langFlag" src="/assets/iccons/gb.svg" alt="" />
           </button>
         </div>
       </div>
