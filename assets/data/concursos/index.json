@@ -1,0 +1,11 @@
+{
+  "current": "2026",
+  "editions": [
+    {
+      "id": "2026",
+      "year": 2026,
+      "editionNumber": 1,
+      "dataUrl": "./data/concursos/ediciones/2026.json"
+    }
+  ]
+}
