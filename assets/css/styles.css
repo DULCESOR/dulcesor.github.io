@@ -74,7 +74,20 @@ a { color: inherit; }
   border-color: rgba(0,0,0,0.55);
   font-weight: 700;
 }
+/* Banderas en el selector de idioma */
+.langBtn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;              /* puedes bajar a 6px 8px si quieres */
+}
 
+.langFlag{
+  width: 22px;
+  height: 16px;
+  display: block;
+  border-radius: 3px;             /* opcional */
+}
 /* Menú fila 2 */
 .mainNav {
   margin-top: 10px;
