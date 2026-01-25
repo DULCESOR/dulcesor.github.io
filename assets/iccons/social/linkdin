@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="LinkedIn">
-  <rect x="3.5" y="3.5" width="17" height="17" rx="3.2"
-        fill="none" stroke="#0A66C2" stroke-width="1.8"/>
-  <!-- "in" simplificado -->
-  <circle cx="8.2" cy="9" r="1.1" fill="#0A66C2"/>
-  <rect x="7.3" y="10.6" width="1.8" height="7.2" rx="0.6" fill="#0A66C2"/>
-  <path d="M11 10.7h1.8v1c.5-.8 1.3-1.2 2.4-1.2c2 0 3.3 1.2 3.3 3.7v3.6h-1.8v-3.4c0-1.6-.7-2.3-1.9-2.3c-1.2 0-2 .8-2 2.3v3.4H11v-7.1z"
-        fill="#0A66C2"/>
-</svg>
