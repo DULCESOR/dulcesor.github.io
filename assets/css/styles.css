@@ -329,3 +329,49 @@ body.page-concurso .hero h1 .ordinal{
   vertical-align: super; /* o 'sub' si lo quieres abajo */
   letter-spacing: 0;
 }
+/* RRSS: base */
+.social{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.socialLink{
+  width: 34px;
+  height: 34px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.45);
+  color: rgba(0,0,0,0.55);          /* gris por defecto */
+  text-decoration:none;
+  transition: color .15s ease, border-color .15s ease, background .15s ease, transform .15s ease;
+}
+
+.socialLink svg{
+  width: 16px;
+  height: 16px;
+  fill: currentColor;               /* clave: el SVG hereda el color */
+  display:block;
+}
+
+.socialLink:hover,
+.socialLink:focus-visible{
+  transform: translateY(-1px);
+  border-color: rgba(0,0,0,0.22);
+  background: rgba(255,255,255,0.70);
+}
+
+/* Colores por red SOLO en hover/focus */
+.socialLink.ig:hover, .socialLink.ig:focus-visible{ color:#E4405F; } /* Instagram */
+.socialLink.fb:hover, .socialLink.fb:focus-visible{ color:#1877F2; } /* Facebook */
+.socialLink.in:hover, .socialLink.in:focus-visible{ color:#0A66C2; } /* LinkedIn */
+.socialLink.wa:hover, .socialLink.wa:focus-visible{ color:#25D366; } /* WhatsApp */
+
+/* Estado “Próximamente” */
+.socialLink[aria-disabled="true"]{
+  opacity: .55;
+  pointer-events: none;
+}
