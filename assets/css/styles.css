@@ -375,3 +375,69 @@ body.page-concurso .hero h1 .ordinal{
   opacity: .55;
   pointer-events: none;
 }
+/* Topbar derecha: RRSS + banderas */
+.topbarRight{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+/* RRSS (monocromo + color al hover) */
+.socials{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.socialBtn{
+  width:34px;
+  height:34px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  background:transparent;
+  border-radius:999px;
+  color: rgba(0,0,0,0.55);
+  cursor:pointer;
+  opacity:.70;
+}
+
+/* Icono por máscara (usa tus SVG de /assets/icons/) */
+.socialBtn::before{
+  content:"";
+  width:20px;
+  height:20px;
+  background: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+/* Asignación de iconos */
+.socialBtn.ig{ --icon: url("/assets/icons/instagram.svg"); }
+.socialBtn.fb{ --icon: url("/assets/icons/facebook.svg"); }
+.socialBtn.in{ --icon: url("/assets/icons/linkedin.svg"); }
+.socialBtn.wa{ --icon: url("/assets/icons/whatsapp.svg"); }
+
+/* Color SOLO al pasar el cursor */
+.socialBtn:hover{
+  opacity:1;
+  color:#8a6f18;
+}
+
+/* Banderas */
+.langBtn{
+  padding:0;
+  width:34px;
+  height:34px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.langFlag{
+  width:22px;
+  height:16px;
+  display:block;
+  border-radius:4px;
+}
