@@ -127,6 +127,13 @@ a { color: inherit; }
   text-transform: uppercase;
   color: #8a6f18;
 }
+/* Ordinal (st/er) en minúscula y ligeramente “abajo” */
+body.page-concurso .hero h1 .ordinal{
+  text-transform: none;     /* evita que uppercase lo convierta en ST/ER */
+  font-size: 0.55em;        /* más pequeño */
+  letter-spacing: 0;        /* para que no herede tanto espaciado */
+  vertical-align: sub;      /* lo baja respecto al número */
+}
 .hero p { margin: 0; color: rgba(0,0,0,0.7); }
 
 .card {
