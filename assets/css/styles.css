@@ -61,33 +61,34 @@ a { color: inherit; }
   align-items: center;
   gap: 10px;
 }
+
 .langBtn {
   border: 1px solid rgba(0,0,0,0.18);
   background: #fff;
-  padding: 6px 10px;
   border-radius: 999px;
-  font-size: 11px;
-  letter-spacing: 0.07em;
   cursor: pointer;
-}
-.langBtn.active {
-  border-color: rgba(0,0,0,0.55);
-  font-weight: 700;
-}
-/* Banderas en el selector de idioma */
-.langBtn{
+
+  /* para banderas */
+  width: 34px;
+  height: 34px;
+  padding: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 10px;              /* puedes bajar a 6px 8px si quieres */
+}
+
+.langBtn.active {
+  border-color: rgba(0,0,0,0.55);
+  font-weight: 700;
 }
 
 .langFlag{
   width: 22px;
   height: 16px;
   display: block;
-  border-radius: 3px;             /* opcional */
+  border-radius: 4px;
 }
+
 /* Menú fila 2 */
 .mainNav {
   margin-top: 10px;
@@ -98,7 +99,7 @@ a { color: inherit; }
   flex-wrap: wrap;
   gap: 14px 26px;
   align-items: center;
-  justify-content: center; /* <-- AÑADE ESTA */
+  justify-content: center;
 }
 
 .mainNav a {
@@ -110,25 +111,33 @@ a { color: inherit; }
   border-radius: 999px;
   color: rgba(0,0,0,0.78);
 }
+
 .mainNav a.current {
   border: 1px solid rgba(0,0,0,0.22);
   background: rgba(255,255,255,0.45);
 }
+
 /* Mantener "st/er" en minúscula aunque el h1 sea uppercase */
 .hero h1 .noCaps{
   text-transform: none;
 }
+
 /* Responsive: en móvil reduce logo */
 @media (max-width: 768px) {
   .headerInner { padding: 10px 0; }
   .brandLogo { height: 60px; max-width: 260px; }
   .lang { gap: 8px; }
-  .langBtn { 
-     padding: 5px 8px; 
-     font-size: 10px; }
-     letter-spacing: 0.06em;
+
+  .langBtn{
+    width: 32px;
+    height: 32px;
+  }
+  .langFlag{
+    width: 20px;
+    height: 14px;
   }
 }
+
 /* =========================
    Contenido
 ========================= */
@@ -140,13 +149,7 @@ a { color: inherit; }
   text-transform: uppercase;
   color: #8a6f18;
 }
-/* Ordinal (st/er) en minúscula y ligeramente “abajo” */
-body.page-concurso .hero h1 .ordinal{
-  text-transform: none;     /* evita que uppercase lo convierta en ST/ER */
-  font-size: 0.55em;        /* más pequeño */
-  letter-spacing: 0;        /* para que no herede tanto espaciado */
-  vertical-align: super;      /* lo sube respecto al número */
-}
+
 .hero p { margin: 0; color: rgba(0,0,0,0.7); }
 
 .card {
@@ -202,7 +205,7 @@ body.page-concurso .hero h1 .ordinal{
 /* Imagen de contenido: tamaño controlado y responsive */
 .pageImage {
   width: 100%;
-  max-width: 520px; /* AJUSTA aquí el tamaño visual */
+  max-width: 520px;
   height: auto;
   display: block;
   margin: 18px auto;
@@ -210,23 +213,16 @@ body.page-concurso .hero h1 .ordinal{
 }
 
 /* =========================
-   Utilidades globales (NUEVO)
-   - Para no repetir estilos por página
+   Utilidades globales
 ========================= */
-
-/* Centrar texto */
 .center { text-align: center; }
-
-/* Quitar margen (útil en textos bajo logos, etc.) */
 .noMargin { margin: 0; }
 
-/* Card más suave / secundaria (para secciones menos “pesadas”) */
 .card.soft{
   background: rgba(255,255,255,0.55);
   border-color: rgba(0,0,0,0.08);
 }
 
-/* “Pastilla” (estado/etiqueta) */
 .pill{
   display:inline-block;
   border: 1px solid rgba(0,0,0,0.18);
@@ -239,7 +235,6 @@ body.page-concurso .hero h1 .ordinal{
   color: rgba(0,0,0,0.72);
 }
 
-/* Fila de botones */
 .btnRow{
   display:flex;
   justify-content:center;
@@ -249,7 +244,6 @@ body.page-concurso .hero h1 .ordinal{
   align-items:center;
 }
 
-/* Botón base */
 .btn{
   display:inline-block;
   text-decoration:none;
@@ -261,7 +255,6 @@ body.page-concurso .hero h1 .ordinal{
   cursor:pointer;
 }
 
-/* Botón “ghost” */
 .btn.ghost{
   border:1px solid rgba(0,0,0,0.22);
   background: rgba(255,255,255,0.45);
@@ -270,19 +263,15 @@ body.page-concurso .hero h1 .ordinal{
 .btn.ghost:hover{
   border-color: rgba(0,0,0,0.35);
 }
-/* =========================
-   Page Blocks (reutilizable 1-2-3-4...)
-   - 2 columnas en escritorio
-   - 1 columna en móvil
-   - Bloques crecen según contenido
-========================= */
 
+/* =========================
+   Page Blocks
+========================= */
 :root{
-  --text-soft: rgba(0,0,0,0.72);   /* gris oscuro elegante */
+  --text-soft: rgba(0,0,0,0.72);
   --text-strong: rgba(0,0,0,0.86);
 }
 
-/* Contenedor de bloques */
 .pageGrid{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -290,26 +279,22 @@ body.page-concurso .hero h1 .ordinal{
   margin-top: 18px;
 }
 
-/* 1 columna en pantallas medianas/móvil */
 @media (max-width: 860px){
   .pageGrid{ grid-template-columns: 1fr; }
 }
 
-/* Los bloques dentro de pageGrid no necesitan margen extra */
 .pageGrid .card{ margin: 0; }
 
-/* Texto dentro de los bloques: menos negro, más gris */
 .pageGrid .card,
 .pageGrid .card p,
 .pageGrid .card li{
   color: var(--text-soft);
 }
 
-/* Títulos un poco más marcados para jerarquía */
 .pageGrid .card h2{
   color: var(--text-strong);
 }
-/* Centrar el título con salto de línea (i18n <br>) */
+
 [data-i18n="contest_hero_title"]{
   text-align: center;
   width: 100%;
@@ -317,65 +302,20 @@ body.page-concurso .hero h1 .ordinal{
   margin-right: auto;
 }
 
-/* Por si necesitas un bloque que ocupe 2 columnas (ancho completo) */
 .pageGrid .span2{ grid-column: 1 / -1; }
-
-/* Por si quieres el hero alineado a la izquierda (como Asociación) */
 .heroLeft{ text-align: left; }
+
 /* Ordinal st/er siempre en minúscula aunque el título esté en uppercase */
 .ord{
   text-transform: none;
   font-size: 0.55em;
-  vertical-align: super; /* o 'sub' si lo quieres abajo */
+  vertical-align: super;
   letter-spacing: 0;
 }
-/* RRSS: base */
-.social{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
 
-.socialLink{
-  width: 34px;
-  height: 34px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,0.12);
-  background: rgba(255,255,255,0.45);
-  color: rgba(0,0,0,0.55);          /* gris por defecto */
-  text-decoration:none;
-  transition: color .15s ease, border-color .15s ease, background .15s ease, transform .15s ease;
-}
-
-.socialLink svg{
-  width: 16px;
-  height: 16px;
-  fill: currentColor;               /* clave: el SVG hereda el color */
-  display:block;
-}
-
-.socialLink:hover,
-.socialLink:focus-visible{
-  transform: translateY(-1px);
-  border-color: rgba(0,0,0,0.22);
-  background: rgba(255,255,255,0.70);
-}
-
-/* Colores por red SOLO en hover/focus */
-.socialLink.ig:hover, .socialLink.ig:focus-visible{ color:#E4405F; } /* Instagram */
-.socialLink.fb:hover, .socialLink.fb:focus-visible{ color:#1877F2; } /* Facebook */
-.socialLink.in:hover, .socialLink.in:focus-visible{ color:#0A66C2; } /* LinkedIn */
-.socialLink.wa:hover, .socialLink.wa:focus-visible{ color:#25D366; } /* WhatsApp */
-
-/* Estado “Próximamente” */
-.socialLink[aria-disabled="true"]{
-  opacity: .55;
-  pointer-events: none;
-}
-/* Topbar derecha: RRSS + banderas */
+/* =========================
+   Topbar derecha: RRSS + banderas
+========================= */
 .topbarRight{
   display:flex;
   align-items:center;
@@ -400,10 +340,11 @@ body.page-concurso .hero h1 .ordinal{
   border-radius:999px;
   color: rgba(0,0,0,0.55);
   cursor:pointer;
-  opacity:.70;
+  opacity:.75;
+  padding:0;
 }
 
-/* Icono por máscara (usa tus SVG de /assets/iccons/) */
+/* Icono por máscara (usa tus SVG en /assets/iccons/social/) */
 .socialBtn::before{
   content:"";
   width:20px;
@@ -413,31 +354,20 @@ body.page-concurso .hero h1 .ordinal{
   mask: var(--icon) center / contain no-repeat;
 }
 
-/* Asignación de iconos */
-.socialBtn.ig{ --icon: url("/assets/iccons/instagram.svg"); }
-.socialBtn.fb{ --icon: url("/assets/iccons/facebook.svg"); }
-.socialBtn.in{ --icon: url("/assets/iccons/linkedin.svg"); }
-.socialBtn.wa{ --icon: url("/assets/iccons/whatsapp.svg"); }
+/* Asignación de iconos (OJO: carpeta iccons/social) */
+.socialBtn.ig{ --icon: url("/assets/iccons/social/instagram.svg"); }
+.socialBtn.fb{ --icon: url("/assets/iccons/social/facebook.svg"); }
+.socialBtn.in{ --icon: url("/assets/iccons/social/linkedin.svg"); }
+.socialBtn.wa{ --icon: url("/assets/iccons/social/whatsapp.svg"); }
 
-/* Color SOLO al pasar el cursor */
-.socialBtn:hover{
-  opacity:1;
-  color:#8a6f18;
-}
+/* Colores SOLO al pasar el cursor / focus */
+.socialBtn:hover, .socialBtn:focus-visible{ opacity:1; }
+.socialBtn.ig:hover, .socialBtn.ig:focus-visible{ color:#E4405F; }
+.socialBtn.fb:hover, .socialBtn.fb:focus-visible{ color:#1877F2; }
+.socialBtn.in:hover, .socialBtn.in:focus-visible{ color:#0A66C2; }
+.socialBtn.wa:hover, .socialBtn.wa:focus-visible{ color:#25D366; }
 
-/* Banderas */
-.langBtn{
-  padding:0;
-  width:34px;
-  height:34px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.langFlag{
-  width:22px;
-  height:16px;
-  display:block;
-  border-radius:4px;
+/* “Próximamente”: sigue habiendo hover, pero deja claro que no hay enlace */
+.socialBtn[aria-disabled="true"]{
+  opacity: .70;
 }
