@@ -16,8 +16,8 @@ body {
   line-height: 1.5;
   color: #1f1f1f;
  /*  background: #8F7F6F;  */  /* prueba 1 */
-  /*background: #f7f3ee;*/ /* original */
- background: #BDAAA0; /* prueba 2 */
+  background: #f7f3ee; /* original */
+/* background: #BDAAA0; /* /* prueba 2 */
   /*background: ##CEDBC3;*/ /* prueba 3 */
    }
 
@@ -33,7 +33,7 @@ a { color: inherit; }
 ========================= */
 .siteHeader {
    /* background: #f7f3ee; */ /* original */
-  background: #BDAAA0;
+  background: #f7f3ee;
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
@@ -201,7 +201,7 @@ a { color: inherit; }
 .siteFooter {
   border-top: 1px solid rgba(0,0,0,0.10);
  /* background: #f7f3ee; */ /* original */
-  background: #BDAAA0;
+  background: #f7f3ee;
 }
 .footerInner {
   width: min(1100px, calc(100% - 48px));
