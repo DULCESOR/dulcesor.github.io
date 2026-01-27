@@ -16,53 +16,16 @@
   <!-- CSS global -->
   <link rel="stylesheet" href="assets/css/styles.css">
 
-  <!-- Estilos SOLO de esta página (rejilla de patrocinadores) -->
+  <!-- Estilos SOLO de esta página (mínimos) -->
   <style>
-    :root{
-      --sponsor-logo-h: 58px;   /* tamaño de logo en desktop */
-      --sponsor-card-gap: 14px;
-    }
-
-    .sponsorGrid{
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 12px;
-    }
-
-    @media (max-width: 860px){
-      .sponsorGrid{ grid-template-columns: 1fr; }
-    }
-
-    .sponsorItem{
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: var(--sponsor-card-gap);
+    /* Para que el logo sea clicable ocupando toda la caja (como en Concursos) */
+    .sponsor a{
+      width: 100%;
+      height: 100%;
+      display: flex;
       align-items: center;
-      padding: 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(0,0,0,0.08);
-      background: rgba(255,255,255,0.55);
-    }
-
-    .sponsorLogo{
-      height: var(--sponsor-logo-h);
-      width: auto;
-      max-width: 220px;
-      display: block;
-      object-fit: contain;
-    }
-
-    .sponsorText p{ margin: 0; }
-
-    @media (max-width: 420px){
-      :root{ --sponsor-logo-h: 48px; }
-      .sponsorItem{
-        grid-template-columns: 1fr;
-        text-align: center;
-        justify-items: center;
-      }
-      .btnRow{ justify-content: center; }
+      justify-content: center;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -111,76 +74,61 @@
       <section class="card span2" aria-label="Listado de patrocinadores">
         <h2 data-i18n="sponsors_list_title">Listado</h2>
 
+        <!-- OJO: usamos el mismo sistema que CONCURSOS: .sponsorGrid + .sponsor -->
         <div class="sponsorGrid" aria-label="Rejilla de patrocinadores">
 
           <!-- Patrocinador 1: MUSEO -->
-          <div class="sponsorItem">
+          <div class="sponsor">
             <a href="https://www.museosanjoaquinysantaana.es/" target="_blank" rel="noopener noreferrer"
                aria-label="Museo San Joaquín y Santa Ana (web oficial)">
               <img
-                class="sponsorLogo"
                 src="assets/logos/logo-museosantaana.png"
                 alt="Museo San Joaquín y Santa Ana"
                 loading="lazy"
               >
             </a>
-            <div class="sponsorText">
-              <p data-i18n="sponsors_nb21_text"></p>
-            </div>
           </div>
 
           <!-- Patrocinador 2: NB21 -->
-          <div class="sponsorItem">
-            <a href="https://www.nb21.es/" target="_blank" rel="noopener noreferrer" aria-label="NB21 (web oficial)">
+          <div class="sponsor">
+            <a href="https://www.nb21.es/" target="_blank" rel="noopener noreferrer"
+               aria-label="NB21 (web oficial)">
               <img
-                class="sponsorLogo"
                 src="assets/logos/logo-nb21.png"
                 alt="NB21"
                 loading="lazy"
               >
             </a>
-
-            <div class="sponsorText">
-              <p data-i18n="sponsors_nb21_text"></p>
-            </div>
           </div>
 
           <!-- Patrocinador 3: APOLO -->
-          <div class="sponsorItem">
-            <a href="https://www.apolostudio.es/" target="_blank" rel="noopener noreferrer" aria-label="APOLO (web oficial)">
+          <div class="sponsor">
+            <a href="https://www.apolostudio.es/" target="_blank" rel="noopener noreferrer"
+               aria-label="APOLO (web oficial)">
               <img
-                class="sponsorLogo"
                 src="assets/logos/logo-apolo.png"
                 alt="APOLO"
                 loading="lazy"
               >
             </a>
-
-            <div class="sponsorText">
-              <p data-i18n="sponsors_nb21_text"></p>
-            </div>
           </div>
 
           <!-- Patrocinador 4: (ejemplo / placeholder) -->
-          <div class="sponsorItem">
+          <div class="sponsor">
             <a href="https://www.museosanjoaquinysantaana.es/" target="_blank" rel="noopener noreferrer"
                aria-label="Museo San Joaquín y Santa Ana (web oficial)">
               <img
-                class="sponsorLogo"
                 src="assets/logos/logo-nb21.png"
                 alt="Logo (pendiente de sustituir)"
                 loading="lazy"
               >
             </a>
-            <div class="sponsorText">
-              <p data-i18n="sponsors_nb21_text"></p>
-            </div>
           </div>
 
           <!--
             Para añadir más patrocinadores:
-            1) Duplica un bloque .sponsorItem
-            2) Cambia logo (src), alt, enlace (href) y texto (data-i18n)
+            1) Duplica un bloque .sponsor
+            2) Cambia logo (src), alt y enlace (href)
           -->
 
         </div>
