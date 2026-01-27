@@ -32,7 +32,8 @@ a { color: inherit; }
    Header (2 filas)
 ========================= */
 .siteHeader {
-  background: #f7f3ee;
+   /* background: #f7f3ee; */ /* original */
+  background: #8F7F6F
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
