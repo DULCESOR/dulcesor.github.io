@@ -437,4 +437,35 @@ width: auto;
   border-radius: 10px;
   filter: none !important;
 }
+/* Botones dorados en "Documentación oficial" */
+.docButtons__row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  align-items:center;
+}
+
+.docButtons__row .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding: 10px 16px;
+  border-radius: 999px;
+
+  background: #8b6f2a;      /* dorado */
+  color: #fff;
+  border: 1px solid transparent;
+
+  text-decoration:none;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 12px;
+  font-weight: 700;
+  cursor:pointer;
+}
+
+.docButtons__row .btn:hover{
+  filter: brightness(0.95);
+}
 
