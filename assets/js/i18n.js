@@ -344,9 +344,9 @@
         "La convocatoria inicial se encuentra en preparación. En esta sección se publicarán las bases y la documentación oficial para participar.",
 
       contest_docs_title: "Documentación oficial",
-      contest_docs_bases_soon: "Bases (PDF) · Próximamente",
+      contest_docs_bases_soon: "Bases (PDF)",
       contest_docs_application: "Solicitud de inscripción",
-      contest_docs_info_soon: "Info (PDF) · Próximamente",
+      contest_docs_info_soon: "Info (PDF)",
       contest_docs_note:
         "Si algún enlace no estuviese publicado aún, aparecerá marcado como “Próximamente”.",
 
@@ -679,9 +679,9 @@
         "The initial call is being prepared. This section will publish the rules and official documentation to participate.",
 
       contest_docs_title: "Official documentation",
-      contest_docs_bases_soon: "Rules (PDF) · Coming soon",
+      contest_docs_bases_soon: "Rules (PDF)",
       contest_docs_application: "Registration form",
-      contest_docs_info_soon: "Info (PDF) · Coming soon",
+      contest_docs_info_soon: "Info (PDF)",
       contest_docs_note:
         "If a link is not published yet, it will appear marked as “Coming soon”.",
 
@@ -1014,9 +1014,9 @@
         "A convocatória inicial está em preparação. Nesta secção serão publicadas as bases e a documentação oficial para participar.",
 
       contest_docs_title: "Documentação oficial",
-      contest_docs_bases_soon: "Regulamento (PDF) · Em breve",
+      contest_docs_bases_soon: "Regulamento (PDF)",
       contest_docs_application: "Pedido de inscrição",
-      contest_docs_info_soon: "Info (PDF) · Em breve",
+      contest_docs_info_soon: "Info (PDF)",
       contest_docs_note:
         "Se alguma ligação ainda não estiver publicada, aparecerá assinalada como “Em breve”.",
 
@@ -1350,9 +1350,9 @@
         "L’appel initial est en préparation. Dans cette section seront publiés le règlement et la documentation officielle pour participer.",
 
       contest_docs_title: "Documentation officielle",
-      contest_docs_bases_soon: "Règlement (PDF) · Bientôt",
+      contest_docs_bases_soon: "Règlement (PDF)",
       contest_docs_application: "Demande d’inscription",
-      contest_docs_info_soon: "Info (PDF) · Bientôt",
+      contest_docs_info_soon: "Info (PDF)",
       contest_docs_note:
         "Si un lien n’est pas encore publié, il apparaîtra marqué comme “Bientôt”.",
 
@@ -1686,9 +1686,9 @@
         "Il bando iniziale è in preparazione. In questa sezione saranno pubblicati il regolamento e la documentazione ufficiale per partecipare.",
 
       contest_docs_title: "Documentazione ufficiale",
-      contest_docs_bases_soon: "Regolamento (PDF) · Prossimamente",
+      contest_docs_bases_soon: "Regolamento (PDF)",
       contest_docs_application: "Domanda di iscrizione",
-      contest_docs_info_soon: "Info (PDF) · Prossimamente",
+      contest_docs_info_soon: "Info (PDF)",
       contest_docs_note:
         "Se un link non è ancora pubblicato, apparirà contrassegnato come “Prossimamente”.",
 
