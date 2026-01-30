@@ -66,7 +66,7 @@
         "Quiénes somos y para qué trabajamos: preservar la repostería monacal-conventual e impulsar proyectos culturales y el Concurso Internacional de Postres Monacales.",
       assoc_identity_title: "Identidad",
       assoc_identity_p1:
-        "La Asociación Cultural DULCESOR es una entidad sin ánimo de lucro dedicada a <strong>preservar, investigar y difundir<strong> la repostería monacal-conventual como patrimonio cultural.",
+        "La Asociación Cultural DULCESOR es una entidad sin ánimo de lucro dedicada a <strong>preservar, investigar y difundir</strong> la repostería monacal-conventual como patrimonio cultural.",
       assoc_identity_p2:
         "Trabajamos para poner en valor un legado vivo de recetas, técnicas y saberes transmitidos durante siglos, con respeto patrimonial y vocación de colaboración.",
 
