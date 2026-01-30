@@ -1014,7 +1014,7 @@
         "A convocatória inicial está em preparação. Nesta secção serão publicadas as bases e a documentação oficial para participar.",
 
       contest_docs_title: "Documentação oficial",
-      contest_docs_bases_soon: "Bases (PDF) · Em breve",
+      contest_docs_bases_soon: "Regulamento (PDF) · Em breve",
       contest_docs_application: "Pedido de inscrição",
       contest_docs_info_soon: "Info (PDF) · Em breve",
       contest_docs_note:
