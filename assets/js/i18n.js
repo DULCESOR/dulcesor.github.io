@@ -114,7 +114,7 @@
       assoc_admin_duration_label: "Duración",
       assoc_admin_duration_value: "Indefinida",
       assoc_admin_registry_label: "Situación registral",
-      assoc_admin_registry_value: "La formalización de acuerdos se realizará conforme a la situación registral vigente en cada momento",
+      assoc_admin_registry_value: "La formalización de acuerdos se realizará conforme a la situación registral vigente en cada momento.",
 
       assoc_collab_title: "Cómo colaborar",
       assoc_collab_intro:
@@ -281,7 +281,7 @@
       contest_hero_title: "I Concurso Internacional<br>de Repostería Monacal DULCESOR",
       contest_title: "I Concurso Internacional de Repostería Monacal DULCESOR 2026",
       contest_place_date: "España - Valladolid · 1–4 de octubre",
-      contest_btn_registration_top: "Solicitud inscripción",
+      contest_btn_registration_top: "Solicitud de inscripción",
       contest_intro_p:
         "Un encuentro cultural dedicado a la repostería monacal-conventual como patrimonio vivo: tradición, artesanía, transmisión del saber y diálogo con la gastronomía contemporánea.",
 
@@ -345,7 +345,7 @@
 
       contest_docs_title: "Documentación oficial",
       contest_docs_bases_soon: "Bases (PDF) · Próximamente",
-      contest_docs_application: "Solicitud inscripción",
+      contest_docs_application: "Solicitud de inscripción",
       contest_docs_info_soon: "Info (PDF) · Próximamente",
       contest_docs_note:
         "Si algún enlace no estuviese publicado aún, aparecerá marcado como “Próximamente”.",
@@ -448,7 +448,7 @@
       assoc_admin_duration_label: "Duration",
       assoc_admin_duration_value: "Indefinite",
       assoc_admin_registry_label: "Registration status",
-      assoc_admin_registry_value: "Entity in the process of official registration (NIF/CIF requested)",
+      assoc_admin_registry_value: "The formalization of agreements will be carried out in accordance with the registration status in effect at any given time.",
 
       assoc_collab_title: "How to collaborate",
       assoc_collab_intro:
@@ -784,7 +784,7 @@
       assoc_admin_duration_label: "Duração",
       assoc_admin_duration_value: "Indefinida",
       assoc_admin_registry_label: "Situação registral",
-      assoc_admin_registry_value: "Entidade em processo de inscrição oficial (NIF/CIF solicitado)",
+      assoc_admin_registry_value: "A formalização de acordos será realizada de acordo com a situação registal vigente em cada momento.",
 
       assoc_collab_title: "Como colaborar",
       assoc_collab_intro:
@@ -1120,7 +1120,7 @@
       assoc_admin_duration_label: "Durée",
       assoc_admin_duration_value: "Indéfinie",
       assoc_admin_registry_label: "Situation d’enregistrement",
-      assoc_admin_registry_value: "Entité en cours d’inscription officielle (NIF/CIF demandé)",
+      assoc_admin_registry_value: "La formalisation des accords sera effectuée conformément à la situation d'enregistrement en vigueur à chaque moment.",
 
       assoc_collab_title: "Comment collaborer",
       assoc_collab_intro:
@@ -1456,7 +1456,7 @@
       assoc_admin_duration_label: "Durata",
       assoc_admin_duration_value: "Indeterminata",
       assoc_admin_registry_label: "Stato di registrazione",
-      assoc_admin_registry_value: "Ente in fase di registrazione ufficiale (NIF/CIF richiesto)",
+      assoc_admin_registry_value: "La formalizzazione degli accordi sarà effettuata conformemente alla situazione registrale vigente in ciascun momento.",
 
       assoc_collab_title: "Come collaborare",
       assoc_collab_intro:
