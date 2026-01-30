@@ -1,4 +1,4 @@
-Preparation and judging/* ============================================================
+/* ============================================================
    DULCESOR i18n (ES/EN/PT/FR/IT) — Protocolo único (COMPAT HEADER)
    - Traduce:
        * data-i18n (texto / HTML)
@@ -25,7 +25,7 @@ Preparation and judging/* ======================================================
     es: {
 
       // ===== COMMON =====
-      common_in_prep: "Convocatoria abierta",
+      common_in_prep: "En preparación",
 
       // ===== NAV (header) =====
       nav_home: "Inicio",
@@ -43,7 +43,7 @@ Preparation and judging/* ======================================================
         'La Asociación Cultural <strong>DULCESOR</strong> impulsa la preservación, difusión y puesta en valor de la <strong>repostería monacal conventual</strong> y del patrimonio gastronómico ligado a comunidades religiosas, promoviendo proyectos culturales de alcance nacional e internacional.',
       home_project_title: "Proyecto principal",
       home_project_desc: "I Concurso Internacional de Postres Monacal –DULCESOR- Valladolid",
-      home_project_status: "Convocatoria abierta",
+      home_project_status: "Información en preparación",
       home_identity_title: "Identidad",
       home_identity_name_label: "Nombre:",
       home_identity_name: "Asociación Cultural DULCESOR",
@@ -339,9 +339,9 @@ Preparation and judging/* ======================================================
 
       contest_reg_title: "INSCRIPCIÓN · Convocatoria inicial",
       contest_reg_status_label: "Estado:",
-      contest_reg_status_value: "Convocatoria abierta",
+      contest_reg_status_value: "en preparación",
       contest_reg_p1:
-        "La convocatoria inicial se encuentra en abierta hasta el próximo 30 de mayo. En esta sección se publicarán las bases y la documentación oficial para participar.",
+        "La convocatoria inicial se encuentra en preparación. En esta sección se publicarán las bases y la documentación oficial para participar.",
 
       contest_docs_title: "Documentación oficial",
       contest_docs_bases_soon: "Bases (PDF)",
@@ -632,7 +632,7 @@ Preparation and judging/* ======================================================
         "(Detailed participation information, criteria and calendar will be included in the official rules).",
 
       contest_section_title: "The competition",
-      contest_section_subtitle: "Open call",
+      contest_section_subtitle: "Preparation and judging",
       contest_section_li1: "Preparation: Thursday, 1 October (International Cooking School).",
       contest_section_li2: "Awards ceremony (afternoon): Chapel of the Convent of Santa Ana.",
       contest_section_li3: "Note: full details in the rules.",
@@ -674,9 +674,9 @@ Preparation and judging/* ======================================================
 
       contest_reg_title: "REGISTRATION · Initial call",
       contest_reg_status_label: "Status:",
-      contest_reg_status_value: "Open call",
+      contest_reg_status_value: "in preparation",
       contest_reg_p1:
-        "The initial call is open until next May 30. This section will publish the rules and official documentation to participate.",
+        "The initial call is being prepared. This section will publish the rules and official documentation to participate.",
 
       contest_docs_title: "Official documentation",
       contest_docs_bases_soon: "Rules (PDF)",
@@ -967,7 +967,7 @@ Preparation and judging/* ======================================================
         "(A informação detalhada de participação, critérios e calendário será incluída nas bases oficiais).",
 
       contest_section_title: "O concurso",
-      contest_section_subtitle: "Convocatória aberta",
+      contest_section_subtitle: "Confeção e avaliação",
       contest_section_li1: "Confeção: quinta-feira, 1 de outubro (Escola Internacional de Cozinha).",
       contest_section_li2: "Entrega de prémios (tarde): Capela do Convento de Santa Ana.",
       contest_section_li3: "Nota: detalhes completos nas bases.",
@@ -1009,9 +1009,9 @@ Preparation and judging/* ======================================================
 
       contest_reg_title: "INSCRIÇÃO · Convocatória inicial",
       contest_reg_status_label: "Estado:",
-      contest_reg_status_value: "Convocatória aberta",
+      contest_reg_status_value: "em preparação",
       contest_reg_p1:
-        "A convocatória inicial está aberta até ao próximo dia 30 de maio. Nesta secção serão publicadas as bases e a documentação oficial para participar.",
+        "A convocatória inicial está em preparação. Nesta secção serão publicadas as bases e a documentação oficial para participar.",
 
       contest_docs_title: "Documentação oficial",
       contest_docs_bases_soon: "Regulamento (PDF)",
@@ -1303,7 +1303,7 @@ Preparation and judging/* ======================================================
         "(Les informations détaillées de participation, critères et calendrier seront incluses dans le règlement officiel).",
 
       contest_section_title: "Le concours",
-      contest_section_subtitle: "Appel à candidatures",
+      contest_section_subtitle: "Confection et évaluation",
       contest_section_li1: "Confection : jeudi 1er octobre (École internationale de cuisine).",
       contest_section_li2: "Remise des prix (après-midi) : chapelle du couvent de Santa Ana.",
       contest_section_li3: "Note : détails complets dans le règlement.",
@@ -1345,9 +1345,9 @@ Preparation and judging/* ======================================================
 
       contest_reg_title: "INSCRIPTION · Appel initial",
       contest_reg_status_label: "Statut :",
-      contest_reg_status_value: "Appel à candidatures",
+      contest_reg_status_value: "en préparation",
       contest_reg_p1:
-        "L'appel à candidatures initial est ouvert jusqu'au 30 mai prochain. Dans cette section seront publiés le règlement et la documentation officielle pour participer.",
+        "L’appel initial est en préparation. Dans cette section seront publiés le règlement et la documentation officielle pour participer.",
 
       contest_docs_title: "Documentation officielle",
       contest_docs_bases_soon: "Règlement (PDF)",
@@ -1639,7 +1639,7 @@ Preparation and judging/* ======================================================
         "(Le informazioni dettagliate su partecipazione, criteri e calendario saranno incluse nel regolamento ufficiale).",
 
       contest_section_title: "Il concorso",
-      contest_section_subtitle: "Chiamata aperta",
+      contest_section_subtitle: "Preparazione e valutazione",
       contest_section_li1: "Preparazione: giovedì 1 ottobre (Scuola Internazionale di Cucina).",
       contest_section_li2: "Cerimonia di premiazione (pomeriggio): Cappella del Convento di Santa Ana.",
       contest_section_li3: "Nota: dettagli completi nel regolamento.",
@@ -1681,9 +1681,9 @@ Preparation and judging/* ======================================================
 
       contest_reg_title: "ISCRIZIONE · Bando iniziale",
       contest_reg_status_label: "Stato:",
-      contest_reg_status_value: "convocatoria aperta",
+      contest_reg_status_value: "in preparazione",
       contest_reg_p1:
-        "La convocazione iniziale è aperta fino al prossimo 30 maggio. In questa sezione saranno pubblicati il regolamento e la documentazione ufficiale per partecipare.",
+        "Il bando iniziale è in preparazione. In questa sezione saranno pubblicati il regolamento e la documentazione ufficiale per partecipare.",
 
       contest_docs_title: "Documentazione ufficiale",
       contest_docs_bases_soon: "Regolamento (PDF)",
