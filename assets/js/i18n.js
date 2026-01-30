@@ -1048,7 +1048,7 @@
       home_title: "ASSOCIATION CULTURELLE DULCESOR",
       home_subtitle: "Pâtisserie monastique et conventuelle · Patrimoine gastronomique · Culture et tradition",
       home_intro:
-        'L’Association culturelle <strong>DULCESOR</strong> promeut la préservation, la diffusion et la valorisation de la <strong>pâtisserie monastique et conventuelle</strong> ainsi que du patrimoine gastronomique lié aux communautés religieuses, en développant des projets culturels d’envergure nationale et internationale.',
+        'L’Association culturelle <strong>DULCESOR</strong> promeut la <strong>préservation, la diffusion et la valorisation</strong> de la pâtisserie monastique et conventuelle ainsi que du patrimoine gastronomique lié aux communautés religieuses, en développant des projets culturels d’envergure nationale et internationale.',
       home_project_title: "Projet principal en développement",
       home_project_desc: "I Concours international de desserts conventuels -DULCESOR-  Valladolid 2026",
       home_project_status: "Informations en préparation",
