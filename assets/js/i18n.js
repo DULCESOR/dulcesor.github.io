@@ -1,4 +1,4 @@
-/* ============================================================
+Preparation and judging/* ============================================================
    DULCESOR i18n (ES/EN/PT/FR/IT) — Protocolo único (COMPAT HEADER)
    - Traduce:
        * data-i18n (texto / HTML)
@@ -674,9 +674,9 @@
 
       contest_reg_title: "REGISTRATION · Initial call",
       contest_reg_status_label: "Status:",
-      contest_reg_status_value: "in preparation",
+      contest_reg_status_value: "Open call",
       contest_reg_p1:
-        "The initial call is being prepared. This section will publish the rules and official documentation to participate.",
+        "The initial call is open until next May 30. This section will publish the rules and official documentation to participate.",
 
       contest_docs_title: "Official documentation",
       contest_docs_bases_soon: "Rules (PDF)",
@@ -1009,9 +1009,9 @@
 
       contest_reg_title: "INSCRIÇÃO · Convocatória inicial",
       contest_reg_status_label: "Estado:",
-      contest_reg_status_value: "em preparação",
+      contest_reg_status_value: "Convocatória aberta",
       contest_reg_p1:
-        "A convocatória inicial está em preparação. Nesta secção serão publicadas as bases e a documentação oficial para participar.",
+        "A convocatória inicial está aberta até ao próximo dia 30 de maio. Nesta secção serão publicadas as bases e a documentação oficial para participar.",
 
       contest_docs_title: "Documentação oficial",
       contest_docs_bases_soon: "Regulamento (PDF)",
@@ -1345,9 +1345,9 @@
 
       contest_reg_title: "INSCRIPTION · Appel initial",
       contest_reg_status_label: "Statut :",
-      contest_reg_status_value: "en préparation",
+      contest_reg_status_value: "Appel à candidatures",
       contest_reg_p1:
-        "L’appel initial est en préparation. Dans cette section seront publiés le règlement et la documentation officielle pour participer.",
+        "L'appel à candidatures initial est ouvert jusqu'au 30 mai prochain. Dans cette section seront publiés le règlement et la documentation officielle pour participer.",
 
       contest_docs_title: "Documentation officielle",
       contest_docs_bases_soon: "Règlement (PDF)",
@@ -1681,9 +1681,9 @@
 
       contest_reg_title: "ISCRIZIONE · Bando iniziale",
       contest_reg_status_label: "Stato:",
-      contest_reg_status_value: "in preparazione",
+      contest_reg_status_value: "convocatoria aperta",
       contest_reg_p1:
-        "Il bando iniziale è in preparazione. In questa sezione saranno pubblicati il regolamento e la documentazione ufficiale per partecipare.",
+        "La convocazione iniziale è aperta fino al prossimo 30 maggio. In questa sezione saranno pubblicati il regolamento e la documentazione ufficiale per partecipare.",
 
       contest_docs_title: "Documentazione ufficiale",
       contest_docs_bases_soon: "Regolamento (PDF)",
