@@ -114,7 +114,7 @@
       assoc_admin_duration_label: "Duración",
       assoc_admin_duration_value: "Indefinida",
       assoc_admin_registry_label: "Situación registral",
-      assoc_admin_registry_value: "Entidad en proceso de inscripción oficial (NIF/CIF solicitado)",
+      assoc_admin_registry_value: "La formalización de acuerdos se realizará conforme a la situación registral vigente en cada momento",
 
       assoc_collab_title: "Cómo colaborar",
       assoc_collab_intro:
