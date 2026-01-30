@@ -1410,7 +1410,7 @@
         "Chi siamo e per cosa lavoriamo: preservare la pasticceria monastica-conventuale e promuovere progetti culturali e il Concorso internazionale di dolci conventuali.",
       assoc_identity_title: "Identità",
       assoc_identity_p1:
-        "L’Associazione culturale DULCESOR è un ente senza scopo di lucro dedicato a preservare, ricercare e diffondere la pasticceria monastica-conventuale come patrimonio culturale.",
+        "L’Associazione culturale DULCESOR è un ente senza scopo di lucro dedicato a <strong>preservare, ricercare e diffondere</strong> la pasticceria monastica-conventuale come patrimonio culturale.",
       assoc_identity_p2:
         "Lavoriamo per valorizzare un’eredità viva di ricette, tecniche e saperi trasmessi per secoli, con rispetto del patrimonio e vocazione collaborativa.",
 
