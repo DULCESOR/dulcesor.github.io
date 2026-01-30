@@ -339,9 +339,9 @@
 
       contest_reg_title: "INSCRIPCIÓN · Convocatoria inicial",
       contest_reg_status_label: "Estado:",
-      contest_reg_status_value: "en preparación",
+      contest_reg_status_value: "Convocatoria abierta",
       contest_reg_p1:
-        "La convocatoria inicial se encuentra en preparación. En esta sección se publicarán las bases y la documentación oficial para participar.",
+        "La convocatoria se encuentra abierta hasta el proximo 30 de mayo. En esta sección se publicarán las bases y la documentación oficial para participar.",
 
       contest_docs_title: "Documentación oficial",
       contest_docs_bases_soon: "Bases (PDF)",
