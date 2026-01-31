@@ -285,22 +285,22 @@
       contest_intro_p:
         "Un encuentro cultural dedicado a la repostería monacal-conventual como patrimonio vivo: tradición, artesanía, transmisión del saber y diálogo con la gastronomía contemporánea.",
 
-      contest_poster_kicker: "Cartel oficial del concurso",
+      contest_poster_kicker: "Cartel oficial del <strong>concurso</strong>",
       contest_poster_alt: "Cartel oficial del concurso",
       contest_poster_note:
-        "El cartel aparece como imagen oficial del I Concurso Internacional de Repostería Monacal DULCESOR 2026",
+        "",
 
       contest_presentation_title: "Presentación",
       contest_presentation_p1:
         "El concurso nace con vocación cultural e internacional para reconocer y poner en valor la repostería monacal como legado histórico y expresión de artesanía. Reúne a comunidades, instituciones y ciudadanía en torno a un programa que combina elaboración, divulgación y encuentro.",
       contest_presentation_note:
-        "(La información detallada de participación, criterios y calendario se recogerá en las bases oficiales).",
+        "",
 
       contest_section_title: "El concurso",
-      contest_section_subtitle: "Elaboración y evaluación",
-      contest_section_li1: "Elaboración: jueves 1 de octubre (Escuela Internacional de Cocina).",
-      contest_section_li2: "Entrega de premios (tarde): Capilla del Convento de Santa Ana.",
-      contest_section_li3: "Nota: detalles completos en las bases.",
+      contest_section_subtitle: "Desarrollo del concurso",
+      contest_section_li1: "Desarrollo del concurso: jueves 1 de octubre en la Escuela Internacional de Cocina de Valladolid.",
+      contest_section_li2: "Entrega de premios: Iglesia del Convento de Santa Ana, Valladolid.",
+      contest_section_li3: "Más información: Consultar bases.",
 
       contest_craft_kicker: "Artesanía / Hacer",
       contest_craft_img_alt: "Manos amasando masa",
@@ -341,14 +341,15 @@
       contest_reg_status_label: "Estado:",
       contest_reg_status_value: "Convocatoria abierta",
       contest_reg_p1:
-        "La convocatoria se encuentra abierta hasta el proximo 30 de mayo. En esta sección se publicarán las bases y la documentación oficial para participar.",
+        "La convocatoria se encuentra abierta hasta el próximo 30 de mayo. Bases y documentación oficial disponible para la inscripción.",
 
       contest_docs_title: "Documentación oficial",
       contest_docs_bases_soon: "Bases (PDF)",
       contest_docs_application: "Solicitud de inscripción",
+      contest_docs_bases: "Bases",
       contest_docs_info_soon: "Info (PDF)",
       contest_docs_note:
-        "Si algún enlace no estuviese publicado aún, aparecerá marcado como “Próximamente”.",
+        "",
 
       contest_institutional_title: "Marco institucional",
       contest_institutional_p1:
@@ -620,22 +621,22 @@
       contest_intro_p:
         "A cultural gathering dedicated to monastic-convent pastry as living heritage: tradition, craft, transmission of know-how and dialogue with contemporary gastronomy.",
 
-      contest_poster_kicker: "Official competition poster",
+      contest_poster_kicker: "Official <strong>competition</strong> poster",
       contest_poster_alt: "Official competition poster",
       contest_poster_note:
-        "The poster appears as the official image of the 1st International Competition<br>of Monastic Pastry DULCESOR 2026.",
+        "",
 
       contest_presentation_title: "Presentation",
       contest_presentation_p1:
         "The competition is born with a cultural and international vocation to recognise and highlight monastic pastry as historical legacy and expression of craftsmanship. It brings together communities, institutions and citizens around a programme that combines preparation, outreach and meeting.",
       contest_presentation_note:
-        "(Detailed participation information, criteria and calendar will be included in the official rules).",
+        "",
 
       contest_section_title: "The competition",
-      contest_section_subtitle: "Preparation and judging",
-      contest_section_li1: "Preparation: Thursday, 1 October (International Cooking School).",
-      contest_section_li2: "Awards ceremony (afternoon): Chapel of the Convent of Santa Ana.",
-      contest_section_li3: "Note: full details in the rules.",
+      contest_section_subtitle: "Competition programme",
+      contest_section_li1: "Competition day: Thursday, 1 October at the International Cooking School of Valladolid.",
+      contest_section_li2: "Awards ceremony: Church of the Convent of Santa Ana, Valladolid.",
+      contest_section_li3: "More information: See the rules.",
 
       contest_craft_kicker: "Craft / Making",
       contest_craft_img_alt: "Hands kneading dough",
@@ -674,16 +675,17 @@
 
       contest_reg_title: "REGISTRATION · Initial call",
       contest_reg_status_label: "Status:",
-      contest_reg_status_value: "in preparation",
+      contest_reg_status_value: "Open call",
       contest_reg_p1:
-        "The initial call is being prepared. This section will publish the rules and official documentation to participate.",
+        "The call is open until 30 May. Rules and official documentation are available for registration.",
 
       contest_docs_title: "Official documentation",
       contest_docs_bases_soon: "Rules (PDF)",
       contest_docs_application: "Registration form",
+      contest_docs_bases: "Rules",
       contest_docs_info_soon: "Info (PDF)",
       contest_docs_note:
-        "If a link is not published yet, it will appear marked as “Coming soon”.",
+        "",
 
       contest_institutional_title: "Institutional framework",
       contest_institutional_p1:
@@ -955,22 +957,22 @@
       contest_intro_p:
         "Um encontro cultural dedicado à doçaria monástica-conventual como património vivo: tradição, artesanato, transmissão do saber e diálogo com a gastronomia contemporânea.",
 
-      contest_poster_kicker: "Cartaz oficial do concurso",
+      contest_poster_kicker: "Cartaz oficial do <strong>concurso</strong>",
       contest_poster_alt: "Cartaz oficial do concurso",
       contest_poster_note:
-        "O cartaz aparece como imagem oficial do 1º Concurso Internacional de Doçaria Monacal DULCESOR 2026.",
+        "",
 
       contest_presentation_title: "Apresentação",
       contest_presentation_p1:
         "O concurso nasce com vocação cultural e internacional para reconhecer e valorizar a doçaria monástica como legado histórico e expressão de artesanato. Reúne comunidades, instituições e cidadania em torno de um programa que combina confeção, divulgação e encontro.",
       contest_presentation_note:
-        "(A informação detalhada de participação, critérios e calendário será incluída nas bases oficiais).",
+        "",
 
       contest_section_title: "O concurso",
-      contest_section_subtitle: "Confeção e avaliação",
-      contest_section_li1: "Confeção: quinta-feira, 1 de outubro (Escola Internacional de Cozinha).",
-      contest_section_li2: "Entrega de prémios (tarde): Capela do Convento de Santa Ana.",
-      contest_section_li3: "Nota: detalhes completos nas bases.",
+      contest_section_subtitle: "Desenvolvimento do concurso",
+      contest_section_li1: "Desenvolvimento do concurso: quinta-feira, 1 de outubro, na Escola Internacional de Cozinha de Valladolid.",
+      contest_section_li2: "Entrega de prémios: Igreja do Convento de Santa Ana, Valladolid.",
+      contest_section_li3: "Mais informações: Consultar as bases.",
 
       contest_craft_kicker: "Artesanato / Fazer",
       contest_craft_img_alt: "Mãos a amassar massa",
@@ -1009,16 +1011,17 @@
 
       contest_reg_title: "INSCRIÇÃO · Convocatória inicial",
       contest_reg_status_label: "Estado:",
-      contest_reg_status_value: "em preparação",
+      contest_reg_status_value: "Convocatória aberta",
       contest_reg_p1:
-        "A convocatória inicial está em preparação. Nesta secção serão publicadas as bases e a documentação oficial para participar.",
+        "A convocatória está aberta até 30 de maio. Bases e documentação oficial disponíveis para a inscrição.",
 
       contest_docs_title: "Documentação oficial",
       contest_docs_bases_soon: "Regulamento (PDF)",
       contest_docs_application: "Pedido de inscrição",
+      contest_docs_bases: "Bases",
       contest_docs_info_soon: "Info (PDF)",
       contest_docs_note:
-        "Se alguma ligação ainda não estiver publicada, aparecerá assinalada como “Em breve”.",
+        "",
 
       contest_institutional_title: "Enquadramento institucional",
       contest_institutional_p1:
@@ -1291,22 +1294,22 @@
       contest_intro_p:
         "Une rencontre culturelle dédiée à la pâtisserie monastique-conventuelle en tant que patrimoine vivant : tradition, artisanat, transmission du savoir-faire et dialogue avec la gastronomie contemporaine.",
 
-      contest_poster_kicker: "Affiche officielle du concours",
+      contest_poster_kicker: "Affiche officielle du <strong>concours</strong>",
       contest_poster_alt: "Affiche officielle du concours",
       contest_poster_note:
-        "L’affiche apparaît comme l’image officielle du 1er Concours international de pâtisserie monastique DULCESOR 2026.",
+        "",
 
       contest_presentation_title: "Présentation",
       contest_presentation_p1:
         "Le concours naît avec une vocation culturelle et internationale afin de reconnaître et de valoriser la pâtisserie monastique comme héritage historique et expression de l’artisanat. Il réunit communautés, institutions et citoyennes/citoyens autour d’un programme mêlant confection, diffusion et rencontre.",
       contest_presentation_note:
-        "(Les informations détaillées de participation, critères et calendrier seront incluses dans le règlement officiel).",
+        "",
 
       contest_section_title: "Le concours",
-      contest_section_subtitle: "Confection et évaluation",
-      contest_section_li1: "Confection : jeudi 1er octobre (École internationale de cuisine).",
-      contest_section_li2: "Remise des prix (après-midi) : chapelle du couvent de Santa Ana.",
-      contest_section_li3: "Note : détails complets dans le règlement.",
+      contest_section_subtitle: "Déroulement du concours",
+      contest_section_li1: "Déroulement du concours : jeudi 1er octobre à l’École Internationale de Cuisine de Valladolid.",
+      contest_section_li2: "Remise des prix : église du couvent de Santa Ana, Valladolid.",
+      contest_section_li3: "Plus d’informations : consulter le règlement.",
 
       contest_craft_kicker: "Artisanat / Faire",
       contest_craft_img_alt: "Mains pétrissant la pâte",
@@ -1345,16 +1348,17 @@
 
       contest_reg_title: "INSCRIPTION · Appel initial",
       contest_reg_status_label: "Statut :",
-      contest_reg_status_value: "en préparation",
+      contest_reg_status_value: "Appel ouvert",
       contest_reg_p1:
-        "L’appel initial est en préparation. Dans cette section seront publiés le règlement et la documentation officielle pour participer.",
+        "L’appel est ouvert jusqu’au 30 mai. Règlement et documentation officielle disponibles pour l’inscription.",
 
       contest_docs_title: "Documentation officielle",
       contest_docs_bases_soon: "Règlement (PDF)",
       contest_docs_application: "Demande d’inscription",
+      contest_docs_bases: "Règlement",
       contest_docs_info_soon: "Info (PDF)",
       contest_docs_note:
-        "Si un lien n’est pas encore publié, il apparaîtra marqué comme “Bientôt”.",
+        "",
 
       contest_institutional_title: "Cadre institutionnel",
       contest_institutional_p1:
@@ -1627,22 +1631,22 @@
       contest_intro_p:
         "Un incontro culturale dedicato alla pasticceria monastica-conventuale come patrimonio vivo: tradizione, artigianato, trasmissione del sapere e dialogo con la gastronomia contemporanea.",
 
-      contest_poster_kicker: "Locandina ufficiale del concorso",
+      contest_poster_kicker: "Locandina ufficiale del <strong>concorso</strong>",
       contest_poster_alt: "Locandina ufficiale del concorso",
       contest_poster_note:
-        "La locandina appare come immagine ufficiale del I Concorso internazionale di pasticceria monastica DULCESOR 2026.",
+        "",
 
       contest_presentation_title: "Presentazione",
       contest_presentation_p1:
         "Il concorso nasce con vocazione culturale e internazionale per riconoscere e valorizzare la pasticceria monastica come eredità storica ed espressione di artigianato. Riunisce comunità, istituzioni e cittadinanza attorno a un programma che combina preparazione, divulgazione e incontro.",
       contest_presentation_note:
-        "(Le informazioni dettagliate su partecipazione, criteri e calendario saranno incluse nel regolamento ufficiale).",
+        "",
 
       contest_section_title: "Il concorso",
-      contest_section_subtitle: "Preparazione e valutazione",
-      contest_section_li1: "Preparazione: giovedì 1 ottobre (Scuola Internazionale di Cucina).",
-      contest_section_li2: "Cerimonia di premiazione (pomeriggio): Cappella del Convento di Santa Ana.",
-      contest_section_li3: "Nota: dettagli completi nel regolamento.",
+      contest_section_subtitle: "Svolgimento del concorso",
+      contest_section_li1: "Svolgimento del concorso: giovedì 1 ottobre presso la Scuola Internazionale di Cucina di Valladolid.",
+      contest_section_li2: "Cerimonia di premiazione: chiesa del Convento di Santa Ana, Valladolid.",
+      contest_section_li3: "Maggiori informazioni: consultare il regolamento.",
 
       contest_craft_kicker: "Artigianato / Fare",
       contest_craft_img_alt: "Mani che impastano",
@@ -1681,16 +1685,17 @@
 
       contest_reg_title: "ISCRIZIONE · Bando iniziale",
       contest_reg_status_label: "Stato:",
-      contest_reg_status_value: "in preparazione",
+      contest_reg_status_value: "Bando aperto",
       contest_reg_p1:
-        "Il bando iniziale è in preparazione. In questa sezione saranno pubblicati il regolamento e la documentazione ufficiale per partecipare.",
+        "Il bando è aperto fino al 30 maggio. Regolamento e documentazione ufficiale disponibili per l’iscrizione.",
 
       contest_docs_title: "Documentazione ufficiale",
       contest_docs_bases_soon: "Regolamento (PDF)",
       contest_docs_application: "Domanda di iscrizione",
+      contest_docs_bases: "Regolamento",
       contest_docs_info_soon: "Info (PDF)",
       contest_docs_note:
-        "Se un link non è ancora pubblicato, apparirà contrassegnato come “Prossimamente”.",
+        "",
 
       contest_institutional_title: "Quadro istituzionale",
       contest_institutional_p1:
