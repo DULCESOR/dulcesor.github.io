@@ -60,7 +60,7 @@ a { color: inherit; }
 
 /* AJUSTA SOLO ESTE VALOR para hacerlo más pequeño/grande */
 .brandLogo{
-  height: 130px;      /* <-- cambia aquí el tamaño */
+  height: 150px;      /* <-- cambia aquí el tamaño */
   width: auto;
   max-width: 420px;  /* evita que se desmadre en pantallas grandes */
   display: block;
