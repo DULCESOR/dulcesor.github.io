@@ -285,7 +285,7 @@
       contest_intro_p:
         "Un encuentro cultural dedicado a la repostería monacal-conventual como patrimonio vivo: tradición, artesanía, transmisión del saber y diálogo con la gastronomía contemporánea.",
 
-      contest_poster_kicker: "Cartel oficial del <strong>concurso</strong>",
+      contest_poster_kicker: "<strong>Cartel oficial del concurso</strong>",
       contest_poster_alt: "Cartel oficial del concurso",
       contest_poster_note:
         "",
@@ -621,7 +621,7 @@
       contest_intro_p:
         "A cultural gathering dedicated to monastic-convent pastry as living heritage: tradition, craft, transmission of know-how and dialogue with contemporary gastronomy.",
 
-      contest_poster_kicker: "Official <strong>competition</strong> poster",
+      contest_poster_kicker: "<strong>Official competition poster</strong>",
       contest_poster_alt: "Official competition poster",
       contest_poster_note:
         "",
@@ -957,7 +957,7 @@
       contest_intro_p:
         "Um encontro cultural dedicado à doçaria monástica-conventual como património vivo: tradição, artesanato, transmissão do saber e diálogo com a gastronomia contemporânea.",
 
-      contest_poster_kicker: "Cartaz oficial do <strong>concurso</strong>",
+      contest_poster_kicker: "<strong>Cartaz oficial do concurso</strong>",
       contest_poster_alt: "Cartaz oficial do concurso",
       contest_poster_note:
         "",
@@ -1294,7 +1294,7 @@
       contest_intro_p:
         "Une rencontre culturelle dédiée à la pâtisserie monastique-conventuelle en tant que patrimoine vivant : tradition, artisanat, transmission du savoir-faire et dialogue avec la gastronomie contemporaine.",
 
-      contest_poster_kicker: "Affiche officielle du <strong>concours</strong>",
+      contest_poster_kicker: "<strong>Affiche officielle du concours</strong>",
       contest_poster_alt: "Affiche officielle du concours",
       contest_poster_note:
         "",
@@ -1631,7 +1631,7 @@
       contest_intro_p:
         "Un incontro culturale dedicato alla pasticceria monastica-conventuale come patrimonio vivo: tradizione, artigianato, trasmissione del sapere e dialogo con la gastronomia contemporanea.",
 
-      contest_poster_kicker: "Locandina ufficiale del <strong>concorso</strong>",
+      contest_poster_kicker: "<strong>Locandina ufficiale del concorso</strong>",
       contest_poster_alt: "Locandina ufficiale del concorso",
       contest_poster_note:
         "",
