@@ -38,14 +38,14 @@
         </div>
         <div class="row">
           <div class="label">Domicilio</div>
-          <div class="value">[[Plaza Santa Ana, 4    47004 Valladolid]]</div>
+          <div class="value">[[Plaza Santa Ana, 4  C.Postal 47004 Valladolid]]</div>
         </div>
         <div class="row">
           <div class="label">Email</div>
           <div class="value">[[contacto@dulcesor.org]]</div>
         </div>
         <div class="row">
-          <div class="label">Registro (si aplica)</div>
+          <div class="label">Registro</div>
           <div class="value">[[DATOS REGISTRALES / “en proceso de inscripción”]]</div>
         </div>
       </div>
@@ -108,7 +108,7 @@
       <h2>7. Legislación aplicable y jurisdicción</h2>
       <p>
         La relación entre el titular y el usuario se regirá por la normativa española vigente. Para la resolución de
-        cualquier controversia, las partes se someterán a los juzgados y tribunales de [[CIUDAD/PROVINCIA]],
+        cualquier controversia, las partes se someterán a los juzgados y tribunales de [[VALLADOLID]],
         salvo que la normativa establezca otro fuero imperativo.
       </p>
     </section>
@@ -121,7 +121,7 @@
       </p>
     </section>
 
-    <p class="note">Última actualización: [[FECHA]]</p>
+    <p class="note">Última actualización: [[01/02/2026]]</p>
   </main>
 
   <div id="site-footer"></div>
