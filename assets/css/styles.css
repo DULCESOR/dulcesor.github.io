@@ -405,6 +405,7 @@ a { color: inherit; }
 /* Icono por máscara (usa tus SVG en assets/iccons/social/) */
 .socialBtn::before{
   content:"";
+  display:block;              /* <- CLAVE: si no, width/height no aplican */
   width:20px;
   height:20px;
   background: currentColor;
@@ -413,10 +414,10 @@ a { color: inherit; }
 }
 
 /* Rutas RELATIVAS (mejor para GitHub Pages / hosting) */
-.socialBtn.ig{ --icon: url("assets/iccons/social/instagram.svg"); }
-.socialBtn.fb{ --icon: url("assets/iccons/social/facebook.svg"); }
-.socialBtn.in{ --icon: url("assets/iccons/social/linkedin.svg"); }
-.socialBtn.wa{ --icon: url("assets/iccons/social/whatsapp.svg"); }
+.socialBtn.ig{ --icon: url("/assets/iccons/social/instagram.svg"); }
+.socialBtn.fb{ --icon: url("/assets/iccons/social/facebook.svg"); }
+.socialBtn.in{ --icon: url("/assets/iccons/social/linkedin.svg"); }
+.socialBtn.wa{ --icon: url("/assets/iccons/social/whatsapp.svg"); }
 
 /* Colores SOLO al pasar el cursor / focus */
 .socialBtn:hover, .socialBtn:focus-visible{ opacity:1; }
