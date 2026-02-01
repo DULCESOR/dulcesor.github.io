@@ -39,11 +39,11 @@
     </div>
 
     <!-- Enlaces legales -->
-    <div class="footerLine3" aria-label="Enlaces legales">
+    <nav class="footerLine3" aria-label="Enlaces legales">
       <a class="footerLink" href="/cookies.html">Cookies</a>
       <span class="footerSep">·</span>
       <a class="footerLink" href="/aviso-legal.html">Aviso legal</a>
-    </div>
+    </nav>
   </div>
 </footer>
 `.trim();
