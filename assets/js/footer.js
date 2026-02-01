@@ -13,7 +13,7 @@
   }
 
   function ensureCookiesScript() {
-    const SRC = "/assets/js/cookies.js";
+    const SRC = "assets/js/cookies.js";
     if (document.querySelector(`script[src="${SRC}"]`)) return;
 
     const s = document.createElement("script");
@@ -40,7 +40,7 @@
 
     <!-- Enlaces legales -->
     <div class="footerLine3" aria-label="Enlaces legales">
-      <a class="footerLink" href="/cookies.js">Cookies</a>
+      <a class="footerLink" href="/cookies.html">Cookies</a>
       <span class="footerSep">·</span>
       <a class="footerLink" href="/aviso-legal.html">Aviso legal</a>
     </div>
