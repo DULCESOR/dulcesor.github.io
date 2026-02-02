@@ -11,12 +11,25 @@
 
     // RRSS (por ahora "Próximamente"): botones sin enlace, pero con hover (color)
     const socials = `
-      <div class="socials" aria-label="Redes sociales (Próximamente)">
-        <button class="socialBtn ig" type="button" aria-disabled="true" title="Próximamente" aria-label="Instagram (Próximamente)"></button>
-        <button class="socialBtn fb" type="button" aria-disabled="true" title="Próximamente" aria-label="Facebook (Próximamente)"></button>
-        <button class="socialBtn in" type="button" aria-disabled="true" title="Próximamente" aria-label="LinkedIn (Próximamente)"></button>
-        <button class="socialBtn wa" type="button" aria-disabled="true" title="Próximamente" aria-label="WhatsApp Business (Próximamente)"></button>
-      </div>
+      <div class="socials" aria-label="Redes sociales">
+    <a class="socialBtn ig"
+       href="https://www.instagram.com/dulcesor_org/"
+       target="_blank" rel="noopener noreferrer"
+       title="Instagram" aria-label="Instagram"></a>
+
+    <button class="socialBtn fb"
+            type="button" aria-disabled="true"
+            title="Próximamente" aria-label="Facebook (Próximamente)"></button>
+
+    <a class="socialBtn in"
+       href="https://www.linkedin.com/in/asociacion-cultural-reposteria-monacal-dulcesor-2a5a3a3a9/"
+       target="_blank" rel="noopener noreferrer"
+       title="LinkedIn" aria-label="LinkedIn"></a>
+
+    <button class="socialBtn wa"
+            type="button" aria-disabled="true"
+            title="Próximamente" aria-label="WhatsApp Business (Próximamente)"></button>
+  </div>
     `.trim();
 
     return `
