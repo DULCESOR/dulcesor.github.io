@@ -142,12 +142,11 @@
       contact_contest_label: "Concursos",
       contact_address_label: "Sede",
       contact_address_value: "Plaza Santa Ana, 4 · 47001 Valladolid (España)",
-     contact_phone_label: "Teléfono",
+      contact_phone_label: "Teléfono",
       contact_phone_value: "+34 634 008 167",
       contact_action_write: "Escribir (general)",
       contact_action_call: "Llamar",
       contact_action_directions: "Cómo llegar",
-
       contact_note: "Si deseas colaborar o ampliar información, escríbenos y te responderemos a la mayor brevedad.",
       contact_collab_title: "Colabora con DULCESOR",
       contact_collab_text:
@@ -488,7 +487,6 @@
       contact_action_write: "Email (general)",
       contact_action_call: "Call",
       contact_action_directions: "Get directions",
- 
       contact_note:
         "If you want to collaborate or request more information, write to us and we will reply as soon as possible.",
       contact_collab_title: "Collaborate with DULCESOR",
@@ -831,7 +829,6 @@
       contact_action_write: "Escrever (geral)",
       contact_action_call: "Ligar",
       contact_action_directions: "Como chegar",
-
       contact_note: "Se deseja colaborar ou obter mais informações, escreva-nos e responderemos com a maior brevidade.",
       contact_collab_title: "Colabore com a DULCESOR",
       contact_collab_text:
@@ -1876,3 +1873,4 @@
       }
     };
 })();
+
