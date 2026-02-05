@@ -14,6 +14,45 @@
 
   <!-- CSS global -->
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Fix: el teléfono NO debe ir subrayado -->
+  <style>
+    .contactCard .row.phone a{
+      text-decoration: none;
+    }
+    .contactCard .row.phone a:hover,
+    .contactCard .row.phone a:focus-visible{
+      text-decoration: none;
+    }
+  </style>
+
+  <!-- SEO extra: Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ContactPage",
+    "name":"Contacto · DULCESOR",
+    "description":"Canales de comunicación de la Asociación Cultural DULCESOR.",
+    "about":{
+      "@type":"Organization",
+      "name":"Asociación Cultural DULCESOR",
+      "email":"info@dulcesor.org",
+      "telephone":"+34 634 008 167",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"Plaza Santa Ana, 4",
+        "postalCode":"47001",
+        "addressLocality":"Valladolid",
+        "addressCountry":"ES"
+      },
+      "contactPoint":[
+        {"@type":"ContactPoint","contactType":"información general","email":"info@dulcesor.org"},
+        {"@type":"ContactPoint","contactType":"contacto institucional","email":"contacto@dulcesor.org"},
+        {"@type":"ContactPoint","contactType":"concursos","email":"concurso@dulcesor.org"}
+      ]
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -28,65 +67,67 @@
       <p data-i18n="contact_subtitle">Canales de comunicación de la Asociación Cultural DULCESOR.</p>
     </section>
 
-   <!-- BLOQUES -->
-<section class="pageGrid" aria-label="Bloques de contacto">
+    <!-- BLOQUES -->
+    <section class="pageGrid" aria-label="Bloques de contacto">
 
-  <section class="card contactCard" aria-labelledby="contacto-title">
-    <h2 id="contacto-title" data-i18n="contact_block_title">Información de contacto</h2>
+      <!-- (1) Información de contacto -->
+      <section class="card contactCard" aria-labelledby="contacto-title">
+        <h2 id="contacto-title" data-i18n="contact_block_title">Información de contacto</h2>
 
-    <div class="grid">
-      <div class="row">
-        <span class="label" data-i18n="contact_email_label">Información general</span>
-        <span class="value">
-          <a href="mailto:info@dulcesor.org">info@dulcesor.org</a>
-        </span>
-      </div>
+        <div class="grid">
+          <div class="row">
+            <span class="label" data-i18n="contact_email_label">Información general</span>
+            <span class="value">
+              <a href="mailto:info@dulcesor.org">info@dulcesor.org</a>
+            </span>
+          </div>
 
-      <div class="row">
-        <span class="label" data-i18n="contact_contact_label">Contacto institucional</span>
-        <span class="value">
-          <a href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a>
-        </span>
-      </div>
+          <div class="row">
+            <span class="label" data-i18n="contact_contact_label">Contacto institucional</span>
+            <span class="value">
+              <a href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a>
+            </span>
+          </div>
 
-      <div class="row">
-        <span class="label" data-i18n="contact_contest_label">Concursos</span>
-        <span class="value">
-          <a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a>
-        </span>
-      </div>
+          <div class="row">
+            <span class="label" data-i18n="contact_contest_label">Concursos</span>
+            <span class="value">
+              <a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a>
+            </span>
+          </div>
 
-      <div class="row address">
-        <span class="label" data-i18n="contact_address_label">Sede</span>
-        <address class="value">
-          <span data-i18n="contact_address_value">
-            Plaza Santa Ana, 4 · 47001 Valladolid (España)
-          </span>
-        </address>
-      </div>
+          <div class="row address">
+            <span class="label" data-i18n="contact_address_label">Sede</span>
+            <address class="value">
+              <span data-i18n="contact_address_value">
+                Plaza Santa Ana, 4 · 47001 Valladolid (España)
+              </span>
+            </address>
+          </div>
 
-      <div class="row phone">
-        <span class="label" data-i18n="contact_phone_label">Teléfono</span>
-        <span class="value">
-          <a href="tel:+34634008167" data-i18n="contact_phone_value">+34 634 008 167</a>
-        </span>
-      </div>
-    </div>
+          <div class="row phone">
+            <span class="label" data-i18n="contact_phone_label">Teléfono</span>
+            <span class="value">
+              <a href="tel:+34634008167" data-i18n="contact_phone_value">+34 634 008 167</a>
+            </span>
+          </div>
+        </div>
 
-    <p class="note" data-i18n="contact_note">
-      Si deseas colaborar o ampliar información, escríbenos y te responderemos a la mayor brevedad.
-    </p>
-    .contactCard .row.phone a{
-      text-decoration: none;
-    }
-    .contactCard .row.phone a:hover,
-    .contactCard .row.phone a:focus-visible{
-    text-decoration: none;
-    }
-   
-  </section>
-</section>
+        <!-- NUEVO: acciones rápidas (sin tocar tu estilo, reusando .btn) -->
+        <div class="btnRow" style="justify-content:flex-start; flex-wrap:wrap; gap:.75rem; margin-top: 1rem;">
+          <a class="btn" href="mailto:info@dulcesor.org?subject=Contacto%20DULCESOR">Escribir (general)</a>
+          <a class="btn ghost" href="tel:+34634008167">Llamar</a>
+          <a class="btn ghost"
+             href="https://www.google.com/maps?q=Plaza+Santa+Ana,+4,+47001+Valladolid"
+             target="_blank" rel="noopener">
+            Cómo llegar
+          </a>
+        </div>
 
+        <p class="note" data-i18n="contact_note">
+          Si deseas colaborar o ampliar información, escríbenos y te responderemos a la mayor brevedad.
+        </p>
+      </section>
 
       <!-- (2) Bloque de colaboración -->
       <section class="card soft" aria-label="Colaboración">
@@ -122,4 +163,3 @@
 
 </body>
 </html>
-
