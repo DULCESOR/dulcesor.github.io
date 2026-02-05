@@ -28,42 +28,57 @@
       <p data-i18n="contact_subtitle">Canales de comunicación de la Asociación Cultural DULCESOR.</p>
     </section>
 
-    <!-- BLOQUES -->
-    <section class="pageGrid" aria-label="Bloques de contacto">
+   <!-- BLOQUES -->
+<section class="pageGrid" aria-label="Bloques de contacto">
 
-      <!-- (1) Información de contacto -->
-      <section class="card" aria-label="Información de contacto">
-        <h2 data-i18n="contact_block_title">Información de contacto</h2>
+  <section class="card contactCard" aria-labelledby="contacto-title">
+    <h2 id="contacto-title" data-i18n="contact_block_title">Información de contacto</h2>
 
-        <div class="grid">
-          <div class="row">
-            <span class="label" data-i18n="contact_email_label">Información general</span>
-            <span class="value"><a href="mailto:info@dulcesor.org">info@dulcesor.org</a></span>
-          </div>
+    <div class="grid">
+      <div class="row">
+        <span class="label" data-i18n="contact_email_label">Información general</span>
+        <span class="value">
+          <a href="mailto:info@dulcesor.org">info@dulcesor.org</a>
+        </span>
+      </div>
 
-          <div class="row">
-            <span class="label" data-i18n="contact_contact_label">Contacto institucional</span>
-            <span class="value"><a href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a></span>
-          </div>
+      <div class="row">
+        <span class="label" data-i18n="contact_contact_label">Contacto institucional</span>
+        <span class="value">
+          <a href="mailto:contacto@dulcesor.org">contacto@dulcesor.org</a>
+        </span>
+      </div>
 
-          <div class="row">
-            <span class="label" data-i18n="contact_contest_label">Concursos</span>
-            <span class="value"><a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a></span>
-          </div>
+      <div class="row">
+        <span class="label" data-i18n="contact_contest_label">Concursos</span>
+        <span class="value">
+          <a href="mailto:concurso@dulcesor.org">concurso@dulcesor.org</a>
+        </span>
+      </div>
 
-          <div class="row">
-            <span class="label" data-i18n="contact_address_label">Sede</span>
-            <span class="value" data-i18n="contact_address_value">
-              Plaza Santa Ana, 4 · 47001 Valladolid (España)
-              Tfno: +34 634 008 167
-            </span>
-          </div>
-        </div>
+      <div class="row address">
+        <span class="label" data-i18n="contact_address_label">Sede</span>
+        <address class="value">
+          <span data-i18n="contact_address_value">
+            Plaza Santa Ana, 4 · 47001 Valladolid (España)
+          </span>
+        </address>
+      </div>
 
-        <p class="note" data-i18n="contact_note">
-          Si deseas colaborar o ampliar información, escríbenos y te responderemos a la mayor brevedad.
-        </p>
-      </section>
+      <div class="row phone">
+        <span class="label" data-i18n="contact_phone_label">Teléfono</span>
+        <span class="value">
+          <a href="tel:+34634008167" data-i18n="contact_phone_value">+34 634 008 167</a>
+        </span>
+      </div>
+    </div>
+
+    <p class="note" data-i18n="contact_note">
+      Si deseas colaborar o ampliar información, escríbenos y te responderemos a la mayor brevedad.
+    </p>
+  </section>
+</section>
+
 
       <!-- (2) Bloque de colaboración -->
       <section class="card soft" aria-label="Colaboración">
