@@ -26,9 +26,12 @@
        target="_blank" rel="noopener noreferrer"
        title="LinkedIn" aria-label="LinkedIn"></a>
 
-    <button class="socialBtn wa"
-            type="button" aria-disabled="true"
-            title="Próximamente" aria-label="WhatsApp Business (Próximamente)"></button>
+    <a class="socialBtn wa"
+         href="https://wa.me/34634008167"
+         target="_blank" rel="noopener noreferrer"
+         title="WhatsApp"
+         aria-label="WhatsApp: +34 634 008 167"></a>
+
   </div>
     `.trim();
 
