@@ -533,7 +533,7 @@ body.page-concurso .concursoDocs .docButtons__row{
         Solicitud de inscripción
       </a>
 
-      <a class="btn"
+      <a class="btn js-bases"
          data-i18n="contest_docs_bases"
          href="assets/docs/bases.pdf"
          target="_blank" rel="noopener">
@@ -606,7 +606,8 @@ body.page-concurso .concursoDocs .docButtons__row{
 (() => {
   "use strict";
 
-  const PDF_BY_LANG = {
+  // 1) PDFs por idioma
+  const SOLICITUD_BY_LANG = {
     es: "solicitud-inscripcion.pdf",
     en: "solicitud-inscripcion_EN.pdf",
     fr: "solicitud-inscripcion_FR.pdf",
@@ -614,6 +615,14 @@ body.page-concurso .concursoDocs .docButtons__row{
     pt: "solicitud-inscripcion_PT.pdf"
   };
 
+  // Bases: solo cambian en FR/PT; el resto usa bases.pdf
+  const BASES_BY_LANG = {
+    fr: "bases_F.pdf",
+    pt: "bases_P.pdf",
+    default: "bases.pdf"
+  };
+
+  // OJO: en tu HTML estás usando /assets/docs/ (con “s”)
   const BASE = "/assets/docs/";
 
   const normalizeLang = (l) => {
@@ -646,11 +655,19 @@ body.page-concurso .concursoDocs .docButtons__row{
 
   const applyPdfLinks = () => {
     const lang = getCurrentLang();
-    const file = PDF_BY_LANG[lang] || PDF_BY_LANG.es;
-    const url = BASE + file;
 
+    // Solicitud
+    const solicitudFile = SOLICITUD_BY_LANG[lang] || SOLICITUD_BY_LANG.es;
+    const solicitudUrl = BASE + solicitudFile;
     document.querySelectorAll("a.js-solicitud").forEach((a) => {
-      a.setAttribute("href", url);
+      a.setAttribute("href", solicitudUrl);
+    });
+
+    // Bases
+    const basesFile = BASES_BY_LANG[lang] || BASES_BY_LANG.default;
+    const basesUrl = BASE + basesFile;
+    document.querySelectorAll("a.js-bases").forEach((a) => {
+      a.setAttribute("href", basesUrl);
     });
   };
 
@@ -658,6 +675,7 @@ body.page-concurso .concursoDocs .docButtons__row{
   document.addEventListener("dulcesor:langchange", applyPdfLinks);
 })();
 </script>
+
 </body>
 </html>
 
