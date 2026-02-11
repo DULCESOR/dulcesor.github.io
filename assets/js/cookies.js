@@ -4,7 +4,7 @@
   // =========================
   // CONFIG
   // =========================
-  const GA_MEASUREMENT_ID = "G-KRE7MLMNXY";
+  const GA_MEASUREMENT_ID = "G-KRE7MLMNXY"; // <-- TU ID GA4 NUEVO
   const CONSENT_KEY = "dulcesor_cookie_consent_v1";
   const CONSENT_TTL_DAYS = 365; // recomendado: 12 meses
 
@@ -145,6 +145,10 @@
     window.gtag("js", new Date());
     window.gtag("config", GA_MEASUREMENT_ID, {
       anonymize_ip: true,
+
+      // Mejora recomendada (si NO haces publicidad/remarketing)
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
     });
   }
 
